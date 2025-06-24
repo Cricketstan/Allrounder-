@@ -267,12 +267,7 @@ html, body {
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
 <div id="player-container" style="margin-top: 60px; width: 100vw; height: calc(100vw * 9 / 16); background: #000;">
-  <iframe src="https://cricketstan.github.io/Willow-Cricbuzz-/" 
-          width="100%" 
-          height="100%" 
-          frameborder="0" 
-          allowfullscreen 
-          allow="autoplay; encrypted-media"></iframe>
+  <iframe id="contentFrame" sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen="true" scrolling="no" src="https://cricketstan.github.io/Willow-Cricbuzz-/" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
