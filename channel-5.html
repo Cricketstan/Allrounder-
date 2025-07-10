@@ -87,7 +87,17 @@ html, body {
     flex-direction: column;
     gap: 0.7rem;
   }
-
+.counter-box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+  margin-top: 1rem;
+}
+.counter-box img {
+  height: 48px;
+}
   .popup-btn {
     padding: 0.8rem;
     border-radius: 12px;
@@ -242,6 +252,17 @@ html, body {
 </style>
 </head>
 <body>
+  <!-- Visitor Counter Popup -->
+<div class="popup-overlay" id="visitorPopup" style="display:none;">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closeVisitorPopup()">×</button>
+    <div class="popup-header">Total Visitors</div>
+    <div class="popup-subtitle">Users Live On Web</div>
+    <div class="counter-box">
+      <img src="https://visit-counter.vercel.app/counter.png?page=allrounder.com&s=40&c=00ff00&bg=00000000&no=10&ff=digi&tb=&ta=" alt="Visitor Count" />
+    </div>
+  </div>
+</div>
 <div class="popup-overlay" id="popup">
   <div class="popup-box">
     <button class="close-btn" onclick="closePopup()">×</button>
@@ -263,6 +284,7 @@ html, body {
   <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank"> Join Our Telegram</a>
   <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank"> Contact Us</a>
   <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank">Copyright</a>
+  <a href="#" onclick="showVisitorPopup()">Total Visitor</a>
 </div>
 <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
 
@@ -368,6 +390,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
   }
+  function showVisitorPopup() {
+  const popup = document.getElementById("visitorPopup");
+  popup.style.display = "flex";
+  setTimeout(() => {
+    popup.querySelector('.popup-box').style.opacity = '1';
+  }, 10);
+}
+function closeVisitorPopup() {
+  const popup = document.getElementById("visitorPopup");
+  popup.querySelector('.popup-box').style.opacity = '0';
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 300);
+}
 </script>
 
 </body>
