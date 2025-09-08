@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ALLROUNDER</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #0a0a0a;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      color: #e0e0e0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 9999;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    header img {
+      height: 65%;
+      filter: drop-shadow(0 0 8px rgba(29, 185, 84, 0.3));
+      transition: filter 0.3s ease;
+    }
+
+    header:hover img {
+      filter: drop-shadow(0 0 12px rgba(29, 185, 84, 0.5));
+    }
+/* 🔔 Telegram Join Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10002;
+}
+
+.popup-box {
+  width: 320px;
+  background: rgba(20, 20, 30, 0.6);
+  border: 1px solid rgba(173, 216, 230, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4), 0 0 80px rgba(173, 216, 230, 0.15);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  animation: fadeIn 0.5s ease forwards;
+  position: relative;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-header {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00eaff, #bd00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+.popup-subtitle {
+  font-size: 1rem;
+  color: #aaa;
+  margin-bottom: 1.2rem;
+}
+
+.popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.popup-buttons a {
+  text-decoration: none;
+}
+
+.popup-btn {
+  padding: 0.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0,255,255,0.3), rgba(255,0,255,0.2));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup-btn:hover::after {
+  opacity: 1;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, #00eaff, #9c00ff);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+.join-btn:hover {
+  background: linear-gradient(135deg, #00ffff, #c000ff);
+  box-shadow: 0 0 16px rgba(0, 255, 255, 0.6);
+}
+
+.already-btn {
+  background: rgba(255,255,255,0.05);
+}
+
+.already-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 1.3rem;
+  color: #00eaff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff00cc;
+}
+    .video-container {
+      width: 100vw;
+      aspect-ratio: 16/9;
+      background: #000;
+      margin-top: 70px; /* Space for fixed header */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      background: #0f0f0f;
+      border-top: 1px solid rgba(51, 51, 51, 0.5);
+      border-bottom: 1px solid rgba(51, 51, 51, 0.5);
+    }
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+    .tab-button {
+      flex: 1;
+      padding: 16px 0;
+      color: #b0b0b0;
+      cursor: pointer;
+      background: none;
+      border: none;
+      outline: none;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .tab-button .material-icons {
+      font-size: 22px;
+      transition: all 0.3s ease;
+    }
+  .menu-icon {
+    position: absolute; left: 16px; color: #fff; font-size: 30px; cursor: pointer;
+  }
+    .tab-button:hover {
+      color: #e0e0e0;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .tab-button:hover .material-icons {
+      transform: translateY(-2px);
+    }
+
+    .tab-button.active {
+      color: #1db954;
+      font-weight: 600;
+    }
+
+    .tab-button.active .material-icons {
+      color: #1db954;
+      text-shadow: 0 0 10px rgba(29, 185, 84, 0.5);
+    }
+
+    .tab-button.active::after {
+      content: "";
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, rgba(29,185,84,0.5), #1db954, rgba(29,185,84,0.5));
+      border-radius: 10px;
+      animation: slideIn 0.3s ease-in-out forwards;
+      box-shadow: 0 0 10px rgba(29, 185, 84, 0.3);
+    }
+
+    @keyframes slideIn {
+      from { width: 0; opacity: 0; }
+      to { width: 60px; opacity: 1; }
+    }
+.menu-header {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+    .tab-content {
+      display: none;
+      width: 100%;
+      background: #0a0a0a;
+      margin-top: -1px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .tab-content iframe {
+      width: 100%;
+      height: 600px; /* Adjustable height */
+      border: none;
+      display: block;
+      background: #0a0a0a;
+    }
+
+    /* Enhanced Plyr player styling */
+    .plyr--full-ui input[type=range] {
+      color: #1db954;
+    }
+  /* Sidebar Styles - Premium Glassmorphic */
+  .sidebar {
+    position: fixed; top: 0; left: -300px; width: 280px; height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    color: #fff; z-index: 10001; transition: left 0.5s ease;
+    padding-top: 80px; box-shadow: 4px 0 15px rgba(0,0,0,0.4);
+    border-top-right-radius: 12px; border-bottom-right-radius: 12px;
+  }
+  .sidebar.open { left: 0; }
+  .sidebar a {
+    display: block; padding: 15px 24px; color: #fff; text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    font-weight: 500; font-size: 16px;
+    transition: background 0.3s, padding-left 0.3s;
+  }
+  .sidebar a:hover {
+    background: rgba(255,255,255,0.15);
+    padding-left: 32px;
+  }
+    .plyr__control--overlaid {
+      background: rgba(29, 185, 84, 0.8);
+      box-shadow: 0 0 20px rgba(29, 185, 84, 0.3);
+    }
+    .counter-box {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px;
+      border-radius: 16px;
+      box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+      margin-top: 1rem;
+    }
+    
+    .counter-box img {
+      height: 48px;
+    }
+    .plyr__control--overlaid:hover {
+      background: #1db954;
+      transform: scale(1.05);
+    }
+
+    .plyr--video .plyr__control:hover {
+      background: #1db954;
+    }
+
+    .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
+      background: #1db954;
+    }
+  </style>
+</head>
+<body>
+<!-- Visitor Counter Popup -->
+<div class="popup-overlay" id="visitorPopup" style="display:none;">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closeVisitorPopup()">×</button>
+    <div class="popup-header">Total Visitors</div>
+    <div class="popup-subtitle">Users Live On Web</div>
+    <div class="counter-box">
+      <img src="https://visit-counter.vercel.app/counter.png?page=allrounder.com&s=40&c=00ff00&bg=00000000&no=10&ff=digi&tb=&ta=" alt="Visitor Count" />
+    </div>
+  </div>
+</div>
+<!-- Telegram Join Popup -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <div class="popup-header">Support Us!</div>
+    <div class="popup-subtitle">Join our Telegram for latest updates.</div>
+    <div class="popup-buttons">
+      <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank" class="popup-btn join-btn">Join Now</a>
+      <button class="popup-btn already-btn" onclick="closePopup()">Already Joined</button>
+    </div>
+  </div>
+</div>
+  <header>
+<span class="material-icons menu-icon" onclick="toggleSidebar()">menu</span>
+    <img src="https://i.ibb.co/FqkV5v5y/Picsart-25-06-21-13-44-20-140.png" alt="Logo">
+  </header>
+<div class="video-container">
+  <iframe
+    src="https://cricketstan.github.io/Channel-13"
+    frameborder="0"
+    allowfullscreen
+    allow="autoplay; encrypted-media"
+    sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
+  ></iframe>
+</div>
+<div class="sidebar" id="sidebar">
+  <div class="menu-header">MENU</div>
+  <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank"> Join Our Telegram</a>
+  <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank"> Contact Us</a>
+  <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank">Copyright</a>
+<a href="#" onclick="showVisitorPopup()">Total Visitor</a>
+</div>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <div class="tabs">
+    <button class="tab-button active" onclick="switchTab('chat')">
+      <span class="material-icons">chat</span>
+      <span>Live Chat</span>
+    </button>
+    <button class="tab-button" onclick="switchTab('scoreboard')">
+      <span class="material-icons">leaderboard</span>
+      <span>Scoreboard</span>
+    </button>
+    <button class="tab-button" onclick="switchTab('highlights')">
+      <span class="material-icons">movie</span>
+      <span>Highlights</span>
+    </button>
+  </div>
+
+  <div id="chat" class="tab-content active">
+    <iframe src="https://cricketstan.github.io/Live-Chat/"></iframe>
+  </div>
+  <div id="scoreboard" class="tab-content">
+    <iframe src="https://live-scoreboard.pages.dev/"></iframe>
+  </div>
+  <div id="highlights" class="tab-content">
+<iframe src="https://cricketstan.github.io/Top-moments-/" allowfullscreen></iframe> 
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+  <script>
+    const jsonUrl = 'https://raw.githubusercontent.com/StmpupCricket/Star-Sports-Hindi-json/refs/heads/main/data.json';
+
+    fetch(jsonUrl)
+      .then(res => res.json())
+      .then(data => {
+        const m3u8Url = data.stream_url;
+        const video = document.getElementById('player');
+
+        if (Hls.isSupported()) {
+          const hls = new Hls();
+          hls.loadSource(m3u8Url);
+          hls.attachMedia(video);
+          hls.on(Hls.Events.MANIFEST_PARSED, () => {
+            const qualities = hls.levels.map(l => l.height).filter((v, i, a) => a.indexOf(v) === i).sort((a, b) => b - a);
+            new Plyr(video, {
+              controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
+              settings: ['quality', 'speed'],
+              quality: {
+                default: qualities[0],
+                options: qualities,
+                forced: true,
+                onChange: q => {
+                  const level = hls.levels.findIndex(l => l.height === q);
+                  hls.currentLevel = level;
+                }
+              }
+            });
+            video.play();
+          });
+        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+          video.src = m3u8Url;
+          video.addEventListener('loadedmetadata', () => {
+            new Plyr(video, {
+              controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
+              settings: ['quality', 'speed']
+            });
+            video.play();
+          });
+        } else {
+          alert("Your browser does not support HLS.");
+        }
+      })
+      .catch(err => {
+        console.error('Failed to load stream:', err);
+        alert('Failed to load stream.');
+      });
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+      document.querySelector(`.tab-button[onclick*="${tabId}"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('show');
+  }
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+function showVisitorPopup() {
+    const popup = document.getElementById("visitorPopup");
+    popup.style.display = "flex";
+    setTimeout(() => {
+      popup.querySelector('.popup-box').style.opacity = '1';
+    }, 10);
+  }
+
+  function closeVisitorPopup() {
+    const popup = document.getElementById("visitorPopup");
+    popup.querySelector('.popup-box').style.opacity = '0';
+    setTimeout(() => {
+      popup.style.display = "none";
+    }, 300);
+  }
+  </script>
+</body>
+</html>
