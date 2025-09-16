@@ -1,4 +1,3 @@
-
 {
   "posters": [
     {
@@ -11,7 +10,7 @@
         {"id": "channel-4", "name": "SonyLIV"},
         {"id": "channel-5", "name": "Hotstar"}
       ],
-      "start_time": "9:00"
+      "start_time": "09:00 AM"
     },
     {
       "title": "https://i.ibb.co/9H5q2TBs/Picsart-25-09-16-02-38-36-796.jpg",
@@ -23,7 +22,7 @@
         {"id": "channel-9", "name": "Sky Sports"},
         {"id": "channel-10", "name": "Hotstar"}
       ],
-      "start_time": "21:30"
+      "start_time": "09:30 PM"
     },
     {
       "title": "https://i.ibb.co/PZZLz3L5/Picsart-25-09-16-02-27-15-061.png",
@@ -35,7 +34,7 @@
         {"id": "channel-14", "name": "Hotstar"},
         {"id": "channel-15", "name": "Star Sports"}
       ],
-      "start_time": "15:30"
+      "start_time": "03:30 PM"
     },
     {
       "title": "https://i.ibb.co/PZZLz3L5/Picsart-25-09-16-02-27-15-061.png",
@@ -47,7 +46,7 @@
         {"id": "channel-19", "name": "Star Sports"},
         {"id": "channel-20", "name": "SonyLIV"}
       ],
-      "start_time": "23:00"
+      "start_time": "11:00 PM"
     },
     {
       "title": "https://i.ibb.co/9H5q2TBs/Picsart-25-09-16-02-38-36-796.jpg",
@@ -59,7 +58,7 @@
         {"id": "channel-24", "name": "SonyLIV"},
         {"id": "channel-25", "name": "FanCode"}
       ],
-      "start_time": "18:30"
+      "start_time": "06:30 PM"
     }
   ]
 }
