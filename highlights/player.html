@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allrounder - Player</title>
+
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; font-family: Arial, sans-serif; color: #fff; }
+
+    header {
+      position: fixed; top: 0; left: 0; width: 100%; height: 60px;
+      background: rgba(0,0,0,1); display: flex; align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.5); z-index: 1000;
+    }
+    .logo img { height: 100%; width: auto; display: block; }
+
+    .player-wrapper { margin-top: 60px; width: 100%; }
+    .player-container { position: relative; width: 100%; aspect-ratio: 16/9; background: #000; }
+    .plyr { width: 100%; height: 100%; border-radius: 0; }
+
+    .video-details { padding: 15px; }
+    .video-details h2 { font-size: 20px; font-weight: 600; margin-bottom: 5px; text-shadow: 0 2px 6px rgba(0,0,0,0.7); }
+    .video-details p { font-size: 14px; color: #ccc; }
+
+    .action-bar {
+      display: flex; justify-content: space-around; align-items: center;
+      padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.2);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      background: rgba(20,20,20,0.95);
+    }
+    .action-btn { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #fff; transition: transform 0.2s; }
+    .action-btn:hover { transform: scale(1.15); color: #1db954; }
+    .action-btn i { font-size: 28px; margin-bottom: 4px; }
+    .action-btn span { font-size: 12px; color: #ccc; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="https://allrounderlive.pages.dev/logo.png" alt="Logo">
+  </div>
+</header>
+
+<div class="player-wrapper">
+  <div class="player-container">
+    <video id="player" playsinline controls>
+      <source id="videoSource" src="" type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="action-bar">
+    <div class="action-btn" id="favBtn">
+      <i class="material-icons">favorite_border</i><span>Favourite</span>
+    </div>
+    <div class="action-btn" id="shareBtn">
+      <i class="material-icons">share</i><span>Share</span>
+    </div>
+    <div class="action-btn" id="downloadBtn">
+      <i class="material-icons">download</i><span>Download</span>
+    </div>
+    <div class="action-btn" id="watchMoreBtn">
+      <i class="material-icons">live_tv</i><span>Watch More</span>
+    </div>
+  </div>
+
+  <div class="video-details">
+    <h2 id="videoTitle">Loading...</h2>
+    <p id="videoDuration">Duration: --:--</p>
+  </div>
+</div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+<script>
+  const player = new Plyr('#player');
+  const favBtn = document.getElementById("favBtn");
+  const favIcon = favBtn.querySelector("i");
+
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+  const videoUrl = getQueryParam("src");
+  const videoTitle = getQueryParam("title");
+
+  if (videoUrl) {
+    document.getElementById("videoSource").src = videoUrl;
+    player.source = { type: 'video', sources: [{ src: videoUrl, type: 'video/mp4' }] };
+  }
+  if (videoTitle) {
+    document.getElementById("videoTitle").textContent = decodeURIComponent(videoTitle);
+  }
+
+  player.on('loadedmetadata', () => {
+    const duration = player.duration;
+    const minutes = Math.floor(duration / 60);
+    const seconds = Math.floor(duration % 60).toString().padStart(2, '0');
+    document.getElementById("videoDuration").textContent = `Duration: ${minutes}:${seconds}`;
+  });
+
+  favBtn.addEventListener("click", () => {
+    if (favIcon.textContent === "favorite_border") {
+      favIcon.textContent = "favorite"; favIcon.style.color = "red";
+    } else {
+      favIcon.textContent = "favorite_border"; favIcon.style.color = "white";
+    }
+  });
+
+  document.getElementById("shareBtn").addEventListener("click", async () => {
+    const shareData = { title: videoTitle || "Allrounder Highlight", text: "Watch this highlight on Allrounder", url: window.location.href };
+    if (navigator.share) { await navigator.share(shareData); }
+    else { navigator.clipboard.writeText(window.location.href); alert("Link copied to clipboard!"); }
+  });
+
+  document.getElementById("downloadBtn").addEventListener("click", () => {
+    if (videoUrl) {
+      const a = document.createElement("a");
+      a.href = videoUrl;
+      a.download = videoTitle ? videoTitle + ".mp4" : "highlight.mp4";
+      a.click();
+    }
+  });
+
+  document.getElementById("watchMoreBtn").addEventListener("click", () => {
+    window.location.href = "https://allrounderlive.pages.dev";
+  });
+</script>
+</body>
+</html>
