@@ -1,19 +1,15 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/PZZLz3L5/Picsart-25-09-16-02-27-15-061.png",
-      "poster_link": "https://i.ibb.co/9H5q2TBs/Picsart-25-09-16-02-38-36-796.jpg",
+      "title": "https://i.ibb.co/Gf2gg7Lv/Picsart-25-09-17-05-15-32-365.png",
+      "poster_link": "https://i.ibb.co/dJcbg3zY/Picsart-25-09-17-05-17-31-101.jpg",
       "watch_now": [
-        {"id": "channel-5", "name": "Sony Ten 3"},
-        {"id": "channel-6", "name": "Sony Ten 5"},
-        {"id": "channel-13", "name": "Sony Liv Hindi"},
-        {"id": "channel-7", "name": "Fox Cricket"},
-        {"id": "channel-11", "name": "Astro Cricket"}
+        {"id": "channel-4", "name": "Fancode"}
       ],
-      "start_time": "09:00 AM",
+      "start_time": "05:30 AM",
       "category": "Sports",
       "year": "2025",
-      "language": "Multi",
+      "language": "English",
       "rating": "U/A"
     }
   ]
