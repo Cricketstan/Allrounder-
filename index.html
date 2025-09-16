@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allrounder</title>
+  <title>Allrounder - Auto Sliding</title>
   <style>
     /* Reset */
     * {
@@ -30,10 +30,7 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      
-      /* Very thin white bottom outline */
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      
       padding: 0; /* remove default padding so logo goes fully left */
     }
 
@@ -43,7 +40,7 @@
       display: flex;
       align-items: center;
       transition: transform 0.3s ease, margin-left 0.3s ease;
-      margin-left: 0; /* fully left */
+      margin-left: 0;
     }
 
     .logo img {
@@ -53,15 +50,149 @@
       transition: transform 0.3s ease;
     }
 
-    /* Shrink and move logo slightly on scroll */
     header.scrolled .logo {
-      transform: scale(0.9); /* slightly smaller */
-      margin-left: 0; /* stays fully left */
+      transform: scale(0.9);
+      margin-left: 0;
     }
 
-    /* Translucent background on scroll */
     header.scrolled {
       background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Poster Styles */
+    .slider-wrapper { 
+      padding-top: 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .slider {
+      display:flex; 
+      overflow-x:auto; 
+      gap: 20px;
+      padding: 15px 15px 15px 0;
+      cursor:grab;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+    }
+    .slider:active { cursor:grabbing; }
+    .poster-card {
+      position: relative; 
+      flex: 0 0 auto; 
+      width: 400px; 
+      aspect-ratio:16/9;
+      border-radius:12px; 
+      overflow:hidden; 
+      background:#111; 
+      transition: transform 0.3s;
+      margin-left: 0;
+    }
+    .poster-card:first-child {
+      margin-left: 15px;
+    }
+    .poster-card:hover { transform: scale(1.05); }
+    .poster-card img.poster-img { 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+      display:block; 
+      cursor: default;
+      position: relative;
+      z-index: 0;
+    }
+    .poster-card img.title-img {
+      position:absolute; 
+      bottom:20px; 
+      left:20px;
+      width:130px; 
+      height:130px; 
+      object-fit:contain;
+      border-radius:0; 
+      background:none; 
+      padding:0;
+      cursor: default;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .watch-btn {
+      position:absolute; 
+      bottom:20px; 
+      left:20px;  
+      padding:8px 14px;
+      background:#ff4500; 
+      color:#fff; 
+      border:none; 
+      border-radius:5px; 
+      cursor:pointer;
+      font-weight:bold; 
+      transition:0.2s;
+      z-index: 2;
+    }
+    .watch-btn:hover { background:#e03e00; }
+    .modal {
+      display:none; 
+      position:fixed; 
+      top:0; 
+      left:0; 
+      width:100%; 
+      height:100%;
+      background: rgba(0,0,0,0.8); 
+      justify-content:center; 
+      align-items:center; 
+      z-index:2000;
+    }
+    .modal-content {
+      background:#111; 
+      padding:20px; 
+      border-radius:12px; 
+      width:300px; 
+      text-align:center;
+    }
+    .modal-content h3 { margin-bottom:15px; }
+    .modal-content button {
+      background:#ff4500; 
+      color:#fff; 
+      border:none; 
+      border-radius:5px; 
+      padding:8px 15px;
+      margin:5px; 
+      cursor:pointer; 
+      transition:0.2s;
+    }
+    .modal-content button:hover { background:#e03e00; }
+    .slider::-webkit-scrollbar { display:none; }
+    .slider { -ms-overflow-style:none; scrollbar-width:none; }
+
+    /* Vignette left side only */
+    .poster-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Navigation dots */
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      gap: 8px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .dot.active {
+      background-color: #ff4500;
+      transform: scale(1.2);
     }
   </style>
 </head>
@@ -73,16 +204,168 @@
     </div>
   </header>
 
+  <div class="slider-wrapper">
+    <div class="slider" id="posterSlider"></div>
+    <div class="slider-dots" id="sliderDots"></div>
+  </div>
+
+  <div class="modal" id="channelModal">
+    <div class="modal-content">
+      <h3>Select Channel</h3>
+      <div id="channelButtons"></div>
+      <br>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
   <script>
     const header = document.querySelector('header');
-
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
     });
+
+    const slider = document.getElementById('posterSlider');
+    const sliderDots = document.getElementById('sliderDots');
+    const modal = document.getElementById('channelModal');
+    const channelContainer = document.getElementById('channelButtons');
+    let currentChannels = [];
+    let autoSlideInterval;
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let isDragging = false;
+    let startX, scrollLeft;
+    let userInteractionTimeout;
+
+    function getISTTime() {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset()*60000;
+      const istOffset = 5.5*60*60000;
+      return new Date(utc+istOffset);
+    }
+
+    function isLive(start_time) {
+      const [time, meridiem] = start_time.split(' ');
+      let [hour, min] = time.split(':').map(Number);
+      if (meridiem === 'PM' && hour !== 12) hour += 12;
+      if (meridiem === 'AM' && hour === 12) hour = 0;
+      const now = getISTTime();
+      const nowMinutes = now.getHours()*60 + now.getMinutes();
+      const startMinutes = hour*60 + min;
+      return nowMinutes >= startMinutes;
+    }
+
+    function startAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(() => {
+        if (!isDragging) {
+          currentSlide = (currentSlide + 1) % totalSlides;
+          scrollToSlide(currentSlide);
+        }
+      }, 2000);
+    }
+
+    function scrollToSlide(index) {
+      const posters = slider.querySelectorAll('.poster-card');
+      if (!posters.length) return;
+      currentSlide = index;
+      posters[currentSlide].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      updateDots();
+    }
+
+    function updateDots() {
+      const dots = sliderDots.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) dot.classList.add('active');
+        else dot.classList.remove('active');
+      });
+    }
+
+    function createDots(count) {
+      sliderDots.innerHTML = '';
+      for (let i = 0; i < count; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => { currentSlide = i; scrollToSlide(i); pauseAutoSlide(); });
+        sliderDots.appendChild(dot);
+      }
+    }
+
+    function pauseAutoSlide() {
+      clearInterval(autoSlideInterval);
+      clearTimeout(userInteractionTimeout);
+      userInteractionTimeout = setTimeout(() => startAutoSlide(), 2000);
+    }
+
+    fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/main-poster.json')
+      .then(res => res.json())
+      .then(data => {
+        totalSlides = data.posters.length;
+        createDots(totalSlides);
+
+        data.posters.forEach(poster => {
+          const card = document.createElement('div');
+          card.className = 'poster-card';
+          const isStarted = isLive(poster.start_time);
+          const buttonLabel = isStarted ? 'Watch Now' : 'Upcoming';
+
+          card.innerHTML = `
+            <img class="poster-img" src="${poster.poster_link}" alt="Poster">
+            <img class="title-img" src="${poster.title}" alt="Title Image">
+            <button class="watch-btn">${buttonLabel}</button>
+          `;
+          slider.appendChild(card);
+
+          const watchBtn = card.querySelector('.watch-btn');
+          watchBtn.addEventListener('click', () => {
+            if (isStarted) { currentChannels = poster.watch_now; openModal(); }
+            else alert(`Match starts at ${poster.start_time} IST`);
+          });
+        });
+
+        startAutoSlide();
+
+        // Drag functionality
+        slider.addEventListener('mousedown', e => { isDragging = true; startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; pauseAutoSlide(); });
+        slider.addEventListener('mouseleave', () => { isDragging = false; });
+        slider.addEventListener('mouseup', () => { isDragging = false; pauseAutoSlide(); });
+        slider.addEventListener('mousemove', e => { if(!isDragging) return; e.preventDefault(); slider.scrollLeft = scrollLeft - ((e.pageX - slider.offsetLeft) - startX)*2; });
+        slider.addEventListener('touchstart', e => { isDragging = true; startX = e.touches[0].pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; pauseAutoSlide(); });
+        slider.addEventListener('touchend', () => { isDragging = false; pauseAutoSlide(); });
+        slider.addEventListener('touchmove', e => { if(!isDragging) return; e.preventDefault(); slider.scrollLeft = scrollLeft - ((e.touches[0].pageX - slider.offsetLeft) - startX)*2; });
+
+        slider.addEventListener('scroll', () => {
+          if (!isDragging) return;
+          const posters = slider.querySelectorAll('.poster-card');
+          let closestSlide = 0;
+          let closestDistance = Infinity;
+          posters.forEach((poster, index) => {
+            const rect = poster.getBoundingClientRect();
+            const centerDistance = Math.abs(rect.left + rect.width/2 - window.innerWidth/2);
+            if(centerDistance < closestDistance){ closestDistance = centerDistance; closestSlide = index; }
+          });
+          if(closestSlide !== currentSlide){ currentSlide = closestSlide; updateDots(); }
+        });
+      });
+
+    function openModal(){
+      channelContainer.innerHTML='';
+      currentChannels.forEach((channel, index)=>{
+        const btn=document.createElement('button');
+        btn.textContent=channel.name;
+        // Open relative URL like channel-1, channel-2
+        btn.onclick = () => window.open(`channel-${index+1}`, '_blank');
+        channelContainer.appendChild(btn);
+      });
+      modal.style.display='flex';
+      clearInterval(autoSlideInterval);
+    }
+
+    function closeModal(){ 
+      modal.style.display='none'; 
+      startAutoSlide();
+    }
   </script>
 
 </body>
