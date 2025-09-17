@@ -13,6 +13,7 @@
         {"id": "channel-10", "name": "TNT Sports"},
         {"id": "channel-9", "name": "Ten Cricket"}
       ],
+      "date": "17 Sep 2025",
       "start_time": "12:05 AM",
       "category": "Cricket",
       "year": "2025",
@@ -25,6 +26,7 @@
       "watch_now": [
         {"id": "channel-4", "name": "Fancode"}
       ],
+      "date": "17 Sep 2025",
       "start_time": "05:30 AM",
       "category": "Cricket",
       "year": "2025",
