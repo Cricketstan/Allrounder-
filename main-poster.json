@@ -1,6 +1,25 @@
 {
   "posters": [
     {
+      "title": "https://i.ibb.co/S758xngc/Picsart-25-09-17-17-29-59-502.png",
+      "poster_link": "https://i.ibb.co/HLf4DFqb/Picsart-25-09-17-17-11-17-906.jpg",
+      "watch_now": [
+        {"id": "channel-7", "name": "Fox Cricket"},
+        {"id": "channel-5", "name": "Sony Ten 3"},
+        {"id": "channel-6", "name": "Sony Ten 5"},
+        {"id": "channel-11", "name": "Astro Cricket"},
+        {"id": "channel-13", "name": "Hindi"},
+        {"id": "channel-14", "name": "English"},
+        {"id": "channel-10", "name": "TNT Sports"},
+        {"id": "channel-9", "name": "Ten Cricket"}
+      ],
+      "start_time": "7:45 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "rating": "U/A"
+    },
+    {
       "title": "https://i.ibb.co/wZH7F9Cx/Picsart-25-09-17-07-20-21-576.png",
       "poster_link": "https://i.ibb.co/HLgCF5fB/Picsart-25-09-17-05-49-06-654.jpg",
       "watch_now": [
@@ -24,23 +43,6 @@
       "year": "2025",
       "language": "English",
       "rating": "U/A"
-    },
-    {
-      "title": "https://i.ibb.co/S758xngc/Picsart-25-09-17-17-29-59-502.png",
-      "poster_link": "https://i.ibb.co/HLf4DFqb/Picsart-25-09-17-17-11-17-906.jpg",
-      "watch_now": [
-        {"id": "channel-7", "name": "Fox Cricket"},
-        {"id": "channel-11", "name": "Astro Cricket"},
-        {"id": "channel-13", "name": "Hindi"},
-        {"id": "channel-14", "name": "English"},
-        {"id": "channel-10", "name": "TNT Sports"},
-        {"id": "channel-9", "name": "Ten Cricket"}
-      ],
-      "start_time": "08:00 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "rating": "U/A"
     }
   ]
-}
+    }
