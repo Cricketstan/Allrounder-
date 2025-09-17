@@ -13,36 +13,23 @@
         {"id": "channel-10", "name": "TNT Sports"},
         {"id": "channel-9", "name": "Ten Cricket"}
       ],
-      "start_time": "8:45 PM",
+      "start_time": "12:05 AM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
       "rating": "U/A"
     },
     {
-      "title": "https://i.ibb.co/wZH7F9Cx/Picsart-25-09-17-07-20-21-576.png",
-      "poster_link": "https://i.ibb.co/HLgCF5fB/Picsart-25-09-17-05-49-06-654.jpg",
+      "title": "https://i.ibb.co/LhqH0ZG9/Picsart-25-09-18-00-01-27-629.png",
+      "poster_link": "https://i.ibb.co/PZ2rKHZc/Picsart-25-09-18-00-03-34-290.jpg",
       "watch_now": [
         {"id": "channel-4", "name": "Fancode"}
       ],
-      "start_time": "06:00 PM",
+      "start_time": "05:30 AM",
       "category": "Cricket",
-      "year": "2025",
-      "language": "English",
-      "rating": "U/A"
-    },
-    {
-      "title": "https://i.ibb.co/2zMLZQZ/Picsart-25-09-17-14-25-29-130.png",
-      "poster_link": "https://i.ibb.co/pr5H41qm/4b32aed7-a148-41e5-ba66-799f98b71203.jpg",
-      "watch_now": [
-        {"id": "channel-12", "name": "CricBuzz"},
-        {"id": "willow-sports", "name": "Willow Sports"}
-      ],
-      "start_time": "4:00 PM",
-      "category": "Sports",
       "year": "2025",
       "language": "English",
       "rating": "U/A"
     }
   ]
-    }
+}
