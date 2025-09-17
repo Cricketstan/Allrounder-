@@ -1,12 +1,13 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/6cLW2pZm/Picsart-25-09-17-05-23-32-021.png",
-      "poster_link": "https://i.ibb.co/dJcbg3zY/Picsart-25-09-17-05-17-31-101.jpg",
+      "title": "https://i.ibb.co/2zMLZQZ/Picsart-25-09-17-14-25-29-130.png",
+      "poster_link": "https://i.ibb.co/pr5H41qm/4b32aed7-a148-41e5-ba66-799f98b71203.jpg",
       "watch_now": [
-        {"id": "channel-4", "name": "Fancode"}
+        {"id": "channel-12", "name": "CricBuzz"},
+        {"id": "willow-sports", "name": "Willow Sports"}
       ],
-      "start_time": "05:30 AM",
+      "start_time": "01:30 PM",
       "category": "Sports",
       "year": "2025",
       "language": "English",
