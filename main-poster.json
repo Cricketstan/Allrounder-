@@ -1,23 +1,16 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/pCPQ8DY/Picsart-25-09-18-12-59-28-292.png",
-      "poster_link": "https://i.ibb.co/WpNmn2xF/Picsart-25-09-18-12-56-07-034.jpg",
+      "title": "https://i.ibb.co/JRnMS6FL/Picsart-25-09-17-07-20-21-576.png",
+      "poster_link": "https://i.ibb.co/GQ4vgwJh/Picsart-25-09-17-05-49-06-654.jpg",
       "watch_now": [
-        {"id": "channel-7", "name": "Fox Cricket Hindi"},
-        {"id": "channel-13", "name": "Sony Liv Hindi"},
-        {"id": "channel-5", "name": "Ten 3 Hindi"},
-        {"id": "channel-14", "name": "Sony Liv English"},
-        {"id": "channel-6", "name": "Ten 5 English"},
-        {"id": "channel-10", "name": "TNT Sports"},
-        {"id": "channel-11", "name": "Astro Cricket"},
-        {"id": "channel-9", "name": "CricLife Max"}
+        {"id": "channel-4", "name": "Fancode"}
       ],
-      "date": "18 Sep 2025",
-      "start_time": "07:45 PM",
+      "date": "19 Sep 2025",
+      "start_time": "05:55 PM",
       "category": "Cricket",
       "year": "2025",
-      "language": "Multi",
+      "language": "English",
       "rating": "U/A"
     }
   ]
