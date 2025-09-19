@@ -33,7 +33,8 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
 .poster-card {
   position: relative;
   flex: 0 0 auto;
-  width: 400px;     
+  width: 90vw;          /* ✅ take 90% of viewport width */
+  max-width: 600px;     /* ✅ prevent it from getting too big on desktops */
   aspect-ratio: 16/9;
   border-radius: 12px;
   overflow: hidden;
