@@ -30,17 +30,28 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
 }
 .slider:active { cursor:grabbing; }
 
+/* Default (mobile / tablet) */
 .poster-card {
   position: relative;
   flex: 0 0 auto;
-  width: 90vw;          
-  max-width: 600px;     
+  width: 90vw;          /* ✅ 90% of screen width */
+  max-width: 600px;     /* ✅ capped for small/medium screens */
   aspect-ratio: 16/9;
-  border-radius: 12px;
+  border-radius: 12px;  /* ✅ rounded corners on mobile */
   overflow: hidden;
   background: #111;
   transition: transform 0.3s;
-  margin-left: 0;
+  margin: 0 auto;       /* ✅ center horizontally */
+}
+
+/* Desktop (PC, large screens) */
+@media (min-width: 1024px) {
+  .poster-card {
+    width: 100vw;       /* ✅ full screen width */
+    max-width: 100%;
+    border-radius: 0;   /* ✅ remove rounding for edge-to-edge */
+    margin: 0;          /* ✅ no margin */
+  }
 }
 .poster-card:first-child { margin-left:15px; }
 .poster-card:hover { transform: scale(1.05); }
