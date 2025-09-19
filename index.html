@@ -449,9 +449,16 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
 }
 .poster-card img.poster-img { width:100%; height:100%; object-fit:cover; display:block; border-radius:12px; box-shadow: 0 0 6px rgba(255,255,255,0.05);}
 .poster-card img.title-img {
-  position:absolute; bottom:10px; left:-10px; width:200px; height:200px;
-  object-fit:contain; z-index:2; pointer-events:none;
-  box-shadow:0 12px 28px rgba(0,0,0,0.7);
+  position: absolute;
+  bottom: 5%;        /* ✅ relative */
+  left: 5%;          /* ✅ relative */
+  width: 35%;        /* ✅ scales with poster */
+  max-width: 200px;  /* ✅ doesn’t blow up */
+  height: auto;      /* ✅ keeps ratio */
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.7);
 }
 .team-score { 
   font-size:0.75rem; 
