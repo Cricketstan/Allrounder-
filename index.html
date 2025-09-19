@@ -447,16 +447,24 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.poster-card img.poster-img { width:100%; height:100%; object-fit:cover; display:block; border-radius:12px; box-shadow: 0 0 6px rgba(255,255,255,0.05);}
+.poster-card img.poster-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* ✅ fills poster */
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(255,255,255,0.05);
+}
+
 .poster-card img.title-img {
   position: absolute;
-  bottom: 5%;        /* ✅ relative */
-  left: 5%;          /* ✅ relative */
-  width: 35%;        /* ✅ scales with poster */
-  max-width: 200px;  /* ✅ doesn’t blow up */
-  height: auto;      /* ✅ keeps ratio */
+  bottom: 5%;               /* ✅ relative to poster height */
+  left: 5%;                 /* ✅ relative to poster width */
+  width: 35%;               /* ✅ scales with poster */
+  max-width: 200px;         /* ✅ prevents too big */
+  height: auto;             /* ✅ keeps ratio */
   object-fit: contain;
-  z-index: 3;
+  z-index: 3;               /* ✅ on top of meta */
   pointer-events: none;
   box-shadow: 0 12px 28px rgba(0,0,0,0.7);
 }
