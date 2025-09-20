@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="referrer" content="no-referrer">
-<title>Full Page Plyr Player with Quality Selector</title>
+<title>Allrounder</title>
 
 <!-- Plyr + HLS.js -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
@@ -21,38 +21,6 @@
   #plyr-player {
     width: 100%;
     height: 100%;
-  }
-  
-  /* Custom styling for Plyr to match the requested configuration */
-  :root {
-    --plyr-color-main: rgb(255, 105, 180);
-    --plyr-video-controls-background: rgba(0, 0, 0, 0.7);
-    --plyr-audio-controls-background: rgba(0, 0, 0, 0.7);
-    --plyr-volume-height: 6px;
-    --plyr-volume-track-height: 6px;
-    --plyr-progress-buffered-background: rgba(255, 255, 0, 0.6);
-    --plyr-video-range-track-background: rgba(255, 255, 0, 0.3);
-    --plyr-video-progress-buffered-background: rgba(255, 255, 0, 0.6);
-    --plyr-video-progress-background: rgb(255, 255, 0);
-    --plyr-audio-range-track-background: rgba(255, 192, 203, 0.3);
-    --plyr-audio-range-fill-background: rgb(255, 105, 180);
-  }
-  
-  /* Additional styling to match the requested control panel */
-  .plyr--video .plyr__controls {
-    padding: 20px;
-  }
-  
-  .plyr__controls .plyr__controls__item {
-    margin-left: 10px;
-  }
-  
-  .plyr__controls .plyr__controls__item:first-child {
-    margin-left: 0;
-  }
-  
-  .plyr__menu__container .plyr__control {
-    padding: 5px 15px;
   }
 </style>
 </head>
@@ -77,26 +45,10 @@
       // Extract available resolutions
       const availableQualities = hls.levels.map(l => l.height).filter((v, i, a) => a.indexOf(v) === i);
 
-      // Init Plyr with custom controls configuration
+      // Init Plyr
       const player = new Plyr(video, {
         autoplay: true,
         muted: true,
-        controls: [
-          'play-large', 
-          'restart', 
-          'rewind', 
-          'play', 
-          'fast-forward', 
-          'progress', 
-          'current-time', 
-          'duration', 
-          'mute', 
-          'volume', 
-          'captions', 
-          'settings', 
-          'pip', 
-          'fullscreen'
-        ],
         settings: ['quality', 'speed', 'loop'],
         quality: {
           default: availableQualities[0],
@@ -120,26 +72,7 @@
     });
   } else {
     video.src = videoSrc;
-    new Plyr(video, { 
-      autoplay: true, 
-      muted: true,
-      controls: [
-        'play-large', 
-        'restart', 
-        'rewind', 
-        'play', 
-        'fast-forward', 
-        'progress', 
-        'current-time', 
-        'duration', 
-        'mute', 
-        'volume', 
-        'captions', 
-        'settings', 
-        'pip', 
-        'fullscreen'
-      ]
-    });
+    new Plyr(video, { autoplay: true, muted: true });
   }
 </script>
 
