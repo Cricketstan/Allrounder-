@@ -45,6 +45,23 @@
       border-bottom: 1px solid rgba(255,255,255,0.2);
       background: rgba(20,20,20,0.95);
     }
+    /* Remove blue highlight on tap/click for all elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection for specific elements where it might be needed */
+input, textarea, [contenteditable] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
     .action-btn { display: flex; flex-direction: column; align-items: center; cursor: pointer; color: #fff; transition: transform 0.2s; }
     .action-btn:hover { transform: scale(1.15); color: #1db954; }
     .action-btn i { font-size: 28px; margin-bottom: 4px; }
