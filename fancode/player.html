@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fancode</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#000; font-family:Arial,sans-serif; color:#fff; }
+
+header {
+  position: fixed; top:0; left:0; width:100%; height:60px;
+  background:rgba(0,0,0,1); display:flex; align-items:center;
+  z-index:1000; border-bottom:1px solid rgba(255,255,255,0.2);
+  transition:0.3s ease;
+}
+header.scrolled { background-color: rgba(0,0,0,0.6); backdrop-filter: blur(6px); }
+.logo { height:80%; display:flex; align-items:center; margin-left:0; }
+.logo img { height:100%; width:auto; display:block; }
+
+.player-wrapper { padding-top:70px; max-width:960px; margin:auto; }
+iframe { width:100%; aspect-ratio:16/9; border:none; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.6); }
+
+/* Premium Match Details */
+.match-details {
+  background: linear-gradient(145deg, rgba(25,25,25,0.95), rgba(45,45,45,0.85));
+  padding: 22px;
+  border-radius: 16px;
+  margin-top: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  transition:0.3s ease;
+}
+.match-details:hover { transform:scale(1.01); box-shadow:0 10px 25px rgba(0,0,0,0.8); }
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.match-teams {
+  font-size: 1.35rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.live-badge {
+  display:inline-block;
+  background: linear-gradient(90deg, #ff0000, #ff4747);
+  color:#fff;
+  padding:5px 14px;
+  border-radius:30px;
+  font-weight:bold;
+  font-size:0.8rem;
+  text-transform:uppercase;
+  box-shadow: 0 0 10px rgba(255,0,0,0.7);
+  animation: pulse 1.2s infinite alternate;
+}
+@keyframes pulse { from{opacity:1;} to{opacity:0.6;} }
+
+.match-meta {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  font-size:0.95rem;
+  margin-top:8px;
+}
+
+.meta-item {
+  display:flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,0.08);
+  padding:7px 12px;
+  border-radius:10px;
+  box-shadow:inset 0 0 8px rgba(255,255,255,0.05);
+  transition:0.2s;
+}
+.meta-item:hover { background:rgba(255,255,255,0.15); }
+
+.meta-item i {
+  font-size:18px;
+  color:#ff9800;
+}
+
+/* Action Buttons */
+.action-buttons { display:flex; justify-content:space-around; margin-top:15px; gap:10px; }
+.action-buttons button {
+  flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:10px 0; font-size:14px; font-weight:bold; color:#fff; background:rgba(255,255,255,0.05);
+  border:none; border-radius:14px; cursor:pointer; transition:0.25s;
+}
+.action-buttons button:hover { background:linear-gradient(90deg,#ff5722,#ff7043); transform:scale(1.08); }
+.action-buttons i.material-icons { font-size:24px; margin-bottom:4px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><img src="https://allrounderlive.pages.dev/logo.png" alt="Logo"></div>
+</header>
+
+<div class="player-wrapper">
+  <iframe id="playerFrame" src="" allowfullscreen></iframe>
+
+  <div class="action-buttons">
+    <button id="favBtn"><i class="material-icons">favorite_border</i>Favourite</button>
+    <button id="shareBtn"><i class="material-icons">share</i>Share</button>
+    <button id="watchMoreBtn"><i class="material-icons">play_circle_filled</i>Watch More</button>
+    <button id="joinNowBtn"><i class="material-icons">group</i>Join Now</button>
+  </div>
+
+  <div class="match-details" id="matchDetails">Loading match details...</div>
+</div>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const matchUrl = urlParams.get('url'); 
+const playerFrame = document.getElementById('playerFrame');
+const matchDetailsDiv = document.getElementById('matchDetails');
+const favBtn = document.getElementById('favBtn');
+
+// Set iframe source
+if(matchUrl){
+  playerFrame.src = `https://allrounderlive.pages.dev/player?url=${encodeURIComponent(matchUrl)}`;
+}
+
+// Load match details
+async function loadMatchDetails(){
+  try {
+    const res = await fetch('https://raw.githubusercontent.com/Odfinity/live-events/refs/heads/main/fancode/data.json');
+    const data = await res.json();
+    const match = data.matches.find(m => (m.dai_url === matchUrl || m.adfree_url === matchUrl));
+    if(!match){
+      matchDetailsDiv.innerHTML = '<p style="color:red;">Match not found.</p>';
+      return;
+    }
+
+    matchDetailsDiv.innerHTML = `
+      <div class="match-header">
+        <div class="match-teams">${match.team_1} <span style="color:#ccc;">vs</span> ${match.team_2}</div>
+        ${match.status.toLowerCase() === 'live' ? '<span class="live-badge">LIVE</span>' : ''}
+      </div>
+      <div class="match-meta">
+        <div class="meta-item"><i class="material-icons">emoji_events</i><span>${match.event_name}</span></div>
+        <div class="meta-item"><i class="material-icons">schedule</i><span>Start: ${match.startTime}</span></div>
+        <div class="meta-item"><i class="material-icons">tv</i><span>Status: ${match.status}</span></div>
+      </div>
+    `;
+
+    // Favourite button
+    const favKey = `favMatch-${match.id}`;
+    const updateFavBtn = ()=>{
+      const isFav = localStorage.getItem(favKey) === 'true';
+      favBtn.innerHTML = isFav 
+        ? '<i class="material-icons" style="color:red">favorite</i>Favourite'
+        : '<i class="material-icons">favorite_border</i>Favourite';
+    };
+    updateFavBtn();
+    favBtn.onclick = ()=>{
+      const isFav = localStorage.getItem(favKey) === 'true';
+      localStorage.setItem(favKey, !isFav);
+      updateFavBtn();
+    };
+
+    // Share button
+    document.getElementById('shareBtn').onclick = async ()=>{
+      if(navigator.share){
+        navigator.share({
+          title: `Watch ${match.team_1} vs ${match.team_2}`,
+          text: 'Check out this match!',
+          url: window.location.href
+        });
+      } else alert('Share not supported on this browser.');
+    };
+
+    // Watch More
+    document.getElementById('watchMoreBtn').onclick = ()=> window.open('https://allrounderlive.pages.dev/','_blank');
+
+    // Join Now
+    document.getElementById('joinNowBtn').onclick = ()=> window.open('https://t.me/+KOnGKXbcSBszNWY1','_blank');
+
+  } catch(err){
+    console.error(err);
+    matchDetailsDiv.innerHTML = '<p style="color:red;">Failed to load match details.</p>';
+  }
+}
+
+loadMatchDetails();
+
+// Header scroll effect
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) header.classList.add('scrolled'); 
+  else header.classList.remove('scrolled');
+});
+</script>
+</body>
+</html>
