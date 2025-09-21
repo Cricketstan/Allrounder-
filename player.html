@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="referrer" content="no-referrer">
-<title>Allrounder Fullscreen Player</title>
+<title>Allrounder</title>
 
 <!-- Plyr + HLS.js -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
@@ -17,37 +17,16 @@
     padding: 0;
     height: 100%;
     background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
-
-  #player-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-  }
-
   #plyr-player {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* maintain aspect ratio, black bars if needed */
-  }
-
-  /* Optional: hide scrollbars */
-  body::-webkit-scrollbar {
-    display: none;
   }
 </style>
 </head>
 <body>
 
-<div id="player-wrapper">
-  <video id="plyr-player" controls playsinline></video>
-</div>
+<video id="plyr-player" controls playsinline></video>
 
 <script>
   function getQueryParam(param) {
@@ -63,17 +42,20 @@
     hls.attachMedia(video);
 
     hls.on(Hls.Events.MANIFEST_PARSED, function () {
+      // Extract available resolutions
       const availableQualities = hls.levels.map(l => l.height).filter((v, i, a) => a.indexOf(v) === i);
 
+      // Init Plyr
       const player = new Plyr(video, {
-        autoplay: false, // autoplay off
-        muted: false,    // unmuted
+        autoplay: true,
+        muted: true,
         settings: ['quality', 'speed', 'loop'],
         quality: {
           default: availableQualities[0],
           options: availableQualities,
           forced: true,
           onChange: (newQuality) => {
+            // Set HLS level based on selected quality
             hls.levels.forEach((level, levelIndex) => {
               if (level.height === newQuality) {
                 hls.currentLevel = levelIndex;
@@ -83,13 +65,14 @@
         }
       });
 
+      // Default to best quality (last in list = highest resolution)
       if (availableQualities.length) {
-        hls.currentLevel = hls.levels.length - 1; // default to best quality
+        hls.currentLevel = hls.levels.length - 1;
       }
     });
   } else {
     video.src = videoSrc;
-    new Plyr(video, { autoplay: false, muted: false });
+    new Plyr(video, { autoplay: true, muted: true });
   }
 </script>
 
