@@ -68,7 +68,23 @@ iframe { width:100%; aspect-ratio:16/9; border:none; border-radius:12px; box-sha
   font-size:0.95rem;
   margin-top:8px;
 }
+/* Remove blue highlight on tap/click for all elements */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
+/* Allow text selection for specific elements where it might be needed */
+input, textarea, [contenteditable] {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
 .meta-item {
   display:flex; align-items:center; gap:6px;
   background:rgba(255,255,255,0.08);
