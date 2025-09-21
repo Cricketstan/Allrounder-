@@ -1240,7 +1240,7 @@ function renderFancodeMatches(matches) {
     card.addEventListener('click', () => {
       if (isLive && (match.dai_url || match.adfree_url)) {
         const url = encodeURIComponent(match.dai_url || match.adfree_url);
-        window.location.href = `player.html?url=${url}&matchName=${encodeURIComponent(match.match_name)}`;
+        window.location.href = `fancode/player.html?url=${url}&matchName=${encodeURIComponent(match.match_name)}`;
       } else {
         alert(match.startTime ? 
           `Match starts at ${match.startTime} IST. Check back later.` : 
