@@ -18,8 +18,8 @@
     height: 100%;
     background: black;
     display: flex;
-    justify-content: center; /* horizontal center */
-    align-items: center;     /* vertical center */
+    justify-content: center;
+    align-items: center;
   }
   #plyr-player {
     max-width: 100%;
@@ -50,15 +50,14 @@
 
       // Init Plyr
       const player = new Plyr(video, {
-        autoplay: true,
-        muted: true,
+        autoplay: false,  // autoplay off
+        muted: false,     // unmuted
         settings: ['quality', 'speed', 'loop'],
         quality: {
           default: availableQualities[0],
           options: availableQualities,
           forced: true,
           onChange: (newQuality) => {
-            // Set HLS level based on selected quality
             hls.levels.forEach((level, levelIndex) => {
               if (level.height === newQuality) {
                 hls.currentLevel = levelIndex;
@@ -75,7 +74,7 @@
     });
   } else {
     video.src = videoSrc;
-    new Plyr(video, { autoplay: flase, muted: true });
+    new Plyr(video, { autoplay: false, muted: false });
   }
 </script>
 
