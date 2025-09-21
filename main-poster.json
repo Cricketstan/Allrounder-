@@ -1,25 +1,17 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/4wQ4p77N/Picsart-25-09-21-12-03-18-538.png",
-      "poster_link": "https://i.ibb.co/8g8Lvdtp/Picsart-25-09-21-11-58-19-924.jpg",
+      "title": "https://i.ibb.co/20VXvxQT/Picsart-25-09-22-01-58-51-274.png",
+      "poster_link": "https://i.ibb.co/ycMJpq8J/Picsart-25-09-22-01-53-50-840.jpg",
       "watch_now": [
-        {"id": "channel-7", "name": "Fox Cricket Hindi"},
-        {"id": "channel-13", "name": "Sony Liv Hindi"},
-        {"id": "channel-5", "name": "Ten 3 Hindi"},
-        {"id": "channel-4", "name": "Willow Cricket"},
-        {"id": "channel-14", "name": "Sony Liv English"},
-        {"id": "channel-6", "name": "Ten 5 English"},
-        {"id": "channel-10", "name": "TNT Sports"},
-        {"id": "channel-11", "name": "Astro Cricket"},
-        {"id": "channel-9", "name": "CricLife Max"}
+        {"id": "channel-4", "name": "Fancode"}
       ],
-      "date": "21 Sep 2025",
-      "start_time": "07:30 PM",
-      "category": "Cricket",
+      "date": "22 Sep 2025",
+      "start_time": "05:30 AM",
+      "category": "CPL",
       "year": "2025",
-      "language": "Multi",
-      "rating": "U/A"
+      "language": "English",
+      "rating": "Final"
     }
   ]
 }
