@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allrounder</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    #contentFrame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Telegram Modal Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none; /* initially hidden */
+      align-items: center;
+      justify-content: center;
+      z-index: 10002;
+    }
+
+    .popup-box {
+      width: 320px;
+      background: rgba(20, 20, 30, 0.8);
+      border: 1px solid rgba(173, 216, 230, 0.25);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4), 0 0 80px rgba(173, 216, 230, 0.15);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      animation: fadeIn 0.5s ease forwards;
+      position: relative;
+    }
+
+    @keyframes fadeIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .popup-header {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(45deg, #00eaff, #bd00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    }
+
+    .popup-subtitle {
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 1.2rem;
+    }
+
+    .popup-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .popup-buttons a,
+    .popup-buttons button {
+      padding: 0.8rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      border: none;
+    }
+
+    .join-btn {
+      background: linear-gradient(135deg, #00eaff, #9c00ff);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+    }
+
+    .join-btn:hover {
+      background: linear-gradient(135deg, #00ffff, #c000ff);
+      box-shadow: 0 0 16px rgba(0, 255, 255, 0.6);
+    }
+
+    .already-btn {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .already-btn:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      font-size: 1.3rem;
+      color: #00eaff;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .close-btn:hover {
+      color: #ff00cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main iframe -->
+  <iframe id="contentFrame"
+          sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
+          frameborder="0"
+          gesture="media"
+          allow="encrypted-media"
+          allowfullscreen="true"
+          scrolling="no"
+          src="https://cricketstan.github.io/Willow-Cricbuzz-/">
+  </iframe>
+
+  <!-- Telegram Modal -->
+  <div class="popup-overlay" id="telegramPopup">
+    <div class="popup-box">
+      <button class="close-btn" onclick="closePopup()">×</button>
+      <div class="popup-header">Support Us!</div>
+      <div class="popup-subtitle">Join our Telegram for latest updates.</div>
+      <div class="popup-buttons">
+        <a href="https://t.me/+9LmqJs-Te9ozYzhl" target="_blank" class="join-btn">Join Now</a>
+        <button class="already-btn" onclick="closePopup()">Already Joined</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Show modal automatically after 1 second
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('telegramPopup').style.display = 'flex';
+      }, 1000);
+    }
+
+    // Close modal function
+    function closePopup() {
+      document.getElementById('telegramPopup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
