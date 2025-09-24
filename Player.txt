@@ -1,0 +1,312 @@
+player. html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Stream Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="https://fancode.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --plyr-color-main: #0ea5e9;
+            --background-dark: #02040a;
+            --border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            height: 100svh; 
+            display: flex;
+            flex-direction: column;
+            background-color: var(--background-dark);
+            font-family: 'Inter', sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+
+        .player-header, .player-footer {
+            flex-shrink: 0;
+            padding: 1rem;
+            background-color: #0f172a;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .player-footer {
+            border-bottom: none;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .player-main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000;
+            min-height: 0;
+        }
+
+        .plyr {
+            width: 100%;
+            height: 100%;
+        }
+
+        .share-button {
+            background: linear-gradient(90deg, #f59e0b, #eab308);
+            color: black;
+            font-weight: bold;
+            box-shadow: 0 0 20px -5px rgba(234, 179, 8, 0.7);
+            transition: all 0.3s ease;
+        }
+        .share-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px -2px rgba(234, 179, 8, 0.9);
+        }
+
+        .telegram-btn {
+            background-color: #0ea5e9;
+            box-shadow: 0 0 15px -5px #0ea5e9;
+            transition: all 0.3s ease;
+        }
+        .telegram-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px -2px #0ea5e9;
+            background-color: #38bdf8;
+        }
+        
+        /* --- NEW: Telegram Popup Styles --- */
+        .popup-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0s 0.4s;
+        }
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.4s ease;
+        }
+        .popup-card {
+            background-color: #1e293b; /* slate-800 */
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem; /* 24px */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            text-align: center;
+            transform: scale(0.9) translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.215, 0.610, 0.355, 1), opacity 0.4s ease;
+        }
+        .popup-overlay.show .popup-card {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        .popup-join-btn {
+            background: linear-gradient(90deg, #22d3ee, #0ea5e9);
+        }
+
+        .error-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body class="text-slate-200">
+
+    <header class="player-header text-center">
+        <h1 id="match-title" class="text-xl font-bold text-white truncate">Loading Match...</h1>
+        <button id="share-links-btn" class="share-button w-full max-w-sm mx-auto mt-2 py-3 px-6 rounded-lg text-md">
+            <i class="fas fa-share-alt mr-2"></i> Share With Friends
+        </button>
+    </header>
+
+    <main class="player-main">
+        <video id="player" playsinline controls></video>
+    </main>
+
+    <footer class="player-footer text-center">
+        <a href="https://t.me/+xdQNNePetGxjYjI1" target="_blank" class="telegram-btn inline-flex items-center justify-center w-full max-w-sm mx-auto px-6 py-3 rounded-lg font-semibold text-black hover:text-white">
+            <i class="fab fa-telegram-plane mr-3"></i> Join Telegram Channel
+        </a>
+    </footer>
+    
+    <div id="telegram-popup" class="popup-overlay">
+        <div class="popup-card">
+            <div class="text-6xl mb-4 text-sky-400"><i class="fab fa-telegram"></i></div>
+            <h3 class="text-2xl font-bold text-white mb-2">Never Miss a Match!</h3>
+            <p class="text-slate-400 mb-6">
+                Join our Telegram channel for live updates and instant stream links.
+            </p>
+            <div class="flex flex-col gap-3">
+                <a href="https://t.me/+xdQNNePetGxjYjI1" target="_blank" id="popup-join-btn" class="popup-join-btn w-full text-center px-6 py-3 rounded-lg font-semibold text-white transition-transform transform hover:scale-105">
+                    <i class="fas fa-rocket mr-2"></i>Join Now
+                </a>
+                <button id="popup-close-btn" class="w-full text-center px-6 py-3 rounded-lg font-semibold text-slate-300 bg-slate-700 hover:bg-slate-600 transition-colors">
+                    Maybe Later
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+    <script>
+        const DATA_URL = 'https://raw.githubusercontent.com/Jitendra-unatti/fancode/refs/heads/main/data/fancode.json';
+        const playerElement = document.getElementById('player');
+        const shareLinksBtn = document.getElementById('share-links-btn');
+        const matchTitleElem = document.getElementById('match-title');
+
+        async function getStreamAndMatchDetails(id, cdnKey) {
+            try {
+                const res = await fetch(DATA_URL);
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                const data = await res.json();
+                
+                const match = data.matches.find(m => String(m.match_id) === String(id));
+                if (!match) throw new Error("Match not found for ID: " + id);
+
+                const streamingCdn = { ...match.STREAMING_CDN };
+                delete streamingCdn.Primary_Playback_URL;
+
+                const sources = {
+                    adfree_stream: match.adfree_stream,
+                    dai_stream: match.dai_stream,
+                    ...streamingCdn
+                };
+
+                const streamUrl = sources[cdnKey];
+                if (streamUrl && streamUrl !== "Unavailable") {
+                    return { streamUrl, match };
+                } else {
+                    throw new Error(`Stream for '${cdnKey}' is unavailable.`);
+                }
+            } catch (err) {
+                console.error("Error fetching stream data:", err);
+                return { streamUrl: null, match: null };
+            }
+        }
+
+        function displayError(message) {
+            document.body.innerHTML = `
+                <div class="error-message">
+                    <h2 class="text-2xl font-bold text-red-500 mb-4">Stream Error</h2>
+                    <p class="text-slate-400">${message}</p>
+                    <a href="index.html" class="mt-6 px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors">
+                        Go Back Home
+                    </a>
+                </div>`;
+        }
+        
+        // NEW: Function to handle the popup logic
+        function handlePopup() {
+            const popup = document.getElementById('telegram-popup');
+            const closeBtn = document.getElementById('popup-close-btn');
+            const joinBtn = document.getElementById('popup-join-btn');
+            const POPUP_KEY = 'playerTelegramPopupDismissed';
+
+            // Don't show if already dismissed
+            if (localStorage.getItem(POPUP_KEY)) {
+                return;
+            }
+
+            // Show after a delay (e.g., 5 seconds)
+            setTimeout(() => {
+                popup.classList.add('show');
+            }, 5000);
+
+            function dismissPopup() {
+                popup.classList.remove('show');
+                // Set flag in localStorage so it doesn't show again
+                localStorage.setItem(POPUP_KEY, 'true');
+            }
+
+            closeBtn.addEventListener('click', dismissPopup);
+            joinBtn.addEventListener('click', () => {
+                // Dismiss after a short delay to allow the new tab to open
+                setTimeout(dismissPopup, 300);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get("id");
+            const cdn = urlParams.get("cdn");
+
+            if (!id || !cdn) {
+                displayError("Missing match ID or CDN information in the URL.");
+                return;
+            }
+
+            const { streamUrl, match } = await getStreamAndMatchDetails(id, cdn);
+
+            if (!streamUrl) {
+                displayError(`Sorry, this stream could not be loaded. It might be offline or unavailable.`);
+                return;
+            }
+
+            if (match) {
+                matchTitleElem.textContent = match.title || 'Live Match';
+            }
+
+            shareLinksBtn.addEventListener('click', async () => {
+                const shareData = {
+                    title: `Watch: ${match?.title || 'Live Stream'}`,
+                    text: `Watch "${match?.title || 'Live Stream'}" live!`,
+                    url: window.location.href
+                };
+                try {
+                    if (navigator.share) {
+                        await navigator.share(shareData);
+                    } else {
+                        await navigator.clipboard.writeText(window.location.href);
+                        alert('Link copied to clipboard!');
+                    }
+                } catch (err) {
+                    console.error('Share failed:', err);
+                    alert('Could not share. Please copy the link manually.');
+                }
+            });
+
+            try {
+                if (streamUrl.includes('.m3u8') && Hls.isSupported()) {
+                    const hls = new Hls();
+                    hls.loadSource(streamUrl);
+                    hls.attachMedia(playerElement);
+                } else {
+                    playerElement.src = streamUrl;
+                }
+                
+                const player = new Plyr(playerElement, { autoplay: true });
+                player.play().catch(e => console.warn("Autoplay was blocked.", e));
+            } catch (error) {
+                console.error("Player initialization error:", error);
+                displayError("A player error occurred. Please try another stream.");
+            }
+            
+            // Initialize the popup logic
+            handlePopup();
+        });
+    </script>
+</body>
+</html>
