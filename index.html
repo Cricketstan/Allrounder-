@@ -948,7 +948,9 @@ function closeModal(){
 }
 async function fetchMatches() {
   try {
-    const res = await fetch('https://m.cricbuzz.com/api/home');
+    const res = await fetch(
+  'https://cy-8i38.onrender.com/raw?url=' + encodeURIComponent('https://m.cricbuzz.com/api/home')
+);
     const data = await res.json();
     renderMatches(data.matches);
     startAutoScroll();
