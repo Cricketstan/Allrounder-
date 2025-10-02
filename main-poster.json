@@ -1,10 +1,13 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/HfjsPRnq/Picsart-25-10-03-02-02-00-491.png",
+      "title": "https://i.ibb.co/8DWSdJwv/1000126875.jpg",
       "poster_link": "https://i.ibb.co/fGys2Pf2/Picsart-25-10-03-01-55-40-382.jpg",
       "watch_now": [
-        {"id": "pkl", "name": "Star Sports Hindi"}
+        {
+          "id": "channel-11",
+          "name": "Star Sports Hindi"
+        }
       ],
       "date": "22 Sep 2025",
       "start_time": "07:30 PM",
@@ -17,7 +20,10 @@
       "title": "https://i.ibb.co/DPgTm1WX/Picsart-25-10-03-02-02-44-939.png",
       "poster_link": "https://allrounderlive.pages.dev/image/pkl3.png",
       "watch_now": [
-        {"id": "pkl2", "name": "Star Sports Hindi"}
+        {
+          "id": "pkl2",
+          "name": "Star Sports Hindi"
+        }
       ],
       "date": "23 Sep 2025",
       "start_time": "08:00 PM",
@@ -30,9 +36,12 @@
       "title": "https://i.ibb.co/9HHj0Hv0/Picsart-25-10-03-02-03-14-991.png",
       "poster_link": "https://allrounderlive.pages.dev/image/pkl5.png",
       "watch_now": [
-        {"id": "pkl4", "name": "Star Sports Hindi"}
+        {
+          "id": "pkl4",
+          "name": "Star Sports Hindi"
+        }
       ],
-      "date": "25 Sep 2025",
+      "date": "2025-10-03",
       "start_time": "07:30 PM",
       "category": "Kabbadi",
       "year": "2025",
