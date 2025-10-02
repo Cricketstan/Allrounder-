@@ -714,18 +714,7 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
 </style>
 </head>
 <body>
-<!-- Loader -->
-<div id="loader" class="loader-container">
-  <div class="ball">
-    <div class="inner">
-      <div class="line"></div>
-      <div class="line line--two"></div>
-      <div class="oval"></div>
-      <div class="oval oval--two"></div>
-    </div>
-  </div>
-  <div class="shadow"></div>
-</div>
+
 <header>
   <div class="logo"><img src="https://allrounderlive.pages.dev/logo.png" alt="Logo"></div>
 </header>
@@ -1191,24 +1180,7 @@ function loadTodayEvents(){
 }
 
 loadTodayEvents();
-  // Function to show the loader
-function showLoader() {
-  document.getElementById('loader').style.display = 'flex';
-}
 
-// Function to hide the loader
-function hideLoader() {
-  document.getElementById('loader').style.display = 'none';
-}
-
-// Show loader when page starts loading
-showLoader();
-
-// Hide loader when page is fully loaded
-window.addEventListener('load', function() {
-  // Add a small delay for better UX
-  setTimeout(hideLoader, 1000);
-});
 // Fancode Section
 let fancodeShowingAll = false;
 
