@@ -1,103 +1,114 @@
 {
   "upcomingMatches": [
     {
-      "title": "Bangladesh vs Afghanistan",
-      "date": "Tue, Sep 16 2025",
-      "venue": "Abu Dhabi, Sheikh Zayed Stadium",
-      "team1": "Bangladesh",
-      "team2": "Afghanistan",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Pakistan vs United Arab Emirates",
-      "date": "Wed, Sep 17 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "Pakistan",
-      "team2": "United Arab Emirates",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Sri Lanka vs Afghanistan",
-      "date": "Thu, Sep 18 2025",
-      "venue": "Abu Dhabi, Sheikh Zayed Stadium",
-      "team1": "Sri Lanka",
-      "team2": "Afghanistan",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "India vs Oman",
-      "date": "Fri, Sep 19 2025",
-      "venue": "Abu Dhabi, Sheikh Zayed Stadium",
-      "team1": "India",
-      "team2": "Oman",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Super Fours, Match 1 (B1 vs B2)",
-      "date": "Sat, Sep 20 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "Sri Lanka",
+      "title": "Afghanistan vs Bangladesh - 2nd T20I",
+      "date": "Sat, Oct 4 2025",
+      "venue": "Sharjah, Sharjah Cricket Stadium",
+      "team1": "Afghanistan",
       "team2": "Bangladesh",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
+      "time": "8:00 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
     },
     {
-      "title": "Super Fours, Match 2 (A1 vs A2)",
-      "date": "Sun, Sep 21 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "India",
-      "team2": "Pakistan",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
+      "title": "New Zealand vs Australia - 2nd T20I",
+      "date": "Sat, Oct 4 2025",
+      "venue": "Mount Maunganui, Bay Oval",
+      "team1": "New Zealand",
+      "team2": "Australia",
+      "time": "11:45 AM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
     },
     {
-      "title": "Super Fours, Match 3 (A2 vs B1)",
-      "date": "Tue, Sep 23 2025",
+      "title": "England Women vs South Africa Women - World Cup",
+      "date": "Sat, Oct 4 2025",
+      "venue": "Guwahati, Barsapara Cricket Stadium",
+      "team1": "England Women",
+      "team2": "South Africa Women",
+      "time": "3:00 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "India A vs Australia A - 2nd Unofficial ODI",
+      "date": "Sat, Oct 4 2025",
+      "venue": "Kanpur, Green Park",
+      "team1": "India A",
+      "team2": "Australia A",
+      "time": "1:30 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+
+    {
+      "title": "Afghanistan vs Bangladesh - 3rd T20I",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Sharjah, Sharjah Cricket Stadium",
+      "team1": "Afghanistan",
+      "team2": "Bangladesh",
+      "time": "8:00 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "New Zealand vs Australia - 3rd T20I",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Mount Maunganui, Bay Oval",
+      "team1": "New Zealand",
+      "team2": "Australia",
+      "time": "11:45 AM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "Zimbabwe vs Namibia - T20 Final",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Harare, Harare Sports Club",
+      "team1": "Zimbabwe",
+      "team2": "Namibia",
+      "time": "5:20 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "Sri Lanka Women vs Australia Women - World Cup",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "Sri Lanka Women",
+      "team2": "Australia Women",
+      "time": "3:00 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "India Women vs Pakistan Women - World Cup",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "India Women",
+      "team2": "Pakistan Women",
+      "time": "3:00 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "India A vs Australia A - 3rd Unofficial ODI",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Kanpur, Green Park",
+      "team1": "India A",
+      "team2": "Australia A",
+      "time": "1:30 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+    {
+      "title": "Zimbabwe Women vs UAE Women - 1st T20I",
+      "date": "Sun, Oct 5 2025",
+      "venue": "Bulawayo, Queens Sports Club",
+      "team1": "Zimbabwe Women",
+      "team2": "United Arab Emirates Women",
+      "time": "12:45 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
+    },
+
+    {
+      "title": "Afghanistan vs Bangladesh - 1st ODI",
+      "date": "Wed, Oct 8 2025",
       "venue": "Abu Dhabi, Sheikh Zayed Stadium",
-      "team1": "Pakistan",
-      "team2": "Sri Lanka",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Super Fours, Match 4 (A1 vs B2)",
-      "date": "Wed, Sep 24 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "India",
+      "team1": "Afghanistan",
       "team2": "Bangladesh",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Super Fours, Match 5 (A2 vs B2)",
-      "date": "Thu, Sep 25 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "Pakistan",
-      "team2": "Bangladesh",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Super Fours, Match 6 (A1 vs B1)",
-      "date": "Fri, Sep 26 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "India",
-      "team2": "Sri Lanka",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
-    },
-    {
-      "title": "Final",
-      "date": "Sun, Sep 28 2025",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "TBC",
-      "team2": "TBC",
-      "time": "20:00 PM",
-      "poster": "https://i.ibb.co/BHxKmvzt/Asia-cup-Homepage-MWeb-Banner-2-1757918075251.webp"
+      "time": "3:30 PM",
+      "poster": "https://i.ibb.co/XZRsrfGV/MWeb-MAIN-Homepage-Banner.webp"
     }
   ]
 }
