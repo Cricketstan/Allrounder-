@@ -1,52 +1,47 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/HDyRTgt6/1000126876.png",
-      "poster_link": "https://i.ibb.co/fGys2Pf2/Picsart-25-10-03-01-55-40-382.jpg",
+      "title": "https://i.ibb.co/HfjsPRnq/Picsart-25-10-03-02-02-00-491.png",
+      "poster_link": "https://i.ibb.co/NnW9by0p/Picsart-25-10-03-01-55-40-382.jpg",
       "watch_now": [
-        {
-          "id": "channel-1",
-          "name": "Star Sports Hindi"
-        }
+        {"id": "channel-13", "name": "Star Sports Hindi"},
+        {"id": "channel-10", "name": "TNT Sports"},
+        {"id": "channel-4", "name": "Willow Cricket"}    
       ],
-      "date": "2025-10-03",
-      "start_time": "09:00",
-      "category": "Cricket ",
+      "date": "3 Oct  2025",
+      "start_time": "09:00 AM",
+      "category": "Cricket",
       "year": "2025",
-      "language": "Multi ",
+      "language": "Multi",
       "rating": "U/A"
     },
     {
       "title": "https://i.ibb.co/DPgTm1WX/Picsart-25-10-03-02-02-44-939.png",
-      "poster_link": "https://allrounderlive.pages.dev/image/pkl3.png",
+      "poster_link": "https://i.ibb.co/GQv1HbsC/Picsart-25-10-03-07-21-51-087.jpg",
       "watch_now": [
-        {
-          "id": "pkl2",
-          "name": "Star Sports Hindi"
-        }
+        {"id": "channel-12", "name": "Prime"},
+        {"id": "channel-9", "name": "TNT Sports"},
+        {"id": "channel-6", "name": "Sony Liv"}
       ],
-      "date": "23 Sep 2025",
-      "start_time": "08:00 PM",
-      "category": "Kabbadi",
+      "date": "3 Oct 2025",
+      "start_time": "11:40 AM",
+      "category": "Cricket",
       "year": "2025",
-      "language": "Hindi",
+      "language": "English",
       "rating": "U/A"
     },
     {
       "title": "https://i.ibb.co/9HHj0Hv0/Picsart-25-10-03-02-03-14-991.png",
-      "poster_link": "https://allrounderlive.pages.dev/image/pkl5.png",
+      "poster_link": "https://i.ibb.co/zTGgH6Wz/Picsart-25-10-03-07-32-44-925.jpg",
       "watch_now": [
-        {
-          "id": "pkl4",
-          "name": "Star Sports Hindi"
-        }
+        {"id": "pkl4", "name": "Star Sports Hindi"}
       ],
-      "date": "2025-10-03",
-      "start_time": "07:30 PM",
-      "category": "Kabbadi",
+      "date": "3 Oct 2025",
+      "start_time": "02:45 PM",
+      "category": "Cricket",
       "year": "2025",
-      "language": "Hindi",
-      "rating": "U/A"
+      "language": "English",
+      "rating": "W-CWC"
     }
   ]
 }
