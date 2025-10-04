@@ -1206,27 +1206,40 @@ function renderFancodeMatches(matches) {
     return;
   }
   
-  matchesToShow.forEach((match, index) => {
+  matchesToShow.forEach((match) => {
     const card = document.createElement('div');
     card.className = 'card';
-    
-    const isLive = match.status && match.status.toLowerCase() === 'live';
-    const isPremium = match.premium || false;
-    
+
+    const isLive = match.status && match.status.toUpperCase() === 'LIVE';
+
     card.innerHTML = `
-      <img src="${match.src || 'https://via.placeholder.com/220x124/222/fff?text=No+Image'}" alt="${match.match_name || 'Match'}">
+      <img src="${match.image || 'https://via.placeholder.com/220x124/222/fff?text=No+Image'}" alt="${match.title || 'Match'}">
       ${isLive ? '<div class="live-badge">LIVE</div>' : ''}
-      ${isPremium ? '<div class="premium-badge">PREMIUM</div>' : ''}
-      <div class="card-title">${match.match_name || 'Upcoming Match'}</div>
+      <div class="card-title">${match.title || 'Upcoming Match'}</div>
+      <div style="padding:6px 8px; font-size:0.8rem; color:#ddd;">
+        ${match.tournament || ''}<br>
+        ${match.startTime || ''}
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:8px;">
+        <div style="text-align:center; flex:1;">
+          <img src="${match.teams?.[0]?.flag?.src || ''}" width="40"><br>
+          <span>${match.teams?.[0]?.shortName || ''}</span>
+        </div>
+        <div style="font-size:0.85rem; font-weight:bold; color:#fff; padding:0 5px;">VS</div>
+        <div style="text-align:center; flex:1;">
+          <img src="${match.teams?.[1]?.flag?.src || ''}" width="40"><br>
+          <span>${match.teams?.[1]?.shortName || ''}</span>
+        </div>
+      </div>
     `;
     
     card.addEventListener('click', () => {
-      if (isLive && (match.dai_url || match.adfree_url)) {
-        const url = encodeURIComponent(match.dai_url || match.adfree_url);
-        window.location.href = `fancode/player.html?url=${url}&matchName=${encodeURIComponent(match.match_name)}`;
+      if (isLive && match.stream_url) {
+        const url = encodeURIComponent(match.stream_url);
+        window.location.href = `fancode/player.html?url=${url}&matchName=${encodeURIComponent(match.title)}`;
       } else {
         alert(match.startTime ? 
-          `Match starts at ${match.startTime} IST. Check back later.` : 
+          `Match starts at ${match.startTime}. Please check back later.` : 
           'Match details not available.');
       }
     });
@@ -1234,6 +1247,7 @@ function renderFancodeMatches(matches) {
     container.appendChild(card);
   });
   
+  // Add view all toggle if more than 10 matches
   if (matches.length > 10) {
     const viewAll = document.createElement('div');
     viewAll.className = 'view-all-card';
