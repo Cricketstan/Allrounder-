@@ -16,17 +16,18 @@
       "rating": "U/A"
     },
     {
-      "title": "https://i.ibb.co/9HHj0Hv0/Picsart-25-10-03-02-03-14-991.png",
-      "poster_link": "https://i.ibb.co/zTGgH6Wz/Picsart-25-10-03-07-32-44-925.jpg",
+      "title": "https://i.ibb.co/DPgTm1WX/Picsart-25-10-03-02-02-44-939.png",
+      "poster_link": "https://i.ibb.co/GQv1HbsC/Picsart-25-10-03-07-21-51-087.jpg",
       "watch_now": [
-        {"id": "channel-12", "name": "Willow"}
+        {"id": "channel-12", "name": "Prime"},
+        {"id": "channel-6", "name": "Sony Liv"}
       ],
-      "date": "3 Oct 2025",
-      "start_time": "02:45 PM",
+      "date": "4 Oct 2025",
+      "start_time": "11:40 AM",
       "category": "Cricket",
       "year": "2025",
       "language": "English",
-      "rating": "Wcwc"
+      "rating": "U/A"
     }
   ]
 }
