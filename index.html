@@ -1186,7 +1186,7 @@ let fancodeShowingAll = false;
 
 async function loadFancodeMatches() {
   try {
-    const res = await fetch('https://raw.githubusercontent.com/Odfinity/live-events/refs/heads/main/fancode/data.json');
+    const res = await fetch('https://raw.githubusercontent.com/Jitendra-unatti/fancode/refs/heads/main/data/fancode.json');
     const data = await res.json();
     renderFancodeMatches(data.matches || []);
   } catch(err) {
