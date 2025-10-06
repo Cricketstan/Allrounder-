@@ -1,29 +1,16 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/HfjsPRnq/Picsart-25-10-03-02-02-00-491.png",
-      "poster_link": "https://i.ibb.co/CKQ7Rk2t/1759403528174-i.jpg",
+      "title": "https://i.ibb.co/jvdvGzYs/Picsart-25-10-06-07-58-12-172.png",
+      "poster_link": "https://allrounderlive.pages.dev/image/wcwc.png",
       "watch_now": [
-        {"id": "channel-13", "name": "Star Sports Hindi"},
-        {"id": "channel-10", "name": "TNT Sports"},
-        {"id": "channel-4", "name": "Willow Cricket"}    
+        { "id": "channel-10", "name": "Prime Video" },
+        { "id": "channel-14", "name": "Willow" },
+        { "id": "channel-6", "name": "IOS" },
+        { "id": "channel-7", "name": "ICC TV" }
       ],
-      "date": "3 Oct 2025",
-      "start_time": "09:00 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "rating": "U/A"
-    },
-    {
-      "title": "https://i.ibb.co/DPgTm1WX/Picsart-25-10-03-02-02-44-939.png",
-      "poster_link": "https://i.ibb.co/GQv1HbsC/Picsart-25-10-03-07-21-51-087.jpg",
-      "watch_now": [
-        {"id": "channel-12", "name": "Prime"},
-        {"id": "channel-6", "name": "Sony Liv"}
-      ],
-      "date": "4 Oct 2025",
-      "start_time": "11:40 AM",
+      "date": "6 Oct 2025",
+      "start_time": "02:20 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "English",
