@@ -1,32 +1,16 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/jvdvGzYs/Picsart-25-10-06-07-58-12-172.png",
-      "poster_link": "https://allrounderlive.pages.dev/image/wcwc.png",
+      "title": "https://i.ibb.co/gMxw2fBd/Picsart-25-10-06-22-36-11-998.png",
+      "poster_link": "https://i.ibb.co/cq31M6Q/1758472113944-a-1.jpg",
       "watch_now": [
-        { "id": "channel-12", "name": "Shoq Tv" },
-        { "id": "channel-4", "name": "Willow" },
-        { "id": "channel-6", "name": "IOS" },
-        { "id": "channel-7", "name": "ICC TV" }
+        { "id": "channel-13", "name": "IND U19 VS AUS U19" }
       ],
       "date": "6 Oct 2025",
       "start_time": "02:20 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "English",
-      "rating": "U/A"
-    },
-    {
-      "title": "https://i.ibb.co/6cc6d1jX/Picsart-25-10-06-18-08-44-050.png",
-      "poster_link": "https://i.ibb.co/WNdgBr1k/Picsart-25-10-06-18-07-44-171.jpg",
-      "watch_now": [
-        { "id": "channel-13", "name": "Star Sports Hindi" }
-      ],
-      "date": "6 Oct 2025",
-      "start_time": "07:30 PM",
-      "category": "Kabbadi",
-      "year": "2025",
-      "language": "Hindi",
       "rating": "U/A"
     }
   ]
