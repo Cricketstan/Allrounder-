@@ -1,23 +1,12 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/gMxw2fBd/Picsart-25-10-06-22-36-11-998.png",
-      "poster_link": "https://i.ibb.co/cq31M6Q/1758472113944-a-1.jpg",
-      "watch_now": [
-        { "id": "u-19", "name": "IND U19 VS AUS U19" }
-      ],
-      "date": "7 Oct 2025",
-      "start_time": "05:20 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "English",
-      "rating": "U/A"
-    },
-    {
       "title": "https://i.ibb.co/39dYQ48Y/Picsart-25-10-07-10-24-49-720.png",
       "poster_link": "https://i.ibb.co/hJmc4sRf/Picsart-25-10-07-10-22-04-213.jpg",
       "watch_now": [
-        { "id": "u-19", "name": "IND U19 VS AUS U19" }
+        { "id": "channel-7", "name": "ICC TV" }
+        { "id": "channel-12", "name": "Prime" }
+        { "id": "channel-4", "name": "Willow" }
       ],
       "date": "7 Oct 2025",
       "start_time": "02:20 PM",
