@@ -4,8 +4,8 @@
       "title": "https://i.ibb.co/39dYQ48Y/Picsart-25-10-07-10-24-49-720.png",
       "poster_link": "https://i.ibb.co/hJmc4sRf/Picsart-25-10-07-10-22-04-213.jpg",
       "watch_now": [
-        { "id": "channel-7", "name": "ICC TV" }
-        { "id": "channel-12", "name": "Prime" }
+        { "id": "channel-7", "name": "ICC TV" },
+        { "id": "channel-12", "name": "Prime" },
         { "id": "channel-4", "name": "Willow" }
       ],
       "date": "7 Oct 2025",
