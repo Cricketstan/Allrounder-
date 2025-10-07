@@ -1,15 +1,13 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/39dYQ48Y/Picsart-25-10-07-10-24-49-720.png",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/2301/1759748252301-h",
+      "title": "https://i.ibb.co/5gDSnFVw/Picsart-25-10-08-00-08-43-133.png",
+      "poster_link": "https://i.ibb.co/kVfhMDXZ/Picsart-25-10-08-00-04-47-675.jpg",
       "watch_now": [
-        { "id": "channel-7", "name": "ICC TV" },
-        { "id": "channel-12", "name": "Prime" },
-        { "id": "channel-4", "name": "Willow" }
+        { "id": "icctv", "name": "ICC TV" }
       ],
-      "date": "7 Oct 2025",
-      "start_time": "02:20 PM",
+      "date": "8 Oct 2025",
+      "start_time": "11:00 AM",
       "category": "Cricket",
       "year": "2025",
       "language": "English",
