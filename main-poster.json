@@ -5,7 +5,10 @@
       "title": "https://i.ibb.co/h18Q1vy9/Picsart-25-10-09-13-00-37-064.png",
       "poster_link": "https://i.ibb.co/WNx25Z87/Picsart-25-10-09-13-02-17-059.jpg",
       "watch_now": [
-        { "id": "channel-4", "name": "Willow Sports" }
+        { "id": "channel-4", "name": "Willow Sports" },
+        { "id": "channel-12", "name": "Prime Hindi" },
+        { "id": "channel-10", "name": "Prime English" },
+        { "id": "channel-7", "name": "ICC TV" }
       ],
       "date": "9 Oct 2025",
       "start_time": "02:20 PM",
