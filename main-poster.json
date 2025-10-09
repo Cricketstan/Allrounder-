@@ -1,53 +1,12 @@
 {
   "posters": [
     {
-      "title": "https://i.ibb.co/p6MNtW8V/Picsart-25-10-08-17-14-49-070.png",
-      "poster_link": "https://i.ibb.co/LzpXy43X/Picsart-25-10-08-17-12-58-859.jpg",
-      "watch_now": [
-        { "id": "channel-12", "name": "ICC TV" },
-        { "id": "fancode", "name": "fancode" }
-      ],
-      "date": "8 Oct 2025",
-      "start_time": "05:00 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "English",
-      "rating": "U/A"
-    },
-   {
-      "title": "https://i.ibb.co/QjqfnQ0g/Picsart-25-10-06-18-08-44-050.png",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/5618/1759835415618-h",
-      "watch_now": [
-        { "id": "channel-13", "name": "Star Sports Hinidi" }
-      ],
-      "date": "8 Oct 2025",
-      "start_time": "02:30 PM",
-      "category": "Kabbadi",
-      "year": "2025",
-      "language": "Hindi",
-      "rating": "U/A"
-    },
-    {
-      "title": "https://i.ibb.co/b5rG3Dx6/Picsart-25-10-08-14-04-06-693.png",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto/sources/r1/cms/prod/3386/1759834923386-h",
-      "watch_now": [
-        { "id": "channel-4", "name": "Willow" },
-        { "id": "channel-7", "name": "ICC TV" }
-      ],
-      "date": "8 Oct 2025",
-      "start_time": "02:30 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "English",
-      "rating": "U/A"
-    },
-    {
-      "title": "https://i.ibb.co/FqBFpP2z/Picsart-25-10-08-20-15-50-180.png",
-      "poster_link": "https://i.ibb.co/G4mMcvTW/Picsart-25-10-08-20-17-03-583.jpg",
+      "title": "",
+      "poster_link": "https://www.fancode.com/skillup-uploads/cms-media/137177_5697_MAS_QAT_fc-Web.jpg",
       "watch_now": [
         { "id": "icctv", "name": "ICC TV" }
       ],
-      "date": "8 Oct 2025",
+      "date": "9 Oct 2025",
       "start_time": "11:00 AM",
       "category": "Cricket",
       "year": "2025",
