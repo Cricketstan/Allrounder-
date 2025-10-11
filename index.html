@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Live Stream Player</title>
+<title>Allrounder</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.3.4/dist/controls.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,26 +13,27 @@
 
 <style>
 :root {
-    --bg-color: #121212;
-    --primary-red: #e50914; 
-    --primary-red-dark: #b91c1c;
-    --card-bg: #1e1e1e;
+    --bg-color: #0a0f1a;
+    --primary-blue: #1e90ff;
+    --primary-blue-dark: #0d47a1;
+    --card-bg: #111827;
     --text-light: #f1f5f9;
     --text-muted: #94a3b8;
-    --border-color: #2d2d2d;
-    --popup-bg: #282828;
-    --popup-shadow-color: rgba(229, 9, 20, 0.4);
+    --border-color: #1f2937;
+    --popup-bg: #1a2233;
+    --popup-shadow-color: rgba(30, 144, 255, 0.4);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
+    background: linear-gradient(135deg, #0a0f1a, #0c1b33);
     color: var(--text-light);
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
     padding: 1rem;
+    background-attachment: fixed;
 }
 .container {
     width: 100%;
@@ -42,6 +43,7 @@ body {
     animation: fadeIn 0.5s ease-out forwards;
 }
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
 .stream-header {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -51,123 +53,139 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    box-shadow: 0 4px 20px rgba(30,144,255,0.2);
 }
-.stream-header h1 { font-size: 1.25rem; font-weight: 600; }
+.stream-header h1 { font-size: 1.5rem; font-weight: 700; color: var(--primary-blue); text-shadow: 0 0 10px #1e90ff, 0 0 20px #1e90ff; }
 .live-badge {
-    background-color: var(--primary-red);
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-dark));
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.4rem;
     animation: pulse 1.5s infinite;
+    box-shadow: 0 0 15px var(--primary-blue);
 }
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30,144,255,0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(30,144,255,0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(30,144,255,0); }
 }
+
 #player-container {
     width: 100%;
-    height: 50vh;
-    max-height: 600px;
+    height: 55vh;
+    max-height: 650px;
     background-color: #000;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(30,144,255,0.5);
+    border-radius: 16px;
     overflow: hidden;
+    border: 2px solid var(--primary-blue);
 }
+
 .info-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.25rem;
-    margin-top: 1rem;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
     text-align: center;
+    box-shadow: 0 5px 25px rgba(30,144,255,0.2);
+    transition: transform 0.3s ease;
 }
+.info-card:hover { transform: translateY(-5px); }
 .info-card h2 {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    color: var(--text-muted);
+    color: var(--primary-blue);
+    text-shadow: 0 0 8px #1e90ff;
 }
+
 .action-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     width: 100%;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
+    padding: 0.9rem 1rem;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-dark));
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(30,144,255,0.3);
 }
 .action-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px var(--popup-shadow-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(30,144,255,0.5);
 }
 .action-button.copied { background: linear-gradient(90deg, #22c55e, #4ade80); }
+
 .back-link {
     display: inline-block;
     width: 100%;
     text-align: center;
-    margin-top: 1.5rem;
+    margin-top: 1.8rem;
     color: var(--text-muted);
     text-decoration: none;
     padding: 0.5rem;
     border-radius: 8px;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
-.back-link:hover { background-color: var(--card-bg); color: var(--text-light); }
+.back-link:hover { background-color: var(--card-bg); color: var(--primary-blue); }
+
 .error-message {
-     text-align: center;
-     padding: 4rem 1rem;
-     background-color: var(--card-bg);
-     border: 1px solid var(--border-color);
-     border-radius: 12px;
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(30,144,255,0.2);
 }
-.error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
+.error-message h2 { color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem; text-shadow: 0 0 8px #1e90ff; }
+
 .telegram-popup {
     position: fixed; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     background: var(--popup-bg); color: var(--text-light);
-    padding: 30px 20px; border-radius: 12px;
-    box-shadow: 0 0 50px 10px var(--popup-shadow-color);
+    padding: 35px 25px; border-radius: 16px;
+    box-shadow: 0 0 60px 15px var(--popup-shadow-color);
     z-index: 10000; text-align: center;
-    width: 90%; max-width: 350px;
-    display: none; border: 1px solid var(--primary-red-dark);
+    width: 90%; max-width: 400px;
+    display: none; border: 2px solid var(--primary-blue-dark);
     animation: popIn 0.3s ease-out forwards;
 }
 @keyframes popIn {
     from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
     to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
-.telegram-popup h2 { margin-top: 0; color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
-.telegram-popup p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+.telegram-popup h2 { margin-top: 0; color: var(--primary-blue); font-size: 1.7rem; margin-bottom: 0.5rem; text-shadow: 0 0 10px #1e90ff; }
+.telegram-popup p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.8rem; }
 .telegram-popup button {
-    width: 100%; padding: 12px;
-    margin-top: 12px; font-size: 1rem;
-    border: none; border-radius: 6px;
-    cursor: pointer; font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%; padding: 14px;
+    margin-top: 12px; font-size: 1.05rem;
+    border: none; border-radius: 8px;
+    cursor: pointer; font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-.telegram-popup button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
-.telegram-popup .join-btn { background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark)); color: white; }
+.telegram-popup button:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(30,144,255,0.3); }
+.telegram-popup .join-btn { background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-dark)); color: white; }
 .telegram-popup .joined-btn { background-color: var(--border-color); color: var(--text-light); }
+
 @media (max-width: 480px) {
     body { padding: 0.5rem; }
-    .telegram-popup { padding: 20px 15px; }
+    .telegram-popup { padding: 25px 20px; }
 }
 </style>
 </head>
