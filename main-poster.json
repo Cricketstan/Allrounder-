@@ -21,7 +21,8 @@
       "poster_link": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/6951/1760149666951-i",
       "watch_now": [
         { "id": "channel-7", "name": "ICC TV" },
-        { "id": "channel-4", "name": "Willow Sports" }
+        { "id": "channel-4", "name": "Willow Sports" },
+        { "id": "channel-12", "name": "prime" }
       ],
       "date": "11 Oct 2025",
       "start_time": "2:30 PM",
