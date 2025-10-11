@@ -42,6 +42,7 @@ body {
     animation: fadeIn 0.5s ease-out forwards;
 }
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
 .stream-header {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -70,6 +71,7 @@ body {
     70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
 }
+
 #player-container {
     width: 100%;
     height: 50vh;
@@ -79,6 +81,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
 }
+
 .info-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -97,6 +100,7 @@ body {
     gap: 0.5rem;
     color: var(--text-muted);
 }
+
 .action-button {
     display: inline-flex;
     align-items: center;
@@ -118,6 +122,7 @@ body {
     box-shadow: 0 6px 15px var(--popup-shadow-color);
 }
 .action-button.copied { background: linear-gradient(90deg, #22c55e, #4ade80); }
+
 .back-link {
     display: inline-block;
     width: 100%;
@@ -130,6 +135,7 @@ body {
     transition: background-color 0.2s ease;
 }
 .back-link:hover { background-color: var(--card-bg); color: var(--text-light); }
+
 .error-message {
      text-align: center;
      padding: 4rem 1rem;
@@ -138,6 +144,7 @@ body {
      border-radius: 12px;
 }
 .error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
+
 .telegram-popup {
     position: fixed; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -165,8 +172,21 @@ body {
 .telegram-popup button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
 .telegram-popup .join-btn { background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark)); color: white; }
 .telegram-popup .joined-btn { background-color: var(--border-color); color: var(--text-light); }
+
+/* --- RESPONSIVE CHANGES --- */
+@media (max-width: 768px) {
+    #player-container { height: 40vh; }
+    .stream-header h1 { font-size: 1.1rem; }
+    .info-card h2 { font-size: 0.95rem; }
+    .action-button { padding: 0.7rem; font-size: 0.9rem; }
+}
+
 @media (max-width: 480px) {
     body { padding: 0.5rem; }
+    #player-container { height: 35vh; }
+    .stream-header h1 { font-size: 1rem; }
+    .info-card h2 { font-size: 0.85rem; }
+    .action-button { padding: 0.6rem; font-size: 0.85rem; }
     .telegram-popup { padding: 20px 15px; }
 }
 </style>
