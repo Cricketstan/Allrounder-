@@ -17,16 +17,47 @@
       "rating": "U/A"
     },
     {
-      "title": "https://i.ibb.co/LXsGTydM/Picsart-25-10-09-08-45-14-710.png",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/192/1759921820192-i",
+      "title": "https://i.ibb.co/5xWSvf5F/Picsart-25-10-11-13-40-08-152.png",
+      "poster_link": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/6951/1760149666951-i",
       "watch_now": [
-        { "id": "channel-13", "name": "Hindi" }
+        { "id": "channel-7", "name": "ICC TV" },
+        { "id": "channel-6", "name": "Sky Sports" }
       ],
-      "date": "9 Oct 2025",
-      "start_time": "11:20 AM",
+      "date": "11 Oct 2025",
+      "start_time": "2:30 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "English",
+      "rating": "U/A"
+    },
+    {
+      "title": "https://i.ibb.co/B5LTyBGm/Picsart-25-10-11-13-42-06-072.png",
+      "poster_link": "https://i.ibb.co/LDMq0YvD/Picsart-25-10-11-13-45-05-732.jpg",
+      "watch_now": [
+        { "id": "channel-4", "name": "Willow Sports" },
+        { "id": "channel-13", "name": "Hindi" },
+        { "id": "channel-10", "name": "TNT Sports" }
+      ],
+      "date": "11 Oct 2025",
+      "start_time": "05:00 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "rating": "U/A"
+    },
+   {
+      "title": "https://i.ibb.co/WW98ffzP/Picsart-25-10-11-13-42-38-458.png",
+      "poster_link": "https://i.ibb.co/gb9zFPqr/Picsart-25-10-11-13-45-29-691.jpg",
+      "watch_now": [
+        { "id": "channel-4", "name": "Willow Sports" },
+        { "id": "channel-13", "name": "Hindi" },
+        { "id": "channel-10", "name": "TNT Sports" }
+      ],
+      "date": "11 Oct 2025",
+      "start_time": "05:00 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
       "rating": "U/A"
     }
   ]
