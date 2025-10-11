@@ -195,7 +195,7 @@ async function initializeApp() {
         const streamData = data.iframes.find(item => item.id === streamId);
 
         if (streamData) {
-            document.title = `${streamData.name} // Live Stream`;
+            document.title = `${streamData.name}`;
             renderIframeUI(streamData);
             setTimeout(() => {
                 document.getElementById('telegramPopup').style.display = 'block';
