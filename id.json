@@ -1,0 +1,16 @@
+{
+  "iframes": [
+    {
+      "id": "iff1",
+      "name": "prrime",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/channel-12/"
+    },
+    {
+      "id": "iff1",
+      "name": "prrime duplicate",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/channel-12/"
+    }
+  ]
+}
