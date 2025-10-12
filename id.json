@@ -11,6 +11,12 @@
       "name": "TNT Sports",
       "type": "iframe",
       "iframeSrc": "https://prime-sooty-six.vercel.app/"
+    },
+    {
+      "id": "willow",
+      "name": "willow",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/allrounder/player.html?id=willowextra"
     }
   ]
 }
