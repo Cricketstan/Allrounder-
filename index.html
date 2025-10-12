@@ -70,7 +70,7 @@ body {
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
 }
 
-/* ✅ 16:9 Video Container */
+/* ✅ Fixed 16:9 Video Container - No scrolling */
 #player-container {
     position: relative;
     width: 100%;
@@ -87,6 +87,8 @@ body {
     width: 100%;
     height: 100%;
     border: none;
+    /* Prevent scrolling inside iframe */
+    overflow: hidden;
 }
 
 .info-card {
@@ -269,9 +271,9 @@ function renderIframeUI(data) {
             <h1>${data.name}</h1>
             <div class="live-badge"><i class="fa-solid fa-circle"></i> LIVE</div>
         </div>
-        <!-- ✅ 16:9 Video Box -->
+        <!-- ✅ Fixed 16:9 Video Box - No scrolling -->
         <div id="player-container">
-            <iframe src="${data.iframeSrc}" allow="encrypted-media; autoplay" allowfullscreen></iframe>
+            <iframe src="${data.iframeSrc}" allow="encrypted-media; autoplay" allowfullscreen scrolling="no"></iframe>
         </div>
         <div class="info-card">
             <h2><i class="fa-solid fa-bell"></i> Follow us for Updates!</h2>
