@@ -87,9 +87,11 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-    /* Prevent scrolling inside iframe */
     overflow: hidden;
+    display: block;
+    scrollbar-width: none; /* Firefox */
 }
+#player-container iframe::-webkit-scrollbar { display: none; } /* Chrome/Safari */
 
 .info-card {
     background-color: var(--card-bg);
@@ -219,10 +221,10 @@ body {
     #player-container { aspect-ratio: 16 / 9; }
 }
 
-/* ✅ Added this small block — everything else unchanged */
+/* ✅ Prevent page scroll */
 html, body {
     height: 100%;
-    overflow: hidden; /* Prevent scrolling */
+    overflow: hidden;
 }
 </style>
 </head>
@@ -273,7 +275,13 @@ function renderIframeUI(data) {
         </div>
         <!-- ✅ Fixed 16:9 Video Box - No scrolling -->
         <div id="player-container">
-            <iframe src="${data.iframeSrc}" allow="encrypted-media; autoplay" allowfullscreen scrolling="no"></iframe>
+            <iframe 
+                src="${data.iframeSrc}" 
+                allow="encrypted-media; autoplay" 
+                allowfullscreen 
+                sandbox="allow-same-origin allow-scripts allow-presentation allow-forms allow-popups"
+                style="width:100%;height:100%;border:none;overflow:hidden;scrollbar-width:none;"
+            ></iframe>
         </div>
         <div class="info-card">
             <h2><i class="fa-solid fa-bell"></i> Follow us for Updates!</h2>
