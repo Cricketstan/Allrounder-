@@ -1,10 +1,10 @@
 {
   "iframes": [
     {
-      "id": "prime",
-      "name": "prrime",
+      "id": "hindi",
+      "name": "Star Sports Hindu",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/channel-12/"
+      "iframeSrc": "https://cricketstan.github.io/Channel-13"
     },
     {
       "id": "iff1",
