@@ -17,6 +17,12 @@
       "name": "willow",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/channel/"
-    }
+    },
+        {
+      "id": "prime-hin",
+      "name": "willow",
+      "type": "iframe",
+      "iframeSrc": "https://hff-eight.vercel.app/"
+        }
   ]
 }
