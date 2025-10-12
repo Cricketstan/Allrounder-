@@ -35,6 +35,12 @@
       "name": "Willow",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Willow-Cricbuzz-/"
-    }
+    },
+     {
+      "id": "icc-tv",
+      "name": "ICC TV",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/Sony-Liv/"
+     }
   ]
 }
