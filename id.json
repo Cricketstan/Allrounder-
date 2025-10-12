@@ -20,7 +20,7 @@
     },
         {
       "id": "prime-hin",
-      "name": "willow",
+      "name": "prime",
       "type": "iframe",
       "iframeSrc": "https://hff-eight.vercel.app/"
         }
