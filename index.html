@@ -216,6 +216,12 @@ body {
 @media (max-width: 768px) {
     #player-container { aspect-ratio: 16 / 9; }
 }
+
+/* ✅ Added this small block — everything else unchanged */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+}
 </style>
 </head>
 <body>
