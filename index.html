@@ -20,7 +20,6 @@
     --text-light: #f1f5f9;
     --text-muted: #94a3b8;
     --border-color: #2d2d2d;
-    --popup-bg: #282828;
     --popup-shadow-color: rgba(229, 9, 20, 0.4);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,20 +27,19 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-light);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 100vh;
-    padding: 1rem;
 }
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
 }
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+
 .stream-header {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -53,6 +51,7 @@ body {
     margin-bottom: 1rem;
 }
 .stream-header h1 { font-size: 1.25rem; font-weight: 600; }
+
 .live-badge {
     background-color: var(--primary-red);
     color: white;
@@ -70,15 +69,20 @@ body {
     70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
 }
+
 #player-container {
     width: 100%;
-    height: 50vh;
-    max-height: 600px;
+    height: 85vh;
     background-color: #000;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
 }
+#player-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .info-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -97,6 +101,7 @@ body {
     gap: 0.5rem;
     color: var(--text-muted);
 }
+
 .action-button {
     display: inline-flex;
     align-items: center;
@@ -118,6 +123,7 @@ body {
     box-shadow: 0 6px 15px var(--popup-shadow-color);
 }
 .action-button.copied { background: linear-gradient(90deg, #22c55e, #4ade80); }
+
 .back-link {
     display: inline-block;
     width: 100%;
@@ -130,6 +136,7 @@ body {
     transition: background-color 0.2s ease;
 }
 .back-link:hover { background-color: var(--card-bg); color: var(--text-light); }
+
 .error-message {
      text-align: center;
      padding: 4rem 1rem;
@@ -138,6 +145,7 @@ body {
      border-radius: 12px;
 }
 .error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
+
 .telegram-popup {
     position: fixed;
     top: 50%; left: 50%;
@@ -153,9 +161,8 @@ body {
     max-width: 400px;
     display: none;
     border: 2px solid var(--primary-red);
-    animation: popIn 0.4s ease-out forwards, glowPulse 2.5s infinite alternate;
+    animation: glowPulse 2.5s infinite alternate;
 }
-
 @keyframes glowPulse {
     0% { box-shadow: 0 0 20px rgba(229, 9, 20, 0.3), 0 0 10px rgba(229, 9, 20, 0.2) inset; }
     100% { box-shadow: 0 0 40px rgba(229, 9, 20, 0.7), 0 0 20px rgba(229, 9, 20, 0.4) inset; }
@@ -169,14 +176,12 @@ body {
     text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
     margin-bottom: 0.75rem;
 }
-
 .telegram-popup p {
     font-size: 1rem;
     color: var(--text-muted);
     margin-bottom: 1.75rem;
     line-height: 1.5;
 }
-
 .telegram-popup button {
     width: 100%;
     padding: 14px;
@@ -188,35 +193,22 @@ body {
     font-weight: 600;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-
 .telegram-popup button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
-
 .telegram-popup .join-btn {
     background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
     color: white;
-    box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
 }
-
-.telegram-popup .join-btn:hover {
-    box-shadow: 0 0 25px rgba(229, 9, 20, 0.7);
-}
-
 .telegram-popup .joined-btn {
     background-color: var(--border-color);
     color: var(--text-light);
     border: 1px solid var(--primary-red-dark);
 }
 
-@media (max-width: 480px) {
-    .telegram-popup {
-        padding: 30px 20px;
-        max-width: 90%;
-    }
-    .telegram-popup h2 { font-size: 1.5rem; }
-    .telegram-popup p { font-size: 0.9rem; }
+@media (max-width: 768px) {
+    #player-container { height: 55vh; }
 }
 </style>
 </head>
@@ -227,7 +219,7 @@ body {
 
 <div class="telegram-popup" id="telegramPopup">
     <h2><i class="fa-brands fa-telegram"></i> Support Us!</h2>
-    <p>Join our Telegram channel <strong>CricketWithAJ</strong> for instant updates, highlights, and exclusive links.</p>
+    <p>Join our Telegram channel <strong>Allrounder</strong> for instant updates, highlights, and exclusive links.</p>
     <a href="https://t.me/+d_F_hP5GBhliZTQ1" target="_blank" rel="noopener"><button class="join-btn">Join Now</button></a>
     <button class="joined-btn" onclick="document.getElementById('telegramPopup').style.display='none';">Already Joined</button>
 </div>
@@ -266,7 +258,7 @@ function renderIframeUI(data) {
             <div class="live-badge"><i class="fa-solid fa-circle"></i> LIVE</div>
         </div>
         <div id="player-container">
-            <iframe src="${data.iframeSrc}" style="width:100%; height:100%; border:0;" allow="encrypted-media; autoplay" allowfullscreen></iframe>
+            <iframe src="${data.iframeSrc}" allow="encrypted-media; autoplay" allowfullscreen></iframe>
         </div>
         <div class="info-card">
             <h2><i class="fa-solid fa-bell"></i> Follow us for Updates!</h2>
