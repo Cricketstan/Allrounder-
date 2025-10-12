@@ -139,35 +139,84 @@ body {
 }
 .error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
 .telegram-popup {
-    position: fixed; top: 50%; left: 50%;
+    position: fixed;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    background: var(--popup-bg); color: var(--text-light);
-    padding: 30px 20px; border-radius: 12px;
-    box-shadow: 0 0 50px 10px var(--popup-shadow-color);
-    z-index: 10000; text-align: center;
-    width: 90%; max-width: 350px;
-    display: none; border: 1px solid var(--primary-red-dark);
-    animation: popIn 0.3s ease-out forwards;
+    background: linear-gradient(145deg, #181818, #1f1f1f);
+    color: var(--text-light);
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 0 50px 10px rgba(229, 9, 20, 0.5), 0 0 20px rgba(229, 9, 20, 0.3) inset;
+    z-index: 10000;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    display: none;
+    border: 2px solid var(--primary-red);
+    animation: popIn 0.4s ease-out forwards, glowPulse 2.5s infinite alternate;
 }
-@keyframes popIn {
-    from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 20px rgba(229, 9, 20, 0.3), 0 0 10px rgba(229, 9, 20, 0.2) inset; }
+    100% { box-shadow: 0 0 40px rgba(229, 9, 20, 0.7), 0 0 20px rgba(229, 9, 20, 0.4) inset; }
 }
-.telegram-popup h2 { margin-top: 0; color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
-.telegram-popup p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.telegram-popup h2 {
+    margin-top: 0;
+    color: var(--primary-red);
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+    margin-bottom: 0.75rem;
+}
+
+.telegram-popup p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+}
+
 .telegram-popup button {
-    width: 100%; padding: 12px;
-    margin-top: 12px; font-size: 1rem;
-    border: none; border-radius: 6px;
-    cursor: pointer; font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
-.telegram-popup button:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
-.telegram-popup .join-btn { background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark)); color: white; }
-.telegram-popup .joined-btn { background-color: var(--border-color); color: var(--text-light); }
+
+.telegram-popup button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.telegram-popup .join-btn {
+    background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
+    color: white;
+    box-shadow: 0 0 12px rgba(229, 9, 20, 0.4);
+}
+
+.telegram-popup .join-btn:hover {
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.7);
+}
+
+.telegram-popup .joined-btn {
+    background-color: var(--border-color);
+    color: var(--text-light);
+    border: 1px solid var(--primary-red-dark);
+}
+
 @media (max-width: 480px) {
-    body { padding: 0.5rem; }
-    .telegram-popup { padding: 20px 15px; }
+    .telegram-popup {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+    .telegram-popup h2 { font-size: 1.5rem; }
+    .telegram-popup p { font-size: 0.9rem; }
 }
 </style>
 </head>
