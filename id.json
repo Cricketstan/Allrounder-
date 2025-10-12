@@ -26,9 +26,15 @@
     },
     {
       "id": "prime-eng",
-      "name": "Prime Hindi",
+      "name": "Prime English",
       "type": "iframe",
       "iframeSrc": "https://prime-english.vercel.app/"
+    },
+    {
+      "id": "willow-sports",
+      "name": "Willow",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/Willow-Cricbuzz-/"
     }
   ]
 }
