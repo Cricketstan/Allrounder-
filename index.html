@@ -22,6 +22,7 @@
     --border-color: #2d2d2d;
     --popup-shadow-color: rgba(229, 9, 20, 0.4);
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Poppins', sans-serif;
@@ -29,6 +30,7 @@ body {
     color: var(--text-light);
     min-height: 100vh;
 }
+
 .container {
     width: 100%;
     max-width: 100%;
@@ -38,6 +40,7 @@ body {
     transform: translateY(20px);
     animation: fadeIn 0.5s ease-out forwards;
 }
+
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
 .stream-header {
@@ -87,11 +90,14 @@ body {
     width: 100%;
     height: 100%;
     border: none;
-    overflow: hidden;
+    overflow: hidden !important;
     display: block;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
 }
-#player-container iframe::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+#player-container iframe::-webkit-scrollbar {
+    display: none !important;
+}
 
 .info-card {
     background-color: var(--card-bg);
@@ -148,11 +154,11 @@ body {
 .back-link:hover { background-color: var(--card-bg); color: var(--text-light); }
 
 .error-message {
-     text-align: center;
-     padding: 4rem 1rem;
-     background-color: var(--card-bg);
-     border: 1px solid var(--border-color);
-     border-radius: 12px;
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
 }
 .error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
 
@@ -273,14 +279,14 @@ function renderIframeUI(data) {
             <h1>${data.name}</h1>
             <div class="live-badge"><i class="fa-solid fa-circle"></i> LIVE</div>
         </div>
-        <!-- ✅ Fixed 16:9 Video Box - No scrolling -->
         <div id="player-container">
             <iframe 
                 src="${data.iframeSrc}" 
                 allow="encrypted-media; autoplay" 
                 allowfullscreen 
+                scrolling="no"
                 sandbox="allow-same-origin allow-scripts allow-presentation allow-forms allow-popups"
-                style="width:100%;height:100%;border:none;overflow:hidden;scrollbar-width:none;"
+                style="width:100%;height:100%;border:none;overflow:hidden;display:block;scrollbar-width:none;"
             ></iframe>
         </div>
         <div class="info-card">
