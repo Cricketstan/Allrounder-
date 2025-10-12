@@ -2,7 +2,7 @@
   "iframes": [
     {
       "id": "hindi",
-      "name": "Star Sports Hindu",
+      "name": "Star Sports Hindi",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Channel-13"
     },
