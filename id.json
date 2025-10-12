@@ -7,10 +7,10 @@
       "iframeSrc": "https://cricketstan.github.io/Channel-13"
     },
     {
-      "id": "iff1",
-      "name": "prrime duplicate",
+      "id": "tnt",
+      "name": "TNT Sports",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/channel-12/"
+      "iframeSrc": "https://prime-sooty-six.vercel.app/"
     }
   ]
 }
