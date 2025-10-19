@@ -71,6 +71,12 @@
       "name": "Astro",
       "type": "iframe",
       "iframeSrc": "https://portal-to-m3u-07.iptv07india.workers.dev/play.m3u8?id=844"
+    },
+    {
+      "id": "fox-fastly",
+      "name": "Fox Cricket 501",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/"
     }
   ]
 }
