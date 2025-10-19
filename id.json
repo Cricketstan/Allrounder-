@@ -49,12 +49,6 @@
       "iframeSrc": "https://fox-501-allrounder745.onrender.com/"
      },
     {
-      "id": "sony",
-      "name": "Sony Liv",
-      "type": "iframe",
-      "iframeSrc": "https://sonypartnersdaimenew.akamaized.net/hls/live/2018457/DAI35ME-EVSN/hdntl=exp=1760853585~acl=%2f*~id=2f0a066d-3b67-4a52-86eb-ce63109cd16c~data=hdntl~hmac=1e3693224be28e0d1141e6b01518bd880fd117255adadd41a7ce1019fd4c3e7e/master_350.m3u8?aka_me_session_id=AAAAAAAAAABRfvRoAAAAAOiUPVTGCsMLb+xUYBW8%2frHwaHO8TVwtmBVgl+rz+4tohJ2m%2f1qsGcF%2fqLtHUSQJKFRedQxUIQrm&aka_media_format_type=hls&originpath=/linear/hls/pb/event/HynNobMPSu6nQCgpxsK0lQ/stream/502a5f63-9752-4e14-8ba0-da29b9a60625:TPE/variant/55974577e238b4c6928229fc37896dc6/bandwidth/516408.m3u8"
-    },
-    {
       "id": "ios",
       "name": "Appel Wale",
       "type": "iframe",
