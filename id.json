@@ -16,7 +16,7 @@
       "id": "willow",
       "name": "Willow",
       "type": "iframe",
-      "iframeSrc": "https://ebdc-cricketstan.wasmer.app/player.php?id=willowusa"
+      "iframeSrc": "https://cricketstan.github.io/Willow-Cricbuzz-/"
     },
     {
       "id": "prime-hin",
