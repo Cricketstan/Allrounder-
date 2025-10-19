@@ -53,6 +53,12 @@
       "name": "Appel Wale",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/ios/"
+    },
+    {
+      "id": "eng",
+      "name": "Star Sports 1",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/Channel-14/"
     }
   ]
 }
