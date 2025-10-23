@@ -77,6 +77,12 @@
       "name": "Fox Cricket 501",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/"
+    },
+    {
+      "id": "tnt-1",
+      "name": "TNT Sports 1",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/TNT-1/"
     }
   ]
 }
