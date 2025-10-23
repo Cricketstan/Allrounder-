@@ -83,6 +83,12 @@
       "name": "cwc",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/cwc/"
+    },
+    {
+      "id": "tnt-1",
+      "name": "TNT Sports 1",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/TNT-1/"
     }
   
   ]
