@@ -78,11 +78,12 @@
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/"
     },
-    {
-      "id": "tnt-1",
-      "name": "TNT Sports 1",
+  {
+      "id": "cwc",
+      "name": "cwc",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/TNT-1/"
+      "iframeSrc": "https://cricketstan.github.io/cwc/"
     }
+  
   ]
 }
