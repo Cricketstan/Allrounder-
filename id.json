@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Channel-13/"
+      "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/"
     },
     {
       "id": "tnt",
@@ -64,7 +64,7 @@
       "id": "fox-hd",
       "name": "Fox Cricket",
       "type": "iframe",
-      "iframeSrc": "https://www.livereacting.com/tools/hls-player-embed?url=https://cricketstan.github.io/sf/index.m3u8"
+      "iframeSrc": "https://www.livereacting.com/tools/hls-player-embed?url=https://rumble.com/live-hls/6ykdxa/playlist.m3u8"
     },
      {
       "id": "astro",
