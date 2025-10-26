@@ -89,6 +89,12 @@
       "name": "TNT Sports 1",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/TNT-1/"
+    },
+    {
+      "id": "prime-nz",
+      "name": "PRIME",
+      "type": "iframe",
+      "iframeSrc": "https://hff-eight.vercel.app/"
     }
   
   ]
