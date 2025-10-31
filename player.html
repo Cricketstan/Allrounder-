@@ -1,84 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="referrer" content="no-referrer">
-<title>Allrounder</title>
+  <title>Fox Cricket</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <meta name="referrer" content="no-referrer"/>
+  
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
 
-<!-- Plyr + HLS.js -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css" />
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
+  <!-- HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  #plyr-player {
-    width: 80%;
-    height: auto;
-    max-height: 80%;
-  }
-</style>
+  <!-- Plyr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
+
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* keeps proper aspect ratio */
+      background: #000;
+    }
+    .plyr {
+      height: 100%;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
+  <div class="video-container">
+    <video autoplay playsinline muted id="player" controls preload="metadata"></video>
+  </div>
 
-<video id="plyr-player" controls playsinline></video>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const video = document.getElementById("player");
 
-<script>
-  function getQueryParam(param) {
-    return new URLSearchParams(window.location.search).get(param);
-  }
+      // ✅ Get URL parameter (?url=...)
+      const params = new URLSearchParams(window.location.search);
+      const source = params.get("url");
 
-  const videoSrc = getQueryParam('url');
-  const video = document.getElementById('plyr-player');
-
-  if (Hls.isSupported()) {
-    const hls = new Hls();
-    hls.loadSource(videoSrc);
-    hls.attachMedia(video);
-
-    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-      // Extract available resolutions
-      const availableQualities = hls.levels.map(l => l.height).filter((v, i, a) => a.indexOf(v) === i);
-
-      // Init Plyr
-      const player = new Plyr(video, {
-        autoplay: true,
-        muted: true,
-        settings: ['quality', 'speed', 'loop'],
-        quality: {
-          default: availableQualities[0],
-          options: availableQualities,
-          forced: true,
-          onChange: (newQuality) => {
-            // Set HLS level based on selected quality
-            hls.levels.forEach((level, levelIndex) => {
-              if (level.height === newQuality) {
-                hls.currentLevel = levelIndex;
-              }
-            });
-          }
-        }
-      });
-
-      // Default to best quality (last in list = highest resolution)
-      if (availableQualities.length) {
-        hls.currentLevel = hls.levels.length - 1;
+      if (!source) {
+        alert("❌ No URL found! Please add ?url=YOUR_M3U8_LINK");
+        return;
       }
-    });
-  } else {
-    video.src = videoSrc;
-    new Plyr(video, { autoplay: true, muted: true });
-  }
-</script>
 
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(source);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        video.src = source;
+        video.addEventListener("loadedmetadata", () => video.play());
+      }
+
+      new Plyr(video, { autoplay: true });
+    });
+  </script>
 </body>
 </html>
