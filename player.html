@@ -4,7 +4,7 @@
   <title>Fox Cricket</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
-  
+
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
 
@@ -37,7 +37,7 @@
     video {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* keeps proper aspect ratio */
+      object-fit: contain;
       background: #000;
     }
     .plyr {
@@ -64,17 +64,58 @@
         return;
       }
 
+      let hls, availableQualities = [];
+
+      // Initialize Plyr with quality options (default empty)
+      const player = new Plyr(video, {
+        autoplay: true,
+        controls: [
+          'play-large', 'play', 'progress', 'current-time',
+          'mute', 'volume', 'settings', 'fullscreen'
+        ],
+        settings: ['quality'],
+        quality: {
+          default: 720,
+          options: [],
+          forced: true,
+          onChange: (q) => {
+            if (hls) {
+              hls.levels.forEach((level, index) => {
+                if (level.height === q) {
+                  hls.currentLevel = index;
+                }
+              });
+            }
+          }
+        }
+      });
+
       if (Hls.isSupported()) {
-        const hls = new Hls();
+        hls = new Hls();
         hls.loadSource(source);
         hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, () => video.play());
+
+        hls.on(Hls.Events.MANIFEST_PARSED, function (_, data) {
+          availableQualities = data.levels.map(level => level.height).sort((a, b) => b - a);
+          player.options.quality.options = availableQualities;
+
+          // Add qualities dynamically to Plyr settings menu
+          player.config.quality.options = availableQualities;
+          player.config.quality.default = availableQualities[0];
+          player.once('ready', () => player.quality = availableQualities[0]);
+
+          console.log("✅ Available Qualities:", availableQualities);
+          video.play();
+        });
+
+        hls.on(Hls.Events.LEVEL_SWITCHED, function (_, data) {
+          const quality = hls.levels[data.level].height;
+          player.quality = quality;
+        });
       } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = source;
         video.addEventListener("loadedmetadata", () => video.play());
       }
-
-      new Plyr(video, { autoplay: true });
     });
   </script>
 </body>
