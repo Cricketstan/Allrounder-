@@ -31,6 +31,12 @@
       "iframeSrc": "https://hff-eight.vercel.app/"
     },
     {
+      "id": "fox-hindi",
+      "name": "Fox Hindi",
+      "type": "iframe",
+      "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/"
+    },
+    {
       "id": "willow-sports",
       "name": "Willow",
       "type": "iframe",
