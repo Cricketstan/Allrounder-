@@ -22,7 +22,7 @@
       "id": "prime-hin",
       "name": "Prime Hindi",
       "type": "iframe",
-      "iframeSrc": "https://prime-english.vercel.app/"
+      "iframeSrc": "https://hff-eight.vercel.app/"
     },
     {
       "id": "prime-eng",
