@@ -66,14 +66,18 @@
 
       let hls, availableQualities = [];
 
-      // Initialize Plyr with quality options (default empty)
+      // ✅ Plyr Player (added speed + did NOT remove anything)
       const player = new Plyr(video, {
         autoplay: true,
         controls: [
           'play-large', 'play', 'progress', 'current-time',
           'mute', 'volume', 'settings', 'fullscreen'
         ],
-        settings: ['quality'],
+        settings: ['quality', 'speed'],   // ✅ Added speed toggle
+        speed: {                          // ✅ Available speed levels
+          selected: 1,
+          options: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+        },
         quality: {
           default: 720,
           options: [],
