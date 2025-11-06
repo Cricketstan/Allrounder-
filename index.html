@@ -217,22 +217,29 @@ function renderIframeUI(data) {
 }
 
 function formatViews(num) {
+    if (!num || isNaN(num)) return "0";
     if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
     if (num >= 1000) return (num / 1000).toFixed(1) + "K";
     return num;
 }
 
-function startHitAndCounter(data) {
-    // ✅ Increase hit count once
-    fetch(data.hit).catch(() => {});
+async function startHitAndCounter(data) {
+    try {
+        await fetch(data.hit + "&_=" + Date.now());
+    } catch(e) {}
 
     async function updateViews() {
         try {
             const res = await fetch(data.get + "&_=" + Date.now());
-            const views = await res.text();
-            document.getElementById("viewCount").innerText = formatViews(Number(views)) + " Views";
-        } catch (err) {}
+            let views = await res.text();
+            if (!views || isNaN(views)) views = 0;
+            document.getElementById("viewCount").innerText =
+                formatViews(Number(views)) + " Views";
+        } catch(err) {
+            document.getElementById("viewCount").innerText = "0 Views";
+        }
     }
+
     updateViews();
     setInterval(updateViews, 2000);
 }
