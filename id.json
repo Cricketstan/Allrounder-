@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://www.livereacting.com/tools/hls-player-embed?url=https://cdn-media-content.onestream.studio/content/hls/live/event_21679424_h91j2dirq/hls.m3u8"
+      "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/"
     },
     {
       "id": "tnt",
