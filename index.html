@@ -231,8 +231,8 @@ async function startHitAndCounter(data) {
     async function updateViews() {
         try {
             const res = await fetch(data.get + "&_=" + Date.now());
-            let views = await res.text();
-            if (!views || isNaN(views)) views = 0;
+            const json = await res.json();
+            const views = json.total || 0;
             document.getElementById("viewCount").innerText =
                 formatViews(Number(views)) + " Views";
         } catch(err) {
