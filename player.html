@@ -4,7 +4,7 @@
   <title>Fox Cricket</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
-
+  
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
 
@@ -53,72 +53,55 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const video = document.getElementById("player");
 
-      // ✅ Get URL parameter (?url=...)
+      // ✅ Get ?url= parameter
       const params = new URLSearchParams(window.location.search);
-      const source = params.get("url");
+      const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
 
-      if (!source) {
-        alert("❌ No URL found! Please add ?url=YOUR_M3U8_LINK");
-        return;
-      }
+      const video = document.getElementById("player");
+      const source = streamUrl;
 
-      let hls, availableQualities = [];
-
-      // ✅ Plyr Player (added speed + did NOT remove anything)
-      const player = new Plyr(video, {
+      const defaultOptions = {
         autoplay: true,
         controls: [
-          'play-large', 'play', 'progress', 'current-time',
+          'play', 'rewind', 'fast-forward', 'progress', 'current-time',
           'mute', 'volume', 'settings', 'fullscreen'
         ],
-        settings: ['quality', 'speed'],   // ✅ Added speed toggle
-        speed: {                          // ✅ Available speed levels
-          selected: 1,
-          options: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
-        },
-        quality: {
-          default: 720,
-          options: [],
-          forced: true,
-          onChange: (q) => {
-            if (hls) {
-              hls.levels.forEach((level, index) => {
-                if (level.height === q) {
-                  hls.currentLevel = index;
-                }
-              });
-            }
-          }
-        }
-      });
+        settings: ['quality']
+      };
 
       if (Hls.isSupported()) {
-        hls = new Hls();
+        const hls = new Hls({
+          autoStartLoad: true
+        });
+
         hls.loadSource(source);
         hls.attachMedia(video);
 
-        hls.on(Hls.Events.MANIFEST_PARSED, function (_, data) {
-          availableQualities = data.levels.map(level => level.height).sort((a, b) => b - a);
-          player.options.quality.options = availableQualities;
+        hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
+          const availableQualities = data.levels.map(l => l.height).sort((a,b) => b - a);
 
-          // Add qualities dynamically to Plyr settings menu
-          player.config.quality.options = availableQualities;
-          player.config.quality.default = availableQualities[0];
-          player.once('ready', () => player.quality = availableQualities[0]);
-
-          console.log("✅ Available Qualities:", availableQualities);
-          video.play();
+          const player = new Plyr(video, {
+            ...defaultOptions,
+            quality: {
+              default: availableQualities[0],
+              options: availableQualities,
+              forced: true,
+              onChange: q => {
+                hls.levels.forEach((level, index) => {
+                  if (level.height === q) {
+                    hls.currentLevel = index;
+                  }
+                });
+              }
+            }
+          });
         });
 
-        hls.on(Hls.Events.LEVEL_SWITCHED, function (_, data) {
-          const quality = hls.levels[data.level].height;
-          player.quality = quality;
-        });
       } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
         video.src = source;
         video.addEventListener("loadedmetadata", () => video.play());
+        new Plyr(video, defaultOptions);
       }
     });
   </script>
