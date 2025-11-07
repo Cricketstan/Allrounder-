@@ -1,56 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Fox Cricket</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-  <meta name="referrer" content="no-referrer"/>
-
-  <!-- JW Player -->
-  <script src="https://cdn.jwplayer.com/libraries/IDzF9Zmk.js"></script>
-
-  <style>
-    body {
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-    }
-    .video-container {
-      width: 100%;
-      height: 300px; /* requested height */
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    #player {
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div class="video-container">
-    <div id="player"></div>
-  </div>
-
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>jw player</title> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script> 
+    <link rel="stylesheet" href="https://chlive.pages.dev/style.css">
+  
+  <style> 
+    body { 
+      margin: 0; 
+    } 
+    .jwplayer { 
+      position: absolute !important; 
+    } 
+    .jwplayer.jw-flag-aspect-mode { 
+      min-height: 100%; 
+      max-height: 100%; 
+    } 
+  </style> 
+</head> 
+<body> 
+  <div id="jwplayerDiv"></div> 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Get ?url= param, fallback to example
-      const params = new URLSearchParams(window.location.search);
-      const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
-
-      // JW Player setup (auto quality)
-      jwplayer("player").setup({
-        file: streamUrl,
-        autostart: true,
-        mute: true,
-        width: "100%",
-        height: "100%",
-        stretching: "uniform",
-        controls: true,
-        primary: "html5"
-      });
-    });
-  </script>
-</body>
+      const urlParams = new URLSearchParams(window.location.search);
+      const stream = urlParams.get('url') || "https://rumble.com/live-hls-dvr/6z66p4/playlist.m3u8";
+       jwplayer("jwplayerDiv").setup({ 
+      file: stream, 
+      position: 'bottom', 
+      autostart: true, 
+      stretching: "uniform", 
+      width: "100%", 
+      type: "hls"
+     }); 
+  </script> 
+</body> 
 </html>
