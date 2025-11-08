@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://cdn-media-content.onestream.studio/content/hls/live/event_21705751_6yn1hgx52/hls.m3u8",
+      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://rumble.com/live-hls-dvr/6z7w6k/playlist.m3u8",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=hindi",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=hindi"
     },
