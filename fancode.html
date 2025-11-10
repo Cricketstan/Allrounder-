@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Allrounder Fancode</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="referrer" content="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FanCode Live Streaming | Watch Free</title>
     <link rel="icon" href="https://fancode.com/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,10 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --plyr-color-main: #0ea5e9;
-            --background-dark: #02040a;
+            --background: #02040a;
+            --primary-glow: #0ea5e9;
+            --secondary-glow: #f59e0b;
+            --card-bg: rgba(15, 23, 42, 0.5);
             --border-color: rgba(255, 255, 255, 0.1);
             --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
         }
 
         * {
@@ -26,76 +27,86 @@
         }
 
         body {
-            height: 100svh; 
-            display: flex;
-            flex-direction: column;
-            background: linear-gradient(135deg, #02040a 0%, #0f172a 100%);
+            background-color: var(--background);
             font-family: 'Inter', sans-serif;
-            color: white;
-            overflow: hidden;
-            position: relative;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.2), transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.15), transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.1), transparent 50%);
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
-        body::before {
+        /* --- Match Card 3D Tilt Effect --- */
+        .match-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.5));
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            transform-style: preserve-3d;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.6s ease-out forwards;
+            overflow: hidden;
+        }
+
+        .match-card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.15), transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.1), transparent 40%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        body > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .player-header, .player-footer {
-            flex-shrink: 0;
-            padding: 1.25rem;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-        .player-footer {
-            border-bottom: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .player-main {
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: radial-gradient(circle at center, #0a0a0a, #000);
-            min-height: 0;
-            padding: 0.5rem;
-        }
-
-        .plyr {
+            left: -100%;
             width: 100%;
             height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
         }
 
-        .share-button {
-            background: linear-gradient(135deg, #f59e0b, #eab308, #fbbf24);
-            color: black;
-            font-weight: bold;
-            box-shadow: 0 4px 20px -3px rgba(234, 179, 8, 0.6);
+        .match-card:hover::before {
+            left: 100%;
+        }
+
+        .match-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 
+                        0 0 30px rgba(14, 165, 233, 0.3),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(14, 165, 233, 0.5);
+        }
+        
+        .match-card img {
+            object-position: top;
+            transition: transform 0.4s ease;
+        }
+
+        .match-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .card-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), var(--primary-glow), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        .match-card:hover .card-glow {
+            opacity: 0.1;
+        }
+
+        .watch-btn {
+            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px -3px rgba(14, 165, 233, 0.5);
             position: relative;
             overflow: hidden;
         }
 
-        .share-button::before {
+        .watch-btn::before {
             content: '';
             position: absolute;
             top: 50%;
@@ -108,148 +119,118 @@
             transition: width 0.6s, height 0.6s;
         }
 
-        .share-button:hover::before {
+        .watch-btn:hover::before {
             width: 300px;
             height: 300px;
         }
 
-        .share-button:hover {
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 6px 30px -2px rgba(234, 179, 8, 0.8);
+        .watch-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px -3px rgba(14, 165, 233, 0.7);
         }
 
-        .share-button:active {
+        .watch-btn:active {
             transform: translateY(0) scale(0.98);
-        }
-
-        .telegram-btn {
-            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
-            box-shadow: 0 4px 20px -3px rgba(14, 165, 233, 0.6);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .telegram-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .telegram-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .telegram-btn:hover {
-            transform: translateY(-2px) scale(1.03);
-            box-shadow: 0 6px 30px -2px rgba(14, 165, 233, 0.8);
-            background: linear-gradient(135deg, #38bdf8, #22d3ee);
-        }
-
-        .telegram-btn:active {
-            transform: translateY(0) scale(0.98);
-        }
-        
-        .popup-overlay {
-            position: fixed;
-            inset: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            z-index: 50;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0s 0.4s;
-        }
-        .popup-overlay.show {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0.4s ease;
-        }
-        .popup-card {
-            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 1.5rem;
-            box-shadow: 0 25px 80px -12px rgba(0, 0, 0, 0.7), 
-                        0 0 40px rgba(14, 165, 233, 0.2);
-            width: 90%;
-            max-width: 400px;
-            padding: 2rem;
-            text-align: center;
-            transform: scale(0.9) translateY(20px);
-            opacity: 0;
-            transition: transform 0.4s cubic-bezier(0.215, 0.610, 0.355, 1), opacity 0.4s ease;
-        }
-        .popup-overlay.show .popup-card {
-            transform: scale(1) translateY(0);
-            opacity: 1;
-        }
-        .popup-join-btn {
-            background: linear-gradient(135deg, #22d3ee, #0ea5e9, #06b6d4);
-            box-shadow: 0 4px 15px -3px rgba(14, 165, 233, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .popup-join-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 25px -3px rgba(14, 165, 233, 0.7);
-        }
-
-        .error-message {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            padding: 2rem;
-            text-align: center;
-            font-size: 1.1rem;
         }
 
         .language-badge {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.25));
-            border: 1px solid rgba(168, 85, 247, 0.4);
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+            border: 1px solid rgba(168, 85, 247, 0.3);
             backdrop-filter: blur(8px);
-            padding: 0.375rem 0.875rem;
+            padding: 0.25rem 0.75rem;
             border-radius: 9999px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: #e9d5ff;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+            gap: 0.375rem;
             transition: all 0.3s ease;
         }
 
         .language-badge:hover {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.35), rgba(236, 72, 153, 0.35));
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
             transform: scale(1.05);
         }
 
         .language-badge i {
-            font-size: 0.75rem;
+            font-size: 0.625rem;
         }
 
-        #match-title {
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        /* --- Spotlight Card --- */
+        .spotlight-card {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.6));
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            animation: fadeIn 1s ease-out, floatSpotlight 6s ease-in-out infinite;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 
+                        0 0 40px rgba(14, 165, 233, 0.2),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        /* Custom Scrollbar */
+        @keyframes floatSpotlight {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .spotlight-live-badge {
+            background: linear-gradient(135deg, #dc2626, #ef4444, #f87171);
+            animation: pulse-live 2s infinite ease-in-out;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+        }
+
+        @keyframes pulse-live {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 20px rgba(239, 68, 68, 0.6), 0 0 40px rgba(239, 68, 68, 0.3); 
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 0 30px rgba(239, 68, 68, 0.8), 0 0 60px rgba(239, 68, 68, 0.4); 
+            }
+        }
+
+        /* --- General Animations --- */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* --- Header Enhancements --- */
+        header h1 {
+            text-shadow: 0 0 40px rgba(14, 165, 233, 0.5);
+            letter-spacing: -0.05em;
+        }
+
+        /* --- Section Divider --- */
+        .section-divider {
+            background: linear-gradient(90deg, transparent, var(--primary-glow), var(--secondary-glow), transparent);
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* --- Live Status Badge --- */
+        .live-badge {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* --- Scrollbar Styling --- */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
@@ -257,185 +238,290 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #0ea5e9, #06b6d4);
-            border-radius: 4px;
+            background: linear-gradient(180deg, var(--primary-glow), var(--secondary-glow));
+            border-radius: 5px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #38bdf8, #22d3ee);
+            background: linear-gradient(180deg, #38bdf8, #fbbf24);
         }
 
-        /* Theater Mode */
-        body.theater-mode .player-header,
-        body.theater-mode .player-footer {
-            display: none;
+        /* --- Particle Background --- */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
         }
 
-        body.theater-mode .player-main {
-            height: 100vh;
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, var(--primary-glow), transparent);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
         }
 
-        /* Control Buttons */
-        .control-btn {
-            background: rgba(15, 23, 42, 0.8);
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        /* --- Search & Filter Bar --- */
+        .search-bar {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.7));
+            backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
             transition: all 0.3s ease;
-            cursor: pointer;
         }
 
-        .control-btn:hover {
-            background: var(--plyr-color-main);
-            border-color: var(--plyr-color-main);
+        .search-bar:focus-within {
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+        }
+
+        .filter-btn {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-glow);
+            border-color: var(--primary-glow);
+            color: black;
             transform: translateY(-2px);
         }
 
-        .control-btn.active {
-            background: var(--plyr-color-main);
-            border-color: var(--plyr-color-main);
+        /* --- Stats Counter --- */
+        .stats-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(30, 41, 59, 0.5));
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
         }
 
-        /* Keyboard Shortcuts Hint */
-        .shortcuts-hint {
+        .stats-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-glow);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* --- Countdown Timer --- */
+        .countdown {
+            display: inline-flex;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--secondary-glow);
+        }
+
+        /* --- Toast Notification --- */
+        .toast {
             position: fixed;
-            bottom: 6rem;
+            bottom: 2rem;
             right: 2rem;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.95));
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(14, 165, 233, 0.3);
+            border: 1px solid rgba(14, 165, 233, 0.5);
             border-radius: 1rem;
-            padding: 1rem;
-            max-width: 250px;
-            opacity: 0;
-            transform: translateX(300px);
-            transition: all 0.4s ease;
-            z-index: 100;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transform: translateX(400px);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            max-width: 300px;
         }
 
-        .shortcuts-hint.show {
-            opacity: 1;
+        .toast.show {
             transform: translateX(0);
         }
 
-        /* Loading Overlay */
-        .loading-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            opacity: 1;
-            transition: opacity 0.3s ease;
+        /* --- Loading Skeleton Enhancement --- */
+        @keyframes shimmerLoad {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
         }
 
-        .loading-overlay.hidden {
+        .skeleton {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.5) 25%, rgba(30, 41, 59, 0.5) 50%, rgba(15, 23, 42, 0.5) 75%);
+            background-size: 1000px 100%;
+            animation: shimmerLoad 2s infinite;
+        }
+
+        /* --- Score Display --- */
+        .score-display {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.1));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            backdrop-filter: blur(8px);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            animation: pulse-score 2s infinite;
+        }
+
+        @keyframes pulse-score {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* --- Telegram Popup --- */
+        .popup-overlay {
             opacity: 0;
-            pointer-events: none;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
         }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(14, 165, 233, 0.2);
-            border-top-color: var(--plyr-color-main);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+        .popup-overlay.show {
+            opacity: 1;
+            visibility: visible;
         }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .popup-card {
+            transform: scale(0.8) translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+        }
+        .popup-overlay.show .popup-card {
+            transform: scale(1) translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
 <body class="text-slate-200">
 
-    <header class="player-header text-center">
-        <div class="flex items-center justify-between mb-3">
-            <a href="index.html" class="control-btn text-sm">
-                <i class="fas fa-arrow-left mr-2"></i>Back
-            </a>
-            <div class="flex gap-2">
-                <button id="theater-mode-btn" class="control-btn text-sm" title="Theater Mode (T)">
-                    <i class="fas fa-expand"></i>
-                </button>
-                <button id="pip-btn" class="control-btn text-sm" title="Picture-in-Picture (P)">
-                    <i class="fas fa-external-link-alt"></i>
-                </button>
-                <button id="shortcuts-btn" class="control-btn text-sm" title="Keyboard Shortcuts">
-                    <i class="fas fa-keyboard"></i>
-                </button>
+    <!-- Particle Background -->
+    <div id="particles"></div>
+
+    <header class="text-center py-16 px-4 relative z-10">
+        <h1 class="text-5xl md:text-7xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-400 to-amber-400 mb-4">
+            ALLROUNDER
+        </h1>
+        <p class="text-slate-300 text-lg mt-3 max-w-2xl mx-auto font-medium">
+           Watch all FanCode matches for free in HD quality 🔥
+        </p>
+        
+        <!-- Live Stats Counter -->
+        <div class="flex items-center justify-center gap-4 mt-8 flex-wrap">
+            <div class="stats-card px-6 py-3 rounded-xl">
+                <div class="text-slate-400 text-xs uppercase tracking-wider mb-1">Live Now</div>
+                <div class="stats-number" id="live-count">0</div>
+            </div>
+            <div class="stats-card px-6 py-3 rounded-xl">
+                <div class="text-slate-400 text-xs uppercase tracking-wider mb-1">Total Matches</div>
+                <div class="stats-number" id="total-count">0</div>
+            </div>
+            <div class="stats-card px-6 py-3 rounded-xl">
+                <div class="text-slate-400 text-xs uppercase tracking-wider mb-1">Upcoming</div>
+                <div class="stats-number" id="upcoming-count">0</div>
             </div>
         </div>
-        <h1 id="match-title" class="text-xl md:text-2xl font-black text-white truncate mb-1">Loading Match...</h1>
-        <div id="language-container" class="hidden">
-            <span class="language-badge">
-                <i class="fas fa-globe"></i>
-                <span id="match-language">Loading...</span>
-            </span>
-        </div>
-        <button id="share-links-btn" class="share-button w-full max-w-sm mx-auto mt-3 py-3 px-6 rounded-lg text-md font-bold">
-            <i class="fas fa-share-alt mr-2"></i> Share With Friends
-        </button>
     </header>
 
-    <main class="player-main">
-        <div class="loading-overlay" id="loading-overlay">
-            <div class="text-center">
-                <div class="spinner mx-auto mb-4"></div>
-                <p class="text-slate-300">Loading stream...</p>
+    <main class="max-w-7xl mx-auto px-4 pb-12">
+        <div id="spotlight-container"></div>
+
+        <!-- Search and Filter Section -->
+        <div class="mt-12 mb-8 px-2">
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="search-bar rounded-xl p-4 flex items-center gap-3">
+                    <i class="fas fa-search text-slate-400"></i>
+                    <input 
+                        type="text" 
+                        id="search-input" 
+                        placeholder="Search matches, teams, or tournaments..." 
+                        class="flex-1 bg-transparent outline-none text-slate-200 placeholder-slate-500"
+                    />
+                    <button id="clear-search" class="text-slate-400 hover:text-slate-200 transition-colors hidden">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <!-- Filter Buttons -->
+                <div class="flex items-center justify-center gap-3 mt-4 flex-wrap">
+                    <button class="filter-btn active px-4 py-2 rounded-lg text-sm font-semibold" data-filter="all">
+                        <i class="fas fa-th mr-2"></i>All
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-sm font-semibold" data-filter="live">
+                        <i class="fas fa-circle mr-2 text-red-500"></i>Live
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-sm font-semibold" data-filter="upcoming">
+                        <i class="fas fa-clock mr-2"></i>Upcoming
+                    </button>
+                    <button class="filter-btn px-4 py-2 rounded-lg text-sm font-semibold" data-filter="cricket">
+                        <i class="fas fa-baseball-ball mr-2"></i>Cricket
+                    </button>
+                </div>
             </div>
         </div>
-        <video id="player" playsinline controls></video>
+
+        <div class="mb-10 px-2">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight text-slate-100 mb-2">Live & Upcoming Matches</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-sky-500 via-purple-500 to-amber-500 rounded-full section-divider"></div>
+                </div>
+                <div class="text-slate-400 text-sm flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span>Auto-refreshing</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="matches-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="h-64 skeleton rounded-xl"></div>
+            <div class="h-64 skeleton rounded-xl hidden md:block"></div>
+            <div class="h-64 skeleton rounded-xl hidden lg:block"></div>
+        </div>
+
+        <!-- No Results Message -->
+        <div id="no-results" class="hidden text-center py-20">
+            <div class="text-6xl mb-4">🔍</div>
+            <h3 class="text-2xl font-bold text-slate-300 mb-2">No matches found</h3>
+            <p class="text-slate-500">Try adjusting your search or filters</p>
+        </div>
     </main>
-
-    <!-- Keyboard Shortcuts Hint -->
-    <div class="shortcuts-hint" id="shortcuts-hint">
-        <h4 class="text-white font-bold mb-2 text-sm">Keyboard Shortcuts</h4>
-        <div class="text-xs text-slate-300 space-y-1">
-            <div><kbd class="bg-slate-700 px-1 rounded">Space</kbd> Play/Pause</div>
-            <div><kbd class="bg-slate-700 px-1 rounded">F</kbd> Fullscreen</div>
-            <div><kbd class="bg-slate-700 px-1 rounded">T</kbd> Theater Mode</div>
-            <div><kbd class="bg-slate-700 px-1 rounded">P</kbd> Picture-in-Picture</div>
-            <div><kbd class="bg-slate-700 px-1 rounded">M</kbd> Mute/Unmute</div>
-            <div><kbd class="bg-slate-700 px-1 rounded">↑/↓</kbd> Volume</div>
-            <div><kbd class="bg-slate-700 px-1 rounded">←/→</kbd> Seek</div>
-        </div>
-    </div>
-
-    <footer class="player-footer text-center">
-        <a href="https://t.me/+xdQNNePetGxjYjI1" target="_blank" class="telegram-btn inline-flex items-center justify-center w-full max-w-sm mx-auto px-6 py-3.5 rounded-lg font-bold text-black hover:text-white">
-            <i class="fab fa-telegram-plane mr-3 text-lg"></i> Join Telegram Channel
-        </a>
-    </footer>
     
-    <div id="telegram-popup" class="popup-overlay">
-        <div class="popup-card">
-            <div class="text-6xl mb-4 text-sky-400"><i class="fab fa-telegram"></i></div>
-            <h3 class="text-2xl font-bold text-white mb-2">Never Miss a Match!</h3>
-            <p class="text-slate-400 mb-6">
-                Join our Telegram channel for live updates and instant stream links.
-            </p>
-            <div class="flex flex-col gap-3">
-                <a href="https://t.me/+xdQNNePetGxjYjI1" target="_blank" id="popup-join-btn" class="popup-join-btn w-full text-center px-6 py-3 rounded-lg font-semibold text-white transition-transform transform hover:scale-105">
-                    <i class="fas fa-rocket mr-2"></i>Join Now
-                </a>
-                <button id="popup-close-btn" class="w-full text-center px-6 py-3 rounded-lg font-semibold text-slate-300 bg-slate-700 hover:bg-slate-600 transition-colors">
-                    Maybe Later
-                </button>
-            </div>
+    <div id="telegram-popup" class="popup-overlay fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+        <div class="popup-card w-full max-w-md rounded-2xl border border-slate-700 bg-slate-900/80 shadow-2xl shadow-sky-500/10">
+            <div class="p-8 text-center">
+                <div class="text-5xl mb-4 text-sky-400"><i class="fab fa-telegram-plane"></i></div>
+                <h3 class="text-2xl font-bold text-white mb-2">Join Our Community</h3>
+                <p class="text-slate-400 mb-6">
+                    Get instant match links, updates, and clips directly on Telegram.
+                </p>
+                <div class="flex flex-col gap-3">
+                    <a href="https://t.me/+xdQNNePetGxjYjI1" target="_blank" id="join-btn" class="w-full text-center px-6 py-3 rounded-lg font-semibold text-black bg-sky-400 hover:bg-sky-300 transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-rocket mr-2"></i>Join Now
+                    </a>
+                    <button id="close-popup-btn" class="w-full text-center px-6 py-3 rounded-lg font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 transition-colors duration-300">
+                        Already Joined
+                    </button>
+                </div>
+            </div
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+
     <script>
+        const spotlightContainer = document.getElementById('spotlight-container');
+        const gridContainer = document.getElementById('matches-grid');
         const DATA_URL = 'https://raw.githubusercontent.com/Jitendra-unatti/fancode/refs/heads/main/data/fancode.json';
-        const playerElement = document.getElementById('player');
-        const shareLinksBtn = document.getElementById('share-links-btn');
-        const matchTitleElem = document.getElementById('match-title');
+        const PLAY_BASE = 'player.html';
 
         // Format language names for better display
         function formatLanguage(lang) {
@@ -456,52 +542,291 @@
             return languageMap[lang.toUpperCase()] || `🌐 ${lang.charAt(0) + lang.slice(1).toLowerCase()}`;
         }
 
-        async function getStreamAndMatchDetails(id, cdnKey) {
-            try {
-                const res = await fetch(DATA_URL);
-                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                const data = await res.json();
-                
-                const match = data.matches.find(m => String(m.match_id) === String(id));
-                if (!match) throw new Error("Match not found for ID: " + id);
+        // Get score display for live matches
+        function getScoreDisplay(match) {
+            if (!match.teams || match.teams.length < 2) return '';
+            
+            const team1 = match.teams[0];
+            const team2 = match.teams[1];
+            
+            let score1 = '';
+            let score2 = '';
+            
+            if (team1.cricketScore && team1.cricketScore.length > 0) {
+                const s = team1.cricketScore[0];
+                score1 = `${s.runs}/${s.wickets}`;
+            }
+            
+            if (team2.cricketScore && team2.cricketScore.length > 0) {
+                const s = team2.cricketScore[0];
+                score2 = `${s.runs}/${s.wickets}`;
+            }
+            
+            if (score1 || score2) {
+                return `<div class="score-display text-xs mb-2">
+                    <div class="flex justify-between items-center">
+                        <span>${team1.shortName}: ${score1 || 'Yet to bat'}</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-1">
+                        <span>${team2.shortName}: ${score2 || 'Yet to bat'}</span>
+                    </div>
+                </div>`;
+            }
+            return '';
+        }
 
-                const streamingCdn = { ...match.STREAMING_CDN };
-                delete streamingCdn.Primary_Playback_URL;
-
-                const sources = {
-                    adfree_stream: match.adfree_stream,
-                    dai_stream: match.dai_stream,
-                    ...streamingCdn
-                };
-
-                const streamUrl = sources[cdnKey];
-                if (streamUrl && streamUrl !== "Unavailable") {
-                    return { streamUrl, match };
-                } else {
-                    throw new Error(`Stream for '${cdnKey}' is unavailable.`);
-                }
-            } catch (err) {
-                console.error("Error fetching stream data:", err);
-                return { streamUrl: null, match: null };
+        // Create particle background
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
             }
         }
 
-        function displayError(message) {
-            document.body.innerHTML = `
-                <div class="error-message">
-                    <h2 class="text-2xl font-bold text-red-500 mb-4">Stream Error</h2>
-                    <p class="text-slate-400">${message}</p>
-                    <a href="index.html" class="mt-6 px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors">
-                        Go Back Home
-                    </a>
-                </div>`;
+        // Update countdown timers
+        function updateCountdowns() {
+            const countdowns = document.querySelectorAll('.countdown');
+            countdowns.forEach(countdown => {
+                const timeStr = countdown.dataset.time;
+                if (!timeStr) return;
+                
+                const matchTime = new Date(timeStr);
+                const now = new Date();
+                const diff = matchTime - now;
+                
+                if (diff <= 0) {
+                    countdown.innerHTML = '<i class="fas fa-play-circle mr-1"></i>Starting soon';
+                    return;
+                }
+                
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                if (hours > 24) {
+                    const days = Math.floor(hours / 24);
+                    countdown.innerHTML = `<i class="fas fa-clock mr-1"></i>Starts in ${days}d ${hours % 24}h`;
+                } else {
+                    countdown.innerHTML = `<i class="fas fa-clock mr-1"></i>Starts in ${hours}h ${minutes}m`;
+                }
+            });
+        }
+
+        // Show toast notification
+        function showToast(message, duration = 3000) {
+            const existingToast = document.querySelector('.toast');
+            if (existingToast) existingToast.remove();
+            
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-info-circle text-sky-400 text-xl"></i>
+                    <span class="text-slate-200">${message}</span>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 400);
+            }, duration);
+        }
+
+        // Search and filter functionality
+        let allMatches = [];
+        let currentFilter = 'all';
+
+        function filterMatches(searchTerm = '', filter = 'all') {
+            const grid = document.getElementById('matches-grid');
+            const noResults = document.getElementById('no-results');
+            
+            let filtered = allMatches.filter(match => {
+                const matchText = `${match.title} ${match.tournament} ${match.category}`.toLowerCase();
+                const matchesSearch = matchText.includes(searchTerm.toLowerCase());
+                
+                if (filter === 'all') return matchesSearch;
+                if (filter === 'live') return matchesSearch && match.status?.toUpperCase() === 'LIVE';
+                if (filter === 'upcoming') return matchesSearch && match.status?.toUpperCase() !== 'LIVE';
+                if (filter === 'cricket') return matchesSearch && match.category?.toLowerCase() === 'cricket';
+                
+                return matchesSearch;
+            });
+            
+            grid.innerHTML = '';
+            
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                filtered.forEach((match, index) => {
+                    const card = createMatchCard(match);
+                    card.style.animationDelay = `${index * 50}ms`;
+                    grid.appendChild(card);
+                });
+                initInteractiveEffects();
+                updateCountdowns();
+            }
+        }
+
+        async function fetchAndRender() {
+            try {
+                const res = await fetch(DATA_URL);
+                const data = await res.json();
+                let matches = Array.isArray(data.matches) ? data.matches : [];
+
+                matches.sort((a, b) => {
+                    const aIsLive = a.status?.toUpperCase() === 'LIVE';
+                    const bIsLive = b.status?.toUpperCase() === 'LIVE';
+                    return bIsLive - aIsLive;
+                });
+
+                // Update stats
+                const liveCount = matches.filter(m => m.status?.toUpperCase() === 'LIVE').length;
+                const upcomingCount = matches.filter(m => m.status?.toUpperCase() !== 'LIVE').length;
+                
+                document.getElementById('live-count').textContent = liveCount;
+                document.getElementById('total-count').textContent = matches.length;
+                document.getElementById('upcoming-count').textContent = upcomingCount;
+
+                gridContainer.innerHTML = '';
+
+                const firstLiveMatch = matches.find(m => m.status?.toUpperCase() === 'LIVE');
+                if (firstLiveMatch) {
+                    renderSpotlight(firstLiveMatch);
+                    matches = matches.filter(m => m.match_id !== firstLiveMatch.match_id);
+                }
+
+                allMatches = matches;
+                filterMatches('', currentFilter);
+                
+                if (liveCount > 0) {
+                    showToast(`🔴 ${liveCount} match${liveCount > 1 ? 'es' : ''} live now!`);
+                }
+
+            } catch (error) {
+                console.error("Failed to load match data:", error);
+                gridContainer.innerHTML = `<p class="col-span-full text-center text-red-400">Could not load matches. Please check your connection and try again.</p>`;
+            }
+        }
+
+        function renderSpotlight(match) {
+            const imgSrc = match.image || 'https://fancode.com/skillup-uploads/cms-media/Cricket_Fallback_Old_match-card.jpg';
+            const buttonsHTML = generateButtons(match, 'text-sm px-5 py-2.5 rounded-lg');
+
+            spotlightContainer.innerHTML = `
+                <div class="spotlight-card rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-center gap-8 p-6 md:p-8">
+                    <div class="relative rounded-lg overflow-hidden aspect-video">
+                        <img src="${imgSrc}" alt="${match.title}" class="w-full h-full object-cover object-top">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="spotlight-live-badge absolute top-4 left-4 text-xs font-bold px-3 py-1.5 rounded-full text-white shadow-lg">
+                            <i class="fas fa-circle text-xs mr-1.5 animate-ping absolute opacity-75"></i>
+                            <i class="fas fa-circle text-xs mr-1.5"></i>
+                            LIVE NOW
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <p class="text-amber-400 font-semibold text-sm mb-2 uppercase tracking-wide">${match.tournament || ''}</p>
+                        <h2 class="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">${match.title || 'Live Match'}</h2>
+                        ${match.language ? `<div class="mb-4"><span class="language-badge"><i class="fas fa-globe"></i>${formatLanguage(match.language)}</span></div>` : ''}
+                        <div class="flex flex-wrap gap-3">${buttonsHTML}</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function createMatchCard(match) {
+            const card = document.createElement('div');
+            card.className = 'match-card rounded-xl overflow-hidden flex flex-col';
+            
+            const isLive = match.status?.toUpperCase() === 'LIVE';
+            const imgSrc = match.image || 'https://fancode.com/skillup-uploads/cms-media/Cricket_Fallback_Old_match-card.jpg';
+            const buttonsHTML = generateButtons(match, 'text-xs px-3 py-2 rounded-md');
+
+            card.innerHTML = `
+                <div class="relative">
+                    <div class="card-glow"></div>
+                    <img src="${imgSrc}" alt="${match.title}" class="w-full h-48 object-cover">
+                    ${isLive ? `<span class="absolute top-3 left-3 bg-red-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md">LIVE</span>` : ''}
+                </div>
+                <div class="p-5 flex flex-col flex-grow">
+                    <p class="text-amber-400 text-xs font-bold mb-2 uppercase tracking-wider">${match.tournament || ''}</p>
+                    <h3 class="text-lg font-bold text-slate-100 mb-2 leading-snug">${match.title || 'Match Title'}</h3>
+                    ${match.language ? `<div class="mb-2"><span class="language-badge"><i class="fas fa-globe"></i>${formatLanguage(match.language)}</span></div>` : ''}
+                    ${isLive && match.teams ? getScoreDisplay(match) : ''}
+                    ${!isLive && match.startTime ? `<div class="countdown mb-2" data-time="${match.startTime}"><i class="fas fa-clock mr-1"></i>Loading...</div>` : ''}
+                    <div class="flex flex-wrap gap-2 mt-auto">${buttonsHTML || '<p class="text-xs text-slate-500">Links coming soon...</p>'}</div>
+                </div>
+            `;
+            return card;
+        }
+
+        function generateButtons(match, classes) {
+            const streams = {
+                ...match.STREAMING_CDN,
+                adfree_stream: match.adfree_stream,
+                dai_stream: match.dai_stream
+            };
+            
+            let buttons = '';
+            const id = encodeURIComponent(String(match.match_id ?? ''));
+
+            for (const [key, value] of Object.entries(streams)) {
+                // MODIFICATION: Added a check to skip 'Primary_Playback_URL'
+                if (value && value !== "Unavailable" && key.toLowerCase() !== 'language' && key !== 'Primary_Playback_URL') {
+                    let label = key.replace(/_/g, ' ').replace(/(cdn|stream)/i, '').trim();
+                    
+                    // Better label formatting
+                    if (key === 'adfree_stream') label = '🎯 Ad-Free';
+                    else if (key === 'dai_stream') label = '📺 DAI Stream';
+                    else if (key.includes('fancode')) label = '⚡ FanCode';
+                    else if (key.includes('google')) label = '🔴 Google CDN';
+                    else if (key.includes('cloudfront')) label = '☁️ CloudFront';
+                    else if (key.includes('sony')) label = '📡 Sony';
+                    else label = label.toUpperCase() || 'WATCH';
+                    
+                    const href = `${PLAY_BASE}?id=${id}&cdn=${encodeURIComponent(key)}`;
+                    buttons += `<a href="${href}" class="watch-btn text-center text-black font-semibold ${classes}">${label}</a>`;
+                }
+            }
+            return buttons || '<p class="text-slate-400 text-sm">Stream links will appear when available</p>';
+        }
+
+        function initInteractiveEffects() {
+            const cards = document.querySelectorAll('.match-card');
+            cards.forEach(card => {
+                const glow = card.querySelector('.card-glow');
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const rotateX = (y - rect.height / 2) / -15;
+                    const rotateY = (x - rect.width / 2) / 15;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    
+                    glow.style.setProperty('--x', `${x}px`);
+                    glow.style.setProperty('--y', `${y}px`);
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
+            });
         }
         
         function handlePopup() {
             const popup = document.getElementById('telegram-popup');
-            const closeBtn = document.getElementById('popup-close-btn');
-            const joinBtn = document.getElementById('popup-join-btn');
-            const POPUP_KEY = 'playerTelegramPopupDismissed';
+            const closeBtn = document.getElementById('close-popup-btn');
+            const joinBtn = document.getElementById('join-btn');
+            const POPUP_KEY = 'telegramPopupDismissed';
 
             if (localStorage.getItem(POPUP_KEY)) {
                 return;
@@ -509,7 +834,7 @@
 
             setTimeout(() => {
                 popup.classList.add('show');
-            }, 5000);
+            }, 3000);
 
             function dismissPopup() {
                 popup.classList.remove('show');
@@ -518,188 +843,51 @@
 
             closeBtn.addEventListener('click', dismissPopup);
             joinBtn.addEventListener('click', () => {
-                setTimeout(dismissPopup, 300);
+                setTimeout(dismissPopup, 500); 
             });
         }
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const id = urlParams.get("id");
-            const cdn = urlParams.get("cdn");
-
-            if (!id || !cdn) {
-                displayError("Missing match ID or CDN information in the URL.");
-                return;
-            }
-
-            const { streamUrl, match } = await getStreamAndMatchDetails(id, cdn);
-
-            if (!streamUrl) {
-                displayError(`Sorry, this stream could not be loaded. It might be offline or unavailable.`);
-                return;
-            }
-
-            if (match) {
-                matchTitleElem.textContent = match.title || 'Live Match';
-                document.title = `${match.title || 'Live Match'} | FanCode Player`;
-                
-                // Display language if available
-                const languageContainer = document.getElementById('language-container');
-                const languageElem = document.getElementById('match-language');
-                if (match.language) {
-                    languageElem.textContent = formatLanguage(match.language);
-                    languageContainer.classList.remove('hidden');
-                }
-            }
-
-            shareLinksBtn.addEventListener('click', async () => {
-                const shareData = {
-                    title: `Watch: ${match?.title || 'Live Stream'}`,
-                    text: `Watch "${match?.title || 'Live Stream'}" live!`,
-                    url: window.location.href
-                };
-                try {
-                    if (navigator.share) {
-                        await navigator.share(shareData);
-                    } else {
-                        await navigator.clipboard.writeText(window.location.href);
-                        alert('Link copied to clipboard!');
-                    }
-                } catch (err) {
-                    console.error('Share failed:', err);
-                    alert('Could not share. Please copy the link manually.');
-                }
-            });
-
-            try {
-                const loadingOverlay = document.getElementById('loading-overlay');
-                
-                if (streamUrl.includes('.m3u8') && Hls.isSupported()) {
-                    const hls = new Hls();
-                    hls.loadSource(streamUrl);
-                    hls.attachMedia(playerElement);
-                    
-                    hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                        loadingOverlay.classList.add('hidden');
-                        
-                        const availableQualities = hls.levels.map((l) => l.height);
-                        const uniqueQualities = [...new Set(availableQualities)].sort((a, b) => b - a);
-
-                        const player = new Plyr(playerElement, {
-                            autoplay: true,
-                            quality: {
-                                default: uniqueQualities[0] || 720,
-                                options: uniqueQualities,
-                                forced: true,
-                                onChange: (newQuality) => {
-                                    hls.currentLevel = hls.levels.findIndex((level) => level.height === newQuality);
-                                },
-                            },
-                            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'],
-                        });
-
-                        player.play().catch(e => console.warn("Autoplay was blocked.", e));
-                        setupPlayerControls(player);
-                    });
-                } else {
-                    loadingOverlay.classList.add('hidden');
-                    playerElement.src = streamUrl;
-                    const player = new Plyr(playerElement, { 
-                        autoplay: true,
-                        controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen']
-                    });
-                    player.play().catch(e => console.warn("Autoplay was blocked.", e));
-                    setupPlayerControls(player);
-                }
-            } catch (error) {
-                console.error("Player initialization error:", error);
-                displayError("A player error occurred. Please try another stream.");
-            }
-            
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            fetchAndRender();
             handlePopup();
-            setupUIControls();
+            
+            // Search functionality
+            const searchInput = document.getElementById('search-input');
+            const clearSearch = document.getElementById('clear-search');
+            
+            searchInput.addEventListener('input', (e) => {
+                const value = e.target.value;
+                clearSearch.classList.toggle('hidden', !value);
+                filterMatches(value, currentFilter);
+            });
+            
+            clearSearch.addEventListener('click', () => {
+                searchInput.value = '';
+                clearSearch.classList.add('hidden');
+                filterMatches('', currentFilter);
+            });
+            
+            // Filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    filterMatches(searchInput.value, currentFilter);
+                });
+            });
+            
+            // Update countdowns every minute
+            setInterval(updateCountdowns, 60000);
         });
 
-        // Setup player controls
-        function setupPlayerControls(player) {
-            // Keyboard shortcuts
-            document.addEventListener('keydown', (e) => {
-                if (e.target.tagName === 'INPUT') return;
-                
-                switch(e.key.toLowerCase()) {
-                    case 't':
-                        toggleTheaterMode();
-                        break;
-                    case 'p':
-                        if (document.pictureInPictureEnabled) {
-                            if (document.pictureInPictureElement) {
-                                document.exitPictureInPicture();
-                            } else {
-                                playerElement.requestPictureInPicture();
-                            }
-                        }
-                        break;
-                }
-            });
-        }
-
-        // Setup UI controls
-        function setupUIControls() {
-            const theaterBtn = document.getElementById('theater-mode-btn');
-            const pipBtn = document.getElementById('pip-btn');
-            const shortcutsBtn = document.getElementById('shortcuts-btn');
-            const shortcutsHint = document.getElementById('shortcuts-hint');
-
-            // Theater mode
-            theaterBtn.addEventListener('click', toggleTheaterMode);
-
-            // Picture-in-Picture
-            pipBtn.addEventListener('click', async () => {
-                try {
-                    if (document.pictureInPictureEnabled) {
-                        if (document.pictureInPictureElement) {
-                            await document.exitPictureInPicture();
-                        } else {
-                            await playerElement.requestPictureInPicture();
-                        }
-                    }
-                } catch (error) {
-                    console.error('PiP error:', error);
-                }
-            });
-
-            // Shortcuts hint toggle
-            let shortcutsVisible = false;
-            shortcutsBtn.addEventListener('click', () => {
-                shortcutsVisible = !shortcutsVisible;
-                shortcutsHint.classList.toggle('show', shortcutsVisible);
-                shortcutsBtn.classList.toggle('active', shortcutsVisible);
-            });
-
-            // Hide shortcuts when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!shortcutsBtn.contains(e.target) && !shortcutsHint.contains(e.target)) {
-                    shortcutsVisible = false;
-                    shortcutsHint.classList.remove('show');
-                    shortcutsBtn.classList.remove('active');
-                }
-            });
-        }
-
-        // Toggle theater mode
-        function toggleTheaterMode() {
-            document.body.classList.toggle('theater-mode');
-            const btn = document.getElementById('theater-mode-btn');
-            const icon = btn.querySelector('i');
-            
-            if (document.body.classList.contains('theater-mode')) {
-                icon.className = 'fas fa-compress';
-                btn.classList.add('active');
-            } else {
-                icon.className = 'fas fa-expand';
-                btn.classList.remove('active');
-            }
-        }
+        // Auto-refresh every 2 minutes
+        setInterval(() => {
+            fetchAndRender();
+        }, 120000);
+  
     </script>
 </body>
+
 </html>
