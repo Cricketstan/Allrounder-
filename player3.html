@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DILLZY</title>
+
+  <!-- Bitmovin Player Core and UI CSS -->
+  <link rel="stylesheet" href="https://cdn.bitmovin.com/player/web/8.156.0/bitmovinplayer-ui.css" />
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    #player {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .bmpui-ui-watermark {
+      display: none !important; /* Hide Bitmovin watermark */
+    }
+  </style>
+</head>
+<body>
+  <div id="player"></div>
+
+  <!-- Bitmovin Player JS + UI -->
+  <script src="https://cdn.bitmovin.com/player/web/8.156.0/bitmovinplayer.js?v=22"></script>
+  <script src="https://cdn.bitmovin.com/player/web/8.156.0/bitmovinplayer-ui.js?v=22"></script>
+
+  <script>
+    // Function to get ?url= parameter from page URL
+    function getStreamURL() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('url');
+    }
+
+    const streamUrl = getStreamURL();
+
+    if (!streamUrl) {
+      document.body.innerHTML = '<h2 style="color:white;text-align:center;margin-top:20%;">❌ No stream URL provided.<br>Use ?url=your_m3u8_link</h2>';
+      throw new Error('No M3U8 URL found in query string');
+    }
+
+    const playerContainer = document.getElementById('player');
+
+    const playerConfig = {
+      key: '', // Optional Bitmovin license key
+      playback: {
+        autoplay: true,
+        muted: false
+      }
+    };
+
+    // Create Bitmovin player
+    const player = new bitmovin.player.Player(playerContainer, playerConfig);
+
+    // Enable Bitmovin UI (adds progress bar & controls)
+    const uiManager = bitmovin.playerui.UIFactory.buildDefaultUI(player);
+
+    // Load dynamic stream
+    player.load({
+      hls: streamUrl,
+      title: 'Allrounder Bitmovin Player',
+      poster: 'https://bitmovin.com/wp-content/uploads/2016/06/sintel-poster.jpg'
+    }).then(() => {
+      console.log('✅ Stream loaded:', streamUrl);
+    }).catch((error) => {
+      console.error('❌ Error loading stream:', error);
+    });
+  </script>
+</body>
+</html>
