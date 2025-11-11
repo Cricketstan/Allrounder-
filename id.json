@@ -82,7 +82,7 @@
     },
     {
       "id": "eng",
-      "name": "Star Sports 1",
+      "name": "Star Sports Select",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Channel-14/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=eng",
