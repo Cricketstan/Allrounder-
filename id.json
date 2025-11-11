@@ -92,7 +92,7 @@
       "id": "fox-hd",
       "name": "Fox Cricket",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://cdn-media-content.onestream.studio/content/hls/live/event_21697439_6d8atnq43/hls.m3u8",
+      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://cdn-media-content.onestream.studio/content/hls/live/event_21697439_6d8atnq43/hls.m3u8",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=fox-hd",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=fox-hd"
     },
@@ -100,7 +100,7 @@
       "id": "astro",
       "name": "Astro",
       "type": "iframe",
-      "iframeSrc": "https://portal-to-m3u-07.iptv07india.workers.dev/play.m3u8?id=844",
+      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://smart.bengaldigital.live/AstroCricket/index.m3u8",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=astro",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=astro"
     },
