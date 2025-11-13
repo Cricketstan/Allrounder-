@@ -41,12 +41,12 @@
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=prime-eng"
     },
     {
-      "id": "fox-hindi",
-      "name": "Fox Hindi",
+      "id": "sky-sports-nz",
+      "name": "Sky Nz",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://cricketstan.github.io/Jaka/index.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=fox-hindi",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=fox-hindi"
+      "iframeSrc": "https://cricketstan.github.io/Sky-sports-nz-/",
+      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sky-sports-nz",
+      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sky-sports-nz"
     },
     {
       "id": "willow-sports",
