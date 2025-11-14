@@ -114,12 +114,12 @@
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=jio-hotstar"
     },
     {
-      "id": "cwc",
-      "name": "cwc",
+      "id": "sky-nz-1",
+      "name": "SKY NZ",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/cwc/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=cwc",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=cwc"
+      "iframeSrc": "https://cricketstan.github.io/sky-sports-nz-1/",
+      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sky-nz-1",
+      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sky-nz-1"
     },
     {
       "id": "tnt-1",
