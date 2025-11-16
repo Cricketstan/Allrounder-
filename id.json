@@ -101,7 +101,7 @@
       "id": "astro",
       "name": "Astro",
       "type": "iframe",
-      "iframeSrc": "https://astro-3uk3.onrender.com/",
+      "iframeSrc": "https://cricketstan.github.io/astro/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=astro",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=astro"
     },
