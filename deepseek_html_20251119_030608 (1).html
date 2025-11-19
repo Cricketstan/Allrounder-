@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DILLZY - Premium AI Image Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    :root {
+        --primary: #00b7ff;
+        --primary-glow: #00b7ff;
+        --surface: #000;
+        --card: #0d0d0d;
+        --card-border: rgba(0, 183, 255, 0.2);
+        --text: #ffffff;
+        --text-light: #8b8b8b;
+        --radius: 16px;
+        --shadow: 0 0 25px rgba(0, 200, 255, 0.1);
+        --gradient: linear-gradient(135deg, #00b7ff 0%, #0062ff 100%);
+        --gradient-hover: linear-gradient(135deg, #00c3ff 0%, #006eff 100%);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: var(--surface);
+        font-family: 'Poppins', sans-serif;
+        color: var(--text);
+        padding: 30px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(0, 183, 255, 0.05) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(0, 183, 255, 0.05) 0%, transparent 20%);
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+            radial-gradient(circle at 20% 30%, rgba(0, 183, 255, 0.03) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(0, 183, 255, 0.03) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .floating-particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--primary);
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 0.3;
+        }
+        50% {
+            opacity: 0.6;
+        }
+        100% {
+            transform: translateY(-100vh) translateX(100px);
+            opacity: 0;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 52px;
+        font-weight: 800;
+        margin-bottom: 5px;
+        background: linear-gradient(to right, #00b7ff, #0062ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(0, 200, 255, 0.4);
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    h1::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: var(--gradient);
+        border-radius: 3px;
+    }
+
+    .tagline {
+        text-align: center;
+        color: var(--text-light);
+        margin-bottom: 30px;
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: var(--card);
+        padding: 30px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--card-border);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--gradient);
+    }
+
+    .card:hover {
+        box-shadow: 0 0 35px rgba(0, 200, 255, 0.2);
+        transform: translateY(-5px);
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .input-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--text-light);
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 18px;
+        border: 1px solid #222;
+        border-radius: var(--radius);
+        background: #111;
+        color: var(--text);
+        font-size: 16px;
+        transition: all 0.3s ease;
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .input-field:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(0, 183, 255, 0.2);
+    }
+
+    .input-field::placeholder {
+        color: #555;
+    }
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Custom Selector Styles */
+    .custom-selector {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .selector-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        border: 1px solid #222;
+        border-radius: var(--radius);
+        background: #111;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .selector-header:hover {
+        border-color: #333;
+    }
+
+    .selector-header.active {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 2px rgba(0, 183, 255, 0.2);
+    }
+
+    .selector-options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #111;
+        border: 1px solid #222;
+        border-top: none;
+        border-radius: 0 0 var(--radius) var(--radius);
+        z-index: 10;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .selector-options.active {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .selector-option {
+        padding: 14px 16px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border-bottom: 1px solid #222;
+    }
+
+    .selector-option:last-child {
+        border-bottom: none;
+    }
+
+    .selector-option:hover {
+        background: rgba(0, 183, 255, 0.1);
+    }
+
+    .selector-option.selected {
+        background: rgba(0, 183, 255, 0.2);
+        color: var(--primary);
+    }
+
+    .btn {
+        width: 100%;
+        padding: 18px;
+        margin-top: 10px;
+        border-radius: var(--radius);
+        background: var(--gradient);
+        color: white;
+        font-weight: 700;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .btn:hover {
+        background: var(--gradient-hover);
+        box-shadow: 0 0 30px rgba(0, 200, 255, 0.6);
+        transform: translateY(-2px);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    .btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: 0.5s;
+    }
+
+    .btn:hover::after {
+        left: 100%;
+    }
+
+    .generated-image-container {
+        width: 100%;
+        margin-top: 25px;
+        border-radius: var(--radius);
+        overflow: hidden;
+        position: relative;
+        display: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .generated-image {
+        width: 100%;
+        display: block;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-actions {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .generated-image-container:hover .image-actions {
+        opacity: 1;
+    }
+
+    .action-btn {
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .action-btn:hover {
+        background: var(--primary);
+        transform: scale(1.1);
+    }
+
+    /* 🔥 PREMIUM LOADING SPINNER */
+    .spinner-container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 30px 0;
+    }
+
+    .premium-spinner {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .spinner-ring {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top: 3px solid var(--primary);
+        animation: spin 1.5s linear infinite;
+    }
+
+    .spinner-ring:nth-child(2) {
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+        border-top-color: #00e5ff;
+        animation: spin 1.2s linear infinite reverse;
+    }
+
+    .spinner-ring:nth-child(3) {
+        width: 60%;
+        height: 60%;
+        top: 20%;
+        left: 20%;
+        border-top-color: #0099ff;
+        animation: spin 0.9s linear infinite;
+    }
+
+    .spinner-center {
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        top: 30%;
+        left: 30%;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(0, 183, 255, 0.7);
+    }
+
+    .spinner-center i {
+        color: white;
+        font-size: 18px;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.7; }
+        50% { opacity: 1; }
+        100% { opacity: 0.7; }
+    }
+
+    .loading-text {
+        margin-top: 10px;
+        color: var(--text-light);
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .dots {
+        display: inline-block;
+        width: 20px;
+        text-align: left;
+    }
+
+    .dot {
+        opacity: 0;
+        animation: dot-animation 1.5s infinite;
+    }
+
+    .dot:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .dot:nth-child(3) {
+        animation-delay: 1s;
+    }
+
+    @keyframes dot-animation {
+        0% { opacity: 0; }
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+
+    /* History Section */
+    .history {
+        margin-top: 50px;
+        width: 100%;
+    }
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+        font-weight: 700;
+        background: linear-gradient(to right, #00b7ff, #0062ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .clear-history {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text-light);
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .clear-history:hover {
+        background: rgba(255, 0, 0, 0.2);
+        color: #ff6b6b;
+        border-color: #ff6b6b;
+    }
+
+    .history-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .history-item {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        aspect-ratio: 1/1;
+        cursor: pointer;
+    }
+
+    .history-item:hover {
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 200, 255, 0.3);
+    }
+
+    .history-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .history-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .history-item:hover .history-overlay {
+        opacity: 1;
+    }
+
+    .history-overlay i {
+        font-size: 24px;
+        color: white;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        margin-top: 50px;
+        text-align: center;
+        padding: 25px;
+        background: var(--card);
+        border-radius: var(--radius);
+        border: 1px solid var(--card-border);
+    }
+
+    .contact-section h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        background: linear-gradient(to right, #00b7ff, #0062ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .contact-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: var(--gradient);
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 183, 255, 0.3);
+    }
+
+    .contact-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 183, 255, 0.5);
+    }
+
+    /* Toast Notification */
+    .toast {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        background: var(--card);
+        border-left: 4px solid var(--primary);
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transform: translateX(150%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .toast.show {
+        transform: translateX(0);
+    }
+
+    .toast i {
+        color: var(--primary);
+        font-size: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .options-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        h1 {
+            font-size: 42px;
+        }
+        
+        .card {
+            padding: 20px;
+        }
+        
+        .input-field {
+            min-height: 100px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 36px;
+        }
+        
+        .history-grid {
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        }
+    }
+</style>
+</head>
+
+<body>
+    <!-- Floating Particles Background -->
+    <div class="floating-particles" id="particles"></div>
+
+    <h1>DILLZY</h1>
+    <p class="tagline">AI-Powered Premium Image Generation</p>
+
+    <div class="container">
+        <div class="card">
+            <div class="input-group">
+                <label class="input-label" for="prompt">
+                    <i class="fas fa-pencil-alt"></i> PROMPT
+                </label>
+                <textarea id="prompt" class="input-field" placeholder="Describe the image you want to create in detail..."></textarea>
+            </div>
+
+            <div class="options-grid">
+                <!-- Custom Quality Selector -->
+                <div class="custom-selector" id="qualitySelector">
+                    <label class="input-label">
+                        <i class="fas fa-expand"></i> QUALITY
+                    </label>
+                    <div class="selector-header">
+                        <span class="selector-value">512px (Standard)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="selector-options">
+                        <div class="selector-option selected" data-value="512">512px (Standard)</div>
+                        <div class="selector-option" data-value="1024">1024px (High Quality)</div>
+                        <div class="selector-option" data-value="2048">2048px (Ultra HD)</div>
+                    </div>
+                </div>
+
+                <!-- Custom Ratio Selector -->
+                <div class="custom-selector" id="ratioSelector">
+                    <label class="input-label">
+                        <i class="fas fa-crop-alt"></i> ASPECT RATIO
+                    </label>
+                    <div class="selector-header">
+                        <span class="selector-value">Square (1:1)</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="selector-options">
+                        <div class="selector-option selected" data-value="1:1">Square (1:1)</div>
+                        <div class="selector-option" data-value="9:16">Portrait (9:16)</div>
+                        <div class="selector-option" data-value="16:9">Landscape (16:9)</div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="generateBtn" class="btn">
+                <i class="fas fa-magic"></i> GENERATE IMAGE
+            </button>
+
+            <!-- Premium Loading Spinner -->
+            <div id="spinnerContainer" class="spinner-container">
+                <div class="premium-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-center">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                </div>
+                <p class="loading-text">Creating your masterpiece<span class="dots"><span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span></p>
+            </div>
+
+            <!-- Image Output -->
+            <div id="generatedImageContainer" class="generated-image-container">
+                <img id="generatedImage" class="generated-image">
+                <div class="image-actions">
+                    <div class="action-btn" id="downloadBtn" title="Download">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="action-btn" id="shareBtn" title="Share">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image History Section -->
+        <div class="history">
+            <div class="section-header">
+                <h2>Generated Images</h2>
+                <button class="clear-history" id="clearHistoryBtn">
+                    <i class="fas fa-trash"></i> Clear History
+                </button>
+            </div>
+            <div id="historyGrid" class="history-grid"></div>
+        </div>
+        
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>Need Help or Have Questions?</h3>
+            <a href="https://t.me/dillzycreations" target="_blank" class="contact-btn">
+                <i class="fab fa-telegram"></i> Contact Us on Telegram
+            </a>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Image saved to history!</span>
+    </div>
+
+<script>
+    // Create floating particles
+    function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random position
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            // Random size
+            const size = Math.random() * 4 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            // Random animation delay and duration
+            particle.style.animationDelay = `${Math.random() * 15}s`;
+            particle.style.animationDuration = `${15 + Math.random() * 10}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    // Custom Selector Functionality
+    function initCustomSelectors() {
+        const selectors = document.querySelectorAll('.custom-selector');
+        
+        selectors.forEach(selector => {
+            const header = selector.querySelector('.selector-header');
+            const options = selector.querySelector('.selector-options');
+            const optionItems = selector.querySelectorAll('.selector-option');
+            
+            // Toggle dropdown
+            header.addEventListener('click', () => {
+                const isActive = options.classList.contains('active');
+                
+                // Close all other selectors
+                document.querySelectorAll('.selector-options.active').forEach(activeOptions => {
+                    if (activeOptions !== options) {
+                        activeOptions.classList.remove('active');
+                        activeOptions.parentElement.querySelector('.selector-header').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current selector
+                options.classList.toggle('active', !isActive);
+                header.classList.toggle('active', !isActive);
+            });
+            
+            // Select option
+            optionItems.forEach(option => {
+                option.addEventListener('click', () => {
+                    // Update selected option
+                    optionItems.forEach(item => item.classList.remove('selected'));
+                    option.classList.add('selected');
+                    
+                    // Update header text
+                    header.querySelector('.selector-value').textContent = option.textContent;
+                    
+                    // Close dropdown
+                    options.classList.remove('active');
+                    header.classList.remove('active');
+                });
+            });
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.custom-selector')) {
+                document.querySelectorAll('.selector-options.active').forEach(options => {
+                    options.classList.remove('active');
+                    options.parentElement.querySelector('.selector-header').classList.remove('active');
+                });
+            }
+        });
+    }
+    
+    // Get selected values from custom selectors
+    function getSelectedValues() {
+        const qualitySelector = document.getElementById('qualitySelector');
+        const ratioSelector = document.getElementById('ratioSelector');
+        
+        const quality = qualitySelector.querySelector('.selector-option.selected').getAttribute('data-value');
+        const ratio = ratioSelector.querySelector('.selector-option.selected').getAttribute('data-value');
+        
+        return { quality, ratio };
+    }
+
+    // Show toast notification
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // Generate image function
+    function generate() {
+        const prompt = encodeURIComponent(document.getElementById("prompt").value);
+        const { quality: size, ratio } = getSelectedValues();
+        const ratioParts = ratio.split(":");
+
+        if (!prompt) {
+            showToast("Please enter a prompt first!");
+            return;
+        }
+
+        let width = size;
+        let height = Math.floor(size * (ratioParts[1] / ratioParts[0]));
+
+        const url = `https://dillzy-ai-image-genrator.wasmer.app/?prompt=${prompt}&width=${width}&height=${height}`;
+
+        const img = document.getElementById("generatedImage");
+        const container = document.getElementById("generatedImageContainer");
+        const spinnerContainer = document.getElementById("spinnerContainer");
+
+        // Show loader
+        container.style.display = "none";
+        spinnerContainer.style.display = "flex";
+
+        img.onload = () => {
+            spinnerContainer.style.display = "none";
+            container.style.display = "block";
+            setTimeout(() => {
+                img.style.opacity = 1;
+            }, 100);
+            showToast("Image generated successfully!");
+        };
+
+        img.onerror = () => {
+            spinnerContainer.style.display = "none";
+            showToast("Failed to generate image. Please try again.");
+        };
+
+        img.src = url;
+
+        saveToHistory(url);
+    }
+
+    // Save to history
+    function saveToHistory(url) {
+        let history = JSON.parse(localStorage.getItem("dillzy_images")) || [];
+
+        // Avoid duplicates
+        if (!history.includes(url)) {
+            history.unshift(url);
+            history = history.slice(0, 20); 
+            localStorage.setItem("dillzy_images", JSON.stringify(history));
+            loadHistory();
+        }
+    }
+
+    // Load history
+    function loadHistory() {
+        let history = JSON.parse(localStorage.getItem("dillzy_images")) || [];
+        let grid = document.getElementById("historyGrid");
+
+        grid.innerHTML = "";
+
+        if (history.length === 0) {
+            grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: var(--text-light); padding: 40px;">No images generated yet. Create your first masterpiece!</p>';
+            return;
+        }
+
+        history.forEach(src => {
+            let item = document.createElement("div");
+            item.className = "history-item";
+            
+            let img = document.createElement("img");
+            img.src = src;
+            img.alt = "Generated image";
+            
+            let overlay = document.createElement("div");
+            overlay.className = "history-overlay";
+            overlay.innerHTML = '<i class="fas fa-expand"></i>';
+            
+            item.appendChild(img);
+            item.appendChild(overlay);
+            
+            item.onclick = () => {
+                // Open image in new tab
+                window.open(src, "_blank");
+            };
+            
+            grid.appendChild(item);
+        });
+    }
+
+    // Clear history
+    function clearHistory() {
+        if (confirm("Are you sure you want to clear your image history?")) {
+            localStorage.removeItem("dillzy_images");
+            loadHistory();
+            showToast("History cleared successfully!");
+        }
+    }
+
+    // Download image
+    function downloadImage() {
+        const img = document.getElementById("generatedImage");
+        const url = img.src;
+        
+        if (!url || url.includes('data:')) {
+            showToast("No image to download!");
+            return;
+        }
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'dillzy-generated-image.jpg';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        showToast("Image downloaded!");
+    }
+
+    // Share image
+    function shareImage() {
+        const img = document.getElementById("generatedImage");
+        const url = img.src;
+        
+        if (!url || url.includes('data:')) {
+            showToast("No image to share!");
+            return;
+        }
+        
+        if (navigator.share) {
+            navigator.share({
+                title: 'DILLZY AI Generated Image',
+                text: 'Check out this image I created with DILLZY AI!',
+                url: url,
+            })
+            .then(() => showToast("Image shared successfully!"))
+            .catch(() => showToast("Sharing cancelled"));
+        } else {
+            // Fallback: copy to clipboard
+            navigator.clipboard.writeText(url)
+                .then(() => showToast("Image URL copied to clipboard!"))
+                .catch(() => showToast("Failed to copy URL"));
+        }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+        createParticles();
+        initCustomSelectors();
+        loadHistory();
+        
+        // Event listeners
+        document.getElementById('generateBtn').addEventListener('click', generate);
+        document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
+        document.getElementById('downloadBtn').addEventListener('click', downloadImage);
+        document.getElementById('shareBtn').addEventListener('click', shareImage);
+        
+        // Allow Enter key to generate (but not in textarea)
+        document.getElementById('prompt').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                generate();
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
