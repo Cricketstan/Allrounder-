@@ -68,10 +68,17 @@
       "id": "fox",
       "name": "Fox Cricket 501",
       "type": "iframe",
-      "iframeSrc": "https://fox-cricket.vercel.app/"
-      ,
+      "iframeSrc": "https://fox-cricket.vercel.app/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=fox",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=fox"
+    },
+    {
+      "id": "channel-7",
+      "name": "7 plus Cricket",
+      "type": "iframe",
+      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://iplislive.pages.dev/7.m3u8",
+      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=channel-7",
+      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=channel-7"
     },
     {
       "id": "ios",
