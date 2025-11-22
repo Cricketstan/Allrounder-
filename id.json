@@ -109,7 +109,7 @@
       "id": "fox-hd",
       "name": "Fox Cricket",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://cdn-media-content.onestream.studio/content/hls/live/event_21809006_day75hfec/hls.m3u8",
+      "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=fox-hd",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=fox-hd"
     },
