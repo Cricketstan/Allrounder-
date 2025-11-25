@@ -125,7 +125,7 @@
       "id": "jio-hotstar",
       "name": "Jio Hotstar",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Jio-Hotstar-/",
+      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://allrounderlive.pages.dev/hotstar.m3u8",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=jio-hotstar",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=jio-hotstar"
     },
