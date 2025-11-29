@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Channel-13/",
+      "iframeSrc": "https://cricketstan.github.io/Star-Sports-2-Hindi/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=hindi",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=hindi"
     },
