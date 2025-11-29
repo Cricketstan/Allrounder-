@@ -173,7 +173,7 @@
       "id": "youtube",
       "name": "Youtube",
       "type": "iframe",
-      "iframeSrc": "https://dillzy.wasmer.app/?url=https://www.youtube.com/live/hM9b8P79DLA?si=UeHuP-2ruUuTlqNc",
+      "iframeSrc": "https://dillzy.wasmer.app/?url=https://www.youtube.com/live/eNxEwPcAx0A?si=c4XcxQC54WaBAm2l",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=youtube",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=youtube"
     }
