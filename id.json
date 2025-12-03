@@ -93,7 +93,7 @@
       "id": "ios",
       "name": "Appel Wale",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist.m3u8",
+      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://foxstream.pages.dev/Cricsters01.m3u8",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=ios",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=ios"
     },
