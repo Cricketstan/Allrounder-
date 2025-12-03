@@ -12,7 +12,7 @@
       "id": "tnt",
       "name": "TNT Sports",
       "type": "iframe",
-      "iframeSrc": "https://prime-sooty-six.vercel.app/",
+      "iframeSrc": "https://cricketstan.github.io/TNT-1/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=tnt",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=tnt"
     },
