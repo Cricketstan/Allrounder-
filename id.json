@@ -133,7 +133,7 @@
       "id": "sky-nz-1",
       "name": "SKY NZ",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/sky-sports-nz-1/",
+      "iframeSrc": "https://allrounderlive.pages.dev/player4?url=https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sky-nz-1",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sky-nz-1"
     },
