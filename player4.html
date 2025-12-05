@@ -652,56 +652,100 @@
     });
 
     // Controls visibility - tap to toggle
-    let timeout;
-    let controlsVisible = true;
-    
-    function showControls() {
-      controls.classList.add('active');
-      controlsVisible = true;
-      clearTimeout(timeout);
-      if (!video.paused) {
-        timeout = setTimeout(() => {
-          controls.classList.remove('active');
-          controlsVisible = false;
-        }, 3000);
-      }
-    }
-    
-    function hideControls() {
-      controls.classList.remove('active');
-      controlsVisible = false;
-      clearTimeout(timeout);
-    }
-    
-    function toggleControls() {
-      if (controlsVisible) {
-        hideControls();
-      } else {
-        showControls();
-      }
-    }
+let controlsTimeout;
+let controlsVisible = true;
 
-    videoPlayer.addEventListener('mousemove', showControls);
-    
-    // Tap/click on player area to toggle controls
-    videoPlayer.addEventListener('click', (e) => {
-      if (e.target === videoPlayer || e.target === video) {
-        toggleControls();
-      }
-    });
+function showControls() {
+  controls.classList.add('active');
+  controlsVisible = true;
+  clearTimeout(controlsTimeout);
+  if (!video.paused) {
+    controlsTimeout = setTimeout(() => {
+      hideControls();
+    }, 3000);
+  }
+}
 
-    // Video click also toggles controls
-    video.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleControls();
-    });
+function hideControls() {
+  controls.classList.remove('active');
+  controlsVisible = false;
+  clearTimeout(controlsTimeout);
+}
 
-    // Prevent controls clicks from triggering play/pause
-    controls.addEventListener('click', (e) => {
-      e.stopPropagation();
-    });
-
+function toggleControls() {
+  if (controlsVisible) {
+    hideControls();
+  } else {
     showControls();
+  }
+}
+
+// Mouse move shows controls
+videoPlayer.addEventListener('mousemove', showControls);
+
+// FIXED: Tap/click on player area to toggle controls
+videoPlayer.addEventListener('click', (e) => {
+  // Only toggle if clicking on the video player itself (not on controls or other elements)
+  if (e.target === videoPlayer || e.target === video) {
+    toggleControls();
+  }
+});
+
+// Video click also toggles controls
+video.addEventListener('click', (e) => {
+  // Don't call toggleControls() here since it's handled by videoPlayer
+  // Just ensure controls are shown/hidden properly
+  if (e.target === video) {
+    toggleControls();
+  }
+});
+
+// Prevent controls clicks from triggering play/pause or hiding controls
+controls.addEventListener('click', (e) => {
+  e.stopPropagation();
+  // When clicking on controls, ensure they stay visible
+  showControls();
+});
+
+// Also prevent settings clicks from hiding controls
+settings.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+// Hide controls when video ends
+video.addEventListener('ended', () => {
+  hideControls();
+});
+
+// Show controls initially
+showControls();
+
+// FIXED: Add touch events for mobile
+videoPlayer.addEventListener('touchstart', (e) => {
+  // Only toggle on single tap (not swipe, pinch, etc.)
+  if (e.touches.length === 1) {
+    // Prevent default to avoid scrolling
+    e.preventDefault();
+    toggleControls();
+  }
+}, { passive: false });
+    // Add this right before the closing tag
+// to handle fullscreen exit properly
+document.addEventListener('fullscreenchange', () => {
+  if (document.fullscreenElement) {
+    // Entering fullscreen - remove any preview images
+    if (currentPreviewImage) {
+      currentPreviewImage.remove();
+      currentPreviewImage = null;
+    }
+    fullscreenBtn.textContent = 'fullscreen_exit';
+  } else {
+    // Exiting fullscreen
+    fullscreenBtn.textContent = 'fullscreen';
+    // Ensure controls are visible when exiting fullscreen
+    showControls();
+  }
+});
   </script>
 </body>
 </html>
