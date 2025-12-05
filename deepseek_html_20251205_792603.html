@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HLS Video Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    .material-icons {
+      user-select: none;
+      cursor: pointer;
+    }
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video_player {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border: 4px solid #fff;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      z-index: 1;
+      animation: rotate 0.6s linear infinite;
+      display: none;
+    }
+
+    @keyframes rotate {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .main-video {
+      width: 100%;
+      height: 100%;
+      outline: none;
+      object-fit: contain;
+    }
+
+    .progressAreaTime {
+      position: absolute;
+      left: calc(var(--x) + 11px);
+      transform: translateX(-50%);
+      bottom: 50px;
+      min-width: 60px;
+      text-align: center;
+      padding: 5px 10px;
+      color: #fff;
+      font-size: 14px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 3px;
+      z-index: 1;
+      display: none;
+    }
+
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 10px;
+      right: 10px;
+      width: calc(100% - 20px);
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 3;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      padding: 0 10px;
+      border-radius: 8px;
+    }
+
+    .controls.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .progress-area {
+      width: 100%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .bufferedBar {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .progress-bar {
+      position: relative;
+      width: 0%;
+      background: #ff0000;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .progress-bar::before {
+      content: "";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      right: -7px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #ff0000;
+    }
+
+    .controls-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 46px;
+    }
+
+    .controls-left,
+    .controls-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon {
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon .material-icons {
+      font-size: 26px;
+      color: #fff;
+    }
+
+    .timer {
+      color: #fff;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .volume_range {
+      appearance: none;
+      width: 0;
+      height: 3px;
+      background: #fff;
+      cursor: pointer;
+      outline: none;
+      transition: width 0.4s;
+    }
+
+    .volume_range::-webkit-slider-thumb {
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .icon:hover .volume_range {
+      width: 60px;
+    }
+
+    .icon:hover .volume_range::-webkit-slider-thumb {
+      opacity: 1;
+    }
+
+    .settingsBtn.active {
+      transform: rotate(45deg);
+    }
+
+    .settings {
+      position: absolute;
+      right: 25px;
+      bottom: 62px;
+      background: rgba(28, 28, 28, 0.95);
+      width: 200px;
+      max-height: 250px;
+      color: #fff;
+      overflow-y: auto;
+      z-index: 20;
+      display: none;
+      border-radius: 5px;
+    }
+
+    .settings.active {
+      display: block;
+    }
+
+    .settings > div > span {
+      font-size: 14px;
+      padding: 15px 20px;
+      border-bottom: 1px solid #535353;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .settings ul {
+      list-style: none;
+    }
+
+    .settings ul li {
+      padding: 12px 33px;
+      font-size: 14px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .settings ul li:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .settings ul li.active::before {
+      content: "✓";
+      position: absolute;
+      left: 10px;
+    }
+
+    .settings .icon {
+      font-size: 14px;
+      margin: 0 5px;
+    }
+
+    .playback[hidden],
+    [data-label="quality"][hidden] {
+      display: none;
+    }
+
+    .capture-preview {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 90%;
+      max-height: 90%;
+      border: 3px solid #ff0000;
+      border-radius: 8px;
+      z-index: 9999;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+      animation: fadeInOut 3s ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+      10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    }
+
+    @media (max-width: 768px) {
+      .icon.picture_in_picutre,
+      .volume_range {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="container">
+      <div class="video_player">
+        <div class="loader"></div>
+        <video class="main-video" preload="metadata"></video>
+        <div class="progressAreaTime">0:00</div>
+        
+        <div class="controls active">
+          <div class="progress-area">
+            <canvas class="bufferedBar"></canvas>
+            <div class="progress-bar">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="controls-list">
+            <div class="controls-left">
+              <span class="icon">
+                <i class="material-icons fast-rewind">fast_rewind</i>
+              </span>
+              <span class="icon">
+                <i class="material-icons play_pause">play_arrow</i>
+              </span>
+              <span class="icon">
+                <i class="material-icons fast-forward">fast_forward</i>
+              </span>
+              <span class="icon">
+                <i class="material-icons volume">volume_up</i>
+                <input type="range" min="0" max="100" value="80" class="volume_range">
+              </span>
+              <div class="timer">
+                <span class="current">0:00</span> / <span class="duration">0:00</span>
+              </div>
+            </div>
+
+            <div class="controls-right">
+              <span class="icon">
+                <i class="material-icons capture" title="Capture Frame">photo_camera</i>
+              </span>
+              <span class="icon">
+                <i class="material-icons settingsBtn">settings</i>
+              </span>
+              <span class="icon picture_in_picutre">
+                <i class="material-icons">picture_in_picture_alt</i>
+              </span>
+              <span class="icon">
+                <i class="material-icons fullscreen">fullscreen</i>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="settings">
+          <div data-label="settingHome">
+            <span>
+              <span>Playback Speed</span>
+            </span>
+            <ul class="playback">
+              <li data-speed="0.25">0.25</li>
+              <li data-speed="0.5">0.5</li>
+              <li data-speed="0.75">0.75</li>
+              <li data-speed="1" class="active">Normal</li>
+              <li data-speed="1.25">1.25</li>
+              <li data-speed="1.5">1.5</li>
+              <li data-speed="1.75">1.75</li>
+              <li data-speed="2">2</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoUrl = urlParams.get('url');
+    
+    const video = document.querySelector('.main-video');
+    const loader = document.querySelector('.loader');
+    const controls = document.querySelector('.controls');
+    const progressArea = document.querySelector('.progress-area');
+    const progressBar = document.querySelector('.progress-bar');
+    const progressAreaTime = document.querySelector('.progressAreaTime');
+    const bufferedBar = document.querySelector('.bufferedBar');
+    const playPauseBtn = document.querySelector('.play_pause');
+    const fastRewind = document.querySelector('.fast-rewind');
+    const fastForward = document.querySelector('.fast-forward');
+    const volumeBtn = document.querySelector('.volume');
+    const volumeRange = document.querySelector('.volume_range');
+    const currentTime = document.querySelector('.current');
+    const duration = document.querySelector('.duration');
+    const captureBtn = document.querySelector('.capture');
+    const settingsBtn = document.querySelector('.settingsBtn');
+    const settings = document.querySelector('.settings');
+    const pipBtn = document.querySelector('.picture_in_picutre');
+    const fullscreenBtn = document.querySelector('.fullscreen');
+    const playbackItems = document.querySelectorAll('.playback li');
+    const videoPlayer = document.querySelector('.video_player');
+
+    let hls;
+    let currentPreviewImage = null;
+
+    // Load HLS video
+    if (videoUrl) {
+      if (Hls.isSupported()) {
+        hls = new Hls({
+          enableWorker: true,
+          lowLatencyMode: true,
+        });
+        
+        hls.loadSource(videoUrl);
+        hls.attachMedia(video);
+        
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          loader.style.display = 'none';
+        });
+
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          if (data.fatal) {
+            console.error('HLS Error:', data);
+            loader.style.display = 'none';
+          }
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoUrl;
+      }
+    }
+
+    // Play/Pause - FIXED: prevent controls from toggling when clicking play button
+    playPauseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      togglePlayPause();
+    });
+
+    function togglePlayPause() {
+      if (video.paused) {
+        video.play();
+        playPauseBtn.textContent = 'pause';
+      } else {
+        video.pause();
+        playPauseBtn.textContent = 'play_arrow';
+      }
+    }
+
+    video.addEventListener('play', () => playPauseBtn.textContent = 'pause');
+    video.addEventListener('pause', () => playPauseBtn.textContent = 'play_arrow');
+
+    // Rewind/Forward - FIXED with preventDefault
+    fastRewind.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      
+      // Ensure we don't go below 0
+      const newTime = Math.max(0, video.currentTime - 10);
+      video.currentTime = newTime;
+      
+      // Visual feedback
+      highlightButton(fastRewind);
+    });
+    
+    fastForward.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      
+      // Ensure we don't go beyond duration
+      const newTime = Math.min(video.duration, video.currentTime + 10);
+      video.currentTime = newTime;
+      
+      // Visual feedback
+      highlightButton(fastForward);
+    });
+
+    // Helper function for button feedback
+    function highlightButton(button) {
+      button.style.color = '#ff0000';
+      setTimeout(() => {
+        button.style.color = '#fff';
+      }, 200);
+    }
+
+    // Volume
+    volumeRange.addEventListener('input', (e) => {
+      e.stopPropagation();
+      video.volume = volumeRange.value / 100;
+      updateVolumeIcon();
+    });
+
+    // Volume button - FIXED
+    volumeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      video.muted = !video.muted;
+      volumeRange.value = video.muted ? 0 : video.volume * 100;
+      updateVolumeIcon();
+    });
+
+    function updateVolumeIcon() {
+      const vol = video.muted ? 0 : video.volume;
+      volumeBtn.textContent = vol === 0 ? 'volume_off' : vol < 0.5 ? 'volume_down' : 'volume_up';
+    }
+
+    // Time formatting
+    function formatTime(seconds) {
+      const min = Math.floor(seconds / 60);
+      const sec = Math.floor(seconds % 60);
+      return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+    }
+
+    video.addEventListener('loadedmetadata', () => {
+      duration.textContent = formatTime(video.duration);
+      video.volume = 0.8;
+    });
+
+    video.addEventListener('timeupdate', () => {
+      currentTime.textContent = formatTime(video.currentTime);
+      const progress = (video.currentTime / video.duration) * 100;
+      progressBar.style.width = `${progress}%`;
+    });
+
+    // Progress bar
+    progressArea.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const rect = progressArea.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      video.currentTime = pos * video.duration;
+      
+      // Show controls after progress bar interaction
+      showControls();
+    });
+
+    progressArea.addEventListener('mousemove', (e) => {
+      const rect = progressArea.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      const time = pos * video.duration;
+      progressAreaTime.textContent = formatTime(time);
+      progressAreaTime.style.setProperty('--x', `${e.clientX - rect.left}px`);
+      progressAreaTime.style.display = 'block';
+    });
+
+    progressArea.addEventListener('mouseleave', () => {
+      progressAreaTime.style.display = 'none';
+    });
+
+    // Buffered progress
+    video.addEventListener('progress', () => {
+      if (video.buffered.length > 0) {
+        const ctx = bufferedBar.getContext('2d');
+        const width = bufferedBar.width = progressArea.clientWidth;
+        const height = bufferedBar.height = 5;
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        
+        for (let i = 0; i < video.buffered.length; i++) {
+          const start = (video.buffered.start(i) / video.duration) * width;
+          const end = (video.buffered.end(i) / video.duration) * width;
+          ctx.fillRect(start, 0, end - start, height);
+        }
+      }
+    });
+
+    // Loading indicator
+    video.addEventListener('waiting', () => loader.style.display = 'block');
+    video.addEventListener('canplay', () => loader.style.display = 'none');
+
+    // Frame capture - FIXED
+    captureBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      
+      // Remove existing preview if any
+      if (currentPreviewImage) {
+        currentPreviewImage.remove();
+        currentPreviewImage = null;
+      }
+      
+      // Pause video briefly for better capture
+      const wasPlaying = !video.paused;
+      video.pause();
+      
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      
+      // Resume if was playing
+      if (wasPlaying) {
+        setTimeout(() => video.play(), 100);
+      }
+      
+      // Convert to blob and download
+      canvas.toBlob((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `capture-${Date.now()}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        // Only show preview if not in fullscreen
+        if (!document.fullscreenElement) {
+          const img = document.createElement('img');
+          img.src = url;
+          img.className = 'capture-preview';
+          document.body.appendChild(img);
+          currentPreviewImage = img;
+          
+          setTimeout(() => {
+            if (currentPreviewImage === img) {
+              img.remove();
+              currentPreviewImage = null;
+            }
+            URL.revokeObjectURL(url);
+          }, 3000);
+        } else {
+          // Clean up URL immediately if in fullscreen
+          setTimeout(() => URL.revokeObjectURL(url), 100);
+        }
+      }, 'image/png');
+    });
+
+    // Settings - FIXED
+    settingsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      settings.classList.toggle('active');
+      settingsBtn.classList.toggle('active');
+    });
+
+    playbackItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        playbackItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        video.playbackRate = parseFloat(item.dataset.speed);
+      });
+    });
+
+    // PIP - FIXED
+    if (pipBtn) {
+      pipBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (document.pictureInPictureElement) {
+          document.exitPictureInPicture();
+        } else {
+          video.requestPictureInPicture();
+        }
+      });
+    }
+
+    // Fullscreen - FIXED
+    fullscreenBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+      if (!document.fullscreenElement) {
+        videoPlayer.requestFullscreen();
+        fullscreenBtn.textContent = 'fullscreen_exit';
+      } else {
+        document.exitFullscreen();
+        fullscreenBtn.textContent = 'fullscreen';
+      }
+    });
+
+    // Controls visibility - tap to toggle - FIXED
+    let controlsTimeout;
+    let controlsVisible = true;
+    
+    function showControls() {
+      controls.classList.add('active');
+      controlsVisible = true;
+      clearTimeout(controlsTimeout);
+      if (!video.paused) {
+        controlsTimeout = setTimeout(() => {
+          hideControls();
+        }, 3000);
+      }
+    }
+    
+    function hideControls() {
+      controls.classList.remove('active');
+      controlsVisible = false;
+      clearTimeout(controlsTimeout);
+    }
+    
+    function toggleControls() {
+      if (controlsVisible) {
+        hideControls();
+      } else {
+        showControls();
+      }
+    }
+
+    // Mouse move shows controls
+    videoPlayer.addEventListener('mousemove', showControls);
+    
+    // FIXED: Tap/click on player area to toggle controls
+    videoPlayer.addEventListener('click', (e) => {
+      // Only toggle if clicking on the video player background or video itself
+      // NOT on any control buttons or other elements
+      if (e.target === videoPlayer || e.target === video || e.target.classList.contains('video_player')) {
+        toggleControls();
+      }
+    });
+
+    // Video click also toggles controls - SIMPLIFIED
+    video.addEventListener('click', (e) => {
+      // This is already handled by videoPlayer click handler
+      // No need to duplicate
+    });
+
+    // Prevent controls clicks from triggering play/pause or hiding controls
+    controls.addEventListener('click', (e) => {
+      e.stopPropagation();
+      // When clicking on controls, ensure they stay visible
+      showControls();
+    });
+
+    // Also prevent settings clicks from hiding controls
+    settings.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Hide controls when video ends
+    video.addEventListener('ended', () => {
+      hideControls();
+    });
+
+    // Show controls initially
+    showControls();
+
+    // FIXED: Add touch events for mobile
+    videoPlayer.addEventListener('touchstart', (e) => {
+      // Only toggle on single tap (not swipe, pinch, etc.)
+      if (e.touches.length === 1) {
+        // Prevent default to avoid scrolling
+        e.preventDefault();
+        toggleControls();
+      }
+    }, { passive: false });
+
+    // Add this right before the closing </script> tag
+    // to handle fullscreen exit properly
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement) {
+        // Entering fullscreen - remove any preview images
+        if (currentPreviewImage) {
+          currentPreviewImage.remove();
+          currentPreviewImage = null;
+        }
+        fullscreenBtn.textContent = 'fullscreen_exit';
+      } else {
+        // Exiting fullscreen
+        fullscreenBtn.textContent = 'fullscreen';
+        // Ensure controls are visible when exiting fullscreen
+        showControls();
+      }
+    });
+  </script>
+</body>
+</html>
