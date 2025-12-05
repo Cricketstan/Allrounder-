@@ -61,7 +61,7 @@
       "id": "willow-sports",
       "name": "Willow",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Willow-Cricbuzz-/",
+      "iframeSrc": "https://cricketstan.github.io/Willow-Sports/",
       "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=willow-sports",
       "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=willow-sports"
     },
