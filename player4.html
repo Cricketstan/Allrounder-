@@ -55,7 +55,29 @@
       background: #000;
       overflow: hidden;
     }
+.controls-list {
+  flex-wrap: wrap;
+}
+    @media (max-width: 768px) {
+  .controls-list {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
 
+  .controls-left,
+  .controls-right {
+    flex-wrap: wrap;
+  }
+
+  .timer {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .icon .material-icons {
+    font-size: 22px;
+  }
+    }
     .loader {
       position: absolute;
       top: 50%;
