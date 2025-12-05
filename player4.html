@@ -20,7 +20,39 @@
       background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
       overflow: hidden;
     }
+/* Force control bar to stay in one clean row */
+.controls-list {
+  flex-wrap: nowrap !important;
+}
 
+/* Make left & right controls shrink to fit on mobile */
+.controls-left,
+.controls-right {
+  flex-wrap: nowrap !important;
+  min-width: 0;
+}
+
+/* Reduce icon + timer size on mobile */
+@media (max-width: 600px) {
+
+  .icon .material-icons {
+    font-size: 22px !important;
+  }
+
+  .icon {
+    padding: 4px !important;
+  }
+
+  .timer {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Reduce gap so items stay in one line */
+  .controls-list {
+    gap: 6px !important;
+  }
+}
     .material-icons {
       user-select: none;
       cursor: pointer;
