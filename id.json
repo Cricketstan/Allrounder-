@@ -5,177 +5,176 @@
       "name": "Star Sports Hindi",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Star-Sports-2-Hindi/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=hindi",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=hindi"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=hindi",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=hindi"
     },
     {
       "id": "tnt",
       "name": "TNT Sports",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/channel-10/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=tnt",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=tnt"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=tnt",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=tnt"
     },
-    
     {
       "id": "asiacup",
       "name": "TNT Sports",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://d3ssd0juqbxbw.cloudfront.net/mtvsinstlive/master.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=tnt",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=tnt"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=asiacup",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=asiacup"
     },
     {
       "id": "willow",
       "name": "Willow",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Willow-Cricbuzz-/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=willow",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=willow"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=willow",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=willow"
     },
     {
       "id": "prime-hin",
       "name": "Prime Hindi",
       "type": "iframe",
       "iframeSrc": "https://hff-eight.vercel.app/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=prime-hin",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=prime-hin"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=prime-hin",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=prime-hin"
     },
     {
       "id": "prime-eng",
       "name": "Prime English",
       "type": "iframe",
       "iframeSrc": "https://prime-english.vercel.app/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=prime-eng",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=prime-eng"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=prime-eng",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=prime-eng"
     },
     {
       "id": "sky-sports-nz",
       "name": "Sky Nz",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Sky-sports-nz-/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sky-sports-nz",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sky-sports-nz"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sky-sports-nz",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sky-sports-nz"
     },
     {
       "id": "willow-sports",
       "name": "Willow",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Willow-Sports/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=willow-sports",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=willow-sports"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=willow-sports",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=willow-sports"
     },
     {
       "id": "icc-tv",
       "name": "ICC TV",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Sony-Liv/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=icc-tv",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=icc-tv"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=icc-tv",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=icc-tv"
     },
     {
       "id": "fox",
       "name": "Fox Cricket 501",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://foxmatch.pages.dev/Playe.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=fox",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=fox"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=fox",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=fox"
     },
     {
       "id": "channel-7",
       "name": "7 plus Cricket",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://hugh.cdn.rumble.cloud/live/gi29le7p/slot-139/bx1o-9vac_720p/chunklist.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=channel-7",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=channel-7"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=channel-7",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=channel-7"
     },
     {
       "id": "ios",
       "name": "Appel Wale",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://live-hz-12.livepush.io/live/emY9WU-UYFzDjFOR/playlist.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=ios",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=ios"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=ios",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=ios"
     },
     {
       "id": "eng",
       "name": "Star Sports Select",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Channel-14/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=eng",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=eng"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=eng",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=eng"
     },
     {
       "id": "fox-hd",
       "name": "Fox Cricket",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/Fox-Cricket-/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=fox-hd",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=fox-hd"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=fox-hd",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=fox-hd"
     },
     {
       "id": "astro",
       "name": "Astro",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/astro/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=astro",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=astro"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=astro",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=astro"
     },
     {
       "id": "jio-hotstar",
       "name": "Jio Hotstar",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/player4?url=https://live-hz-12.livepush.io/live/emY9WU-UYFzDjFOR/playlist.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=jio-hotstar",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=jio-hotstar"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=jio-hotstar",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=jio-hotstar"
     },
     {
       "id": "sky-nz-1",
       "name": "SKY NZ",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/player4?url=https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sky-nz-1",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sky-nz-1"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sky-nz-1",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sky-nz-1"
     },
     {
       "id": "tnt-1",
       "name": "TNT Sports 1",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/TNT-1/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=tnt-1",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=tnt-1"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=tnt-1",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=tnt-1"
     },
     {
       "id": "prime-nz",
       "name": "PRIME",
       "type": "iframe",
       "iframeSrc": "https://hff-eight.vercel.app/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=prime-nz",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=prime-nz"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=prime-nz",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=prime-nz"
     },
     {
       "id": "sony-1",
       "name": "SONY",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/channel-10/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sony-1",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sony-1"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sony-1",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sony-1"
     },
     {
       "id": "sony-3",
       "name": "SONY",
       "type": "iframe",
       "iframeSrc": "https://cricketstan.github.io/channel-12/",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=sony-3",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=sony-3"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sony-3",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sony-3"
     },
     {
       "id": "youtube",
       "name": "Youtube",
       "type": "iframe",
       "iframeSrc": "https://dillzy.wasmer.app/?url=https://www.youtube.com/live/eNxEwPcAx0A?si=c4XcxQC54WaBAm2l",
-      "hit": "https://dillzycreations.cricketstream745.workers.dev/hit?key=youtube",
-      "get": "https://dillzycreations.cricketstream745.workers.dev/get?key=youtube"
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=youtube",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=youtube"
     }
   ]
 }
