@@ -235,15 +235,6 @@ body {
     color: var(--text-light);
     border: 1px solid var(--primary-blue-dark);
 }
-
-@media (max-width: 480px) {
-    .telegram-popup {
-        padding: 30px 20px;
-        max-width: 90%;
-    }
-    .telegram-popup h2 { font-size: 1.5rem; }
-    .telegram-popup p { font-size: 0.9rem; }
-}
 </style>
 </head>
 <body>
@@ -253,15 +244,14 @@ body {
 
 <div class="telegram-popup" id="telegramPopup">
     <h2><i class="fa-brands fa-telegram"></i> Support Us!</h2>
-    <p>Join our Telegram channel <strong>DILZ  LINKS</strong> for instant updates, highlights, and exclusive links.</p>
-    <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank" rel="noopener"><button class="join-btn">Join Now</button></a>
+    <p>Join our Telegram channel <strong>DILZ LINKS</strong> for instant updates and exclusive links.</p>
+    <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank"><button class="join-btn">Join Now</button></a>
     <button class="joined-btn" onclick="document.getElementById('telegramPopup').style.display='none';">Already Joined</button>
 </div>
 
 <script>
 async function initializeApp() {
     try {
-        // Fetch main iframe JSON + separate hit-counter JSON together
         const [streamsRes, counterRes] = await Promise.all([
             fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/id.json'),
             fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/kk.json')
@@ -269,29 +259,31 @@ async function initializeApp() {
 
         if (!streamsRes.ok || !counterRes.ok) throw new Error('Failed to fetch JSON');
 
-        const [streamsData, counterData] = await Promise.all([
-            streamsRes.json(),
-            counterRes.json()
-        ]);
+        const streamsData = await streamsRes.json();
+        const counterData = await counterRes.json();
 
         const urlParams = new URLSearchParams(window.location.search);
         const streamId = urlParams.get('id');
 
-        const streamBase = streamsData.iframes.find(item => item.id === streamId);
-        const counterBase = counterData.iframes.find(item => item.id === streamId);
+        const base = streamsData.iframes.find(item => item.id === streamId);
+        const counter = counterData.iframes.find(item => item.id === streamId);
 
-        if (streamBase) {
-            // Merge data from both JSONs (counter data overrides if duplicate fields)
-            const mergedData = { ...streamBase, ...(counterBase || {}) };
+        if (base) {
+            const mergedData = {
+                ...base, // id.json ALWAYS wins
+                hit: counter?.hit || null,
+                get: counter?.get || null
+            };
+
             renderIframeUI(mergedData);
 
-            // Show Telegram popup after 1s
             setTimeout(() => {
                 document.getElementById('telegramPopup').style.display = 'block';
             }, 1000);
         } else {
             renderErrorUI();
         }
+
     } catch (err) {
         console.error(err);
         renderErrorUI();
@@ -305,80 +297,71 @@ function renderIframeUI(data) {
             <h1>${data.name}</h1>
             <div class="live-badge"><i class="fa-solid fa-circle"></i> LIVE</div>
         </div>
+
         <div id="player-container">
-            <iframe src="${data.iframeSrc}" style="width:100%; height:100%; border:0;" allow="encrypted-media; autoplay" allowfullscreen></iframe>
+            <iframe src="${data.iframeSrc}" style="width:100%;height:100%;border:0;" allowfullscreen></iframe>
+
             <div class="view-counter">
-                <div class="name" id="viewChannelName">${data.name}</div>
+                <div class="name">${data.name}</div>
                 <div class="views" id="viewCount">0 Views</div>
             </div>
         </div>
+
         <div class="info-card">
             <h2><i class="fa-solid fa-bell"></i> Follow us for Updates!</h2>
-            <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank" rel="noopener" class="action-button">
-                <i class="fa-brands fa-telegram"></i> Click Here To Join Telegram
+            <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank" class="action-button">
+                <i class="fa-brands fa-telegram"></i> Join Telegram
             </a>
         </div>
+
         <div class="info-card">
             <h2><i class="fa-solid fa-link"></i> Copy Link & Share</h2>
-            <button class="action-button" id="shareButton"><i class="fa-solid fa-share-nodes"></i> Click Here To Share This Page Link</button>
+            <button class="action-button" id="shareButton">
+                <i class="fa-solid fa-share-nodes"></i> Share This Page
+            </button>
         </div>
+
         <a href="#" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to All Streams</a>
     `;
 
-    document.getElementById('shareButton').addEventListener('click', async () => {
-        try {
-            await navigator.clipboard.writeText(window.location.href);
-            const btn = document.getElementById('shareButton');
-            const original = btn.innerHTML;
-            btn.innerHTML = `<i class="fa-solid fa-check"></i> Link Copied!`;
-            btn.classList.add('copied');
-            setTimeout(() => { btn.innerHTML = original; btn.classList.remove('copied'); }, 2000);
-        } catch (err) { console.error(err); }
-    });
+    document.getElementById("shareButton").onclick = async () => {
+        await navigator.clipboard.writeText(window.location.href);
+        const btn = document.getElementById("shareButton");
+        const old = btn.innerHTML;
+        btn.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
+        btn.classList.add('copied');
+        setTimeout(() => { btn.innerHTML = old; btn.classList.remove('copied'); }, 2000);
+    };
 
-    // Start counter only if hit/get are available from kk.json
-    if (data.hit && data.get) {
-        startViewCounter(data.hit, data.get);
-    } else {
-        // If no counter data found, just show 0 Views
-        const vc = document.getElementById("viewCount");
-        if (vc) vc.innerText = "0 Views";
-    }
+    if (data.hit && data.get) startViewCounter(data.hit, data.get);
 }
 
 function renderErrorUI() {
-    const contentDiv = document.getElementById('stream-content');
-    document.title = "Error - Stream Not Found";
-    contentDiv.innerHTML = `
+    document.getElementById('stream-content').innerHTML = `
         <div class="error-message">
             <h2><i class="fa-solid fa-triangle-exclamation"></i> Stream Not Found</h2>
             <p>The requested stream ID is invalid or offline.</p>
-            <a href="#" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to All Streams</a>
-        </div>`;
+            <a href="#" class="back-link">Back to All Streams</a>
+        </div>
+    `;
 }
 
-document.addEventListener("DOMContentLoaded", initializeApp);
-
 function formatViews(num) {
-    if (!num || isNaN(num)) return "0";
-    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
+    if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + "M";
+    if (num >= 1_000) return (num / 1_000).toFixed(1) + "K";
     return num;
 }
 
 async function startViewCounter(hitUrl, getUrl) {
-    try {
-        await fetch(hitUrl + "&_=" + Date.now());
-    } catch (e) {}
+    try { await fetch(hitUrl + "&_=" + Date.now()); } catch(e){}
 
     async function updateViews() {
         try {
             const res = await fetch(getUrl + "&_=" + Date.now());
             const json = await res.json();
-            const views = json.total || 0;
             document.getElementById("viewCount").innerText =
-                formatViews(Number(views)) + " Views";
-        } catch (err) {
+                formatViews(json.total || 0) + " Views";
+        } catch {
             document.getElementById("viewCount").innerText = "0 Views";
         }
     }
@@ -386,6 +369,8 @@ async function startViewCounter(hitUrl, getUrl) {
     updateViews();
     setInterval(updateViews, 2000);
 }
+
+document.addEventListener("DOMContentLoaded", initializeApp);
 </script>
 </body>
 </html>
