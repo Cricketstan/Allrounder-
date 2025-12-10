@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>𝗗𝗜𝗟𝗟𝗭𝗬 𝗟𝗜𝗡𝗞𝗦 ™</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.3.4/dist/controls.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --bg-color: #121212;
+    --primary-blue: #00b4d8;
+    --primary-blue-dark: #0077b6;
+    --card-bg: #1e1e1e;
+    --text-light: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-color: #2d2d2d;
+    --popup-bg: #282828;
+    --popup-shadow-color: rgba(0, 180, 216, 0.4);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 1rem;
+}
+.container {
+    width: 100%;
+    max-width: 800px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}
+@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+.stream-header {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.stream-header h1 { font-size: 1.25rem; font-weight: 600; }
+.live-badge {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 180, 216, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+}
+#player-container {
+    width: 100%;
+    height: 50vh;
+    max-height: 600px;
+    background-color: #000;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+.info-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+.info-card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+}
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-dark));
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--popup-shadow-color);
+}
+.action-button.copied { background: linear-gradient(90deg, #22c55e, #4ade80); }
+.back-link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+.back-link:hover { background-color: var(--card-bg); color: var(--text-light); }
+.error-message {
+     text-align: center;
+     padding: 4rem 1rem;
+     background-color: var(--card-bg);
+     border: 1px solid var(--border-color);
+     border-radius: 12px;
+}
+.error-message h2 { color: var(--primary-blue); font-size: 1.5rem; margin-bottom: 0.5rem; }
+
+.view-counter {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+    line-height: 1.3;
+    color: #fff;
+    font-weight: 600;
+    text-align: right;
+    z-index: 9999;
+    pointer-events: none;
+}
+.view-counter .name {
+    font-size: 10px;
+    opacity: 0.85;
+}
+.view-counter .views {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.telegram-popup {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #181818, #1f1f1f);
+    color: var(--text-light);
+    padding: 40px 25px;
+    border-radius: 16px;
+    box-shadow: 0 0 50px 10px rgba(0, 180, 216, 0.5), 0 0 20px rgba(0, 180, 216, 0.3) inset;
+    z-index: 10000;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    display: none;
+    border: 2px solid var(--primary-blue);
+    animation: popIn 0.4s ease-out forwards, glowPulse 2.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 20px rgba(0, 180, 216, 0.3), 0 0 10px rgba(0, 180, 216, 0.2) inset; }
+    100% { box-shadow: 0 0 40px rgba(0, 180, 216, 0.7), 0 0 20px rgba(0, 180, 216, 0.4) inset; }
+}
+
+.telegram-popup h2 {
+    margin-top: 0;
+    color: var(--primary-blue);
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+    margin-bottom: 0.75rem;
+}
+
+.telegram-popup p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
+}
+
+.telegram-popup button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.telegram-popup button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.telegram-popup .join-btn {
+    background: linear-gradient(90deg, var(--primary-blue), var(--primary-blue-dark));
+    color: white;
+    box-shadow: 0 0 12px rgba(0, 180, 216, 0.4);
+}
+
+.telegram-popup .join-btn:hover {
+    box-shadow: 0 0 25px rgba(0, 180, 216, 0.7);
+}
+
+.telegram-popup .joined-btn {
+    background-color: var(--border-color);
+    color: var(--text-light);
+    border: 1px solid var(--primary-blue-dark);
+}
+
+@media (max-width: 480px) {
+    .telegram-popup {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+    .telegram-popup h2 { font-size: 1.5rem; }
+    .telegram-popup p { font-size: 0.9rem; }
+}
+</style>
+</head>
+<body>
+<main class="container">
+    <div id="stream-content"></div>
+</main>
+
+<div class="telegram-popup" id="telegramPopup">
+    <h2><i class="fa-brands fa-telegram"></i> Support Us!</h2>
+    <p>Join our Telegram channel <strong>DILZ  LINKS</strong> for instant updates, highlights, and exclusive links.</p>
+    <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank" rel="noopener"><button class="join-btn">Join Now</button></a>
+    <button class="joined-btn" onclick="document.getElementById('telegramPopup').style.display='none';">Already Joined</button>
+</div>
+
+<script>
+async function initializeApp() {
+    try {
+        // Fetch main iframe JSON + separate hit-counter JSON together
+        const [streamsRes, counterRes] = await Promise.all([
+            fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/id.json'),
+            fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/kk.json')
+        ]);
+
+        if (!streamsRes.ok || !counterRes.ok) throw new Error('Failed to fetch JSON');
+
+        const [streamsData, counterData] = await Promise.all([
+            streamsRes.json(),
+            counterRes.json()
+        ]);
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const streamId = urlParams.get('id');
+
+        const streamBase = streamsData.iframes.find(item => item.id === streamId);
+        const counterBase = counterData.iframes.find(item => item.id === streamId);
+
+        if (streamBase) {
+            // Merge data from both JSONs (counter data overrides if duplicate fields)
+            const mergedData = { ...streamBase, ...(counterBase || {}) };
+            renderIframeUI(mergedData);
+
+            // Show Telegram popup after 1s
+            setTimeout(() => {
+                document.getElementById('telegramPopup').style.display = 'block';
+            }, 1000);
+        } else {
+            renderErrorUI();
+        }
+    } catch (err) {
+        console.error(err);
+        renderErrorUI();
+    }
+}
+
+function renderIframeUI(data) {
+    const contentDiv = document.getElementById('stream-content');
+    contentDiv.innerHTML = `
+        <div class="stream-header">
+            <h1>${data.name}</h1>
+            <div class="live-badge"><i class="fa-solid fa-circle"></i> LIVE</div>
+        </div>
+        <div id="player-container">
+            <iframe src="${data.iframeSrc}" style="width:100%; height:100%; border:0;" allow="encrypted-media; autoplay" allowfullscreen></iframe>
+            <div class="view-counter">
+                <div class="name" id="viewChannelName">${data.name}</div>
+                <div class="views" id="viewCount">0 Views</div>
+            </div>
+        </div>
+        <div class="info-card">
+            <h2><i class="fa-solid fa-bell"></i> Follow us for Updates!</h2>
+            <a href="https://t.me/+RPa_8c-ENCszYjk1" target="_blank" rel="noopener" class="action-button">
+                <i class="fa-brands fa-telegram"></i> Click Here To Join Telegram
+            </a>
+        </div>
+        <div class="info-card">
+            <h2><i class="fa-solid fa-link"></i> Copy Link & Share</h2>
+            <button class="action-button" id="shareButton"><i class="fa-solid fa-share-nodes"></i> Click Here To Share This Page Link</button>
+        </div>
+        <a href="#" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to All Streams</a>
+    `;
+
+    document.getElementById('shareButton').addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(window.location.href);
+            const btn = document.getElementById('shareButton');
+            const original = btn.innerHTML;
+            btn.innerHTML = `<i class="fa-solid fa-check"></i> Link Copied!`;
+            btn.classList.add('copied');
+            setTimeout(() => { btn.innerHTML = original; btn.classList.remove('copied'); }, 2000);
+        } catch (err) { console.error(err); }
+    });
+
+    // Start counter only if hit/get are available from kk.json
+    if (data.hit && data.get) {
+        startViewCounter(data.hit, data.get);
+    } else {
+        // If no counter data found, just show 0 Views
+        const vc = document.getElementById("viewCount");
+        if (vc) vc.innerText = "0 Views";
+    }
+}
+
+function renderErrorUI() {
+    const contentDiv = document.getElementById('stream-content');
+    document.title = "Error - Stream Not Found";
+    contentDiv.innerHTML = `
+        <div class="error-message">
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Stream Not Found</h2>
+            <p>The requested stream ID is invalid or offline.</p>
+            <a href="#" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to All Streams</a>
+        </div>`;
+}
+
+document.addEventListener("DOMContentLoaded", initializeApp);
+
+function formatViews(num) {
+    if (!num || isNaN(num)) return "0";
+    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
+    return num;
+}
+
+async function startViewCounter(hitUrl, getUrl) {
+    try {
+        await fetch(hitUrl + "&_=" + Date.now());
+    } catch (e) {}
+
+    async function updateViews() {
+        try {
+            const res = await fetch(getUrl + "&_=" + Date.now());
+            const json = await res.json();
+            const views = json.total || 0;
+            document.getElementById("viewCount").innerText =
+                formatViews(Number(views)) + " Views";
+        } catch (err) {
+            document.getElementById("viewCount").innerText = "0 Views";
+        }
+    }
+
+    updateViews();
+    setInterval(updateViews, 2000);
+}
+</script>
+</body>
+</html>
