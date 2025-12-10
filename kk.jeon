@@ -1,0 +1,142 @@
+{
+  "iframes": [
+    {
+      "id": "hindi",
+      "name": "Star Sports Hindi",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=hind",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=hind"
+    },
+    {
+      "id": "tnt",
+      "name": "TNT Sports",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=tn",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=tn"
+    },
+    {
+      "id": "asiacup",
+      "name": "Asia Cup",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=asiacu",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=asiacu"
+    },
+    {
+      "id": "willow",
+      "name": "Willow",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=willo",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=willo"
+    },
+    {
+      "id": "prime-hin",
+      "name": "Prime Hindi",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=prime-hi",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=prime-hi"
+    },
+    {
+      "id": "alt",
+      "name": "DILLZY",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=al",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=al"
+    },
+    {
+      "id": "prime-eng",
+      "name": "Prime English",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=prime-en",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=prime-en"
+    },
+    {
+      "id": "sky-sports-nz",
+      "name": "Sky NZ",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sky-sports-n",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sky-sports-n"
+    },
+    {
+      "id": "willow-sports",
+      "name": "Willow Sports",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=willow-sport",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=willow-sport"
+    },
+    {
+      "id": "icc-tv",
+      "name": "ICC TV",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=icc-t",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=icc-t"
+    },
+    {
+      "id": "fox",
+      "name": "Fox Cricket 501",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=fo",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=fo"
+    },
+    {
+      "id": "channel-7",
+      "name": "7 Plus Cricket",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=channel-",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=channel-"
+    },
+    {
+      "id": "ios",
+      "name": "Apple Wale",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=io",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=io"
+    },
+    {
+      "id": "eng",
+      "name": "Star Sports Select",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=en",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=en"
+    },
+    {
+      "id": "fox-hd",
+      "name": "Fox Cricket HD",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=fox-h",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=fox-h"
+    },
+    {
+      "id": "astro",
+      "name": "Astro",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=astr",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=astr"
+    },
+    {
+      "id": "jio-hotstar",
+      "name": "Jio Hotstar",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=jio-hotsta",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=jio-hotsta"
+    },
+    {
+      "id": "sky-nz-1",
+      "name": "Sky NZ 1",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sky-nz-",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sky-nz-"
+    },
+    {
+      "id": "tnt-1",
+      "name": "TNT Sports 1",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=tnt-",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=tnt-"
+    },
+    {
+      "id": "prime-nz",
+      "name": "Prime NZ",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=prime-n",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=prime-n"
+    },
+    {
+      "id": "sony-1",
+      "name": "Sony 1",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sony-",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sony-"
+    },
+    {
+      "id": "sony-3",
+      "name": "Sony 3",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=sony",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=sony"
+    },
+    {
+      "id": "youtube",
+      "name": "YouTube Live",
+      "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=youtub",
+      "get": "https://hit-counter-7fvw.vercel.app/api/get?key=youtub"
+    }
+  ]
+}
