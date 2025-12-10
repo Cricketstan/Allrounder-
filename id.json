@@ -44,7 +44,7 @@
       "id": "alt",
       "name": "DILLZY",
       "type": "iframe",
-      "iframeSrc": "https://dillzyishere.vercel.app/?id=asasssazpapps",
+      "iframeSrc": "https://dillzyishere.vercel.app/player2.html?id=asasssazpapps",
       "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=alt",
       "get": "https://hit-counter-7fvw.vercel.app/api/get?key=alt"
     },
