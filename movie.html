@@ -15,7 +15,14 @@
 }
 *{box-sizing:border-box;font-family:system-ui}
 body{margin:0;background:var(--bg);color:var(--text)}
-header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight:700}
+
+header{
+  padding:16px;
+  text-align:center;
+  background:#000;
+  font-size:20px;
+  font-weight:700;
+}
 
 .search-box{
   padding:10px;
@@ -30,69 +37,101 @@ header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight
   font-size:14px;
 }
 
-.tabs{display:flex;overflow-x:auto;background:#111}
+.tabs{
+  display:flex;
+  overflow-x:auto;
+  background:#111;
+}
 .tabs button{
-  flex:1;padding:12px;border:none;background:none;
-  color:#aaa;cursor:pointer;white-space:nowrap
+  flex:1;
+  padding:12px;
+  border:none;
+  background:none;
+  color:#aaa;
+  cursor:pointer;
+  white-space:nowrap;
 }
 .tabs button.active{
   color:var(--accent);
-  border-bottom:2px solid var(--accent)
+  border-bottom:2px solid var(--accent);
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:14px;padding:14px
+  gap:14px;
+  padding:14px;
 }
 .card{
   background:var(--card);
   border-radius:12px;
   overflow:hidden;
   cursor:pointer;
-  transition:.2s
+  transition:.2s;
 }
 .card:hover{transform:scale(1.05)}
 .card img{
-  width:100%;height:230px;
-  object-fit:cover;background:#000
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  background:#000;
 }
 .card-content{padding:8px}
 .card-title{font-size:14px;font-weight:600}
 .card-cat{font-size:11px;color:var(--muted);margin-top:4px}
 
 .load-more{
-  display:block;width:90%;max-width:320px;
-  margin:20px auto;padding:12px;
-  border:none;border-radius:30px;
-  background:var(--accent);color:#000;
-  font-weight:700;cursor:pointer
+  display:block;
+  width:90%;
+  max-width:320px;
+  margin:20px auto;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
 }
 
 .modal{
-  position:fixed;inset:0;
+  position:fixed;
+  inset:0;
   background:rgba(0,0,0,.85);
-  display:none;align-items:center;justify-content:center;
-  z-index:999
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
 .modal-box{
-  background:#111;padding:16px;
-  max-width:520px;width:95%;
-  border-radius:12px
+  background:#111;
+  padding:16px;
+  max-width:520px;
+  width:95%;
+  border-radius:12px;
 }
 .links{
   font-size:13px;
   white-space:pre-line;
   color:var(--accent);
-  word-break:break-all
+  word-break:break-all;
 }
 .close{
-  margin-top:12px;background:#333;
-  border:none;color:#fff;
-  padding:8px 14px;border-radius:6px;
-  cursor:pointer
+  margin-top:12px;
+  background:#333;
+  border:none;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
 }
-footer{text-align:center;padding:15px;font-size:12px;color:#888}
+
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+  color:#888;
+}
 </style>
 </head>
 
@@ -101,7 +140,7 @@ footer{text-align:center;padding:15px;font-size:12px;color:#888}
 <header>🎬 Dillzy Movies</header>
 
 <div class="search-box">
-  <input type="text" id="searchInput" placeholder="Search movies or series..." />
+  <input id="searchInput" type="text" placeholder="Search movies or series..." />
 </div>
 
 <div class="tabs">
@@ -128,111 +167,133 @@ footer{text-align:center;padding:15px;font-size:12px;color:#888}
 <footer>Powered by Dillzy</footer>
 
 <script>
-const BASE_API="https://dillzy-movie.cricketstream745.workers.dev";
-let currentEndpoint="/hollywood/movies";
-let offset=0,loading=false,hasMore=true;
-let searchQuery="";
+const BASE_API = "https://dillzy-movie.cricketstream745.workers.dev";
 
-function switchTab(endpoint,btn){
+let currentEndpoint = "/hollywood/movies";
+let offset = 0;
+let limit = 50;
+let loading = false;
+let hasMore = true;
+
+let allItems = [];
+let searchQuery = "";
+
+function switchTab(endpoint, btn){
   document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  currentEndpoint=endpoint;
-  resetAndLoad();
+  currentEndpoint = endpoint;
+  resetAll();
 }
 
-function resetAndLoad(){
-  offset=0;
-  hasMore=true;
-  grid.innerHTML="";
-  loadMore.style.display="block";
+function resetAll(){
+  offset = 0;
+  loading = false;
+  hasMore = true;
+  allItems = [];
+  grid.innerHTML = "";
+  loadMore.style.display = "block";
   loadMovies();
 }
 
 async function loadMovies(){
   if(loading || !hasMore) return;
-  loading=true;
+  loading = true;
 
-  let url=`${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`;
-  if(searchQuery){
-    url+=`&search=${encodeURIComponent(searchQuery)}`;
-  }
+  const res = await fetch(`${BASE_API}${currentEndpoint}?offset=${offset}&limit=${limit}`);
+  const json = await res.json();
+  const data = json.data || [];
 
-  const res=await fetch(url);
-  const json=await res.json();
-  const data=json.data||[];
-
-  if(data.length===0){
-    hasMore=false;
-    loadMore.style.display="none";
-    loading=false;
+  if(data.length === 0){
+    hasMore = false;
+    loadMore.style.display = "none";
+    loading = false;
     return;
   }
 
-  data.forEach(movie=>{
-    const card=document.createElement("div");
-    card.className="card";
-    card.innerHTML=`
+  offset += data.length;
+  allItems.push(...data);
+  renderGrid();
+  loading = false;
+}
+
+function renderGrid(){
+  grid.innerHTML = "";
+
+  const filtered = searchQuery
+    ? allItems.filter(m =>
+        (m.title || m.name || "").toLowerCase().includes(searchQuery)
+      )
+    : allItems;
+
+  filtered.forEach(movie=>{
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
       <img src="${movie.featured_image}"
            loading="lazy"
            referrerpolicy="no-referrer"
            onerror="this.src='https://via.placeholder.com/300x450?text=No+Image'">
       <div class="card-content">
-        <div class="card-title">${movie.title||movie.name||"Untitled"}</div>
-        <div class="card-cat">${movie.categories||""}</div>
-      </div>`;
-    card.onclick=()=>showModal(movie);
+        <div class="card-title">${movie.title || movie.name || "Untitled"}</div>
+        <div class="card-cat">${movie.categories || ""}</div>
+      </div>
+    `;
+    card.onclick = () => showModal(movie);
     grid.appendChild(card);
   });
-
-  offset+=data.length;
-  loading=false;
 }
 
 function showModal(movie){
-  modalTitle.innerText=movie.title||movie.name||"Details";
-  let out="";
+  modalTitle.innerText = movie.title || movie.name || "Details";
+  let out = "";
 
   if(movie.links && movie.links.trim()){
-    out+="🔗 LINKS\n\n"+movie.links+"\n\n";
+    out += "🔗 LINKS\n\n" + movie.links + "\n\n";
   }
+
   if(movie.season_zip && movie.season_zip.trim()){
-    out+="📦 SEASON ZIP\n\n"+formatZip(movie.season_zip)+"\n\n";
+    out += "📦 SEASON ZIP\n\n" + formatZip(movie.season_zip) + "\n\n";
   }
+
   for(let i=1;i<=10;i++){
-    const k="season_"+i;
+    const k = "season_" + i;
     if(movie[k] && movie[k].trim()){
-      out+=`🎬 SEASON ${i}\n\n`+formatEpisodes(movie[k])+"\n\n";
+      out += `🎬 SEASON ${i}\n\n` + formatEpisodes(movie[k]) + "\n\n";
     }
   }
-  if(!out) out="❌ No links available";
-  modalLinks.innerText=out.trim();
-  modal.style.display="flex";
+
+  modalLinks.innerText = out || "❌ No links available";
+  modal.style.display = "flex";
 }
 
 function formatZip(raw){
   return raw.split(",").map(x=>{
-    x=x.trim();
-    if(x.startsWith("http")) return "➡ "+x;
-    if(x.startsWith("Season")) return "\n"+x;
+    x = x.trim();
+    if(x.startsWith("http")) return "➡ " + x;
+    if(x.startsWith("Season")) return "\n" + x;
     return x;
   }).join("\n");
 }
 
 function formatEpisodes(raw){
-  return raw.replace(/&amp;/g,"&").split("\n").map(l=>{
-    if(l.includes("Episode")) return "\n"+l.trim();
-    if(l.includes("http")) return "➡ "+l.trim();
-    return l.trim();
-  }).join("\n");
+  return raw.replace(/&amp;/g,"&")
+    .split("\n")
+    .map(l=>{
+      if(l.includes("Episode")) return "\n" + l.trim();
+      if(l.includes("http")) return "➡ " + l.trim();
+      return l.trim();
+    }).join("\n");
 }
 
-function closeModal(){modal.style.display="none"}
+function closeModal(){
+  modal.style.display = "none";
+}
 
-loadMore.onclick=loadMovies;
+loadMore.onclick = loadMovies;
 
-searchInput.addEventListener("input",()=>{
-  searchQuery=searchInput.value.trim();
-  resetAndLoad();
+searchInput.addEventListener("input", e=>{
+  searchQuery = e.target.value.toLowerCase().trim();
+  renderGrid();
 });
 
 loadMovies();
