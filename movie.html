@@ -6,7 +6,7 @@
 <title>Dillzy Movies</title>
 
 <style>
-:root{
+:root {
   --bg:#0e0e0e;
   --card:#1b1b1b;
   --accent:#00b4ff;
@@ -17,7 +17,11 @@
 body{margin:0;background:var(--bg);color:var(--text)}
 header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight:700}
 
-.tabs{display:flex;overflow-x:auto;background:#111}
+.tabs{
+  display:flex;
+  overflow-x:auto;
+  background:#111;
+}
 .tabs button{
   flex:1;
   padding:12px;
@@ -69,6 +73,7 @@ header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight
   cursor:pointer;
 }
 
+/* MODAL */
 .modal{
   position:fixed;
   inset:0;
@@ -138,22 +143,11 @@ footer{
 
 <script>
 const BASE_API = "https://dillzy-movie.cricketstream745.workers.dev";
-
 let currentEndpoint = "/hollywood/movies";
 let offset = 0;
 let loading = false;
-let sessionReady = false;
 
-/* CREATE SESSION */
-async function initSession(){
-  await fetch(`${BASE_API}/session`, { credentials:"include" });
-  sessionReady = true;
-  loadMovies();
-}
-
-/* SWITCH TAB */
 function switchTab(endpoint, btn){
-  if(!sessionReady) return;
   document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
   currentEndpoint = endpoint;
@@ -162,26 +156,18 @@ function switchTab(endpoint, btn){
   loadMovies();
 }
 
-/* LOAD MOVIES */
 async function loadMovies(){
-  if(loading || !sessionReady) return;
+  if(loading) return;
   loading = true;
 
-  const res = await fetch(
-    `${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`,
-    { credentials:"include" }
-  );
-
-  if(!res.ok){ loading=false; return; }
-
+  const res = await fetch(`${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`);
   const json = await res.json();
-  if(!json.data){ loading=false; return; }
 
   json.data.forEach(movie=>{
     const card=document.createElement("div");
     card.className="card";
     card.innerHTML=`
-      <img src="${movie.featured_image || ''}"
+      <img src="${movie.featured_image}"
            referrerpolicy="no-referrer"
            loading="lazy"
            onerror="this.src='https://via.placeholder.com/300x450?text=No+Image'">
@@ -198,20 +184,56 @@ async function loadMovies(){
   loading = false;
 }
 
-/* MODAL */
 function showModal(movie){
-  document.getElementById("modalTitle").innerText = movie.title || movie.name;
-  document.getElementById("modalLinks").innerText = movie.links || "No links available";
+  document.getElementById("modalTitle").innerText =
+    movie.title || movie.name || "Details";
+
+  let output = "";
+
+  if (movie.links && movie.links.trim() !== "") {
+    output += "🔗 LINKS\n\n" + movie.links + "\n\n";
+  }
+
+  if (movie.season_zip && movie.season_zip.trim() !== "") {
+    output += "📦 SEASON ZIP DOWNLOADS\n\n";
+    output += formatSeasonZip(movie.season_zip);
+  }
+
+  if (!output) {
+    output = "❌ No links available";
+  }
+
+  document.getElementById("modalLinks").innerText = output;
   document.getElementById("modal").style.display="flex";
 }
+
+function formatSeasonZip(raw){
+  let text = "";
+  const parts = raw.split(",");
+
+  parts.forEach(p=>{
+    const part = p.trim();
+    if (part.startsWith("Season")) {
+      text += "\n" + part + "\n";
+    }
+    else if (part.startsWith("http")) {
+      text += "➡ " + part + "\n";
+    }
+    else {
+      text += part + "\n";
+    }
+  });
+
+  return text.trim();
+}
+
 function closeModal(){
   document.getElementById("modal").style.display="none";
 }
 
 document.getElementById("loadMore").onclick = loadMovies;
 
-/* START */
-initSession();
+loadMovies();
 </script>
 
 </body>
