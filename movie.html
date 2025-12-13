@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dillzy Movies</title>
+
+<style>
+:root{
+  --bg:#0e0e0e;
+  --card:#1b1b1b;
+  --accent:#00b4ff;
+  --text:#fff;
+  --muted:#9a9a9a;
+}
+*{box-sizing:border-box;font-family:system-ui}
+body{margin:0;background:var(--bg);color:var(--text)}
+header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight:700}
+
+.tabs{display:flex;overflow-x:auto;background:#111}
+.tabs button{
+  flex:1;
+  padding:12px;
+  border:none;
+  background:none;
+  color:#aaa;
+  cursor:pointer;
+}
+.tabs button.active{
+  color:var(--accent);
+  border-bottom:2px solid var(--accent);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:14px;
+  padding:14px;
+}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.2s;
+}
+.card:hover{transform:scale(1.05)}
+.card img{
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  background:#000;
+}
+.card-content{padding:8px}
+.card-title{font-size:14px;font-weight:600}
+.card-cat{font-size:11px;color:var(--muted);margin-top:4px}
+
+.load-more{
+  display:block;
+  width:90%;
+  max-width:320px;
+  margin:20px auto;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.modal-box{
+  background:#111;
+  padding:16px;
+  max-width:520px;
+  width:95%;
+  border-radius:12px;
+}
+.links{
+  font-size:13px;
+  white-space:pre-line;
+  color:var(--accent);
+  word-break:break-all;
+}
+.close{
+  margin-top:12px;
+  background:#333;
+  border:none;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
+}
+footer{
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+  color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<header>🎬 Dillzy Movies</header>
+
+<div class="tabs">
+  <button class="active" onclick="switchTab('/hollywood/movies',this)">Hollywood Movies</button>
+  <button onclick="switchTab('/hollywood/series',this)">Hollywood Series</button>
+  <button onclick="switchTab('/platform/netflix',this)">Netflix</button>
+  <button onclick="switchTab('/platform/prime',this)">Prime</button>
+  <button onclick="switchTab('/bollywood/movies',this)">Bollywood</button>
+  <button onclick="switchTab('/featured',this)">Featured</button>
+  <button onclick="switchTab('/recent',this)">Recent</button>
+</div>
+
+<div class="grid" id="grid"></div>
+<button class="load-more" id="loadMore">Load More</button>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h2 id="modalTitle"></h2>
+    <div class="links" id="modalLinks"></div>
+    <button class="close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<footer>Powered by Dillzy</footer>
+
+<script>
+const BASE_API = "https://dillzy-movie.cricketstream745.workers.dev";
+
+let currentEndpoint = "/hollywood/movies";
+let offset = 0;
+let loading = false;
+let sessionReady = false;
+
+/* CREATE SESSION */
+async function initSession(){
+  await fetch(`${BASE_API}/session`, { credentials:"include" });
+  sessionReady = true;
+  loadMovies();
+}
+
+/* SWITCH TAB */
+function switchTab(endpoint, btn){
+  if(!sessionReady) return;
+  document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  currentEndpoint = endpoint;
+  offset = 0;
+  document.getElementById("grid").innerHTML = "";
+  loadMovies();
+}
+
+/* LOAD MOVIES */
+async function loadMovies(){
+  if(loading || !sessionReady) return;
+  loading = true;
+
+  const res = await fetch(
+    `${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`,
+    { credentials:"include" }
+  );
+
+  if(!res.ok){ loading=false; return; }
+
+  const json = await res.json();
+  if(!json.data){ loading=false; return; }
+
+  json.data.forEach(movie=>{
+    const card=document.createElement("div");
+    card.className="card";
+    card.innerHTML=`
+      <img src="${movie.featured_image || ''}"
+           referrerpolicy="no-referrer"
+           loading="lazy"
+           onerror="this.src='https://via.placeholder.com/300x450?text=No+Image'">
+      <div class="card-content">
+        <div class="card-title">${movie.title || movie.name || "Untitled"}</div>
+        <div class="card-cat">${movie.categories || ""}</div>
+      </div>
+    `;
+    card.onclick=()=>showModal(movie);
+    document.getElementById("grid").appendChild(card);
+  });
+
+  offset += json.data.length;
+  loading = false;
+}
+
+/* MODAL */
+function showModal(movie){
+  document.getElementById("modalTitle").innerText = movie.title || movie.name;
+  document.getElementById("modalLinks").innerText = movie.links || "No links available";
+  document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+document.getElementById("loadMore").onclick = loadMovies;
+
+/* START */
+initSession();
+</script>
+
+</body>
+</html>
