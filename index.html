@@ -2,30 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dillzy</title>
+  <title>DILLZY</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: Poppins, Arial, sans-serif;
-      background: #0f0f0f;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0e0e0e;
       color: #fff;
     }
 
     header {
-      padding: 16px;
+      padding: 14px;
       text-align: center;
       font-size: 22px;
-      font-weight: 600;
-      background: #121212;
+      font-weight: bold;
+      background: #141414;
       border-bottom: 1px solid #222;
     }
 
     .tabs {
       display: flex;
       overflow-x: auto;
-      background: #161616;
+      background: #181818;
     }
 
     .tab {
@@ -74,8 +76,9 @@
 
     .loader {
       text-align: center;
-      padding: 40px;
+      padding: 30px;
       color: #777;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -85,43 +88,47 @@
 <header>DILLZY</header>
 
 <div class="tabs">
-  <div class="tab active" onclick="load('x9a', this)">Hollywood Movies</div>
-  <div class="tab" onclick="load('q2m', this)">Hollywood Series</div>
-  <div class="tab" onclick="load('n4x', this)">Netflix</div>
-  <div class="tab" onclick="load('p6v', this)">Prime</div>
-  <div class="tab" onclick="load('b3l', this)">Bollywood</div>
-  <div class="tab" onclick="load('r7p', this)">Recent</div>
+  <div class="tab active" onclick="changeTab('x9a', this)">Hollywood Movies</div>
+  <div class="tab" onclick="changeTab('q2m', this)">Hollywood Series</div>
+  <div class="tab" onclick="changeTab('n4x', this)">Netflix</div>
+  <div class="tab" onclick="changeTab('p6v', this)">Prime</div>
+  <div class="tab" onclick="changeTab('b3l', this)">Bollywood</div>
+  <div class="tab" onclick="changeTab('r7p', this)">Recent</div>
 </div>
 
 <div id="content" class="grid"></div>
 <div id="loader" class="loader" style="display:none;">Loading…</div>
 
 <script>
-const API_BASE = ""; // same domain worker
-let offset = 0;
+/* ================= CONFIG ================= */
+const WORKER_URL = "https://dillzy-movie.cricketstream745.workers.dev/";
+/* ========================================== */
+
 let currentCode = "x9a";
+let offset = 0;
+let loading = false;
 
+/* ---------- SESSION ---------- */
 async function startSession() {
-  await fetch(API_BASE + "/s", { credentials: "include" });
+  try {
+    await fetch(WORKER_URL + "/s", {
+      credentials: "include"
+    });
+  } catch (e) {
+    console.log("Session failed");
+  }
 }
 
-async function load(code, el) {
-  currentCode = code;
-  offset = 0;
-
-  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-  el.classList.add("active");
-
-  document.getElementById("content").innerHTML = "";
-  fetchData();
-}
-
+/* ---------- LOAD DATA ---------- */
 async function fetchData() {
+  if (loading) return;
+  loading = true;
+
   document.getElementById("loader").style.display = "block";
 
   try {
     const res = await fetch(
-      `${API_BASE}/api?c=${currentCode}&o=${offset}&l=24`,
+      `${WORKER_URL}/api?c=${currentCode}&o=${offset}&l=24`,
       { credentials: "include" }
     );
 
@@ -130,11 +137,14 @@ async function fetchData() {
     const json = await res.json();
     render(json.d || []);
     offset += 24;
+
   } catch (e) {}
 
   document.getElementById("loader").style.display = "none";
+  loading = false;
 }
 
+/* ---------- RENDER ---------- */
 function render(list) {
   const box = document.getElementById("content");
 
@@ -156,15 +166,33 @@ function render(list) {
   });
 }
 
-/* infinite scroll */
+/* ---------- TAB CHANGE ---------- */
+function changeTab(code, el) {
+  currentCode = code;
+  offset = 0;
+
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
+
+  document.getElementById("content").innerHTML = "";
+  fetchData();
+}
+
+/* ---------- INFINITE SCROLL ---------- */
 window.addEventListener("scroll", () => {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
+  if (
+    window.innerHeight + window.scrollY >=
+    document.body.offsetHeight - 300
+  ) {
     fetchData();
   }
 });
 
-/* init */
-startSession().then(() => fetchData());
+/* ---------- INIT ---------- */
+(async () => {
+  await startSession();
+  fetchData();
+})();
 </script>
 
 </body>
