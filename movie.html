@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dillzy Movies</title>
 
 <style>
@@ -15,117 +15,73 @@
 }
 *{box-sizing:border-box;font-family:system-ui}
 body{margin:0;background:var(--bg);color:var(--text)}
+header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight:700}
 
-header{
-  padding:16px;
-  text-align:center;
-  background:#000;
-  font-size:20px;
-  font-weight:700;
-}
-
-.search-box{
-  padding:10px;
-  background:#111;
-}
-.search-box input{
-  width:100%;
-  padding:10px 14px;
-  border-radius:20px;
-  border:none;
-  outline:none;
-}
-
-.tabs{
-  display:flex;
-  overflow-x:auto;
-  background:#111;
-}
+.tabs{display:flex;overflow-x:auto;background:#111}
 .tabs button{
-  flex:1;
-  padding:12px;
-  border:none;
-  background:none;
-  color:#aaa;
-  cursor:pointer;
-  white-space:nowrap;
+  flex:1;padding:12px;border:none;background:none;
+  color:#aaa;cursor:pointer;white-space:nowrap
 }
 .tabs button.active{
   color:var(--accent);
-  border-bottom:2px solid var(--accent);
+  border-bottom:2px solid var(--accent)
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:14px;
-  padding:14px;
+  gap:14px;padding:14px
 }
 .card{
   background:var(--card);
   border-radius:12px;
   overflow:hidden;
   cursor:pointer;
-  transition:.2s;
+  transition:.2s
 }
 .card:hover{transform:scale(1.05)}
 .card img{
-  width:100%;
-  height:230px;
-  object-fit:cover;
+  width:100%;height:230px;
+  object-fit:cover;background:#000
 }
 .card-content{padding:8px}
 .card-title{font-size:14px;font-weight:600}
-.card-cat{font-size:11px;color:var(--muted)}
+.card-cat{font-size:11px;color:var(--muted);margin-top:4px}
 
 .load-more{
-  display:block;
-  margin:20px auto;
-  padding:12px 28px;
-  border:none;
-  border-radius:30px;
-  background:var(--accent);
-  font-weight:700;
-  cursor:pointer;
+  display:block;width:90%;max-width:320px;
+  margin:20px auto;padding:12px;
+  border:none;border-radius:30px;
+  background:var(--accent);color:#000;
+  font-weight:700;cursor:pointer
 }
 
 .modal{
-  position:fixed;
-  inset:0;
+  position:fixed;inset:0;
   background:rgba(0,0,0,.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
+  display:none;align-items:center;justify-content:center;
+  z-index:999
 }
 .modal-box{
-  background:#111;
-  padding:16px;
-  max-width:520px;
-  width:95%;
-  border-radius:12px;
+  background:#111;padding:16px;
+  max-width:520px;width:95%;
+  border-radius:12px
 }
 .links{
   font-size:13px;
   white-space:pre-line;
   color:var(--accent);
-  word-break:break-all;
+  word-break:break-all
 }
 .close{
-  margin-top:12px;
-  background:#333;
-  border:none;
-  color:#fff;
-  padding:8px 14px;
-  border-radius:6px;
-  cursor:pointer;
+  margin-top:12px;background:#333;
+  border:none;color:#fff;
+  padding:8px 14px;border-radius:6px;
+  cursor:pointer
 }
-
 footer{
-  text-align:center;
-  padding:15px;
-  font-size:12px;
-  color:#888;
+  text-align:center;padding:15px;
+  font-size:12px;color:#888
 }
 </style>
 </head>
@@ -133,10 +89,6 @@ footer{
 <body>
 
 <header>🎬 Dillzy Movies</header>
-
-<div class="search-box">
-  <input id="searchInput" placeholder="Search movies or series">
-</div>
 
 <div class="tabs">
   <button class="active" onclick="switchTab('/hollywood/movies',this)">Hollywood Movies</button>
@@ -163,104 +115,94 @@ footer{
 
 <script>
 const BASE_API="https://dillzy-movie.cricketstream745.workers.dev";
-
-const grid=document.getElementById("grid");
-const modal=document.getElementById("modal");
-const modalTitle=document.getElementById("modalTitle");
-const modalLinks=document.getElementById("modalLinks");
-const loadMore=document.getElementById("loadMore");
-const searchInput=document.getElementById("searchInput");
-
 let currentEndpoint="/hollywood/movies";
-let offset=0,limit=50,loading=false,hasMore=true;
-let allItems=[],searchQuery="";
+let offset=0,loading=false;
 
 function switchTab(endpoint,btn){
   document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
   currentEndpoint=endpoint;
-  resetAll();
-}
-
-function resetAll(){
   offset=0;
-  hasMore=true;
-  loading=false;
-  allItems=[];
   grid.innerHTML="";
-  loadMore.style.display="block";
   loadMovies();
 }
 
 async function loadMovies(){
-  if(loading||!hasMore) return;
+  if(loading) return;
   loading=true;
-
-  const res=await fetch(`${BASE_API}${currentEndpoint}?offset=${offset}&limit=${limit}`);
+  const res=await fetch(`${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`);
   const json=await res.json();
-  const data=json.data||[];
 
-  if(!data.length){
-    hasMore=false;
-    loadMore.style.display="none";
-    loading=false;
-    return;
-  }
-
-  offset+=data.length;
-  allItems.push(...data);
-  renderGrid();
-  loading=false;
-}
-
-function renderGrid(){
-  grid.innerHTML="";
-  const list=searchQuery
-    ? allItems.filter(m=>(m.title||"").toLowerCase().includes(searchQuery))
-    : allItems;
-
-  list.forEach(movie=>{
+  json.data.forEach(movie=>{
     const card=document.createElement("div");
     card.className="card";
     card.innerHTML=`
       <img src="${movie.featured_image}"
            loading="lazy"
+           referrerpolicy="no-referrer"
            onerror="this.src='https://via.placeholder.com/300x450?text=No+Image'">
       <div class="card-content">
-        <div class="card-title">${movie.title||"Untitled"}</div>
+        <div class="card-title">${movie.title||movie.name||"Untitled"}</div>
         <div class="card-cat">${movie.categories||""}</div>
       </div>`;
     card.onclick=()=>showModal(movie);
     grid.appendChild(card);
   });
+
+  offset+=json.data.length;
+  loading=false;
 }
 
 function showModal(movie){
-  modalTitle.innerText=movie.title||"Details";
+  modalTitle.innerText=movie.title||movie.name||"Details";
   let out="";
 
-  if(movie.links) out+="🔗 LINKS\n\n"+movie.links+"\n\n";
-  if(movie.season_zip) out+="📦 ZIP\n\n"+movie.season_zip+"\n\n";
-
-  for(let i=1;i<=10;i++){
-    const k="season_"+i;
-    if(movie[k]) out+=`🎬 SEASON ${i}\n\n${movie[k]}\n\n`;
+  if(movie.links && movie.links.trim()){
+    out+="🔗 LINKS\n\n"+movie.links+"\n\n";
   }
 
-  modalLinks.innerText=out||"❌ No links available";
+  if(movie.season_zip && movie.season_zip.trim()){
+    out+="📦 SEASON ZIP\n\n"+formatZip(movie.season_zip)+"\n\n";
+  }
+
+  for(let i=1;i<=10;i++){
+    const key="season_"+i;
+    if(movie[key] && movie[key].trim()){
+      out+=`🎬 SEASON ${i}\n\n`;
+      out+=formatEpisodes(movie[key])+"\n\n";
+    }
+  }
+
+  if(!out) out="❌ No links available";
+  modalLinks.innerText=out.trim();
   modal.style.display="flex";
 }
 
-function closeModal(){
-  modal.style.display="none";
+function formatZip(raw){
+  return raw.split(",").map(x=>{
+    x=x.trim();
+    if(x.startsWith("http")) return "➡ "+x;
+    if(x.startsWith("Season")) return "\n"+x;
+    return x;
+  }).join("\n");
 }
 
-loadMore.onclick=loadMovies;
-searchInput.oninput=e=>{
-  searchQuery=e.target.value.toLowerCase().trim();
-  renderGrid();
-};
+function formatEpisodes(raw){
+  return raw
+    .replace(/&amp;/g,"&")
+    .split("\n")
+    .map(line=>{
+      if(line.includes("Episode"))
+        return "\n"+line.trim();
+      if(line.includes("http"))
+        return "➡ "+line.trim();
+      return line.trim();
+    })
+    .join("\n");
+}
 
+function closeModal(){modal.style.display="none"}
+loadMore.onclick=loadMovies;
 loadMovies();
 </script>
 
