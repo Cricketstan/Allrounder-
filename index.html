@@ -1,260 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Allrounder</title>
+  <meta charset="UTF-8" />
+  <title>Dillzy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shaka-player@4.3.4/dist/controls.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+    }
 
-<style>
-:root {
-    --bg-color: #121212;
-    --primary-red: #e50914; 
-    --primary-red-dark: #b91c1c;
-    --card-bg: #1e1e1e;
-    --text-light: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border-color: #2d2d2d;
-    --popup-bg: #282828;
-    --popup-shadow-color: rgba(229, 9, 20, 0.4);
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-light);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 1rem;
-}
-.container {
-    width: 100%;
-    max-width: 800px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.5s ease-out forwards;
-}
-@keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
-.stream-header {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 0.75rem 1.25rem;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-.stream-header h1 { font-size: 1.25rem; font-weight: 600; }
-.live-badge {
-    background-color: var(--primary-red);
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    animation: pulse 1.5s infinite;
-}
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(229, 9, 20, 0); }
-    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 9, 20, 0); }
-}
-#player-container {
-    width: 100%;
-    height: 50vh;
-    max-height: 600px;
-    background-color: #000;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-}
+    header {
+      padding: 16px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      background: #121212;
+      border-bottom: 1px solid #222;
+    }
 
-/* ✅ HOTSTAR STYLE VIEW COUNTER */
-.view-counter {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    background: rgba(0, 0, 0, 0.55);
-    padding: 5px 9px;
-    border-radius: 6px;
-    font-size: 11px;
-    line-height: 1.3;
-    color: #fff;
-    font-weight: 600;
-    text-align: right;
-    z-index: 9999;
-    pointer-events: none;
-}
-.view-counter .name {
-    font-size: 10px;
-    opacity: 0.85;
-}
-.view-counter .views {
-    font-size: 12px;
-    font-weight: 700;
-}
+    .tabs {
+      display: flex;
+      overflow-x: auto;
+      background: #161616;
+    }
 
-.info-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.25rem;
-    margin-top: 1rem;
-    text-align: center;
-}
-.info-card h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    color: var(--text-muted);
-}
-.action-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.action-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px var(--popup-shadow-color);
-}
-.action-button.copied { background: linear-gradient(90deg, #22c55e, #4ade80); }
-.back-link {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    margin-top: 1.5rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 8px;
-    transition: background-color 0.2s ease;
-}
-.back-link:hover { background-color: var(--card-bg); color: var(--text-light); }
-.error-message {
-     text-align: center;
-     padding: 4rem 1rem;
-     background-color: var(--card-bg);
-     border: 1px solid var(--border-color);
-     border-radius: 12px;
-}
-.error-message h2 { color: var(--primary-red); font-size: 1.5rem; margin-bottom: 0.5rem; }
-</style>
+    .tab {
+      padding: 12px 16px;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .tab.active {
+      color: #00b4d8;
+      border-bottom: 2px solid #00b4d8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .card {
+      background: #1b1b1b;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform .2s;
+    }
+
+    .card:hover {
+      transform: scale(1.04);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title {
+      padding: 8px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .loader {
+      text-align: center;
+      padding: 40px;
+      color: #777;
+    }
+  </style>
 </head>
+
 <body>
-<main class="container">
-    <div id="stream-content"></div>
-</main>
+
+<header>DILLZY</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="load('x9a', this)">Hollywood Movies</div>
+  <div class="tab" onclick="load('q2m', this)">Hollywood Series</div>
+  <div class="tab" onclick="load('n4x', this)">Netflix</div>
+  <div class="tab" onclick="load('p6v', this)">Prime</div>
+  <div class="tab" onclick="load('b3l', this)">Bollywood</div>
+  <div class="tab" onclick="load('r7p', this)">Recent</div>
+</div>
+
+<div id="content" class="grid"></div>
+<div id="loader" class="loader" style="display:none;">Loading…</div>
 
 <script>
-async function initializeApp() {
-    try {
-        const response = await fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/id.json');
-        if (!response.ok) throw new Error('Failed to fetch JSON');
-        const data = await response.json();
+const API_BASE = ""; // same domain worker
+let offset = 0;
+let currentCode = "x9a";
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const streamId = urlParams.get('id');
-        const streamData = data.iframes.find(item => item.id === streamId);
-
-        if (streamData) {
-            document.title = `${streamData.name}`;
-            renderIframeUI(streamData);
-        } else {
-            renderErrorUI();
-        }
-    } catch (err) {
-        console.error(err);
-        renderErrorUI();
-    }
+async function startSession() {
+  await fetch(API_BASE + "/s", { credentials: "include" });
 }
 
-function renderIframeUI(data) {
-    const contentDiv = document.getElementById('stream-content');
-    contentDiv.innerHTML = `
-        <div class="stream-header">
-            <h1>${data.name}</h1>
-            <div class="live-badge"><i class="fa-solid fa-circle"></i> LIVE</div>
-        </div>
+async function load(code, el) {
+  currentCode = code;
+  offset = 0;
 
-        <div id="player-container">
-            <iframe src="${data.iframeSrc}" style="width:100%; height:100%; border:0;" allow="encrypted-media; autoplay" allowfullscreen></iframe>
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  el.classList.add("active");
 
-            <div class="view-counter">
-                <div class="name">${data.name}</div>
-                <div class="views" id="viewCount">0 Views</div>
-            </div>
-        </div>
-    `;
-
-    startHitAndCounter(data);
+  document.getElementById("content").innerHTML = "";
+  fetchData();
 }
 
-function formatViews(num) {
-    if (!num || isNaN(num)) return "0";
-    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
-    return num;
+async function fetchData() {
+  document.getElementById("loader").style.display = "block";
+
+  try {
+    const res = await fetch(
+      `${API_BASE}/api?c=${currentCode}&o=${offset}&l=24`,
+      { credentials: "include" }
+    );
+
+    if (!res.ok) return;
+
+    const json = await res.json();
+    render(json.d || []);
+    offset += 24;
+  } catch (e) {}
+
+  document.getElementById("loader").style.display = "none";
 }
 
-async function startHitAndCounter(data) {
-    try {
-        await fetch(data.hit + "&_=" + Date.now());
-    } catch(e) {}
+function render(list) {
+  const box = document.getElementById("content");
 
-    async function updateViews() {
-        try {
-            const res = await fetch(data.get + "&_=" + Date.now());
-            const json = await res.json();
-            const views = json.total || 0;
-            document.getElementById("viewCount").innerText =
-                formatViews(Number(views)) + " Views";
-        } catch(err) {
-            document.getElementById("viewCount").innerText = "0 Views";
-        }
-    }
+  list.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
 
-    updateViews();
-    setInterval(updateViews, 2000);
+    const img = document.createElement("img");
+    img.src = item.poster || item.image || "";
+    img.onerror = () => img.style.display = "none";
+
+    const title = document.createElement("div");
+    title.className = "title";
+    title.textContent = item.title || item.name || "Untitled";
+
+    card.appendChild(img);
+    card.appendChild(title);
+    box.appendChild(card);
+  });
 }
 
-function renderErrorUI() {
-    const contentDiv = document.getElementById('stream-content');
-    document.title = "Error - Stream Not Found";
-    contentDiv.innerHTML = `
-        <div class="error-message">
-            <h2><i class="fa-solid fa-triangle-exclamation"></i> Stream Not Found</h2>
-            <p>The requested stream ID is invalid or offline.</p>
-        </div>`;
-}
+/* infinite scroll */
+window.addEventListener("scroll", () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
+    fetchData();
+  }
+});
 
-document.addEventListener("DOMContentLoaded", initializeApp);
+/* init */
+startSession().then(() => fetchData());
 </script>
+
 </body>
 </html>
