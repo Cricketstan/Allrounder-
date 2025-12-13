@@ -6,7 +6,7 @@
 <title>Dillzy Movies</title>
 
 <style>
-:root{
+:root {
   --bg:#0e0e0e;
   --card:#1b1b1b;
   --accent:#00b4ff;
@@ -17,71 +17,99 @@
 body{margin:0;background:var(--bg);color:var(--text)}
 header{padding:16px;text-align:center;background:#000;font-size:20px;font-weight:700}
 
-.tabs{display:flex;overflow-x:auto;background:#111}
+.tabs{
+  display:flex;
+  overflow-x:auto;
+  background:#111;
+}
 .tabs button{
-  flex:1;padding:12px;border:none;background:none;
-  color:#aaa;cursor:pointer;white-space:nowrap
+  flex:1;
+  padding:12px;
+  border:none;
+  background:none;
+  color:#aaa;
+  cursor:pointer;
 }
 .tabs button.active{
   color:var(--accent);
-  border-bottom:2px solid var(--accent)
+  border-bottom:2px solid var(--accent);
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-  gap:14px;padding:14px
+  gap:14px;
+  padding:14px;
 }
 .card{
   background:var(--card);
   border-radius:12px;
   overflow:hidden;
   cursor:pointer;
-  transition:.2s
+  transition:.2s;
 }
 .card:hover{transform:scale(1.05)}
 .card img{
-  width:100%;height:230px;
-  object-fit:cover;background:#000
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  background:#000;
 }
 .card-content{padding:8px}
 .card-title{font-size:14px;font-weight:600}
 .card-cat{font-size:11px;color:var(--muted);margin-top:4px}
 
 .load-more{
-  display:block;width:90%;max-width:320px;
-  margin:20px auto;padding:12px;
-  border:none;border-radius:30px;
-  background:var(--accent);color:#000;
-  font-weight:700;cursor:pointer
+  display:block;
+  width:90%;
+  max-width:320px;
+  margin:20px auto;
+  padding:12px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
 }
 
+/* MODAL */
 .modal{
-  position:fixed;inset:0;
+  position:fixed;
+  inset:0;
   background:rgba(0,0,0,.85);
-  display:none;align-items:center;justify-content:center;
-  z-index:999
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:999;
 }
 .modal-box{
-  background:#111;padding:16px;
-  max-width:520px;width:95%;
-  border-radius:12px
+  background:#111;
+  padding:16px;
+  max-width:520px;
+  width:95%;
+  border-radius:12px;
 }
 .links{
   font-size:13px;
   white-space:pre-line;
   color:var(--accent);
-  word-break:break-all
+  word-break:break-all;
 }
 .close{
-  margin-top:12px;background:#333;
-  border:none;color:#fff;
-  padding:8px 14px;border-radius:6px;
-  cursor:pointer
+  margin-top:12px;
+  background:#333;
+  border:none;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:6px;
+  cursor:pointer;
 }
 footer{
-  text-align:center;padding:15px;
-  font-size:12px;color:#888
+  text-align:center;
+  padding:15px;
+  font-size:12px;
+  color:#888;
 }
 </style>
 </head>
@@ -114,95 +142,97 @@ footer{
 <footer>Powered by Dillzy</footer>
 
 <script>
-const BASE_API="https://dillzy-movie.cricketstream745.workers.dev";
-let currentEndpoint="/hollywood/movies";
-let offset=0,loading=false;
+const BASE_API = "https://dillzy-movie.cricketstream745.workers.dev";
+let currentEndpoint = "/hollywood/movies";
+let offset = 0;
+let loading = false;
 
-function switchTab(endpoint,btn){
+function switchTab(endpoint, btn){
   document.querySelectorAll(".tabs button").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  currentEndpoint=endpoint;
-  offset=0;
-  grid.innerHTML="";
+  currentEndpoint = endpoint;
+  offset = 0;
+  document.getElementById("grid").innerHTML = "";
   loadMovies();
 }
 
 async function loadMovies(){
   if(loading) return;
-  loading=true;
-  const res=await fetch(`${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`);
-  const json=await res.json();
+  loading = true;
+
+  const res = await fetch(`${BASE_API}${currentEndpoint}?offset=${offset}&limit=50`);
+  const json = await res.json();
 
   json.data.forEach(movie=>{
     const card=document.createElement("div");
     card.className="card";
     card.innerHTML=`
       <img src="${movie.featured_image}"
-           loading="lazy"
            referrerpolicy="no-referrer"
+           loading="lazy"
            onerror="this.src='https://via.placeholder.com/300x450?text=No+Image'">
       <div class="card-content">
-        <div class="card-title">${movie.title||movie.name||"Untitled"}</div>
-        <div class="card-cat">${movie.categories||""}</div>
-      </div>`;
+        <div class="card-title">${movie.title || movie.name || "Untitled"}</div>
+        <div class="card-cat">${movie.categories || ""}</div>
+      </div>
+    `;
     card.onclick=()=>showModal(movie);
-    grid.appendChild(card);
+    document.getElementById("grid").appendChild(card);
   });
 
-  offset+=json.data.length;
-  loading=false;
+  offset += json.data.length;
+  loading = false;
 }
 
 function showModal(movie){
-  modalTitle.innerText=movie.title||movie.name||"Details";
-  let out="";
+  document.getElementById("modalTitle").innerText =
+    movie.title || movie.name || "Details";
 
-  if(movie.links && movie.links.trim()){
-    out+="🔗 LINKS\n\n"+movie.links+"\n\n";
+  let output = "";
+
+  if (movie.links && movie.links.trim() !== "") {
+    output += "🔗 LINKS\n\n" + movie.links + "\n\n";
   }
 
-  if(movie.season_zip && movie.season_zip.trim()){
-    out+="📦 SEASON ZIP\n\n"+formatZip(movie.season_zip)+"\n\n";
+  if (movie.season_zip && movie.season_zip.trim() !== "") {
+    output += "📦 SEASON ZIP DOWNLOADS\n\n";
+    output += formatSeasonZip(movie.season_zip);
   }
 
-  for(let i=1;i<=10;i++){
-    const key="season_"+i;
-    if(movie[key] && movie[key].trim()){
-      out+=`🎬 SEASON ${i}\n\n`;
-      out+=formatEpisodes(movie[key])+"\n\n";
+  if (!output) {
+    output = "❌ No links available";
+  }
+
+  document.getElementById("modalLinks").innerText = output;
+  document.getElementById("modal").style.display="flex";
+}
+
+function formatSeasonZip(raw){
+  let text = "";
+  const parts = raw.split(",");
+
+  parts.forEach(p=>{
+    const part = p.trim();
+    if (part.startsWith("Season")) {
+      text += "\n" + part + "\n";
     }
-  }
+    else if (part.startsWith("http")) {
+      text += "➡ " + part + "\n";
+    }
+    else {
+      text += part + "\n";
+    }
+  });
 
-  if(!out) out="❌ No links available";
-  modalLinks.innerText=out.trim();
-  modal.style.display="flex";
+  return text.trim();
 }
 
-function formatZip(raw){
-  return raw.split(",").map(x=>{
-    x=x.trim();
-    if(x.startsWith("http")) return "➡ "+x;
-    if(x.startsWith("Season")) return "\n"+x;
-    return x;
-  }).join("\n");
+function closeModal(){
+  document.getElementById("modal").style.display="none";
 }
 
-function formatEpisodes(raw){
-  return raw
-    .replace(/&amp;/g,"&")
-    .split("\n")
-    .map(line=>{
-      if(line.includes("Episode"))
-        return "\n"+line.trim();
-      if(line.includes("http"))
-        return "➡ "+line.trim();
-      return line.trim();
-    })
-    .join("\n");
-}
+document.getElementById("loadMore").onclick = loadMovies;
 
-function closeModal(){modal.style.display="none"}
-loadMore.onclick=loadMovies;
 loadMovies();
 </script>
 
