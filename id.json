@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://dillzyishere.vercel.app/player2.html?id=dillzy745",
+      "iframeSrc": "https://ghg-cricketstan.wasmer.app//player2.html?id=dillzy745",
       "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=hindi",
       "get": "https://hit-counter-7fvw.vercel.app/api/get?key=hindi"
     },
@@ -44,7 +44,7 @@
       "id": "alt",
       "name": "DILLZY",
       "type": "iframe",
-      "iframeSrc": "https://dillzyishere.vercel.app/player2.html?id=dillzy745",
+      "iframeSrc": "https://ghg-cricketstan.wasmer.app/player2.html?id=dillzy745/player2.html?id=dillzy745",
       "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=alt",
       "get": "https://hit-counter-7fvw.vercel.app/api/get?key=alt"
     },
@@ -84,7 +84,7 @@
       "id": "fox",
       "name": "Fox Cricket 501",
       "type": "iframe",
-      "iframeSrc": "https://dillzyishere.vercel.app/player2.html?id=127678ggg",
+      "iframeSrc": "https://ghg-cricketstan.wasmer.app/player2.html?id=127678ggg",
       "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=fox",
       "get": "https://hit-counter-7fvw.vercel.app/api/get?key=fox"
     },
