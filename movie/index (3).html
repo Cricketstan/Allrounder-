@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieHub - Watch & Download Latest Movies</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <span>ALLROUNDER MOVIES</span>
+            </div>
+            <nav class="nav">
+                <a href="#" data-category="all" class="nav-link active">All Movies</a>
+                <a href="#" data-category="hollywood-movies" class="nav-link">Hollywood Movies</a>
+                <a href="#" data-category="hollywood-series" class="nav-link">Hollywood Series</a>
+                <a href="#" data-category="bollywood" class="nav-link">Bollywood</a>
+                <a href="#" data-category="netflix" class="nav-link">Netflix</a>
+                <a href="#" data-category="prime" class="nav-link">Prime Video</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search movies...">
+                <i class="fas fa-search"></i>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to MovieHub</h1>
+            <p>Watch & Download Latest Movies in HD Quality</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToMovies()">
+                    <i class="fas fa-play"></i> Browse Movies
+                </button>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="loading" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading Movies...</p>
+    </div>
+
+    <!-- Movies Section -->
+    <section class="movies-section" id="moviesSection">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="sectionTitle">All Movies</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="movie">Movies</button>
+                    <button class="filter-btn" data-filter="series">Series</button>
+                </div>
+            </div>
+            <div class="movies-grid" id="moviesGrid">
+                <!-- Movies will be dynamically loaded here -->
+            </div>
+            <div class="load-more-container">
+                <button class="btn btn-secondary" id="loadMoreBtn">
+                    Load More <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Details Modal -->
+    <div class="modal" id="movieModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="movie-poster-section">
+                    <img id="modalPoster" src="" alt="Movie Poster">
+                </div>
+                <div class="movie-info-section">
+                    <h2 id="modalTitle"></h2>
+                    <div class="movie-meta">
+                        <span class="meta-item" id="modalYear"></span>
+                        <span class="meta-item" id="modalRating"></span>
+                        <span class="meta-item" id="modalDuration"></span>
+                    </div>
+                    <p id="modalDescription"></p>
+                    
+                    <!-- Video Player -->
+                    <div class="video-player-container" id="videoPlayerContainer" style="display: none;">
+                        <video id="videoPlayer" controls controlsList="nodownload">
+                            <source id="videoSource" src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="quality-selector" id="qualitySelector">
+                            <!-- Quality options will be added dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="playOnlineBtn">
+                            <i class="fas fa-play"></i> Play Online
+                        </button>
+                        <button class="btn btn-secondary" id="downloadBtn">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+
+                    <!-- Download Options -->
+                    <div class="download-options" id="downloadOptions" style="display: none;">
+                        <h3>Download Options</h3>
+                        <div class="quality-tabs" id="qualityTabs">
+                            <!-- Quality tabs will be added dynamically -->
+                        </div>
+                        <div class="download-links" id="downloadLinks">
+                            <!-- Download links will be added dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-film"></i> MovieHub</h3>
+                    <p>Your ultimate destination for the latest movies and series.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">Series</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Hollywood</a></li>
+                        <li><a href="#">Bollywood</a></li>
+                        <li><a href="#">Netflix</a></li>
+                        <li><a href="#">Prime Video</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MovieHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
