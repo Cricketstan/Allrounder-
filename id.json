@@ -180,7 +180,7 @@
       "id": "youtube",
       "name": "Youtube",
       "type": "iframe",
-      "iframeSrc": "https://dillzy.wasmer.app/?url=https://www.youtube.com/live/UgUefaVajL8?si=IRpzeNRf05rK1W8C",
+      "iframeSrc": "https://dillzy.wasmer.app/?url=https://www.youtube.com/live/4FFqaCqqp_E?si=qz8hFPvFyuDzEFmL",
       "hit": "https://hit-counter-7fvw.vercel.app/api/hit?key=youtube",
       "get": "https://hit-counter-7fvw.vercel.app/api/get?key=youtube"
     }
