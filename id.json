@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Star-Sports-2-Hindi/",
+      "iframeSrc": "https://ghg-cricketstan.wasmer.app/player2.html?id=dillzy745/player2.html?id=dillzy45",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=hindi",
       "get": "https://dillzycounter.vercel.app/api/get?key=hindi"
     },
