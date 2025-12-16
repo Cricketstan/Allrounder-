@@ -28,7 +28,7 @@
       "id": "willow",
       "name": "Willow",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Willow-Cricbuzz-/",
+      "iframeSrc": "https://allrounderlive.pages.dev/willow",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=willow",
       "get": "https://dillzycounter.vercel.app/api/get?key=willow"
     },
