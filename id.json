@@ -156,7 +156,7 @@
       "id": "prime-nz",
       "name": "PRIME",
       "type": "iframe",
-      "iframeSrc": "https://hff-eight.vercel.app/",
+      "iframeSrc": "https://hff-cricketstan.wasmer.app/",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=prime-nz",
       "get": "https://dillzycounter.vercel.app/api/get?key=prime-nz"
     },
