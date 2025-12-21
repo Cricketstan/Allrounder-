@@ -172,7 +172,7 @@
       "id": "sony-3",
       "name": "SONY",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/channel-12/",
+      "iframeSrc": "https://cricketstan.github.io/Sony-ten-5/",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=sony-3",
       "get": "https://dillzycounter.vercel.app/api/get?key=sony-3"
     },
