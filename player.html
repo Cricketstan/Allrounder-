@@ -4,7 +4,7 @@
   <title>Fox Cricket</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
-  
+
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
 
@@ -44,17 +44,34 @@
       height: 100%;
       width: 100%;
     }
+
+    /* 🔹 Invisible visitor counter (same as before) */
+    #visitor-counter {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
   </style>
 </head>
 <body>
+
   <div class="video-container">
     <video autoplay playsinline muted id="player" controls preload="metadata"></video>
+  </div>
+
+  <!-- 🔹 BACKGROUND VISITOR COUNTER -->
+  <div id="visitor-counter">
+    <div id="sfcf9a543mw181dpyf921tw7rfrwz5bx28z"></div>
+    <script src="https://counter1.optistats.ovh/private/counter.js?c=f9a543mw181dpyf921tw7rfrwz5bx28z&down=async" async></script>
+    <noscript>
+      <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=f9a543mw181dpyf921tw7rfrwz5bx28z" alt="">
+    </noscript>
   </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
 
-      // ✅ Get ?url= parameter
       const params = new URLSearchParams(window.location.search);
       const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
 
@@ -70,9 +87,7 @@
       };
 
       if (Hls.isSupported()) {
-        const hls = new Hls({
-          autoStartLoad: true
-        });
+        const hls = new Hls({ autoStartLoad: true });
 
         hls.loadSource(source);
         hls.attachMedia(video);
@@ -80,7 +95,7 @@
         hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
           const availableQualities = data.levels.map(l => l.height).sort((a,b) => b - a);
 
-          const player = new Plyr(video, {
+          new Plyr(video, {
             ...defaultOptions,
             quality: {
               default: availableQualities[0],
@@ -88,9 +103,7 @@
               forced: true,
               onChange: q => {
                 hls.levels.forEach((level, index) => {
-                  if (level.height === q) {
-                    hls.currentLevel = index;
-                  }
+                  if (level.height === q) hls.currentLevel = index;
                 });
               }
             }
@@ -104,5 +117,6 @@
       }
     });
   </script>
+
 </body>
 </html>
