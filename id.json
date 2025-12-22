@@ -44,7 +44,7 @@
       "id": "alt",
       "name": "DILLZY",
       "type": "iframe",
-      "iframeSrc": "https://ghg-cricketstan.wasmer.app/player2.html?id=dillzy745/player2.html?id=dillzy745",
+      "iframeSrc": "https://we.cricketstream745.workers.dev/live.m3u8?u=854576",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=alt",
       "get": "https://dillzycounter.vercel.app/api/get?key=alt"
     },
