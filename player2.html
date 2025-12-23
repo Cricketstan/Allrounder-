@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en"> 
 <head> 
   <meta charset="UTF-8"> 
@@ -5,6 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script> 
+
+  <!-- Anti-iframe protection -->
+  <script>
+    if (window.top !== window.self) {
+      const ref = document.referrer || "";
+
+      if (
+        !ref.includes("") &&
+        !ref.includes("https://dilzcreation.pages.dev") &&
+        !ref.includes("https://run-machine.pages.dev") &&
+        !ref.includes("https://match-central.pages.dev") &&
+        !ref.includes("https://cricontime.pages.dev") &&
+        !ref.includes("https://pitchside.pages.dev/") &&
+        !ref.includes("https://cricworldd.pages.dev/") &&
+        !ref.includes("https://cricketchampion.pages.dev/") &&
+        !ref.includes("https://editverse.pages.dev/") &&
+        !ref.includes("https://cricket-stan.pages.dev/") &&
+        !ref.includes("domain9.com") &&
+        !ref.includes("domain10.com")
+      ) {
+        window.addEventListener('DOMContentLoaded', () => {
+          document.body.innerHTML = '<div id="message">Contact t.me/dillzycreations on tg</div>';
+        });
+      }
+    }
+  </script>
     
   <style> 
     html, body { 
