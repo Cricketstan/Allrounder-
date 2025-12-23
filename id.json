@@ -73,10 +73,10 @@
       "get": "https://dillzycounter.vercel.app/api/get?key=willow-sports"
     },
     {
-      "id": "icc-tv",
-      "name": "ICC TV",
+      "id": "hotstar",
+      "name": "Hotstar",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/Sony-Liv/",
+      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://we.cricketstream745.workers.dev/live.m3u8?u=dillzy745",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=icc-tv",
       "get": "https://dillzycounter.vercel.app/api/get?key=icc-tv"
     },
