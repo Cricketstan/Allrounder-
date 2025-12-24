@@ -183,6 +183,13 @@
       "iframeSrc": "https://dillzy.wasmer.app/?url=https://www.youtube.com/live/yquSpGafY4A?si=-K-RQ3n7o9JtmQXr",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=youtube",
       "get": "https://dillzycounter.vercel.app/api/get?key=youtube"
+    },
+     {
+      "id": "plrtst",
+      "name": "Willow TV Plus",
+      "iframeSrc": "https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/ts-eu-w1-n2/playlist/amg01269-willowtvfast-willowplus-sportstribalemea/cb7d3e1a7b736f8a93ca3f6cd9f615a5d10f34855f3ad76667fb5ec17cc01d5383bda0c7e71dbb3b54bd40a33e40340d0136d41cc07c11dfb923f6056b3b5464e4fca27ad9871202a2bf56742cb7710e19f80a0cc0541362d5ec2d0d8716bc6d4a46bb5e200564cdf522d5122fb99c1ad72672debdaa346a2605468f2e05a7ff03f6e0e05946c66cbfb10248854c14b1d30090cb19b887ca5898519224f4409b96f98fd60dd786c435b456b33259157b28cfd83490c808e0dbcf38609f247b432c7f8cccfb689111fc256a72ba9ae2b161f612bce64fe34104cbcb1cd2e64aee4ab900a69b2eeacde99d2a454839524ee1dbc1b180f331a4819064db91c9971f5d8aff15376cc661d3233f39aa30aa7e8bee1a8cbf2f89b526487690d10dac94bc87e0a79e0ab2118a96a4d66d190e540d0cd009f9da758d7d943889de032d597a41afb15cd0c98c0d672c1cd0c016ff3b2f94f7c7c3d30730cf203c5feb6bd612454fc4266371e062a8ce6f22d9685acb657dc859338150f5f779a6f095b65049c0b4ad75f661ebba1dc1b653f91f5b7736f3a37c1115363eba8841023f7ecf409ea3e9e965060de9b780bef75a36033600414eecc6e263909acf3917759007738015dcbc46aeb00f833eb66982eae1d400287613a2eb1e/145/1920x1080_5859480/index.m3u8",
+      "hit": "https://api.countapi.xyz/hit/dilzzy/willow",
+      "get": "https://api.countapi.xyz/get/dilzzy/willow"
     }
   ]
 }
