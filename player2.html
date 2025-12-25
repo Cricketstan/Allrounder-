@@ -65,12 +65,50 @@
       max-height: 100%; 
     } 
 
-    /* 🔹 visitor counter fix (no interaction, no overlay) */
     #visitor-counter {
       position: fixed;
       opacity: 0;
       pointer-events: none;
       z-index: -1;
+    }
+
+    /* Frame capture preview */
+    #capture-preview {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.95);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      z-index: 10000;
+      display: none;
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    #capture-preview img {
+      max-width: 100%;
+      max-height: 70vh;
+      display: block;
+      border-radius: 4px;
+    }
+
+    #capture-preview .info {
+      color: #4CAF50;
+      text-align: center;
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    /* Custom capture button styling */
+    .jw-icon-capture {
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>');
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   </style> 
 </head> 
@@ -78,7 +116,13 @@
 <body> 
   <div id="jwplayerDiv"></div> 
 
-  <!-- 🔹 BACKGROUND VISITOR COUNTER -->
+  <!-- Frame capture preview -->
+  <div id="capture-preview">
+    <img id="captured-image" alt="Captured Frame">
+    <div class="info">✓ Frame captured and downloaded!</div>
+  </div>
+
+  <!-- Visitor counter -->
   <div id="visitor-counter">
     <div id="sfcf9a543mw181dpyf921tw7rfrwz5bx28z"></div>
     <script src="https://counter1.optistats.ovh/private/counter.js?c=f9a543mw181dpyf921tw7rfrwz5bx28z&down=async" async></script>
@@ -91,14 +135,76 @@
     const urlParams = new URLSearchParams(window.location.search);
     const stream = urlParams.get('url') || "https://rumble.com/live-hls-dvr/6z66p4/playlist.m3u8";
 
-    jwplayer("jwplayerDiv").setup({ 
+    const player = jwplayer("jwplayerDiv");
+    
+    player.setup({ 
       file: stream, 
       position: 'bottom', 
       autostart: true, 
       stretching: "uniform", 
       width: "100%", 
       type: "hls"
-    }); 
+    });
+
+    // Add custom capture button to control bar
+    player.on('ready', function() {
+      player.addButton(
+        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>',
+        'Capture Frame',
+        function() {
+          captureFrame();
+        },
+        'capture-frame-btn'
+      );
+    });
+
+    function captureFrame() {
+      try {
+        // Get the video element
+        const video = document.querySelector('video');
+        
+        if (!video) {
+          alert('Video element not found');
+          return;
+        }
+
+        // Create canvas
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        
+        // Draw current frame
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        // Convert to blob and download
+        canvas.toBlob(function(blob) {
+          // Create download link
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+          a.href = url;
+          a.download = `frame-capture-${timestamp}.png`;
+          a.click();
+          
+          // Show preview
+          const preview = document.getElementById('capture-preview');
+          const capturedImg = document.getElementById('captured-image');
+          capturedImg.src = url;
+          preview.style.display = 'block';
+          
+          // Hide preview after 2 seconds
+          setTimeout(() => {
+            preview.style.display = 'none';
+            URL.revokeObjectURL(url);
+          }, 2000);
+        }, 'image/png');
+        
+      } catch (error) {
+        console.error('Error capturing frame:', error);
+        alert('Error capturing frame. Please try again.');
+      }
+    }
   </script> 
 </body> 
 </html>
