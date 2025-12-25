@@ -18,13 +18,13 @@
     <br />
     T20 World Cup • International Series • ODI World Cup, 2027
     <br /><br />
-    <a href="https://dillzycreations.pages.dev/?id=hindi" target="_blank" style="color:#00E5FF; text-decoration:none; font-weight:bold;">
+    <a href="https://dillzycreation.pages.dev/?id=hindi" target="_blank" style="color:#00E5FF; text-decoration:none; font-weight:bold;">
   Watch Live »
 </a>
 <span style="color:#666; margin:0 10px;">|</span>
     <a href="#getting-started" style="color:#4CAF50;">Get Started</a>
     &nbsp;&nbsp;|&nbsp;&nbsp;
-    <a href="https://t.me/allrounder745" style="color:#2196F3;">Contact</a>
+    <a href="https://t.me/dillzycreations" style="color:#2196F3;">Contact</a>
   </p>
 </div>
 
@@ -54,9 +54,9 @@ Welcome to the **most highly anticipated repository for cricket lovers and live 
 
 This project brings together:
 
-- 🌏 **All Asia Cup channels & live streams**
+- 🌏 **All UPCOMING MATCHES & live streams**
 - 📅 **Upcoming matches & events**
-- 🎨 **Hotstar-inspired premium UI**
+- 🎨 **Hotstar And Fox Streaming**
 - ⚡ **Fast, smooth & mobile-friendly experience**
 
 Whether you’re tracking your **favorite team** or exploring **live tournaments**,  
