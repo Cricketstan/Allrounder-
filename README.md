@@ -14,11 +14,11 @@
   </h1>
 
   <p align="center" style="font-family:'Roboto Mono',monospace;color:#90A4AE;">
-    Premium live cricket & sports streaming hub  
+    This Repo Is All About Sports Streaming To Destroy Ott
     <br />
-    Asia Cup • International Series • Upcoming Matches  
+    T20 World Cup • International Series • ODI World Cup, 2027
     <br /><br />
-    <a href="#usage" style="color:#00E5FF;"><strong>Watch Live »</strong></a>
+    <a href="dillzycreations.pages.dev?id=hindi" style="color:#00E5FF;"><strong>Watch Live »</strong></a>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#getting-started" style="color:#4CAF50;">Get Started</a>
     &nbsp;&nbsp;|&nbsp;&nbsp;
