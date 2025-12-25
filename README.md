@@ -18,8 +18,10 @@
     <br />
     T20 World Cup • International Series • ODI World Cup, 2027
     <br /><br />
-    <a href="dillzycreations.pages.dev?id=hindi" style="color:#00E5FF;"><strong>Watch Live »</strong></a>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://dillzycreations.pages.dev/?id=hindi" target="_blank" style="color:#00E5FF; text-decoration:none; font-weight:bold;">
+  Watch Live »
+</a>
+<span style="color:#666; margin:0 10px;">|</span>
     <a href="#getting-started" style="color:#4CAF50;">Get Started</a>
     &nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://t.me/allrounder745" style="color:#2196F3;">Contact</a>
