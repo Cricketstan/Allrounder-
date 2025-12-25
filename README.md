@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Allrounder745">
-    <img src="https://i.ibb.co/qq69M27/Picsart-25-10-16-21-59-39-299.jpg"
+    <img src="https://avatars.githubusercontent.com/u/201894808?v=4"
          alt="Allrounder Live Sports Logo"
          width="120"
          height="120"
