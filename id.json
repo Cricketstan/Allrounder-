@@ -44,7 +44,7 @@
       "id": "alt",
       "name": "DILLZY",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player2?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
+      "iframeSrc": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=alt",
       "get": "https://dillzycounter.vercel.app/api/get?key=alt"
     },
