@@ -10,7 +10,7 @@
   </a>
 
   <h1 align="center" style="font-family:'Roboto',sans-serif;color:#00E5FF;">
-    🔥 ALLROUNDER LIVE SPORTS – ASIA CUP & MORE 🔥
+    🔥 DILLZY 🔥
   </h1>
 
   <p align="center" style="font-family:'Roboto Mono',monospace;color:#90A4AE;">
