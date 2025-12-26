@@ -16,7 +16,6 @@
       "run-machine.pages.dev",
       "match-central.pages.dev",
       "cricontime.pages.dev",
-      "ajayxlive.pages.dev",
       "pitchside.pages.dev",
       "cricworldd.pages.dev",
       "cricketchampion.pages.dev",
@@ -73,43 +72,88 @@
       z-index: -1;
     }
 
-    /* Frame capture preview */
+    /* Premium frame capture preview */
     #capture-preview {
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.95);
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transform: translate(-50%, -50%) scale(0.9);
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.1) inset;
       z-index: 10000;
       display: none;
-      max-width: 90%;
-      max-height: 90%;
+      max-width: 85%;
+      max-height: 85%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInScale 0.3s ease-out forwards;
+    }
+
+    @keyframes fadeInScale {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    #capture-preview.show {
+      display: block;
+      opacity: 0;
+    }
+
+    #capture-preview .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #4CAF50;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    #capture-preview .preview-header svg {
+      width: 24px;
+      height: 24px;
+      fill: #4CAF50;
+    }
+
+    #capture-preview .image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.05);
     }
 
     #capture-preview img {
       max-width: 100%;
-      max-height: 70vh;
+      max-height: 65vh;
       display: block;
-      border-radius: 4px;
+      border-radius: 10px;
     }
 
     #capture-preview .info {
-      color: #4CAF50;
+      color: #888;
       text-align: center;
-      margin-top: 10px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      margin-top: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.3px;
     }
 
-    /* Custom capture button styling */
-    .jw-icon-capture {
-      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>');
-      background-size: 50%;
-      background-repeat: no-repeat;
-      background-position: center;
+    /* Style the JW Player button */
+    .jw-button-container .jw-icon-capture {
+      width: 40px;
+      height: 40px;
+    }
+
+    .jw-svg-icon-capture {
+      fill: white;
+      width: 20px;
+      height: 20px;
     }
   </style> 
 </head> 
@@ -117,10 +161,18 @@
 <body> 
   <div id="jwplayerDiv"></div> 
 
-  <!-- Frame capture preview -->
+  <!-- Premium frame capture preview -->
   <div id="capture-preview">
-    <img id="captured-image" alt="Captured Frame">
-    <div class="info">✓ Frame captured and downloaded!</div>
+    <div class="preview-header">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      <span>Frame Captured Successfully</span>
+    </div>
+    <div class="image-wrapper">
+      <img id="captured-image" alt="Captured Frame">
+    </div>
+    <div class="info">Image downloaded automatically</div>
   </div>
 
   <!-- Visitor counter -->
@@ -149,14 +201,27 @@
 
     // Add custom capture button to control bar
     player.on('ready', function() {
+      // Create SVG icon
+      const iconPath = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="jw-svg-icon jw-svg-icon-capture"><path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>';
+      
       player.addButton(
-        'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>',
+        iconPath,
         'Capture Frame',
         function() {
           captureFrame();
         },
         'capture-frame-btn'
       );
+
+      // Apply custom styling to the button
+      setTimeout(() => {
+        const captureBtn = document.querySelector('.jw-icon-capture');
+        if (captureBtn) {
+          captureBtn.style.display = 'flex';
+          captureBtn.style.alignItems = 'center';
+          captureBtn.style.justifyContent = 'center';
+        }
+      }, 100);
     });
 
     function captureFrame() {
@@ -188,17 +253,19 @@
           a.download = `frame-capture-${timestamp}.png`;
           a.click();
           
-          // Show preview
+          // Show premium preview
           const preview = document.getElementById('capture-preview');
           const capturedImg = document.getElementById('captured-image');
           capturedImg.src = url;
-          preview.style.display = 'block';
+          preview.classList.add('show');
           
-          // Hide preview after 2 seconds
+          // Hide preview after 2.5 seconds
           setTimeout(() => {
-            preview.style.display = 'none';
-            URL.revokeObjectURL(url);
-          }, 2000);
+            preview.classList.remove('show');
+            setTimeout(() => {
+              URL.revokeObjectURL(url);
+            }, 300);
+          }, 2500);
         }, 'image/png');
         
       } catch (error) {
