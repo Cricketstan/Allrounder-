@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JioStar Player</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css">
+
+<style>
+html,body{
+  margin:0;
+  background:#000;
+  height:100%;
+}
+.shaka-video-container{
+  position:absolute;
+  inset:0;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+.shaka-spinner-container{display:none!important}
+</style>
+</head>
+
+<body>
+<div class="shaka-video-container" data-shaka-player>
+  <video autoplay playsinline></video>
+</div>
+
+<script>
+(async()=>{
+  const p = new URLSearchParams(location.search);
+
+  const mpd   = p.get("mpd");
+  const kid   = p.get("kid");
+  const key   = p.get("key");
+  const cookie= p.get("cookie") || "";
+
+  shaka.polyfill.installAll();
+  if(!shaka.Player.isBrowserSupported()) return;
+
+  const video = document.querySelector("video");
+  const player = new shaka.Player(video);
+  new shaka.ui.Overlay(player, document.querySelector(".shaka-video-container"), video);
+
+  player.configure({
+    drm:{ clearKeys:{ [kid]:key }},
+    streaming:{
+      lowLatencyMode:true,
+      bufferingGoal:15,
+      rebufferingGoal:2
+    }
+  });
+
+  player.getNetworkingEngine().registerRequestFilter((type,req)=>{
+    req.headers["Referer"]="https://www.jiotv.com/";
+    req.headers["User-Agent"]="plaYtv/7.1.5 (Android)";
+    if(cookie) req.headers["Cookie"]=cookie;
+
+    if(req.uris[0] && cookie && !req.uris[0].includes("__hdnea")){
+      req.uris[0]+= (req.uris[0].includes("?")?"&":"?")+cookie;
+    }
+  });
+
+  await player.load(mpd);
+  try{ await video.play(); }catch{}
+})();
+</script>
+</body>
+</html>
