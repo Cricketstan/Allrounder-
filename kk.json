@@ -12,6 +12,12 @@
       "hit": "https://dillzycounter.vercel.app/api/hit?key=tn",
       "get": "https://dillzycounter.vercel.app/api/get?key=tn"
     },
+       {
+      "id": "sky-uk",
+      "name": "SKY",
+      "hit": "https://dillzycounter.vercel.app/api/hit?key=sk",
+      "get": "https://dillzycounter.vercel.app/api/get?key=sk"
+    },
     {
       "id": "asiacup",
       "name": "Asia Cup",
