@@ -137,6 +137,14 @@
       "get": "https://dillzycounter.vercel.app/api/get?key=jio-hotstar"
     },
     {
+      "id": "sky-uk",
+      "name": "SKY",
+      "type": "iframe",
+      "iframeSrc": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
+      "hit": "https://dillzycounter.vercel.app/api/hit?key=sky",
+      "get": "https://dillzycounter.vercel.app/api/get?key=sky"
+    },
+    {
       "id": "sky-nz-1",
       "name": "SKY NZ",
       "type": "iframe",
