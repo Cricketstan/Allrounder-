@@ -14,31 +14,36 @@ html, body {
     height: 100%;
 }
 
-/* push player slightly down */
+/* push slightly down */
 .page {
-    padding-top: 18px;
+    padding-top: 22px;
 }
 
-/* 16:9 container */
-.player-box {
-    width: 100%;
+/* outer spacing left & right */
+.player-shell {
     max-width: 960px;
     margin: 0 auto;
-    position: relative;
-    padding-top: 56.25%;
-    background: #000; /* tiny black gap */
-    border: 1px solid #38bdf8; /* sky blue outline */
+    padding: 0 14px; /* left-right gap */
 }
 
-/* iframe with tiny inner gap */
+/* 16:9 box with bold outline */
+.player-box {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    background: #000;
+    border: 3px solid #38bdf8; /* bold sky blue */
+}
+
+/* iframe with more inner black gap */
 .player-box iframe {
     position: absolute;
-    top: 0.6px;
-    left: 0.6px;
-    right: 0.6px;
-    bottom: 0.6px;
-    width: calc(100% - 1.2px);
-    height: calc(100% - 1.2px);
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
     border: 0;
     background: #000;
 }
@@ -48,7 +53,9 @@ html, body {
 <body>
 
 <div class="page">
-    <div class="player-box" id="player"></div>
+    <div class="player-shell">
+        <div class="player-box" id="player"></div>
+    </div>
 </div>
 
 <script>
