@@ -11,18 +11,17 @@ html,body{
   background:#fff;
 }
 
-/* TOP PLAYER CONTAINER */
+/* Top 16:9 container */
 #container{
   width:100%;
   max-width:1100px;
   margin:12px auto 0;
-  padding:6px;                 /* 👈 black gap */
-  background:#000;             /* gap color */
-  border:2px solid red;        /* red outline */
+  padding:6px;                /* black gap */
+  background:#000;
+  border:2px solid red;
   border-radius:10px;
 }
 
-/* 16:9 ratio */
 #ratio{
   position:relative;
   width:100%;
@@ -48,8 +47,17 @@ iframe{
     <iframe
       id="player"
       allowfullscreen
-      sandbox="allow-scripts allow-same-origin allow-presentation allow-forms allow-popups"
-    ></iframe>
+      allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+      sandbox="
+        allow-scripts
+        allow-same-origin
+        allow-presentation
+        allow-forms
+        allow-popups
+        allow-popups-to-escape-sandbox
+        allow-top-navigation-by-user-activation
+      ">
+    </iframe>
   </div>
 </div>
 
