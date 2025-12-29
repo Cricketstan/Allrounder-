@@ -1,138 +1,48 @@
 {
   "upcomingMatches": [
     {
-      "title": "Afghanistan vs Bangladesh - 1st ODI",
-      "date": "Wed, Oct 8 2025",
-      "venue": "Abu Dhabi, Sheikh Zayed Stadium",
-      "team1": "Afghanistan",
-      "team2": "Bangladesh",
-      "time": "3:30 PM",
+      "title": "Sunrisers Eastern Cape vs Pretoria Capitals - 5th Match (SA20)",
+      "date": "Today",
+      "venue": "Gqeberha, St George's Park",
+      "team1": "Sunrisers Eastern Cape",
+      "team2": "Pretoria Capitals",
+      "time": "9:00 PM",
       "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
     },
     {
-      "title": "Afghanistan vs Bangladesh - 2nd ODI",
-      "date": "Sat, Oct 11 2025",
-      "venue": "Abu Dhabi, Sheikh Zayed Stadium",
-      "team1": "Afghanistan",
-      "team2": "Bangladesh",
-      "time": "3:30 PM",
+      "title": "Sydney Thunder vs Perth Scorchers - 16th Match (BBL)",
+      "date": "Tomorrow",
+      "venue": "Sydney, Sydney Showground Stadium",
+      "team1": "Sydney Thunder",
+      "team2": "Perth Scorchers",
+      "time": "1:45 PM",
       "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
     },
     {
-      "title": "India vs West Indies - 2nd Test",
-      "date": "Fri, Oct 10 2025",
-      "venue": "Delhi, Arun Jaitley Stadium",
-      "team1": "India",
-      "team2": "West Indies",
-      "time": "9:30 AM",
+      "title": "Sylhet Titans vs Chattogram Royals - 7th Match (BPL)",
+      "date": "Tomorrow",
+      "venue": "Sylhet, Sylhet International Cricket Stadium",
+      "team1": "Sylhet Titans",
+      "team2": "Chattogram Royals",
+      "time": "12:30 PM",
       "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
     },
     {
-      "title": "Pakistan vs South Africa - 1st Test",
-      "date": "Sun, Oct 12 2025",
-      "venue": "Lahore, Gaddafi Stadium",
-      "team1": "Pakistan",
-      "team2": "South Africa",
-      "time": "10:00 AM",
+      "title": "Dhaka Capitals vs Rangpur Riders - 8th Match (BPL)",
+      "date": "Tomorrow",
+      "venue": "Sylhet, Sylhet International Cricket Stadium",
+      "team1": "Dhaka Capitals",
+      "team2": "Rangpur Riders",
+      "time": "5:30 PM",
       "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
     },
     {
-      "title": "Namibia vs South Africa - Only T20I",
-      "date": "Sat, Oct 11 2025",
-      "venue": "Windhoek, Wanderers Cricket Ground",
-      "team1": "Namibia",
-      "team2": "South Africa",
-      "time": "1:30 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "New Zealand Women vs South Africa Women - World Cup",
-      "date": "Mon, Oct 6 2025",
-      "venue": "Indore, Holkar Cricket Stadium",
-      "team1": "New Zealand Women",
-      "team2": "South Africa Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "England Women vs Bangladesh Women - World Cup",
-      "date": "Tue, Oct 7 2025",
-      "venue": "Guwahati, Barsapara Cricket Stadium",
-      "team1": "England Women",
-      "team2": "Bangladesh Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "Australia Women vs Pakistan Women - World Cup",
-      "date": "Wed, Oct 8 2025",
-      "venue": "Colombo, R.Premadasa Stadium",
-      "team1": "Australia Women",
-      "team2": "Pakistan Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "India Women vs South Africa Women - World Cup",
-      "date": "Thu, Oct 9 2025",
-      "venue": "Visakhapatnam, Dr. Y.S. Rajasekhara Reddy ACA-VDCA Stadium",
-      "team1": "India Women",
-      "team2": "South Africa Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "New Zealand Women vs Bangladesh Women - World Cup",
-      "date": "Fri, Oct 10 2025",
-      "venue": "Guwahati, Barsapara Cricket Stadium",
-      "team1": "New Zealand Women",
-      "team2": "Bangladesh Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "England Women vs Sri Lanka Women - World Cup",
-      "date": "Sat, Oct 11 2025",
-      "venue": "Colombo, R.Premadasa Stadium",
-      "team1": "England Women",
-      "team2": "Sri Lanka Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "India Women vs Australia Women - World Cup",
-      "date": "Sun, Oct 12 2025",
-      "venue": "Visakhapatnam, Dr. Y.S. Rajasekhara Reddy ACA-VDCA Stadium",
-      "team1": "India Women",
-      "team2": "Australia Women",
-      "time": "3:00 PM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "Malaysia Women vs Nepal Women - 4th T20I",
-      "date": "Tue, Oct 7 2025",
-      "venue": "Kuala Lumpur, Bayuemas Oval",
-      "team1": "Malaysia Women",
-      "team2": "Nepal Women",
-      "time": "7:30 AM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "Malaysia Women vs Nepal Women - 5th T20I",
-      "date": "Wed, Oct 8 2025",
-      "venue": "Kuala Lumpur, Bayuemas Oval",
-      "team1": "Malaysia Women",
-      "team2": "Nepal Women",
-      "time": "7:30 AM",
-      "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
-    },
-    {
-      "title": "Zimbabwe Women vs UAE Women - 2nd T20I",
-      "date": "Mon, Oct 6 2025",
-      "venue": "Bulawayo, Queens Sports Club",
-      "team1": "Zimbabwe Women",
-      "team2": "United Arab Emirates Women",
-      "time": "12:45 PM",
+      "title": "Otago vs Central Districts - 5th Match (Super Smash)",
+      "date": "Tomorrow",
+      "venue": "Alexandra, Molyneux Park",
+      "team1": "Otago",
+      "team2": "Central Districts",
+      "time": "8:55 AM",
       "poster": "https://i.ibb.co/5Wz5c6pL/unnamed.webp"
     }
   ]
