@@ -6,7 +6,9 @@
       "poster_link": "https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5879/1766920435879-h",
       "watch_now": [
         { "id": "home?id=hotstar", "name": "Hotstar" },
-        { "id": "home?id=willow-sports", "name": "Willow" }
+        { "id": "home?id=willow-sports", "name": "Willow" },
+        { "id": "home?id=sky", "name": "Sky Sports Cricket" }
+        
         
       ],
       "date": "29 Dec 2025",
