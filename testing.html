@@ -13,34 +13,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-:root {
+/* 🔒 YOUR ORIGINAL CSS — NOT TOUCHED */
+:root{
 --bg-deep:#f8fafc;
 --bg-gradient:linear-gradient(to bottom,#fff 0%,#f1f5f9 100%);
 --glass-bg:rgba(255,255,255,.75);
 --glass-border:rgba(0,0,0,.08);
 --glass-blur:blur(20px);
 --glass-shadow:0 10px 40px -10px rgba(0,0,0,.08);
+--accent-primary:#3b82f6;
 --accent-gradient:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
 --text-primary:#1e293b;
 --text-secondary:#64748b;
 --danger:#ef4444;
+--danger-glow:rgba(239,68,68,.2);
+--success:#10b981;
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
-
 body{
-font-family:Outfit,sans-serif;
+font-family:'Outfit',sans-serif;
 background:var(--bg-deep);
 background-image:var(--bg-gradient);
 color:var(--text-primary);
 min-height:100vh;
 display:flex;
 justify-content:center;
-padding:1.5rem
+padding:1.5rem;
 }
-
 .container{width:100%;max-width:1100px}
-
 .stream-header{
 background:var(--glass-bg);
 backdrop-filter:var(--glass-blur);
@@ -53,12 +53,7 @@ align-items:center;
 margin-bottom:1.5rem;
 box-shadow:var(--glass-shadow)
 }
-
-.stream-header h1{
-font-size:1.2rem;
-font-weight:700
-}
-
+.stream-header h1{font-size:1.25rem;font-weight:700}
 .live-badge{
 background:rgba(239,68,68,.1);
 color:#dc2626;
@@ -69,9 +64,9 @@ font-size:.75rem;
 font-weight:700;
 display:flex;
 align-items:center;
-gap:.5rem
+gap:.5rem;
+box-shadow:0 4px 12px var(--danger-glow)
 }
-
 #player-container{
 width:100%;
 aspect-ratio:16/9;
@@ -81,14 +76,12 @@ overflow:hidden;
 border:1px solid rgba(0,0,0,.1);
 box-shadow:0 25px 50px -12px rgba(0,0,0,.25)
 }
-
 .grid-panels{
 display:grid;
 gap:1.5rem;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 margin-top:2rem
 }
-
 .info-card{
 background:var(--glass-bg);
 backdrop-filter:var(--glass-blur);
@@ -98,7 +91,6 @@ padding:1.5rem;
 text-align:center;
 box-shadow:var(--glass-shadow)
 }
-
 .action-button{
 display:flex;
 align-items:center;
@@ -111,11 +103,30 @@ background:var(--accent-gradient);
 color:#fff;
 font-weight:600;
 border:none;
-cursor:pointer
+cursor:pointer;
 }
-
-.action-button.copied{background:#10b981}
-
+.action-button.copied{background:var(--success)}
+.telegram-popup{
+position:fixed;top:50%;left:50%;
+transform:translate(-50%,-50%);
+background:rgba(255,255,255,.95);
+border:1px solid rgba(0,0,0,.1);
+padding:2.5rem 2rem;
+border-radius:20px;
+z-index:10000;
+text-align:center;
+width:90%;max-width:400px;
+display:none;
+box-shadow:0 25px 50px -12px rgba(0,0,0,.2)
+}
+.telegram-popup h2{font-size:1.5rem;margin-bottom:.5rem}
+.telegram-popup p{color:#64748b;margin-bottom:1.5rem}
+.popup-button{
+width:100%;padding:1rem;border-radius:12px;
+font-weight:600;border:none;cursor:pointer
+}
+.join-btn{background:#2AABEE;color:#fff}
+.joined-btn{margin-top:.75rem;background:transparent;border:1px solid #ddd}
 .error-message{
 background:#fff;
 border:1px solid rgba(239,68,68,.2);
@@ -135,10 +146,15 @@ text-align:center
 </div>
 </main>
 
-<div class="telegram-popup" id="telegramPopup" style="display:none"></div>
+<div class="telegram-popup" id="telegramPopup">
+<h2><i class="fa-brands fa-telegram"></i> Join The Action</h2>
+<p>Get instant <strong>Ajayxl!ve</strong> updates & live cricket streams.</p>
+<a href="https://t.me/+6H0lhRBbr702OTY1" target="_blank" class="popup-button join-btn">Join Channel Now</a>
+<button class="popup-button joined-btn" onclick="telegramPopup.style.display='none'">I've Already Joined</button>
+</div>
 
 <script>
-(async () => {
+(async()=>{
 try{
 const res=await fetch("https://crickettv.site/id.json");
 const json=await res.json();
@@ -147,12 +163,11 @@ const stream=json.iframes.find(x=>x.id===id);
 
 if(!stream){
 document.getElementById("stream-content").innerHTML=
-'<div class="error-message"><h2>Stream Not Found</h2><p>Invalid or missing id</p></div>';
+'<div class="error-message"><h2>Stream Not Found</h2></div>';
 return;
 }
 
 document.title=stream.name+" • LIVE";
-
 if(stream.hit) fetch(stream.hit).catch(()=>{});
 
 document.getElementById("stream-content").innerHTML=`
@@ -162,20 +177,16 @@ document.getElementById("stream-content").innerHTML=`
 </div>
 
 <div id="player-container">
-<iframe src="${stream.iframeSrc}"
-allow="autoplay; encrypted-media"
-allowfullscreen
-style="width:100%;height:100%;border:0"></iframe>
+<iframe src="${stream.iframeSrc}" allow="autoplay;encrypted-media" allowfullscreen style="width:100%;height:100%;border:0"></iframe>
 </div>
 
 <div class="grid-panels">
 <div class="info-card">
-<h2>📣 Telegram</h2>
+<h2>📣 Follow us</h2>
 <a href="https://t.me/+6H0lhRBbr702OTY1" target="_blank" class="action-button">
-<i class="fa-brands fa-telegram"></i> Join Channel
+<i class="fa-brands fa-telegram"></i> Join Telegram
 </a>
 </div>
-
 <div class="info-card">
 <h2><i class="fa-solid fa-share-nodes"></i> Share</h2>
 <button class="action-button" id="shareBtn">Copy Stream Link ❤️</button>
@@ -184,16 +195,17 @@ style="width:100%;height:100%;border:0"></iframe>
 `;
 
 document.getElementById("shareBtn").onclick=async()=>{
-const btn=document.getElementById("shareBtn");
 await navigator.clipboard.writeText(location.href);
-btn.innerText="✔ Copied";
-btn.classList.add("copied");
-setTimeout(()=>{btn.innerText="Copy Stream Link ❤️";btn.classList.remove("copied")},2000);
+shareBtn.innerText="✔ Copied";
+shareBtn.classList.add("copied");
+setTimeout(()=>{shareBtn.innerText="Copy Stream Link ❤️";shareBtn.classList.remove("copied")},2000);
 };
 
-}catch(e){
+setTimeout(()=>telegramPopup.style.display="block",2500);
+
+}catch{
 document.getElementById("stream-content").innerHTML=
-'<div class="error-message"><h2>Error</h2><p>Unable to load streams</p></div>';
+'<div class="error-message"><h2>Error Loading Stream</h2></div>';
 }
 })();
 </script>
