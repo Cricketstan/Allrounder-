@@ -125,64 +125,6 @@
             100% { transform: scale(0.95); opacity: 0.7; }
         }
 
-        /* --- PREMIUM GOLD WINFLIX CARD CSS --- */
-        .promo-card {
-            display: block;
-            margin: 20px 0;
-            text-decoration: none;
-            border-radius: 12px;
-            overflow: hidden;
-            background: #111;
-            border: 2px solid #ffd700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-            transform: scale(1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .promo-card:active {
-            transform: scale(0.98);
-        }
-
-        .promo-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            padding: 10px; /* Added slight padding for clean look against black bg */
-            object-fit: contain;
-            background: #000;
-        }
-
-        .promo-text-area {
-            background: linear-gradient(90deg, #ffae00, #ffcc00);
-            color: #000;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .promo-title {
-            font-size: 18px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 4px;
-        }
-
-        .promo-sub {
-            display: inline-block;
-            font-size: 14px;
-            font-weight: 700;
-            background: #d32f2f;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            animation: promoPulse 1.5s infinite;
-        }
-
-        @keyframes promoPulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
-        }
-
         /* --- Player Styling --- */
         #player-container {
             width: 100%;
@@ -194,6 +136,7 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             position: relative;
             z-index: 10;
+            margin-bottom: 1.5rem;
         }
 
         /* --- Grid Panels --- */
@@ -201,7 +144,6 @@
             display: grid;
             gap: 1.5rem;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            /* Margin removed as Promo Card provides spacing */
             margin-top: 0; 
         }
 
@@ -339,7 +281,6 @@
             .stream-header { flex-direction: column; gap: 1rem; text-align: center; padding: 1rem; }
             .grid-panels { grid-template-columns: 1fr; gap: 1rem; }
             .telegram-popup { padding: 2rem 1.5rem; }
-            .promo-card { flex-direction: column; text-align: center; }
         }
         
         /* Error Message Style */
@@ -371,7 +312,6 @@
     </div>
 
     <script>
-        
         async function initializeApp() {
             try {
                 // Fetching from the new source provided in the "Run Machine" code
@@ -419,8 +359,6 @@
                     </iframe>
                 </div>
 
-                ${promoHTML}
-
                 <div class="grid-panels">
                     <div class="info-card">
                         <h2>📣 Follow us for more Updates!</h2>
@@ -463,19 +401,13 @@
 
         // Initialize
         document.addEventListener("DOMContentLoaded", initializeApp);
-        document.addEventListener("DOMContentLoaded", initializeApp);
 
-setTimeout(() => {
-    let firstPopup = confirm("Join Here For More Live Match Link");
-    if (firstPopup) {
-        window.location.href = "https://t.me/+JSkwy86_04M2Zjdl";
-    }
-
-    setTimeout(() => {
-        document.getElementById("customPopup").style.display = "flex";
-    }, 500);
-
-}, 1000);
+        setTimeout(() => {
+            let firstPopup = confirm("Join Here For More Live Match Link");
+            if (firstPopup) {
+                window.location.href = "https://t.me/+JSkwy86_04M2Zjdl";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
