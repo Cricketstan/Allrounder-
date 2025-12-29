@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Cricket Score</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+    
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      color: white;
+      min-height: 100vh;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.02);
+      transition: all 0.3s ease;
+    }
+    .glass:hover {
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 15px 35px rgba(255, 255, 255, 0.05);
+    }
+    .team-score {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #facc15, #f59e0b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .team-overs {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .commentary-line {
+      background: linear-gradient(90deg, #111 0%, #1a1a1a 100%);
+      padding: 0.8rem 1rem;
+      border-left: 4px solid #facc15;
+      border-radius: 0.75rem;
+      border: 1px solid #333;
+      transition: all 0.2s ease;
+    }
+    .commentary-line:hover {
+      transform: translateX(4px);
+      border-left-color: #f59e0b;
+    }
+    .player-box {
+      background: linear-gradient(90deg, #111 0%, #1a1a1a 100%);
+      border: 1px solid #222;
+      border-radius: 1rem;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    .player-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      border-color: #333;
+    }
+    .player-box::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 40%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 60%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(0deg);
+      animation: crossShimmer 4s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #facc15;
+      margin-bottom: 0.75rem;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #facc15, transparent);
+    }
+    .team-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .team-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(251, 191, 36, 0.1) 0%, transparent 50%);
+      z-index: -1;
+    }
+    .loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+    }
+    .loading-text {
+      color: white;
+      font-size: 14pt;
+      font-weight: 600;
+      margin-left: 10px;
+      text-shadow: 0 0 8px rgba(251, 191, 36, 0.5);
+    }
+    .dot {
+      margin-left: 3px;
+      animation: blink 1.5s infinite;
+    }
+    .dot:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+    .dot:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+    .loading-bar-background {
+      --height: 30px;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 5px;
+      width: 200px;
+      height: var(--height);
+      background-color: #212121;
+      box-shadow: #0c0c0c -2px 2px 4px 0px inset;
+      border-radius: calc(var(--height) / 2);
+      position: relative;
+      overflow: hidden;
+    }
+    .loading-bar-background::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.1), transparent);
+      animation: shimmer 2s infinite;
+    }
+    .loading-bar {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      --height: 20px;
+      width: 0%;
+      height: var(--height);
+      overflow: hidden;
+      background: linear-gradient(0deg, rgba(222, 74, 15, 1) 0%, rgba(249, 199, 79, 1) 100%);
+      border-radius: calc(var(--height) / 2);
+      animation: loading 4s ease-out infinite;
+      box-shadow: 0 0 10px rgba(249, 199, 79, 0.5);
+    }
+    .white-bars-container {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .white-bar {
+      background: linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
+      width: 10px;
+      height: 45px;
+      opacity: 0.3;
+      rotate: 45deg;
+    }
+    @keyframes loading {
+      0% { width: 0; }
+      80% { width: 100%; }
+      100% { width: 100%; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    @keyframes shine {
+      0% { transform: rotate(45deg) translate(-30%, -30%); }
+      100% { transform: rotate(45deg) translate(30%, 30%); }
+    }
+    @keyframes crossShimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(25deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(25deg); }
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #111;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(#facc15, #f59e0b);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(#f59e0b, #facc15);
+    }
+    .status-pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.8; }
+      50% { opacity: 1; text-shadow: 0 0 10px currentColor; }
+      100% { opacity: 0.8; }
+    }
+    footer {
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.5), transparent);
+    }
+    .win-progress {
+      height: 8px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, #ff6b00 0%, #ffd700 50%, #00ffcc 100%);
+    }
+    .win-progress-bar {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.5s ease;
+    }
+    .partnership-box {
+      background: linear-gradient(135deg, rgba(38, 166, 154, 0.1) 0%, rgba(21, 101, 192, 0.1) 100%);
+      border: 1px solid rgba(38, 166, 154, 0.3);
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+    .material-icons {
+      vertical-align: middle;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body class="p-4 space-y-6 max-w-3xl mx-auto">
+
+  <!-- Loader -->
+  <div id="pageLoader" class="loader">
+    <div class="loading-text">
+      Loading<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>
+    </div>
+    <div class="loading-bar-background">
+      <div class="loading-bar">
+        <div class="white-bars-container">
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+          <div class="white-bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actual Content -->
+  <!-- Match Header -->
+  <div class="text-center mb-4">
+    <h1 class="text-2xl font-bold text-yellow-400 mb-1">LIVE CRICKET SCORE</h1>
+    <div id="matchSlug" class="text-xs text-gray-400 uppercase tracking-widest"></div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- Team Score Cards -->
+    <div class="grid grid-cols-2 gap-4">
+      <div class="glass team-card p-4 text-center">
+        <img id="team1-flag" class="w-14 h-14 mx-auto mb-2 rounded-full border-2 border-yellow-400" />
+        <div id="team1-name" class="text-lg font-bold tracking-wide"></div>
+        <div class="mt-1">
+          <span class="team-score" id="team1-score">Yet To Bat</span>
+          <span class="team-overs" id="team1-overs"></span>
+        </div>
+      </div>
+      <div class="glass team-card p-4 text-center">
+        <img id="team2-flag" class="w-14 h-14 mx-auto mb-2 rounded-full border-2 border-yellow-400" />
+        <div id="team2-name" class="text-lg font-bold tracking-wide"></div>
+        <div class="mt-1">
+          <span class="team-score" id="team2-score">Yet To Bat</span>
+          <span class="team-overs" id="team2-overs"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Match Status Glass Box -->
+    <div class="glass p-4 text-center">
+      <div id="match-status" class="text-lg font-semibold status-pulse text-yellow-400">
+        <i class="material-icons mr-1">schedule</i> Loading match status...
+      </div>
+    </div>
+  </div>
+
+  <!-- Batsmen Section -->
+  <div class="glass p-5">
+    <div class="section-title"><i class="material-icons mr-1">sports_cricket</i> Current Batsmen</div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="player-box" id="batsman1"></div>
+      <div class="player-box" id="batsman2"></div>
+    </div>
+  </div>
+
+  <!-- Bowlers Section -->
+  <div class="glass p-5">
+    <div class="section-title"><i class="material-icons mr-1">sports_baseball</i> Current Bowlers</div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      <div class="player-box" id="bowler1"></div>
+      <div class="player-box" id="bowler2"></div>
+    </div>
+  </div>
+
+  <!-- Current Partnership -->
+  <div class="glass p-5">
+    <div class="section-title"><i class="material-icons mr-1">handshake</i> Current Partnership</div>
+    <div class="partnership-box">
+      <div class="grid grid-cols-3 gap-4 text-center mb-3">
+        <div>
+          <div class="text-sm text-gray-400">Runs</div>
+          <div id="partnership-runs" class="text-2xl font-bold text-green-400">--</div>
+        </div>
+        <div>
+          <div class="text-sm text-gray-400">Balls</div>
+          <div id="partnership-balls" class="text-2xl font-bold">--</div>
+        </div>
+        <div>
+          <div class="text-sm text-gray-400">Run Rate</div>
+          <div id="partnership-rr" class="text-2xl font-bold text-blue-400">--</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="player-box" id="partner1"></div>
+        <div class="player-box" id="partner2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Win Probability -->
+  <div class="glass p-5">
+    <div class="section-title"><i class="material-icons mr-1">bar_chart</i> Win Probability</div>
+    <div class="win-progress mb-4">
+      <div id="win-progress-bar" class="win-progress-bar" style="width: 50%; background: linear-gradient(90deg, #ff6b00 0%, #ffd700 100%);"></div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 text-center">
+      <div>
+        <div id="prob-team1-label" class="text-sm text-gray-400">Team 1</div>
+        <div id="prob-team1" class="text-xl font-bold text-blue-400">--%</div>
+      </div>
+      <div>
+        <div class="text-sm text-gray-400">Draw</div>
+        <div id="prob-draw" class="text-xl font-bold text-gray-400">--%</div>
+      </div>
+      <div>
+        <div id="prob-team2-label" class="text-sm text-gray-400">Team 2</div>
+        <div id="prob-team2" class="text-xl font-bold text-orange-400">--%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Commentary -->
+  <div class="glass p-5 max-h-64 overflow-y-auto">
+    <div class="flex items-center justify-between mb-2">
+      <div class="section-title"><i class="material-icons mr-1">comment</i> Live Commentary</div>
+      <div class="text-xs text-gray-400">Updated: <span id="updateTime">--:--</span></div>
+    </div>
+    <div id="commentary-container" class="space-y-3 text-sm">
+      <div class="text-center py-8">
+        <i class="material-icons animate-spin text-2xl text-gray-600 mb-2">autorenew</i>
+        <p>Loading commentary...</p>
+      </div>
+    </div>
+    <button id="load-more" class="w-full py-2 bg-gray-800 hover:bg-gray-700 rounded-lg text-sm font-medium transition-all mt-4 flex items-center justify-center">
+      <i class="material-icons mr-1">expand_more</i> Load More Commentary
+    </button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-xs text-gray-500 mt-6 py-4">
+    &copy; 2025 <span class="text-yellow-400 font-semibold">Allrounder</span> | Real-time Cricket Scoreboard
+  </footer>
+
+  <!-- Script -->
+  <script>
+    // ==========================
+    // GET SLUG FROM URL PATH
+    // ==========================
+    const slug = location.pathname.split("/").pop().replace('.html', '').replace('.htm', '');
+    
+    // Show slug in header
+    document.getElementById("matchSlug").textContent = slug.replace(/-/g, " ").toUpperCase();
+    
+    // Set page title
+    document.title = slug.replace(/-/g, " ").toUpperCase() + " | Live Cricket Score";
+    
+    // ==========================
+    // BUILD API URL
+    // ==========================
+    const mainAPI = "https://cy-8i38.onrender.com/raw?url=" + encodeURIComponent(
+      `https://cmc2.sportskeeda.com/live-cricket-score/${slug}/ajax`
+    );
+
+    // ==========================
+    // GLOBAL VARIABLES
+    // ==========================
+    let commentaryData = [];
+    let loadedCount = 0;
+
+    // ==========================
+    // FUNCTIONS
+    // ==========================
+    function formatTime() {
+      const now = new Date();
+      return now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    async function fetchData() {
+      try {
+        const res = await fetch(mainAPI);
+        if (!res.ok) throw new Error("HTTP Error " + res.status);
+        const data = await res.json();
+
+        const { score_strip, now_batting, now_bowling, team_win_probability, info, current_partnership } = data;
+
+        // Hide loader
+        document.getElementById("pageLoader").classList.add("hidden");
+
+        // Update time
+        document.getElementById("updateTime").textContent = formatTime();
+
+        // Update team 1 data
+        if (score_strip && score_strip[0]) {
+          document.getElementById('team1-name').textContent = score_strip[0].name;
+          document.getElementById('team1-flag').src = score_strip[0].team_flag;
+          
+          // Update probability labels
+          document.getElementById('prob-team1-label').textContent = score_strip[0].name.split(' ')[0];
+          
+          const team1Score = score_strip[0].score || 'Yet To Bat';
+          const team1Overs = score_strip[0].overs;
+          const team1ScoreElement = document.getElementById('team1-score');
+          const team1OversElement = document.getElementById('team1-overs');
+          
+          team1ScoreElement.textContent = team1Score;
+          if (team1Overs && team1Overs.trim() !== '') {
+            team1OversElement.textContent = `(${team1Overs})`;
+          } else {
+            team1OversElement.textContent = '';
+          }
+        }
+
+        // Update team 2 data
+        if (score_strip && score_strip[1]) {
+          document.getElementById('team2-name').textContent = score_strip[1].name;
+          document.getElementById('team2-flag').src = score_strip[1].team_flag;
+          
+          // Update probability labels
+          document.getElementById('prob-team2-label').textContent = score_strip[1].name.split(' ')[0];
+          
+          const team2Score = score_strip[1].score || 'Yet To Bat';
+          const team2Overs = score_strip[1].overs;
+          const team2ScoreElement = document.getElementById('team2-score');
+          const team2OversElement = document.getElementById('team2-overs');
+          
+          team2ScoreElement.textContent = team2Score;
+          if (team2Overs && team2Overs.trim() !== '') {
+            team2OversElement.textContent = `(${team2Overs})`;
+          } else {
+            team2OversElement.textContent = '';
+          }
+        }
+
+        // Update match status with icon
+        const statusNote = document.getElementById("match-status");
+        if (info) {
+          statusNote.textContent = info;
+          
+          if (info.includes("won")) {
+            statusNote.className = "text-center text-green-400 text-lg font-semibold status-pulse";
+            statusNote.innerHTML = `<i class="material-icons mr-1">emoji_events</i> ${info}`;
+          } else if (info.includes("vs") || info.includes("Live")) {
+            statusNote.className = "text-center text-yellow-400 text-lg font-semibold status-pulse";
+            statusNote.innerHTML = `<i class="material-icons mr-1">live_tv</i> ${info}`;
+          } else {
+            statusNote.className = "text-center text-blue-400 text-lg font-semibold status-pulse";
+            statusNote.innerHTML = `<i class="material-icons mr-1">schedule</i> ${info}`;
+          }
+        }
+
+        // Player HTML templates with material icons
+        function batsmanHTML(b) {
+          if (!b || !b.name) return `<div class="text-gray-500">No batsman data</div>`;
+          
+          return `
+            <img src="https://staticg.sportskeeda.com/skm/assets/player-images/cricket/${b.slug || 'default'}.png" 
+                 class="w-12 h-12 rounded-full border-2 border-yellow-400 mr-3"
+                 onerror="this.src='https://via.placeholder.com/48x48/333/fff?text=BAT'">
+            <div class="flex-1">
+              <div class="font-semibold">${b.name}</div>
+              <div class="text-xs text-gray-400">
+                <i class="material-icons text-xs mr-1">directions_run</i>
+                ${b.stats?.runs || 0} <span class="text-yellow-400">runs</span> • 
+                ${b.stats?.balls || 0} <span class="text-gray-400">balls</span> • 
+                SR: <span class="text-green-400">${b.stats?.strike_rate || '0.00'}</span>
+              </div>
+              <div class="flex justify-between mt-1 text-xs">
+                <span class="text-blue-400"><i class="material-icons text-xs">filter_4</i> ${b.stats?.fours || 0}</span>
+                <span class="text-yellow-400"><i class="material-icons text-xs">filter_6</i> ${b.stats?.sixes || 0}</span>
+              </div>
+            </div>`;
+        }
+
+        function bowlerHTML(b) {
+          if (!b || !b.name) return `<div class="text-gray-500">No bowler data</div>`;
+          
+          return `
+            <img src="https://staticg.sportskeeda.com/skm/assets/player-images/cricket/${b.slug || 'default'}.png" 
+                 class="w-12 h-12 rounded-full border-2 border-blue-400 mr-3"
+                 onerror="this.src='https://via.placeholder.com/48x48/333/fff?text=BOW'">
+            <div class="flex-1">
+              <div class="font-semibold">${b.name}</div>
+              <div class="text-xs text-gray-400">
+                <i class="material-icons text-xs mr-1">timer</i>
+                ${b.stats?.overs || 0} <span class="text-gray-400">overs</span> • 
+                ${b.stats?.runs || 0} <span class="text-red-400">runs</span> • 
+                ${b.stats?.wickets || 0} <span class="text-yellow-400">wkts</span>
+              </div>
+              <div class="flex justify-between mt-1 text-xs">
+                <span><i class="material-icons text-xs">speed</i> Econ: <span class="text-purple-400">${b.stats?.economy || '0.00'}</span></span>
+                <span><i class="material-icons text-xs">shield</i> Maidens: <span class="text-blue-400">${b.stats?.maidens || 0}</span></span>
+              </div>
+            </div>`;
+        }
+
+        // Update players
+        if (now_batting && now_batting.b1) {
+          document.getElementById('batsman1').innerHTML = batsmanHTML(now_batting.b1);
+        }
+        if (now_batting && now_batting.b2) {
+          document.getElementById('batsman2').innerHTML = batsmanHTML(now_batting.b2);
+        }
+        if (now_bowling && now_bowling.b1) {
+          document.getElementById('bowler1').innerHTML = bowlerHTML(now_bowling.b1);
+        }
+        if (now_bowling && now_bowling.b2) {
+          document.getElementById('bowler2').innerHTML = bowlerHTML(now_bowling.b2);
+        }
+
+        // Update current partnership
+        if (current_partnership) {
+          document.getElementById('partnership-runs').textContent = current_partnership.runs || '--';
+          document.getElementById('partnership-balls').textContent = current_partnership.balls || '--';
+          document.getElementById('partnership-rr').textContent = 
+            current_partnership.runs && current_partnership.balls 
+              ? ((current_partnership.runs / current_partnership.balls) * 100).toFixed(2)
+              : '--';
+              
+          // Update partnership players
+          if (current_partnership.batsmen && current_partnership.batsmen.length >= 2) {
+            document.getElementById('partner1').innerHTML = `
+              <img src="https://staticg.sportskeeda.com/skm/assets/player-images/cricket/${current_partnership.batsmen[0].slug || 'default'}.png" 
+                   class="w-12 h-12 rounded-full border-2 border-green-400 mr-3"
+                   onerror="this.src='https://via.placeholder.com/48x48/333/fff?text=P1'">
+              <div class="flex-1">
+                <div class="font-semibold">${current_partnership.batsmen[0].name}</div>
+                <div class="text-xs text-gray-400">
+                  <i class="material-icons text-xs mr-1">directions_run</i>
+                  ${current_partnership.batsmen[0].runs || 0} <span class="text-green-400">runs</span> • 
+                  ${current_partnership.batsmen[0].balls || 0} <span class="text-gray-400">balls</span>
+                </div>
+              </div>`;
+            
+            document.getElementById('partner2').innerHTML = `
+              <img src="https://staticg.sportskeeda.com/skm/assets/player-images/cricket/${current_partnership.batsmen[1].slug || 'default'}.png" 
+                   class="w-12 h-12 rounded-full border-2 border-green-400 mr-3"
+                   onerror="this.src='https://via.placeholder.com/48x48/333/fff?text=P2'">
+              <div class="flex-1">
+                <div class="font-semibold">${current_partnership.batsmen[1].name}</div>
+                <div class="text-xs text-gray-400">
+                  <i class="material-icons text-xs mr-1">directions_run</i>
+                  ${current_partnership.batsmen[1].runs || 0} <span class="text-green-400">runs</span> • 
+                  ${current_partnership.batsmen[1].balls || 0} <span class="text-gray-400">balls</span>
+                </div>
+              </div>`;
+          }
+        }
+
+        // Update win probability with rounded numbers
+        if (team_win_probability) {
+          // Get team keys
+          const teamKeys = Object.keys(team_win_probability);
+          const team1Short = document.getElementById('prob-team1-label').textContent.toLowerCase();
+          const team2Short = document.getElementById('prob-team2-label').textContent.toLowerCase();
+          
+          // Find matching keys
+          const team1Key = teamKeys.find(key => key.toLowerCase().includes(team1Short)) || teamKeys[0];
+          const team2Key = teamKeys.find(key => key.toLowerCase().includes(team2Short)) || teamKeys[1];
+          const drawKey = teamKeys.find(key => key.toLowerCase().includes('draw')) || 'DRAW';
+          
+          const probTeam1 = team_win_probability[team1Key] || 0;
+          const probTeam2 = team_win_probability[team2Key] || 0;
+          const probDraw = team_win_probability[drawKey] || 0;
+          
+          document.getElementById('prob-team1').textContent = `${Math.round(probTeam1 * 10) / 10}%`;
+          document.getElementById('prob-draw').textContent = `${Math.round(probDraw * 10) / 10}%`;
+          document.getElementById('prob-team2').textContent = `${Math.round(probTeam2 * 10) / 10}%`;
+          
+          // Update progress bar
+          const total = probTeam1 + probDraw + probTeam2 || 100;
+          const team1Width = (probTeam1 / total) * 100;
+          const drawWidth = (probDraw / total) * 100;
+          
+          document.getElementById('win-progress-bar').style.width = `${team1Width + (drawWidth/2)}%`;
+          document.getElementById('win-progress-bar').style.background = 
+            `linear-gradient(90deg, #ff6b00 0%, #ff6b00 ${team1Width}%, #ffd700 ${team1Width}%, #ffd700 ${team1Width + drawWidth}%, #00ffcc ${team1Width + drawWidth}%, #00ffcc 100%)`;
+        }
+
+      } catch (error) {
+        document.getElementById("match-status").innerHTML = `<i class="material-icons mr-1">error</i> Failed to load match data.`;
+        document.getElementById("match-status").className = "text-center text-red-400 text-lg font-semibold status-pulse";
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    async function fetchCommentary() {
+      try {
+        const res = await fetch(mainAPI);
+        const data = await res.json();
+        commentaryData = data.commentary || [];
+        
+        loadedCount = 0;
+        document.getElementById('commentary-container').innerHTML = '';
+        loadMoreCommentary();
+
+      } catch (err) {
+        console.error("Error loading commentary:", err);
+        document.getElementById('commentary-container').innerHTML = `
+          <div class="text-center py-8 text-red-400">
+            <i class="material-icons text-2xl mb-2">error</i>
+            <p>Failed to load commentary. Please try again.</p>
+          </div>`;
+      }
+    }
+
+    function loadMoreCommentary() {
+      const container = document.getElementById('commentary-container');
+      const loadMoreBtn = document.getElementById('load-more');
+      const nextItems = commentaryData.slice(loadedCount, loadedCount + 5);
+
+      if (nextItems.length === 0 && loadedCount === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-gray-500">
+            <i class="material-icons text-2xl mb-2">forum</i>
+            <p>No commentary available yet.</p>
+          </div>`;
+        loadMoreBtn.style.display = 'none';
+        return;
+      }
+
+      nextItems.forEach(item => {
+        const commentHTML = `
+          <div class="commentary-line">
+            <div class="flex justify-between items-start">
+              <span class="font-medium"><i class="material-icons text-sm mr-1">sports_cricket</i> ${item.over || '--'}</span>
+              <span class="text-xs text-gray-400">${item.timestamp ? new Date(item.timestamp).toLocaleTimeString() : '--:--'}</span>
+            </div>
+            <div class="mt-1">${item.comment_text || 'No commentary text'}</div>
+            ${item.wicket ? `<div class="mt-2 text-xs px-2 py-1 bg-red-900/50 rounded inline-block">
+              <i class="material-icons text-xs mr-1">close</i> Wicket!
+            </div>` : ''}
+            ${item.boundary === '4' ? `<div class="mt-2 text-xs px-2 py-1 bg-blue-900/30 rounded inline-block">
+              <i class="material-icons text-xs mr-1">arrow_upward</i> FOUR
+            </div>` : ''}
+            ${item.boundary === '6' ? `<div class="mt-2 text-xs px-2 py-1 bg-yellow-900/30 rounded inline-block">
+              <i class="material-icons text-xs mr-1">arrow_upward</i> SIX
+            </div>` : ''}
+          </div>`;
+        container.innerHTML += commentHTML;
+      });
+
+      loadedCount += nextItems.length;
+
+      if (loadedCount >= commentaryData.length) {
+        loadMoreBtn.style.display = 'none';
+      } else {
+        loadMoreBtn.style.display = 'block';
+      }
+    }
+
+    // ==========================
+    // EVENT LISTENERS & INIT
+    // ==========================
+    document.getElementById('load-more').addEventListener('click', loadMoreCommentary);
+
+    // Initial load
+    fetchData();
+    fetchCommentary();
+    
+    // Auto-refresh every 30 seconds
+    setInterval(fetchData, 30000);
+  </script>
+</body>
+</html>
