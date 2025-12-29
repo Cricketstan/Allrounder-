@@ -5,7 +5,9 @@
       "title": "https://i.ibb.co/7dYSsQ8m/Picsart-25-12-29-19-58-06-099.png",
       "poster_link": "https://img1.hotstarext.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5879/1766920435879-h",
       "watch_now": [
-        { "id": "home?id=hotstar", "name": "Hotstar" }
+        { "id": "home?id=hotstar", "name": "Hotstar" },
+        { "id": "home?id=willow-sports", "name": "Willow" }
+        
       ],
       "date": "29 Dec 2025",
       "start_time": "09:00 PM",
