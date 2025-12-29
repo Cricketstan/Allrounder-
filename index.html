@@ -67,6 +67,80 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
   display: flex;
   gap: 15px;
 }
+  /* ===== SKELETON LOADER STYLES ===== */
+.skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+  background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+  background-size: 200% 100%;
+  border-radius: 8px;
+}
+
+.skeleton-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Skeleton specific styles */
+.skeleton-poster {
+  width: 90vw;
+  max-width: 600px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  margin-left: 15px;
+}
+
+.skeleton-match-card {
+  flex: 0 0 280px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+}
+
+.skeleton-upcoming-card {
+  flex: 0 0 280px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+}
+
+.skeleton-today-card {
+  flex: 0 0 260px;
+  aspect-ratio: 16/9;
+  border-radius: 10px;
+}
+
+.skeleton-fancode-card {
+  min-width: 220px;
+  height: 180px;
+  border-radius: 12px;
+}
+
+.skeleton-highlight-card {
+  flex: 0 0 260px;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+}
+
+.skeleton-section-title {
+  height: 24px;
+  width: 150px;
+  margin: 0 0 8px 15px;
+  border-radius: 4px;
+}
 
 .upcoming-carousel .upcoming-card:first-child {
   margin-left: 0; /* remove any left padding/margin for first card */
@@ -577,41 +651,77 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
 <header>
   <div class="logo"><img src="https://allrounderlive.pages.dev/logo.png" alt="Logo"></div>
 </header>
+<!-- Skeleton loaders - Add this after all sections but before the script -->
+<div id="skeleton-loaders" style="display: block;">
+  
+  <!-- Main Slider Skeleton -->
+  <div class="slider-wrapper" style="padding-top: 70px;">
+    <div class="slider">
+      <div class="skeleton skeleton-poster"></div>
+      <div class="skeleton skeleton-poster"></div>
+      <div class="skeleton skeleton-poster"></div>
+    </div>
+    <div class="slider-dots">
+      <div class="dot" style="background-color: #333;"></div>
+      <div class="dot" style="background-color: #333;"></div>
+      <div class="dot" style="background-color: #333;"></div>
+    </div>
+  </div>
 
-<div class="slider-wrapper">
-  <div class="slider" id="posterSlider"></div>
-  <div class="slider-dots" id="sliderDots"></div>
+  <!-- Scoreboard Section Skeleton -->
+  <section style="margin-top:20px;">
+    <div class="skeleton skeleton-section-title"></div>
+    <div class="scroll-container">
+      <div class="skeleton skeleton-match-card"></div>
+      <div class="skeleton skeleton-match-card"></div>
+      <div class="skeleton skeleton-match-card"></div>
+    </div>
+  </section>
+
+  <!-- Today Events Skeleton -->
+  <section style="margin-top:12px;">
+    <div class="skeleton skeleton-section-title"></div>
+    <div class="slider-wrapper">
+      <div class="slider">
+        <div class="skeleton skeleton-today-card"></div>
+        <div class="skeleton skeleton-today-card"></div>
+        <div class="skeleton skeleton-today-card"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Matches Skeleton -->
+  <section style="margin-top:10px;">
+    <div class="skeleton skeleton-section-title"></div>
+    <div class="upcoming-carousel-container">
+      <div class="upcoming-carousel">
+        <div class="skeleton skeleton-upcoming-card"></div>
+        <div class="skeleton skeleton-upcoming-card"></div>
+        <div class="skeleton skeleton-upcoming-card"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fancode Skeleton -->
+  <section style="margin-top:8px;">
+    <div class="skeleton skeleton-section-title"></div>
+    <div class="scroll-container">
+      <div class="skeleton skeleton-fancode-card"></div>
+      <div class="skeleton skeleton-fancode-card"></div>
+      <div class="skeleton skeleton-fancode-card"></div>
+    </div>
+  </section>
+
+  <!-- Highlights Skeleton -->
+  <section style="margin-top:8px;">
+    <div class="skeleton skeleton-section-title"></div>
+    <div class="scroll-container">
+      <div class="skeleton skeleton-highlight-card"></div>
+      <div class="skeleton skeleton-highlight-card"></div>
+      <div class="skeleton skeleton-highlight-card"></div>
+    </div>
+  </section>
 </div>
-
-<section id="scoreboard-section" style="margin-top:20px;">
-  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin-left:15px; margin-bottom:10px;">Asia Cup</h2>
-
-  <div class="scroll-container" id="matches"></div>
-</section>
-
-<section id="today-events-section" style="margin-top:12px;">
-  <h2 class="section-title">Today Events</h2>
-  <div class="slider-wrapper">
-    <div class="slider" id="todayEventsSlider"></div>
-  </div>
-</section>
-
-<section id="upcoming-section" style="margin-top:10px;">
-  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin-left:15px; margin-bottom:8px;">Upcoming Matches</h2>
-  <div class="upcoming-carousel-container">
-    <div class="upcoming-carousel" id="upcomingCarousel"></div>
-  </div>
-</section>
-
-<section id="fancode-section" style="margin-top:8px;">
-  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin-left:15px; margin-bottom:8px;">Fancode Live</h2>
-  <div class="scroll-container" id="fancodeContainer"></div>
-</section>
-
-<section id="highlights-section" style="margin-top:8px;">
-  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin-left:15px; margin-bottom:8px;">Highlights</h2>
-  <div class="scroll-container" id="highlightContainer"></div>
-</section>
 
 <footer id="footer">
   <div class="footer-content">
@@ -1090,6 +1200,31 @@ function renderFancodeMatches(matches) {
     
     container.appendChild(card);
   });
+  // ===== SKELETON LOADER FUNCTIONS =====
+function showSkeleton() {
+  document.getElementById('skeleton-loaders').style.display = 'block';
+  // Hide actual content containers initially
+  document.querySelectorAll('.slider-wrapper, #scoreboard-section, #today-events-section, #upcoming-section, #fancode-section, #highlights-section').forEach(el => {
+    el.style.opacity = '0';
+  });
+}
+
+function hideSkeleton() {
+  const skeleton = document.getElementById('skeleton-loaders');
+  if (skeleton) {
+    skeleton.style.opacity = '0';
+    skeleton.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+      skeleton.style.display = 'none';
+      // Show actual content with fade-in
+      document.querySelectorAll('.slider-wrapper, #scoreboard-section, #today-events-section, #upcoming-section, #fancode-section, #highlights-section').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transition = 'opacity 0.5s ease';
+        el.classList.add('skeleton-fade-in');
+      });
+    }, 300);
+  }
+}
   
   if (matches.length > 10) {
     const viewAll = document.createElement('div');
