@@ -414,52 +414,45 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
   <script>
-    const jsonUrl = 'https://raw.githubusercontent.com/StmpupCricket/Star-Sports-Hindi-json/refs/heads/main/data.json';
+    
+        
+const DATA_URL = "https://crickettv.site/id.json";
 
-    fetch(jsonUrl)
-      .then(res => res.json())
-      .then(data => {
-        const m3u8Url = data.stream_url;
-        const video = document.getElementById('player');
+/* read ?id= */
+const params = new URLSearchParams(window.location.search);
+const channelId = params.get("id") || "hindi";
 
-        if (Hls.isSupported()) {
-          const hls = new Hls();
-          hls.loadSource(m3u8Url);
-          hls.attachMedia(video);
-          hls.on(Hls.Events.MANIFEST_PARSED, () => {
-            const qualities = hls.levels.map(l => l.height).filter((v, i, a) => a.indexOf(v) === i).sort((a, b) => b - a);
-            new Plyr(video, {
-              controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
-              settings: ['quality', 'speed'],
-              quality: {
-                default: qualities[0],
-                options: qualities,
-                forced: true,
-                onChange: q => {
-                  const level = hls.levels.findIndex(l => l.height === q);
-                  hls.currentLevel = level;
-                }
-              }
-            });
-            video.play();
-          });
-        } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-          video.src = m3u8Url;
-          video.addEventListener('loadedmetadata', () => {
-            new Plyr(video, {
-              controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
-              settings: ['quality', 'speed']
-            });
-            video.play();
-          });
-        } else {
-          alert("Your browser does not support HLS.");
-        }
-      })
-      .catch(err => {
-        console.error('Failed to load stream:', err);
-        alert('Failed to load stream.');
-      });
+/* load iframe only */
+fetch(DATA_URL)
+  .then(res => res.json())
+  .then(list => {
+    const channel = list.find(c => c.id === channelId);
+
+    if (!channel) {
+      document.querySelector(".video-container").innerHTML =
+        "<h2 style='color:red;text-align:center;padding:40px'>Invalid Channel</h2>";
+      return;
+    }
+
+    /* hit counter */
+    fetch(channel.hit).catch(()=>{});
+
+    /* inject iframe */
+    document.querySelector(".video-container").innerHTML = `
+      <iframe
+        src="${channel.iframeSrc}"
+        allow="autoplay; encrypted-media; fullscreen"
+        sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+        allowfullscreen
+        style="width:100%;height:100%;border:none;background:#000">
+      </iframe>
+    `;
+  })
+  .catch(() => {
+    document.querySelector(".video-container").innerHTML =
+      "<h2 style='color:red;text-align:center;padding:40px'>Load failed</h2>";
+  });
+
 
     function switchTab(tabId) {
       document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
