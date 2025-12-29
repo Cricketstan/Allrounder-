@@ -873,7 +873,7 @@ function startAutoScroll() {
 
 fetchMatches();
 const upcomingCarousel = document.getElementById('upcomingCarousel');
-const upcomingApi = 'https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/upcomingevnets.json';
+const upcomingApi = 'https://crickettv.site/upcomingevnets.json';
 
 // Convert match date & time to IST Date object
 function getISTDate(dateStr, timeStr) {
@@ -988,7 +988,7 @@ function todayStartAuto(){
 }
 
 function loadTodayEvents(){
-  fetch("https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/main-poster.json")
+  fetch("https://crickettv.site/main-poster.json")
     .then(res=>res.json())
     .then(data=>{
       const liveEvents = [];
