@@ -654,75 +654,48 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
 <!-- Skeleton loaders - Add this after all sections but before the script -->
 <div id="skeleton-loaders" style="display: block;">
   
-  <!-- Main Slider Skeleton -->
-  <div class="slider-wrapper" style="padding-top: 70px;">
-    <div class="slider">
-      <div class="skeleton skeleton-poster"></div>
-      <div class="skeleton skeleton-poster"></div>
-      <div class="skeleton skeleton-poster"></div>
-    </div>
-    <div class="slider-dots">
-      <div class="dot" style="background-color: #333;"></div>
-      <div class="dot" style="background-color: #333;"></div>
-      <div class="dot" style="background-color: #333;"></div>
-    </div>
+<!-- Add these sections after the skeleton loaders -->
+<div id="content" style="display: none;">
+  <!-- Main Slider -->
+  <div class="slider-wrapper">
+    <div class="slider" id="posterSlider"></div>
+    <div class="slider-dots" id="sliderDots"></div>
   </div>
 
-  <!-- Scoreboard Section Skeleton -->
-  <section style="margin-top:20px;">
-    <div class="skeleton skeleton-section-title"></div>
-    <div class="scroll-container">
-      <div class="skeleton skeleton-match-card"></div>
-      <div class="skeleton skeleton-match-card"></div>
-      <div class="skeleton skeleton-match-card"></div>
-    </div>
+  <!-- Scoreboard Section -->
+  <section id="scoreboard-section" style="margin-top:20px;">
+    <h2>Live Scores</h2>
+    <div class="scroll-container" id="matches"></div>
   </section>
 
-  <!-- Today Events Skeleton -->
-  <section style="margin-top:12px;">
-    <div class="skeleton skeleton-section-title"></div>
+  <!-- Today Events Section -->
+  <section id="today-events-section">
+    <h2 class="section-title">Today's Events</h2>
     <div class="slider-wrapper">
-      <div class="slider">
-        <div class="skeleton skeleton-today-card"></div>
-        <div class="skeleton skeleton-today-card"></div>
-        <div class="skeleton skeleton-today-card"></div>
-      </div>
+      <div class="slider" id="todayEventsSlider"></div>
     </div>
   </section>
 
-  <!-- Upcoming Matches Skeleton -->
-  <section style="margin-top:10px;">
-    <div class="skeleton skeleton-section-title"></div>
+  <!-- Upcoming Matches Section -->
+  <section id="upcoming-section" style="margin-top:10px;">
+    <h2>Upcoming Matches</h2>
     <div class="upcoming-carousel-container">
-      <div class="upcoming-carousel">
-        <div class="skeleton skeleton-upcoming-card"></div>
-        <div class="skeleton skeleton-upcoming-card"></div>
-        <div class="skeleton skeleton-upcoming-card"></div>
-      </div>
+      <div class="upcoming-carousel" id="upcomingCarousel"></div>
     </div>
   </section>
 
-  <!-- Fancode Skeleton -->
-  <section style="margin-top:8px;">
-    <div class="skeleton skeleton-section-title"></div>
-    <div class="scroll-container">
-      <div class="skeleton skeleton-fancode-card"></div>
-      <div class="skeleton skeleton-fancode-card"></div>
-      <div class="skeleton skeleton-fancode-card"></div>
-    </div>
+  <!-- Fancode Section -->
+  <section id="fancode-section">
+    <h2>FanCode</h2>
+    <div class="scroll-container" id="fancodeContainer"></div>
   </section>
 
-  <!-- Highlights Skeleton -->
-  <section style="margin-top:8px;">
-    <div class="skeleton skeleton-section-title"></div>
-    <div class="scroll-container">
-      <div class="skeleton skeleton-highlight-card"></div>
-      <div class="skeleton skeleton-highlight-card"></div>
-      <div class="skeleton skeleton-highlight-card"></div>
-    </div>
+  <!-- Highlights Section -->
+  <section id="highlights-section" style="margin-top:8px;">
+    <h2>Highlights</h2>
+    <div class="scroll-container" id="highlightContainer"></div>
   </section>
 </div>
-
 <footer id="footer">
   <div class="footer-content">
     <p>&copy; 2025 Allrounder. All Rights Reserved.</p>
@@ -1200,31 +1173,45 @@ function renderFancodeMatches(matches) {
     
     container.appendChild(card);
   });
-  // ===== SKELETON LOADER FUNCTIONS =====
-function showSkeleton() {
-  document.getElementById('skeleton-loaders').style.display = 'block';
-  // Hide actual content containers initially
-  document.querySelectorAll('.slider-wrapper, #scoreboard-section, #today-events-section, #upcoming-section, #fancode-section, #highlights-section').forEach(el => {
-    el.style.opacity = '0';
+// Add this at the beginning of your script section
+document.addEventListener('DOMContentLoaded', function() {
+  showSkeleton();
+  
+  // Load all data
+  Promise.all([
+    // Fetch main posters
+    fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/main-poster.json')
+      .then(res => res.json())
+      .then(data => {
+        // ... your existing poster loading code ...
+      }),
+    
+    // Fetch matches
+    fetchMatches(),
+    
+    // Fetch upcoming matches
+    fetch('https://crickettv.site/upcomingevnets.json')
+      .then(res => res.json())
+      .then(data => {
+        // ... your existing upcoming matches code ...
+      }),
+    
+    // Load highlights
+    loadHighlights(),
+    
+    // Load today events
+    loadTodayEvents(),
+    
+    // Load fancode matches
+    loadFancodeMatches()
+  ]).then(() => {
+    // Hide skeleton when all data is loaded
+    hideSkeleton();
+  }).catch(error => {
+    console.error('Error loading data:', error);
+    hideSkeleton(); // Still hide skeleton on error
   });
-}
-
-function hideSkeleton() {
-  const skeleton = document.getElementById('skeleton-loaders');
-  if (skeleton) {
-    skeleton.style.opacity = '0';
-    skeleton.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => {
-      skeleton.style.display = 'none';
-      // Show actual content with fade-in
-      document.querySelectorAll('.slider-wrapper, #scoreboard-section, #today-events-section, #upcoming-section, #fancode-section, #highlights-section').forEach(el => {
-        el.style.opacity = '1';
-        el.style.transition = 'opacity 0.5s ease';
-        el.classList.add('skeleton-fade-in');
-      });
-    }, 300);
-  }
-}
+});
   
   if (matches.length > 10) {
     const viewAll = document.createElement('div');
