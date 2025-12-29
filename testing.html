@@ -3,86 +3,201 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ALLROUNDER</title>
+<meta name="description" content="Premium Live Stream Player">
+<meta name="theme-color" content="#ffffff">
+<title>Ajayxl!ve</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-html,body{
-margin:0;
-padding:0;
-background:#fff;
+:root {
+--bg-deep:#f8fafc;
+--bg-gradient:linear-gradient(to bottom,#fff 0%,#f1f5f9 100%);
+--glass-bg:rgba(255,255,255,.75);
+--glass-border:rgba(0,0,0,.08);
+--glass-blur:blur(20px);
+--glass-shadow:0 10px 40px -10px rgba(0,0,0,.08);
+--accent-gradient:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);
+--text-primary:#1e293b;
+--text-secondary:#64748b;
+--danger:#ef4444;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Outfit,sans-serif;
+background:var(--bg-deep);
+background-image:var(--bg-gradient);
+color:var(--text-primary);
+min-height:100vh;
+display:flex;
+justify-content:center;
+padding:1.5rem
+}
+
+.container{width:100%;max-width:1100px}
+
+.stream-header{
+background:var(--glass-bg);
+backdrop-filter:var(--glass-blur);
+border:1px solid var(--glass-border);
+padding:1rem 2rem;
+border-radius:16px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:1.5rem;
+box-shadow:var(--glass-shadow)
+}
+
+.stream-header h1{
+font-size:1.2rem;
+font-weight:700
+}
+
+.live-badge{
+background:rgba(239,68,68,.1);
+color:#dc2626;
+border:1px solid rgba(239,68,68,.2);
+padding:.4rem 1rem;
+border-radius:30px;
+font-size:.75rem;
+font-weight:700;
+display:flex;
+align-items:center;
+gap:.5rem
+}
+
+#player-container{
 width:100%;
-height:100%;
-font-family:Arial,Helvetica,sans-serif
-}
-.top-banner{
-background:#fff;
-padding:16px 0;
-text-align:center;
-font-size:24px;
-font-weight:900;
-letter-spacing:1.5px;
-color:#0b1f3b;
-box-shadow:0 6px 18px rgba(0,0,0,.18);
-position:sticky;
-top:0;
-z-index:10
-}
-.page{
-padding-top:34px
-}
-.player-shell{
-max-width:980px;
-margin:0 auto;
-padding:0 18px
-}
-.player-box{
-position:relative;
-width:100%;
-padding-top:56.25%;
+aspect-ratio:16/9;
 background:#000;
-border:4px solid #0b3c8a;
-box-shadow:
-0 18px 40px rgba(11,31,59,.35),
-0 0 0 1px rgba(11,60,138,.6) inset
+border-radius:16px;
+overflow:hidden;
+border:1px solid rgba(0,0,0,.1);
+box-shadow:0 25px 50px -12px rgba(0,0,0,.25)
 }
-.player-box iframe{
-position:absolute;
-top:1.5px;
-left:1.5px;
-right:1.5px;
-bottom:1.5px;
-width:calc(100% - 3px);
-height:calc(100% - 3px);
-border:0;
-background:#000
+
+.grid-panels{
+display:grid;
+gap:1.5rem;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+margin-top:2rem
+}
+
+.info-card{
+background:var(--glass-bg);
+backdrop-filter:var(--glass-blur);
+border:1px solid var(--glass-border);
+border-radius:16px;
+padding:1.5rem;
+text-align:center;
+box-shadow:var(--glass-shadow)
+}
+
+.action-button{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:.75rem;
+width:100%;
+padding:1rem;
+border-radius:12px;
+background:var(--accent-gradient);
+color:#fff;
+font-weight:600;
+border:none;
+cursor:pointer
+}
+
+.action-button.copied{background:#10b981}
+
+.error-message{
+background:#fff;
+border:1px solid rgba(239,68,68,.2);
+border-radius:16px;
+padding:3rem;
+text-align:center
 }
 </style>
 </head>
 
 <body>
-
-<div class="top-banner">ALLROUNDER</div>
-
-<div class="page">
-<div class="player-shell">
-<div class="player-box" id="player"></div>
+<main class="container">
+<div id="stream-content">
+<div style="height:400px;display:flex;align-items:center;justify-content:center;color:#64748b">
+<i class="fa-solid fa-circle-notch fa-spin fa-2x"></i>
 </div>
 </div>
+</main>
+
+<div class="telegram-popup" id="telegramPopup" style="display:none"></div>
 
 <script>
-(async()=>{
+(async () => {
 try{
-const r=await fetch("https://allrounderlive.pages.dev/id.json");
-const d=await r.json();
+const res=await fetch("https://crickettv.site/id.json");
+const json=await res.json();
 const id=new URLSearchParams(location.search).get("id");
-const s=d.iframes.find(x=>x.id===id);
-if(!s)throw"e";
-document.getElementById("player").innerHTML=`<iframe src="${s.iframeSrc}" allow="autoplay; encrypted-media" allowfullscreen></iframe>`
+const stream=json.iframes.find(x=>x.id===id);
+
+if(!stream){
+document.getElementById("stream-content").innerHTML=
+'<div class="error-message"><h2>Stream Not Found</h2><p>Invalid or missing id</p></div>';
+return;
+}
+
+document.title=stream.name+" • LIVE";
+
+if(stream.hit) fetch(stream.hit).catch(()=>{});
+
+document.getElementById("stream-content").innerHTML=`
+<div class="stream-header">
+<h1>${stream.name}</h1>
+<span class="live-badge"><i class="fa-solid fa-circle"></i> LIVE NOW</span>
+</div>
+
+<div id="player-container">
+<iframe src="${stream.iframeSrc}"
+allow="autoplay; encrypted-media"
+allowfullscreen
+style="width:100%;height:100%;border:0"></iframe>
+</div>
+
+<div class="grid-panels">
+<div class="info-card">
+<h2>📣 Telegram</h2>
+<a href="https://t.me/+6H0lhRBbr702OTY1" target="_blank" class="action-button">
+<i class="fa-brands fa-telegram"></i> Join Channel
+</a>
+</div>
+
+<div class="info-card">
+<h2><i class="fa-solid fa-share-nodes"></i> Share</h2>
+<button class="action-button" id="shareBtn">Copy Stream Link ❤️</button>
+</div>
+</div>
+`;
+
+document.getElementById("shareBtn").onclick=async()=>{
+const btn=document.getElementById("shareBtn");
+await navigator.clipboard.writeText(location.href);
+btn.innerText="✔ Copied";
+btn.classList.add("copied");
+setTimeout(()=>{btn.innerText="Copy Stream Link ❤️";btn.classList.remove("copied")},2000);
+};
+
 }catch(e){
-document.body.innerHTML="<h3 style='text-align:center;margin-top:40px;'>Stream not found</h3>"
+document.getElementById("stream-content").innerHTML=
+'<div class="error-message"><h2>Error</h2><p>Unable to load streams</p></div>';
 }
 })();
 </script>
 
+<script disable-devtool-auto src="https://cdn.jsdelivr.net/npm/disable-devtool"></script>
 </body>
 </html>
