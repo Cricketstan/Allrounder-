@@ -680,6 +680,19 @@ header.scrolled { background-color: rgba(0,0,0,0.6); }
     <div class="skeleton skeleton-card" style="min-width: 100px; height: 180px; background: #333;"></div>
   </div>
 </section>
+  <section id="highlights-top-section" style="margin-top:8px;">
+  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin-left:15px; margin-bottom:8px;">
+    Big Bash - Ashes
+  </h2>
+
+  <!-- Skeleton for top highlights -->
+  <div class="scroll-container skeleton-container" id="highlightTopContainer">
+    <div class="skeleton skeleton-card" style="flex: 0 0 260px;"></div>
+    <div class="skeleton skeleton-card" style="flex: 0 0 260px;"></div>
+    <div class="skeleton skeleton-card" style="flex: 0 0 260px;"></div>
+    <div class="skeleton skeleton-card" style="flex: 0 0 260px;"></div>
+  </div>
+  </section>
 
 <section id="highlights-section" style="margin-top:8px;">
   <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin-left:15px; margin-bottom:8px;">Highlights</h2>
@@ -1157,6 +1170,47 @@ function loadTodayEvents(){
 }
 
 loadTodayEvents();
+  
+async function loadTopHighlights() {
+  const container = document.getElementById("highlightTopContainer");
+
+  try {
+    const res = await fetch(
+      "https://cricket-australia-highlights.cricketstream745.workers.dev/videos?offset=0&limit=10"
+    );
+    const data = await res.json();
+
+    removeSkeleton(container);
+    container.innerHTML = "";
+
+    data.content.forEach(video => {
+      const card = document.createElement("div");
+      card.className = "highlight-card";
+      card.innerHTML = `
+        <img src="${video.thumbnailUrl}">
+        <div class="gradient"></div>
+        <div class="highlight-title">${video.title}</div>
+      `;
+
+      card.addEventListener("click", () => {
+        window.location.href =
+          "/highlights/player2?id=" + video.mediaId +
+          "&title=" + encodeURIComponent(video.title);
+      });
+
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error("Top highlights error:", err);
+    removeSkeleton(container);
+    container.innerHTML =
+      '<p style="color:#ccc; margin-left:15px;">Failed to load highlights.</p>';
+  }
+}
+
+loadTopHighlights();
+
  
 // Fancode Section
 let fancodeShowingAll = false;
