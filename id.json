@@ -121,10 +121,10 @@
       "get": "https://dillzycounter.vercel.app/api/get?key=fox-hd"
     },
     {
-      "id": "astro",
-      "name": "Astro",
+      "id": "zee",
+      "name": "Zee Cenena",
       "type": "iframe",
-      "iframeSrc": "https://cricketstan.github.io/astro/",
+      "iframeSrc": "https://zee-seven.vercel.app/",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=astro",
       "get": "https://dillzycounter.vercel.app/api/get?key=astro"
     },
