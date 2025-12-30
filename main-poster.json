@@ -1,5 +1,21 @@
 {
   "posters": [
+{
+      "title": "https://i.ibb.co/hxkHCv7r/Picsart-25-12-30-08-45-30-570.png",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8277/1767015188277-i",
+      "watch_now": [
+        { "id": "home?id=hotstar", "name": "Hindi" },
+{ "id": "home?id=jio-hotstar", "name": "Hotstar Multi Quality" },
+        { "id": "home?id=willow", "name": "Willow" }
+       
+      ],
+      "date": "30 Dec 2025",
+      "start_time": "08:55 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "rating": "U/A"
+    },
     {
       "title": "https://i.ibb.co/jPWxLhrz/Picsart-25-12-30-08-42-10-537.png",
       "poster_link": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/931/1766832740931-i",
