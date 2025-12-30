@@ -6,7 +6,8 @@
       "watch_now": [
         { "id": "home?id=hotstar", "name": "Hindi" },
 { "id": "home?id=jio-hotstar", "name": "Hotstar Multi Quality" },
-        { "id": "home?id=willow", "name": "Willow" }
+        { "id": "home?id=willow", "name": "Willow" },
+        { "id": "home?id=sky-uk", "name": "Fox 501" }
        
       ],
       "date": "30 Dec 2025",
