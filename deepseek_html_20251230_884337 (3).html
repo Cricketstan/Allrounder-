@@ -790,7 +790,7 @@ section {
 
 <!-- New Highlights Section with Proxy (same as scoreboard) -->
 <section id="new-highlights-section">
-  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin:0 0 8px 15px;">Highlights (New)</h2>
+  <h2 style="font-size:1.2rem; font-weight:bold; color:#fff; margin:0 0 8px 15px;">Ashes & Big Bash</h2>
   <div class="scroll-container" id="newHighlightsContainer">
     <!-- Skeleton for new highlights -->
     <div class="skeleton skeleton-card" style="flex: 0 0 260px;"></div>
@@ -1407,7 +1407,7 @@ async function loadNewHighlights() {
       `;
       
       card.addEventListener('click', () => {
-        window.location.href = `player.html?id=${video.mediaId}&title=${encodeURIComponent(video.title)}`;
+        window.location.href = `highlights/player2.html?id=${video.mediaId}&title=${encodeURIComponent(video.title)}`;
       });
       
       container.appendChild(card);
