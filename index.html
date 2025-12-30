@@ -1308,7 +1308,7 @@ async function loadNewHighlights() {
       `;
       card.onclick = () => {
         window.location.href =
-          `player.html?id=${video.mediaId}&title=${encodeURIComponent(video.title)}`;
+          `highlight/player2.html?id=${video.mediaId}&title=${encodeURIComponent(video.title)}`;
       };
       container.appendChild(card);
     });
