@@ -1,66 +1,39 @@
 {
   "upcomingMatches": [
     {
-      "title": "Sunrisers Eastern Cape vs Pretoria Capitals - 5th Match (SA20)",
-      "date": "Mon, Dec 29 2025",
+      "title": "Sunrisers Eastern Cape vs Paarl Royals - 7th Match (SA20)",
+      "date": "Wed, Dec 31 2025",
       "venue": "Gqeberha, St George's Park",
       "team1": "Sunrisers Eastern Cape",
+      "team2": "Paarl Royals",
+      "time": "4:30 PM",
+      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+    },
+    {
+      "title": "MI Cape Town vs Pretoria Capitals - 8th Match (SA20)",
+      "date": "Wed, Dec 31 2025",
+      "venue": "Cape Town, Newlands",
+      "team1": "MI Cape Town",
       "team2": "Pretoria Capitals",
       "time": "9:00 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Durban Super Giants vs Joburg Super Kings - 6th Match (SA20)",
-      "date": "Tue, Dec 30 2025",
-      "venue": "Durban, Kingsmead",
-      "team1": "Durban Super Giants",
-      "team2": "Joburg Super Kings",
-      "time": "9:00 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Sydney Thunder vs Perth Scorchers - 16th Match (BBL)",
-      "date": "Tue, Dec 30 2025",
-      "venue": "Sydney, Sydney Showground Stadium",
-      "team1": "Sydney Thunder",
-      "team2": "Perth Scorchers",
+      "title": "Adelaide Strikers vs Brisbane Heat - 17th Match (BBL)",
+      "date": "Wed, Dec 31 2025",
+      "venue": "Adelaide, Adelaide Oval",
+      "team1": "Adelaide Strikers",
+      "team2": "Brisbane Heat",
       "time": "1:45 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Sylhet Titans vs Chattogram Royals - 7th Match (BPL)",
-      "date": "Tue, Dec 30 2025",
-      "venue": "Sylhet, Sylhet International Cricket Stadium",
-      "team1": "Sylhet Titans",
-      "team2": "Chattogram Royals",
-      "time": "12:30 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Dhaka Capitals vs Rangpur Riders - 8th Match (BPL)",
-      "date": "Tue, Dec 30 2025",
-      "venue": "Sylhet, Sylhet International Cricket Stadium",
-      "team1": "Dhaka Capitals",
-      "team2": "Rangpur Riders",
-      "time": "5:30 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Otago vs Central Districts - 5th Match (Super Smash)",
-      "date": "Tue, Dec 30 2025",
-      "venue": "Alexandra, Molyneux Park",
-      "team1": "Otago",
-      "team2": "Central Districts",
-      "time": "8:55 AM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Northern Knights vs Wellington - 6th Match (Super Smash)",
+      "title": "Zimbabwe U19 vs Afghanistan U19 - 4th Match (Zimbabwe U19 Tri-Series)",
       "date": "Wed, Dec 31 2025",
-      "venue": "Mount Maunganui, Bay Oval",
-      "team1": "Northern Knights",
-      "team2": "Wellington",
-      "time": "8:55 AM",
+      "venue": "Harare, Sunrise Sports Club",
+      "team1": "Zimbabwe U19",
+      "team2": "Afghanistan U19",
+      "time": "1:00 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     }
   ]
