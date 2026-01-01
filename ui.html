@@ -1775,45 +1775,77 @@ function startMatchAutoScroll() {
 }
 
 // Load matches after poster loads
-window.addEventListener('load', () => {
-  // Wait a bit for poster to load, then load matches
-  setTimeout(loadLiveMatches, 1500);
-});
-// Load Today Events
+scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  }
+  
+  scrollInterval = setInterval(scrollToNext, 8000);
+  
+  container.addEventListener('scroll', () => {
+    userScrolling = true;
+    clearTimeout(window.todayScrollTimeout);
+    window.todayScrollTimeout = setTimeout(() => {
+      userScrolling = false;
+    }, 3000);
+  });
+}
+
+// Load Today Events from separate JSON file
 async function loadTodayEvents() {
   try {
     const todayContainer = document.getElementById('todayEvents');
     
-    // Use existing event data from main poster (already loaded)
-    if (!eventData || eventData.length === 0) {
-      // If eventData not loaded yet, fetch it
-      const response = await fetch('https://crickettv.site/api/today-events.json');
-      const data = await response.json();
-      eventData = data.event || [];
-    }
-    
     // Clear skeleton loaders
     todayContainer.innerHTML = '';
     
-    if (eventData.length === 0) {
+    // Fetch from separate today events JSON
+    const response = await fetch('https://crickettv.site/api/today-events.json');
+    const data = await response.json();
+    
+    // Use the same structure as event.json but for today's events only
+    const todayEvents = data.event || [];
+    
+    if (todayEvents.length === 0) {
       todayContainer.innerHTML = '<p style="color:#ccc; text-align:center; padding:20px; width:100%; font-family:\'Arial\', sans-serif;">No events today</p>';
       return;
     }
     
-    // Create cards for each event
-    eventData.forEach(event => {
+    // Function to check if event is live (same as before)
+    function parseEventTime(e) {
+      const [d, m, y] = e.date.split(" ");
+      const M = {Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
+      let [h, min] = e.start_time.split(":");
+      let p = "AM";
+      if(min.includes(" ")) { 
+        [min, p] = min.split(" "); 
+      }
+      h = parseInt(h); 
+      min = parseInt(min);
+      if(p === "PM" && h < 12) h += 12;
+      if(p === "AM" && h === 12) h = 0;
+      return new Date(Date.UTC(y, M[m], d, h - 5, min - 30));
+    }
+    
+    function isLive(e) {
+      return new Date() >= parseEventTime(e);
+    }
+    
+    // Create cards for each today event
+    todayEvents.forEach(event => {
       const isLiveNow = isLive(event);
       
       const card = document.createElement('div');
       card.className = 'today-event-card';
       
       card.innerHTML = `
-        <img src="${event.poster_link}" alt="${event.title}">
+        <img src="${event.poster_link}" alt="${event.title}" onerror="this.src='https://via.placeholder.com/260x146/071b4f/ffffff?text=Today+Event'">
         ${isLiveNow ? '<div class="live-indicator">LIVE</div>' : ''}
         <div class="event-info">
           <div class="event-title">${event.title}</div>
           <div class="event-meta">
-            <span>${event.league}</span>
+            <span>${event.league || event.category || 'Cricket'}</span>
             <span>•</span>
             <span>${event.start_time}</span>
           </div>
@@ -1875,9 +1907,9 @@ async function loadTodayEvents() {
             <div style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">Match Not Started Yet</div>
             <div style="font-size: 14px; margin-bottom: 8px; opacity: 0.9">Starts at: ${event.start_time}</div>
             <div style="font-size: 14px; margin-bottom: 8px; opacity: 0.9">Date: ${event.date}</div>
-            <div style="font-size: 14px; margin-bottom: 8px; opacity: 0.9">League: ${event.league}</div>
-            <div style="font-size: 14px; margin-bottom: 8px; opacity: 0.9">Language: ${event.language}</div>
-            <div style="font-size: 14px; opacity: 0.9">Category: ${event.category}</div>
+            <div style="font-size: 14px; margin-bottom: 8px; opacity: 0.9">League: ${event.league || event.category || 'Cricket'}</div>
+            <div style="font-size: 14px; margin-bottom: 8px; opacity: 0.9">Language: ${event.language || 'Multiple'}</div>
+            <div style="font-size: 14px; opacity: 0.9">Category: ${event.category || 'Cricket'}</div>
           `;
           
           streamsList.appendChild(infoDiv);
@@ -1889,17 +1921,17 @@ async function loadTodayEvents() {
       todayContainer.appendChild(card);
     });
     
-    // Start auto-scroll (same as scoreboard)
+    // Start auto-scroll
     startTodayEventsAutoScroll();
     
   } catch (error) {
     console.error('Error loading today events:', error);
     const todayContainer = document.getElementById('todayEvents');
-    todayContainer.innerHTML = '<p style="color:#ccc; text-align:center; padding:20px; width:100%; font-family:\'Arial\', sans-serif;">Unable to load events</p>';
+    todayContainer.innerHTML = '<p style="color:#ccc; text-align:center; padding:20px; width:100%; font-family:\'Arial\', sans-serif;">Unable to load today\'s events</p>';
   }
 }
 
-// Auto-scroll for today events (same as scoreboard)
+// Auto-scroll for today events
 function startTodayEventsAutoScroll() {
   const container = document.getElementById('todayEvents');
   if (!container.children.length) return;
@@ -1928,14 +1960,6 @@ function startTodayEventsAutoScroll() {
     }, 3000);
   });
 }
-
-// Load today events after page loads
-window.addEventListener('load', () => {
-  // Wait for main posters to load, then load today events
-  setTimeout(() => {
-    loadTodayEvents();
-  }, 2000);
-});
 // Load Upcoming Matches from JSON
 async function loadUpcomingMatches() {
   try {
