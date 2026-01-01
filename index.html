@@ -997,11 +997,17 @@ footer {
 }
 
 /* ==================== MEDIA QUERIES FOR LARGE SCREENS ==================== */
-@media (min-width: 1400px) {
-  :root {
-    --container-padding: 40px;
-    --gap-size: 20px;
+@media (min-width: 1024px) {
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
   }
+
+  .scroll-container > * {
+    flex: 0 0 300px; /* wider cards on PC */
+  }
+}
   
   .scroll-container {
     display: grid;
