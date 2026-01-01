@@ -5,7 +5,9 @@
       "title_url": "https://i.ibb.co/v6t3YVMS/Picsart-25-12-31-10-19-06-936.png",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8334/1767106358334-i",
       "watch_now": [
-        { "id": "home?id=willow", "name": "Willow" }
+        { "id": "home?id=willow", "name": "Willow" },
+        { "id": "home?id=willw", "name": "Wilow" },
+        { "id": "home?id=willo", "name": "Willw" }
        
       ],
       "date": "31 Dec 2025",
