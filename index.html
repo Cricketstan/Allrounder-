@@ -997,38 +997,38 @@ footer {
 }
 
 /* ==================== MEDIA QUERIES FOR LARGE SCREENS ==================== */
+/* ==================== MEDIA QUERIES FOR LARGE SCREENS ==================== */
 @media (min-width: 1400px) {
   :root {
     --container-padding: 40px;
     --gap-size: 20px;
   }
   
+  /* Keep horizontal scrolling on large screens */
   .scroll-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: var(--gap-size);
-    overflow-x: visible;
-    padding-right: 0;
-    scroll-snap-type: none;
+    display: flex;
+    overflow-x: auto;
+    padding-right: 40px;
+    scroll-snap-type: x mandatory;
   }
   
+  /* Cards maintain their flex sizing */
   .match-card, .today-event-card, .upcoming-card, 
   .highlight-new-card, .highlight-card, .load-more-card {
-    flex: 1;
-    min-width: auto;
-    width: 100%;
+    flex: 0 0 var(--card-large-width);
+    min-width: var(--card-min-width);
   }
   
   .fancode-card {
-    flex: 1;
-    min-width: auto;
-    width: 100%;
+    flex: 0 0 220px;
+    min-width: 180px;
   }
   
   .view-all-card {
     flex: 0 0 100px;
   }
 }
+ 
 
 /* Medium screens */
 @media (min-width: 768px) and (max-width: 1399px) {
