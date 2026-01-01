@@ -1,13 +1,14 @@
 {
   "event": [
     {
-      "title": "Sydney Vs Melbourne",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231d4e4b06fdd0fa83711-1766979736924?location=hero-default&imwidth=1920",
+      "title": "Knights Vs Vipers",
+      "poster_link": "https://www.fancode.com/skillup-uploads/cms-media/138629_5786_DC_ADKR_FC-Web.jpg",
       "watch_now": [
-        { "id": "home?id=eng", "name": "Star Sports" }
+        { "id": "home?id=zee", "name": "Hindi" },
+        { "id": "fancode", "name": "Fancode" }
       ],
       "date": "1 Jan 2026",
-      "start_time": "10:30 AM",
+      "start_time": "07:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
