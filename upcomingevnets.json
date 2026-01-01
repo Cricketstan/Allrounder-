@@ -1,39 +1,66 @@
 {
   "upcomingMatches": [
     {
-      "title": "Sunrisers Eastern Cape vs Paarl Royals - 7th Match (SA20)",
-      "date": "Wed, Dec 31 2025",
-      "venue": "Gqeberha, St George's Park",
-      "team1": "Sunrisers Eastern Cape",
-      "team2": "Paarl Royals",
-      "time": "4:30 PM",
+      "title": "Melbourne Renegades vs Sydney Sixers - 18th Match (BBL)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Melbourne, Docklands Stadium",
+      "team1": "Melbourne Renegades",
+      "team2": "Sydney Sixers",
+      "time": "10:30 AM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "MI Cape Town vs Pretoria Capitals - 8th Match (SA20)",
-      "date": "Wed, Dec 31 2025",
-      "venue": "Cape Town, Newlands",
-      "team1": "MI Cape Town",
-      "team2": "Pretoria Capitals",
-      "time": "9:00 PM",
+      "title": "Canterbury vs Central Districts - 7th Match (Super Smash)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Christchurch, Hagley Oval",
+      "team1": "Canterbury",
+      "team2": "Central Districts",
+      "time": "10:25 AM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Adelaide Strikers vs Brisbane Heat - 17th Match (BBL)",
-      "date": "Wed, Dec 31 2025",
-      "venue": "Adelaide, Adelaide Oval",
-      "team1": "Adelaide Strikers",
-      "team2": "Brisbane Heat",
+      "title": "Sylhet Titans vs Dhaka Capitals - 9th Match (BPL)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Sylhet, Sylhet International Cricket Stadium",
+      "team1": "Sylhet Titans",
+      "team2": "Dhaka Capitals",
+      "time": "12:30 PM",
+      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+    },
+    {
+      "title": "Hobart Hurricanes vs Perth Scorchers - 19th Match (BBL)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Hobart, Bellerive Oval",
+      "team1": "Hobart Hurricanes",
+      "team2": "Perth Scorchers",
       "time": "1:45 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Zimbabwe U19 vs Afghanistan U19 - 4th Match (Zimbabwe U19 Tri-Series)",
-      "date": "Wed, Dec 31 2025",
-      "venue": "Harare, Sunrise Sports Club",
-      "team1": "Zimbabwe U19",
-      "team2": "Afghanistan U19",
-      "time": "1:00 PM",
+      "title": "Rangpur Riders vs Rajshahi Warriors - 10th Match (BPL)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Sylhet, Sylhet International Cricket Stadium",
+      "team1": "Rangpur Riders",
+      "team2": "Rajshahi Warriors",
+      "time": "5:30 PM",
+      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+    },
+    {
+      "title": "Dubai Capitals vs Abu Dhabi Knight Riders - Eliminator (ILT20)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Dubai, Dubai International Cricket Stadium",
+      "team1": "Dubai Capitals",
+      "team2": "Abu Dhabi Knight Riders",
+      "time": "8:00 PM",
+      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+    },
+    {
+      "title": "Joburg Super Kings vs Durban Super Giants - 9th Match (SA20)",
+      "date": "Thu, Jan 1 2026",
+      "venue": "Johannesburg, The Wanderers Stadium",
+      "team1": "Joburg Super Kings",
+      "team2": "Durban Super Giants",
+      "time": "9:00 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     }
   ]
