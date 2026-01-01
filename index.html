@@ -1380,6 +1380,7 @@ async function loadNewHighlights() {
     
     const limit = 10;
     const url = `https://cricket-australia-highlights.cricketstream745.workers.dev/videos?offset=${newHighlightsOffset}&limit=${limit}`;
+    const proxyUrl = `https://cy-8i38.onrender.com/raw?url=${encodeURIComponent(url)}`;
     
     
     const res = await fetch(proxyUrl);
