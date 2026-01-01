@@ -1,7 +1,7 @@
 {
   "event": [
     {
-      "title_url": "https://i.ibb.co/3yP7hvCZ/Picsart-26-01-01-07-35-53-876.png",
+      "title": "Sydney Vs Melbourne",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231d4e4b06fdd0fa83711-1766979736924?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home?id=eng", "name": "Star Sports" }
@@ -14,7 +14,7 @@
       "league": "BBL"
     },
     {
-      "title_url": "https://i.ibb.co/VcmWds9P/Picsart-26-01-01-07-37-09-073.png",
+      "title": "Hobart Vs Perth",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231dde4b06fdd0fa83712-1766533179838?location=hero-default&imwidth=2560",
       "watch_now": [
         { "id": "home?id=eng", "name": "Star Sports" }
