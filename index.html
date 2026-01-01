@@ -1673,7 +1673,7 @@ document.addEventListener('click', function(e) {
 // Fetch and render live matches
 async function loadLiveMatches() {
   try {
-    const res = await fetch('https://cy-8i38.onrender.com/raw?url=https://m.cricbuzz.com/api/home');
+    const res = await fetch('https://crictv.cricketstream745.workers.dev/?url=https://m.cricbuzz.com/api/home');
     const data = await res.json();
     
     // Remove skeleton loaders
@@ -2135,7 +2135,7 @@ async function loadHighlightsSection() {
     console.log('Loading Highlights section...');
     
     // Using the same URL as final fixed.html (with CORS proxy like scoreboard)
-    const proxyUrl = 'https://cy-8i38.onrender.com/raw?url=' + 
+    const proxyUrl = 'https://crictv.cricketstream745.workers.dev/?url=' + 
       encodeURIComponent("https://acc-matchcentre.s3-ap-south-1.amazonaws.com/cpanel/client_14/2025/mediadoc/videos/1/videos.js?v=1758267404&callback=onVideos&_=1758303099872");
     
     const response = await fetch(proxyUrl);
