@@ -26,7 +26,13 @@ body {
 padding-bottom: 40px; /* Add space at bottom of page */
 
 }
-
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .app-header {
   position: relative;
   z-index: 5;
@@ -2102,7 +2108,7 @@ async function loadHighlightsNewSection() {
       `;
       
       card.addEventListener('click', () => {
-        window.location.href = `player.html?id=${video.mediaId}&title=${encodeURIComponent(video.title)}`;
+        window.location.href = `highlights/player2.html?id=${video.mediaId}&title=${encodeURIComponent(video.title)}`;
       });
       
       container.appendChild(card);
