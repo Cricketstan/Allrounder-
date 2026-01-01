@@ -12,19 +12,6 @@
       "year": "2025",
       "language": "Eng",
       "league": "BBL"
-    },
-    {
-      "title": "Hobart Vs Perth",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231dde4b06fdd0fa83712-1766533179838?location=hero-default&imwidth=2560",
-      "watch_now": [
-        { "id": "home?id=eng", "name": "Star Sports" }
-      ],
-      "date": "1 Jan 2026",
-      "start_time": "1:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
     }
   ]
 }
