@@ -997,15 +997,12 @@ footer {
 }
 
 /* ==================== MEDIA QUERIES FOR LARGE SCREENS ==================== */
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   .scroll-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
-  .scroll-container > * {
-    flex: 0 0 300px; /* wider cards on PC */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    overflow-x: visible;
+    scroll-snap-type: none;
   }
 }
   
