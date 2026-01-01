@@ -1787,7 +1787,7 @@ async function loadTodayEvents() {
     // Use existing event data from main poster (already loaded)
     if (!eventData || eventData.length === 0) {
       // If eventData not loaded yet, fetch it
-      const response = await fetch('https://crickettv.site/api/event.json');
+      const response = await fetch('https://crickettv.site/api/today-events.json');
       const data = await response.json();
       eventData = data.event || [];
     }
@@ -1942,7 +1942,7 @@ async function loadUpcomingMatches() {
     const upcomingContainer = document.getElementById('upcomingMatches');
     
     // Fetch from the upcoming JSON URL from final fixed.html
-    const response = await fetch('https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/upcomingevnets.json');
+    const response = await fetch('https://crickettv.site/api/upcomingevnets.json');
     const data = await response.json();
     
     // Clear skeleton loaders
