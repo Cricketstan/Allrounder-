@@ -1,8 +1,8 @@
 {
   "event": [
     {
-      "title": "Knights Vs Vipers",
-      "poster_link": "https://www.fancode.com/skillup-uploads/cms-media/138629_5786_DC_ADKR_FC-Web.jpg",
+      "title": "Knights Vs Capitals",
+      "poster_link": "https://i.ibb.co/TMY3tgSb/Picsart-26-01-01-19-12-37-831.jpg",
       "watch_now": [
         { "id": "home?id=zee", "name": "Hindi" },
         { "id": "fancode", "name": "Fancode" }
@@ -11,47 +11,24 @@
       "start_time": "07:45 PM",
       "category": "Cricket",
       "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
+      "language": "Multi",
+      "league": "ILT20"
     },
     {
-      "title": "Hobart Vs Perth",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231dde4b06fdd0fa83712-1766533179838?location=hero-default&imwidth=2560",
+      "title": "Knights Vs Capitals",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home?id=eng", "name": "Star Sports" }
+        { "id": "home?id=hotstar", "name": "Hotstar" },
+        { "id": "home?id=jio-hotstar", "name": "Hindi (Multi Quality)" },
+        { "id": "home?id=willow", "name": "Willow" }
       ],
       "date": "1 Jan 2026",
-      "start_time": "1:45 PM",
+      "start_time": "08:55 PM",
       "category": "Cricket",
       "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
+      "language": "Multi",
+      "league": "SA 20"
     },
-    {
-      "title": "Sydney Vs Melbourne",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231d4e4b06fdd0fa83711-1766979736924?location=hero-default&imwidth=1920",
-      "watch_now": [
-        { "id": "home?id=eng", "name": "Star Sports" }
-      ],
-      "date": "1 Jan 2026",
-      "start_time": "10:30 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
-    },
-    {
-      "title": "Hobart Vs Perth",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231dde4b06fdd0fa83712-1766533179838?location=hero-default&imwidth=2560",
-      "watch_now": [
-        { "id": "home?id=eng", "name": "Star Sports" }
-      ],
-      "date": "1 Jan 2026",
-      "start_time": "1:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
-    }
+    
   ]
 }
