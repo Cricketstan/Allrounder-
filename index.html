@@ -1172,7 +1172,7 @@ fetch(upcomingApi)
   });
 
 async function loadHighlights() {
-  const url = "https://cy-8i38.onrender.com/raw?url=" +
+  const url = "https://crictv.cricketstream745.workers.dev/?url=" +
     encodeURIComponent("https://acc-matchcentre.s3-ap-south-1.amazonaws.com/cpanel/client_14/2025/mediadoc/videos/1/videos.js?v=1758267404&callback=onVideos&_=1758303099872");
 
   try {
@@ -1380,7 +1380,7 @@ async function loadNewHighlights() {
     
     const limit = 10;
     const url = `https://cricket-australia-highlights.cricketstream745.workers.dev/videos?offset=${newHighlightsOffset}&limit=${limit}`;
-    const proxyUrl = `https://cy-8i38.onrender.com/raw?url=${encodeURIComponent(url)}`;
+    const proxyUrl = `https://crictv.cricketstream745.workers.dev/?url=${encodeURIComponent(url)}`;
     
     const res = await fetch(proxyUrl);
     const data = await res.json();
