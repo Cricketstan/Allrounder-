@@ -2,32 +2,32 @@
   "platform": "Sony LIV",
   "channels": [
     {
-      "id": "sonyliv/sonyliv-1",
+      "stream": "sonyliv/sonyliv-1",
       "name": "Sony LIV 1",
       "logo": "https://i.ibb.co/FLdDdd5S/1767340316422.png"
     },
     {
-      "id": "sonyliv/sonyliv-2",
+      "stream": "sonyliv/sonyliv-2",
       "name": "Sony LIV 2",
       "logo": "https://i.ibb.co/5VvKncN/1767340452609.png"
     },
     {
-      "id": "sonyliv/sonyliv-3",
+      "stream": "sonyliv/sonyliv-3",
       "name": "Sony LIV 3",
       "logo": "https://i.ibb.co/1f4B0BRn/1767340677553.png"
     },
     {
-      "id": "sonyliv/sonyliv-4-tam",
+      "stream": "sonyliv/sonyliv-4-tam",
       "name": "Sony LIV Tamil",
       "logo": "https://i.ibb.co/DHwMSF88/1767340734450.png"
     },
     {
-      "id": "sonyliv/sonyliv-4-tel",
+      "stream": "sonyliv/sonyliv-4-tel",
       "name": "Sony LIV Telugu",
       "logo": "https://i.ibb.co/DHwMSF88/1767340734450.png"
     },
     {
-      "id": "sonyliv/sonyliv-5",
+      "stream": "sonyliv/sonyliv-5",
       "name": "Sony LIV 5",
       "logo": "https://i.ibb.co/6cnWnPkv/1767340790095.png"
     }
