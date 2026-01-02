@@ -2,13 +2,14 @@
   "event": [
 
     {
-      "title": "Heat Vs Star",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694231e5e4b0d1261fa20517-1766533440673?location=hero-default&imwidth=1920",
+      "title": "MI City Vs Knights",
+      "poster_link": "https://i.ibb.co/BH7LCL5k/Picsart-26-01-02-18-53-05-793.jpg",
       "watch_now": [
-        { "id": "home?id=eng", "name": "Star Sports" }
+        { "id": "home?id=zee", "name": "Hindi" },
+        { "id": "fancode", "name": "Fancode" },
       ],
       "date": "2 Jan 2026",
-      "start_time": "1:40 PM",
+      "start_time": "7:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
