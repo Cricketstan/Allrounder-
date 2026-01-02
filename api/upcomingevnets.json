@@ -10,49 +10,31 @@
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Brisbane Heat vs Melbourne Stars - 20th Match (BBL 2025-26)",
-      "date": "Fri, Jan 2 2026",
-      "venue": "Brisbane, The Gabba",
-      "team1": "Brisbane Heat",
-      "team2": "Melbourne Stars",
+      "title": "Joburg Super Kings vs Sunrisers Eastern Cape - 11th Match (SA20 2025-26)",
+      "date": "Sat, Jan 3 2026",
+      "venue": "Johannesburg, The Wanderers Stadium",
+      "team1": "Joburg Super Kings",
+      "team2": "Sunrisers Eastern Cape",
+      "time": "4:30 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Sydney Thunder vs Hobart Hurricanes - 21st Match (BBL 2025-26)",
+      "date": "Sat, Jan 3 2026",
+      "venue": "Sydney, Sydney Showground Stadium",
+      "team1": "Sydney Thunder",
+      "team2": "Hobart Hurricanes",
       "time": "1:45 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Dhaka Capitals vs Chattogram Royals - 11th Match (BPL 2025-26)",
-      "date": "Fri, Jan 2 2026",
-      "venue": "Sylhet, Sylhet International Cricket Stadium",
-      "team1": "Dhaka Capitals",
-      "team2": "Chattogram Royals",
-      "time": "1:30 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Sylhet Titans vs Rangpur Riders - 12th Match (BPL 2025-26)",
-      "date": "Fri, Jan 2 2026",
-      "venue": "Sylhet, Sylhet International Cricket Stadium",
-      "team1": "Sylhet Titans",
-      "team2": "Rangpur Riders",
-      "time": "6:30 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Auckland vs Wellington - 8th Match (Super Smash 2025-26)",
-      "date": "Fri, Jan 2 2026",
-      "venue": "Auckland, Eden Park Outer Oval",
-      "team1": "Auckland",
-      "team2": "Wellington",
+      "title": "Central Districts vs Canterbury - 9th Match (Super Smash 2025-26)",
+      "date": "Sat, Jan 3 2026",
+      "venue": "Nelson, Saxton Oval",
+      "team1": "Central Districts",
+      "team2": "Canterbury",
       "time": "8:55 AM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/694b30c8e4b01f2a0926d892-1766535445208?location=hero-default&imwidth=2560"
-    },
-    {
-      "title": "Afghanistan U19 vs Pakistan U19 - 5th Match (Zimbabwe U19 Tri-Series)",
-      "date": "Fri, Jan 2 2026",
-      "venue": "Harare, Sunrise Sports Club",
-      "team1": "Afghanistan U19",
-      "team2": "Pakistan U19",
-      "time": "1:00 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     }
   ]
 }
