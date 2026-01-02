@@ -1,11 +1,10 @@
 {
   "event": [
     {
-      "title": "Knights Vs Capitals",
-      "poster_link": "https://i.ibb.co/TMY3tgSb/Picsart-26-01-01-19-12-37-831.jpg",
+      "title": "Highlights",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7398/1767267587398-h",
       "watch_now": [
-        { "id": "home?id=zee", "name": "Hindi" },
-        { "id": "fancode", "name": "Fancode" }
+        { "id": "home?id=youtube", "name": "Play Highlights" }
       ],
       "date": "1 Jan 2026",
       "start_time": "07:45 PM",
@@ -15,7 +14,7 @@
       "league": "ILT20"
     },
     {
-      "title": "Joburg Vs Durban",
+      "title": "Peapa",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home?id=hotstar", "name": "Hotstar" },
