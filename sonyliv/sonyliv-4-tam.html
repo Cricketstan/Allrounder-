@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Cric Tv Sony Liv 2</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      background: #000;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .shaka-video-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: contain;
+    }
+    .shaka-spinner-container,
+    .shaka-spinner,
+    .shaka-spinner-svg {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shaka-video-container" data-shaka-player>
+    <video autoplay playsinline preload="metadata"></video>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+
+  shaka.polyfill.installAll();
+  if (!shaka.Player.isBrowserSupported()) return;
+
+  const video = document.querySelector('video');
+  const player = new shaka.Player();
+  await player.attach(video);
+
+  const container = document.querySelector('.shaka-video-container');
+  const ui = new shaka.ui.Overlay(player, container, video);
+
+  ui.configure({
+    controlPanelElements: [
+      'play_pause','time_and_duration','mute','volume',
+      'spacer','language','captions','picture_in_picture',
+      'quality','fullscreen'
+    ],
+    seekBarColors: {
+      base: 'white',
+      buffered: 'red',
+      played: 'green'
+    }
+  });
+
+  let drmConfig = {
+    clearKeys: {
+      "9f266ceda9555faf8b40c586ac40406a":
+      "92f9a1ca4c16545db65ad0578bd1baa3"
+    }
+  };
+
+  let cookieHeader =
+    "__hdnea__=st=1759751405~exp=1759837805~acl=/*~hmac=be0a77ab3649dfd1c57f6c0801fad8aa319a16d2063f18fdb21ebe43c043f7bf";
+
+  let streamUrl =
+    "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Tamil_MOB/WDVLive/index.mpd";
+
+  try {
+    const response = await fetch(
+      'https://raw.githubusercontent.com/alex8875/m3u/refs/heads/main/jstar.m3u'
+    );
+    const m3uText = await response.text();
+    const lines = m3uText.split('\n');
+
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].includes('Star_Sports_HD')) {
+        for (let j = i - 1; j >= 0; j--) {
+          if (lines[j].startsWith('#EXTHTTP:')) {
+            const cookieMatch =
+              lines[j].match(/"cookie":"([^"]+)"/);
+            if (cookieMatch) {
+              cookieHeader = cookieMatch[1];
+            }
+            break;
+          }
+        }
+        break;
+      }
+    }
+  } catch (e) {}
+
+  let backupCookie = null;
+  let usingBackupCookie = false;
+
+  async function fetchBackupCookie() {
+    if (backupCookie) return backupCookie;
+    const res = await fetch('https://crickettv.site/api/cookie.json');
+    const data = await res.json();
+    backupCookie = data.cookie;
+    return backupCookie;
+  }
+
+  async function switchToBackupCookie() {
+    if (usingBackupCookie) return;
+    usingBackupCookie = true;
+    cookieHeader = await fetchBackupCookie();
+    try {
+      await player.unload();
+      await player.load(streamUrl);
+      video.play();
+    } catch (e) {}
+  }
+
+  player.configure({
+    drm: drmConfig
+  });
+
+  player.getNetworkingEngine().registerRequestFilter((type, request) => {
+    request.headers['Referer'] = 'https://www.jiotv.com/';
+    request.headers['User-Agent'] =
+      "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
+    request.headers['Cookie'] = cookieHeader;
+
+    if (
+      (type === shaka.net.NetworkingEngine.RequestType.MANIFEST ||
+       type === shaka.net.NetworkingEngine.RequestType.SEGMENT) &&
+      request.uris[0] &&
+      !request.uris[0].includes('__hdnea=')
+    ) {
+      const sep = request.uris[0].includes('?') ? '&' : '?';
+      request.uris[0] += sep + cookieHeader;
+    }
+  });
+
+  player.addEventListener('error', async (event) => {
+    const err = event.detail;
+    if (
+      !usingBackupCookie &&
+      (
+        err.code === 401 ||
+        err.code === 403 ||
+        err.code === shaka.util.Error.Code.BAD_HTTP_STATUS ||
+        err.code === shaka.util.Error.Code.MANIFEST_UNAVAILABLE
+      )
+    ) {
+      await switchToBackupCookie();
+    }
+  });
+
+  try {
+    await player.load(streamUrl);
+    video.play();
+  } catch (e) {}
+
+});
+</script>
+</body>
+</html>
