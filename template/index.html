@@ -8,6 +8,26 @@
 <meta name="description" content="{{META_DESCRIPTION}}">
 <link rel="canonical" href="{{CANONICAL}}">
 
+<!-- VideoObject Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{SCHEMA_NAME}}",
+  "description": "{{SCHEMA_DESCRIPTION}}",
+  "thumbnailUrl": "{{SCHEMA_THUMBNAIL}}",
+  "uploadDate": "{{SCHEMA_UPLOAD_DATE}}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CricTV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://crickettv.site/image/api/crickettv.png"
+    }
+  }
+}
+</script>
+
 <style>
 html, body {
   margin: 0;
@@ -97,8 +117,8 @@ html, body {
 
 <script>
 (function(){
-  const buttons = document.querySelectorAll("[data-src]");
   const iframe = document.getElementById("player");
+  const buttons = document.querySelectorAll("[data-src]");
 
   buttons.forEach(btn => {
     btn.onclick = () => {
