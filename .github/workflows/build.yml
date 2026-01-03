@@ -90,5 +90,5 @@ jobs:
           git config user.name "static-pages-bot"
           git config user.email "bot@github.com"
           git add home
-          git diff --cached --quiet || git commit -m "Generate fully static SEO pages"
+          git diff --cached --quiet || git commit -m "DILLZY AUTOMATION"
           git push
