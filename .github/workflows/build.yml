@@ -40,10 +40,11 @@ jobs:
               os.makedirs(out_dir, exist_ok=True)
               shutil.copy("template/index.html", f"{out_dir}/index.html")
 
+              # ✅ ABSOLUTE URL FIX HERE
               output_pages.append({
                   "id": pid,
                   "title": page["title"],
-                  "url": f"{HOME_BASE}/{pid}",
+                  "url": f"{SITE_BASE}{HOME_BASE}/{pid}",
                   "description": page.get("description", "")
               })
 
