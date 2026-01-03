@@ -32,6 +32,15 @@
       "hit": "https://dillzycounter.vercel.app/api/hit?key=willow",
       "get": "https://dillzycounter.vercel.app/api/get?key=willow"
     },
+    
+    {
+      "id": "willow-2",
+      "name": "Willow",
+      "type": "iframe",
+      "iframeSrc": "https://allrounderlive.pages.dev/willow2",
+      "hit": "https://dillzycounter.vercel.app/api/hit?key=willow",
+      "get": "https://dillzycounter.vercel.app/api/get?key=willow"
+    },
     {
       "id": "prime-hin",
       "name": "Prime Hindi",
