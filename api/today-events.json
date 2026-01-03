@@ -2,18 +2,20 @@
 {
   "event": [
 {
-      "title": "Pretoria Vs Durban",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
+      "title": "Australia Vs England",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68f9e57ae4b057f436c58d0f-1763764785886?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home?id=willow", "name": "Willow" }
+        { "id": "home?id=tnt", "name": "TNT" },
+        { "id": "home?id=eng", "name": "Star Sports 2" },
+        { "id": "home?id=jio-hotstar", "name": "Hotstar (Live After 7 Am )" },
+        { "id": "home?id=willow-sports", "name": "Willow" }
       ],
-      "date": "3 Jan 2026",
-      "start_time": "08:50 PM",
+      "date": "4 Jan 2026",
+      "start_time": "04:30 AM",
       "category": "Cricket",
       "year": "2025",
-      "language": "Multi",
-      "league": "SA 20"
+      "language": "Eng",
+      "league": "Ashes"
     }
-    
   ]
 }
