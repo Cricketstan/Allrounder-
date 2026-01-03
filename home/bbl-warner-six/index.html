@@ -8,6 +8,26 @@
 <meta name="description" content="Watch David Warner hit a massive six in Big Bash League 2025 using multiple iframe streaming servers.">
 <link rel="canonical" href="https://crickettv.site/home/bbl-warner-six">
 
+<!-- VideoObject Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "David Warner Massive Six – Big Bash League 2025",
+  "description": "Watch David Warner smash a massive six in Big Bash League 2025 using fast iframe streaming servers.",
+  "thumbnailUrl": "https://crickettv.site/image/api/crickettv.png",
+  "uploadDate": "2026-01-03",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CricTV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://crickettv.site/image/api/crickettv.png"
+    }
+  }
+}
+</script>
+
 <style>
 html, body {
   margin: 0;
@@ -98,8 +118,8 @@ html, body {
 
 <script>
 (function(){
-  const buttons = document.querySelectorAll("[data-src]");
   const iframe = document.getElementById("player");
+  const buttons = document.querySelectorAll("[data-src]");
 
   buttons.forEach(btn => {
     btn.onclick = () => {
