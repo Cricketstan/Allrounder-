@@ -3,7 +3,7 @@ name: Build Home Pages
 on:
   push:
     paths:
-      - api/id.json
+      - api/page.json
       - template/index.html
   workflow_dispatch:
 
@@ -26,7 +26,7 @@ jobs:
           HOME_BASE = "/home"
 
           # Load source JSON
-          with open("api/id.json", "r", encoding="utf-8") as f:
+          with open("api/page.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
           os.makedirs("home", exist_ok=True)
