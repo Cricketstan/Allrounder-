@@ -39,45 +39,6 @@
       },
 
       "status": "published"
-    },
-
-    {
-      "id": "bbl-maxwell-six",
-      "slug": "glenn-maxwell-six-bbl-2025",
-
-      "title": "Glenn Maxwell Huge Six – Big Bash League 2025",
-      "description": "Watch Glenn Maxwell hit a huge six in Big Bash League 2025 with smooth iframe video playback.",
-
-      "players": [
-        {
-          "name": "Server 1",
-          "src": "https://player1.domain.com/?url=MAXWELL.m3u8"
-        },
-        {
-          "name": "Server 2",
-          "src": "https://player2.domain.com/?url=MAXWELL.m3u8"
-        },
-        {
-          "name": "Server 3",
-          "src": "https://player3.domain.com/?url=MAXWELL.m3u8&quality=low"
-        }
-      ],
-
-      "seo": {
-        "meta_title": "Glenn Maxwell Huge Six – Watch BBL 2025 Video",
-        "meta_description": "Glenn Maxwell smashes a huge six in Big Bash League 2025. Watch using fast iframe streaming servers.",
-        "canonical": "/glenn-maxwell-six-bbl-2025/"
-      },
-
-      "content": {
-        "heading": "Glenn Maxwell Six Video Highlight",
-        "paragraphs": [
-          "Glenn Maxwell showcased his explosive batting in the Big Bash League 2025.",
-          "Use alternate servers if one player does not load properly."
-        ]
-      },
-
-      "status": "published"
     }
   ]
 }
