@@ -1,12 +1,18 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-03T22:57:17.351580Z",
-  "count": 1,
+  "updated_at": "2026-01-03T23:46:57.549902Z",
+  "count": 2,
   "pages": [
     {
       "id": "bbl-warner-six",
       "title": "David Warner Massive Six \u2013 Big Bash League 2025",
       "url": "https://crickettv.site/home/bbl-warner-six",
+      "description": "Watch David Warner smash a massive six in Big Bash League 2025 using fast iframe streaming servers."
+    },
+    {
+      "id": "bbl-warner",
+      "title": "David Warner Massive Six \u2013 Big Bash League 2025",
+      "url": "https://crickettv.site/home/bbl-warner",
       "description": "Watch David Warner smash a massive six in Big Bash League 2025 using fast iframe streaming servers."
     }
   ]
