@@ -1,20 +1,6 @@
 
 {
   "event": [
-
-    {
-      "title": "India Vs South Africa",
-      "poster_link": "https://i.ibb.co/SDfd9ssV/Picsart-26-01-03-09-53-36-547.jpg",
-      "watch_now": [
-        { "id": "home?id=willow-2", "name": "Willow" }
-      ],
-      "date": "3 Jan 2026",
-      "start_time": "1:20 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "ICC"
-    },
 {
       "title": "Hobart Vs Sydney",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69415465e4b0d2fac50bdfb7-1765889195661?location=hero-default&imwidth=1920",
