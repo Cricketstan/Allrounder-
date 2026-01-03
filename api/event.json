@@ -4,8 +4,6 @@
       "title": "Pretoria Vs Durban",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home?id=hotstar", "name": "Hotstar" },
-        { "id": "home?id=jio-hotstar", "name": "Hindi (Multi Quality)" },
         { "id": "home?id=willow", "name": "Willow" }
       ],
       "date": "3 Jan 2026",
