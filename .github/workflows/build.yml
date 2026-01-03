@@ -1,0 +1,39 @@
+name: Build Home Pages
+
+on:
+  push:
+    paths:
+      - api/page.json
+      - template/index.html
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Generate home pages
+        run: |
+          mkdir -p home
+
+          IDS=$(jq -r '.pages[].id' api/page.json)
+
+          for ID in $IDS; do
+            mkdir -p home/$ID
+            cp template/index.html home/$ID/index.html
+          done
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "home-pages-bot"
+          git config user.email "bot@github.com"
+
+          git add home
+          git commit -m "Auto-generate home pages" || exit 0
+          git push
