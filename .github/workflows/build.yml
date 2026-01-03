@@ -16,15 +16,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate fully static HTML pages
+      - name: Generate static pages & clean removed IDs
         run: |
           python3 - << 'EOF'
-          import json, os, datetime
+          import json, os, shutil, datetime
 
           SITE = "https://crickettv.site"
           HOME = "/home"
           THUMB = "https://crickettv.site/image/api/crickettv.png"
 
+          # Load source JSON
           with open("api/page.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
@@ -32,14 +33,25 @@ jobs:
               template = f.read()
 
           os.makedirs("home", exist_ok=True)
+
+          # ---- VALID IDS FROM JSON ----
+          valid_ids = {page["id"] for page in data["pages"]}
+
+          # ---- CLEANUP REMOVED PAGES ----
+          for name in os.listdir("home"):
+              path = os.path.join("home", name)
+              if os.path.isdir(path) and name not in valid_ids:
+                  shutil.rmtree(path)
+
           index_pages = []
 
+          # ---- GENERATE STATIC PAGES ----
           for page in data["pages"]:
               pid = page["id"]
               out_dir = f"home/{pid}"
               os.makedirs(out_dir, exist_ok=True)
 
-              # Build server buttons
+              # Server buttons
               buttons = []
               for i, srv in enumerate(page["players"]):
                   cls = "active" if i == 0 else ""
@@ -63,7 +75,8 @@ jobs:
                 .replace("{{SCHEMA_NAME}}", page["title"]) \
                 .replace("{{SCHEMA_DESCRIPTION}}", page["description"]) \
                 .replace("{{SCHEMA_THUMBNAIL}}", THUMB) \
-                .replace("{{SCHEMA_UPLOAD_DATE}}", page.get("uploadDate", datetime.date.today().isoformat()))
+                .replace("{{SCHEMA_UPLOAD_DATE}}",
+                         page.get("uploadDate", datetime.date.today().isoformat()))
 
               with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
                   f.write(html)
@@ -75,6 +88,7 @@ jobs:
                   "description": page["description"]
               })
 
+          # ---- UPDATE home/id.json ----
           with open("home/id.json", "w", encoding="utf-8") as f:
               json.dump({
                   "site": SITE,
@@ -85,10 +99,11 @@ jobs:
 
           EOF
 
-      - name: Commit & push
+      - name: Commit & push changes
         run: |
           git config user.name "static-pages-bot"
           git config user.email "bot@github.com"
+
           git add home
-          git diff --cached --quiet || git commit -m "DILLZY AUTOMATION"
+          git diff --cached --quiet || git commit -m "Sync home pages with JSON (add/update/remove)"
           git push
