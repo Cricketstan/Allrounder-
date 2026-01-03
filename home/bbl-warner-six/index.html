@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Loading...</title>
-<meta name="description" content="">
-
-<link rel="canonical" href="">
+<title>{{META_TITLE}}</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL}}">
 
 <style>
 html, body {
@@ -83,64 +82,32 @@ html, body {
 </header>
 
 <div class="player-wrap">
-  <iframe id="player" allowfullscreen></iframe>
+  <iframe id="player" src="{{DEFAULT_IFRAME}}" allowfullscreen></iframe>
 </div>
 
-<div class="servers" id="servers"></div>
+<div class="servers">
+{{SERVER_BUTTONS}}
+</div>
 
 <div class="content">
-  <h1 id="title"></h1>
-  <p id="desc"></p>
-  <div id="extra"></div>
+  <h1>{{TITLE}}</h1>
+  <p>{{DESCRIPTION}}</p>
+  {{EXTRA_PARAGRAPHS}}
 </div>
 
 <script>
-const JSON_URL = "https://raw.githubusercontent.com/Cricketstan/Allrounder-/refs/heads/main/api/page.json";
-const pageId = location.pathname.split("/").filter(Boolean).pop();
+(function(){
+  const buttons = document.querySelectorAll("[data-src]");
+  const iframe = document.getElementById("player");
 
-fetch(JSON_URL)
-  .then(r => r.json())
-  .then(data => {
-    const page = data.pages.find(p => p.id === pageId);
-    if (!page) return;
-
-    // SEO
-    document.title = page.seo.meta_title;
-    document.querySelector('meta[name="description"]').content = page.seo.meta_description;
-    document.querySelector('link[rel="canonical"]').href =
-      data.site.base_url + "/home/" + page.slug + "/";
-
-    // Content
-    title.textContent = page.title;
-    desc.textContent = page.description;
-
-    // Player
-    const iframe = document.getElementById("player");
-    iframe.src = page.players[0].src;
-
-    // Servers
-    const serverBox = document.getElementById("servers");
-    page.players.forEach((srv, i) => {
-      const btn = document.createElement("button");
-      btn.textContent = srv.name;
-      if (i === 0) btn.classList.add("active");
-
-      btn.onclick = () => {
-        iframe.src = srv.src;
-        document.querySelectorAll(".servers button").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-      };
-
-      serverBox.appendChild(btn);
-    });
-
-    // Extra text
-    page.content.paragraphs.forEach(t => {
-      const p = document.createElement("p");
-      p.textContent = t;
-      extra.appendChild(p);
-    });
+  buttons.forEach(btn => {
+    btn.onclick = () => {
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      iframe.src = btn.dataset.src;
+    };
   });
+})();
 </script>
 
 </body>
