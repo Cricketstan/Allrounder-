@@ -3,37 +3,68 @@ name: Build Home Pages
 on:
   push:
     paths:
-      - api/page.json
+      - api/id.json
       - template/index.html
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install jq
-        run: sudo apt-get install -y jq
-
-      - name: Generate home pages
+      - name: Generate pages and home/id.json
         run: |
-          mkdir -p home
+          python3 - << 'EOF'
+          import json, os, shutil, datetime
 
-          IDS=$(jq -r '.pages[].id' api/page.json)
+          SITE_BASE = "https://crickettv.site"
+          HOME_BASE = "/home"
 
-          for ID in $IDS; do
-            mkdir -p home/$ID
-            cp template/index.html home/$ID/index.html
-          done
+          # Load source JSON
+          with open("api/id.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
 
-      - name: Commit & push changes
+          os.makedirs("home", exist_ok=True)
+          output_pages = []
+
+          for page in data["pages"]:
+              pid = page["id"]
+
+              # Create /home/<id>/index.html
+              out_dir = f"home/{pid}"
+              os.makedirs(out_dir, exist_ok=True)
+              shutil.copy("template/index.html", f"{out_dir}/index.html")
+
+              output_pages.append({
+                  "id": pid,
+                  "title": page["title"],
+                  "url": f"{HOME_BASE}/{pid}",
+                  "description": page.get("description", "")
+              })
+
+          # Write /home/id.json
+          home_json = {
+              "site": SITE_BASE,
+              "updated_at": datetime.datetime.utcnow().isoformat() + "Z",
+              "count": len(output_pages),
+              "pages": output_pages
+          }
+
+          with open("home/id.json", "w", encoding="utf-8") as f:
+              json.dump(home_json, f, indent=2)
+
+          EOF
+
+      - name: Commit and push changes
         run: |
           git config user.name "home-pages-bot"
           git config user.email "bot@github.com"
 
           git add home
-          git commit -m "Auto-generate home pages" || exit 0
+          git diff --cached --quiet || git commit -m "Auto-generate home pages and home/id.json"
           git push
