@@ -1,18 +1,11 @@
 {
-  "site": {
-    "name": "CricTV",
-    "base_url": "https://crickettv.site",
-    "language": "en"
-  },
-
+  "site": "https://crickettv.site",
   "pages": [
     {
       "id": "bbl-warner-six",
       "slug": "david-warner-six-bbl-2025",
-
       "title": "David Warner Massive Six – Big Bash League 2025",
       "description": "Watch David Warner smash a massive six in Big Bash League 2025 using fast iframe streaming servers.",
-
       "players": [
         {
           "name": "TNT Sports",
@@ -23,13 +16,11 @@
           "src": "https://player2.domain.com/?url=MASTER.m3u8"
         }
       ],
-
       "seo": {
         "meta_title": "David Warner Massive Six – Watch BBL 2025 Video",
         "meta_description": "Watch David Warner hit a massive six in Big Bash League 2025 using multiple iframe streaming servers.",
         "canonical": "/david-warner-six-bbl-2025/"
       },
-
       "content": {
         "heading": "David Warner Six Video Highlight",
         "paragraphs": [
@@ -37,8 +28,32 @@
           "Multiple servers are available to ensure smooth video playback."
         ]
       },
-
       "status": "published"
+    },
+    {
+      "id": "bbl-warner",
+      "title": "David Warner Massive Six – Big Bash League 2025",
+      "description": "Watch David Warner smash a massive six in Big Bash League 2025 using fast iframe streaming servers.",
+      "players": [
+        {
+          "name": "TNT Sports",
+          "src": "https://cricketstan.github.io/TNT-1/"
+        },
+        {
+          "name": "Server 2",
+          "src": "https://player2.domain.com/?url=MASTER.m3u8"
+        }
+      ],
+      "seo": {
+        "meta_title": "David Warner Massive Six – Watch BBL 2025 Video",
+        "meta_description": "Watch David Warner hit a massive six in Big Bash League 2025 using multiple iframe streaming servers."
+      },
+      "content": {
+        "paragraphs": [
+          "David Warner played a powerful shot during the Big Bash League 2025 match.",
+          "Multiple servers are available to ensure smooth video playback."
+        ]
+      }
     }
   ]
 }
