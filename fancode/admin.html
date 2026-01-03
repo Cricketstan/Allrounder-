@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CricTV Admin Panel</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Helvetica, Arial, sans-serif;
+  background: #00013a;
+  color: #e6ecff;
+}
+
+header {
+  padding: 14px;
+  text-align: center;
+  background: linear-gradient(90deg,#0b2f7c,#071b4f);
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.container {
+  padding: 14px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.page-card {
+  background: linear-gradient(180deg,#071b4f,#00013a);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-left: 4px solid #1e90ff;
+}
+
+.page-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.page-card small {
+  opacity: .7;
+}
+
+button {
+  background: #1e90ff;
+  border: none;
+  padding: 8px 12px;
+  color: #000;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+button.danger {
+  background: #ff4d4d;
+  color: #fff;
+}
+
+textarea {
+  width: 100%;
+  min-height: 260px;
+  background: #000;
+  color: #00ffcc;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #1e90ff;
+  font-family: monospace;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>CricTV – Admin Panel</header>
+
+<div class="container">
+
+  <button onclick="addPage()">➕ Add New Page</button>
+  <button onclick="exportJSON()">📄 Export JSON</button>
+
+  <div id="pages"></div>
+
+  <h3>Generated api/page.json</h3>
+  <textarea id="output"></textarea>
+
+</div>
+
+<script>
+const JSON_URL =
+  "https://raw.githubusercontent.com/Cricketstan/Allrounder-/main/api/page.json";
+
+let data = null;
+
+fetch(JSON_URL)
+  .then(r => r.json())
+  .then(j => {
+    data = j;
+    render();
+  });
+
+function render() {
+  const box = document.getElementById("pages");
+  box.innerHTML = "";
+
+  data.pages.forEach((p, i) => {
+    const div = document.createElement("div");
+    div.className = "page-card";
+    div.innerHTML = `
+      <h3>${p.title}</h3>
+      <small>ID: ${p.id}</small><br><br>
+
+      <button onclick="editPage(${i})">Edit</button>
+      <button class="danger" onclick="deletePage(${i})">Delete</button>
+    `;
+    box.appendChild(div);
+  });
+}
+
+function addPage() {
+  data.pages.push({
+    id: "new-page-id",
+    title: "New Page Title",
+    description: "Page description here",
+    players: [
+      { name: "Server 1", src: "https://example.com/stream.mpd" }
+    ],
+    seo: {
+      meta_title: "SEO title",
+      meta_description: "SEO description"
+    },
+    content: {
+      paragraphs: ["Write page content here"]
+    }
+  });
+  render();
+}
+
+function deletePage(i) {
+  if (!confirm("Delete this page?")) return;
+  data.pages.splice(i, 1);
+  render();
+}
+
+function editPage(i) {
+  const p = data.pages[i];
+  const json = prompt(
+    "Edit page JSON (advanced users):",
+    JSON.stringify(p, null, 2)
+  );
+  if (!json) return;
+  try {
+    data.pages[i] = JSON.parse(json);
+    render();
+  } catch {
+    alert("Invalid JSON");
+  }
+}
+
+function exportJSON() {
+  document.getElementById("output").value =
+    JSON.stringify(data, null, 2);
+}
+</script>
+
+</body>
+</html>
