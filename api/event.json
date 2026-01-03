@@ -6,7 +6,7 @@
       "watch_now": [
         { "id": "home?id=tnt", "name": "TNT" },
         { "id": "home?id=eng", "name": "Star Sports 2" },
-        { "id": "home?id=jio-hotstar", "name": "Hotstar (Live After 7 Am )" },
+        { "id": "home?id=jio-hotstar", "name": "Hotstar" },
         { "id": "home?id=willow-sports", "name": "Willow" }
       ],
       "date": "4 Jan 2026",
