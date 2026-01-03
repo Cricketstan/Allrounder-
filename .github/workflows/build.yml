@@ -1,4 +1,4 @@
-name: Build Home Pages
+name: Build Fully Static Pages
 
 on:
   push:
@@ -14,58 +14,76 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Generate pages and home/id.json
+      - name: Generate fully static HTML
         run: |
           python3 - << 'EOF'
-          import json, os, shutil, datetime
+          import json, os, datetime
 
-          SITE_BASE = "https://crickettv.site"
-          HOME_BASE = "/home"
+          SITE = "https://crickettv.site"
+          HOME = "/home"
 
-          # Load source JSON
           with open("api/page.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
+          with open("template/index.html", "r", encoding="utf-8") as f:
+              template = f.read()
+
           os.makedirs("home", exist_ok=True)
-          output_pages = []
+          pages_index = []
 
           for page in data["pages"]:
               pid = page["id"]
-
-              # Create /home/<id>/index.html
               out_dir = f"home/{pid}"
               os.makedirs(out_dir, exist_ok=True)
-              shutil.copy("template/index.html", f"{out_dir}/index.html")
 
-              # ✅ ABSOLUTE URL FIX HERE
-              output_pages.append({
+              # Build server buttons
+              buttons = []
+              for i, srv in enumerate(page["players"]):
+                  cls = "active" if i == 0 else ""
+                  buttons.append(
+                      f'<button class="{cls}" data-src="{srv["src"]}">{srv["name"]}</button>'
+                  )
+
+              paragraphs = "".join(
+                  f"<p>{p}</p>" for p in page["content"]["paragraphs"]
+              )
+
+              html = template \
+                .replace("{{META_TITLE}}", page["seo"]["meta_title"]) \
+                .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"]) \
+                .replace("{{CANONICAL}}", f"{SITE}{HOME}/{pid}") \
+                .replace("{{TITLE}}", page["title"]) \
+                .replace("{{DESCRIPTION}}", page["description"]) \
+                .replace("{{DEFAULT_IFRAME}}", page["players"][0]["src"]) \
+                .replace("{{SERVER_BUTTONS}}", "\n".join(buttons)) \
+                .replace("{{EXTRA_PARAGRAPHS}}", paragraphs)
+
+              with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
+                  f.write(html)
+
+              pages_index.append({
                   "id": pid,
                   "title": page["title"],
-                  "url": f"{SITE_BASE}{HOME_BASE}/{pid}",
-                  "description": page.get("description", "")
+                  "url": f"{SITE}{HOME}/{pid}",
+                  "description": page["description"]
               })
 
-          # Write /home/id.json
-          home_json = {
-              "site": SITE_BASE,
-              "updated_at": datetime.datetime.utcnow().isoformat() + "Z",
-              "count": len(output_pages),
-              "pages": output_pages
-          }
-
           with open("home/id.json", "w", encoding="utf-8") as f:
-              json.dump(home_json, f, indent=2)
+              json.dump({
+                  "site": SITE,
+                  "updated_at": datetime.datetime.utcnow().isoformat() + "Z",
+                  "count": len(pages_index),
+                  "pages": pages_index
+              }, f, indent=2)
 
           EOF
 
-      - name: Commit and push changes
+      - name: Commit & push
         run: |
-          git config user.name "home-pages-bot"
+          git config user.name "static-pages-bot"
           git config user.email "bot@github.com"
-
           git add home
-          git diff --cached --quiet || git commit -m "Auto-generate home pages and home/id.json"
+          git diff --cached --quiet || git commit -m "Generate fully static SEO pages"
           git push
