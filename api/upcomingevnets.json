@@ -1,66 +1,39 @@
 {
   "upcomingMatches": [
     {
-      "title": "Australia vs England - 5th Test (The Ashes 2025-26)",
+      "title": "MI Cape Town vs Paarl Royals - 13th Match (SA20 2025-26)",
       "date": "Sat, Jan 4 2026",
-      "venue": "Sydney, Sydney Cricket Ground",
-      "team1": "Australia",
-      "team2": "England",
-      "time": "5:00 AM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/F958B6AF-9499-4410-AACCF1D314312D9C.jpg"
-    },
-    {
-      "title": "Joburg Super Kings vs Sunrisers Eastern Cape - 11th Match (SA20 2025-26)",
-      "date": "Fri, Jan 3 2026",
-      "venue": "Johannesburg, The Wanderers Stadium",
-      "team1": "Joburg Super Kings",
-      "team2": "Sunrisers Eastern Cape",
-      "time": "4:30 PM",
+      "venue": "Cape Town, Newlands",
+      "team1": "MI Cape Town",
+      "team2": "Paarl Royals",
+      "time": "7:00 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Pretoria Capitals vs Durban Super Giants - 12th Match (SA20 2025-26)",
-      "date": "Fri, Jan 3 2026",
-      "venue": "Centurion, SuperSport Park",
-      "team1": "Pretoria Capitals",
-      "team2": "Durban Super Giants",
-      "time": "9:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "Melbourne Stars vs Melbourne Renegades - 22nd Match (BBL 2025-26)",
+      "title": "Perth Scorchers vs Adelaide Strikers - 23rd Match (BBL 2025-26)",
       "date": "Sat, Jan 4 2026",
-      "venue": "Melbourne, Melbourne Cricket Ground",
-      "team1": "Melbourne Stars",
-      "team2": "Melbourne Renegades",
-      "time": "12:35 PM",
+      "venue": "Perth, Perth Stadium",
+      "team1": "Perth Scorchers",
+      "team2": "Adelaide Strikers",
+      "time": "3:45 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Sylhet Titans vs Chattogram Royals - 7th Match (BPL 2025-26)",
+      "title": "Dhaka Capitals vs Rangpur Riders - 8th Match (BPL 2025-26)",
       "date": "Sat, Jan 4 2026",
       "venue": "Sylhet, Sylhet International Cricket Stadium",
-      "team1": "Sylhet Titans",
-      "team2": "Chattogram Royals",
-      "time": "12:30 PM",
+      "team1": "Dhaka Capitals",
+      "team2": "Rangpur Riders",
+      "time": "5:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Northern Knights vs Otago - 10th Match (Super Smash 2025-26)",
+      "title": "Desert Vipers vs MI Emirates - Final (ILT20 2025-26)",
       "date": "Sat, Jan 4 2026",
-      "venue": "Mount Maunganui, Bay Oval",
-      "team1": "Northern Knights",
-      "team2": "Otago",
-      "time": "10:25 AM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/694b30c8e4b01f2a0926d892-1766535445208?location=hero-default&imwidth=2560"
-    },
-    {
-      "title": "Zimbabwe U19 vs Pakistan U19 - 6th Match (U19 Tri-Series 2025-26)",
-      "date": "Sat, Jan 4 2026",
-      "venue": "Harare, Old Hararians Sports Club",
-      "team1": "Zimbabwe U19",
-      "team2": "Pakistan U19",
-      "time": "1:00 PM",
+      "venue": "Dubai, Dubai International Cricket Stadium",
+      "team1": "Desert Vipers",
+      "team2": "MI Emirates",
+      "time": "8:00 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     }
   ]
