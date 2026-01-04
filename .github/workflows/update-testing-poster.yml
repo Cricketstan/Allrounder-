@@ -2,6 +2,9 @@ name: Inject Main Poster into testing.html
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - api/event.json
 
 jobs:
   build:
@@ -9,14 +12,57 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Write test marker
+      - name: Inject static poster
         run: |
-          echo "<!-- WORKFLOW_OK -->" >> testing.html
+          python3 - <<EOF
+import json, re
 
-      - name: Commit change
+with open("api/event.json", "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+e = data["event"][0]
+
+title = e["title"].replace(" Vs ", " <span class=\\"vs-red\\">VS</span> ")
+
+poster = f"""<!-- MAIN_POSTER_START -->
+<div class="poster-wrapper">
+  <div class="poster-slider">
+    <img src="{e['poster_link']}" alt="{e['title']} Live Streaming" loading="eager">
+
+    <h1 class="match-title">{title}</h1>
+
+    <div class="match-meta">
+      <span>{e['league']}</span>
+      <span>•</span>
+      <span>{e['date']}</span>
+      <span>•</span>
+      <span>{e['start_time']}</span>
+    </div>
+
+    <a href="/{e['watch_now'][0]['id']}" class="watch-btn">
+      Watch Live
+    </a>
+  </div>
+</div>
+<!-- MAIN_POSTER_END -->"""
+
+with open("testing.html", "r", encoding="utf-8") as f:
+    html = f.read()
+
+html = re.sub(
+    r"<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->",
+    poster,
+    html
+)
+
+with open("testing.html", "w", encoding="utf-8") as f:
+    f.write(html)
+EOF
+
+      - name: Commit changes
         run: |
           git config user.name "poster-bot"
           git config user.email "bot@github.com"
           git add testing.html
-          git commit -m "Test workflow write access" || exit 0
+          git commit -m "Inject static main poster from event.json" || exit 0
           git push
