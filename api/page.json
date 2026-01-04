@@ -1,4 +1,25 @@
 {
   "site": "https://crickettv.site",
-  "pages": []
+  "pages": [
+    {
+      "id": "star-vs-renegades",
+      "title": "Melbourne Star Vs Renegades Live Stream",
+      "description": "Big Bash League Live ",
+      "players": [
+        {
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/"
+        }
+      ],
+      "seo": {
+        "meta_title": "",
+        "meta_description": ""
+      },
+      "content": {
+        "paragraphs": [
+          ""
+        ]
+      }
+    }
+  ]
 }
