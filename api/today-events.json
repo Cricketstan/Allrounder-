@@ -4,7 +4,7 @@
 
 {
       "title": "Perth Vs Adelaide",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/3229/1767440663229-h",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69426413e4b0d8ef2e159a4b-1766981807193?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home/star-vs-renegades", "name": "All Stream" }
       ],
@@ -18,7 +18,7 @@
 
 {
       "title": "Star Vs Renegades",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69448109e4b0175cc0cd4d82-1766534044808?location=hero-default&imwidth=2560",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/3229/1767440663229-h",
       "watch_now": [
         { "id": "home/star-vs-renegades", "name": "All Stream" }
       ],
