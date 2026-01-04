@@ -1,13 +1,19 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-04T10:46:30.096423Z",
-  "count": 1,
+  "updated_at": "2026-01-04T11:32:03.159495Z",
+  "count": 2,
   "pages": [
     {
       "id": "perth-vs-adelaide",
       "title": "Perth Scorches Vs Adelaide Strikers Live Streaming Free",
       "url": "https://crickettv.site/home/perth-vs-adelaide/",
       "description": "Big Bash Match No :- 23 | Perth Scorches Vs Adelaide Strikers Live Streaming | Crickettv.site"
+    },
+    {
+      "id": "captown-vs-paarls",
+      "title": "SA 20 | Match No 13 | Mi Captown Vs Parls Royals | Live Stream",
+      "url": "https://crickettv.site/home/captown-vs-paarls/",
+      "description": "Sa 20 Match No 13 Live Stream Mi Capetown Match No 13 Live Streaming "
     }
   ]
 }
