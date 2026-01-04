@@ -1,6 +1,20 @@
 
 {
   "event": [
+
+{
+      "title": "Star Vs Renegades",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69448109e4b0175cc0cd4d82-1766534044808?location=hero-default&imwidth=2560",
+      "watch_now": [
+        { "id": "home/star-vs-renegades", "name": "All Stream" }
+      ],
+      "date": "4 Jan 2026",
+      "start_time": "04:30 AM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Eng",
+      "league": "Ashes"
+    },
 {
       "title": "Australia Vs England",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68f9e57ae4b057f436c58d0f-1763764785886?location=hero-default&imwidth=1920",
