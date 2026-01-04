@@ -27,7 +27,7 @@
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
-      "league": "Ashes"
+      "league": "BBL"
     },
 {
       "title": "Australia Vs England",
@@ -38,7 +38,7 @@
         { "id": "home?id=jio-hotstar", "name": "Hotstar" },
         { "id": "home?id=willow-sports", "name": "Willow" }
       ],
-      "date": "4 Jan 2026",
+      "date": "5 Jan 2026",
       "start_time": "04:30 AM",
       "category": "Cricket",
       "year": "2025",
