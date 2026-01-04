@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /api/
+Disallow: /template/
+Disallow: /home/id.json
+
+Allow: /
+
+Sitemap: https://crickettv.site/sitemap.xml
