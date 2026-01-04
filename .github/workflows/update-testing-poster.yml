@@ -9,5 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Test runner
-        run: echo "Workflow YAML is valid"
+      - name: Write test marker
+        run: |
+          echo "<!-- WORKFLOW_OK -->" >> testing.html
+
+      - name: Commit change
+        run: |
+          git config user.name "poster-bot"
+          git config user.email "bot@github.com"
+          git add testing.html
+          git commit -m "Test workflow write access" || exit 0
+          git push
