@@ -48,6 +48,26 @@
           "Watch All Cricket Live Event Only On Cricket Tv Updates For Free One Of Fastest And Smoothest Streaming Like Never Before"
         ]
       }
+    },
+    {
+      "id": "mi-vs-desert",
+      "title": "Mi Emirates Vs Desert Vipers Live Streaming",
+      "description": "Final Mi Emirates Vs Desert Vipers",
+      "players": [
+        {
+          "name": "Zee Hindi",
+          "src": "https://zee-seven.vercel.app/"
+        }
+      ],
+      "seo": {
+        "meta_title": "ILT20 Live Final Mi Emirate Va Desert Vipers",
+        "meta_description": ""
+      },
+      "content": {
+        "paragraphs": [
+          ""
+        ]
+      }
     }
   ]
 }
