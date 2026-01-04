@@ -1,0 +1,13 @@
+name: Inject Main Poster into testing.html
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test runner
+        run: echo "Workflow YAML is valid"
