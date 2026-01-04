@@ -11,34 +11,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
 
-      - name: Generate static poster from event.json
+      - name: Build static poster HTML
         run: |
-          node <<'EOF'
-          const fs = require("fs");
+          node -e "
+          const fs = require('fs');
 
-          // Read JSON
-          const data = JSON.parse(fs.readFileSync("api/event.json", "utf8"));
-          const e = data.event[0]; // MAIN POSTER ONLY
+          const data = JSON.parse(fs.readFileSync('api/event.json','utf8'));
+          const e = data.event[0];
 
-          // Build STATIC HTML
           const posterHTML = `
 <!-- MAIN_POSTER_START -->
-<section class="poster-wrapper">
-  <div class="poster-slider">
+<div class=\"poster-wrapper\">
+  <div class=\"poster-slider\">
+    <img src=\"${e.poster_link}\" alt=\"${e.title} Live Streaming\" loading=\"eager\">
 
-    <img
-      src="${e.poster_link}"
-      alt="${e.title} Live Streaming"
-      loading="eager"
-    >
-
-    <h1 class="match-title">
-      ${e.title.replace(" Vs ", ' <span class="vs-red">VS</span> ')}
+    <h1 class=\"match-title\">
+      ${e.title.replace(' Vs ', ' <span class=\"vs-red\">VS</span> ')}
     </h1>
 
-    <div class="match-meta">
+    <div class=\"match-meta\">
       <span>${e.league}</span>
       <span>•</span>
       <span>${e.date}</span>
@@ -46,32 +40,28 @@ jobs:
       <span>${e.start_time}</span>
     </div>
 
-    <a href="/${e.watch_now[0].id}" class="watch-btn">
+    <a href=\"/${e.watch_now[0].id}\" class=\"watch-btn\">
       Watch Live
     </a>
-
   </div>
-</section>
+</div>
 <!-- MAIN_POSTER_END -->
 `;
 
-          // Read testing.html
-          let html = fs.readFileSync("testing.html", "utf8");
+          let html = fs.readFileSync('testing.html','utf8');
 
-          // Replace section
           html = html.replace(
             /<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->/,
             posterHTML
           );
 
-          // Write back
-          fs.writeFileSync("testing.html", html);
-          EOF
+          fs.writeFileSync('testing.html', html);
+          "
 
       - name: Commit updated testing.html
         run: |
           git config user.name "poster-bot"
           git config user.email "bot@github.com"
           git add testing.html
-          git commit -m "Update main poster in testing.html from event.json" || exit 0
+          git commit -m "Update main poster from event.json" || exit 0
           git push
