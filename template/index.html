@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>{{META_TITLE}}</title>
 <meta name="description" content="{{META_DESCRIPTION}}">
 <link rel="canonical" href="{{CANONICAL}}">
@@ -33,18 +31,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* ===== GLOBAL RESET & BASE ===== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-/* ===== GLOBAL ===== */
-html, body {
   margin: 0;
+  padding: 0;
+}
+
+html, body {
   background: #00013a;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #e6ecff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* ===== HEADER ===== */
@@ -53,102 +54,133 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg,#0b2f7c,#071b4f,#00013a);
-  box-shadow: 0 2px 10px rgba(0,0,0,.4);
-  position: relative;
+  background: linear-gradient(90deg, #0b2f7c, #071b4f, #00013a);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
   z-index: 100;
 }
-.app-header img { height: 30px; }
 
-/* ===== PLAYER ===== */
+.app-header img {
+  height: 30px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== PLAYER SECTION ===== */
+.player-section {
+  margin: 20px 0;
+}
+
 .player-wrap {
   width: 100%;
   aspect-ratio: 16 / 9;
   background: black;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
+
 .player-wrap iframe {
   width: 100%;
   height: 100%;
   border: 0;
+  display: block;
 }
+
+/* ===== SERVER SELECTION ===== */
+.server-section {
+  margin: 20px 0;
+}
+
 .select-stream {
-  padding: 8px 14px 0;
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   color: #9db7ff;
+  margin-bottom: 15px;
+  padding: 0 5px;
 }
-/* ===== SERVER BUTTONS ===== */
+
 .servers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 12px;
-  padding: 14px;
 }
 
 .servers button {
-  background: linear-gradient(180deg,#0b2f7c,#071b4f);
+  background: linear-gradient(180deg, #0b2f7c, #071b4f);
   color: #fff;
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 14px 10px;
   border-radius: 12px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: .3px;
-  transition: all .2s ease;
+  letter-spacing: 0.3px;
+  transition: all 0.2s ease;
+  min-height: 50px;
 }
 
 .servers button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(30,144,255,.25);
+  box-shadow: 0 6px 18px rgba(30, 144, 255, 0.25);
 }
 
 .servers button.active {
-  background: linear-gradient(180deg,#1e90ff,#0b5ed7);
+  background: linear-gradient(180deg, #1e90ff, #0b5ed7);
   border-color: #1e90ff;
-  box-shadow: 0 0 18px rgba(30,144,255,.6);
+  box-shadow: 0 0 18px rgba(30, 144, 255, 0.6);
 }
 
-/* ===== CONTENT ===== */
-.content { padding: 18px 16px 28px; }
+/* ===== CONTENT SECTION ===== */
+.content-section {
+  margin: 25px 0;
+}
 
 .title-box {
-  background: linear-gradient(180deg,#071b4f,#00013a);
+  background: linear-gradient(180deg, #071b4f, #00013a);
   border-left: 4px solid #1e90ff;
-  padding: 14px;
+  padding: 20px;
   border-radius: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
 }
 
 .title-box h1 {
   margin: 0;
-  font-size: 20px;
-  line-height: 1.3;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 600;
 }
 
+/* ===== ACTION BUTTONS ===== */
 .action-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
 }
 
 .action-btn {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  font-size: 13px;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   border: none;
   text-decoration: none;
   transition: all 0.25s ease;
-  box-sizing: border-box;
+  text-align: center;
+  min-height: 50px;
 }
 
 /* Telegram button */
@@ -159,25 +191,43 @@ html, body {
 
 .telegram-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.4);
 }
 
 /* Share button */
 .share-btn {
   background: rgba(30, 41, 59, 0.9);
   color: #e5e7eb;
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .share-btn:hover {
   background: rgba(51, 65, 85, 0.9);
+  transform: translateY(-2px);
 }
 
-.content p {
-  font-size: 14px;
+/* ===== CONTENT TEXT ===== */
+.content-text {
+  background: rgba(11, 47, 124, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content-text p {
+  font-size: 15px;
   line-height: 1.7;
-  margin: 10px 0;
-  opacity: .92;
+  margin: 15px 0;
+  opacity: 0.92;
+  color: #e6ecff;
+}
+
+.content-text p:first-child {
+  margin-top: 0;
+}
+
+.content-text p:last-child {
+  margin-bottom: 0;
 }
 
 /* ===== POPUP STYLES ===== */
@@ -208,8 +258,9 @@ html, body {
   max-width: 28rem;
   border-radius: 1rem;
   border: 1px solid #374151;
-  background: rgba(15, 23, 42, 0.9);
-  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.1);
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.2);
   transform: scale(0.8) translateY(20px);
   opacity: 0;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
@@ -270,7 +321,7 @@ html, body {
 .popup-join-btn:hover {
   background: #0ea5e9;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
 }
 
 .popup-close-btn {
@@ -292,9 +343,70 @@ html, body {
   background: rgba(51, 65, 85, 0.8);
 }
 
-@media (max-width: 640px) {
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 12px;
+  }
+  
+  .servers {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+  
+  .title-box h1 {
+    font-size: 20px;
+  }
+  
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+  
+  .content-text {
+    padding: 15px;
+  }
+  
+  .content-text p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .servers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .servers button {
+    font-size: 12px;
+    padding: 12px 8px;
+    min-height: 45px;
+  }
+  
+  .action-btn {
+    font-size: 14px;
+    padding: 12px 15px;
+    min-height: 45px;
+  }
+  
   .popup-card {
     max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-container {
+    padding: 0 20px;
+  }
+  
+  .player-section {
+    margin: 25px 0;
+  }
+  
+  .server-section {
+    margin: 25px 0;
+  }
+  
+  .content-section {
+    margin: 30px 0;
   }
 }
 </style>
@@ -306,50 +418,63 @@ html, body {
   <img src="https://crickettv.site/image/api/crickettv.png" alt="CricTV">
 </header>
 
-<div class="player-wrap">
-  <iframe
-    id="player"
-    src="{{DEFAULT_IFRAME}}"
-    allow="
-      autoplay;
-      fullscreen;
-      encrypted-media;
-      picture-in-picture;
-      clipboard-write
-    "
-    allowfullscreen
-    sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
-    referrerpolicy="no-referrer"
-  ></iframe>
-</div>
-  <div class="select-stream">Select Stream</div>
-<div class="servers">
-{{SERVER_BUTTONS}}
-</div>
-
-<div class="content">
-  <div class="title-box">
-    <h1>{{TITLE}}</h1>
+<div class="main-container">
+  <!-- Player Section -->
+  <div class="player-section">
+    <div class="player-wrap">
+      <iframe
+        id="player"
+        src="{{DEFAULT_IFRAME}}"
+        allow="
+          autoplay;
+          fullscreen;
+          encrypted-media;
+          picture-in-picture;
+          clipboard-write
+        "
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+        referrerpolicy="no-referrer"
+      ></iframe>
+    </div>
   </div>
-
-<div class="action-buttons">
-  <a href="https://t.me/+rpCDHZWrhWszM2Y1"
-     target="_blank"
-     class="action-btn telegram-btn">
-    <i class="fab fa-telegram-plane"></i>
-    Join Telegram
-  </a>
-
-  <button class="action-btn share-btn" onclick="sharePage()">
-    <i class="fas fa-share-alt"></i>
-    Share
-  </button>
+  
+  <!-- Server Selection Section -->
+  <div class="server-section">
+    <div class="select-stream">Select Stream</div>
+    <div class="servers">
+      {{SERVER_BUTTONS}}
+    </div>
+  </div>
+  
+  <!-- Content Section -->
+  <div class="content-section">
+    <div class="title-box">
+      <h1>{{TITLE}}</h1>
+    </div>
+    
+    <div class="action-buttons">
+      <a href="https://t.me/+rpCDHZWrhWszM2Y1"
+         target="_blank"
+         class="action-btn telegram-btn">
+        <i class="fab fa-telegram-plane"></i>
+        Join Telegram
+      </a>
+      
+      <button class="action-btn share-btn" onclick="sharePage()">
+        <i class="fas fa-share-alt"></i>
+        Share
+      </button>
+    </div>
+    
+    <div class="content-text">
+      <p>{{DESCRIPTION}}</p>
+      {{EXTRA_PARAGRAPHS}}
+    </div>
+  </div>
 </div>
-  <p>{{DESCRIPTION}}</p>
-  {{EXTRA_PARAGRAPHS}}
-</div>
 
-<!-- FANCODE POPUP - FIXED -->
+<!-- Telegram Popup -->
 <div id="telegram-popup" class="popup-overlay">
   <div class="popup-card">
     <div class="popup-content">
@@ -422,7 +547,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
+// SHARE FUNCTIONALITY
 function sharePage() {
   if (navigator.share) {
     navigator.share({
@@ -435,7 +560,6 @@ function sharePage() {
     alert("Link copied to clipboard!");
   }
 }
-
 </script>
 
 </body>
