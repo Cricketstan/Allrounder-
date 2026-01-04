@@ -13,51 +13,54 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create poster script
+      - name: Inject poster HTML
         run: |
-          cat > inject-poster.js << 'EOF'
-          const fs = require("fs");
+          python3 - << 'EOF'
+          import json, re
 
-          const data = JSON.parse(fs.readFileSync("api/event.json", "utf8"));
-          const e = data.event[0];
+          with open("api/event.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
 
-          const posterHTML =
-`<!-- MAIN_POSTER_START -->
+          e = data["event"][0]
+
+          poster_html = f"""<!-- MAIN_POSTER_START -->
 <div class="poster-wrapper">
   <div class="poster-slider">
-    <img src="${e.poster_link}" alt="${e.title} Live Streaming" loading="eager">
+    <img src="{e['poster_link']}" alt="{e['title']} Live Streaming" loading="eager">
 
     <h1 class="match-title">
-      ${e.title.replace(" Vs ", ' <span class="vs-red">VS</span> ')}
+      {e['title'].replace(' Vs ', ' <span class="vs-red">VS</span> ')}
     </h1>
 
     <div class="match-meta">
-      <span>${e.league}</span>
+      <span>{e['league']}</span>
       <span>•</span>
-      <span>${e.date}</span>
+      <span>{e['date']}</span>
       <span>•</span>
-      <span>${e.start_time}</span>
+      <span>{e['start_time']}</span>
     </div>
 
-    <a href="/${e.watch_now[0].id}" class="watch-btn">Watch Live</a>
+    <a href="/{e['watch_now'][0]['id']}" class="watch-btn">
+      Watch Live
+    </a>
   </div>
 </div>
-<!-- MAIN_POSTER_END -->`;
+<!-- MAIN_POSTER_END -->"""
 
-          let html = fs.readFileSync("testing.html", "utf8");
+          with open("testing.html", "r", encoding="utf-8") as f:
+              html = f.read()
 
-          html = html.replace(
-            /<!-- MAIN_POSTER_START -->[\s\S]*?<!-- MAIN_POSTER_END -->/,
-            posterHTML
-          );
+          html = re.sub(
+              r"<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->",
+              poster_html,
+              html
+          )
 
-          fs.writeFileSync("testing.html", html);
+          with open("testing.html", "w", encoding="utf-8") as f:
+              f.write(html)
           EOF
 
-      - name: Run poster script
-        run: node inject-poster.js
-
-      - name: Commit updated testing.html
+      - name: Commit changes
         run: |
           git config user.name "poster-bot"
           git config user.email "bot@github.com"
