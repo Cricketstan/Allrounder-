@@ -25,6 +25,30 @@
           "Multiple servers are available to ensure smooth video playback."
         ]
       }
+    },
+    {
+      "id": "star-vs-renegades",
+      "title": "Big Bash Match :- Melbourne Star Vs Melbourne Renegades Live",
+      "description": "Big Bash Match No 20 Melbourne Remgandes Vs Star ",
+      "players": [
+        {
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/"
+        },
+        {
+          "name": "Willow ",
+          "src": "https://cricketstan.github.io/Willow-Sports/"
+        }
+      ],
+      "seo": {
+        "meta_title": "Big Bash League Live, Melbourne Remandes Va Melbourne Star Live Stream ",
+        "meta_description": "Big Bash Match Live Streaming Free "
+      },
+      "content": {
+        "paragraphs": [
+          ""
+        ]
+      }
     }
   ]
 }
