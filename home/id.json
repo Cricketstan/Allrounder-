@@ -1,13 +1,19 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-04T08:13:15.099445Z",
-  "count": 1,
+  "updated_at": "2026-01-04T09:08:10.822954Z",
+  "count": 2,
   "pages": [
     {
       "id": "star-vs-renegades",
       "title": "Melbourne Star Vs Renegades Live Stream",
       "url": "https://crickettv.site/home/star-vs-renegades",
       "description": "Big Bash League Live Melbourne Renegades Vs Melbourne Star Live Match "
+    },
+    {
+      "id": "perth-vs-adelaide",
+      "title": "Perth Scorches Vs Adelaide Strikers Live Streaming Free",
+      "url": "https://crickettv.site/home/perth-vs-adelaide",
+      "description": "Big Bash Match No :- 23 | Perth Scorches Vs Adelaide Strikers Live Streaming | Crickettv.site"
     }
   ]
 }
