@@ -3,7 +3,7 @@ name: Inject Main Poster into testing.html
 on:
   push:
     paths:
-      - "api/event.json"
+      - api/event.json
   workflow_dispatch:
 
 jobs:
@@ -11,28 +11,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Build static poster HTML
+      - name: Create poster script
         run: |
-          node -e "
-          const fs = require('fs');
+          cat > inject-poster.js << 'EOF'
+          const fs = require("fs");
 
-          const data = JSON.parse(fs.readFileSync('api/event.json','utf8'));
+          const data = JSON.parse(fs.readFileSync("api/event.json", "utf8"));
           const e = data.event[0];
 
-          const posterHTML = `
-<!-- MAIN_POSTER_START -->
-<div class=\"poster-wrapper\">
-  <div class=\"poster-slider\">
-    <img src=\"${e.poster_link}\" alt=\"${e.title} Live Streaming\" loading=\"eager\">
+          const posterHTML =
+`<!-- MAIN_POSTER_START -->
+<div class="poster-wrapper">
+  <div class="poster-slider">
+    <img src="${e.poster_link}" alt="${e.title} Live Streaming" loading="eager">
 
-    <h1 class=\"match-title\">
-      ${e.title.replace(' Vs ', ' <span class=\"vs-red\">VS</span> ')}
+    <h1 class="match-title">
+      ${e.title.replace(" Vs ", ' <span class="vs-red">VS</span> ')}
     </h1>
 
-    <div class=\"match-meta\">
+    <div class="match-meta">
       <span>${e.league}</span>
       <span>•</span>
       <span>${e.date}</span>
@@ -40,23 +39,23 @@ jobs:
       <span>${e.start_time}</span>
     </div>
 
-    <a href=\"/${e.watch_now[0].id}\" class=\"watch-btn\">
-      Watch Live
-    </a>
+    <a href="/${e.watch_now[0].id}" class="watch-btn">Watch Live</a>
   </div>
 </div>
-<!-- MAIN_POSTER_END -->
-`;
+<!-- MAIN_POSTER_END -->`;
 
-          let html = fs.readFileSync('testing.html','utf8');
+          let html = fs.readFileSync("testing.html", "utf8");
 
           html = html.replace(
-            /<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->/,
+            /<!-- MAIN_POSTER_START -->[\s\S]*?<!-- MAIN_POSTER_END -->/,
             posterHTML
           );
 
-          fs.writeFileSync('testing.html', html);
-          "
+          fs.writeFileSync("testing.html", html);
+          EOF
+
+      - name: Run poster script
+        run: node inject-poster.js
 
       - name: Commit updated testing.html
         run: |
