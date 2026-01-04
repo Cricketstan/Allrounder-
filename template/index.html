@@ -301,9 +301,22 @@ html, body {
 </header>
 
 <div class="player-wrap">
-  <iframe id="player" src="{{DEFAULT_IFRAME}}" allowfullscreen></iframe>
+  <iframe
+    id="player"
+    src="{{DEFAULT_IFRAME}}"
+    allow="
+      autoplay;
+      fullscreen;
+      encrypted-media;
+      picture-in-picture;
+      clipboard-write
+    "
+    allowfullscreen
+    sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+    referrerpolicy="no-referrer"
+  ></iframe>
 </div>
-
+  
 <div class="servers">
 {{SERVER_BUTTONS}}
 </div>
