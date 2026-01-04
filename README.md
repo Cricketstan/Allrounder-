@@ -18,7 +18,7 @@
     <br />
     T20 World Cup • International Series • ODI World Cup, 2027
     <br /><br />
-    <a href="https://dillzycreation.pages.dev/?id=hindi" target="_blank" style="color:#00E5FF; text-decoration:none; font-weight:bold;">
+    <a href="https://crickettv.site" target="_blank" style="color:#00E5FF; text-decoration:none; font-weight:bold;">
   Watch Live »
 </a>
 <span style="color:#666; margin:0 10px;">|</span>
