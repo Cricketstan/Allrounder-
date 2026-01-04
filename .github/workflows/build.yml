@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate static pages & clean removed IDs
+      - name: Generate static pages, clean removed IDs & sitemap
         run: |
           python3 - << 'EOF'
           import json, os, shutil, datetime
@@ -25,7 +25,7 @@ jobs:
           HOME = "/home"
           THUMB = "https://crickettv.site/image/api/crickettv.png"
 
-          # Load source JSON
+          # ---------- LOAD DATA ----------
           with open("api/page.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
@@ -34,24 +34,23 @@ jobs:
 
           os.makedirs("home", exist_ok=True)
 
-          # ---- VALID IDS FROM JSON ----
-          valid_ids = {page["id"] for page in data["pages"]}
+          valid_ids = {p["id"] for p in data["pages"]}
 
-          # ---- CLEANUP REMOVED PAGES ----
+          # ---------- CLEAN REMOVED PAGES ----------
           for name in os.listdir("home"):
               path = os.path.join("home", name)
               if os.path.isdir(path) and name not in valid_ids:
                   shutil.rmtree(path)
 
           index_pages = []
+          sitemap_urls = []
 
-          # ---- GENERATE STATIC PAGES ----
+          # ---------- GENERATE PAGES ----------
           for page in data["pages"]:
               pid = page["id"]
               out_dir = f"home/{pid}"
               os.makedirs(out_dir, exist_ok=True)
 
-              # Server buttons
               buttons = []
               for i, srv in enumerate(page["players"]):
                   cls = "active" if i == 0 else ""
@@ -60,23 +59,28 @@ jobs:
                   )
 
               paragraphs = "".join(
-                  f"<p>{p}</p>" for p in page["content"]["paragraphs"]
+                  f'<div class="content-box"><p>{p}</p></div>'
+                  for p in page["content"]["paragraphs"]
               )
 
-              html = template \
-                .replace("{{META_TITLE}}", page["seo"]["meta_title"]) \
-                .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"]) \
-                .replace("{{CANONICAL}}", f"{SITE}{HOME}/{pid}") \
-                .replace("{{TITLE}}", page["title"]) \
-                .replace("{{DESCRIPTION}}", page["description"]) \
-                .replace("{{DEFAULT_IFRAME}}", page["players"][0]["src"]) \
-                .replace("{{SERVER_BUTTONS}}", "\n".join(buttons)) \
-                .replace("{{EXTRA_PARAGRAPHS}}", paragraphs) \
-                .replace("{{SCHEMA_NAME}}", page["title"]) \
-                .replace("{{SCHEMA_DESCRIPTION}}", page["description"]) \
-                .replace("{{SCHEMA_THUMBNAIL}}", THUMB) \
-                .replace("{{SCHEMA_UPLOAD_DATE}}",
-                         page.get("uploadDate", datetime.date.today().isoformat()))
+              html = (
+                template
+                  .replace("{{META_TITLE}}", page["seo"]["meta_title"])
+                  .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"])
+                  .replace("{{CANONICAL}}", f"{SITE}{HOME}/{pid}/")
+                  .replace("{{TITLE}}", page["title"])
+                  .replace("{{DESCRIPTION}}", page["description"])
+                  .replace("{{DEFAULT_IFRAME}}", page["players"][0]["src"])
+                  .replace("{{SERVER_BUTTONS}}", "\n".join(buttons))
+                  .replace("{{EXTRA_PARAGRAPHS}}", paragraphs)
+                  .replace("{{SCHEMA_NAME}}", page["title"])
+                  .replace("{{SCHEMA_DESCRIPTION}}", page["description"])
+                  .replace("{{SCHEMA_THUMBNAIL}}", THUMB)
+                  .replace(
+                      "{{SCHEMA_UPLOAD_DATE}}",
+                      page.get("uploadDate", datetime.date.today().isoformat())
+                  )
+              )
 
               with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
                   f.write(html)
@@ -84,11 +88,13 @@ jobs:
               index_pages.append({
                   "id": pid,
                   "title": page["title"],
-                  "url": f"{SITE}{HOME}/{pid}",
+                  "url": f"{SITE}{HOME}/{pid}/",
                   "description": page["description"]
               })
 
-          # ---- UPDATE home/id.json ----
+              sitemap_urls.append(f"{SITE}{HOME}/{pid}/")
+
+          # ---------- home/id.json ----------
           with open("home/id.json", "w", encoding="utf-8") as f:
               json.dump({
                   "site": SITE,
@@ -97,6 +103,34 @@ jobs:
                   "pages": index_pages
               }, f, indent=2)
 
+          # ---------- sitemap.xml ----------
+          sitemap = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+              f'''  <url>
+                  <loc>{SITE}/</loc>
+                  <changefreq>daily</changefreq>
+                  <priority>1.0</priority>
+                </url>''',
+              f'''  <url>
+                  <loc>{SITE}/home/</loc>
+                  <changefreq>hourly</changefreq>
+                  <priority>0.9</priority>
+                </url>'''
+          ]
+
+          for url in sitemap_urls:
+              sitemap.append(f'''  <url>
+                  <loc>{url}</loc>
+                  <changefreq>never</changefreq>
+                  <priority>0.8</priority>
+                </url>''')
+
+          sitemap.append('</urlset>')
+
+          with open("sitemap.xml", "w", encoding="utf-8") as f:
+              f.write("\n".join(sitemap))
+
           EOF
 
       - name: Commit & push changes
@@ -104,6 +138,6 @@ jobs:
           git config user.name "static-pages-bot"
           git config user.email "bot@github.com"
 
-          git add home
-          git diff --cached --quiet || git commit -m "Sync home pages with JSON (add/update/remove)"
+          git add home sitemap.xml
+          git diff --cached --quiet || git commit -m "Sync pages & sitemap (auto add/remove IDs)"
           git push
