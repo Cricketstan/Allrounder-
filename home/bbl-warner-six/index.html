@@ -301,9 +301,22 @@ html, body {
 </header>
 
 <div class="player-wrap">
-  <iframe id="player" src="https://cricketstan.github.io/TNT-1/" allowfullscreen></iframe>
+  <iframe
+    id="player"
+    src="https://cricketstan.github.io/TNT-1/"
+    allow="
+      autoplay;
+      fullscreen;
+      encrypted-media;
+      picture-in-picture;
+      clipboard-write
+    "
+    allowfullscreen
+    sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+    referrerpolicy="no-referrer"
+  ></iframe>
 </div>
-
+  
 <div class="servers">
 <button class="active" data-src="https://cricketstan.github.io/TNT-1/">TNT Sports</button>
 <button class="" data-src="https://player2.domain.com/?url=MASTER.m3u8">Server 2</button>
