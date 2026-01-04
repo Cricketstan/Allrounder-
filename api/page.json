@@ -57,6 +57,10 @@
         {
           "name": "Zee Hindi",
           "src": "https://zee-seven.vercel.app/"
+        },
+        {
+          "name": "Fancode ",
+          "src": "https://crickettv.site/player?url=https://in-mc-fdlive.fancode.com/mumbai/138656_english_hls_ce83ff130b39556_1ta-di_h264/index.m3u8"
         }
       ],
       "seo": {
