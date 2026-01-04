@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +29,15 @@
 }
 </script>
 
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 /* ===== GLOBAL ===== */
 html, body {
   margin: 0;
@@ -46,6 +55,8 @@ html, body {
   justify-content: center;
   background: linear-gradient(90deg,#0b2f7c,#071b4f,#00013a);
   box-shadow: 0 2px 10px rgba(0,0,0,.4);
+  position: relative;
+  z-index: 100;
 }
 .app-header img { height: 30px; }
 
@@ -110,6 +121,52 @@ html, body {
   line-height: 1.3;
 }
 
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* Telegram button */
+.telegram-btn {
+  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
+  color: #000;
+}
+
+.telegram-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.4);
+}
+
+/* Share button */
+.share-btn {
+  background: rgba(30, 41, 59, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+.share-btn:hover {
+  background: rgba(51, 65, 85, 0.9);
+}
+
 .content p {
   font-size: 14px;
   line-height: 1.7;
@@ -117,100 +174,122 @@ html, body {
   opacity: .92;
 }
 
-/* ===== FANCODE STYLE POPUP ===== */
-.fc-overlay {
+/* ===== POPUP STYLES ===== */
+.popup-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.72);
-  backdrop-filter: blur(6px);
-  z-index: 99999;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
-}
-
-.fc-overlay.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.fc-sheet {
-  width: 100%;
-  max-width: 420px;
-  background: linear-gradient(180deg,#0b2f7c,#071b4f,#00013a);
-  border-radius: 18px 18px 0 0;
-  padding: 18px 18px 22px;
-  transform: translateY(100%);
-  transition: transform .35s cubic-bezier(.22,1,.36,1);
-  box-shadow: 0 -10px 40px rgba(30,144,255,.35);
-}
-
-.fc-overlay.show .fc-sheet {
-  transform: translateY(0);
-}
-
-.fc-drag {
-  width: 44px;
-  height: 4px;
-  background: rgba(255,255,255,.25);
-  border-radius: 4px;
-  margin: 0 auto 14px;
-}
-
-.fc-icon {
-  width: 58px;
-  height: 58px;
-  margin: 0 auto 10px;
-  background: #1e90ff;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
-.fc-icon svg {
-  width: 28px;
-  height: 28px;
-  fill: #000;
+.popup-overlay.show {
+  opacity: 1;
+  visibility: visible;
 }
 
-.fc-sheet h3 {
-  text-align: center;
-  margin: 8px 0 6px;
-  font-size: 20px;
-}
-
-.fc-sheet p {
-  text-align: center;
-  font-size: 14px;
-  opacity: .9;
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-
-.fc-join {
-  display: block;
-  background: #1e90ff;
-  color: #000;
-  font-weight: 700;
-  padding: 12px;
-  border-radius: 12px;
-  text-align: center;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-.fc-close {
+.popup-card {
   width: 100%;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,.25);
-  color: #fff;
-  padding: 10px;
-  border-radius: 12px;
+  max-width: 28rem;
+  border-radius: 1rem;
+  border: 1px solid #374151;
+  background: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.1);
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.4s ease;
+}
+
+.popup-overlay.show .popup-card {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.popup-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.popup-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.popup-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.popup-text {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.popup-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.popup-join-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: black;
+  background: #38bdf8;
+  text-decoration: none;
+  border: none;
   cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.popup-join-btn:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+}
+
+.popup-close-btn {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.8);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.popup-close-btn:hover {
+  background: rgba(51, 65, 85, 0.8);
+}
+
+@media (max-width: 640px) {
+  .popup-card {
+    max-width: 90%;
+  }
 }
 </style>
 </head>
@@ -233,44 +312,111 @@ html, body {
   <div class="title-box">
     <h1>{{TITLE}}</h1>
   </div>
+
+<div class="action-buttons">
+  <a href="https://t.me/+rpCDHZWrhWszM2Y1"
+     target="_blank"
+     class="action-btn telegram-btn">
+    <i class="fab fa-telegram-plane"></i>
+    Join Telegram
+  </a>
+
+  <button class="action-btn share-btn" onclick="sharePage()">
+    <i class="fas fa-share-alt"></i>
+    Share
+  </button>
+</div>
   <p>{{DESCRIPTION}}</p>
   {{EXTRA_PARAGRAPHS}}
 </div>
 
-<!-- FANCODE POPUP -->
-<div id="fc-popup" class="fc-overlay">
-  <div class="fc-sheet">
-    <div class="fc-drag"></div>
-    <div class="fc-icon">
-      <svg viewBox="0 0 24 24">
-        <path d="M9.04 15.47l-.38 5.32c.55 0 .79-.24 1.07-.52l2.56-2.45 5.31 3.88c.97.54 1.66.26 1.92-.9l3.48-16.36c.33-1.53-.55-2.13-1.5-1.78L1.87 9.29c-1.48.58-1.46 1.41-.27 1.78l5.53 1.73L19.8 5.4c.6-.39 1.15-.17.7.22z"/>
-      </svg>
+<!-- FANCODE POPUP - FIXED -->
+<div id="telegram-popup" class="popup-overlay">
+  <div class="popup-card">
+    <div class="popup-content">
+      <div class="popup-icon">
+        <i class="fab fa-telegram-plane"></i>
+      </div>
+      
+      <h3 class="popup-title">Join Our Community</h3>
+      
+      <p class="popup-text">
+        Get instant match links, updates, and clips directly on Telegram.
+      </p>
+      
+      <div class="popup-buttons">
+        <a href="https://t.me/+rpCDHZWrhWszM2Y1"
+           target="_blank"
+           id="join-btn"
+           class="popup-join-btn">
+          <i class="fas fa-rocket" style="margin-right: 0.5rem;"></i>Join Now
+        </a>
+        
+        <button id="close-popup-btn" class="popup-close-btn">
+          Already Joined
+        </button>
+      </div>
     </div>
-    <h3>Join FanCode Updates</h3>
-    <p>Get instant match links, backup servers & highlights on Telegram.</p>
-    <a href="https://t.me/+rpCDHZWrhWszM2Y1" target="_blank" class="fc-join">Join Telegram</a>
-    <button id="fc-close" class="fc-close">Continue Watching</button>
   </div>
 </div>
 
 <script>
-(function(){
-  /* SERVER SWITCH */
-  const iframe = document.getElementById("player");
-  document.querySelectorAll("[data-src]").forEach(btn=>{
-    btn.onclick=()=>{
-      document.querySelectorAll("[data-src]").forEach(b=>b.classList.remove("active"));
-      btn.classList.add("active");
-      iframe.src=btn.dataset.src;
-    };
+// SERVER SWITCH FUNCTIONALITY
+const iframe = document.getElementById("player");
+document.querySelectorAll("[data-src]").forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll("[data-src]").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    iframe.src = btn.dataset.src;
+  };
+});
+
+// POPUP FUNCTIONALITY
+document.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('telegram-popup');
+  const closeBtn = document.getElementById('close-popup-btn');
+  const joinBtn = document.getElementById('join-btn');
+
+  // Show popup after 3 seconds
+  setTimeout(() => {
+    popup.classList.add('show');
+  }, 3000);
+
+  // Close popup function
+  function closePopup() {
+    popup.classList.remove('show');
+  }
+
+  // Close when "Already Joined" is clicked
+  closeBtn.addEventListener('click', closePopup);
+  
+  // Close after clicking "Join Now" (with delay for redirect)
+  joinBtn.addEventListener('click', () => {
+    setTimeout(closePopup, 500);
   });
 
-  /* POPUP EVERY LOAD */
-  const popup=document.getElementById("fc-popup");
-  const close=document.getElementById("fc-close");
-  setTimeout(()=>popup.classList.add("show"),600);
-  close.onclick=()=>popup.classList.remove("show");
-})();
+  // Optional: Close when clicking outside the popup
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
+});
+
+
+function sharePage() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.title,
+      text: 'Watch this match on CricTV',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link copied to clipboard!");
+  }
+}
+
 </script>
 
 </body>
