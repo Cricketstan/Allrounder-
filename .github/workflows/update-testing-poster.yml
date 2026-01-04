@@ -13,52 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Inject poster HTML
-        run: |
-          python3 - << 'EOF'
-          import json, re
-
-          with open("api/event.json", "r", encoding="utf-8") as f:
-              data = json.load(f)
-
-          e = data["event"][0]
-
-          poster_html = f"""<!-- MAIN_POSTER_START -->
-<div class="poster-wrapper">
-  <div class="poster-slider">
-    <img src="{e['poster_link']}" alt="{e['title']} Live Streaming" loading="eager">
-
-    <h1 class="match-title">
-      {e['title'].replace(' Vs ', ' <span class="vs-red">VS</span> ')}
-    </h1>
-
-    <div class="match-meta">
-      <span>{e['league']}</span>
-      <span>•</span>
-      <span>{e['date']}</span>
-      <span>•</span>
-      <span>{e['start_time']}</span>
-    </div>
-
-    <a href="/{e['watch_now'][0]['id']}" class="watch-btn">
-      Watch Live
-    </a>
-  </div>
-</div>
-<!-- MAIN_POSTER_END -->"""
-
-          with open("testing.html", "r", encoding="utf-8") as f:
-              html = f.read()
-
-          html = re.sub(
-              r"<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->",
-              poster_html,
-              html
-          )
-
-          with open("testing.html", "w", encoding="utf-8") as f:
-              f.write(html)
-          EOF
+      - name: Inject static poster
+        run: python3 -c "import json,re; e=json.load(open('api/event.json'))['event'][0]; html=open('testing.html').read(); poster=f'<!-- MAIN_POSTER_START -->\\n<div class=\"poster-wrapper\">\\n  <div class=\"poster-slider\">\\n    <img src=\"{e[\"poster_link\"]}\" alt=\"{e[\"title\"]} Live Streaming\" loading=\"eager\">\\n    <h1 class=\"match-title\">{e[\"title\"].replace(\" Vs \",\" <span class=\\\\\"vs-red\\\\\">VS</span> \")}</h1>\\n    <div class=\"match-meta\"><span>{e[\"league\"]}</span><span>•</span><span>{e[\"date\"]}</span><span>•</span><span>{e[\"start_time\"]}</span></div>\\n    <a href=\"/{e[\"watch_now\"][0][\"id\"]}\" class=\"watch-btn\">Watch Live</a>\\n  </div>\\n</div>\\n<!-- MAIN_POSTER_END -->'; html=re.sub(r'<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->',poster,html); open('testing.html','w').write(html)"
 
       - name: Commit changes
         run: |
