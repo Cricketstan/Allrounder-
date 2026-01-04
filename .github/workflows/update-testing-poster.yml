@@ -1,0 +1,77 @@
+name: Inject Main Poster into testing.html
+
+on:
+  push:
+    paths:
+      - "api/event.json"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate static poster from event.json
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+
+          // Read JSON
+          const data = JSON.parse(fs.readFileSync("api/event.json", "utf8"));
+          const e = data.event[0]; // MAIN POSTER ONLY
+
+          // Build STATIC HTML
+          const posterHTML = `
+<!-- MAIN_POSTER_START -->
+<section class="poster-wrapper">
+  <div class="poster-slider">
+
+    <img
+      src="${e.poster_link}"
+      alt="${e.title} Live Streaming"
+      loading="eager"
+    >
+
+    <h1 class="match-title">
+      ${e.title.replace(" Vs ", ' <span class="vs-red">VS</span> ')}
+    </h1>
+
+    <div class="match-meta">
+      <span>${e.league}</span>
+      <span>•</span>
+      <span>${e.date}</span>
+      <span>•</span>
+      <span>${e.start_time}</span>
+    </div>
+
+    <a href="/${e.watch_now[0].id}" class="watch-btn">
+      Watch Live
+    </a>
+
+  </div>
+</section>
+<!-- MAIN_POSTER_END -->
+`;
+
+          // Read testing.html
+          let html = fs.readFileSync("testing.html", "utf8");
+
+          // Replace section
+          html = html.replace(
+            /<!-- MAIN_POSTER_START -->[\\s\\S]*?<!-- MAIN_POSTER_END -->/,
+            posterHTML
+          );
+
+          // Write back
+          fs.writeFileSync("testing.html", html);
+          EOF
+
+      - name: Commit updated testing.html
+        run: |
+          git config user.name "poster-bot"
+          git config user.email "bot@github.com"
+          git add testing.html
+          git commit -m "Update main poster in testing.html from event.json" || exit 0
+          git push
