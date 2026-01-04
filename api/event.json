@@ -16,17 +16,17 @@
     },
 
 {
-      "title": "Star Vs Renegades",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69448109e4b0175cc0cd4d82-1766534044808?location=hero-default&imwidth=2560",
+      "title": "Highlights",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6963/1767522706963-h",
       "watch_now": [
-        { "id": "home/star-vs-renegades", "name": "All Stream" }
+        { "id": "highlights/BBL", "name": "Play Highlights" }
       ],
-      "date": "4 Jan 2026",
-      "start_time": "04:30 AM",
+      "date": "1 Jan 2026",
+      "start_time": "07:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
-      "league": "Ashes"
+      "league": "BBL"
     },
 {
       "title": "Australia Vs England",
