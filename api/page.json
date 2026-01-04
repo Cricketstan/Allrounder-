@@ -2,30 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "star-vs-renegades",
-      "title": "Melbourne Star Vs Renegades Live Stream",
-      "description": "Big Bash League Live Melbourne Renegades Vs Melbourne Star Live Match ",
-      "players": [
-        {
-          "name": "Star Sports ",
-          "src": "https://cricketstan.github.io/Channel-14/"
-        },
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow"
-        }
-      ],
-      "seo": {
-        "meta_title": "Big Bash Live Free Streaming Smooth ",
-        "meta_description": "Big Bash Live Free "
-      },
-      "content": {
-        "paragraphs": [
-          ""
-        ]
-      }
-    },
-    {
       "id": "perth-vs-adelaide",
       "title": "Perth Scorches Vs Adelaide Strikers Live Streaming Free",
       "description": "Big Bash Match No :- 23 | Perth Scorches Vs Adelaide Strikers Live Streaming | Crickettv.site",
