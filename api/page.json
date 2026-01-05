@@ -2,30 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "mi-vs-desert",
-      "title": "Mi Emirates Vs Desert Vipers Live Streaming",
-      "description": "Final Mi Emirates Vs Desert Vipers Live Streaming ",
-      "players": [
-        {
-          "name": "Zee Hindi",
-          "src": "https://zee-seven.vercel.app/"
-        },
-        {
-          "name": "Fancode ",
-          "src": "https://crickettv.site/player?url=https://in-mc-fdlive.fancode.com/mumbai/138656_english_hls_ce83ff130b39556_1ta-di_h264/index.m3u8"
-        }
-      ],
-      "seo": {
-        "meta_title": "ILT20 Live Final Mi Emirate Va Desert Vipers",
-        "meta_description": ""
-      },
-      "content": {
-        "paragraphs": [
-          "Watch All Matches For Free Only On Cricket Tv . Free Streaming Site Ever You Visit Dont Miss To Join Telegram Channel "
-        ]
-      }
-    },
-    {
       "id": "sixers-vs-heat",
       "title": "Sydney Sixers Vs Brisbane Heat | BBL 2025 | Live Streaming",
       "description": "Big Bash League 2025 - Sydney Sixers Vs Brisbane Heat - Match No 24 - Live Streaming Free Only On Cricket Tv ",
