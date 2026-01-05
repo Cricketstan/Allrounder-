@@ -3,20 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All 15 Sixes by Chinelle Henry in TATA WPL 2025</title>
-<meta name="robots" content="index,follow">
+
+<title>All 15 Sixes by Chinelle Henry in TATA WPL 2025 | WPL Videos & Highlights | CricTV</title>
+
+<!-- 🔍 BASIC SEO -->
+<meta name="description" content="Watch official Women’s Premier League (WPL) videos including announcements, interviews, match moments, and exclusive cricket content on CricTV. Fast, HD and mobile-friendly streaming.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="en">
+<meta name="revisit-after" content="1 days">
+<meta name="theme-color" content="#00013a">
+
+<link rel="canonical" href="{{CANONICAL}}">
+
+<!-- 🌍 GEO -->
+<meta name="geo.region" content="IN">
+<meta name="geo.placename" content="India">
+
+<!-- ⚡ PERFORMANCE -->
+<link rel="dns-prefetch" href="//players.brightcove.net">
+<link rel="preconnect" href="https://players.brightcove.net" crossorigin>
+<link rel="dns-prefetch" href="//crickettv.site">
+
+<!-- 📱 OPEN GRAPH -->
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="All 15 Sixes by Chinelle Henry in TATA WPL 2025 | WPL Videos | CricTV">
+<meta property="og:description" content="Official Women’s Premier League (WPL) videos and exclusive cricket content on CricTV.">
+<meta property="og:image" content="{{SCHEMA_THUMBNAIL}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:site_name" content="CricTV">
+
+<!-- 🐦 TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="All 15 Sixes by Chinelle Henry in TATA WPL 2025 | WPL Videos | CricTV">
+<meta name="twitter:description" content="Watch official WPL videos, interviews, and announcements on CricTV.">
+<meta name="twitter:image" content="{{SCHEMA_THUMBNAIL}}">
+<meta name="twitter:site" content="@crickettv">
+
+<!-- 🎥 VIDEO OBJECT -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "All 15 Sixes by Chinelle Henry in TATA WPL 2025",
+  "description": "Official Women’s Premier League (WPL) video published on CricTV.",
+  "thumbnailUrl": "{{SCHEMA_THUMBNAIL}}",
+  "uploadDate": "{{SCHEMA_UPLOAD_DATE}}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CricTV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://crickettv.site/image/api/crickettv.png"
+    }
+  }
+}
+</script>
 
 <style>
 /* ===== BASE ===== */
 html, body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-    180deg,
-    #00013a 0%,
-    #071b4f 50%,
-    #00013a 100%
-  );
+  background: linear-gradient(180deg,#00013a 0%,#071b4f 50%,#00013a 100%);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
   overflow-x: hidden;
 }
@@ -29,20 +78,11 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    90deg,
-    #0b2f7c 0%,
-    #0b2a6f 35%,
-    #071b4f 65%,
-    #00013a 100%
-  );
+  background: linear-gradient(90deg,#0b2f7c 0%,#0b2a6f 35%,#071b4f 65%,#00013a 100%);
 }
+.app-header img { height: 30px; }
 
-.app-header img {
-  height: 30px;
-}
-
-/* ===== PARTICLE CANVAS ===== */
+/* ===== PARTICLES ===== */
 #particles {
   position: fixed;
   inset: 0;
@@ -50,23 +90,36 @@ html, body {
   pointer-events: none;
 }
 
-/* ===== CONTENT WRAP ===== */
+/* ===== CONTENT ===== */
 .content {
   position: relative;
   z-index: 2;
-  padding: 10px;
+  padding: 14px;
 }
 
-/* ===== 16:9 PLAYER ===== */
+/* ===== PLAYER OUTER OUTLINE ===== */
+.player-shell {
+  max-width: 1120px;
+  margin: auto;
+  padding: 6px;
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg,
+      rgba(0,160,255,0.9),
+      rgba(0,60,180,0.7),
+      rgba(0,160,255,0.9)
+    );
+  box-shadow:
+    0 0 35px rgba(0,140,255,0.55),
+    0 0 80px rgba(0,80,255,0.35);
+}
+
 .player-wrap {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
   aspect-ratio: 16 / 9;
   background: #000;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 0 25px rgba(0,0,0,0.6);
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.9);
 }
 
 .player-wrap iframe {
@@ -75,95 +128,75 @@ html, body {
   border: 0;
 }
 
-/* ===== TITLE ===== */
+/* ===== PREMIUM TITLE ===== */
 .video-title {
-  max-width: 1100px;
-  margin: 12px auto 0;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
+  max-width: 1120px;
+  margin: 16px auto 8px;
   text-align: center;
-  opacity: 0.95;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  background: linear-gradient(180deg,#ffffff,#cfe6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    0 0 18px rgba(0,140,255,0.6),
+    0 0 35px rgba(0,80,255,0.45);
+}
+
+/* ===== SEO TEXT ===== */
+.seo-text {
+  max-width: 1120px;
+  margin: 8px auto 0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
 }
 </style>
 </head>
 
 <body>
 
-<!-- PARTICLES -->
 <canvas id="particles"></canvas>
 
-<!-- HEADER -->
 <header class="app-header">
   <img src="https://crickettv.site/image/api/crickettv.png" alt="CricTV">
 </header>
 
-<!-- MAIN CONTENT -->
-<div class="content">
+<main class="content" role="main">
 
   <!-- PLAYER -->
-  <div class="player-wrap">
-    <iframe
-      src="https://players.brightcove.net/6415615747001/default_default/index.html?videoId=6373100599112"
-      allow="autoplay; fullscreen; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <section class="player-shell" aria-label="WPL video player">
+    <div class="player-wrap">
+      <iframe
+        src="https://players.brightcove.net/6415615747001/default_default/index.html?videoId=6373100599112"
+        allow="autoplay; fullscreen; encrypted-media"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
 
-  <!-- TITLE FROM WORKFLOW -->
-  <div class="video-title">
-    All 15 Sixes by Chinelle Henry in TATA WPL 2025
-  </div>
+  <!-- TITLE -->
+  <h1 class="video-title">All 15 Sixes by Chinelle Henry in TATA WPL 2025</h1>
 
-</div>
+  <!-- FIXED SEO PARAGRAPH -->
+  <p class="seo-text">
+    CricTV presents official <strong>Women’s Premier League (WPL)</strong> videos including announcements,
+    interviews, league updates, and exclusive cricket moments sourced from <em>wplt20.com</em>.
+    All videos are optimized for fast playback, HD clarity, and smooth viewing across mobile and desktop devices.
+  </p>
+
+</main>
 
 <script>
-/* ===== PARTICLE EFFECT ===== */
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
-
-let w, h;
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resize);
-resize();
-
-const particles = [];
-const COUNT = 45;
-
-for (let i = 0; i < COUNT; i++) {
-  particles.push({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    r: Math.random() * 1.4 + 0.4,
-    vx: Math.random() * 0.15 + 0.05,
-    vy: Math.random() * 0.1 + 0.03,
-    a: Math.random() * 0.35 + 0.15
-  });
-}
-
-function animate() {
-  ctx.clearRect(0, 0, w, h);
-
-  for (const p of particles) {
-    p.x += p.vx;
-    p.y += p.vy;
-
-    if (p.x > w) p.x = 0;
-    if (p.y > h) p.y = 0;
-
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${p.a})`;
-    ctx.fill();
-  }
-
-  requestAnimationFrame(animate);
-}
-
-animate();
+/* ===== PARTICLES ===== */
+const c=document.getElementById("particles"),x=c.getContext("2d");
+let w,h;function r(){w=c.width=innerWidth;h=c.height=innerHeight}
+addEventListener("resize",r);r();
+const p=[];for(let i=0;i<45;i++)p.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.4+.4,vx:Math.random()*.15+.05,vy:Math.random()*.1+.03,a:Math.random()*.35+.15});
+(function a(){x.clearRect(0,0,w,h);for(const o of p){o.x+=o.vx;o.y+=o.vy;if(o.x>w)o.x=0;if(o.y>h)o.y=0;x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fillStyle=`rgba(255,255,255,${o.a})`;x.fill()}requestAnimationFrame(a)})();
 </script>
 
 </body>
