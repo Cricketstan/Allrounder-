@@ -1,9 +1,9 @@
-name: Build WPL Pages (Max 50)
+name: WPL VIDEO
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 minutes
+    - cron: "*/15 * * * *"
 
 jobs:
   build:
@@ -12,68 +12,73 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Fetch WPL data & build pages
+      - name: Build WPL JSON & pages
         run: |
           python3 << 'EOF'
           import requests, os, json
 
-          # CONFIG
-          API_URL = "https://wpl-video.cricketstream745.workers.dev/"
-          MAX_ITEMS = 50
+          API = "https://wpl-video.cricketstream745.workers.dev/"
+          MAX = 50
 
-          JSON_DIR = "api"
-          JSON_FILE = f"{JSON_DIR}/wpl.json"
+          JSON_FILE = "api/wpl.json"
+          WPL_DIR = "wpl"
+          TEMPLATE = "template/wpl.html"
 
-          PAGES_DIR = "wpl/pages"
-          TEMPLATE_FILE = "template/wpl.html"
+          os.makedirs("api", exist_ok=True)
+          os.makedirs(WPL_DIR, exist_ok=True)
 
-          # CREATE FOLDERS
-          os.makedirs(JSON_DIR, exist_ok=True)
-          os.makedirs(PAGES_DIR, exist_ok=True)
+          data = requests.get(API, timeout=20).json()
+          items = data["items"][:MAX]
 
-          # FETCH DATA
-          data = requests.get(API_URL, timeout=20).json()
-          items = data["items"][:MAX_ITEMS]
+          tpl = open(TEMPLATE, "r", encoding="utf-8").read()
 
-          # SAVE JSON (ONLY FIRST 50)
+          keep = set()
+          json_items = []
+
+          for item in items:
+              vid = item["video_id"]
+              filename = f"{vid}.html"
+              keep.add(filename)
+
+              page_url = f"https://crickettv.site/wpl/{filename}"
+
+              # JSON ENTRY
+              json_items.append({
+                  "title": item["title"],
+                  "thumbnail": item["thumbnail"],
+                  "publish_date": item["published"],
+                  "url": page_url
+              })
+
+              # PAGE
+              html = tpl \
+                .replace("{{TITLE}}", item["title"]) \
+                .replace("{{PLAYER}}", item["player"])
+
+              with open(f"{WPL_DIR}/{filename}", "w", encoding="utf-8") as f:
+                  f.write(html)
+
+          # DELETE OLD FILES
+          for f in os.listdir(WPL_DIR):
+              if f.endswith(".html") and f not in keep:
+                  os.remove(f"{WPL_DIR}/{f}")
+
+          # WRITE JSON
           with open(JSON_FILE, "w", encoding="utf-8") as jf:
               json.dump({
                   "updated_at": data.get("updated_at"),
-                  "items": items
+                  "items": json_items
               }, jf, indent=2)
 
-          # LOAD TEMPLATE
-          template = open(TEMPLATE_FILE, "r", encoding="utf-8").read()
-
-          keep_files = set()
-
-          # CREATE / UPDATE PAGES
-          for item in items:
-              vid = item["video_id"]
-              keep_files.add(f"{vid}.html")
-
-              html = template \
-                  .replace("{{TITLE}}", item["title"]) \
-                  .replace("{{PLAYER}}", item["player"])
-
-              with open(f"{PAGES_DIR}/{vid}.html", "w", encoding="utf-8") as f:
-                  f.write(html)
-
-          # REMOVE OLD PAGES (AUTO DELETE >50)
-          for f in os.listdir(PAGES_DIR):
-              if f.endswith(".html") and f not in keep_files:
-                  os.remove(f"{PAGES_DIR}/{f}")
-
-          print("WPL pages generated:", len(keep_files))
+          print("WPL pages:", len(keep))
           EOF
 
-      - name: Commit & push changes
+      - name: Commit & push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add api wpl
-          git commit -m "Auto update WPL JSON & pages (max 50)" || exit 0
+          git commit -m "Auto update WPL (JSON + pages, max 50)" || exit 0
           git push
