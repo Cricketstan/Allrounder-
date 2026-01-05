@@ -3,116 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>{{META_TITLE}}</title>
-
-<!-- 🔍 BASIC SEO -->
-<meta name="description" content="Watch Women’s Premier League (WPL) highlights, match clips, player moments, and exclusive cricket videos online on CricTV. Fast streaming, mobile-friendly, HD quality.">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="googlebot" content="index, follow">
-<meta name="language" content="en">
-<meta name="revisit-after" content="1 days">
-<meta name="theme-color" content="#00013a">
-
-<link rel="canonical" href="{{CANONICAL}}">
-
-<!-- 🌍 GEO (OPTIONAL BUT GOOD) -->
-<meta name="geo.region" content="IN">
-<meta name="geo.placename" content="India">
-
-<!-- ⚡ PERFORMANCE -->
-<link rel="dns-prefetch" href="//players.brightcove.net">
-<link rel="preconnect" href="https://players.brightcove.net" crossorigin>
-<link rel="dns-prefetch" href="//crickettv.site">
-
-<!-- 📱 OPEN GRAPH -->
-<meta property="og:type" content="video.other">
-<meta property="og:title" content="{{META_TITLE}}">
-<meta property="og:description" content="Watch WPL highlights, exclusive cricket clips, and match moments on CricTV.">
-<meta property="og:image" content="{{SCHEMA_THUMBNAIL}}">
-<meta property="og:url" content="{{CANONICAL}}">
-<meta property="og:site_name" content="CricTV">
-
-<!-- 🐦 TWITTER / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{META_TITLE}}">
-<meta name="twitter:description" content="Watch WPL highlights, exclusive cricket clips, and match moments on CricTV.">
-<meta name="twitter:image" content="{{SCHEMA_THUMBNAIL}}">
-<meta name="twitter:site" content="@crickettv">
-
-<!-- 🎥 VIDEO OBJECT SCHEMA -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "VideoObject",
-  "name": "{{META_TITLE}}",
-  "description": "Watch Women’s Premier League (WPL) highlights, match clips, player moments, and exclusive cricket videos online on CricTV.",
-  "thumbnailUrl": "{{SCHEMA_THUMBNAIL}}",
-  "uploadDate": "{{SCHEMA_UPLOAD_DATE}}",
-  "publisher": {
-    "@type": "Organization",
-    "name": "CricTV",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://crickettv.site/image/api/crickettv.png"
-    }
-  }
-}
-</script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>TATA WPL Player Auction 2026 - Royal Challengers Bengaluru</title>
+<meta name="robots" content="index,follow">
 
 <style>
-/* ===== GLOBAL RESET & BASE ===== */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* ===== BASE ===== */
+html, body {
   margin: 0;
   padding: 0;
-}
-
-html, body {
-  background: #00013a;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #e6ecff;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(
+    180deg,
+    #00013a 0%,
+    #071b4f 50%,
+    #00013a 100%
+  );
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  overflow-x: hidden;
 }
 
 /* ===== HEADER ===== */
 .app-header {
-  height: 52px;
+  position: relative;
+  z-index: 3;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #0b2f7c, #071b4f, #00013a);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background: linear-gradient(
+    90deg,
+    #0b2f7c 0%,
+    #0b2a6f 35%,
+    #071b4f 65%,
+    #00013a 100%
+  );
 }
 
 .app-header img {
   height: 30px;
 }
 
-/* ===== MAIN CONTAINER ===== */
-.main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+/* ===== PARTICLE CANVAS ===== */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
-/* ===== PLAYER ===== */
-.player-section { margin: 20px 0; }
+/* ===== CONTENT WRAP ===== */
+.content {
+  position: relative;
+  z-index: 2;
+  padding: 10px;
+}
 
+/* ===== 16:9 PLAYER ===== */
 .player-wrap {
   width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   aspect-ratio: 16 / 9;
-  background: black;
+  background: #000;
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 0 25px rgba(0,0,0,0.6);
 }
 
 .player-wrap iframe {
@@ -121,109 +75,95 @@ html, body {
   border: 0;
 }
 
-/* ===== CONTENT ===== */
-.title-box {
-  background: linear-gradient(180deg, #071b4f, #00013a);
-  border-left: 4px solid #1e90ff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-.title-box h1 { font-size: 22px; }
-
-/* ===== ACTIONS ===== */
-.action-buttons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.action-btn {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:14px;
-  border-radius:10px;
-  font-weight:600;
-  text-decoration:none;
-}
-
-.telegram-btn {
-  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
-  color:#000;
-}
-
-.share-btn {
-  background: rgba(30,41,59,.9);
-  color:#fff;
-}
-
-/* ===== TEXT ===== */
-.content-text {
-  background: rgba(11,47,124,.1);
-  padding:20px;
-  border-radius:10px;
+/* ===== TITLE ===== */
+.video-title {
+  max-width: 1100px;
+  margin: 12px auto 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0.95;
 }
 </style>
 </head>
 
 <body>
 
+<!-- PARTICLES -->
+<canvas id="particles"></canvas>
+
+<!-- HEADER -->
 <header class="app-header">
   <img src="https://crickettv.site/image/api/crickettv.png" alt="CricTV">
 </header>
 
-<div class="main-container">
+<!-- MAIN CONTENT -->
+<div class="content">
 
-  <div class="player-section">
-    <div class="player-wrap">
-      <iframe
-        src="{{DEFAULT_IFRAME}}"
-        allow="autoplay; fullscreen; encrypted-media"
-        allowfullscreen
-        referrerpolicy="no-referrer">
-      </iframe>
-    </div>
+  <!-- PLAYER -->
+  <div class="player-wrap">
+    <iframe
+      src="https://players.brightcove.net/6415615747001/default_default/index.html?videoId=6385660534112"
+      allow="autoplay; fullscreen; encrypted-media"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <div class="title-box">
-    <h1>TATA WPL Player Auction 2026 - Royal Challengers Bengaluru</h1>
+  <!-- TITLE FROM WORKFLOW -->
+  <div class="video-title">
+    TATA WPL Player Auction 2026 - Royal Challengers Bengaluru
   </div>
 
-  <div class="action-buttons">
-    <a href="https://t.me/+rpCDHZWrhWszM2Y1" target="_blank" class="action-btn telegram-btn">
-      <i class="fab fa-telegram-plane"></i> Join Telegram
-    </a>
-
-    <button class="action-btn share-btn" onclick="sharePage()">
-      <i class="fas fa-share-alt"></i> Share
-    </button>
-  </div>
-
-  <div class="content-text">
-    <p>Watch official Women’s Premier League highlights and exclusive cricket content on CricTV.</p>
-  </div>
 </div>
 
-<!-- 🔴 TELEGRAM POPUP (UNCHANGED) -->
-<!-- (Your existing popup code remains exactly the same here) -->
-
 <script>
-function sharePage(){
-  if(navigator.share){
-    navigator.share({
-      title: document.title,
-      text: 'Watch WPL highlights on CricTV',
-      url: location.href
-    });
-  }else{
-    navigator.clipboard.writeText(location.href);
-    alert("Link copied!");
-  }
+/* ===== PARTICLE EFFECT ===== */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+
+let w, h;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
 }
+window.addEventListener('resize', resize);
+resize();
+
+const particles = [];
+const COUNT = 45;
+
+for (let i = 0; i < COUNT; i++) {
+  particles.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.4 + 0.4,
+    vx: Math.random() * 0.15 + 0.05,
+    vy: Math.random() * 0.1 + 0.03,
+    a: Math.random() * 0.35 + 0.15
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, w, h);
+
+  for (const p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x > w) p.x = 0;
+    if (p.y > h) p.y = 0;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${p.a})`;
+    ctx.fill();
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
 </script>
 
 </body>
