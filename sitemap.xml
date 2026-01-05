@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-        <loc>https://crickettv.site/</loc>
-        <lastmod>2026-01-05</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-      </url>
-  <url>
-        <loc>https://crickettv.site/home/</loc>
-        <lastmod>2026-01-05</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-      </url>
-  <url>
-        <loc>https://crickettv.site/home/pretoria-vs-sunrisers/</loc>
-        <lastmod>2026-01-05</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-      </url>
-</urlset>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:urlset xmlns:ns0="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <ns0:url>
+        <ns0:loc>https://crickettv.site/</ns0:loc>
+        <ns0:lastmod>2026-01-05</ns0:lastmod>
+        <ns0:changefreq>daily</ns0:changefreq>
+        <ns0:priority>1.0</ns0:priority>
+      </ns0:url>
+  <ns0:url>
+        <ns0:loc>https://crickettv.site/home/</ns0:loc>
+        <ns0:lastmod>2026-01-05</ns0:lastmod>
+        <ns0:changefreq>daily</ns0:changefreq>
+        <ns0:priority>0.8</ns0:priority>
+      </ns0:url>
+  <ns0:url>
+        <ns0:loc>https://crickettv.site/home/pretoria-vs-sunrisers/</ns0:loc>
+        <ns0:lastmod>2026-01-05</ns0:lastmod>
+        <ns0:changefreq>weekly</ns0:changefreq>
+        <ns0:priority>0.7</ns0:priority>
+      </ns0:url>
+<url><loc>https://crickettv.site/wpl/6387076043112.html</loc><lastmod>2025-12-30</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url><url><loc>https://crickettv.site/wpl/6385737635112.html</loc><lastmod>2025-11-29</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url><url><loc>https://crickettv.site/wpl/6385731679112.html</loc><lastmod>2025-11-29</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url><url><loc>https://crickettv.site/wpl/6385693425112.html</loc><lastmod>2025-11-28</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url><url><loc>https://crickettv.site/wpl/6385685949112.html</loc><lastmod>2025-11-28</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url></ns0:urlset>
