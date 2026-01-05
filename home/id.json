@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-05T14:06:12.141986Z",
-  "count": 5,
+  "updated_at": "2026-01-05T14:25:10.875739Z",
+  "count": 6,
   "pages": [
     {
       "id": "perth-vs-adelaide",
@@ -32,6 +32,12 @@
       "title": "Sydney Sixers Vs Brisbane Heat | BBL 2025 | Live Streaming",
       "url": "https://crickettv.site/home/sixers-vs-hea/",
       "description": "Big Bash League 2025 - Sydney Sixers Vs Brisbane Heat - Match No 24 - Live Streaming Free Only On Cricket Tv "
+    },
+    {
+      "id": "pretoria-vs-sunrisers",
+      "title": "Sa 20 - Pretoria Vs Sunrisers Live",
+      "url": "https://crickettv.site/home/pretoria-vs-sunrisers/",
+      "description": "Sa 20 - Pretoria Vs Sunrisers Live Streaming "
     }
   ]
 }
