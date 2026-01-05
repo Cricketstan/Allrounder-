@@ -6,41 +6,26 @@
 
 <title>Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh | WPL Videos & Highlights | CricTV</title>
 
-<!-- 🔍 BASIC SEO -->
-<meta name="description" content="Watch official Women’s Premier League (WPL) videos including announcements, interviews, match moments, and exclusive cricket content on CricTV. Fast, HD and mobile-friendly streaming.">
+<!-- BASIC SEO -->
+<meta name="description" content="Watch official Women’s Premier League (WPL) videos including interviews, announcements, highlights and exclusive cricket content on CricTV. Fast, HD and mobile-friendly streaming.">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="googlebot" content="index, follow">
-<meta name="language" content="en">
-<meta name="revisit-after" content="1 days">
 <meta name="theme-color" content="#00013a">
-
 <link rel="canonical" href="{{CANONICAL}}">
 
-<!-- 🌍 GEO -->
-<meta name="geo.region" content="IN">
-<meta name="geo.placename" content="India">
-
-<!-- ⚡ PERFORMANCE -->
-<link rel="dns-prefetch" href="//players.brightcove.net">
-<link rel="preconnect" href="https://players.brightcove.net" crossorigin>
-<link rel="dns-prefetch" href="//crickettv.site">
-
-<!-- 📱 OPEN GRAPH -->
+<!-- OPEN GRAPH -->
 <meta property="og:type" content="video.other">
 <meta property="og:title" content="Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh | WPL Videos | CricTV">
-<meta property="og:description" content="Official Women’s Premier League (WPL) videos and exclusive cricket content on CricTV.">
+<meta property="og:description" content="Watch official Women’s Premier League videos and exclusive cricket content on CricTV.">
 <meta property="og:image" content="{{SCHEMA_THUMBNAIL}}">
 <meta property="og:url" content="{{CANONICAL}}">
-<meta property="og:site_name" content="CricTV">
 
-<!-- 🐦 TWITTER -->
+<!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh | WPL Videos | CricTV">
-<meta name="twitter:description" content="Watch official WPL videos, interviews, and announcements on CricTV.">
+<meta name="twitter:description" content="Official WPL videos, interviews and announcements on CricTV.">
 <meta name="twitter:image" content="{{SCHEMA_THUMBNAIL}}">
-<meta name="twitter:site" content="@crickettv">
 
-<!-- 🎥 VIDEO OBJECT -->
+<!-- VIDEO SCHEMA -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,144 +45,156 @@
 }
 </script>
 
+<!-- Google Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <style>
-/* ===== BASE ===== */
-html, body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(180deg,#00013a 0%,#071b4f 50%,#00013a 100%);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-  overflow-x: hidden;
+html,body{
+  margin:0;
+  padding:0;
+  background:#00013a;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  color:#fff;
 }
 
-/* ===== HEADER ===== */
-.app-header {
-  position: relative;
-  z-index: 3;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(90deg,#0b2f7c 0%,#0b2a6f 35%,#071b4f 65%,#00013a 100%);
+/* HEADER */
+.app-header{
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(90deg,#0b2f7c,#071b4f,#00013a);
 }
-.app-header img { height: 30px; }
+.app-header img{height:30px}
 
-/* ===== PARTICLES ===== */
-#particles {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
+/* PLAYER */
+.player-wrap{
+  width:100%;
+  aspect-ratio:16/9;
+  background:#000;
 }
-
-/* ===== CONTENT ===== */
-.content {
-  position: relative;
-  z-index: 2;
-  padding: 14px;
+.player-wrap iframe{
+  width:100%;
+  height:100%;
+  border:0;
 }
 
-/* ===== PLAYER OUTER OUTLINE ===== */
-.player-shell {
-  max-width: 1120px;
-  margin: auto;
-  padding: 6px;
-  border-radius: 18px;
-  background:
-    linear-gradient(145deg,
-      rgba(0,160,255,0.9),
-      rgba(0,60,180,0.7),
-      rgba(0,160,255,0.9)
-    );
-  box-shadow:
-    0 0 35px rgba(0,140,255,0.55),
-    0 0 80px rgba(0,80,255,0.35);
+/* ACTION BAR (MATERIAL ICON STYLE) */
+.action-bar{
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  padding:12px 0;
+  background:rgba(20,20,20,.95);
+  border-top:1px solid rgba(255,255,255,.2);
+  border-bottom:1px solid rgba(255,255,255,.2);
 }
 
-.player-wrap {
-  aspect-ratio: 16 / 9;
-  background: #000;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.9);
+.action-btn{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  cursor:pointer;
+  transition:transform .2s;
 }
 
-.player-wrap iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
+.action-btn:hover{
+  transform:scale(1.15);
 }
 
-/* ===== PREMIUM TITLE ===== */
-.video-title {
-  max-width: 1120px;
-  margin: 16px auto 8px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.4px;
-  background: linear-gradient(180deg,#ffffff,#cfe6ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow:
-    0 0 18px rgba(0,140,255,0.6),
-    0 0 35px rgba(0,80,255,0.45);
+.action-btn i{
+  font-size:28px;
 }
 
-/* ===== SEO TEXT ===== */
-.seo-text {
-  max-width: 1120px;
-  margin: 8px auto 0;
-  font-size: 13.5px;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.8);
-  text-align: center;
+.action-btn span{
+  font-size:12px;
+  color:#ccc;
+}
+
+/* TITLE */
+.video-title{
+  padding:10px 14px 4px;
+  font-size:20px;
+  font-weight:800;
+  line-height:1.35;
+}
+
+/* SEO TEXT */
+.seo-text{
+  padding:0 14px 30px;
+  font-size:14px;
+  line-height:1.7;
+  color:rgba(255,255,255,.85);
+}
+
+/* Disable tap highlight */
+*{
+  -webkit-tap-highlight-color:transparent;
+  user-select:none;
 }
 </style>
 </head>
 
 <body>
 
-<canvas id="particles"></canvas>
-
 <header class="app-header">
   <img src="https://crickettv.site/image/api/crickettv.png" alt="CricTV">
 </header>
 
-<main class="content" role="main">
+<!-- PLAYER -->
+<div class="player-wrap">
+  <iframe
+    id="videoFrame"
+    src="https://players.brightcove.net/6415615747001/default_default/index.html?videoId=6385656957112"
+    allow="autoplay; fullscreen; encrypted-media"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
 
-  <!-- PLAYER -->
-  <section class="player-shell" aria-label="WPL video player">
-    <div class="player-wrap">
-      <iframe
-        src="https://players.brightcove.net/6415615747001/default_default/index.html?videoId=6385656957112"
-        allow="autoplay; fullscreen; encrypted-media"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-  </section>
+<!-- MATERIAL ICON BUTTONS -->
+<div class="action-bar">
 
-  <!-- TITLE -->
-  <h1 class="video-title">Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh</h1>
+  <div class="action-btn" onclick="location.href='/'">
+    <i class="material-icons">home</i>
+    <span>Home</span>
+  </div>
 
-  <!-- FIXED SEO PARAGRAPH -->
-  <p class="seo-text">
-    CricTV presents official <strong>Women’s Premier League (WPL)</strong> videos including announcements,
-    interviews, league updates, and exclusive cricket moments sourced from <em>wplt20.com</em>.
-    All videos are optimized for fast playback, HD clarity, and smooth viewing across mobile and desktop devices.
+  <div class="action-btn" onclick="location.href='/wpl'">
+    <i class="material-icons">video_library</i>
+    <span>WPL Videos</span>
+  </div>
+
+  <div class="action-btn" onclick="window.open('https://t.me/crickettv','_blank')">
+    <i class="material-icons">campaign</i>
+    <span>Telegram</span>
+  </div>
+
+  <div class="action-btn" onclick="navigator.share({title:'Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh',url:'{{CANONICAL}}'})">
+    <i class="material-icons">share</i>
+    <span>Share</span>
+  </div>
+
+</div>
+
+<!-- TITLE -->
+<h1 class="video-title">Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh</h1>
+
+<!-- SEO TEXT -->
+<div class="seo-text">
+  <p>
+    Watch official <strong>Women’s Premier League (WPL)</strong> videos on CricTV including exclusive interviews,
+    tournament announcements, behind-the-scenes moments and important league updates.
   </p>
 
-</main>
+  <p>
+    CricTV delivers a fast and mobile-friendly streaming experience with minimal buffering and clean design.
+  </p>
 
-<script>
-/* ===== PARTICLES ===== */
-const c=document.getElementById("particles"),x=c.getContext("2d");
-let w,h;function r(){w=c.width=innerWidth;h=c.height=innerHeight}
-addEventListener("resize",r);r();
-const p=[];for(let i=0;i<45;i++)p.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.4+.4,vx:Math.random()*.15+.05,vy:Math.random()*.1+.03,a:Math.random()*.35+.15});
-(function a(){x.clearRect(0,0,w,h);for(const o of p){o.x+=o.vx;o.y+=o.vy;if(o.x>w)o.x=0;if(o.y>h)o.y=0;x.beginPath();x.arc(o.x,o.y,o.r,0,Math.PI*2);x.fillStyle=`rgba(255,255,255,${o.a})`;x.fill()}requestAnimationFrame(a)})();
-</script>
+  <p>
+    This page is regularly updated with the latest Women’s Premier League content.
+  </p>
+</div>
 
 </body>
 </html>
