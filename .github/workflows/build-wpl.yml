@@ -1,31 +1,19 @@
-name: WPL VIDEO
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "*/15 * * * *"
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Build WPL JSON & pages
+- name: Build WPL JSON, pages & sitemap
         run: |
           python3 << 'EOF'
           import requests, os, json
           from datetime import datetime
+          from xml.etree.ElementTree import Element, SubElement, ElementTree
 
           API = "https://wpl-video.cricketstream745.workers.dev/"
           MAX = 50
+          SITEMAP_LIMIT = 5
 
           JSON_FILE = "api/wpl.json"
           WPL_DIR = "wpl"
           TEMPLATE = "template/wpl.html"
+          SITEMAP_FILE = "sitemap.xml"
+          SITE = "https://crickettv.site"
 
           os.makedirs("api", exist_ok=True)
           os.makedirs(WPL_DIR, exist_ok=True)
@@ -45,10 +33,9 @@ jobs:
 
               filename = f"{vid}.html"
               keep.add(filename)
+              page_url = f"{SITE}/wpl/{filename}"
 
-              page_url = f"https://crickettv.site/wpl/{filename}"
-
-              # ---- PUBLISHED DATE SAFE HANDLING ----
+              # ---- PUBLISHED DATE SAFE ----
               published_iso = item.get("published")
               if published_iso:
                   try:
@@ -62,7 +49,6 @@ jobs:
                   published_iso = datetime.utcnow().isoformat()
                   published_readable = None
 
-              # ---- JSON ENTRY ----
               json_items.append({
                   "title": item.get("title"),
                   "thumbnail": item.get("thumbnail"),
@@ -73,7 +59,6 @@ jobs:
                   "url": page_url
               })
 
-              # ---- PAGE BUILD (ALL PLACEHOLDERS FIXED) ----
               html = tpl \
                 .replace("{{TITLE}}", item.get("title", "")) \
                 .replace("{{PLAYER}}", item.get("player", "")) \
@@ -97,13 +82,23 @@ jobs:
                   "items": json_items
               }, jf, indent=2, ensure_ascii=False)
 
-          print("WPL pages generated:", len(keep))
-          EOF
+          # ---- SITEMAP (ONLY LATEST 5) ----
+          urlset = Element("urlset")
+          urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
-      - name: Commit & push
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add api wpl
-          git commit -m "Auto update WPL (JSON + pages + schema fixed)" || exit 0
-          git push
+          for item in json_items[:SITEMAP_LIMIT]:
+              url = SubElement(urlset, "url")
+              SubElement(url, "loc").text = item["url"]
+              SubElement(url, "lastmod").text = item["published_iso"].split("T")[0]
+              SubElement(url, "changefreq").text = "daily"
+              SubElement(url, "priority").text = "0.9"
+
+          ElementTree(urlset).write(
+              SITEMAP_FILE,
+              encoding="utf-8",
+              xml_declaration=True
+          )
+
+          print("WPL pages:", len(keep))
+          print("Sitemap updated with latest 5 videos")
+          EOF
