@@ -2,30 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "perth-vs-adelaide",
-      "title": "Perth Scorches Vs Adelaide Strikers Live Streaming Free",
-      "description": "Big Bash Match No :- 23 | Perth Scorches Vs Adelaide Strikers Live Streaming | Crickettv.site",
-      "players": [
-        {
-          "name": "Star Sports ",
-          "src": "https://cricketstan.github.io/Channel-14/"
-        },
-        {
-          "name": "Willow ",
-          "src": "https://allrounderlive.pages.dev/willow2"
-        }
-      ],
-      "seo": {
-        "meta_title": "Big Bash 2025 Live | Perth Scorches Vs Adelaide Strikers | Hotstar | Live Stream",
-        "meta_description": "Big Bash Watch Free On Cricket Tv. Lag Free .Full HD Streaming. Multiple Server And Many More To Start Server Too Good Live Never Before "
-      },
-      "content": {
-        "paragraphs": [
-          "Watch All Cricket Live Event Only On Cricket Tv Updates For Free One Of Fastest And Smoothest Streaming Like Never Before "
-        ]
-      }
-    },
-    {
       "id": "captown-vs-paarls",
       "title": "SA 20 | Match No 13 | Mi Captown Vs Parls Royals | Live Stream",
       "description": "Sa 20 Match No 13 Live Stream Mi Capetown Match No 13 Live Streaming ",
