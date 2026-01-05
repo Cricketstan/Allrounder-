@@ -3,7 +3,7 @@ name: Build WPL Statics Page
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/30 * * * *"
   push:
     paths:
       - api/wpl.json
@@ -33,18 +33,17 @@ jobs:
               data = json.load(f)
 
           items = data.get("items", [])
-
           cards = []
 
           for v in items:
               cards.append(
-                  '<a class="card" href="' + v["url"] + '">\n'
+                  '<a class="card" href="' + v.get("url","") + '">\n'
                   '  <div class="thumb">\n'
-                  '    <img src="' + v["thumbnail"] + '" loading="lazy" alt="' + v["title"] + '">\n'
+                  '    <img src="' + v.get("thumbnail","") + '" loading="lazy" alt="' + v.get("title","") + '">\n'
                   '  </div>\n'
                   '  <div class="info">\n'
-                  '    <div class="title">' + v["title"] + '</div>\n'
-                  '    <div class="meta">' + v["published_readable"] + ' • ' + str(v["duration"]) + 's</div>\n'
+                  '    <div class="title">' + v.get("title","") + '</div>\n'
+                  '    <div class="meta">' + v.get("published_readable","") + ' • ' + str(v.get("duration","")) + 's</div>\n'
                   '  </div>\n'
                   '</a>\n'
               )
