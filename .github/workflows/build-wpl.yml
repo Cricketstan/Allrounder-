@@ -52,13 +52,14 @@ jobs:
               published_iso = item.get("published")
               if published_iso:
                   try:
+                      published_iso = published_iso.replace("Z", "")
                       published_readable = datetime.fromisoformat(
-                          published_iso.replace("Z", "")
+                          published_iso
                       ).strftime("%d %b %Y, %I:%M %p")
                   except:
                       published_readable = published_iso
               else:
-                  published_iso = None
+                  published_iso = datetime.utcnow().isoformat()
                   published_readable = None
 
               # ---- JSON ENTRY ----
@@ -72,10 +73,13 @@ jobs:
                   "url": page_url
               })
 
-              # ---- PAGE ----
+              # ---- PAGE BUILD (ALL PLACEHOLDERS FIXED) ----
               html = tpl \
                 .replace("{{TITLE}}", item.get("title", "")) \
-                .replace("{{PLAYER}}", item.get("player", ""))
+                .replace("{{PLAYER}}", item.get("player", "")) \
+                .replace("{{SCHEMA_THUMBNAIL}}", item.get("thumbnail", "")) \
+                .replace("{{SCHEMA_UPLOAD_DATE}}", published_iso) \
+                .replace("{{CANONICAL}}", page_url)
 
               with open(f"{WPL_DIR}/{filename}", "w", encoding="utf-8") as f:
                   f.write(html)
@@ -101,5 +105,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add api wpl
-          git commit -m "Auto update WPL (JSON + pages with published date)" || exit 0
+          git commit -m "Auto update WPL (JSON + pages + schema fixed)" || exit 0
           git push
