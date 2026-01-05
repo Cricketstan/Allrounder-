@@ -1,0 +1,79 @@
+name: Build WPL Pages (Max 50)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 minutes
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch WPL data & build pages
+        run: |
+          python3 << 'EOF'
+          import requests, os, json
+
+          # CONFIG
+          API_URL = "https://YOUR-WORKER.workers.dev/"
+          MAX_ITEMS = 50
+
+          JSON_DIR = "api"
+          JSON_FILE = f"{JSON_DIR}/wpl.json"
+
+          PAGES_DIR = "wpl/pages"
+          TEMPLATE_FILE = "template/watch.html"
+
+          # CREATE FOLDERS
+          os.makedirs(JSON_DIR, exist_ok=True)
+          os.makedirs(PAGES_DIR, exist_ok=True)
+
+          # FETCH DATA
+          data = requests.get(API_URL, timeout=20).json()
+          items = data["items"][:MAX_ITEMS]
+
+          # SAVE JSON (ONLY FIRST 50)
+          with open(JSON_FILE, "w", encoding="utf-8") as jf:
+              json.dump({
+                  "updated_at": data.get("updated_at"),
+                  "items": items
+              }, jf, indent=2)
+
+          # LOAD TEMPLATE
+          template = open(TEMPLATE_FILE, "r", encoding="utf-8").read()
+
+          keep_files = set()
+
+          # CREATE / UPDATE PAGES
+          for item in items:
+              vid = item["video_id"]
+              keep_files.add(f"{vid}.html")
+
+              html = template \
+                  .replace("{{TITLE}}", item["title"]) \
+                  .replace("{{PLAYER}}", item["player"])
+
+              with open(f"{PAGES_DIR}/{vid}.html", "w", encoding="utf-8") as f:
+                  f.write(html)
+
+          # REMOVE OLD PAGES (AUTO DELETE >50)
+          for f in os.listdir(PAGES_DIR):
+              if f.endswith(".html") and f not in keep_files:
+                  os.remove(f"{PAGES_DIR}/{f}")
+
+          print("WPL pages generated:", len(keep_files))
+          EOF
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add api wpl
+          git commit -m "Auto update WPL JSON & pages (max 50)" || exit 0
+          git push
