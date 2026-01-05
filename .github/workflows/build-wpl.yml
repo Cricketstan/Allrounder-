@@ -21,14 +21,14 @@ jobs:
           import requests, os, json
 
           # CONFIG
-          API_URL = "https://YOUR-WORKER.workers.dev/"
+          API_URL = "https://wpl-video.cricketstream745.workers.dev/"
           MAX_ITEMS = 50
 
           JSON_DIR = "api"
           JSON_FILE = f"{JSON_DIR}/wpl.json"
 
           PAGES_DIR = "wpl/pages"
-          TEMPLATE_FILE = "template/watch.html"
+          TEMPLATE_FILE = "template/wpl.html"
 
           # CREATE FOLDERS
           os.makedirs(JSON_DIR, exist_ok=True)
