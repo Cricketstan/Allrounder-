@@ -1,4 +1,21 @@
-- name: Build WPL JSON, pages & sitemap
+name: WPL VIDEO
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build WPL JSON, pages & sitemap
         run: |
           python3 << 'EOF'
           import requests, os, json
@@ -35,19 +52,11 @@
               keep.add(filename)
               page_url = f"{SITE}/wpl/{filename}"
 
-              # ---- PUBLISHED DATE SAFE ----
               published_iso = item.get("published")
               if published_iso:
-                  try:
-                      published_iso = published_iso.replace("Z", "")
-                      published_readable = datetime.fromisoformat(
-                          published_iso
-                      ).strftime("%d %b %Y, %I:%M %p")
-                  except:
-                      published_readable = published_iso
+                  published_iso = published_iso.replace("Z", "")
               else:
                   published_iso = datetime.utcnow().isoformat()
-                  published_readable = None
 
               json_items.append({
                   "title": item.get("title"),
@@ -55,7 +64,6 @@
                   "video_id": vid,
                   "duration": item.get("duration"),
                   "published_iso": published_iso,
-                  "published_readable": published_readable,
                   "url": page_url
               })
 
@@ -69,12 +77,10 @@
               with open(f"{WPL_DIR}/{filename}", "w", encoding="utf-8") as f:
                   f.write(html)
 
-          # ---- DELETE OLD FILES ----
           for f in os.listdir(WPL_DIR):
               if f.endswith(".html") and f not in keep:
                   os.remove(f"{WPL_DIR}/{f}")
 
-          # ---- WRITE JSON ----
           with open(JSON_FILE, "w", encoding="utf-8") as jf:
               json.dump({
                   "updated_at": data.get("updated_at"),
@@ -82,7 +88,6 @@
                   "items": json_items
               }, jf, indent=2, ensure_ascii=False)
 
-          # ---- SITEMAP (ONLY LATEST 5) ----
           urlset = Element("urlset")
           urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
 
@@ -102,3 +107,11 @@
           print("WPL pages:", len(keep))
           print("Sitemap updated with latest 5 videos")
           EOF
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add api wpl sitemap.xml
+          git commit -m "Auto update WPL videos + sitemap" || exit 0
+          git push
