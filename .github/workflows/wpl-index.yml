@@ -1,0 +1,69 @@
+name: Build WPL Statics Page
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+  push:
+    paths:
+      - api/wpl.json
+      - template/wpl-index.html
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build WPL statics page
+        run: |
+          python3 << 'EOF'
+          import json, re, os
+
+          DATA = "api/wpl.json"
+          TEMPLATE = "template/wpl-index.html"
+          OUTPUT = "wpl/index.html"
+
+          os.makedirs("wpl", exist_ok=True)
+
+          data = json.load(open(DATA, encoding="utf-8"))
+          items = data.get("items", [])
+
+          cards = []
+
+          for v in items:
+              cards.append(f'''
+<a class="card" href="{v["url"]}">
+  <div class="thumb">
+    <img src="{v["thumbnail"]}" loading="lazy" alt="{v["title"]}">
+  </div>
+  <div class="info">
+    <div class="title">{v["title"]}</div>
+    <div class="meta">
+      {v.get("published_readable","")} • {v.get("duration","")}s
+    </div>
+  </div>
+</a>
+''')
+
+          html = open(TEMPLATE, encoding="utf-8").read()
+          html = re.sub(
+            r'<!-- WPL_CARDS_START -->[\\s\\S]*?<!-- WPL_CARDS_END -->',
+            '<!-- WPL_CARDS_START -->\n' + "\n".join(cards) + '\n<!-- WPL_CARDS_END -->',
+            html
+          )
+
+          open(OUTPUT,"w",encoding="utf-8").write(html)
+          print("WPL statics page built:", len(cards))
+          EOF
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add wpl/index.html
+          git commit -m "Auto update WPL statics page" || exit 0
+          git push
