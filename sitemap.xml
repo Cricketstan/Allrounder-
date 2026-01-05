@@ -25,4 +25,9 @@
         <changefreq>never</changefreq>
         <priority>0.8</priority>
       </url>
+  <url>
+        <loc>https://crickettv.site/home/sixers-vs-heat/</loc>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+      </url>
 </urlset>

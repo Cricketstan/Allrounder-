@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-04T14:37:01.778333Z",
-  "count": 3,
+  "updated_at": "2026-01-05T05:33:53.514907Z",
+  "count": 4,
   "pages": [
     {
       "id": "perth-vs-adelaide",
@@ -20,6 +20,12 @@
       "title": "Mi Emirates Vs Desert Vipers Live Streaming",
       "url": "https://crickettv.site/home/mi-vs-desert/",
       "description": "Final Mi Emirates Vs Desert Vipers Live Streaming "
+    },
+    {
+      "id": "sixers-vs-heat",
+      "title": "Sydney Sixers Vs Brisbane Heat | BBL 2025 | Live Streaming",
+      "url": "https://crickettv.site/home/sixers-vs-heat/",
+      "description": "Big Bash League 2025 - Sydney Sixers Vs Brisbane Heat - Match No 24 - Live Streaming Free Only On Cricket Tv "
     }
   ]
 }
