@@ -104,29 +104,34 @@ jobs:
               }, f, indent=2)
 
           # ---------- sitemap.xml ----------
-          sitemap = [
-              '<?xml version="1.0" encoding="UTF-8"?>',
-              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-              f'''  <url>
-                  <loc>{SITE}/</loc>
-                  <changefreq>daily</changefreq>
-                  <priority>1.0</priority>
-                </url>''',
-              f'''  <url>
-                  <loc>{SITE}/home/</loc>
-                  <changefreq>hourly</changefreq>
-                  <priority>0.9</priority>
-                </url>'''
-          ]
+today = datetime.date.today().isoformat()
 
-          for url in sitemap_urls:
-              sitemap.append(f'''  <url>
-                  <loc>{url}</loc>
-                  <changefreq>never</changefreq>
-                  <priority>0.8</priority>
-                </url>''')
+sitemap = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">',
+    f'''  <url>
+        <loc>{SITE}/</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+      </url>''',
+    f'''  <url>
+        <loc>{SITE}/home/</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+      </url>'''
+]
 
-          sitemap.append('</urlset>')
+for url in sitemap_urls:
+    sitemap.append(f'''  <url>
+        <loc>{url}</loc>
+        <lastmod>{today}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+      </url>''')
+
+sitemap.append('</urlset>')
 
           with open("sitemap.xml", "w", encoding="utf-8") as f:
               f.write("\n".join(sitemap))
