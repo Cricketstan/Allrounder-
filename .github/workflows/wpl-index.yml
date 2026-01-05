@@ -3,7 +3,7 @@ name: Build WPL Statics Page
 on:
   workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/15 * * * *"
   push:
     paths:
       - api/wpl.json
