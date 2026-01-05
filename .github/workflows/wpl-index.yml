@@ -21,7 +21,7 @@ jobs:
       - name: Build WPL statics page
         run: |
           python3 << 'EOF'
-          import json, re, os
+          import json, os
 
           DATA = "api/wpl.json"
           TEMPLATE = "template/wpl-index.html"
@@ -29,39 +29,41 @@ jobs:
 
           os.makedirs("wpl", exist_ok=True)
 
-          with open(DATA, encoding="utf-8") as f:
+          with open(DATA, "r", encoding="utf-8") as f:
               data = json.load(f)
 
           items = data.get("items", [])
+
           cards = []
 
           for v in items:
-              url = v.get("url","")
-              thumb = v.get("thumbnail","")
-              title = v.get("title","")
-              pub = v.get("published_readable","")
-              dur = v.get("duration","")
-
-              card = (
-                  '<a class="card" href="' + url + '">\n'
+              cards.append(
+                  '<a class="card" href="' + v["url"] + '">\n'
                   '  <div class="thumb">\n'
-                  '    <img src="' + thumb + '" loading="lazy" alt="' + title + '">\n'
+                  '    <img src="' + v["thumbnail"] + '" loading="lazy" alt="' + v["title"] + '">\n'
                   '  </div>\n'
                   '  <div class="info">\n'
-                  '    <div class="title">' + title + '</div>\n'
-                  '    <div class="meta">' + pub + ' • ' + str(dur) + 's</div>\n'
+                  '    <div class="title">' + v["title"] + '</div>\n'
+                  '    <div class="meta">' + v["published_readable"] + ' • ' + str(v["duration"]) + 's</div>\n'
                   '  </div>\n'
                   '</a>\n'
               )
-              cards.append(card)
 
-          with open(TEMPLATE, encoding="utf-8") as f:
+          with open(TEMPLATE, "r", encoding="utf-8") as f:
               html = f.read()
 
-          html = re.sub(
-              r'<!-- WPL_CARDS_START -->[\\s\\S]*?<!-- WPL_CARDS_END -->',
-              '<!-- WPL_CARDS_START -->\n' + ''.join(cards) + '\n<!-- WPL_CARDS_END -->',
-              html
+          start = html.find("<!-- WPL_CARDS_START -->")
+          end = html.find("<!-- WPL_CARDS_END -->")
+
+          if start == -1 or end == -1:
+              raise Exception("WPL_CARDS markers not found in template")
+
+          html = (
+              html[:start]
+              + "<!-- WPL_CARDS_START -->\n"
+              + "".join(cards)
+              + "\n<!-- WPL_CARDS_END -->"
+              + html[end + len("<!-- WPL_CARDS_END -->"):]
           )
 
           with open(OUTPUT, "w", encoding="utf-8") as f:
