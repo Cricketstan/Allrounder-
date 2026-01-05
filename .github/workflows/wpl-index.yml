@@ -29,34 +29,44 @@ jobs:
 
           os.makedirs("wpl", exist_ok=True)
 
-          data = json.load(open(DATA, encoding="utf-8"))
-          items = data.get("items", [])
+          with open(DATA, encoding="utf-8") as f:
+              data = json.load(f)
 
+          items = data.get("items", [])
           cards = []
 
           for v in items:
-              cards.append(f'''
-<a class="card" href="{v["url"]}">
-  <div class="thumb">
-    <img src="{v["thumbnail"]}" loading="lazy" alt="{v["title"]}">
-  </div>
-  <div class="info">
-    <div class="title">{v["title"]}</div>
-    <div class="meta">
-      {v.get("published_readable","")} • {v.get("duration","")}s
-    </div>
-  </div>
-</a>
-''')
+              url = v.get("url","")
+              thumb = v.get("thumbnail","")
+              title = v.get("title","")
+              pub = v.get("published_readable","")
+              dur = v.get("duration","")
 
-          html = open(TEMPLATE, encoding="utf-8").read()
+              card = (
+                  '<a class="card" href="' + url + '">\n'
+                  '  <div class="thumb">\n'
+                  '    <img src="' + thumb + '" loading="lazy" alt="' + title + '">\n'
+                  '  </div>\n'
+                  '  <div class="info">\n'
+                  '    <div class="title">' + title + '</div>\n'
+                  '    <div class="meta">' + pub + ' • ' + str(dur) + 's</div>\n'
+                  '  </div>\n'
+                  '</a>\n'
+              )
+              cards.append(card)
+
+          with open(TEMPLATE, encoding="utf-8") as f:
+              html = f.read()
+
           html = re.sub(
-            r'<!-- WPL_CARDS_START -->[\\s\\S]*?<!-- WPL_CARDS_END -->',
-            '<!-- WPL_CARDS_START -->\n' + "\n".join(cards) + '\n<!-- WPL_CARDS_END -->',
-            html
+              r'<!-- WPL_CARDS_START -->[\\s\\S]*?<!-- WPL_CARDS_END -->',
+              '<!-- WPL_CARDS_START -->\n' + ''.join(cards) + '\n<!-- WPL_CARDS_END -->',
+              html
           )
 
-          open(OUTPUT,"w",encoding="utf-8").write(html)
+          with open(OUTPUT, "w", encoding="utf-8") as f:
+              f.write(html)
+
           print("WPL statics page built:", len(cards))
           EOF
 
