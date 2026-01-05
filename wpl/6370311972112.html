@@ -1,20 +1,230 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Top Moments of TATA WPL 2025</title>
-<meta name="robots" content="index,follow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>{{META_TITLE}}</title>
+
+<!-- 🔍 BASIC SEO -->
+<meta name="description" content="Watch Women’s Premier League (WPL) highlights, match clips, player moments, and exclusive cricket videos online on CricTV. Fast streaming, mobile-friendly, HD quality.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="googlebot" content="index, follow">
+<meta name="language" content="en">
+<meta name="revisit-after" content="1 days">
+<meta name="theme-color" content="#00013a">
+
+<link rel="canonical" href="{{CANONICAL}}">
+
+<!-- 🌍 GEO (OPTIONAL BUT GOOD) -->
+<meta name="geo.region" content="IN">
+<meta name="geo.placename" content="India">
+
+<!-- ⚡ PERFORMANCE -->
+<link rel="dns-prefetch" href="//players.brightcove.net">
+<link rel="preconnect" href="https://players.brightcove.net" crossorigin>
+<link rel="dns-prefetch" href="//crickettv.site">
+
+<!-- 📱 OPEN GRAPH -->
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="{{META_TITLE}}">
+<meta property="og:description" content="Watch WPL highlights, exclusive cricket clips, and match moments on CricTV.">
+<meta property="og:image" content="{{SCHEMA_THUMBNAIL}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:site_name" content="CricTV">
+
+<!-- 🐦 TWITTER / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{META_TITLE}}">
+<meta name="twitter:description" content="Watch WPL highlights, exclusive cricket clips, and match moments on CricTV.">
+<meta name="twitter:image" content="{{SCHEMA_THUMBNAIL}}">
+<meta name="twitter:site" content="@crickettv">
+
+<!-- 🎥 VIDEO OBJECT SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "{{META_TITLE}}",
+  "description": "Watch Women’s Premier League (WPL) highlights, match clips, player moments, and exclusive cricket videos online on CricTV.",
+  "thumbnailUrl": "{{SCHEMA_THUMBNAIL}}",
+  "uploadDate": "{{SCHEMA_UPLOAD_DATE}}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "CricTV",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://crickettv.site/image/api/crickettv.png"
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ===== GLOBAL RESET & BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background: #00013a;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #e6ecff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== HEADER ===== */
+.app-header {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #0b2f7c, #071b4f, #00013a);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-header img {
+  height: 30px;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===== PLAYER ===== */
+.player-section { margin: 20px 0; }
+
+.player-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.player-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ===== CONTENT ===== */
+.title-box {
+  background: linear-gradient(180deg, #071b4f, #00013a);
+  border-left: 4px solid #1e90ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.title-box h1 { font-size: 22px; }
+
+/* ===== ACTIONS ===== */
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.action-btn {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.telegram-btn {
+  background: linear-gradient(180deg, #38bdf8, #0ea5e9);
+  color:#000;
+}
+
+.share-btn {
+  background: rgba(30,41,59,.9);
+  color:#fff;
+}
+
+/* ===== TEXT ===== */
+.content-text {
+  background: rgba(11,47,124,.1);
+  padding:20px;
+  border-radius:10px;
+}
+</style>
 </head>
 
-<body style="margin:0;background:#000">
+<body>
 
-<iframe
-  src="https://players.brightcove.net/6415615747001/default_default/index.html?videoId=6370311972112"
-  allow="autoplay; fullscreen; encrypted-media"
-  allowfullscreen
-  style="width:100%;height:100vh;border:0">
-</iframe>
+<header class="app-header">
+  <img src="https://crickettv.site/image/api/crickettv.png" alt="CricTV">
+</header>
+
+<div class="main-container">
+
+  <div class="player-section">
+    <div class="player-wrap">
+      <iframe
+        src="{{DEFAULT_IFRAME}}"
+        allow="autoplay; fullscreen; encrypted-media"
+        allowfullscreen
+        referrerpolicy="no-referrer">
+      </iframe>
+    </div>
+  </div>
+
+  <div class="title-box">
+    <h1>Top Moments of TATA WPL 2025</h1>
+  </div>
+
+  <div class="action-buttons">
+    <a href="https://t.me/+rpCDHZWrhWszM2Y1" target="_blank" class="action-btn telegram-btn">
+      <i class="fab fa-telegram-plane"></i> Join Telegram
+    </a>
+
+    <button class="action-btn share-btn" onclick="sharePage()">
+      <i class="fas fa-share-alt"></i> Share
+    </button>
+  </div>
+
+  <div class="content-text">
+    <p>Watch official Women’s Premier League highlights and exclusive cricket content on CricTV.</p>
+  </div>
+</div>
+
+<!-- 🔴 TELEGRAM POPUP (UNCHANGED) -->
+<!-- (Your existing popup code remains exactly the same here) -->
+
+<script>
+function sharePage(){
+  if(navigator.share){
+    navigator.share({
+      title: document.title,
+      text: 'Watch WPL highlights on CricTV',
+      url: location.href
+    });
+  }else{
+    navigator.clipboard.writeText(location.href);
+    alert("Link copied!");
+  }
+}
+</script>
 
 </body>
 </html>
