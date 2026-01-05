@@ -18,6 +18,7 @@ jobs:
         run: |
           python3 << 'EOF'
           import requests, os, json
+          from datetime import datetime
 
           API = "https://wpl-video.cricketstream745.workers.dev/"
           MAX = 50
@@ -30,7 +31,7 @@ jobs:
           os.makedirs(WPL_DIR, exist_ok=True)
 
           data = requests.get(API, timeout=20).json()
-          items = data["items"][:MAX]
+          items = data.get("items", [])[:MAX]
 
           tpl = open(TEMPLATE, "r", encoding="utf-8").read()
 
@@ -38,41 +39,61 @@ jobs:
           json_items = []
 
           for item in items:
-              vid = item["video_id"]
+              vid = item.get("video_id")
+              if not vid:
+                  continue
+
               filename = f"{vid}.html"
               keep.add(filename)
 
               page_url = f"https://crickettv.site/wpl/{filename}"
 
-              # JSON ENTRY
+              # ---- PUBLISHED DATE SAFE HANDLING ----
+              published_iso = item.get("published")
+              if published_iso:
+                  try:
+                      published_readable = datetime.fromisoformat(
+                          published_iso.replace("Z", "")
+                      ).strftime("%d %b %Y, %I:%M %p")
+                  except:
+                      published_readable = published_iso
+              else:
+                  published_iso = None
+                  published_readable = None
+
+              # ---- JSON ENTRY ----
               json_items.append({
-                  "title": item["title"],
-                  "thumbnail": item["thumbnail"],
-                  "publish_date": item["published"],
+                  "title": item.get("title"),
+                  "thumbnail": item.get("thumbnail"),
+                  "video_id": vid,
+                  "duration": item.get("duration"),
+                  "published_iso": published_iso,
+                  "published_readable": published_readable,
                   "url": page_url
               })
 
-              # PAGE
+              # ---- PAGE ----
               html = tpl \
-                .replace("{{TITLE}}", item["title"]) \
-                .replace("{{PLAYER}}", item["player"])
+                .replace("{{TITLE}}", item.get("title", "")) \
+                .replace("{{PLAYER}}", item.get("player", ""))
 
               with open(f"{WPL_DIR}/{filename}", "w", encoding="utf-8") as f:
                   f.write(html)
 
-          # DELETE OLD FILES
+          # ---- DELETE OLD FILES ----
           for f in os.listdir(WPL_DIR):
               if f.endswith(".html") and f not in keep:
                   os.remove(f"{WPL_DIR}/{f}")
 
-          # WRITE JSON
+          # ---- WRITE JSON ----
           with open(JSON_FILE, "w", encoding="utf-8") as jf:
               json.dump({
                   "updated_at": data.get("updated_at"),
+                  "count": len(json_items),
                   "items": json_items
-              }, jf, indent=2)
+              }, jf, indent=2, ensure_ascii=False)
 
-          print("WPL pages:", len(keep))
+          print("WPL pages generated:", len(keep))
           EOF
 
       - name: Commit & push
@@ -80,5 +101,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add api wpl
-          git commit -m "Auto update WPL (JSON + pages, max 50)" || exit 0
+          git commit -m "Auto update WPL (JSON + pages with published date)" || exit 0
           git push
