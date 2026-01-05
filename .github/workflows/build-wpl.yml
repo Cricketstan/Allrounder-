@@ -15,22 +15,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build WPL JSON, pages & sitemap
+      - name: Build WPL JSON, pages & update sitemap
         run: |
           python3 << 'EOF'
           import requests, os, json
           from datetime import datetime
-          from xml.etree.ElementTree import Element, SubElement, ElementTree
+          import xml.etree.ElementTree as ET
 
           API = "https://wpl-video.cricketstream745.workers.dev/"
           MAX = 50
-          SITEMAP_LIMIT = 5
+          WPL_LIMIT = 5
 
+          SITE = "https://crickettv.site"
           JSON_FILE = "api/wpl.json"
           WPL_DIR = "wpl"
           TEMPLATE = "template/wpl.html"
           SITEMAP_FILE = "sitemap.xml"
-          SITE = "https://crickettv.site"
 
           os.makedirs("api", exist_ok=True)
           os.makedirs(WPL_DIR, exist_ok=True)
@@ -43,6 +43,7 @@ jobs:
           keep = set()
           json_items = []
 
+          # ---------- BUILD PAGES + JSON ----------
           for item in items:
               vid = item.get("video_id")
               if not vid:
@@ -50,6 +51,7 @@ jobs:
 
               filename = f"{vid}.html"
               keep.add(filename)
+
               page_url = f"{SITE}/wpl/{filename}"
 
               published_iso = item.get("published")
@@ -77,10 +79,12 @@ jobs:
               with open(f"{WPL_DIR}/{filename}", "w", encoding="utf-8") as f:
                   f.write(html)
 
+          # ---------- CLEAN OLD WPL FILES ----------
           for f in os.listdir(WPL_DIR):
               if f.endswith(".html") and f not in keep:
                   os.remove(f"{WPL_DIR}/{f}")
 
+          # ---------- WRITE JSON ----------
           with open(JSON_FILE, "w", encoding="utf-8") as jf:
               json.dump({
                   "updated_at": data.get("updated_at"),
@@ -88,24 +92,39 @@ jobs:
                   "items": json_items
               }, jf, indent=2, ensure_ascii=False)
 
-          urlset = Element("urlset")
-          urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
+          # ---------- SAFE SITEMAP UPDATE ----------
+          NS = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
-          for item in json_items[:SITEMAP_LIMIT]:
-              url = SubElement(urlset, "url")
-              SubElement(url, "loc").text = item["url"]
-              SubElement(url, "lastmod").text = item["published_iso"].split("T")[0]
-              SubElement(url, "changefreq").text = "daily"
-              SubElement(url, "priority").text = "0.9"
+          if os.path.exists(SITEMAP_FILE):
+              tree = ET.parse(SITEMAP_FILE)
+              root = tree.getroot()
+          else:
+              root = ET.Element("urlset")
+              root.set("xmlns", NS["ns"])
+              tree = ET.ElementTree(root)
 
-          ElementTree(urlset).write(
+          # remove old WPL urls only
+          for url in list(root):
+              loc = url.find("ns:loc", NS)
+              if loc is not None and "/wpl/" in loc.text:
+                  root.remove(url)
+
+          # add latest 5 WPL urls
+          for item in json_items[:WPL_LIMIT]:
+              url = ET.SubElement(root, "url")
+              ET.SubElement(url, "loc").text = item["url"]
+              ET.SubElement(url, "lastmod").text = item["published_iso"].split("T")[0]
+              ET.SubElement(url, "changefreq").text = "daily"
+              ET.SubElement(url, "priority").text = "0.9"
+
+          tree.write(
               SITEMAP_FILE,
               encoding="utf-8",
               xml_declaration=True
           )
 
           print("WPL pages:", len(keep))
-          print("Sitemap updated with latest 5 videos")
+          print("Sitemap updated (WPL only, others preserved)")
           EOF
 
       - name: Commit & push
@@ -113,5 +132,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add api wpl sitemap.xml
-          git commit -m "Auto update WPL videos + sitemap" || exit 0
+          git commit -m "Auto update WPL pages + safe sitemap merge" || exit 0
           git push
