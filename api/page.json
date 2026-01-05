@@ -2,30 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "captown-vs-paarls",
-      "title": "SA 20 | Match No 13 | Mi Captown Vs Parls Royals | Live Stream",
-      "description": "Sa 20 Match No 13 Live Stream Mi Capetown Match No 13 Live Streaming ",
-      "players": [
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow"
-        },
-        {
-          "name": "Jio Hotstar",
-          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8"
-        }
-      ],
-      "seo": {
-        "meta_title": "SA 20 | Match No 13 | Mi Captown Vs Parls Royals | Live Stream",
-        "meta_description": "Live Streaming Free Sa 20 Live "
-      },
-      "content": {
-        "paragraphs": [
-          "Watch All Cricket Live Event Only On Cricket Tv Updates For Free One Of Fastest And Smoothest Streaming Like Never Before"
-        ]
-      }
-    },
-    {
       "id": "mi-vs-desert",
       "title": "Mi Emirates Vs Desert Vipers Live Streaming",
       "description": "Final Mi Emirates Vs Desert Vipers Live Streaming ",
