@@ -1925,8 +1925,12 @@ loadEventData().then(data => {
   data.forEach((e, i) => {
     const p = document.createElement('div');
     p.className = 'poster' + (i === 0 ? ' active' : '');
-    const img = document.createElement('img');
-    img.src = e.poster_link;
+  const img = document.createElement('img');
+img.src = e.poster_link;
+img.loading = "eager";
+img.decoding = "async";
+img.fetchPriority = "high";
+img.alt = e.title + " Live Cricket Streaming";
     img.onload = () => {
       if (i === 0) skeleton.style.opacity = '0';
       createWatchButton(i);
