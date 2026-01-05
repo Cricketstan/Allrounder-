@@ -1,39 +1,102 @@
 {
   "upcomingMatches": [
     {
-      "title": "MI Cape Town vs Paarl Royals - 13th Match (SA20 2025-26)",
-      "date": "Sat, Jan 4 2026",
-      "venue": "Cape Town, Newlands",
-      "team1": "MI Cape Town",
-      "team2": "Paarl Royals",
-      "time": "7:00 PM",
+      "title": "Pretoria Capitals vs Sunrisers Eastern Cape - 14th Match (SA20 2025-26)",
+      "date": "Sun, Jan 5 2026",
+      "venue": "Centurion, SuperSport Park",
+      "team1": "Pretoria Capitals",
+      "team2": "Sunrisers Eastern Cape",
+      "time": "9:00 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Perth Scorchers vs Adelaide Strikers - 23rd Match (BBL 2025-26)",
-      "date": "Sat, Jan 4 2026",
-      "venue": "Perth, Perth Stadium",
-      "team1": "Perth Scorchers",
-      "team2": "Adelaide Strikers",
-      "time": "3:45 PM",
+      "title": "Sydney Sixers vs Brisbane Heat - 24th Match (BBL 2025-26)",
+      "date": "Sun, Jan 5 2026",
+      "venue": "Coffs Harbour, International Sports Stadium",
+      "team1": "Sydney Sixers",
+      "team2": "Brisbane Heat",
+      "time": "1:45 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Dhaka Capitals vs Rangpur Riders - 8th Match (BPL 2025-26)",
-      "date": "Sat, Jan 4 2026",
+      "title": "Sylhet Titans vs Noakhali Express - 13th Match (BPL 2025-26)",
+      "date": "Sun, Jan 5 2026",
       "venue": "Sylhet, Sylhet International Cricket Stadium",
-      "team1": "Dhaka Capitals",
+      "team1": "Sylhet Titans",
+      "team2": "Noakhali Express",
+      "time": "12:30 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Chattogram Royals vs Rangpur Riders - 14th Match (BPL 2025-26)",
+      "date": "Sun, Jan 5 2026",
+      "venue": "Sylhet, Sylhet International Cricket Stadium",
+      "team1": "Chattogram Royals",
       "team2": "Rangpur Riders",
       "time": "5:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Desert Vipers vs MI Emirates - Final (ILT20 2025-26)",
-      "date": "Sat, Jan 4 2026",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "Desert Vipers",
-      "team2": "MI Emirates",
-      "time": "8:00 PM",
+      "title": "Auckland vs Otago - 11th Match (Super Smash 2025-26)",
+      "date": "Mon, Jan 6 2026",
+      "venue": "Auckland, Eden Park Outer Oval",
+      "team1": "Auckland",
+      "team2": "Otago",
+      "time": "5:10 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Tamil Nadu vs Tripura - Group A (Vijay Hazare Trophy Elite 2025-26)",
+      "date": "Mon, Jan 6 2026",
+      "venue": "Ahmedabad, Narendra Modi Stadium B Ground",
+      "team1": "Tamil Nadu",
+      "team2": "Tripura",
+      "time": "9:00 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Karnataka vs Rajasthan - Group A (Vijay Hazare Trophy Elite 2025-26)",
+      "date": "Mon, Jan 6 2026",
+      "venue": "Ahmedabad, Gujarat College Ground",
+      "team1": "Karnataka",
+      "team2": "Rajasthan",
+      "time": "9:00 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Jharkhand vs Madhya Pradesh - Group A (Vijay Hazare Trophy Elite 2025-26)",
+      "date": "Mon, Jan 6 2026",
+      "venue": "Ahmedabad, ADSA Railways Cricket Ground",
+      "team1": "Jharkhand",
+      "team2": "Madhya Pradesh",
+      "time": "9:00 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Kerala vs Puducherry - Group A (Vijay Hazare Trophy Elite 2025-26)",
+      "date": "Mon, Jan 6 2026",
+      "venue": "Ahmedabad, Narendra Modi Stadium A Ground",
+      "team1": "Kerala",
+      "team2": "Puducherry",
+      "time": "9:00 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Bihar vs Manipur - Final (Vijay Hazare Trophy Plate 2025-26)",
+      "date": "Mon, Jan 6 2026",
+      "venue": "Ranchi, JSCA International Stadium Complex",
+      "team1": "Bihar",
+      "team2": "Manipur",
+      "time": "8:45 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "South Africa U19 vs India U19 - 2nd Youth ODI",
+      "date": "Sun, Jan 5 2026",
+      "venue": "Benoni, Willowmoore Park",
+      "team1": "South Africa U19",
+      "team2": "India U19",
+      "time": "1:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     }
   ]
