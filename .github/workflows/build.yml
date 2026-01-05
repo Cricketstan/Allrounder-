@@ -64,7 +64,7 @@ jobs:
               )
 
               html = (
-                template
+                  template
                   .replace("{{META_TITLE}}", page["seo"]["meta_title"])
                   .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"])
                   .replace("{{CANONICAL}}", f"{SITE}{HOME}/{pid}/")
@@ -104,38 +104,37 @@ jobs:
               }, f, indent=2)
 
           # ---------- sitemap.xml ----------
-today = datetime.date.today().isoformat()
+          today = datetime.date.today().isoformat()
 
-sitemap = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">',
-    f'''  <url>
-        <loc>{SITE}/</loc>
-        <lastmod>{today}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-      </url>''',
-    f'''  <url>
-        <loc>{SITE}/home/</loc>
-        <lastmod>{today}</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-      </url>'''
-]
+          sitemap = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">',
+              f'''  <url>
+                  <loc>{SITE}/</loc>
+                  <lastmod>{today}</lastmod>
+                  <changefreq>daily</changefreq>
+                  <priority>1.0</priority>
+                </url>''',
+              f'''  <url>
+                  <loc>{SITE}/home/</loc>
+                  <lastmod>{today}</lastmod>
+                  <changefreq>daily</changefreq>
+                  <priority>0.8</priority>
+                </url>'''
+          ]
 
-for url in sitemap_urls:
-    sitemap.append(f'''  <url>
-        <loc>{url}</loc>
-        <lastmod>{today}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-      </url>''')
+          for url in sitemap_urls:
+              sitemap.append(f'''  <url>
+                  <loc>{url}</loc>
+                  <lastmod>{today}</lastmod>
+                  <changefreq>weekly</changefreq>
+                  <priority>0.7</priority>
+                </url>''')
 
-sitemap.append('</urlset>')
+          sitemap.append('</urlset>')
 
           with open("sitemap.xml", "w", encoding="utf-8") as f:
               f.write("\n".join(sitemap))
-
           EOF
 
       - name: Commit & push changes
