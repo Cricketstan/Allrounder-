@@ -2,23 +2,10 @@
 {
   "event": [
 {
-      "title": "Thunder Vs Strikers",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/3400/1767613813400-h",
-      "watch_now": [
-        { "id": "home/adelaide-vs-sydney", "name": "All Stream" }
-      ],
-      "date": "6 Jan 2026",
-      "start_time": "01:40 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
-    },
-{
       "title": "Captown Vs Joburg",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home/pretoria-vs-sunrisers", "name": "All Stream" }
+        { "id": "home/captown-vs-joubarg", "name": "All Stream" }
       ],
       "date": "6 Jan 2026",
       "start_time": "08:55 PM",
