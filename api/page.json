@@ -20,6 +20,31 @@
           ""
         ]
       }
+    },
+    {
+      "id": "adelaide-vs-sydney",
+      "title": "Big Bash 2025 - Adelaide Strikers Vs Sydney Thunder",
+      "description": "Adelaide Strikers Vs Sydney Thunder Live Streaming Free",
+      "players": [
+        {
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/"
+        },
+        {
+          "name": "Willow",
+          "src": "https://crickettv.site/willow"
+        }
+      ],
+      "seo": {
+        "meta_title": "Sydney Thunder Vs Adelaide Strikers Live",
+        "meta_description": "Matt Short and the Adelaide Strikers host David Warner and the Sydney Thunder in a crucial clash at the Adelaide Oval.\n\nThe sixth placed Strikers are coming off a loss to the Perth Scorchers, while the last placed Thunder are coming off a loss to the Hobart Hurricanes.\n\nThat despite David Warner blasting an astonishing 130 not out as he tries to will his side back into finals contention."
+      },
+      "content": {
+        "paragraphs": [
+          "Short and Chris Lynn will be the danger men at the top of the order for the Strikers, while Lloyd Pope and Tabraiz Shamsi have been amongst the wickets this season.\n\nFor the Thunder Warner and Sam Konstas will lead the charge with the bat, while Daniel Sams and Chris Green will be key men with the ball in hand.\n\nIt sets the scene for a must win clash for both sides as they aim to keep themselves in finals contention.\n\n",
+          "SQUADS\n\nAdelaide Strikers: Hassan Ali, Mackenzie Harvey, Chris Lynn, Harry Manenti, Jamie Overton, Lloyd Pope, Alex Ross, Jason Sangha, Liam Scott, Matt Short (c), Henry Thornton, Jerrssis Wadia, Luke Wood\n\nSydney Thunder: Wes Agar, Tom Andrews, Cameron Bancroft, Sam Billings, Chris Green, Matthew Gilkes, Ryan Hadley, Sam Konstas, Nic Maddinson, Nathan McAndrew, Daniel Sams, Tanveer Sangha, David Warner (c), David Willey"
+        ]
+      }
     }
   ]
 }
