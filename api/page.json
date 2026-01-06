@@ -27,12 +27,12 @@
       "description": "Adelaide Strikers Vs Sydney Thunder Live Streaming Free",
       "players": [
         {
-          "name": "Star Sports ",
-          "src": "https://cricketstan.github.io/Channel-14/"
-        },
-        {
           "name": "Willow",
           "src": "https://crickettv.site/willow"
+        },
+        {
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/"
         }
       ],
       "seo": {
