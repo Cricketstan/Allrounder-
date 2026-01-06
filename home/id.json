@@ -1,13 +1,19 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-05T18:52:33.115532Z",
-  "count": 1,
+  "updated_at": "2026-01-06T05:51:19.755723Z",
+  "count": 2,
   "pages": [
     {
       "id": "pretoria-vs-sunrisers",
       "title": "Sa 20 - Pretoria Vs Sunrisers Live",
       "url": "https://crickettv.site/home/pretoria-vs-sunrisers/",
       "description": "Sa 20 - Pretoria Vs Sunrisers Live Streaming "
+    },
+    {
+      "id": "adelaide-vs-sydney",
+      "title": "Big Bash 2025 - Adelaide Strikers Vs Sydney Thunder",
+      "url": "https://crickettv.site/home/adelaide-vs-sydney/",
+      "description": "Adelaide Strikers Vs Sydney Thunder Live Streaming Free"
     }
   ]
 }
