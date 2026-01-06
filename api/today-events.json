@@ -2,31 +2,30 @@
 {
   "event": [
 {
-      "title": "Sixers Vs Heat",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69426427e4b0d8ef2e159a4c-1766534449696?location=hero-default&imwidth=1920",
+      "title": "Thunder Vs Strikers",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/66fe244be4b09d3bce7ca075-1734040544841?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home/sixers-vs-heat", "name": "All Stream" }
+        { "id": "home/adelaide-vs-sydney", "name": "All Stream" }
       ],
-      "date": "5 Jan 2026",
+      "date": "6 Jan 2026",
       "start_time": "01:40 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
       "league": "BBL"
-},
+    },
 {
-      "title": "Pretoria Vs Sunrisers",
+      "title": "Captown Vs Joburg",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home/pretoria-vs-sunrisers", "name": "All Stream" }
       ],
-      "date": "5 Jan 2026",
+      "date": "6 Jan 2026",
       "start_time": "08:55 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
       "league": "SA20"
-}
-
+},
   ]
 }
