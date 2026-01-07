@@ -2,75 +2,8 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "captown-vs-joubarg",
-      "slug": "captown-vs-joubarg",
-
-      "seo": {
-        "meta_title": "MI Cape Town vs Joburg Super Kings Live Streaming",
-        "meta_description": "Live streaming of MI Cape Town vs Joburg Super Kings in SA20 2025-26. Watch online on CricTV.",
-        "canonical": "https://crickettv.site/home/captown-vs-joubarg/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-06T18:00:00+05:30",
-        "last_modified": "2026-01-06T18:00:00+05:30",
-        "breadcrumb_title": "MI Cape Town vs Joburg Super Kings"
-      },
-
-      "match": {
-        "title": "MI Cape Town vs Joburg Super Kings, 15th Match",
-        "team1": "MI Cape Town",
-        "team2": "Joburg Super Kings",
-        "venue": "Newlands, Cape Town",
-        "start_iso": "2026-01-06T19:30:00+05:30",
-        "end_iso": "2026-01-06T23:00:00+05:30"
-      },
-
-      "streams": [
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow",
-          "default": true
-        },
-        {
-          "name": "Hotstar",
-          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8"
-        }
-      ],
-
-      "content": {
-        "overview": "The SA20 2025-26 season moves forward as MI Cape Town host Joburg Super Kings in Match No. 15 at Newlands, Cape Town.",
-
-        "match_details": "Match: MI Cape Town vs Joburg Super Kings, 15th Match\nTournament: SA20 2025-26\nDate: 6 January 2026\nVenue: Newlands, Cape Town",
-
-        "pitch_report": "Newlands traditionally offers assistance to seamers early with true bounce. Batting becomes easier as the match progresses.",
-
-        "players_to_watch": {
-          "MI Cape Town": [
-            "Rashid Khan",
-            "Ryan Rickelton",
-            "Rassie van der Dussen"
-          ],
-          "Joburg Super Kings": [
-            "Faf du Plessis",
-            "Rilee Rossouw",
-            "Akeal Hosein"
-          ]
-        },
-
-        "squads": {
-          "Joburg Super Kings": "Matthew De Villiers, Faf du Plessis(c), Rilee Rossouw, Wiaan Mulder, Donovan Ferreira, Prenelan Subrayen, Akeal Hosein, Richard Gleeson, Reece Topley, Imran Tahir",
-          "MI Cape Town": "Ryan Rickelton(w), Rassie van der Dussen, Reeza Hendricks, Nicholas Pooran, Rashid Khan(c), Kagiso Rabada, Trent Boult"
-        },
-
-        "prediction": "Joburg Super Kings enter as favourites due to strong form.",
-
-        "final_word": "MI Cape Town need a turnaround, while Joburg Super Kings look set to continue their dominance."
-      }
-    },
-
-    {
       "id": "england-vs-australia",
       "slug": "england-vs-australia",
-
       "seo": {
         "meta_title": "England vs Australia Ashes Day 4 Live Streaming",
         "meta_description": "Watch England vs Australia Ashes Day 4 live streaming online on CricTV.",
@@ -80,7 +13,6 @@
         "last_modified": "2026-01-05T10:00:00+05:30",
         "breadcrumb_title": "England vs Australia"
       },
-
       "match": {
         "title": "Australia vs England, Day 4 – Ashes",
         "team1": "Australia",
@@ -89,7 +21,6 @@
         "start_iso": "2026-01-05T05:00:00+05:30",
         "end_iso": "2026-01-05T22:00:00+05:30"
       },
-
       "streams": [
         {
           "name": "TNT Sports",
@@ -97,14 +28,10 @@
           "default": true
         }
       ],
-
       "content": {
         "overview": "Ashes Day 4 sees Australia in a dominant position after strong batting performances.",
-
         "match_details": "Match: Australia vs England, Day 4\nTournament: The Ashes\nFormat: Test Match",
-
         "pitch_report": "The surface is showing variable bounce making batting tricky in later stages.",
-
         "players_to_watch": {
           "Australia": [
             "Travis Head",
@@ -115,17 +42,13 @@
             "Ben Stokes"
           ]
         },
-
         "prediction": "Australia hold a strong advantage going into Day 4.",
-
         "final_word": "England must strike early to stay in the contest."
       }
     },
-
     {
       "id": "indu19-vs-southafricau19",
       "slug": "indu19-vs-southafricau19",
-
       "seo": {
         "meta_title": "India U19 vs South Africa U19 Live Streaming",
         "meta_description": "Watch India U19 vs South Africa U19 live streaming online on CricTV.",
@@ -135,7 +58,6 @@
         "last_modified": "2026-01-04T14:00:00+05:30",
         "breadcrumb_title": "India U19 vs South Africa U19"
       },
-
       "match": {
         "title": "India U19 vs South Africa U19 Live Streaming",
         "team1": "India U19",
@@ -144,7 +66,6 @@
         "start_iso": "2026-01-04T15:00:00+05:30",
         "end_iso": "2026-01-04T19:00:00+05:30"
       },
-
       "streams": [
         {
           "name": "Hotstar",
@@ -152,22 +73,16 @@
           "default": true
         }
       ],
-
       "content": {
         "overview": "India U19 take on South Africa U19 in an exciting youth international fixture.",
-
         "match_details": "Match: India U19 vs South Africa U19\nFormat: Youth International",
-
         "prediction": "India U19 look slightly stronger on paper.",
-
         "final_word": "Expect young talent and competitive cricket."
       }
     },
-
     {
       "id": "perth-vs-melbourne",
       "slug": "perth-vs-melbourne",
-
       "seo": {
         "meta_title": "Perth Scorchers vs Melbourne Renegades Live Streaming",
         "meta_description": "Watch Perth Scorchers vs Melbourne Renegades live streaming online with match details and prediction.",
@@ -177,7 +92,6 @@
         "last_modified": "2026-01-07T14:00:00+05:30",
         "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
       },
-
       "match": {
         "title": "Perth vs Melbourne Live Streaming – Key Details",
         "team1": "Perth Scorchers",
@@ -186,7 +100,6 @@
         "start_iso": "2026-01-07T19:30:00+05:30",
         "end_iso": "2026-01-07T23:00:00+05:30"
       },
-
       "streams": [
         {
           "name": "Star Sports",
@@ -198,14 +111,10 @@
           "src": "https://crickettv.site/willow"
         }
       ],
-
       "content": {
         "overview": "Perth Scorchers face Melbourne Renegades in a crucial Big Bash League clash.",
-
         "match_details": "Match: Perth Scorchers vs Melbourne Renegades, 26th Match\nTournament: Big Bash League 2026\nDate: 7 January 2026\nVenue: Perth Stadium",
-
         "pitch_report": "Perth Stadium offers bounce and pace, assisting fast bowlers early.",
-
         "players_to_watch": {
           "Perth Scorchers": [
             "Ashton Turner",
@@ -216,14 +125,11 @@
             "Josh Brown"
           ]
         },
-
         "squads": {
           "Perth Scorchers": "Ashton Turner(c), Ashton Agar, Finn Allen, Aaron Hardie, Josh Inglis, Mitchell Marsh",
           "Melbourne Renegades": "Will Sutherland(c), Jason Behrendorff, Tim Seifert, Andrew Tye, Adam Zampa"
         },
-
         "prediction": "Slight Advantage: Perth Scorchers",
-
         "final_word": "Home conditions give Perth the edge, but Melbourne remain dangerous."
       }
     }
