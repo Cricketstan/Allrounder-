@@ -89,7 +89,7 @@
         "canonical": "https://crickettv.site/home/perth-vs-melbourne/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-07T14:00:00+05:30",
-        "last_modified": "2026-01-07T14:00:00+05:30",
+        "last_modified": "2026-01-07T08:23:19.564+05:30",
         "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
       },
       "match": {
@@ -108,13 +108,16 @@
         },
         {
           "name": "Willow",
-          "src": "https://crickettv.site/willow"
+          "src": "https://crickettv.site/willow",
+          "default": true
         }
       ],
       "content": {
-        "overview": "Perth Scorchers face Melbourne Renegades in a crucial Big Bash League clash.",
+        "overview": "The Perth Scorchers vs Melbourne Renegades match fits perfectly into a crucial phase of the tournament. The Scorchers have a good chance as they have gained some momentum in the previous games, and another victory will enhance their chances of making it to the playoffs.\n\nFor the , the stakes are even higher, as they are now in a must-win position after a run of close defeats pushed them towards the lower end of the table. To stay alive in the competition, they need consistency, calm decision-making, and the ability to",
         "match_details": "Match: Perth Scorchers vs Melbourne Renegades, 26th Match\nTournament: Big Bash League 2026\nDate: 7 January 2026\nVenue: Perth Stadium",
         "pitch_report": "Perth Stadium offers bounce and pace, assisting fast bowlers early.",
+        "prediction": "the Scorchers, it is about consolidating dominance and building a winning rhythm heading deeper into the tournament. For the Renegades, it represents resilience, and a chance to prove they can still shape the season narrative.\n\nExpect strategy, tension, and decisive key battles under the Perth lights, where one bold partnership or game-changing bowling spell may decide everything.",
+        "final_word": "the Scorchers, it is about consolidating dominance and building a winning rhythm heading deeper into the tournament. For the Renegades, it represents resilience, and a chance to prove they can still shape the season narrative.\n\nExpect strategy, tension, and decisive key battles under the Perth lights, where one bold partnership or game-changing bowling spell may decide everything.",
         "players_to_watch": {
           "Perth Scorchers": [
             "Ashton Turner",
@@ -128,9 +131,7 @@
         "squads": {
           "Perth Scorchers": "Ashton Turner(c), Ashton Agar, Finn Allen, Aaron Hardie, Josh Inglis, Mitchell Marsh",
           "Melbourne Renegades": "Will Sutherland(c), Jason Behrendorff, Tim Seifert, Andrew Tye, Adam Zampa"
-        },
-        "prediction": "Slight Advantage: Perth Scorchers",
-        "final_word": "Home conditions give Perth the edge, but Melbourne remain dangerous."
+        }
       }
     }
   ]
