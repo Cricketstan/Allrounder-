@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-07T00:01:25.235887Z",
-  "count": 4,
+  "updated_at": "2026-01-07T00:18:24.181993Z",
+  "count": 5,
   "pages": [
     {
       "id": "pretoria-vs-sunrisers",
@@ -26,6 +26,12 @@
       "title": "CricTv - Australia Vs England, Day 4, Live Streaming",
       "url": "https://crickettv.site/home/england-vs-australia/",
       "description": "Ashes Day 4 Between England And Australia Catch Live Only On Cric Tv"
+    },
+    {
+      "id": "indu19-vs-southafricau19",
+      "title": "Cricket Tv - India u19 Vs South Africa U19 Live Streaming",
+      "url": "https://crickettv.site/home/indu19-vs-southafricau19/",
+      "description": "Catch Live India u19 Vs South Africa U19"
     }
   ]
 }
