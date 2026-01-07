@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CricTV Admin Panel</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* ===== CSS RESET & VARIABLES ===== */
+:root {
+  --primary: #1e90ff;
+  --primary-dark: #0b5ed7;
+  --secondary: #0f2d5c;
+  --dark: #00013a;
+  --darker: #000115;
+  --light: #e6ecff;
+  --danger: #ff4757;
+  --success: #2ed573;
+  --warning: #ffa502;
+  --gray: #8e9aaf;
+  --card-bg: linear-gradient(180deg, #0a1b3d, #00022e);
+  --header-bg: linear-gradient(135deg, #0b2f7c 0%, #071b4f 100%);
+  --input-bg: #0a1029;
+  --border: #1a3a6a;
+  --shadow: 0 8px 24px rgba(0, 10, 60, 0.5);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--header-bg);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area h1 {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-area h1 i {
+  color: var(--primary);
+}
+
+.token-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--light);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.token-toggle:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.token-section {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: var(--transition);
+}
+
+.token-section.hidden {
+  display: none;
+}
+
+.token-input-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.token-input-group input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.token-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.page-selector {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.page-selector select {
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: 0 12px 28px rgba(0, 10, 60, 0.6);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-header i {
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.card-header h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+/* ===== FORM ELEMENTS ===== */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #a6b5d6;
+  font-size: 0.95rem;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--light);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(30, 144, 255, 0.3);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #ff2e43;
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+.btn-success:hover {
+  background: #26c464;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ===== STREAM & CONTENT ITEMS ===== */
+.stream-item, .players-item {
+  background: rgba(10, 25, 47, 0.7);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.stream-item:hover, .players-item:hover {
+  border-color: var(--primary);
+}
+
+.stream-item-header, .players-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stream-item-header h4, .players-item-header h4 {
+  font-size: 1rem;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.remove-btn {
+  background: rgba(255, 71, 87, 0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.remove-btn:hover {
+  background: var(--danger);
+  color: white;
+}
+
+/* ===== STATUS MESSAGE ===== */
+.status-message {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  display: none;
+}
+
+.status-success {
+  background: rgba(46, 213, 115, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+  display: block;
+}
+
+.status-error {
+  background: rgba(255, 71, 87, 0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  display: block;
+}
+
+/* ===== TWO COLUMN LAYOUT ===== */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* ===== AUTO-FILLED FIELD STYLE ===== */
+.auto-filled {
+  background: rgba(30, 144, 255, 0.1) !important;
+  border-color: var(--primary) !important;
+}
+
+.auto-filled-label {
+  color: var(--primary) !important;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1.25rem;
+  }
+  
+  .btn-group {
+    flex-direction: column;
+  }
+  
+  .btn-group .btn {
+    width: 100%;
+  }
+  
+  .token-input-group, .page-selector {
+    flex-direction: column;
+  }
+  
+  .token-input-group input, .page-selector select {
+    min-width: 100%;
+  }
+  
+  .token-actions {
+    flex-direction: column;
+  }
+  
+  .stream-item-header, .players-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 1rem;
+  }
+  
+  .logo-area {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .logo-area h1 {
+    font-size: 1.35rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.hidden {
+  display: none !important;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+.text-center { text-align: center; }
+.text-muted { color: var(--gray); }
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+
+/* ===== LOADING INDICATOR ===== */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== TOKEN STORAGE BADGE ===== */
+.token-badge {
+  background: rgba(30, 144, 255, 0.1);
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-left: 0.5rem;
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo-area">
+    <h1><i class="fas fa-tv"></i> CricTV Admin Panel</h1>
+    <button class="token-toggle" id="tokenToggle">
+      <i class="fas fa-key"></i> <span>Show Token</span>
+    </button>
+  </div>
+  
+  <div class="header-controls">
+    <div class="token-section hidden" id="tokenSection">
+      <div class="token-input-group">
+        <input type="password" id="token" placeholder="GitHub Token (contents:write)">
+        <div class="token-actions">
+          <button class="btn btn-success btn-sm" id="saveTokenBtn">
+            <i class="fas fa-save"></i> Save
+          </button>
+          <button class="btn btn-secondary btn-sm" id="clearTokenBtn">
+            <i class="fas fa-trash"></i> Clear
+          </button>
+        </div>
+      </div>
+      <div id="tokenStatus" class="text-muted text-center">
+        <i class="fas fa-info-circle"></i> Token will be saved locally in your browser
+      </div>
+    </div>
+    
+    <div class="page-selector">
+      <select id="pageSelect">
+        <option value="">Load existing page…</option>
+      </select>
+      <button class="btn btn-primary" onclick="loadSelected()">
+        <i class="fas fa-download"></i> Load
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- Basic Info Card -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-info-circle"></i>
+      <h3>Basic Information</h3>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="pid">Page ID</label>
+        <input type="text" id="pid" placeholder="e.g., captown-vs-joubarg">
+      </div>
+      
+      <div class="form-group">
+        <label for="slug" class="auto-filled-label">Slug (for canonical URL)</label>
+        <input type="text" id="slug" placeholder="e.g., captown-vs-joubarg">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="title">Page Title</label>
+      <input type="text" id="title" placeholder="e.g., MI Cape Town vs Joburg Super Kings Live Streaming">
+    </div>
+  </div>
+  
+  <!-- Match Details Card -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-baseball-ball"></i>
+      <h3>Match Details</h3>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="match_title">Match Title</label>
+        <input type="text" id="match_title" placeholder="e.g., MI Cape Town vs Joburg Super Kings, 15th Match">
+      </div>
+      
+      <div class="form-group">
+        <label for="match_venue">Venue</label>
+        <input type="text" id="match_venue" placeholder="e.g., Newlands, Cape Town">
+      </div>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="team1">Team 1</label>
+        <input type="text" id="team1" placeholder="e.g., MI Cape Town">
+      </div>
+      
+      <div class="form-group">
+        <label for="team2">Team 2</label>
+        <input type="text" id="team2" placeholder="e.g., Joburg Super Kings">
+      </div>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="start_iso">Start Time (ISO)</label>
+        <input type="text" id="start_iso" placeholder="e.g., 2026-01-06T19:30:00+05:30">
+      </div>
+      
+      <div class="form-group">
+        <label for="end_iso">End Time (ISO)</label>
+        <input type="text" id="end_iso" placeholder="e.g., 2026-01-06T23:00:00+05:30">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Streams Card -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-satellite-dish"></i>
+      <h3>Stream Servers</h3>
+    </div>
+    
+    <div id="streams"></div>
+    
+    <button class="btn btn-secondary btn-full" onclick="addStream()">
+      <i class="fas fa-plus"></i> Add Stream Server
+    </button>
+  </div>
+  
+  <!-- SEO Card -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-search"></i>
+      <h3>SEO Settings</h3>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="seo_title">Meta Title</label>
+        <input type="text" id="seo_title" placeholder="Optimized title for search engines">
+      </div>
+      
+      <div class="form-group">
+        <label for="breadcrumb_title">Breadcrumb Title</label>
+        <input type="text" id="breadcrumb_title" placeholder="Title for breadcrumb navigation">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="seo_desc">Meta Description</label>
+      <textarea id="seo_desc" placeholder="Compelling description for search results"></textarea>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="canonical" class="auto-filled-label">Canonical URL (Auto-generated)</label>
+        <input type="text" id="canonical" placeholder="Will be auto-filled when saving" readonly>
+      </div>
+      
+      <div class="form-group">
+        <label for="thumbnail">Thumbnail URL</label>
+        <input type="text" id="thumbnail" placeholder="e.g., https://crickettv.site/image/api/crickettv.png">
+      </div>
+    </div>
+    
+    <div class="two-column">
+      <div class="form-group">
+        <label for="publish_date" class="auto-filled-label">Publish Date (Auto-generated)</label>
+        <input type="text" id="publish_date" placeholder="Will be auto-filled when saving" readonly>
+      </div>
+      
+      <div class="form-group">
+        <label for="last_modified" class="auto-filled-label">Last Modified (Auto-generated)</label>
+        <input type="text" id="last_modified" placeholder="Will be auto-filled when saving" readonly>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Content Card -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-align-left"></i>
+      <h3>Content</h3>
+    </div>
+    
+    <div class="form-group">
+      <label for="overview">Overview</label>
+      <textarea id="overview" placeholder="Brief overview of the match"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="match_details">Match Details</label>
+      <textarea id="match_details" placeholder="Match details (use \n for new lines)"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="pitch_report">Pitch Report</label>
+      <textarea id="pitch_report" placeholder="Pitch conditions and report"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="prediction">Prediction</label>
+      <textarea id="prediction" placeholder="Match prediction"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="final_word">Final Word</label>
+      <textarea id="final_word" placeholder="Final thoughts on the match"></textarea>
+    </div>
+    
+    <div class="players-item">
+      <div class="players-item-header">
+        <h4><i class="fas fa-users"></i> Players to Watch</h4>
+      </div>
+      
+      <div class="two-column">
+        <div class="form-group">
+          <label for="team1_players">Team 1 Players (comma separated)</label>
+          <input type="text" id="team1_players" placeholder="e.g., Rashid Khan, Ryan Rickelton, Rassie van der Dussen">
+        </div>
+        
+        <div class="form-group">
+          <label for="team2_players">Team 2 Players (comma separated)</label>
+          <input type="text" id="team2_players" placeholder="e.g., Faf du Plessis, Rilee Rossouw, Akeal Hosein">
+        </div>
+      </div>
+    </div>
+    
+    <div class="players-item">
+      <div class="players-item-header">
+        <h4><i class="fas fa-clipboard-list"></i> Squads</h4>
+      </div>
+      
+      <div class="two-column">
+        <div class="form-group">
+          <label for="team1_squad">Team 1 Squad</label>
+          <textarea id="team1_squad" placeholder="Team 1 squad list"></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="team2_squad">Team 2 Squad</label>
+          <textarea id="team2_squad" placeholder="Team 2 squad list"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Actions Card -->
+  <div class="card">
+    <div class="card-header">
+      <i class="fas fa-cogs"></i>
+      <h3>Actions</h3>
+    </div>
+    
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="save()">
+        <i class="fas fa-save"></i> Save Page
+      </button>
+      <button class="btn btn-danger" onclick="deletePage()">
+        <i class="fas fa-trash"></i> Delete Page
+      </button>
+    </div>
+    
+    <div id="status" class="status-message"></div>
+  </div>
+</div>
+
+<script>
+// ===== GLOBAL CONFIGURATION =====
+const OWNER = "Cricketstan";
+const REPO = "Allrounder-";
+const FILE = "api/page.json";
+const BRANCH = "main";
+const TOKEN_STORAGE_KEY = "crictv_github_token";
+const BASE_SITE_URL = "https://crickettv.site";
+const THUMBNAIL_URL = "https://crickettv.site/image/api/crickettv.png";
+
+// ===== DOM REFERENCES =====
+const $ = id => document.getElementById(id);
+const tokenInput = $("token");
+const tokenToggle = $("tokenToggle");
+const tokenSection = $("tokenSection");
+const saveTokenBtn = $("saveTokenBtn");
+const clearTokenBtn = $("clearTokenBtn");
+const tokenStatus = $("tokenStatus");
+const pageSelect = $("pageSelect");
+const statusDiv = $("status");
+
+// ===== GLOBAL STATE =====
+let pages = [];
+let isTokenVisible = false;
+let currentPageId = null; // Track current page ID
+
+// ===== HELPER FUNCTIONS =====
+function getCurrentISOTime() {
+  // Get current time in Indian timezone (IST = UTC+5:30)
+  const now = new Date();
+  const offset = 5.5 * 60; // IST is UTC+5:30
+  const localTime = new Date(now.getTime() + offset * 60000);
+  return localTime.toISOString().replace('Z', '+05:30');
+}
+
+function generateCanonicalUrl(slug) {
+  if (!slug) return "";
+  // Format: https://crickettv.site/home/slug/
+  return `${BASE_SITE_URL}/home/${slug}/`;
+}
+
+function isNewPage(pid) {
+  // Check if this is a new page (not in existing pages)
+  return !pages.some(p => p.id === pid);
+}
+
+function updateAutoFields() {
+  const slug = $("slug").value.trim();
+  const pid = $("pid").value.trim();
+  
+  // Update canonical URL based on slug
+  if (slug) {
+    $("canonical").value = generateCanonicalUrl(slug);
+    $("canonical").classList.add('auto-filled');
+  }
+  
+  // Set thumbnail to default if empty
+  if (!$("thumbnail").value.trim()) {
+    $("thumbnail").value = THUMBNAIL_URL;
+    $("thumbnail").classList.add('auto-filled');
+  }
+  
+  // Check if this is a new page and set publish date
+  if (pid && isNewPage(pid)) {
+    const currentTime = getCurrentISOTime();
+    $("publish_date").value = currentTime;
+    $("publish_date").classList.add('auto-filled');
+  }
+  
+  // Always update last modified date
+  $("last_modified").value = getCurrentISOTime();
+  $("last_modified").classList.add('auto-filled');
+}
+
+// ===== TOKEN MANAGEMENT =====
+function loadTokenFromStorage() {
+  const savedToken = localStorage.getItem(TOKEN_STORAGE_KEY);
+  if (savedToken) {
+    tokenInput.value = savedToken;
+    updateTokenBadge();
+  }
+}
+
+function saveTokenToStorage() {
+  const token = tokenInput.value.trim();
+  if (token) {
+    localStorage.setItem(TOKEN_STORAGE_KEY, token);
+    showStatus("Token saved to local storage", "success", tokenStatus);
+    updateTokenBadge();
+  } else {
+    showStatus("Please enter a token first", "error", tokenStatus);
+  }
+}
+
+function clearTokenFromStorage() {
+  localStorage.removeItem(TOKEN_STORAGE_KEY);
+  tokenInput.value = "";
+  showStatus("Token cleared from local storage", "success", tokenStatus);
+  updateTokenBadge();
+}
+
+function updateTokenBadge() {
+  const hasToken = localStorage.getItem(TOKEN_STORAGE_KEY);
+  let badge = document.querySelector(".token-badge");
+  
+  if (hasToken) {
+    if (!badge) {
+      badge = document.createElement("span");
+      badge.className = "token-badge";
+      tokenToggle.appendChild(badge);
+    }
+    badge.innerHTML = '<i class="fas fa-check"></i> Saved';
+  } else if (badge) {
+    badge.remove();
+  }
+}
+
+function toggleTokenVisibility() {
+  isTokenVisible = !isTokenVisible;
+  tokenSection.classList.toggle("hidden", !isTokenVisible);
+  tokenToggle.querySelector("span").textContent = isTokenVisible ? "Hide Token" : "Show Token";
+  tokenToggle.querySelector("i").className = isTokenVisible ? "fas fa-eye-slash" : "fas fa-key";
+}
+
+// ===== UI HELPERS =====
+function showStatus(message, type = "success", element = statusDiv) {
+  element.textContent = message;
+  element.className = `status-${type}`;
+  element.style.display = "block";
+  
+  if (element === statusDiv) {
+    setTimeout(() => {
+      element.style.display = "none";
+    }, 5000);
+  }
+}
+
+function showLoading(button, show = true) {
+  if (show) {
+    button.innerHTML = '<div class="loading"></div> Processing...';
+    button.disabled = true;
+  } else {
+    button.innerHTML = '<i class="fas fa-save"></i> Save Page';
+    button.disabled = false;
+  }
+}
+
+// ===== PAGE DATA MANAGEMENT =====
+async function loadJSON() {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`
+    );
+    
+    if (!res.ok) throw new Error("Failed to fetch page data");
+    
+    const json = await res.json();
+    const data = JSON.parse(atob(json.content));
+    pages = data.pages || [];
+
+    // Update page selector
+    pageSelect.innerHTML = '<option value="">Load existing page…</option>';
+    
+    pages.forEach(p => {
+      const opt = document.createElement("option");
+      opt.value = p.id;
+      opt.textContent = p.seo?.meta_title || p.id;
+      pageSelect.appendChild(opt);
+    });
+    
+    return true;
+  } catch (error) {
+    console.error("Error loading pages:", error);
+    showStatus("Failed to load pages. Check token or connection.", "error");
+    return false;
+  }
+}
+
+function loadSelected() {
+  const id = pageSelect.value;
+  if (!id) {
+    showStatus("Please select a page to load", "error");
+    return;
+  }
+
+  const page = pages.find(x => x.id === id);
+  if (!page) {
+    showStatus("Page not found", "error");
+    return;
+  }
+
+  // Set current page ID
+  currentPageId = id;
+
+  // Load basic info
+  $("pid").value = page.id || "";
+  $("slug").value = page.slug || "";
+  $("title").value = page.seo?.meta_title || "";
+
+  // Load match details
+  $("match_title").value = page.match?.title || "";
+  $("team1").value = page.match?.team1 || "";
+  $("team2").value = page.match?.team2 || "";
+  $("match_venue").value = page.match?.venue || "";
+  $("start_iso").value = page.match?.start_iso || "";
+  $("end_iso").value = page.match?.end_iso || "";
+
+  // Load SEO
+  $("seo_title").value = page.seo?.meta_title || "";
+  $("seo_desc").value = page.seo?.meta_description || "";
+  $("breadcrumb_title").value = page.seo?.breadcrumb_title || "";
+  $("canonical").value = page.seo?.canonical || "";
+  $("thumbnail").value = page.seo?.thumbnail || "";
+  $("publish_date").value = page.seo?.publish_date || "";
+  $("last_modified").value = page.seo?.last_modified || "";
+
+  // Load streams
+  $("streams").innerHTML = "";
+  (page.streams || []).forEach(s => addStream(s.name || "", s.src || "", s.default || false));
+
+  // Load content
+  $("overview").value = page.content?.overview || "";
+  $("match_details").value = page.content?.match_details || "";
+  $("pitch_report").value = page.content?.pitch_report || "";
+  $("prediction").value = page.content?.prediction || "";
+  $("final_word").value = page.content?.final_word || "";
+  
+  // Load players to watch
+  const team1Players = page.content?.players_to_watch?.[page.match?.team1] || [];
+  const team2Players = page.content?.players_to_watch?.[page.match?.team2] || [];
+  $("team1_players").value = team1Players.join(", ");
+  $("team2_players").value = team2Players.join(", ");
+  
+  // Load squads
+  $("team1_squad").value = page.content?.squads?.[page.match?.team1] || "";
+  $("team2_squad").value = page.content?.squads?.[page.match?.team2] || "";
+  
+  // Update auto fields
+  updateAutoFields();
+  
+  showStatus(`Loaded: ${page.seo?.meta_title}`, "success");
+}
+
+function addStream(name = "", src = "", isDefault = false) {
+  const streamsDiv = $("streams");
+  const streamCount = streamsDiv.children.length + 1;
+  
+  const div = document.createElement("div");
+  div.className = "stream-item";
+  div.innerHTML = `
+    <div class="stream-item-header">
+      <h4><i class="fas fa-server"></i> Stream Server ${streamCount}</h4>
+      <button class="remove-btn" onclick="this.parentElement.parentElement.remove()">
+        <i class="fas fa-times"></i> Remove
+      </button>
+    </div>
+    <div class="form-group">
+      <label>Server Name</label>
+      <input type="text" placeholder="e.g., Willow, Hotstar" value="${name}">
+    </div>
+    <div class="form-group">
+      <label>Stream URL</label>
+      <input type="text" placeholder="https://example.com/stream.mpd" value="${src}">
+    </div>
+    <div class="form-group">
+      <label>
+        <input type="checkbox" ${isDefault ? 'checked' : ''}> Set as Default Stream
+      </label>
+    </div>
+  `;
+  streamsDiv.appendChild(div);
+}
+
+// ===== SAVE & DELETE OPERATIONS =====
+async function save() {
+  const token = tokenInput.value.trim() || localStorage.getItem(TOKEN_STORAGE_KEY);
+  
+  if (!token) {
+    showStatus("GitHub token is required. Please enter and save your token.", "error");
+    tokenSection.classList.remove("hidden");
+    isTokenVisible = true;
+    tokenToggle.querySelector("span").textContent = "Hide Token";
+    tokenToggle.querySelector("i").className = "fas fa-eye-slash";
+    return;
+  }
+
+  // Validate required fields
+  const pid = $("pid").value.trim();
+  const slug = $("slug").value.trim();
+  const title = $("seo_title").value.trim();
+  
+  if (!pid || !slug || !title) {
+    showStatus("Page ID, Slug and Meta Title are required", "error");
+    return;
+  }
+
+  const saveBtn = document.querySelector('.btn-primary[onclick="save()"]');
+  showLoading(saveBtn, true);
+
+  try {
+    // Get existing file to get SHA
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    
+    if (!metaRes.ok) {
+      throw new Error("Failed to fetch file metadata. Check token permissions.");
+    }
+    
+    const meta = await metaRes.json();
+    
+    // Update auto fields before saving
+    updateAutoFields();
+    
+    // Prepare page data
+    const page = {
+      id: pid,
+      slug: slug,
+      seo: {
+        meta_title: $("seo_title").value,
+        meta_description: $("seo_desc").value,
+        canonical: $("canonical").value,
+        thumbnail: $("thumbnail").value,
+        publish_date: $("publish_date").value,
+        last_modified: $("last_modified").value,
+        breadcrumb_title: $("breadcrumb_title").value
+      },
+      match: {
+        title: $("match_title").value,
+        team1: $("team1").value,
+        team2: $("team2").value,
+        venue: $("match_venue").value,
+        start_iso: $("start_iso").value,
+        end_iso: $("end_iso").value
+      },
+      streams: [...$("streams").children].map(s => ({
+        name: s.querySelectorAll("input[type='text']")[0].value,
+        src: s.querySelectorAll("input[type='text']")[1].value,
+        default: s.querySelector("input[type='checkbox']").checked
+      })),
+      content: {
+        overview: $("overview").value,
+        match_details: $("match_details").value,
+        pitch_report: $("pitch_report").value,
+        prediction: $("prediction").value,
+        final_word: $("final_word").value,
+        players_to_watch: {
+          [$("team1").value]: $("team1_players").value.split(",").map(p => p.trim()).filter(p => p),
+          [$("team2").value]: $("team2_players").value.split(",").map(p => p.trim()).filter(p => p)
+        },
+        squads: {
+          [$("team1").value]: $("team1_squad").value,
+          [$("team2").value]: $("team2_squad").value
+        }
+      }
+    };
+
+    // Update pages array
+    pages = pages.filter(p => p.id !== page.id);
+    pages.push(page);
+
+    // Push to GitHub
+    const res = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: `Update page: ${page.seo.meta_title}`,
+          content: btoa(JSON.stringify({ 
+            site: "https://crickettv.site", 
+            pages 
+          }, null, 2)),
+          sha: meta.sha,
+          branch: BRANCH
+        })
+      }
+    );
+
+    if (res.ok) {
+      showStatus("✅ Page saved successfully! Site is rebuilding...", "success");
+      await loadJSON();
+      
+      // Auto-select the saved page
+      pageSelect.value = page.id;
+      currentPageId = page.id;
+    } else {
+      const error = await res.json();
+      throw new Error(error.message || "Failed to save page");
+    }
+  } catch (error) {
+    console.error("Save error:", error);
+    showStatus(`❌ Save failed: ${error.message}`, "error");
+  } finally {
+    showLoading(saveBtn, false);
+  }
+}
+
+async function deletePage() {
+  const pid = $("pid").value.trim();
+  if (!pid) {
+    showStatus("No page selected to delete", "error");
+    return;
+  }
+
+  if (!confirm(`Are you sure you want to delete page "${pid}"? This action cannot be undone.`)) {
+    return;
+  }
+
+  const token = tokenInput.value.trim() || localStorage.getItem(TOKEN_STORAGE_KEY);
+  if (!token) {
+    showStatus("Token required for deletion", "error");
+    return;
+  }
+
+  try {
+    // Get existing file to get SHA
+    const metaRes = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }
+    );
+    
+    if (!metaRes.ok) throw new Error("Failed to fetch file metadata");
+    
+    const meta = await metaRes.json();
+    const data = JSON.parse(atob(meta.content));
+    
+    // Remove the page
+    data.pages = data.pages.filter(p => p.id !== pid);
+    
+    // Push to GitHub
+    const res = await fetch(
+      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${FILE}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: `Delete page: ${pid}`,
+          content: btoa(JSON.stringify(data, null, 2)),
+          sha: meta.sha,
+          branch: BRANCH
+        })
+      }
+    );
+
+    if (res.ok) {
+      showStatus("✅ Page deleted successfully!", "success");
+      
+      // Clear form
+      $("pid").value = "";
+      $("slug").value = "";
+      $("title").value = "";
+      $("match_title").value = "";
+      $("team1").value = "";
+      $("team2").value = "";
+      $("match_venue").value = "";
+      $("start_iso").value = "";
+      $("end_iso").value = "";
+      $("seo_title").value = "";
+      $("seo_desc").value = "";
+      $("breadcrumb_title").value = "";
+      $("canonical").value = "";
+      $("thumbnail").value = "";
+      $("publish_date").value = "";
+      $("last_modified").value = "";
+      $("streams").innerHTML = "";
+      $("overview").value = "";
+      $("match_details").value = "";
+      $("pitch_report").value = "";
+      $("prediction").value = "";
+      $("final_word").value = "";
+      $("team1_players").value = "";
+      $("team2_players").value = "";
+      $("team1_squad").value = "";
+      $("team2_squad").value = "";
+      
+      currentPageId = null;
+      await loadJSON();
+    } else {
+      throw new Error("Failed to delete page");
+    }
+  } catch (error) {
+    console.error("Delete error:", error);
+    showStatus(`❌ Delete failed: ${error.message}`, "error");
+  }
+}
+
+// ===== INITIALIZATION =====
+function init() {
+  // Load token from storage
+  loadTokenFromStorage();
+  
+  // Load pages from GitHub
+  loadJSON();
+  
+  // Add initial stream
+  addStream();
+  
+  // Set up event listeners
+  tokenToggle.addEventListener("click", toggleTokenVisibility);
+  saveTokenBtn.addEventListener("click", saveTokenToStorage);
+  clearTokenBtn.addEventListener("click", clearTokenFromStorage);
+  
+  // Auto-update canonical URL when slug changes
+  $("slug").addEventListener("input", function() {
+    if (this.value.trim()) {
+      $("canonical").value = generateCanonicalUrl(this.value.trim());
+      $("canonical").classList.add('auto-filled');
+    }
+  });
+  
+  // Keyboard shortcuts
+  document.addEventListener("keydown", (e) => {
+    // Ctrl+S to save
+    if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+      e.preventDefault();
+      save();
+    }
+    
+    // Escape to hide token
+    if (e.key === "Escape" && isTokenVisible) {
+      toggleTokenVisibility();
+    }
+  });
+  
+  // Show welcome message
+  setTimeout(() => {
+    if (!localStorage.getItem(TOKEN_STORAGE_KEY)) {
+      showStatus("👋 Welcome! Please enter your GitHub token to get started.", "success");
+      tokenSection.classList.remove("hidden");
+      isTokenVisible = true;
+      tokenToggle.querySelector("span").textContent = "Hide Token";
+      tokenToggle.querySelector("i").className = "fas fa-eye-slash";
+    }
+  }, 1000);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener("DOMContentLoaded", init);
+</script>
+</body>
+</html>
