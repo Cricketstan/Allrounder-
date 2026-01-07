@@ -93,7 +93,7 @@
         "canonical": "https://crickettv.site/home/perth-vs-melbourne/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-07T08:00:00+05:30",
-        "last_modified": "2026-01-07T13:48:40.350+05:30",
+        "last_modified": "2026-01-07T14:11:14.732+05:30",
         "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
       },
       "match": {
@@ -108,6 +108,11 @@
         {
           "name": "Star Sports",
           "src": "https://cricketstan.github.io/Channel-14/",
+          "default": false
+        },
+        {
+          "name": "Willow ",
+          "src": "https://crickettv.site/willow",
           "default": true
         }
       ],
