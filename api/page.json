@@ -191,6 +191,49 @@
           "Pakistan ": "Shadab Khan, Salman Agha (c), Usman Khan (wk), Abdul Samad, Mohammad Nawaz, Sahibzada Farhan, Saim Ayub, Faheem Ashraf, Naseem Shah, Fakhar Zaman, Mohammad Wasim Jr."
         }
       }
+    },
+    {
+      "id": "durban-vs-pretoria",
+      "slug": "durban-vs-pretoria",
+      "seo": {
+        "meta_title": "Durban Vs Pretoria",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/durban-vs-pretoria/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-07T20:24:06.995+05:30",
+        "last_modified": "2026-01-07T20:24:07.021+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Durban Vs Pretoria",
+        "team1": "Pretoria",
+        "team2": "Durban",
+        "venue": "Kingsmead, Durban",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Willow",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07.",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Pretoria": [],
+          "Durban": []
+        },
+        "squads": {
+          "Pretoria": "",
+          "Durban": ""
+        }
+      }
     }
   ]
 }
