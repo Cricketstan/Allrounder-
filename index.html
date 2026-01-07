@@ -1637,13 +1637,13 @@ Live Cricket Streaming Free – Watch IPL, BBL, Ashes on CricTV
 <!-- Premium Footer with Material Icons - UPDATED -->
 <footer>
   <div class="footer-container">
-    <!-- Disclaimer Section -->
-    <div style="text-align: center; margin-bottom: 25px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-      <h3 style="color: #ff4500; font-size: clamp(0.9rem, 2vw, 1rem); font-weight: bold; margin: 0 0 10px 0; font-family: 'Arial', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px;">
-        <span class="material-symbols-outlined" style="font-size: clamp(1rem, 2.2vw, 1.2rem);">warning</span>
+ <!-- Disclaimer Section -->
+    <div class="disclaimer-section">
+      <div class="disclaimer-title">
+        <span class="material-symbols-outlined">warning</span>
         IMPORTANT DISCLAIMER
-      </h3>
-      <p style="color: rgba(255,255,255,0.8); font-size: clamp(0.75rem, 1.8vw, 0.85rem); line-height: 1.5; margin: 0; font-family: 'Arial', sans-serif;">
+      </div>
+      <p class="disclaimer-text">
         All content displayed here is from publicly available sources on the internet. 
         We do not own or claim ownership of any cricket matches, streams, or highlights. 
         This platform is for informational purposes only.
@@ -1652,79 +1652,80 @@ Live Cricket Streaming Free – Watch IPL, BBL, Ashes on CricTV
     
     <!-- Distribution Team Section -->
     <div style="text-align: center; margin-bottom: 25px;">
-      <div style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, #ff4500, #ff8c00); padding: clamp(6px, 1.5vw, 8px) clamp(15px, 4vw, 20px); border-radius: 25px; margin-bottom: 10px;">
-        <span class="material-icons" style="font-size: clamp(0.9rem, 2vw, 1rem); color: white;">groups</span>
-        <span style="color: white; font-size: clamp(0.8rem, 1.8vw, 0.9rem); font-weight: bold; letter-spacing: 1px; font-family: 'Arial', sans-serif;">
-          DISTRIBUTION TEAM DILLZY
-        </span>
+      <div class="team-badge">
+        <span class="material-icons">groups</span>
+        <span>DISTRIBUTION TEAM DILLZY</span>
       </div>
-      <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 10px 0;">
-        <span class="material-icons" style="color: white; font-size: clamp(1rem, 2.2vw, 1.2rem);">copyright</span>
-        <p style="color: white; font-size: clamp(1rem, 2.2vw, 1.2rem); font-weight: bold; margin: 0; font-family: 'Arial', sans-serif;">
-          ALL RIGHTS RESERVED <span id="currentYear"></span>
-        </p>
+      
+      <div class="copyright-line">
+        <span class="material-icons">copyright</span>
+        <span>ALL RIGHTS RESERVED <span id="currentYear">2026</span></span>
       </div>
-      <p style="color: rgba(255,255,255,0.7); font-size: clamp(0.7rem, 1.5vw, 0.8rem); margin: 5px 0; font-family: 'Arial', sans-serif; display: flex; align-items: center; justify-content: center; gap: 5px;">
-        <span class="material-icons" style="font-size: clamp(0.8rem, 1.8vw, 0.9rem);">block</span>
+      
+      <p class="footer-note">
+        <span class="material-icons">block</span>
         Unauthorized distribution or copying is strictly prohibited
       </p>
     </div>
     
     <!-- Quick Links Section -->
-    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: clamp(15px, 3vw, 20px); margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.1);">
-      <h3 style="color: white; text-align: center; font-size: clamp(0.9rem, 2vw, 1rem); font-weight: bold; margin: 0 0 15px 0; font-family: 'Arial', sans-serif; display: flex; align-items: center; justify-content: center; gap: 8px;">
-        <span class="material-icons" style="font-size: clamp(1rem, 2.2vw, 1.2rem);">link</span>
+    <div class="quick-links-section">
+      <div class="section-title">
+        <span class="material-icons">link</span>
         QUICK ACCESS SECTIONS
-      </h3>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-        <button class="footer-btn" data-section="scoreboard-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">scoreboard</span>
+      </div>
+      
+      <div class="buttons-grid">
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">scoreboard</span>
           Live Scores
         </button>
-        <button class="footer-btn" data-section="today-events-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">today</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">today</span>
           Today Events
         </button>
-        <button class="footer-btn" data-section="upcoming-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">event_upcoming</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">event_upcoming</span>
           Upcoming
         </button>
-        <button class="footer-btn" data-section="ashes-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">emoji_events</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">emoji_events</span>
           Ashes
         </button>
-        <button class="footer-btn" data-section="bigbash-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">bolt</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">bolt</span>
           Big Bash
         </button>
-        <button class="footer-btn" data-section="fancode-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">live_tv</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">live_tv</span>
           Fancode
         </button>
-        <button class="footer-btn" data-section="highlights-new-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">new_releases</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">new_releases</span>
           Highlights New
         </button>
-        <button class="footer-btn" data-section="highlights-section">
-          <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem); margin-right: 5px;">play_circle</span>
+        <button class="footer-btn">
+          <span class="material-symbols-outlined">play_circle</span>
           Highlights
         </button>
       </div>
     </div>
     
     <!-- Copyright -->
-    <div style="text-align: center; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
-      <p style="color: rgba(255,255,255,0.6); font-size: clamp(0.7rem, 1.5vw, 0.8rem); margin: 0; font-family: 'Arial', sans-serif; display: flex; align-items: center; justify-content: center; gap: 5px;">
-        <span class="material-symbols-outlined" style="font-size: clamp(0.9rem, 2vw, 1rem);">sports_cricket</span>
+    <div class="footer-bottom">
+      <p class="brand-line">
+        <span class="material-symbols-outlined">sports_cricket</span>
         CricTV • Your Ultimate Cricket Streaming Companion
       </p>
-      <p style="color: rgba(255,255,255,0.5); font-size: clamp(0.65rem, 1.3vw, 0.7rem); margin: 5px 0 0 0; font-family: 'Arial', sans-serif; display: flex; align-items: center; justify-content: center; gap: 5px;">
-        <span class="material-symbols-outlined" style="font-size: clamp(0.8rem, 1.8vw, 0.9rem);">free_cancellation</span>
+      <p class="service-note">
+        <span class="material-symbols-outlined">free_cancellation</span>
         This service is provided free of charge for cricket enthusiasts worldwide
       </p>
     </div>
+    
   </div>
 </footer>
+  
 
 <!-- Popup -->
 <div class="popup-overlay" id="popupOverlay">
