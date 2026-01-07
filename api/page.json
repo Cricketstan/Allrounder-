@@ -2,51 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "england-vs-australia",
-      "slug": "england-vs-australia",
-      "seo": {
-        "meta_title": "England vs Australia Ashes Day 4 Live Streaming",
-        "meta_description": "Watch England vs Australia Ashes Day 4 live streaming online on CricTV.",
-        "canonical": "https://crickettv.site/home/england-vs-australia/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-05T10:00:00+05:30",
-        "last_modified": "2026-01-05T10:00:00+05:30",
-        "breadcrumb_title": "England vs Australia"
-      },
-      "match": {
-        "title": "Australia vs England, Day 4 – Ashes",
-        "team1": "Australia",
-        "team2": "England",
-        "venue": "Australia",
-        "start_iso": "2026-01-05T05:00:00+05:30",
-        "end_iso": "2026-01-05T22:00:00+05:30"
-      },
-      "streams": [
-        {
-          "name": "TNT Sports",
-          "src": "https://cricketstan.github.io/TNT-1/",
-          "default": true
-        }
-      ],
-      "content": {
-        "overview": "Ashes Day 4 sees Australia in a dominant position after strong batting performances.",
-        "match_details": "Match: Australia vs England, Day 4\nTournament: The Ashes\nFormat: Test Match",
-        "pitch_report": "The surface is showing variable bounce making batting tricky in later stages.",
-        "players_to_watch": {
-          "Australia": [
-            "Travis Head",
-            "Steve Smith"
-          ],
-          "England": [
-            "Joe Root",
-            "Ben Stokes"
-          ]
-        },
-        "prediction": "Australia hold a strong advantage going into Day 4.",
-        "final_word": "England must strike early to stay in the contest."
-      }
-    },
-    {
       "id": "indu19-vs-southafricau19",
       "slug": "indu19-vs-southafricau19",
       "seo": {
@@ -131,6 +86,55 @@
         "squads": {
           "Perth Scorchers": "Mitchell Marsh, Sam Fanning, Cooper Connolly, Aaron Hardie, Ashton Turner(c), Nick Hobson, Brody Couch, Finn Allen, Mahli Beardman, Jhye Richardson, Laurie Evans, Joel Paris, David Payne, Corey Rocchiccioli",
           "Melbourne Renegades": "Josh Brown, Tim Seifert, Mohammad Rizwan(w), Jake Fraser-McGurk, Oliver Peake, Will Sutherland(c), Matthew Spoors, Gurinder Sandhu, Caleb Jewell, Jason Behrendorff, Hassan Khan, Sam Elliott, Callum Stow, Andrew Tye"
+        }
+      }
+    },
+    {
+      "id": "england-vs-australia",
+      "slug": "england-vs-australia",
+      "seo": {
+        "meta_title": "England vs Australia Live ",
+        "meta_description": "Watch England vs Australia Ashes Day 4 live streaming online on CricTV.",
+        "canonical": "https://crickettv.site/home/england-vs-australia/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-05T10:00:00+05:30",
+        "last_modified": "2026-01-07T09:13:29.903+05:30",
+        "breadcrumb_title": "England vs Australia"
+      },
+      "match": {
+        "title": "Australia vs England, Day 4 – Ashes",
+        "team1": "Australia",
+        "team2": "England",
+        "venue": "Australia",
+        "start_iso": "2026-01-05T05:00:00+05:30",
+        "end_iso": "2026-01-05T22:00:00+05:30"
+      },
+      "streams": [
+        {
+          "name": "TNT Sports",
+          "src": "https://cricketstan.github.io/TNT-1/",
+          "default": true
+        }
+      ],
+      "content": {
+        "overview": "Ashes Day 4 sees Australia in a dominant position after strong batting performances.",
+        "match_details": "Match: Australia vs England, Day 4\nTournament: The Ashes\nFormat: Test Match",
+        "pitch_report": "The surface is showing variable bounce making batting tricky in later stages.",
+        "prediction": "Australia hold a strong advantage going into Day 4.",
+        "final_word": "England must strike early to stay in the contest.",
+        "players_to_watch": {
+          "Australia": [
+            "Travis Head",
+            "Steve Smith"
+          ],
+          "England": [
+            "Joe Root",
+            "Ben Stokes"
+          ]
+        },
+        "squads": {
+          "Australia": "",
+          "England": ""
         }
       }
     }
