@@ -2,26 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "pretoria-vs-sunrisers",
-      "title": "Sa 20 - Pretoria Vs Sunrisers Live",
-      "description": "Sa 20 - Pretoria Vs Sunrisers Live Streaming ",
-      "players": [
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow"
-        }
-      ],
-      "seo": {
-        "meta_title": "Live Sa 20 ",
-        "meta_description": ""
-      },
-      "content": {
-        "paragraphs": [
-          ""
-        ]
-      }
-    },
-    {
       "id": "adelaide-vs-sydney",
       "title": "Big Bash 2025 - Adelaide Strikers Vs Sydney Thunder",
       "description": "Adelaide Strikers Vs Sydney Thunder Live Streaming Free",
