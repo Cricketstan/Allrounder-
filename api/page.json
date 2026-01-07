@@ -89,7 +89,7 @@
         "canonical": "https://crickettv.site/home/perth-vs-melbourne/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-07T14:00:00+05:30",
-        "last_modified": "2026-01-07T08:23:19.564+05:30",
+        "last_modified": "2026-01-07T08:24:37.494+05:30",
         "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
       },
       "match": {
@@ -129,8 +129,8 @@
           ]
         },
         "squads": {
-          "Perth Scorchers": "Ashton Turner(c), Ashton Agar, Finn Allen, Aaron Hardie, Josh Inglis, Mitchell Marsh",
-          "Melbourne Renegades": "Will Sutherland(c), Jason Behrendorff, Tim Seifert, Andrew Tye, Adam Zampa"
+          "Perth Scorchers": "Mitchell Marsh, Sam Fanning, Cooper Connolly, Aaron Hardie, Ashton Turner(c), Nick Hobson, Brody Couch, Finn Allen, Mahli Beardman, Jhye Richardson, Laurie Evans, Joel Paris, David Payne, Corey Rocchiccioli",
+          "Melbourne Renegades": "Josh Brown, Tim Seifert, Mohammad Rizwan(w), Jake Fraser-McGurk, Oliver Peake, Will Sutherland(c), Matthew Spoors, Gurinder Sandhu, Caleb Jewell, Jason Behrendorff, Hassan Khan, Sam Elliott, Callum Stow, Andrew Tye"
         }
       }
     }
