@@ -137,6 +137,55 @@
           "Melbourne Renegades": "Josh Brown, Tim Seifert, Mohammad Rizwan(w), Jake Fraser-McGurk, Oliver Peake, Will Sutherland(c), Matthew Spoors, Gurinder Sandhu, Caleb Jewell, Jason Behrendorff, Hassan Khan, Sam Elliott, Callum Stow, Andrew Tye"
         }
       }
+    },
+    {
+      "id": "pakistan-vs-srilanka",
+      "slug": "pakistan-vs-srilanka",
+      "seo": {
+        "meta_title": "Pakistan Vs Srilanka Live Streaming ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/pakistan-vs-srilanka/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-07T16:33:10.666+05:30",
+        "last_modified": "2026-01-07T16:33:10.686+05:30",
+        "breadcrumb_title": "Pakistan Vs Srilanka Live Streaming "
+      },
+      "match": {
+        "title": "Pakistan Vs Srilanka Live",
+        "team1": "Srilanka ",
+        "team2": "Pakistan ",
+        "venue": "Rangiri Dambulla International Stadium",
+        "start_iso": "2026-01-07T16:25:00-05:30",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Willow",
+          "src": "",
+          "default": true
+        }
+      ],
+      "content": {
+        "overview": "The much-anticipated T20I series between Sri Lanka and Pakistan kicks off today, at the Rangiri Dambulla International Stadium. Both teams are eager to fine-tune their squads ahead of the T20 World Cup in February, with this series offering crucial preparation for the global event.",
+        "match_details": "The most T20I encounter in Dambulla was between hosts Sri Lanka and Bangladesh. The match went in the favour of the visitors who defeated the Lankans by an 83-run margin back on July 13, 2025.",
+        "pitch_report": "The pitch at the Rangiri Dambulla International Stadium for the first T20I between Sri Lanka and Pakistan is expected to offer a balanced contest between bat and ball. Historically, the ground has favored spinners, especially in the second innings, with six out of the nine matches being won by the team batting first. The highest total recorded in the first innings here is 209, while the lowest is 89, highlighting the potential for both high-scoring and low-scoring affairs.\n\nThe surface is expected to provide good bounce, particularly during the first six overs with the new ball, which will be key for the batters to capitalize on early momentum. This phase will require an aggressive approach from the top order to put pressure on the bowlers. As the game progresses, the pitch is likely to offer more assistance to the spinners, making it crucial for both teams to strategize wisely and adapt quickly to the changing conditions",
+        "prediction": "While Sri Lanka will draw confidence from familiar conditions at home, Pakistan have a more balanced and well-drilled side. With a stronger spin attack and several players show in form, Pakistan are tipped to come away with a victory in the opening T20I.\n\n",
+        "final_word": "Sri Lanka would want to begin the T20I series with a win in the upcoming match, which will also be the first T20I game to be played at this venue between the two teams.\n\nPakistan, on the other hand, would aim to continue the good form that the team was in last year in this format of the game and build momentum for the 2026 T20 World Cup.",
+        "players_to_watch": {
+          "Srilanka ": [
+            "Kusal Mendis",
+            "Pathum Nisnaka"
+          ],
+          "Pakistan ": [
+            "Shadab Khan",
+            "Mohammad Nawaz"
+          ]
+        },
+        "squads": {
+          "Srilanka ": "Kusal Perera, Charith Asalanka, Pathum Nissanka, Kusal Mendis (wk), Kamindu Mendis, Maheesh Theekshana, Eshan Malinga, Matheesha Pathirana, Dasun Shanaka (c), Wanindu Hasaranga, Dustmanth Chameera..",
+          "Pakistan ": "Shadab Khan, Salman Agha (c), Usman Khan (wk), Abdul Samad, Mohammad Nawaz, Sahibzada Farhan, Saim Ayub, Faheem Ashraf, Naseem Shah, Fakhar Zaman, Mohammad Wasim Jr."
+        }
+      }
     }
   ]
 }
