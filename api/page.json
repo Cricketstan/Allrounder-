@@ -133,6 +133,47 @@
           "Melbourne Renegades": "Josh Brown, Tim Seifert, Mohammad Rizwan(w), Jake Fraser-McGurk, Oliver Peake, Will Sutherland(c), Matthew Spoors, Gurinder Sandhu, Caleb Jewell, Jason Behrendorff, Hassan Khan, Sam Elliott, Callum Stow, Andrew Tye"
         }
       }
+    },
+    {
+      "id": "Sb",
+      "slug": "Sb",
+      "seo": {
+        "meta_title": "Ba",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/Sb/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-07T08:41:27.823+05:30",
+        "last_modified": "2026-01-07T08:41:27.823+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
+        }
+      }
     }
   ]
 }
