@@ -3,20 +3,6 @@
   "event": [
 
 {
-      "title": "England Vs Australia",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69299418e4b0f543fc3ed003-1766962829425?location=hero-default&imwidth=1920",
-      "watch_now": [
-        { "id": "home/england-vs-australia", "name": "All Stream" }
-      ],
-      "date": "7 Jan 2026",
-      "start_time": "04:55 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "Ashes"
-},
-
-{
       "title": "Perth Vs Melbourne",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69575148e4b0fe562d4b792e-1767330200557?location=hero-default&imwidth=1920",
       "watch_now": [
