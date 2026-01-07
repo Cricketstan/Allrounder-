@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-07T13:52:04.252403Z",
-  "count": 4,
+  "updated_at": "2026-01-07T14:54:15.630976Z",
+  "count": 5,
   "pages": [
     {
       "id": "indu19-vs-southafricau19",
@@ -26,6 +26,12 @@
       "title": "Pakistan Vs Srilanka Live",
       "url": "https://crickettv.site/home/pakistan-vs-srilanka/",
       "description": "The much-anticipated T20I series between Sri Lanka and Pakistan kicks off today, at the Rangiri Dambulla International Stadium. Both teams are eager to fine-tune their squads ahead of the T20 World Cup in February, with this series offering crucial preparation for the global event."
+    },
+    {
+      "id": "durban-vs-pretoria",
+      "title": "Durban Vs Pretoria",
+      "url": "https://crickettv.site/home/durban-vs-pretoria/",
+      "description": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07."
     }
   ]
 }
