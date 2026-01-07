@@ -144,7 +144,61 @@
   gtag('config', 'G-FMP9REY96D');
 </script>
 <style>
+  :root {
+  --font-main: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-title: 'Oswald', system-ui, sans-serif;
 
+  --container-max-width: 1600px;
+  --container-padding: 20px;
+  --card-min-width: 240px;
+  --card-large-width: 280px;
+  --gap-size: 15px;
+  }
+/* ==================== FONT OVERRIDE SYSTEM ==================== */
+
+/* Default font for entire site */
+body,
+button,
+input,
+textarea,
+select,
+p,
+span,
+div,
+li,
+ul {
+  font-family: var(--font-main) !important;
+}
+
+/* Titles / headings / match names */
+h1, h2, h3, h4, h5,
+.match-title,
+.match-header strong,
+.event-title,
+.upcoming-title,
+.highlight-new-title,
+.highlight-card-title,
+.card-title {
+  font-family: var(--font-title) !important;
+  font-weight: 700 !important;
+}
+
+  /* Buttons & badges */
+button,
+.watch-btn,
+.footer-btn,
+.status,
+.live-badge,
+.premium-badge {
+  font-family: var(--font-main) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px;
+}
+  * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  }
 /* ==================== RESPONSIVE BASE STYLES ==================== */
 :root {
   --container-max-width: 1600px;
