@@ -147,7 +147,7 @@
         "canonical": "https://crickettv.site/home/pakistan-vs-srilanka/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-07T16:33:10.666+05:30",
-        "last_modified": "2026-01-07T18:50:12.427+05:30",
+        "last_modified": "2026-01-07T19:21:55.243+05:30",
         "breadcrumb_title": "Pakistan Vs Srilanka Live Streaming "
       },
       "match": {
@@ -162,6 +162,11 @@
         {
           "name": "TNT ",
           "src": "https://cricketstan.github.io/TNT-1/",
+          "default": false
+        },
+        {
+          "name": "Sony Liv",
+          "src": "https://crickettv.site/sonyliv/sonyliv-5",
           "default": false
         }
       ],
