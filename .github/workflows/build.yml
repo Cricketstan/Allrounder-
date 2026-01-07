@@ -26,6 +26,12 @@ jobs:
           HOME = "/home"
           THUMB = "https://crickettv.site/image/api/crickettv.png"
 
+          def render_list(items):
+              if not items:
+                  return ""
+              return "<ul>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
+
+          # ---------- LOAD DATA ----------
           with open("api/page.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
@@ -36,6 +42,7 @@ jobs:
 
           valid_ids = {p["id"] for p in data["pages"]}
 
+          # ---------- CLEAN REMOVED PAGES ----------
           for name in os.listdir("home"):
               path = os.path.join("home", name)
               if os.path.isdir(path) and name not in valid_ids:
@@ -44,20 +51,40 @@ jobs:
           index_pages = []
           sitemap_urls = []
 
+          # ---------- GENERATE PAGES ----------
           for page in data["pages"]:
               pid = page["id"]
               out_dir = f"home/{pid}"
               os.makedirs(out_dir, exist_ok=True)
 
-              streams = page.get("streams", [])
+              # STREAM BUTTONS
               buttons = []
-              for i, s in enumerate(streams):
-                  cls = "active" if s.get("default") else ""
+              streams = page.get("streams", [])
+              for i, srv in enumerate(streams):
+                  cls = "active" if srv.get("default") else ""
                   buttons.append(
-                      f'<button class="{cls}" data-src="{s["src"]}">{s["name"]}</button>'
+                      f'<button class="{cls}" data-src="{srv["src"]}">{srv["name"]}</button>'
                   )
 
               content = page.get("content", {})
+              players = content.get("players_to_watch", {})
+              squads = content.get("squads", {})
+
+              team1 = page["match"]["team1"]
+              team2 = page["match"]["team2"]
+
+              team1_players = render_list(players.get(team1, []))
+              team2_players = render_list(players.get(team2, []))
+
+              team1_squad = (
+                  "<p>" + squads.get(team1, "") + "</p>"
+                  if squads.get(team1) else ""
+              )
+
+              team2_squad = (
+                  "<p>" + squads.get(team2, "") + "</p>"
+                  if squads.get(team2) else ""
+              )
 
               html = (
                   template
@@ -69,18 +96,22 @@ jobs:
                   .replace("{{LAST_MODIFIED_ISO}}", page["seo"]["last_modified"])
                   .replace("{{BREADCRUMB_TITLE}}", page["seo"]["breadcrumb_title"])
                   .replace("{{TITLE}}", page["match"]["title"])
-                  .replace("{{TEAM1_NAME}}", page["match"]["team1"])
-                  .replace("{{TEAM2_NAME}}", page["match"]["team2"])
+                  .replace("{{TEAM1_NAME}}", team1)
+                  .replace("{{TEAM2_NAME}}", team2)
                   .replace("{{VENUE_NAME}}", page["match"]["venue"])
                   .replace("{{MATCH_START_ISO}}", page["match"]["start_iso"])
                   .replace("{{MATCH_END_ISO}}", page["match"]["end_iso"])
                   .replace("{{DESCRIPTION}}", content.get("overview", ""))
-                  .replace("{{DEFAULT_IFRAME}}", streams[0]["src"] if streams else "")
-                  .replace("{{SERVER_BUTTONS}}", "\n".join(buttons))
                   .replace("{{MATCH_DETAILS}}", content.get("match_details", ""))
                   .replace("{{PITCH_REPORT}}", content.get("pitch_report", ""))
                   .replace("{{PREDICTION}}", content.get("prediction", ""))
                   .replace("{{FINAL_WORD}}", content.get("final_word", ""))
+                  .replace("{{TEAM1_PLAYERS}}", team1_players)
+                  .replace("{{TEAM2_PLAYERS}}", team2_players)
+                  .replace("{{TEAM1_SQUAD}}", team1_squad)
+                  .replace("{{TEAM2_SQUAD}}", team2_squad)
+                  .replace("{{DEFAULT_IFRAME}}", streams[0]["src"] if streams else "")
+                  .replace("{{SERVER_BUTTONS}}", "\n".join(buttons))
               )
 
               with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
@@ -95,6 +126,7 @@ jobs:
 
               sitemap_urls.append(page["seo"]["canonical"])
 
+          # ---------- home/id.json ----------
           with open("home/id.json", "w", encoding="utf-8") as f:
               json.dump({
                   "site": SITE,
@@ -103,6 +135,7 @@ jobs:
                   "pages": index_pages
               }, f, indent=2)
 
+          # ---------- sitemap.xml ----------
           today = datetime.date.today().isoformat()
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
