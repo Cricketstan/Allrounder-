@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-07T03:03:44.170644Z",
-  "count": 3,
+  "updated_at": "2026-01-07T03:11:35.515602Z",
+  "count": 4,
   "pages": [
     {
       "id": "england-vs-australia",
@@ -20,6 +20,12 @@
       "title": "Perth vs Melbourne Live Streaming ",
       "url": "https://crickettv.site/home/perth-vs-melbourne/",
       "description": "The Perth Scorchers vs Melbourne Renegades match fits perfectly into a crucial phase of the tournament. The Scorchers have a good chance as they have gained some momentum in the previous games, and another victory will enhance their chances of making it to the playoffs.\n\nFor the , the stakes are even higher, as they are now in a must-win position after a run of close defeats pushed them towards the lower end of the table. To stay alive in the competition, they need consistency, calm decision-making, and the ability to"
+    },
+    {
+      "id": "Sb",
+      "title": "",
+      "url": "https://crickettv.site/home/Sb/",
+      "description": ""
     }
   ]
 }
