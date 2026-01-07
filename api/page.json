@@ -36,60 +36,6 @@
       }
     },
     {
-      "id": "perth-vs-melbourne",
-      "slug": "perth-vs-melbourne",
-      "seo": {
-        "meta_title": "Perth Scorchers vs Melbourne Renegades Live Streaming",
-        "meta_description": "Watch Perth Scorchers vs Melbourne Renegades live streaming online with match details and prediction.",
-        "canonical": "https://crickettv.site/home/perth-vs-melbourne/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-07T08:00:00+05:30",
-        "last_modified": "2026-01-07T08:33:33.781+05:30",
-        "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
-      },
-      "match": {
-        "title": "Perth vs Melbourne Live Streaming ",
-        "team1": "Perth Scorchers",
-        "team2": "Melbourne Renegades",
-        "venue": "Perth Stadium",
-        "start_iso": "2026-01-07T13:30:00+05:30",
-        "end_iso": "2026-01-07T23:00:00+05:30"
-      },
-      "streams": [
-        {
-          "name": "Star Sports",
-          "src": "https://cricketstan.github.io/Channel-14/",
-          "default": true
-        },
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow",
-          "default": true
-        }
-      ],
-      "content": {
-        "overview": "The Perth Scorchers vs Melbourne Renegades match fits perfectly into a crucial phase of the tournament. The Scorchers have a good chance as they have gained some momentum in the previous games, and another victory will enhance their chances of making it to the playoffs.\n\nFor the , the stakes are even higher, as they are now in a must-win position after a run of close defeats pushed them towards the lower end of the table. To stay alive in the competition, they need consistency, calm decision-making, and the ability to",
-        "match_details": "Match: Perth Scorchers vs Melbourne Renegades, 26th Match\nTournament: Big Bash League 2026\nDate: 7 January 2026\nVenue: Perth Stadium",
-        "pitch_report": "Perth Stadium offers bounce and pace, assisting fast bowlers early.",
-        "prediction": "Perth Jitega Ye Match Perth Ko Support Krenge ",
-        "final_word": "the Scorchers, it is about consolidating dominance and building a winning rhythm heading deeper into the tournament. For the Renegades, it represents resilience, and a chance to prove they can still shape the season narrative.\n\nExpect strategy, tension, and decisive key battles under the Perth lights, where one bold partnership or game-changing bowling spell may decide everything.",
-        "players_to_watch": {
-          "Perth Scorchers": [
-            "Ashton Turner",
-            "Aaron Hardie"
-          ],
-          "Melbourne Renegades": [
-            "Tim Seifert",
-            "Josh Brown"
-          ]
-        },
-        "squads": {
-          "Perth Scorchers": "Mitchell Marsh, Sam Fanning, Cooper Connolly, Aaron Hardie, Ashton Turner(c), Nick Hobson, Brody Couch, Finn Allen, Mahli Beardman, Jhye Richardson, Laurie Evans, Joel Paris, David Payne, Corey Rocchiccioli",
-          "Melbourne Renegades": "Josh Brown, Tim Seifert, Mohammad Rizwan(w), Jake Fraser-McGurk, Oliver Peake, Will Sutherland(c), Matthew Spoors, Gurinder Sandhu, Caleb Jewell, Jason Behrendorff, Hassan Khan, Sam Elliott, Callum Stow, Andrew Tye"
-        }
-      }
-    },
-    {
       "id": "england-vs-australia",
       "slug": "england-vs-australia",
       "seo": {
@@ -135,6 +81,55 @@
         "squads": {
           "Australia": "",
           "England": ""
+        }
+      }
+    },
+    {
+      "id": "perth-vs-melbourne",
+      "slug": "perth-vs-melbourne",
+      "seo": {
+        "meta_title": "Perth Scorchers vs Melbourne Renegades Live Streaming",
+        "meta_description": "Watch Perth Scorchers vs Melbourne Renegades live streaming online with match details and prediction.",
+        "canonical": "https://crickettv.site/home/perth-vs-melbourne/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-07T08:00:00+05:30",
+        "last_modified": "2026-01-07T13:48:40.350+05:30",
+        "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
+      },
+      "match": {
+        "title": "Perth vs Melbourne Live Streaming ",
+        "team1": "Perth Scorchers",
+        "team2": "Melbourne Renegades",
+        "venue": "Perth Stadium",
+        "start_iso": "2026-01-07T13:30:00+05:30",
+        "end_iso": "2026-01-07T23:00:00+05:30"
+      },
+      "streams": [
+        {
+          "name": "Star Sports",
+          "src": "https://cricketstan.github.io/Channel-14/",
+          "default": true
+        }
+      ],
+      "content": {
+        "overview": "The Perth Scorchers vs Melbourne Renegades match fits perfectly into a crucial phase of the tournament. The Scorchers have a good chance as they have gained some momentum in the previous games, and another victory will enhance their chances of making it to the playoffs.\n\nFor the , the stakes are even higher, as they are now in a must-win position after a run of close defeats pushed them towards the lower end of the table. To stay alive in the competition, they need consistency, calm decision-making, and the ability to",
+        "match_details": "Match: Perth Scorchers vs Melbourne Renegades, 26th Match\nTournament: Big Bash League 2026\nDate: 7 January 2026\nVenue: Perth Stadium",
+        "pitch_report": "Perth Stadium offers bounce and pace, assisting fast bowlers early.",
+        "prediction": "Perth Jitega Ye Match Perth Ko Support Krenge ",
+        "final_word": "the Scorchers, it is about consolidating dominance and building a winning rhythm heading deeper into the tournament. For the Renegades, it represents resilience, and a chance to prove they can still shape the season narrative.\n\nExpect strategy, tension, and decisive key battles under the Perth lights, where one bold partnership or game-changing bowling spell may decide everything.",
+        "players_to_watch": {
+          "Perth Scorchers": [
+            "Ashton Turner",
+            "Aaron Hardie"
+          ],
+          "Melbourne Renegades": [
+            "Tim Seifert",
+            "Josh Brown"
+          ]
+        },
+        "squads": {
+          "Perth Scorchers": "Mitchell Marsh, Sam Fanning, Cooper Connolly, Aaron Hardie, Ashton Turner(c), Nick Hobson, Brody Couch, Finn Allen, Mahli Beardman, Jhye Richardson, Laurie Evans, Joel Paris, David Payne, Corey Rocchiccioli",
+          "Melbourne Renegades": "Josh Brown, Tim Seifert, Mohammad Rizwan(w), Jake Fraser-McGurk, Oliver Peake, Will Sutherland(c), Matthew Spoors, Gurinder Sandhu, Caleb Jewell, Jason Behrendorff, Hassan Khan, Sam Elliott, Callum Stow, Andrew Tye"
         }
       }
     }
