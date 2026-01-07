@@ -89,7 +89,7 @@
         "canonical": "https://crickettv.site/home/perth-vs-melbourne/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-07T14:00:00+05:30",
-        "last_modified": "2026-01-07T08:27:49.468+05:30",
+        "last_modified": "2026-01-07T08:33:33.781+05:30",
         "breadcrumb_title": "Perth Scorchers vs Melbourne Renegades"
       },
       "match": {
@@ -97,7 +97,7 @@
         "team1": "Perth Scorchers",
         "team2": "Melbourne Renegades",
         "venue": "Perth Stadium",
-        "start_iso": "2026-01-07T19:30:00+05:30",
+        "start_iso": "2026-01-07T13:30:00+05:30",
         "end_iso": "2026-01-07T23:00:00+05:30"
       },
       "streams": [
