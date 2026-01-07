@@ -1436,6 +1436,14 @@ body {
     padding-right: 0;
   }
 }
+  /* DISABLE AUTO / SNAP SCROLL FOR WPL ONLY */
+#wplContainer {
+  scroll-snap-type: none !important;
+  scroll-behavior: auto !important;
+}
+#wplContainer > * {
+  scroll-snap-align: none !important;
+}
 </style>
 </head>
 <body>
