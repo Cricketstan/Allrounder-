@@ -1592,6 +1592,24 @@ Live Cricket Streaming Free – Watch IPL, BBL, Ashes on CricTV
       <div class="match-skeleton"></div>
     </div>
   </section>
+  <!-- WPL Section -->
+<section id="wpl-section">
+  <h2>Women's Premier League (WPL)</h2>
+  <div style="display:none">
+    <h3>Women's Premier League Highlights</h3>
+    <p>
+      Watch WPL cricket highlights including matches, sixes, wickets,
+      match-winning moments, and exclusive WPL tournament coverage
+      from the Women's Premier League.
+    </p>
+  </div>
+  <div class="scroll-container" id="wplContainer">
+    <!-- Skeleton loader -->
+    <div class="match-skeleton"></div>
+    <div class="match-skeleton"></div>
+    <div class="match-skeleton"></div>
+  </div>
+</section>
 
   <!-- Highlights New Section -->
   <section id="highlights-new-section">
@@ -2820,6 +2838,108 @@ card.addEventListener('click', () => {
   popupFooter.textContent = 'Direct stream from Sony LIV';
   popupOverlay.style.display = 'flex';
 });
+  // Load WPL Section
+async function loadWPLSection() {
+  try {
+    const container = document.getElementById('wplContainer');
+    
+    console.log('Loading WPL section...');
+    
+    // Fetch WPL data
+    const response = await fetch('https://crickettv.site/api/wpl.json');
+    const data = await response.json();
+    
+    // Clear skeleton loaders
+    container.innerHTML = '';
+    
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = '<p style="color:#ccc; text-align:center; padding:20px; width:100%; font-family:\'Arial\', sans-serif;">No WPL highlights available</p>';
+      return;
+    }
+    
+    // Take only first 10 items
+    const videos = data.items.slice(0, 10);
+    console.log('WPL highlights loaded (first 10):', videos.length);
+    
+    // Create WPL highlight cards
+    videos.forEach(video => {
+      const card = document.createElement('div');
+      card.className = 'highlight-new-card';
+      
+      // Use thumbnail or fallback
+      const thumbnail = video.thumbnail || `https://via.placeholder.com/260x146/8a2be2/ffffff?text=WPL+Highlight`;
+      
+      card.innerHTML = `
+        <img src="${thumbnail}" alt="${video.title}" 
+             onerror="this.src='https://via.placeholder.com/260x146/8a2be2/ffffff?text=WPL'">
+        <div class="highlight-new-title">${video.title}</div>
+      `;
+      
+      card.addEventListener('click', () => {
+        if (video.url) {
+          window.location.href = video.url;
+        } else {
+          alert('Video URL not available for this highlight.');
+        }
+      });
+      
+      container.appendChild(card);
+    });
+    
+    // Add "Load More" button
+    const loadMoreCard = document.createElement('div');
+    loadMoreCard.className = 'load-more-card';
+    loadMoreCard.innerHTML = `
+      <div class="icon">+</div>
+      <div class="text">View All WPL</div>
+      <div class="count">${data.items.length} videos</div>
+    `;
+    
+    loadMoreCard.addEventListener('click', () => {
+      window.location.href = 'https://crickettv.site/wpl';
+    });
+    
+    container.appendChild(loadMoreCard);
+    
+    // Start auto-scroll for WPL section
+    startWPLAutoScroll();
+    
+  } catch (error) {
+    console.error('Error loading WPL section:', error);
+    const container = document.getElementById('wplContainer');
+    container.innerHTML = '<p style="color:#ccc; text-align:center; padding:20px; width:100%; font-family:\'Arial\', sans-serif;">Unable to load WPL highlights</p>';
+  }
+}
+
+// Auto-scroll for WPL section
+function startWPLAutoScroll() {
+  const container = document.getElementById('wplContainer');
+  if (!container.children.length) return;
+  
+  let scrollInterval;
+  let userScrolling = false;
+  
+  function scrollToNext() {
+    if (userScrolling) return;
+    
+    const cardWidth = 260 + 15; // width + gap
+    if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+      container.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      container.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    }
+  }
+  
+  scrollInterval = setInterval(scrollToNext, 8000);
+  
+  container.addEventListener('scroll', () => {
+    userScrolling = true;
+    clearTimeout(window.wplScrollTimeout);
+    window.wplScrollTimeout = setTimeout(() => {
+      userScrolling = false;
+    }, 3000);
+  });
+  }
 </script>
 </body>
 </html>
