@@ -3,6 +3,20 @@
   "event": [
 
 {
+      "title": "Pakistan Vs Srilanka",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68cc9d3fe4b0ad10d8406d7d-1758242310223?location=hero-default&imwidth=1920",
+      "watch_now": [
+        { "id": "home/pakistan-vs-srilanka", "name": "All Stream" }
+      ],
+      "date": "7 Jan 2026",
+      "start_time": "06:55 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Eng",
+      "league": "ICC"
+},
+
+{
       "title": "Perth Vs Melbourne",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1000/sources/r1/cms/prod/4068/1767707904068-h",
       "watch_now": [
