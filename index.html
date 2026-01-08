@@ -2984,37 +2984,49 @@ function startWPLAutoScroll() {
   let currentY = 0;
   let dragging = false;
 
-  // Redirect on click
-  fab.addEventListener("click", () => {
-    if(!dragging){
-      window.location.href = "/feedback.html"; // CHANGE if needed
-    }
-  });
+  // REPLACE the existing feedback button JavaScript (lines around ~2267-2295) with:
 
-  fab.addEventListener("touchstart", e => {
-    dragging = false;
-    startY = e.touches[0].clientY - currentY;
-  });
-
-  fab.addEventListener("touchmove", e => {
-    dragging = true;
-    currentY = e.touches[0].clientY - startY;
-    currentY = Math.max(-200, Math.min(currentY, 200));
-    fab.style.transform = `translateY(${currentY}px)`;
-  });
-
-  fab.addEventListener("touchend", () => {
-    if(currentY > 120){
-      fab.classList.add("hidden");
-    } else {
-      fab.style.transform = `translateY(0)`;
-      currentY = 0;
-    }
-    setTimeout(() => dragging = false, 50);
-  });
-
-})();
+(function(){
+  const fab = document.getElementById("feedback-fab");
   
+  if (!fab) return; // Exit if button doesn't exist
+  
+  // Simple click handler
+  fab.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Redirect to feedback page
+    window.location.href = "feedback.html";
+    // OR open in new tab:
+    // window.open("feedback.html", "_blank");
+  });
+  
+  // Optional: Add some visual feedback
+  fab.addEventListener("mousedown", () => {
+    fab.style.transform = "scale(0.95)";
+  });
+  
+  fab.addEventListener("mouseup", () => {
+    fab.style.transform = "scale(1)";
+  });
+  
+  fab.addEventListener("mouseleave", () => {
+    fab.style.transform = "scale(1)";
+  });
+  
+  // Simple touch feedback
+  fab.addEventListener("touchstart", (e) => {
+    e.preventDefault();
+    fab.style.transform = "scale(0.95)";
+  });
+  
+  fab.addEventListener("touchend", (e) => {
+    e.preventDefault();
+    fab.style.transform = "scale(1)";
+  });
+  
+})();
 </script>
   <!-- Floating Feedback Button -->
 <div id="feedback-fab">
