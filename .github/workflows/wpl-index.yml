@@ -16,7 +16,10 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Build WPL statics page
         run: |
@@ -37,15 +40,16 @@ jobs:
 
           for v in items:
               cards.append(
-                  '<a class="card" href="' + v.get("url","") + '">\n'
-                  '  <div class="thumb">\n'
-                  '    <img src="' + v.get("thumbnail","") + '" loading="lazy" alt="' + v.get("title","") + '">\n'
-                  '  </div>\n'
-                  '  <div class="info">\n'
-                  '    <div class="title">' + v.get("title","") + '</div>\n'
-                  '    <div class="meta">' + v.get("published_readable","") + ' • ' + str(v.get("duration","")) + 's</div>\n'
-                  '  </div>\n'
-                  '</a>\n'
+                  f'''<a class="card" href="{v.get("url","")}">
+    <div class="thumb">
+      <img src="{v.get("thumbnail","")}" loading="lazy" alt="{v.get("title","")}">
+    </div>
+    <div class="info">
+      <div class="title">{v.get("title","")}</div>
+      <div class="meta">{v.get("published_readable","")} • {v.get("duration","")}s</div>
+    </div>
+  </a>
+  '''
               )
 
           with open(TEMPLATE, "r", encoding="utf-8") as f:
@@ -55,7 +59,7 @@ jobs:
           end = html.find("<!-- WPL_CARDS_END -->")
 
           if start == -1 or end == -1:
-              raise Exception("WPL_CARDS markers not found in template")
+              raise Exception("WPL_CARDS markers not found")
 
           html = (
               html[:start]
@@ -71,10 +75,15 @@ jobs:
           print("WPL statics page built:", len(cards))
           EOF
 
-      - name: Commit & push
+      - name: Commit & push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add wpl/index.html
-          git commit -m "Auto update WPL statics page" || exit 0
-          git push
+
+          if [[ -n "$(git status --porcelain wpl/index.html)" ]]; then
+            git add wpl/index.html
+            git commit -m "Auto update WPL statics page"
+            git push
+          else
+            echo "No changes in wpl/index.html"
+          fi
