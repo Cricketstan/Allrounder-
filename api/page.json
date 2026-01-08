@@ -249,22 +249,22 @@
         "canonical": "https://crickettv.site/home/star-vs-sixers/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-08T10:58:28.398+05:30",
-        "last_modified": "2026-01-08T10:58:28.416+05:30",
+        "last_modified": "2026-01-08T12:07:33.529+05:30",
         "breadcrumb_title": ""
       },
       "match": {
         "title": "Melbourne Star Vs Sixers ",
-        "team1": "",
-        "team2": "",
-        "venue": "",
+        "team1": "Sydney Sixers",
+        "team2": "Melbourne Star",
+        "venue": "Melbourne Stadium ",
         "start_iso": "",
         "end_iso": ""
       },
       "streams": [
         {
-          "name": "",
-          "src": "",
-          "default": false
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/",
+          "default": true
         }
       ],
       "content": {
@@ -274,10 +274,12 @@
         "prediction": "",
         "final_word": "",
         "players_to_watch": {
-          "": []
+          "Sydney Sixers": [],
+          "Melbourne Star": []
         },
         "squads": {
-          "": ""
+          "Sydney Sixers": "Daniel Hughes, Babar Azam, Josh Philippe(w), Moises Henriques(c), Jordan Silk, Jack Edwards, Joel Davies, Ben Manenti, Hayden Kerr, Ben Dwarshuis, Sean Abbott, Sam Curran, Mitchell Perry, Lachlan Shaw",
+          "Melbourne Star": "Thomas Rogers, Sam Harper(w), Campbell Kellaway, Blake Macdonald, Glenn Maxwell, Marcus Stoinis(c), Hilton Cartwright, Tom Curran, Mitchell Swepson, Haris Rauf, Peter Siddle, Sam Hain, Liam Hatcher, Hamish McKenzie"
         }
       }
     }
