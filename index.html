@@ -228,7 +228,6 @@ body {
   overflow-y: auto;
   padding-bottom: 40px;
 }
-/* ===== SEO SAFE TEXT (NO UI IMPACT) ===== */
 .seo-text {
   font-size: 0.01px;
   line-height: 0.01px;
@@ -236,6 +235,8 @@ body {
   opacity: 0.01;
   pointer-events: none;
   user-select: none;
+
+  position: absolute;   /* 🔑 FIX */
 }
 * {
   -webkit-tap-highlight-color: transparent;
