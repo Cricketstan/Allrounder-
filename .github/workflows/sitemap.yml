@@ -1,12 +1,12 @@
-name: Auto Generate Sitemap
+name: Sitemap Generator
 
 on:
+  workflow_dispatch:
   push:
     paths:
-      - home/id.json   # run immediately when id.json changes
-
+      - home/id.json
   schedule:
-    - cron: "*/15 * * * *"   # run every 15 minutes
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
@@ -16,16 +16,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Generate sitemap.xml from id.json
+      - name: Debug trigger
+        run: echo "Workflow triggered successfully"
+
+      - name: Generate sitemap.xml
         run: |
           python3 << 'EOF'
           import json
           from datetime import date
 
-          ID_JSON_PATH = "home/id.json"
+          ID_JSON = "home/id.json"
 
           EXTRA_URLS = [
               "https://crickettv.site/",
@@ -35,39 +38,36 @@ jobs:
 
           today = date.today().isoformat()
 
-          with open(ID_JSON_PATH, "r", encoding="utf-8") as f:
+          with open(ID_JSON, "r", encoding="utf-8") as f:
               data = json.load(f)
 
           urls = EXTRA_URLS[:]
-
-          for page in data.get("pages", []):
-              if "url" in page:
-                  urls.append(page["url"])
+          for p in data.get("pages", []):
+              if "url" in p:
+                  urls.append(p["url"])
 
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
               '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
           ]
 
-          for url in sorted(set(urls)):
-              sitemap.extend([
+          for u in sorted(set(urls)):
+              sitemap += [
                   "  <url>",
-                  f"    <loc>{url}</loc>",
+                  f"    <loc>{u}</loc>",
                   f"    <lastmod>{today}</lastmod>",
                   "    <changefreq>weekly</changefreq>",
                   "    <priority>0.7</priority>",
                   "  </url>"
-              ])
+              ]
 
           sitemap.append("</urlset>")
 
-          with open("sitemap.xml", "w", encoding="utf-8") as f:
+          with open("sitemap.xml", "w") as f:
               f.write("\n".join(sitemap))
-
-          print("✅ sitemap.xml generated")
           EOF
 
-      - name: Commit and push sitemap.xml
+      - name: Commit sitemap
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
