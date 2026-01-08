@@ -1,4 +1,4 @@
-name: Sitemap Generator
+name: Auto Generate Sitemap
 
 on:
   workflow_dispatch:
@@ -16,11 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Debug trigger
-        run: echo "Workflow triggered successfully"
 
       - name: Generate sitemap.xml
         run: |
@@ -28,23 +25,23 @@ jobs:
           import json
           from datetime import date
 
-          ID_JSON = "home/id.json"
+          ID_JSON_PATH = "home/id.json"
 
           EXTRA_URLS = [
               "https://crickettv.site/",
-              "https://crickettv.site/wpl",
-              "https://crickettv.site/cricket-tv-hd"
+              "https://crickettv.site/cricket-tv-hd",
+              "https://crickettv.site/wpl"
           ]
 
           today = date.today().isoformat()
 
-          with open(ID_JSON, "r", encoding="utf-8") as f:
+          with open(ID_JSON_PATH, "r", encoding="utf-8") as f:
               data = json.load(f)
 
           urls = EXTRA_URLS[:]
-          for p in data.get("pages", []):
-              if "url" in p:
-                  urls.append(p["url"])
+          for page in data.get("pages", []):
+              if "url" in page:
+                  urls.append(page["url"])
 
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
@@ -52,25 +49,36 @@ jobs:
           ]
 
           for u in sorted(set(urls)):
-              sitemap += [
+              if u == "https://crickettv.site/":
+                  priority = "1.0"
+              elif u == "https://crickettv.site/cricket-tv-hd":
+                  priority = "0.9"
+              elif u == "https://crickettv.site/wpl":
+                  priority = "0.8"
+              else:
+                  priority = "0.7"
+
+              sitemap.extend([
                   "  <url>",
                   f"    <loc>{u}</loc>",
                   f"    <lastmod>{today}</lastmod>",
                   "    <changefreq>weekly</changefreq>",
-                  "    <priority>0.7</priority>",
+                  f"    <priority>{priority}</priority>",
                   "  </url>"
-              ]
+              ])
 
           sitemap.append("</urlset>")
 
-          with open("sitemap.xml", "w") as f:
+          with open("sitemap.xml", "w", encoding="utf-8") as f:
               f.write("\n".join(sitemap))
+
+          print("✅ sitemap.xml generated successfully")
           EOF
 
-      - name: Commit sitemap
+      - name: Commit and push sitemap.xml
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add sitemap.xml
-          git commit -m "Auto update sitemap" || echo "No changes"
+          git commit -m "Auto update sitemap.xml" || echo "No changes"
           git push
