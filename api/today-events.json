@@ -2,40 +2,27 @@
 {
   "event": [
 
-{
-      "title": "Australia Vs England",
-      "poster_link": "https://support.7plus.com.au/hc/article_attachments/41805157846541",
-      "watch_now": [
-        { "id": "home/england-vs-australia", "name": "All Stream" }
-      ],
-      "date": "8 Jan 2026",
-      "start_time": "04:55 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "Ashes"
-},
 
 {
-      "title": "Pakistan Vs Srilanka",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68cc9d3fe4b0ad10d8406d7d-1758242310223?location=hero-default&imwidth=1920",
+      "title": "Melbourne Vs Sydney",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6942312de4b02e5e1749b3b8-1766733407799?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home/pakistan-vs-srilanka", "name": "All Stream" }
+        { "id": "home/star-vs-sixers", "name": "All Stream" }
       ],
-      "date": "7 Jan 2026",
-      "start_time": "06:55 PM",
+      "date": "8 Jan 2026",
+      "start_time": "01:40 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
-      "league": "ICC"
+      "league": "BBL"
 },
 {
-      "title": "Durban Vs Pretoria",
+      "title": "South Africa T20",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home/durban-vs-pretoria", "name": "All Stream" }
       ],
-      "date": "7 Jan 2026",
+      "date": "8 Jan 2026",
       "start_time": "08:55 PM",
       "category": "Cricket",
       "year": "2025",
