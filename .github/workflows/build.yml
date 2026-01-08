@@ -17,113 +17,149 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate static pages safely
+      - name: Generate static pages, clean removed IDs & sitemap
         run: |
-          python3 << 'EOF'
-import json, os, shutil, datetime
+          python3 - << 'EOF'
+          import json, os, shutil, datetime
 
-SITE = "https://crickettv.site"
-HOME_DIR = "home"
-SAFE_DIRS = {"wpl", "assets", "images"}
-SEO_PAGES = ["https://crickettv.site/cricket-tv-hd"]
+          SITE = "https://crickettv.site"
+          HOME = "/home"
+          THUMB = "https://crickettv.site/image/api/crickettv.png"
 
-def render_list(items):
-    if not items:
-        return ""
-    return "<ul>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
+          def render_list(items):
+              if not items:
+                  return ""
+              return "<ul>" + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
 
-with open("api/page.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+          # ---------- LOAD DATA ----------
+          with open("api/page.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
 
-with open("template/index.html", "r", encoding="utf-8") as f:
-    template = f.read()
+          with open("template/index.html", "r", encoding="utf-8") as f:
+              template = f.read()
 
-os.makedirs(HOME_DIR, exist_ok=True)
-valid_ids = {p["id"] for p in data["pages"]}
+          os.makedirs("home", exist_ok=True)
 
-# SAFE CLEANUP
-for name in os.listdir(HOME_DIR):
-    path = os.path.join(HOME_DIR, name)
-    if not os.path.isdir(path):
-        continue
-    if name in SAFE_DIRS:
-        continue
-    if name not in valid_ids and os.path.exists(os.path.join(path, "index.html")):
-        shutil.rmtree(path)
+          valid_ids = {p["id"] for p in data["pages"]}
 
-sitemap_urls = []
-index_pages = []
+          # ---------- CLEAN REMOVED PAGES ----------
+          for name in os.listdir("home"):
+              path = os.path.join("home", name)
+              if os.path.isdir(path) and name not in valid_ids:
+                  shutil.rmtree(path)
 
-for page in data["pages"]:
-    pid = page["id"]
-    out_dir = f"{HOME_DIR}/{pid}"
-    os.makedirs(out_dir, exist_ok=True)
+          index_pages = []
+          sitemap_urls = []
 
-    streams = page.get("streams", [])
-    buttons = [
-        f'<button data-src="{s["src"]}">{s["name"]}</button>'
-        for s in streams
-    ]
+          # ---------- GENERATE PAGES ----------
+          for page in data["pages"]:
+              pid = page["id"]
+              out_dir = f"home/{pid}"
+              os.makedirs(out_dir, exist_ok=True)
 
-    content = page.get("content", {})
-    team1 = page["match"]["team1"]
-    team2 = page["match"]["team2"]
+              # STREAM BUTTONS
+              buttons = []
+              streams = page.get("streams", [])
+              for i, srv in enumerate(streams):
+                  cls = "active" if srv.get("default") else ""
+                  buttons.append(
+                      f'<button class="{cls}" data-src="{srv["src"]}">{srv["name"]}</button>'
+                  )
 
-    html = (
-        template
-        .replace("{{META_TITLE}}", page["seo"]["meta_title"])
-        .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"])
-        .replace("{{CANONICAL}}", page["seo"]["canonical"])
-        .replace("{{TITLE}}", page["match"]["title"])
-        .replace("{{TEAM1_NAME}}", team1)
-        .replace("{{TEAM2_NAME}}", team2)
-        .replace("{{DESCRIPTION}}", content.get("overview", ""))
-        .replace("{{DEFAULT_IFRAME}}", streams[0]["src"] if streams else "")
-        .replace("{{SERVER_BUTTONS}}", "\n".join(buttons))
-    )
+              content = page.get("content", {})
+              players = content.get("players_to_watch", {})
+              squads = content.get("squads", {})
 
-    with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
-        f.write(html)
+              team1 = page["match"]["team1"]
+              team2 = page["match"]["team2"]
 
-    sitemap_urls.append(page["seo"]["canonical"])
-    index_pages.append({"id": pid, "url": page["seo"]["canonical"]})
+              team1_players = render_list(players.get(team1, []))
+              team2_players = render_list(players.get(team2, []))
 
-# ADD SEO PAGE
-sitemap_urls.extend(SEO_PAGES)
-sitemap_urls = sorted(set(sitemap_urls))
+              team1_squad = (
+                  "<p>" + squads.get(team1, "") + "</p>"
+                  if squads.get(team1) else ""
+              )
 
-today = datetime.date.today().isoformat()
-sitemap = [
-    '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
-]
+              team2_squad = (
+                  "<p>" + squads.get(team2, "") + "</p>"
+                  if squads.get(team2) else ""
+              )
 
-for url in sitemap_urls:
-    sitemap.append(f"""  <url>
-    <loc>{url}</loc>
-    <lastmod>{today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>""")
+              html = (
+                  template
+                  .replace("{{META_TITLE}}", page["seo"]["meta_title"])
+                  .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"])
+                  .replace("{{CANONICAL}}", page["seo"]["canonical"])
+                  .replace("{{SCHEMA_THUMBNAIL}}", page["seo"].get("thumbnail", THUMB))
+                  .replace("{{PUBLISH_DATE_ISO}}", page["seo"]["publish_date"])
+                  .replace("{{LAST_MODIFIED_ISO}}", page["seo"]["last_modified"])
+                  .replace("{{BREADCRUMB_TITLE}}", page["seo"]["breadcrumb_title"])
+                  .replace("{{TITLE}}", page["match"]["title"])
+                  .replace("{{TEAM1_NAME}}", team1)
+                  .replace("{{TEAM2_NAME}}", team2)
+                  .replace("{{VENUE_NAME}}", page["match"]["venue"])
+                  .replace("{{MATCH_START_ISO}}", page["match"]["start_iso"])
+                  .replace("{{MATCH_END_ISO}}", page["match"]["end_iso"])
+                  .replace("{{DESCRIPTION}}", content.get("overview", ""))
+                  .replace("{{MATCH_DETAILS}}", content.get("match_details", ""))
+                  .replace("{{PITCH_REPORT}}", content.get("pitch_report", ""))
+                  .replace("{{PREDICTION}}", content.get("prediction", ""))
+                  .replace("{{FINAL_WORD}}", content.get("final_word", ""))
+                  .replace("{{TEAM1_PLAYERS}}", team1_players)
+                  .replace("{{TEAM2_PLAYERS}}", team2_players)
+                  .replace("{{TEAM1_SQUAD}}", team1_squad)
+                  .replace("{{TEAM2_SQUAD}}", team2_squad)
+                  .replace("{{DEFAULT_IFRAME}}", streams[0]["src"] if streams else "")
+                  .replace("{{SERVER_BUTTONS}}", "\n".join(buttons))
+              )
 
-sitemap.append("</urlset>")
+              with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
+                  f.write(html)
 
-with open("sitemap.xml", "w", encoding="utf-8") as f:
-    f.write("\n".join(sitemap))
+              index_pages.append({
+                  "id": pid,
+                  "title": page["match"]["title"],
+                  "url": page["seo"]["canonical"],
+                  "description": content.get("overview", "")
+              })
 
-with open("home/id.json", "w", encoding="utf-8") as f:
-    json.dump({
-        "site": SITE,
-        "updated_at": datetime.datetime.utcnow().isoformat() + "Z",
-        "count": len(index_pages),
-        "pages": index_pages
-    }, f, indent=2)
-EOF
+              sitemap_urls.append(page["seo"]["canonical"])
+
+          # ---------- home/id.json ----------
+          with open("home/id.json", "w", encoding="utf-8") as f:
+              json.dump({
+                  "site": SITE,
+                  "updated_at": datetime.datetime.utcnow().isoformat() + "Z",
+                  "count": len(index_pages),
+                  "pages": index_pages
+              }, f, indent=2)
+
+          # ---------- sitemap.xml ----------
+          today = datetime.date.today().isoformat()
+          sitemap = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
+          ]
+
+          for url in sitemap_urls:
+              sitemap.append(f'''  <url>
+                <loc>{url}</loc>
+                <lastmod>{today}</lastmod>
+                <changefreq>weekly</changefreq>
+                <priority>0.7</priority>
+              </url>''')
+
+          sitemap.append('</urlset>')
+
+          with open("sitemap.xml", "w", encoding="utf-8") as f:
+              f.write("\n".join(sitemap))
+          EOF
 
       - name: Commit & push changes
         run: |
           git config user.name "static-pages-bot"
           git config user.email "bot@github.com"
           git add home sitemap.xml
-          git diff --cached --quiet || git commit -m "Sync static pages & sitemap"
+          git diff --cached --quiet || git commit -m "Sync pages & sitemap"
           git push
