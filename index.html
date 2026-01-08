@@ -754,7 +754,43 @@ section h2 {
   border-radius: 10px;
   z-index: 2;
 }
+/* ===== FLOATING FEEDBACK BUTTON ===== */
+#feedback-fab {
+  position: fixed;
+  left: 16px;
+  bottom: 80px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4500, #ff8c00);
+  box-shadow:
+    0 0 15px rgba(255,69,0,0.6),
+    0 0 30px rgba(255,140,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 9999;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  touch-action: none;
+}
 
+#feedback-fab span {
+  font-size: 26px;
+}
+
+/* Hover / tap premium effect */
+#feedback-fab:hover {
+  transform: scale(1.1);
+}
+
+/* Hidden cut state */
+#feedback-fab.hidden {
+  opacity: 0;
+  transform: translateY(60px) scale(0.8);
+  pointer-events: none;
+}
 /* Bottom gradient overlay */
 .upcoming-card::after {
   content: '';
