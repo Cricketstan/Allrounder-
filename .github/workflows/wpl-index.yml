@@ -16,14 +16,14 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Build WPL statics page
         run: |
-          python3 << 'EOF'
+          python3 - <<EOF
           import json, os
 
           DATA = "api/wpl.json"
@@ -39,18 +39,17 @@ jobs:
           cards = []
 
           for v in items:
-              cards.append(
-                  f'''<a class="card" href="{v.get("url","")}">
-    <div class="thumb">
-      <img src="{v.get("thumbnail","")}" loading="lazy" alt="{v.get("title","")}">
-    </div>
-    <div class="info">
-      <div class="title">{v.get("title","")}</div>
-      <div class="meta">{v.get("published_readable","")} • {v.get("duration","")}s</div>
-    </div>
-  </a>
-  '''
-              )
+              cards.append(f"""
+          <a class="card" href="{v.get('url','')}">
+            <div class="thumb">
+              <img src="{v.get('thumbnail','')}" loading="lazy" alt="{v.get('title','')}">
+            </div>
+            <div class="info">
+              <div class="title">{v.get('title','')}</div>
+              <div class="meta">{v.get('published_readable','')} • {v.get('duration','')}s</div>
+            </div>
+          </a>
+          """)
 
           with open(TEMPLATE, "r", encoding="utf-8") as f:
               html = f.read()
@@ -75,7 +74,7 @@ jobs:
           print("WPL statics page built:", len(cards))
           EOF
 
-      - name: Commit & push if changed
+      - name: Commit & push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
@@ -85,5 +84,5 @@ jobs:
             git commit -m "Auto update WPL statics page"
             git push
           else
-            echo "No changes in wpl/index.html"
+            echo "No changes to commit"
           fi
