@@ -125,6 +125,19 @@ jobs:
               })
 
               sitemap_urls.append(page["seo"]["canonical"])
+              # ---------- ADD STATIC EXTRA PAGE (NO TEMPLATE CHANGE) ----------
+EXTRA_PAGES = [
+    {
+        "id": "cricket-tv-hd",
+        "title": "Cricket TV HD – Watch Live Cricket Online",
+        "url": "https://crickettv.site/cricket-tv-hd",
+        "description": "Watch live cricket matches in HD quality on Cricket TV."
+    }
+]
+
+for p in EXTRA_PAGES:
+    index_pages.append(p)
+    sitemap_urls.append(p["url"])
 
           # ---------- home/id.json ----------
           with open("home/id.json", "w", encoding="utf-8") as f:
