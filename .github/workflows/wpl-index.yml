@@ -1,4 +1,4 @@
-name: Build WPL Statics Page
+name: Build WPL Static Page
 
 on:
   workflow_dispatch:
@@ -16,21 +16,19 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Build WPL statics page
+      - name: Build WPL HTML (root file)
         run: |
           python3 - <<EOF
-          import json, os
+          import json
 
           DATA = "api/wpl.json"
           TEMPLATE = "template/wpl-index.html"
-          OUTPUT = "wpl/index.html"
-
-          os.makedirs("wpl", exist_ok=True)
+          OUTPUT = "wpl.html"
 
           with open(DATA, "r", encoding="utf-8") as f:
               data = json.load(f)
@@ -46,7 +44,9 @@ jobs:
             </div>
             <div class="info">
               <div class="title">{v.get('title','')}</div>
-              <div class="meta">{v.get('published_readable','')} • {v.get('duration','')}s</div>
+              <div class="meta">
+                {v.get('published_readable','')} • {v.get('duration','')}s
+              </div>
             </div>
           </a>
           """)
@@ -71,7 +71,7 @@ jobs:
           with open(OUTPUT, "w", encoding="utf-8") as f:
               f.write(html)
 
-          print("WPL statics page built:", len(cards))
+          print("WPL root HTML built:", len(cards))
           EOF
 
       - name: Commit & push
@@ -79,9 +79,9 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
-          if [[ -n "$(git status --porcelain wpl/index.html)" ]]; then
-            git add wpl/index.html
-            git commit -m "Auto update WPL statics page"
+          if [[ -n "$(git status --porcelain wpl.html)" ]]; then
+            git add wpl.html
+            git commit -m "Auto update WPL page"
             git push
           else
             echo "No changes to commit"
