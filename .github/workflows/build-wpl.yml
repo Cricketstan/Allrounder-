@@ -92,41 +92,7 @@ jobs:
                   "items": json_items
               }, jf, indent=2, ensure_ascii=False)
 
-          # ---------- SAFE SITEMAP UPDATE ----------
-          NS = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
-
-          if os.path.exists(SITEMAP_FILE):
-              tree = ET.parse(SITEMAP_FILE)
-              root = tree.getroot()
-          else:
-              root = ET.Element("urlset")
-              root.set("xmlns", NS["ns"])
-              tree = ET.ElementTree(root)
-
-          # remove old WPL urls only
-          for url in list(root):
-              loc = url.find("ns:loc", NS)
-              if loc is not None and "/wpl/" in loc.text:
-                  root.remove(url)
-
-          # add latest 5 WPL urls
-          for item in json_items[:WPL_LIMIT]:
-              url = ET.SubElement(root, "url")
-              ET.SubElement(url, "loc").text = item["url"]
-              ET.SubElement(url, "lastmod").text = item["published_iso"].split("T")[0]
-              ET.SubElement(url, "changefreq").text = "daily"
-              ET.SubElement(url, "priority").text = "0.9"
-
-          tree.write(
-              SITEMAP_FILE,
-              encoding="utf-8",
-              xml_declaration=True
-          )
-
-          print("WPL pages:", len(keep))
-          print("Sitemap updated (WPL only, others preserved)")
-          EOF
-
+          
       - name: Commit & push
         run: |
           git config user.name "github-actions"
