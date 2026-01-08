@@ -2991,46 +2991,9 @@ function startWPLAutoScroll() {
   
   if (!fab) return; // Exit if button doesn't exist
   
-  // Simple click handler
-  fab.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    // Redirect to feedback page
-    window.location.href = "feedback.html";
-    // OR open in new tab:
-    // window.open("feedback.html", "_blank");
-  });
   
-  // Optional: Add some visual feedback
-  fab.addEventListener("mousedown", () => {
-    fab.style.transform = "scale(0.95)";
-  });
-  
-  fab.addEventListener("mouseup", () => {
-    fab.style.transform = "scale(1)";
-  });
-  
-  fab.addEventListener("mouseleave", () => {
-    fab.style.transform = "scale(1)";
-  });
-  
-  // Simple touch feedback
-  fab.addEventListener("touchstart", (e) => {
-    e.preventDefault();
-    fab.style.transform = "scale(0.95)";
-  });
-  
-  fab.addEventListener("touchend", (e) => {
-    e.preventDefault();
-    fab.style.transform = "scale(1)";
-  });
-  
-})();
 </script>
-  <!-- Floating Feedback Button -->
-<div id="feedback-fab">
-  <span class="material-icons">feedback</span>
+  
 </div>
 </body>
 </html>
