@@ -17,15 +17,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Generate static pages, clean removed IDs & sitemap
+      - name: Generate static pages, safe cleanup & sitemap
         run: |
           python3 - << 'EOF'
           import json, os, shutil, datetime
 
           SITE = "https://crickettv.site"
-          HOME = "/home"
-          THUMB = "https://crickettv.site/image/api/crickettv.png"
+          HOME_DIR = "home"
+          SAFE_DIRS = {"wpl", "assets", "images"}
+          SEO_PAGES = [
+              "https://crickettv.site/cricket-tv-hd"
+          ]
 
+          # ---------- HELPERS ----------
           def render_list(items):
               if not items:
                   return ""
@@ -38,29 +42,37 @@ jobs:
           with open("template/index.html", "r", encoding="utf-8") as f:
               template = f.read()
 
-          os.makedirs("home", exist_ok=True)
+          os.makedirs(HOME_DIR, exist_ok=True)
 
           valid_ids = {p["id"] for p in data["pages"]}
 
-          # ---------- CLEAN REMOVED PAGES ----------
-          for name in os.listdir("home"):
-              path = os.path.join("home", name)
-              if os.path.isdir(path) and name not in valid_ids:
+          # ---------- SAFE CLEANUP ----------
+          for name in os.listdir(HOME_DIR):
+              path = os.path.join(HOME_DIR, name)
+
+              if not os.path.isdir(path):
+                  continue
+
+              if name in SAFE_DIRS:
+                  continue
+
+              # only remove folders that were auto-generated earlier
+              if name not in valid_ids and os.path.exists(os.path.join(path, "index.html")):
                   shutil.rmtree(path)
 
-          index_pages = []
           sitemap_urls = []
+          index_pages = []
 
-          # ---------- GENERATE PAGES ----------
+          # ---------- GENERATE MATCH PAGES ----------
           for page in data["pages"]:
               pid = page["id"]
-              out_dir = f"home/{pid}"
+              out_dir = f"{HOME_DIR}/{pid}"
               os.makedirs(out_dir, exist_ok=True)
 
               # STREAM BUTTONS
               buttons = []
               streams = page.get("streams", [])
-              for i, srv in enumerate(streams):
+              for srv in streams:
                   cls = "active" if srv.get("default") else ""
                   buttons.append(
                       f'<button class="{cls}" data-src="{srv["src"]}">{srv["name"]}</button>'
@@ -73,25 +85,11 @@ jobs:
               team1 = page["match"]["team1"]
               team2 = page["match"]["team2"]
 
-              team1_players = render_list(players.get(team1, []))
-              team2_players = render_list(players.get(team2, []))
-
-              team1_squad = (
-                  "<p>" + squads.get(team1, "") + "</p>"
-                  if squads.get(team1) else ""
-              )
-
-              team2_squad = (
-                  "<p>" + squads.get(team2, "") + "</p>"
-                  if squads.get(team2) else ""
-              )
-
               html = (
                   template
                   .replace("{{META_TITLE}}", page["seo"]["meta_title"])
                   .replace("{{META_DESCRIPTION}}", page["seo"]["meta_description"])
                   .replace("{{CANONICAL}}", page["seo"]["canonical"])
-                  .replace("{{SCHEMA_THUMBNAIL}}", page["seo"].get("thumbnail", THUMB))
                   .replace("{{PUBLISH_DATE_ISO}}", page["seo"]["publish_date"])
                   .replace("{{LAST_MODIFIED_ISO}}", page["seo"]["last_modified"])
                   .replace("{{BREADCRUMB_TITLE}}", page["seo"]["breadcrumb_title"])
@@ -106,10 +104,10 @@ jobs:
                   .replace("{{PITCH_REPORT}}", content.get("pitch_report", ""))
                   .replace("{{PREDICTION}}", content.get("prediction", ""))
                   .replace("{{FINAL_WORD}}", content.get("final_word", ""))
-                  .replace("{{TEAM1_PLAYERS}}", team1_players)
-                  .replace("{{TEAM2_PLAYERS}}", team2_players)
-                  .replace("{{TEAM1_SQUAD}}", team1_squad)
-                  .replace("{{TEAM2_SQUAD}}", team2_squad)
+                  .replace("{{TEAM1_PLAYERS}}", render_list(players.get(team1, [])))
+                  .replace("{{TEAM2_PLAYERS}}", render_list(players.get(team2, [])))
+                  .replace("{{TEAM1_SQUAD}}", squads.get(team1, ""))
+                  .replace("{{TEAM2_SQUAD}}", squads.get(team2, ""))
                   .replace("{{DEFAULT_IFRAME}}", streams[0]["src"] if streams else "")
                   .replace("{{SERVER_BUTTONS}}", "\n".join(buttons))
               )
@@ -117,16 +115,39 @@ jobs:
               with open(f"{out_dir}/index.html", "w", encoding="utf-8") as f:
                   f.write(html)
 
+              sitemap_urls.append(page["seo"]["canonical"])
               index_pages.append({
                   "id": pid,
                   "title": page["match"]["title"],
-                  "url": page["seo"]["canonical"],
-                  "description": content.get("overview", "")
+                  "url": page["seo"]["canonical"]
               })
 
-              sitemap_urls.append(page["seo"]["canonical"])
+          # ---------- ADD SEO PAGES ----------
+          sitemap_urls.extend(SEO_PAGES)
 
-          # ---------- home/id.json ----------
+          sitemap_urls = sorted(set(sitemap_urls))
+          today = datetime.date.today().isoformat()
+
+          # ---------- WRITE SITEMAP ----------
+          sitemap = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
+          ]
+
+          for url in sitemap_urls:
+              sitemap.append(f"""  <url>
+    <loc>{url}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>""")
+
+          sitemap.append("</urlset>")
+
+          with open("sitemap.xml", "w", encoding="utf-8") as f:
+              f.write("\n".join(sitemap))
+
+          # ---------- WRITE INDEX ----------
           with open("home/id.json", "w", encoding="utf-8") as f:
               json.dump({
                   "site": SITE,
@@ -134,26 +155,6 @@ jobs:
                   "count": len(index_pages),
                   "pages": index_pages
               }, f, indent=2)
-
-          # ---------- sitemap.xml ----------
-          today = datetime.date.today().isoformat()
-          sitemap = [
-              '<?xml version="1.0" encoding="UTF-8"?>',
-              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
-          ]
-
-          for url in sitemap_urls:
-              sitemap.append(f'''  <url>
-                <loc>{url}</loc>
-                <lastmod>{today}</lastmod>
-                <changefreq>weekly</changefreq>
-                <priority>0.7</priority>
-              </url>''')
-
-          sitemap.append('</urlset>')
-
-          with open("sitemap.xml", "w", encoding="utf-8") as f:
-              f.write("\n".join(sitemap))
           EOF
 
       - name: Commit & push changes
@@ -161,5 +162,5 @@ jobs:
           git config user.name "static-pages-bot"
           git config user.email "bot@github.com"
           git add home sitemap.xml
-          git diff --cached --quiet || git commit -m "Sync pages & sitemap"
+          git diff --cached --quiet || git commit -m "Sync static pages & sitemap"
           git push
