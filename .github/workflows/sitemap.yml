@@ -1,0 +1,74 @@
+name: Auto Generate Sitemap
+
+on:
+  push:
+    paths:
+      - home/id.json   # ✅ ONLY when id.json changes
+
+permissions:
+  contents: write
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate sitemap.xml from id.json
+        run: |
+          python3 << 'EOF'
+          import json
+          from datetime import date
+
+          ID_JSON_PATH = "home/id.json"
+
+          EXTRA_URLS = [
+              "https://crickettv.site/",
+              "https://crickettv.site/wpl",
+              "https://crickettv.site/cricket-tv-hd"
+          ]
+
+          today = date.today().isoformat()
+
+          with open(ID_JSON_PATH, "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          urls = EXTRA_URLS[:]
+
+          for page in data.get("pages", []):
+              url = page.get("url")
+              if url:
+                  urls.append(url)
+
+          sitemap = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
+          ]
+
+          for url in sorted(set(urls)):
+              sitemap.extend([
+                  "  <url>",
+                  f"    <loc>{url}</loc>",
+                  f"    <lastmod>{today}</lastmod>",
+                  "    <changefreq>weekly</changefreq>",
+                  "    <priority>0.7</priority>",
+                  "  </url>"
+              ])
+
+          sitemap.append("</urlset>")
+
+          with open("sitemap.xml", "w", encoding="utf-8") as f:
+              f.write("\n".join(sitemap))
+
+          print("✅ sitemap.xml generated successfully")
+          EOF
+
+      - name: Commit and push sitemap.xml
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "Auto update sitemap from id.json" || echo "No changes"
+          git push
