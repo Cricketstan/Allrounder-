@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-08T05:07:23.175824Z",
-  "count": 5,
+  "updated_at": "2026-01-08T05:28:38.489572Z",
+  "count": 6,
   "pages": [
     {
       "id": "indu19-vs-southafricau19",
@@ -32,6 +32,12 @@
       "title": "Durban Vs Pretoria",
       "url": "https://crickettv.site/home/durban-vs-pretoria/",
       "description": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07."
+    },
+    {
+      "id": "star-vs-sixers",
+      "title": "Melbourne Star Vs Sixers ",
+      "url": "https://crickettv.site/home/star-vs-sixers/",
+      "description": ""
     }
   ]
 }
