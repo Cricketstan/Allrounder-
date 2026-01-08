@@ -239,6 +239,47 @@
           "Durban": ""
         }
       }
+    },
+    {
+      "id": "star-vs-sixers",
+      "slug": "star-vs-sixers",
+      "seo": {
+        "meta_title": "Melbourne Star Vs Sixers",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/star-vs-sixers/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-08T10:58:28.398+05:30",
+        "last_modified": "2026-01-08T10:58:28.416+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Melbourne Star Vs Sixers ",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
+        }
+      }
     }
   ]
 }
