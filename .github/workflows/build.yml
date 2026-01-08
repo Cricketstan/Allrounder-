@@ -125,19 +125,6 @@ jobs:
               })
 
               sitemap_urls.append(page["seo"]["canonical"])
-              # ---------- ADD STATIC EXTRA PAGE (NO TEMPLATE CHANGE) ----------
-EXTRA_PAGES = [
-    {
-        "id": "cricket-tv-hd",
-        "title": "Cricket TV HD – Watch Live Cricket Online",
-        "url": "https://crickettv.site/cricket-tv-hd",
-        "description": "Watch live cricket matches in HD quality on Cricket TV."
-    }
-]
-
-for p in EXTRA_PAGES:
-    index_pages.append(p)
-    sitemap_urls.append(p["url"])
 
           # ---------- home/id.json ----------
           with open("home/id.json", "w", encoding="utf-8") as f:
@@ -148,26 +135,7 @@ for p in EXTRA_PAGES:
                   "pages": index_pages
               }, f, indent=2)
 
-          # ---------- sitemap.xml ----------
-          today = datetime.date.today().isoformat()
-          sitemap = [
-              '<?xml version="1.0" encoding="UTF-8"?>',
-              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
-          ]
-
-          for url in sitemap_urls:
-              sitemap.append(f'''  <url>
-                <loc>{url}</loc>
-                <lastmod>{today}</lastmod>
-                <changefreq>weekly</changefreq>
-                <priority>0.7</priority>
-              </url>''')
-
-          sitemap.append('</urlset>')
-
-          with open("sitemap.xml", "w", encoding="utf-8") as f:
-              f.write("\n".join(sitemap))
-          EOF
+          
 
       - name: Commit & push changes
         run: |
