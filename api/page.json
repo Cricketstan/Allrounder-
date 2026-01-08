@@ -249,7 +249,7 @@
         "canonical": "https://crickettv.site/home/star-vs-sixers/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-08T10:58:28.398+05:30",
-        "last_modified": "2026-01-08T12:07:33.529+05:30",
+        "last_modified": "2026-01-08T12:13:59.812+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -268,14 +268,18 @@
         }
       ],
       "content": {
-        "overview": "",
+        "overview": "Todays Big Bash League match between Melbourne Stars and Sydney Sixers is a crucial encounter as both teams fight to strengthen their position in the points table. Melbourne Stars will look to use home conditions and aggressive batting to dominate early, while Sydney Sixers rely on experience, composure, and a well-balanced squad. With quality players on both sides, this clash promises intense competition and high entertainment value for fans.",
         "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
+        "pitch_report": "The pitch for todays match is expected to offer a balanced contest between bat and ball. Batters who settle early should find value for their shots, especially during the middle overs, while bowlers who vary pace and hit the right lengths can be effective. Seamers may get some movement with the new ball, whereas spinners could come into play as the surface slows down. Overall, a competitive total is likely, and teams may prefer chasing depending on dew conditions later in the game.",
+        "prediction": "Melbourne Stars and Sydney Sixers face off today in a blockbuster contest that promises intensity from ball one. The Stars will aim to dominate with attacking intent, while the Sixers bring their trademark composure and match-winning mindset. Expect big hits, sharp fielding, and momentum swings as both teams push hard for supremacy in this must-watch clash.",
+        "final_word": "I Think Melbourne Star Gonna Win Today",
         "players_to_watch": {
-          "Sydney Sixers": [],
-          "Melbourne Star": []
+          "Sydney Sixers": [
+            "Babar Azam"
+          ],
+          "Melbourne Star": [
+            "Glen Maxwell"
+          ]
         },
         "squads": {
           "Sydney Sixers": "Daniel Hughes, Babar Azam, Josh Philippe(w), Moises Henriques(c), Jordan Silk, Jack Edwards, Joel Davies, Ben Manenti, Hayden Kerr, Ben Dwarshuis, Sean Abbott, Sam Curran, Mitchell Perry, Lachlan Shaw",
