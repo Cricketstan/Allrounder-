@@ -291,6 +291,54 @@
           "Melbourne Star": "Thomas Rogers, Sam Harper(w), Campbell Kellaway, Blake Macdonald, Glenn Maxwell, Marcus Stoinis(c), Hilton Cartwright, Tom Curran, Mitchell Swepson, Haris Rauf, Peter Siddle, Sam Hain, Liam Hatcher, Hamish McKenzie"
         }
       }
+    },
+    {
+      "id": "joburag-vs-paarl",
+      "slug": "joburag-vs-paarl",
+      "seo": {
+        "meta_title": "Durban Vs Pretoria",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/joburag-vs-paarl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-08T20:16:49.356+05:30",
+        "last_modified": "2026-01-08T20:16:49.356+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Joubarg Vs Paarl",
+        "team1": "Pretoria",
+        "team2": "Durban",
+        "venue": "Kingsmead, Durban",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
+          "default": false
+        },
+        {
+          "name": "Willow ",
+          "src": "https://crickettv.site/willow",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07.",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Pretoria": [],
+          "Durban": []
+        },
+        "squads": {
+          "Pretoria": "",
+          "Durban": ""
+        }
+      }
     }
   ]
 }
