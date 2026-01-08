@@ -2977,6 +2977,44 @@ function startWPLAutoScroll() {
     }, 3000);
   });
   }
+  
+(function(){
+  const fab = document.getElementById("feedback-fab");
+  let startY = 0;
+  let currentY = 0;
+  let dragging = false;
+
+  // Redirect on click
+  fab.addEventListener("click", () => {
+    if(!dragging){
+      window.location.href = "/feedback.html"; // CHANGE if needed
+    }
+  });
+
+  fab.addEventListener("touchstart", e => {
+    dragging = false;
+    startY = e.touches[0].clientY - currentY;
+  });
+
+  fab.addEventListener("touchmove", e => {
+    dragging = true;
+    currentY = e.touches[0].clientY - startY;
+    currentY = Math.max(-200, Math.min(currentY, 200));
+    fab.style.transform = `translateY(${currentY}px)`;
+  });
+
+  fab.addEventListener("touchend", () => {
+    if(currentY > 120){
+      fab.classList.add("hidden");
+    } else {
+      fab.style.transform = `translateY(0)`;
+      currentY = 0;
+    }
+    setTimeout(() => dragging = false, 50);
+  });
+
+})();
+  
 </script>
   <!-- Floating Feedback Button -->
 <div id="feedback-fab">
