@@ -2978,22 +2978,61 @@ function startWPLAutoScroll() {
   });
   }
   
-(function(){
-  const fab = document.getElementById("feedback-fab");
-  let startY = 0;
-  let currentY = 0;
-  let dragging = false;
 
-  // REPLACE the existing feedback button JavaScript (lines around ~2267-2295) with:
-
-(function(){
-  const fab = document.getElementById("feedback-fab");
-  
-  if (!fab) return; // Exit if button doesn't exist
-  
   
 </script>
-  
+  <!-- Floating Feedback Button -->
+<div id="feedbackBtn" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff4500 0%, #ff8c00 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z"></path>
+        <line x1="9" y1="10" x2="15" y2="10"></line>
+        <line x1="12" y1="7" x2="12" y2="13"></line>
+    </svg>
 </div>
+
+<script>
+// Feedback button functionality
+document.getElementById('feedbackBtn').addEventListener('click', function() {
+    window.location.href = 'https://crickettv.site/feedback';
+});
+
+// Add hover effect
+const feedbackBtn = document.getElementById('feedbackBtn');
+feedbackBtn.addEventListener('mouseenter', function() {
+    this.style.transform = 'scale(1.1)';
+    this.style.boxShadow = '0 6px 16px rgba(255, 69, 0, 0.6)';
+});
+
+feedbackBtn.addEventListener('mouseleave', function() {
+    this.style.transform = 'scale(1)';
+    this.style.boxShadow = '0 4px 12px rgba(255, 69, 0, 0.4)';
+});
+
+// Add click animation
+feedbackBtn.addEventListener('mousedown', function() {
+    this.style.transform = 'scale(0.95)';
+});
+
+feedbackBtn.addEventListener('mouseup', function() {
+    this.style.transform = 'scale(1.1)';
+});
+</script>
+
 </body>
 </html>
