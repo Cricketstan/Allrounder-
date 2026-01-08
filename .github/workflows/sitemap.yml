@@ -3,7 +3,10 @@ name: Auto Generate Sitemap
 on:
   push:
     paths:
-      - home/id.json   # ✅ ONLY when id.json changes
+      - home/id.json   # run immediately when id.json changes
+
+  schedule:
+    - cron: "*/15 * * * *"   # run every 15 minutes
 
 permissions:
   contents: write
@@ -38,9 +41,8 @@ jobs:
           urls = EXTRA_URLS[:]
 
           for page in data.get("pages", []):
-              url = page.get("url")
-              if url:
-                  urls.append(url)
+              if "url" in page:
+                  urls.append(page["url"])
 
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
@@ -62,7 +64,7 @@ jobs:
           with open("sitemap.xml", "w", encoding="utf-8") as f:
               f.write("\n".join(sitemap))
 
-          print("✅ sitemap.xml generated successfully")
+          print("✅ sitemap.xml generated")
           EOF
 
       - name: Commit and push sitemap.xml
@@ -70,5 +72,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add sitemap.xml
-          git commit -m "Auto update sitemap from id.json" || echo "No changes"
+          git commit -m "Auto update sitemap" || echo "No changes"
           git push
