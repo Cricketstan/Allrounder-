@@ -1,22 +1,8 @@
 {
   "event": [
-
-{
-      "title": "Hobart Vs Adelaide",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694480f0e4b06fdd0fa83776-1766534186220?location=hero-default&imwidth=1920",
-      "watch_now": [
-        { "id": "home/hobart-vs-adelaide", "name": "All Stream" }
-      ],
-      "date": "9 Jan 2026",
-      "start_time": "01:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
-},
 {
       "title": "Mumbai Vs Bengalore",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7487/1767882227487-i",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69537566e4b07b4a731a0b72-1767938169457?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home/star-vs-sixers", "name": "All Stream" }
       ],
