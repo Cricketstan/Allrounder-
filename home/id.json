@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-08T15:28:21.478086Z",
-  "count": 7,
+  "updated_at": "2026-01-09T03:04:50.952903Z",
+  "count": 8,
   "pages": [
     {
       "id": "indu19-vs-southafricau19",
@@ -44,6 +44,12 @@
       "title": "Joubarg Vs Paarl",
       "url": "https://crickettv.site/home/joburag-vs-paarl/",
       "description": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07."
+    },
+    {
+      "id": "hobart-vs-adelaide",
+      "title": "Hobart Hurricane Vs Adelaide Strikers ",
+      "url": "https://crickettv.site/home/hobart-vs-adelaide/",
+      "description": "In the 28th game of the BBL 2025-26, Hobart Hurricanes (HUR) are set to face Adelaide Strikers (STR). The Hobart Hurricanes are performing well in this season so far, as they won five out of the seven games. They also won the previous match against the Sydney Thunder by 6 wickets. Tim Ward performed well for them in the last game and scored 90 runs off 49 balls, while Will Prestwidge took two wickets in the bowling department. "
     }
   ]
 }
