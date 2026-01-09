@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-09T09:55:23.646947Z",
+  "updated_at": "2026-01-09T11:09:45.985006Z",
   "count": 9,
   "pages": [
     {
@@ -40,12 +40,6 @@
       "description": "Todays Big Bash League match between Melbourne Stars and Sydney Sixers is a crucial encounter as both teams fight to strengthen their position in the points table. Melbourne Stars will look to use home conditions and aggressive batting to dominate early, while Sydney Sixers rely on experience, composure, and a well-balanced squad. With quality players on both sides, this clash promises intense competition and high entertainment value for fans."
     },
     {
-      "id": "joburag-vs-paarl",
-      "title": "Joubarg Vs Paarl",
-      "url": "https://crickettv.site/home/joburag-vs-paarl/",
-      "description": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07."
-    },
-    {
       "id": "hobart-vs-adelaide",
       "title": "Hobart Hurricane Vs Adelaide Strikers ",
       "url": "https://crickettv.site/home/hobart-vs-adelaide/",
@@ -56,6 +50,12 @@
       "title": "RCB Vs MI - Live",
       "url": "https://crickettv.site/home/rcb-vs-mi/",
       "description": "All roads lead to Navi Mumbai as RCB gear up for the WPL 2026 season opener that kickstarts tomorrow. The fourth edition of the tournament will be bigger than anything you have ever seen and the Royal Challengers are all set to rumble.\n\nWith Smriti Mandhana returning to the helm of affairs, this will be her fourth season as the captain of RCB. However, this year, she will have a flurry of fresh faces alongside her to take the challenge head on. From Georgia Voll to Grace Harris, Linsey Smith to Radha Yadav, RCB did sign a handful of experienced campaigners in the side to bolster their ranks.\n\nThe defending champions, Mumbai Indians, will be coming in with some intense firepower. For RCB, the key element to get into their rhythm will be to pick the right combination.\n\nWith star power in Smriti Mandhana, Georgia Voll, Grace Harris, Nadine de Klerk, Richa Ghosh, Lauren Bell and Linsey Smith leading the charge, they will have to slot the right blend of players in order to get the perfect XI in place. Apart from that, the presence of experience will be crucial for the Royal Challengers as they hope to launch another title."
+    },
+    {
+      "id": "joburag-vs-paarl",
+      "title": "Joubarg Vs Paarl",
+      "url": "https://crickettv.site/home/joburag-vs-paarl/",
+      "description": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07."
     }
   ]
 }
