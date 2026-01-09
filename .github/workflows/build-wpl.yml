@@ -23,7 +23,7 @@ jobs:
           import xml.etree.ElementTree as ET
 
           API = "https://wpl-video.cricketstream745.workers.dev/"
-          MAX = 50
+          MAX = 100
           WPL_LIMIT = 5
 
           SITE = "https://crickettv.site"
