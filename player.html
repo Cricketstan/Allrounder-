@@ -16,46 +16,7 @@
 
   <!-- 🔒 ANTI-IFRAME (SECOND SCRIPT ONLY) -->
   <script>
-  if (window.top !== window.self) {
-
-    const allowed = [
-      "dilzcreation.pages.dev",
-      "run-machine.pages.dev",
-      "ajayxlive.pages.dev",
-      "match-central.pages.dev",
-      "cricontime.pages.dev",
-      "pitchside.pages.dev",
-      "cricworldd.pages.dev",
-      "cricketchampion.pages.dev",
-      "editverse.pages.dev",
-      "cricket-stan.pages.dev",
-      "alr-prediction.pages.dev",
-      "crickettv.site"
-    ];
-
-    const ref = document.referrer;
-
-    if (!ref || !allowed.some(d => ref.includes(d))) {
-      document.documentElement.innerHTML = `
-        <style>
-          body {
-            margin:0;
-            height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            background:black;
-            color:white;
-            font-family:Arial, sans-serif;
-          }
-        </style>
-        <h2>Contact t.me/dillzycreations to allow your domain</h2>
-      `;
-      throw new Error("Embed blocked");
-    }
-  }
-  </script>
-
+  
   <style>
     body {
       background-color: #000;
@@ -69,7 +30,48 @@
     }
     .video-container {
       position: relative;
-      width: 100%;
+      width: 100%;<script>
+if (window.top !== window.self) {
+  const allowed = [
+    "dilzcreation.pages.dev",
+    "run-machine.pages.dev",
+    "ajayxlive.pages.dev",
+    "match-central.pages.dev",
+    "cricontime.pages.dev",
+    "pitchside.pages.dev",
+    "cricworldd.pages.dev",
+    "cricketchampion.pages.dev",
+    "editverse.pages.dev",
+    "cricket-stan.pages.dev",
+    "alr-prediction.pages.dev",
+    "crickettv.site"
+  ];
+
+  const ref = document.referrer || "";
+
+  const isAllowed = allowed.some(d => ref.includes(d));
+
+  if (!isAllowed) {
+    document.documentElement.innerHTML = `
+      <style>
+        body {
+          margin:0;
+          height:100vh;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          background:black;
+          color:white;
+          font-family:Arial, sans-serif;
+        }
+      </style>
+      <h2>Contact t.me/dillzycreations to allow your domain</h2>
+    `;
+    throw new Error("Embed blocked");
+  }
+}
+</script>
+  
       height: 100%;
       background: #000;
       display: flex;
