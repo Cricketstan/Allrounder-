@@ -349,7 +349,7 @@
         "canonical": "https://crickettv.site/home/hobart-vs-adelaide/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-09T08:34:41.466+05:30",
-        "last_modified": "2026-01-09T08:34:41.494+05:30",
+        "last_modified": "2026-01-09T13:33:59.834+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -365,6 +365,11 @@
           "name": "Star Sports ",
           "src": "https://cricketstan.github.io/Channel-14/",
           "default": true
+        },
+        {
+          "name": "Willow",
+          "src": "https://crickettv.site/willow",
+          "default": false
         }
       ],
       "content": {
