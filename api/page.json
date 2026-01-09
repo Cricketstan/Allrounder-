@@ -397,7 +397,7 @@
         "canonical": "https://crickettv.site/home/rcb-vs-mi/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-09T15:21:38.948+05:30",
-        "last_modified": "2026-01-09T17:59:25.311+05:30",
+        "last_modified": "2026-01-09T18:14:31.536+05:30",
         "breadcrumb_title": "Rcb Vs Mi Live"
       },
       "match": {
@@ -411,12 +411,17 @@
       "streams": [
         {
           "name": "Hindi ",
-          "src": "",
+          "src": "https://cricketstan.github.io/Channel-13/",
+          "default": true
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://crickettv.site/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
           "default": false
         },
         {
           "name": "Willow",
-          "src": "",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
           "default": false
         }
       ],
