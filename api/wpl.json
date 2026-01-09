@@ -1,10 +1,34 @@
 {
-  "updated_at": "2026-01-09T17:41:43.852Z",
+  "updated_at": "2026-01-09T17:56:48.625Z",
   "count": 100,
   "items": [
     {
+      "title": "Super Sixes: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f8/34/e6/0/image-f3d170f3-1509-41af-b5ec-c4f4d6da81e9.jpg",
+      "video_id": "6387485495112",
+      "duration": 92,
+      "published_iso": "2026-01-09T17:48:14",
+      "url": "https://crickettv.site/wpl/6387485495112.html"
+    },
+    {
+      "title": "Clutch Nadine de Klerk's stunning 63*(44) in the chase",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e8/77/1e/0/image-fe11b322-3f94-41eb-ae56-df855e6ea625.jpg",
+      "video_id": "6387483896112",
+      "duration": 180,
+      "published_iso": "2026-01-09T17:45:25",
+      "url": "https://crickettv.site/wpl/6387483896112.html"
+    },
+    {
+      "title": "Six: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026: Nadine De Klerk Six",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/da/8f/0a/0/image-b3dda450-d7ab-4a59-8b5f-7e6ef6efa710.jpg",
+      "video_id": "6387485759112",
+      "duration": 16,
+      "published_iso": "2026-01-09T17:42:33",
+      "url": "https://crickettv.site/wpl/6387485759112.html"
+    },
+    {
       "title": "Twin strikes! Nicola Carey's game-changing over",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d0/0a/25/0/image-663449ca-d4e6-4ba2-9941-9052b16fe49d.jpg",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/24/67/e7/0/image-06e27aae-3316-40a6-ba3b-f142961df038.jpg",
       "video_id": "6387485377112",
       "duration": 110,
       "published_iso": "2026-01-09T17:33:44",
@@ -267,20 +291,20 @@
       "url": "https://crickettv.site/wpl/6387469959112.html"
     },
     {
-      "title": "Pre Match Interview: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026: Nat Sciver-Brunt Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/98/27/3e/0/image-aa65cdb0-7058-49a6-a856-cf557d50e9ff.jpg",
-      "video_id": "6387472099112",
-      "duration": 128,
-      "published_iso": "2026-01-09T12:48:04",
-      "url": "https://crickettv.site/wpl/6387472099112.html"
-    },
-    {
       "title": "Pre Match Interview: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/75/9c/52/0/image-e07ea5c3-0ff8-4c6e-9174-6c026aa68912.jpg",
       "video_id": "6387472200112",
       "duration": 119,
       "published_iso": "2026-01-09T12:48:04",
       "url": "https://crickettv.site/wpl/6387472200112.html"
+    },
+    {
+      "title": "Pre Match Interview: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026: Nat Sciver-Brunt Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/98/27/3e/0/image-aa65cdb0-7058-49a6-a856-cf557d50e9ff.jpg",
+      "video_id": "6387472099112",
+      "duration": 128,
+      "published_iso": "2026-01-09T12:48:04",
+      "url": "https://crickettv.site/wpl/6387472099112.html"
     },
     {
       "title": "Pitch Report: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026",
@@ -451,20 +475,20 @@
       "url": "https://crickettv.site/wpl/6385660785112.html"
     },
     {
-      "title": "TATA WPL Player Auction 2026 - Mumbai Indians",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/69/97/e1/0/image-ae901487-6e46-48e0-9670-a8a1d0ee9ffd.jpg",
-      "video_id": "6385659918112",
-      "duration": 363,
-      "published_iso": "2025-11-27T15:32:43",
-      "url": "https://crickettv.site/wpl/6385659918112.html"
-    },
-    {
       "title": "TATA WPL Player Auction 2026 - Delhi Capitals",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/93/d0/0d/0/image-707d81fe-f91b-49c8-b74e-0171eae43ef9.jpg",
       "video_id": "6385659328112",
       "duration": 420,
       "published_iso": "2025-11-27T15:32:43",
       "url": "https://crickettv.site/wpl/6385659328112.html"
+    },
+    {
+      "title": "TATA WPL Player Auction 2026 - Mumbai Indians",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/69/97/e1/0/image-ae901487-6e46-48e0-9670-a8a1d0ee9ffd.jpg",
+      "video_id": "6385659918112",
+      "duration": 363,
+      "published_iso": "2025-11-27T15:32:43",
+      "url": "https://crickettv.site/wpl/6385659918112.html"
     },
     {
       "title": "Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh",
@@ -595,14 +619,6 @@
       "url": "https://crickettv.site/wpl/6385652686112.html"
     },
     {
-      "title": "Major Signing! Laura Wolvaardt goes to Delhi Capitals for INR 1.1 Crore",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/06/3c/6d/0/image-d3356ba9-b619-4b43-8881-cbeff50ca6ee.jpg",
-      "video_id": "6385650561112",
-      "duration": 159,
-      "published_iso": "2025-11-27T10:48:00",
-      "url": "https://crickettv.site/wpl/6385650561112.html"
-    },
-    {
       "title": "Return of Kerr! Amelia Kerr rejoins Mumbai Indians for INR 3 Crore",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5c/50/08/0/image-3b5bcff5-9577-4514-836d-6bf96e0d633e.jpg",
       "video_id": "6385652095112",
@@ -611,12 +627,12 @@
       "url": "https://crickettv.site/wpl/6385652095112.html"
     },
     {
-      "title": "Gujarat Giants add Renuka Singh to their squad for INR 60 Lakh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/91/c7/ed/0/image-3fdc7771-8d22-49ee-b721-85599084f2f8.jpg",
-      "video_id": "6385652283112",
-      "duration": 141,
-      "published_iso": "2025-11-27T10:41:00",
-      "url": "https://crickettv.site/wpl/6385652283112.html"
+      "title": "Major Signing! Laura Wolvaardt goes to Delhi Capitals for INR 1.1 Crore",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/06/3c/6d/0/image-d3356ba9-b619-4b43-8881-cbeff50ca6ee.jpg",
+      "video_id": "6385650561112",
+      "duration": 159,
+      "published_iso": "2025-11-27T10:48:00",
+      "url": "https://crickettv.site/wpl/6385650561112.html"
     },
     {
       "title": "Sophie Ecclestone reunites with UP Warriorz for INR 85 Lakh",
@@ -625,6 +641,14 @@
       "duration": 180,
       "published_iso": "2025-11-27T10:41:00",
       "url": "https://crickettv.site/wpl/6385651121112.html"
+    },
+    {
+      "title": "Gujarat Giants add Renuka Singh to their squad for INR 60 Lakh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/91/c7/ed/0/image-3fdc7771-8d22-49ee-b721-85599084f2f8.jpg",
+      "video_id": "6385652283112",
+      "duration": 141,
+      "published_iso": "2025-11-27T10:41:00",
+      "url": "https://crickettv.site/wpl/6385652283112.html"
     },
     {
       "title": "Homecoming! Deepti Sharma returns to UP Warriorz for a staggering INR 3.2 Crore",
@@ -707,20 +731,20 @@
       "url": "https://crickettv.site/wpl/6371745390112.html"
     },
     {
-      "title": "All 18 Sixes by Ashleigh Gardner in TATA WPL 2025",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c7/42/a7/0/ovHcnIYFbR.jpg",
-      "video_id": "6371169921112",
-      "duration": 123,
-      "published_iso": "2025-04-07T10:24:00",
-      "url": "https://crickettv.site/wpl/6371169921112.html"
-    },
-    {
       "title": "All 18 Wickets of Amelia Kerr in TATA WPL 2025",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/52/cc/0/uNkOpTKuEQ.jpg",
       "video_id": "6371169040112",
       "duration": 202,
       "published_iso": "2025-04-07T10:24:00",
       "url": "https://crickettv.site/wpl/6371169040112.html"
+    },
+    {
+      "title": "All 18 Sixes by Ashleigh Gardner in TATA WPL 2025",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c7/42/a7/0/ovHcnIYFbR.jpg",
+      "video_id": "6371169921112",
+      "duration": 123,
+      "published_iso": "2025-04-07T10:24:00",
+      "url": "https://crickettv.site/wpl/6371169921112.html"
     },
     {
       "title": "Top Moments of TATA WPL 2025",
@@ -747,20 +771,20 @@
       "url": "https://crickettv.site/wpl/6370092186112.html"
     },
     {
-      "title": "Curvv Super Strikers of Week 4",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/98/c3/0/image-2f465035-fcc4-420d-87ee-08fdb75b8dbb.jpg",
-      "video_id": "6370092779112",
-      "duration": 206,
-      "published_iso": "2025-03-15T21:42:23",
-      "url": "https://crickettv.site/wpl/6370092779112.html"
-    },
-    {
       "title": "Herbalife Active Catches of Week 4",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e0/c7/d5/0/image-470ba22b-9017-4c90-96ec-f9a81f1f08e9.jpg",
       "video_id": "6370093363112",
       "duration": 118,
       "published_iso": "2025-03-15T21:42:23",
       "url": "https://crickettv.site/wpl/6370093363112.html"
+    },
+    {
+      "title": "Curvv Super Strikers of Week 4",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/98/c3/0/image-2f465035-fcc4-420d-87ee-08fdb75b8dbb.jpg",
+      "video_id": "6370092779112",
+      "duration": 206,
+      "published_iso": "2025-03-15T21:42:23",
+      "url": "https://crickettv.site/wpl/6370092779112.html"
     },
     {
       "title": "Sintex Maximum Sixes of Week 4",
@@ -777,30 +801,6 @@
       "duration": 329,
       "published_iso": "2025-03-15T20:58:07",
       "url": "https://crickettv.site/wpl/6370090975112.html"
-    },
-    {
-      "title": "It was a real team performance tonight: Charlotte Edwards",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cd/66/9a/0/image-c67a768a-c876-4e33-889e-ebda29b65968.jpg",
-      "video_id": "6370092726112",
-      "duration": 354,
-      "published_iso": "2025-03-15T20:58:07",
-      "url": "https://crickettv.site/wpl/6370092726112.html"
-    },
-    {
-      "title": "Presentation: Final, Delhi Capitals vs Mumbai Indians, WPL 2025",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2a/5b/93/0/image-8de5a753-5197-4ce5-98f7-41293560169a.jpg",
-      "video_id": "6370087163112",
-      "duration": 1702,
-      "published_iso": "2025-03-15T19:41:34",
-      "url": "https://crickettv.site/wpl/6370087163112.html"
-    },
-    {
-      "title": "TATA WPL 2025 - Sintex Sixes of the Season: Ashleigh Gardner",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9d/a6/e2/0/image-2ce497e9-3753-4166-ad97-7fdc4a7915a1.jpg",
-      "video_id": "6370088910112",
-      "duration": 95,
-      "published_iso": "2025-03-15T19:29:00",
-      "url": "https://crickettv.site/wpl/6370088910112.html"
     }
   ]
 }
