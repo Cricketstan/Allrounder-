@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-09T11:46:45.333Z",
+  "updated_at": "2026-01-09T13:01:40.111Z",
   "count": 100,
   "items": [
+    {
+      "title": "Pitch Report: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/18/88/56/0/image-03deaf50-33dc-4e9e-87a2-6ffeefe23685.jpg",
+      "video_id": "6387471138112",
+      "duration": 116,
+      "published_iso": "2026-01-09T12:47:33",
+      "url": "https://crickettv.site/wpl/6387471138112.html"
+    },
     {
       "title": "Defining the TATA WPL, ft. the 5 Captains",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1d/78/15/0/image-ba56386f-2919-46f1-acc1-d65f69f2a062.jpg",
@@ -163,20 +171,20 @@
       "url": "https://crickettv.site/wpl/6385660785112.html"
     },
     {
-      "title": "TATA WPL Player Auction 2026 - Mumbai Indians",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/69/97/e1/0/image-ae901487-6e46-48e0-9670-a8a1d0ee9ffd.jpg",
-      "video_id": "6385659918112",
-      "duration": 363,
-      "published_iso": "2025-11-27T15:32:43",
-      "url": "https://crickettv.site/wpl/6385659918112.html"
-    },
-    {
       "title": "TATA WPL Player Auction 2026 - Delhi Capitals",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/93/d0/0d/0/image-707d81fe-f91b-49c8-b74e-0171eae43ef9.jpg",
       "video_id": "6385659328112",
       "duration": 420,
       "published_iso": "2025-11-27T15:32:43",
       "url": "https://crickettv.site/wpl/6385659328112.html"
+    },
+    {
+      "title": "TATA WPL Player Auction 2026 - Mumbai Indians",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/69/97/e1/0/image-ae901487-6e46-48e0-9670-a8a1d0ee9ffd.jpg",
+      "video_id": "6385659918112",
+      "duration": 363,
+      "published_iso": "2025-11-27T15:32:43",
+      "url": "https://crickettv.site/wpl/6385659918112.html"
     },
     {
       "title": "Pooja Vastrakar returns! RCB with a winning bid of INR 85 Lakh",
@@ -307,14 +315,6 @@
       "url": "https://crickettv.site/wpl/6385652686112.html"
     },
     {
-      "title": "Return of Kerr! Amelia Kerr rejoins Mumbai Indians for INR 3 Crore",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5c/50/08/0/image-3b5bcff5-9577-4514-836d-6bf96e0d633e.jpg",
-      "video_id": "6385652095112",
-      "duration": 159,
-      "published_iso": "2025-11-27T10:48:00",
-      "url": "https://crickettv.site/wpl/6385652095112.html"
-    },
-    {
       "title": "Major Signing! Laura Wolvaardt goes to Delhi Capitals for INR 1.1 Crore",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/06/3c/6d/0/image-d3356ba9-b619-4b43-8881-cbeff50ca6ee.jpg",
       "video_id": "6385650561112",
@@ -323,12 +323,12 @@
       "url": "https://crickettv.site/wpl/6385650561112.html"
     },
     {
-      "title": "Gujarat Giants add Renuka Singh to their squad for INR 60 Lakh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/91/c7/ed/0/image-3fdc7771-8d22-49ee-b721-85599084f2f8.jpg",
-      "video_id": "6385652283112",
-      "duration": 141,
-      "published_iso": "2025-11-27T10:41:00",
-      "url": "https://crickettv.site/wpl/6385652283112.html"
+      "title": "Return of Kerr! Amelia Kerr rejoins Mumbai Indians for INR 3 Crore",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5c/50/08/0/image-3b5bcff5-9577-4514-836d-6bf96e0d633e.jpg",
+      "video_id": "6385652095112",
+      "duration": 159,
+      "published_iso": "2025-11-27T10:48:00",
+      "url": "https://crickettv.site/wpl/6385652095112.html"
     },
     {
       "title": "Sophie Ecclestone reunites with UP Warriorz for INR 85 Lakh",
@@ -337,6 +337,14 @@
       "duration": 180,
       "published_iso": "2025-11-27T10:41:00",
       "url": "https://crickettv.site/wpl/6385651121112.html"
+    },
+    {
+      "title": "Gujarat Giants add Renuka Singh to their squad for INR 60 Lakh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/91/c7/ed/0/image-3fdc7771-8d22-49ee-b721-85599084f2f8.jpg",
+      "video_id": "6385652283112",
+      "duration": 141,
+      "published_iso": "2025-11-27T10:41:00",
+      "url": "https://crickettv.site/wpl/6385652283112.html"
     },
     {
       "title": "Homecoming! Deepti Sharma returns to UP Warriorz for a staggering INR 3.2 Crore",
@@ -419,20 +427,20 @@
       "url": "https://crickettv.site/wpl/6371745390112.html"
     },
     {
-      "title": "All 18 Wickets of Amelia Kerr in TATA WPL 2025",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/52/cc/0/uNkOpTKuEQ.jpg",
-      "video_id": "6371169040112",
-      "duration": 202,
-      "published_iso": "2025-04-07T10:24:00",
-      "url": "https://crickettv.site/wpl/6371169040112.html"
-    },
-    {
       "title": "All 18 Sixes by Ashleigh Gardner in TATA WPL 2025",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c7/42/a7/0/ovHcnIYFbR.jpg",
       "video_id": "6371169921112",
       "duration": 123,
       "published_iso": "2025-04-07T10:24:00",
       "url": "https://crickettv.site/wpl/6371169921112.html"
+    },
+    {
+      "title": "All 18 Wickets of Amelia Kerr in TATA WPL 2025",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/52/cc/0/uNkOpTKuEQ.jpg",
+      "video_id": "6371169040112",
+      "duration": 202,
+      "published_iso": "2025-04-07T10:24:00",
+      "url": "https://crickettv.site/wpl/6371169040112.html"
     },
     {
       "title": "Top Moments of TATA WPL 2025",
@@ -459,20 +467,20 @@
       "url": "https://crickettv.site/wpl/6370092186112.html"
     },
     {
-      "title": "Herbalife Active Catches of Week 4",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e0/c7/d5/0/image-470ba22b-9017-4c90-96ec-f9a81f1f08e9.jpg",
-      "video_id": "6370093363112",
-      "duration": 118,
-      "published_iso": "2025-03-15T21:42:23",
-      "url": "https://crickettv.site/wpl/6370093363112.html"
-    },
-    {
       "title": "Curvv Super Strikers of Week 4",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/98/c3/0/image-2f465035-fcc4-420d-87ee-08fdb75b8dbb.jpg",
       "video_id": "6370092779112",
       "duration": 206,
       "published_iso": "2025-03-15T21:42:23",
       "url": "https://crickettv.site/wpl/6370092779112.html"
+    },
+    {
+      "title": "Herbalife Active Catches of Week 4",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e0/c7/d5/0/image-470ba22b-9017-4c90-96ec-f9a81f1f08e9.jpg",
+      "video_id": "6370093363112",
+      "duration": 118,
+      "published_iso": "2025-03-15T21:42:23",
+      "url": "https://crickettv.site/wpl/6370093363112.html"
     },
     {
       "title": "Sintex Maximum Sixes of Week 4",
@@ -483,20 +491,20 @@
       "url": "https://crickettv.site/wpl/6370093744112.html"
     },
     {
-      "title": "Harmanpreet Kaur's innings was the difference between the two sides: Jonathan Batty",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7c/a4/6c/0/image-602f0448-8593-4885-afc2-a007c46696fd.jpg",
-      "video_id": "6370090975112",
-      "duration": 329,
-      "published_iso": "2025-03-15T20:58:07",
-      "url": "https://crickettv.site/wpl/6370090975112.html"
-    },
-    {
       "title": "It was a real team performance tonight: Charlotte Edwards",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cd/66/9a/0/image-c67a768a-c876-4e33-889e-ebda29b65968.jpg",
       "video_id": "6370092726112",
       "duration": 354,
       "published_iso": "2025-03-15T20:58:07",
       "url": "https://crickettv.site/wpl/6370092726112.html"
+    },
+    {
+      "title": "Harmanpreet Kaur's innings was the difference between the two sides: Jonathan Batty",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7c/a4/6c/0/image-602f0448-8593-4885-afc2-a007c46696fd.jpg",
+      "video_id": "6370090975112",
+      "duration": 329,
+      "published_iso": "2025-03-15T20:58:07",
+      "url": "https://crickettv.site/wpl/6370090975112.html"
     },
     {
       "title": "Presentation: Final, Delhi Capitals vs Mumbai Indians, WPL 2025",
@@ -507,20 +515,20 @@
       "url": "https://crickettv.site/wpl/6370087163112.html"
     },
     {
-      "title": "Amazing Moments: Final, Delhi Capitals vs Mumbai Indians, WPL 2025",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/10/15/96/0/image-afa6c666-9dc6-4752-9f2c-97e23b9d4b8a.jpg",
-      "video_id": "6370087249112",
-      "duration": 57,
-      "published_iso": "2025-03-15T19:29:00",
-      "url": "https://crickettv.site/wpl/6370087249112.html"
-    },
-    {
       "title": "TATA WPL 2025 - Sintex Sixes of the Season: Ashleigh Gardner",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9d/a6/e2/0/image-2ce497e9-3753-4166-ad97-7fdc4a7915a1.jpg",
       "video_id": "6370088910112",
       "duration": 95,
       "published_iso": "2025-03-15T19:29:00",
       "url": "https://crickettv.site/wpl/6370088910112.html"
+    },
+    {
+      "title": "Amazing Moments: Final, Delhi Capitals vs Mumbai Indians, WPL 2025",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/10/15/96/0/image-afa6c666-9dc6-4752-9f2c-97e23b9d4b8a.jpg",
+      "video_id": "6370087249112",
+      "duration": 57,
+      "published_iso": "2025-03-15T19:29:00",
+      "url": "https://crickettv.site/wpl/6370087249112.html"
     },
     {
       "title": "TATA WPL 2025 - Purple Cap - Most Wickets of the Season: Amelia Kerr",
@@ -531,36 +539,12 @@
       "url": "https://crickettv.site/wpl/6370088322112.html"
     },
     {
-      "title": "TATA WPL 2025 - Most Valuable Player by TATA Capital: Natalie Sciver",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/47/ef/0/image-c0443f15-d794-4fd4-a031-388568a32bd4.jpg",
-      "video_id": "6370089297112",
-      "duration": 144,
-      "published_iso": "2025-03-15T19:28:59",
-      "url": "https://crickettv.site/wpl/6370089297112.html"
-    },
-    {
-      "title": "TATA WPL 2025 - Emerging Player of the Season: Amanjot Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b4/3d/ab/0/image-26777d80-ab1c-458f-a62f-ebcebed5ab40.jpg",
-      "video_id": "6370088125112",
-      "duration": 51,
-      "published_iso": "2025-03-15T19:28:59",
-      "url": "https://crickettv.site/wpl/6370088125112.html"
-    },
-    {
       "title": "TATA WPL 2025 - Fair Play Award: Gujarat Giants",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/b0/5a/0/image-5f6a4ff3-39ca-4677-b567-8585b35ed503.jpg",
       "video_id": "6370088711112",
       "duration": 37,
       "published_iso": "2025-03-15T19:28:59",
       "url": "https://crickettv.site/wpl/6370088711112.html"
-    },
-    {
-      "title": "Sintex Six of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/bd/53/0/image-05cb3ea7-6767-4fa3-9a24-88ed5fd601a5.jpg",
-      "video_id": "6370088710112",
-      "duration": 41,
-      "published_iso": "2025-03-15T19:28:59",
-      "url": "https://crickettv.site/wpl/6370088710112.html"
     },
     {
       "title": "TATA WPL 2025 - Orange Cap - Most Runs of the Season: Natalie Sciver",
@@ -571,20 +555,36 @@
       "url": "https://crickettv.site/wpl/6370088522112.html"
     },
     {
-      "title": "TATA WPL 2025 - Curvv Super Striker of the Season: Chinelle Henry",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b8/25/32/0/image-fd6665ad-8787-45ab-8e33-1ffedd98fa17.jpg",
-      "video_id": "6370087939112",
-      "duration": 79,
-      "published_iso": "2025-03-15T19:27:13",
-      "url": "https://crickettv.site/wpl/6370087939112.html"
+      "title": "Sintex Six of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/bd/53/0/image-05cb3ea7-6767-4fa3-9a24-88ed5fd601a5.jpg",
+      "video_id": "6370088710112",
+      "duration": 41,
+      "published_iso": "2025-03-15T19:28:59",
+      "url": "https://crickettv.site/wpl/6370088710112.html"
     },
     {
-      "title": "Curvv Super Striker of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Marizanne Kapp",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/f9/58/0/image-414843a0-5dfc-4deb-9cc5-798904db5a0e.jpg",
-      "video_id": "6370087244112",
-      "duration": 46,
+      "title": "TATA WPL 2025 - Emerging Player of the Season: Amanjot Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b4/3d/ab/0/image-26777d80-ab1c-458f-a62f-ebcebed5ab40.jpg",
+      "video_id": "6370088125112",
+      "duration": 51,
+      "published_iso": "2025-03-15T19:28:59",
+      "url": "https://crickettv.site/wpl/6370088125112.html"
+    },
+    {
+      "title": "TATA WPL 2025 - Most Valuable Player by TATA Capital: Natalie Sciver",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/47/ef/0/image-c0443f15-d794-4fd4-a031-388568a32bd4.jpg",
+      "video_id": "6370089297112",
+      "duration": 144,
+      "published_iso": "2025-03-15T19:28:59",
+      "url": "https://crickettv.site/wpl/6370089297112.html"
+    },
+    {
+      "title": "TATA WPL 2025 - Green Dot Balls of the Season: Shabnim Ismail",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/cc/a4/0/image-f1cfffa8-a644-425d-8395-d9e04dc9134f.jpg",
+      "video_id": "6370088622112",
+      "duration": 50,
       "published_iso": "2025-03-15T19:27:13",
-      "url": "https://crickettv.site/wpl/6370087244112.html"
+      "url": "https://crickettv.site/wpl/6370088622112.html"
     },
     {
       "title": "Herbalife Active Catch of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Amelia Kerr",
@@ -595,12 +595,20 @@
       "url": "https://crickettv.site/wpl/6370088813112.html"
     },
     {
-      "title": "Player of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/67/a8/a1/0/image-28849b06-0a0e-4e94-aec1-8523de0bce0c.jpg",
-      "video_id": "6370088030112",
-      "duration": 33,
+      "title": "Curvv Super Striker of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Marizanne Kapp",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/f9/58/0/image-414843a0-5dfc-4deb-9cc5-798904db5a0e.jpg",
+      "video_id": "6370087244112",
+      "duration": 46,
       "published_iso": "2025-03-15T19:27:13",
-      "url": "https://crickettv.site/wpl/6370088030112.html"
+      "url": "https://crickettv.site/wpl/6370087244112.html"
+    },
+    {
+      "title": "TATA WPL 2025 - Curvv Super Striker of the Season: Chinelle Henry",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b8/25/32/0/image-fd6665ad-8787-45ab-8e33-1ffedd98fa17.jpg",
+      "video_id": "6370087939112",
+      "duration": 79,
+      "published_iso": "2025-03-15T19:27:13",
+      "url": "https://crickettv.site/wpl/6370087939112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Marizanne Kapp",
@@ -611,12 +619,12 @@
       "url": "https://crickettv.site/wpl/6370089295112.html"
     },
     {
-      "title": "TATA WPL 2025 - Green Dot Balls of the Season: Shabnim Ismail",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/cc/a4/0/image-f1cfffa8-a644-425d-8395-d9e04dc9134f.jpg",
-      "video_id": "6370088622112",
-      "duration": 50,
+      "title": "Player of the Match: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/67/a8/a1/0/image-28849b06-0a0e-4e94-aec1-8523de0bce0c.jpg",
+      "video_id": "6370088030112",
+      "duration": 33,
       "published_iso": "2025-03-15T19:27:13",
-      "url": "https://crickettv.site/wpl/6370088622112.html"
+      "url": "https://crickettv.site/wpl/6370088030112.html"
     },
     {
       "title": "TATA WPL 2025 - Herbalife Active Catch of the Season: Annabel Sutherland",
@@ -793,14 +801,6 @@
       "duration": 70,
       "published_iso": "2025-03-15T17:27:00",
       "url": "https://crickettv.site/wpl/6370083770112.html"
-    },
-    {
-      "title": "Wicket: Final, Delhi Capitals vs Mumbai Indians, WPL 2025: Sarah Bryce Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fe/0b/43/0/image-d4e37c7e-e6a5-4eb1-9604-482c3cb5c07b.jpg",
-      "video_id": "6370083567112",
-      "duration": 29,
-      "published_iso": "2025-03-15T17:25:47",
-      "url": "https://crickettv.site/wpl/6370083567112.html"
     }
   ]
 }
