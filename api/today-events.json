@@ -3,20 +3,6 @@
   "event": [
 
 {
-      "title": "Hobart Vs Adelaide",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/3620/1767875203620-h",
-      "watch_now": [
-        { "id": "home/hobart-vs-adelaide", "name": "All Stream" }
-      ],
-      "date": "9 Jan 2026",
-      "start_time": "01:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "BBL"
-},
-
-{
       "title": "Pakistan Vs Srilanka",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68cc9d3fe4b0ad10d8406d7d-1758242310223?location=hero-default&imwidth=2560",
       "watch_now": [
