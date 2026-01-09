@@ -14,6 +14,19 @@
       "league": "WPL"
 },
 {
+      "title": "Pakistan Vs Srilanka",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68cc9d3fe4b0ad10d8406d7d-1758242310223?location=hero-default&imwidth=2560",
+      "watch_now": [
+        { "id": "home/pakistan-vs-srilanka", "name": "All Stream" }
+      ],
+      "date": "9 Jan 2026",
+      "start_time": "06:40 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Eng",
+      "league": "ICC"
+},
+{
       "title": "Highlights",
       "poster_link": "https://images.swm.digital/image?u=https://production-mediacms-utility-hsyp63r9v13b.s3-ap-southeast-2.amazonaws.com/media/123761/full-replay-1.jpg&q=95&w=1200",
       "watch_now": [
