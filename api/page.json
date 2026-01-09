@@ -293,54 +293,6 @@
       }
     },
     {
-      "id": "joburag-vs-paarl",
-      "slug": "joburag-vs-paarl",
-      "seo": {
-        "meta_title": "Joubarg Vs Paarl",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/joburag-vs-paarl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-08T20:16:49.356+05:30",
-        "last_modified": "2026-01-08T20:58:13.025+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Joubarg Vs Paarl",
-        "team1": "Pretoria",
-        "team2": "Durban",
-        "venue": "Kingsmead, Durban",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Willow ",
-          "src": "https://crickettv.site/willow",
-          "default": true
-        },
-        {
-          "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07.",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
-        "players_to_watch": {
-          "Pretoria": [],
-          "Durban": []
-        },
-        "squads": {
-          "Pretoria": "",
-          "Durban": ""
-        }
-      }
-    },
-    {
       "id": "hobart-vs-adelaide",
       "slug": "hobart-vs-adelaide",
       "seo": {
@@ -439,6 +391,54 @@
         "squads": {
           "Royal Challengers Bangalore ": "Smriti Mandhana, Richa Ghosh, Sayali Satghare, Shreyanka Patil, Georgia Voll, Nadine de Klerk, Radha Yadav, Lauren Bell, Linsey Smith, Prema Rawat, Arundhati Reddy, Pooja Vastrakar, Grace Harris, Gautami Naik, Prathyoosha Kumar, D. Hemalatha",
           "Mumbai Indians ": "Harmanpreet Kaur (c), Nat Sciver Brunt, Hayley Matthews, Amanjot Kaur, G. Kamalini, Amelia Kerr, Shabnim Ismail, Sanskriti Gupta, Sajana Sajeevan, Rahila Firdous, Nicola Carey, Poonam Khemnar, Triveni Vasistha, Nalla Reddy, Saika Ishaque, Milly Illingworth"
+        }
+      }
+    },
+    {
+      "id": "joburag-vs-paarl",
+      "slug": "joburag-vs-paarl",
+      "seo": {
+        "meta_title": "Joubarg Vs Paarl",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/joburag-vs-paarl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-08T20:16:49.356+05:30",
+        "last_modified": "2026-01-09T16:39:37.022+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Joubarg Vs Paarl",
+        "team1": "Pretoria",
+        "team2": "Durban",
+        "venue": "Kingsmead, Durban",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Willow ",
+          "src": "https://crickettv.site/willow",
+          "default": true
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://crickettv.site/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "Durban Super Giants are set to lock horns with Pretoria Capitals in Match 16 of the SA20 2025-26 at Kingsmead in Durban, on Wednesday, January 07.",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Pretoria": [],
+          "Durban": []
+        },
+        "squads": {
+          "Pretoria": "",
+          "Durban": ""
         }
       }
     }
