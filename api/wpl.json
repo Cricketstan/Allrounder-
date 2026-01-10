@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-10T15:44:33.893Z",
+  "updated_at": "2026-01-10T15:58:10.425Z",
   "count": 100,
   "items": [
+    {
+      "title": "4 x 4! Harmanpreet Kaur's fiery finish",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cc/f0/ac/0/image-26211c6d-898f-4bd7-a540-dc17c16a6597.jpg",
+      "video_id": "6387526099112",
+      "duration": 129,
+      "published_iso": "2026-01-10T15:41:16",
+      "url": "https://crickettv.site/wpl/6387526099112.html"
+    },
     {
       "title": "Interview: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Nat Sciver-Brunt Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/4d/eb/f1/0/image-459b4af6-d5fc-42ce-9a9b-053eed371de1.jpg",
@@ -11,8 +19,8 @@
       "url": "https://crickettv.site/wpl/6387526661112.html"
     },
     {
-      "title": "Captain Harmanpreet Kaur's blistering 74*(42)",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2b/04/67/0/image-d987b975-8d13-4f35-ae1a-1d16683f39e3.jpg",
+      "title": "Captain Harmanpreet Kaur's authoritative 74*(42)",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/90/ab/ce/0/image-42f62957-7913-4a70-ab61-e613f5831687.jpg",
       "video_id": "6387525986112",
       "duration": 217,
       "published_iso": "2026-01-10T15:35:03",
@@ -100,10 +108,10 @@
     },
     {
       "title": "Battle of youngsters! Nandini Sharma vs G.Kamalini",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9a/98/4c/0/image-59cdd14e-62cc-4197-a72f-e2f3679d312a.jpg",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/16/bc/ab/0/EwUFIpSG3h.jpg",
       "video_id": "6387523583112",
       "duration": 100,
-      "published_iso": "2026-01-10T14:54:45",
+      "published_iso": "2026-01-10T14:54:00",
       "url": "https://crickettv.site/wpl/6387523583112.html"
     },
     {
@@ -163,6 +171,22 @@
       "url": "https://crickettv.site/wpl/6387522663112.html"
     },
     {
+      "title": "Player of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Georgia Wareham",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/63/a0/9a/0/image-187aa8e9-b5a3-4dd5-947f-507c875c5eb3.jpg",
+      "video_id": "6387522664112",
+      "duration": 90,
+      "published_iso": "2026-01-10T13:19:00",
+      "url": "https://crickettv.site/wpl/6387522664112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/65/03/0/image-1f0f9187-0630-4f1f-a688-784688280177.jpg",
+      "video_id": "6387522066112",
+      "duration": 24,
+      "published_iso": "2026-01-10T13:19:00",
+      "url": "https://crickettv.site/wpl/6387522066112.html"
+    },
+    {
       "title": "ChatGPT Match IQ Award: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/40/1e/6b/0/image-e622d8cf-0377-441b-a2d3-90d547780485.jpg",
       "video_id": "6387523818112",
@@ -179,28 +203,12 @@
       "url": "https://crickettv.site/wpl/6387523819112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/65/03/0/image-1f0f9187-0630-4f1f-a688-784688280177.jpg",
-      "video_id": "6387522066112",
-      "duration": 24,
-      "published_iso": "2026-01-10T13:19:00",
-      "url": "https://crickettv.site/wpl/6387522066112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Georgia Wareham",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1b/ee/7e/0/image-3c1b9fc3-549c-4c30-a782-8a25d544b0df.jpg",
       "video_id": "6387521883112",
       "duration": 24,
       "published_iso": "2026-01-10T13:19:00",
       "url": "https://crickettv.site/wpl/6387521883112.html"
-    },
-    {
-      "title": "Player of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Georgia Wareham",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/63/a0/9a/0/image-187aa8e9-b5a3-4dd5-947f-507c875c5eb3.jpg",
-      "video_id": "6387522664112",
-      "duration": 90,
-      "published_iso": "2026-01-10T13:19:00",
-      "url": "https://crickettv.site/wpl/6387522664112.html"
     },
     {
       "title": "Presentation: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026",
@@ -251,20 +259,20 @@
       "url": "https://crickettv.site/wpl/6387521646112.html"
     },
     {
-      "title": "Wicket: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Deandra Dottin Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/50/4c/1d/0/image-7601f18f-d77e-420b-9bc8-a6db2572da86.jpg",
-      "video_id": "6387522827112",
-      "duration": 20,
-      "published_iso": "2026-01-10T12:50:26",
-      "url": "https://crickettv.site/wpl/6387522827112.html"
-    },
-    {
       "title": "Six: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Asha Sobhana Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a2/92/22/0/image-0338ab54-b95c-4a8f-a588-e2ec58acb681.jpg",
       "video_id": "6387522148112",
       "duration": 17,
       "published_iso": "2026-01-10T12:50:26",
       "url": "https://crickettv.site/wpl/6387522148112.html"
+    },
+    {
+      "title": "Wicket: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Deandra Dottin Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/50/4c/1d/0/image-7601f18f-d77e-420b-9bc8-a6db2572da86.jpg",
+      "video_id": "6387522827112",
+      "duration": 20,
+      "published_iso": "2026-01-10T12:50:26",
+      "url": "https://crickettv.site/wpl/6387522827112.html"
     },
     {
       "title": "Wicket: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Sophie Ecclestone Wicket",
@@ -436,7 +444,7 @@
     },
     {
       "title": "Highlights: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9f/83/61/0/image-f2d76e9e-7ffc-40c5-ae2e-5c0af6fefc6d.jpg",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d6/ee/5b/0/image-8ff652ff-2f46-445b-8ea9-314487057ed5.jpg",
       "video_id": "6387521898112",
       "duration": 685,
       "published_iso": "2026-01-10T11:16:41",
@@ -540,19 +548,19 @@
     },
     {
       "title": "Six: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Ashleigh Gardner Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a9/47/58/0/image-f3a808e0-6eaa-4e41-b4dc-5a517cc86d2e.jpg",
-      "video_id": "6387520198112",
-      "duration": 19,
-      "published_iso": "2026-01-10T10:44:05",
-      "url": "https://crickettv.site/wpl/6387520198112.html"
-    },
-    {
-      "title": "Six: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Ashleigh Gardner Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cb/62/bb/0/image-d3ddf4fd-f057-4da9-b253-afc330d1d823.jpg",
       "video_id": "6387520893112",
       "duration": 20,
       "published_iso": "2026-01-10T10:44:05",
       "url": "https://crickettv.site/wpl/6387520893112.html"
+    },
+    {
+      "title": "Six: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Ashleigh Gardner Six",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a9/47/58/0/image-f3a808e0-6eaa-4e41-b4dc-5a517cc86d2e.jpg",
+      "video_id": "6387520198112",
+      "duration": 19,
+      "published_iso": "2026-01-10T10:44:05",
+      "url": "https://crickettv.site/wpl/6387520198112.html"
     },
     {
       "title": "Six: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Ashleigh Gardner Six",
@@ -793,14 +801,6 @@
       "duration": 132,
       "published_iso": "2026-01-09T17:51:23",
       "url": "https://crickettv.site/wpl/6387486241112.html"
-    },
-    {
-      "title": "Super Sixes: Match 1, Mumbai Indians vs Royal Challengers Bengaluru, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f8/34/e6/0/image-f3d170f3-1509-41af-b5ec-c4f4d6da81e9.jpg",
-      "video_id": "6387485495112",
-      "duration": 92,
-      "published_iso": "2026-01-09T17:48:14",
-      "url": "https://crickettv.site/wpl/6387485495112.html"
     }
   ]
 }
