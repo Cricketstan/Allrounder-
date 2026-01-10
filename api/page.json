@@ -504,7 +504,7 @@
         "canonical": "https://crickettv.site/home/warriors-vs-gaints/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-10T14:35:23.328+05:30",
-        "last_modified": "2026-01-10T14:35:23.328+05:30",
+        "last_modified": "2026-01-10T14:36:25.086+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -518,12 +518,22 @@
       "streams": [
         {
           "name": "Hindi",
-          "src": "",
+          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
           "default": false
         },
         {
-          "name": "",
-          "src": "",
+          "name": "Jio Hotstar ",
+          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
+          "default": false
+        },
+        {
+          "name": "Willow Sports ",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
+          "default": false
+        },
+        {
+          "name": "Willow",
+          "src": "https://crickettv.site/willow",
           "default": false
         }
       ],
