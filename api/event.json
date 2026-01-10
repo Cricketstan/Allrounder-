@@ -16,9 +16,9 @@
 },
 {
       "title": "Highlights",
-      "poster_link": "https://images.swm.digital/image?u=https://production-mediacms-utility-hsyp63r9v13b.s3-ap-southeast-2.amazonaws.com/media/123761/full-replay-1.jpg&q=95&w=1200",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/8930/1767991858930-h",
       "watch_now": [
-        { "id": "highlights/BBL", "name": "Play Highlights" }
+        { "id": "highlights/wpl", "name": "Play Highlights" }
       ],
       "date": "1 Jan 2026",
       "start_time": "07:45 PM",
