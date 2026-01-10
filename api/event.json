@@ -2,6 +2,19 @@
   "event": [
 
 {
+      "title": "UP Vs Gujarat",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/2041/1768021822041-h",
+      "watch_now": [
+        { "id": "home/warriors-vs-gaints", "name": "All Stream" }
+      ],
+      "date": "10 Jan 2026",
+      "start_time": "03:10 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Eng",
+      "league": "WPL"
+},
+{
       "title": "Heat Vs Thunder",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69493921e4b0ee6bbe946ff5-1766530821240?location=hero-default&imwidth=2560",
       "watch_now": [
