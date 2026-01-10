@@ -2,30 +2,17 @@
 {
   "event": [
 {
-      "title": "Mumbai Vs Bengalore",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/468/1767874880468-h",
+      "title": "Heat Vs Thunder",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69493921e4b0ee6bbe946ff5-1766530821240?location=hero-default&imwidth=2560",
       "watch_now": [
-        { "id": "home/rcb-vs-mi", "name": "All Stream" }
+        { "id": "home/heat-vs-thunder", "name": "All Stream" }
       ],
-      "date": "9 Jan 2026",
-      "start_time": "07:00 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "WPL"
-},
-{
-      "title": "Pakistan Vs Srilanka",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/68cc9d3fe4b0ad10d8406d7d-1758242310223?location=hero-default&imwidth=2560",
-      "watch_now": [
-        { "id": "home/pakistan-vs-srilanka", "name": "All Stream" }
-      ],
-      "date": "9 Jan 2026",
-      "start_time": "06:40 PM",
+      "date": "10 Jan 2026",
+      "start_time": "10:25 AM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
-      "league": "ICC"
+      "league": "BBL"
 },
 {
       "title": "South Africa T20",
@@ -33,8 +20,8 @@
       "watch_now": [
         { "id": "home/durban-vs-pretoria", "name": "All Stream" }
       ],
-      "date": "9 Jan 2026",
-      "start_time": "08:55 PM",
+      "date": "10 Jan 2026",
+      "start_time": "04:25 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
