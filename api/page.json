@@ -446,6 +446,49 @@
           "Durban": ""
         }
       }
+    },
+    {
+      "id": "heat-vs-thunder",
+      "slug": "heat-vs-thunder",
+      "seo": {
+        "meta_title": "Adelaide Strikers Vs Hobart Hurricane ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/heat-vs-thunder/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-10T07:56:55.933+05:30",
+        "last_modified": "2026-01-10T07:56:55.934+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Sydney Thunder Vs Brisbane Heat",
+        "team1": "Hobart Hurricane ",
+        "team2": "Adelaide strikers ",
+        "venue": "Hobart ",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/",
+          "default": true
+        }
+      ],
+      "content": {
+        "overview": "In the 28th game of the BBL 2025-26, Hobart Hurricanes (HUR) are set to face Adelaide Strikers (STR). The Hobart Hurricanes are performing well in this season so far, as they won five out of the seven games. They also won the previous match against the Sydney Thunder by 6 wickets. Tim Ward performed well for them in the last game and scored 90 runs off 49 balls, while Will Prestwidge took two wickets in the bowling department. ",
+        "match_details": "",
+        "pitch_report": "The pitch at Bellerive Oval, Hobart, generally offered good conditions for batting. However, in the first Power Play, the fast bowlers will get good bounce and movement with the new ball, due to which the batters may find it difficult to play shots. But once settled, it will be easy for the batsmen to score runs on this surface. Spinners will also get help from the surface in the middle overs.",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Hobart Hurricane ": [],
+          "Adelaide strikers ": []
+        },
+        "squads": {
+          "Hobart Hurricane ": "",
+          "Adelaide strikers ": "Jason Sangha, MW Short (C), J Overton, CA Lynn, Liam Scott, Hasan Ali, MW Harvey (wk), L Pope, L Wood, J Wadia, H Manenti\n\nBench : AT Carey, HJ Nielsen, TM Head, Thomas Kelly, AI Ross, CJ Boyce, Jordan Buckingham, Henry Thornton, Tom Straker, T Shamsi\n\n"
+        }
+      }
     }
   ]
 }
