@@ -3,38 +3,41 @@
   "event": [
 
 {
-      "title": "Mumbai Vs Delhi",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/7031/1767985767031-h",
-      "watch_now": [
-        { "id": "home/warriors-vs-gaints", "name": "All Stream" }
-      ],
-      "date": "10 Jan 2026",
-      "start_time": "07:00 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "WPL"
-},
-{
-      "title": "Star Vs Renegades",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/695a488fe4b045d41e9a8da7-1767566755818?location=hero-default&imwidth=2560",
+      "title": "Sixers Vs Hurricane",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69448114e4b0d8ef2e159aa3-1766533361094?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home/heat-vs-thunder", "name": "All Stream" }
       ],
-      "date": "10 Jan 2026",
-      "start_time": "01:40 PM",
+      "date": "11 Jan 2026",
+      "start_time": "8:15 AM",
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
       "league": "BBL"
 },
+
+
+{
+      "title": "India Vs Newzealand",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69550365e4b098c9e191f419-1767680166230?location=hero-default&imwidth=1920",
+      "watch_now": [
+        { "id": "home/heat-vs-thunder", "name": "All Stream" }
+      ],
+      "date": "11 Jan 2026",
+      "start_time": "1:00 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "ODI"
+},
+
 {
       "title": "South Africa T20",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920",
       "watch_now": [
         { "id": "home/durban-vs-pretoria", "name": "All Stream" }
       ],
-      "date": "10 Jan 2026",
+      "date": "11 Jan 2026",
       "start_time": "04:25 PM",
       "category": "Cricket",
       "year": "2025",
