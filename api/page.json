@@ -494,6 +494,54 @@
           "Adelaide strikers ": "Jason Sangha, MW Short (C), J Overton, CA Lynn, Liam Scott, Hasan Ali, MW Harvey (wk), L Pope, L Wood, J Wadia, H Manenti\n\nBench : AT Carey, HJ Nielsen, TM Head, Thomas Kelly, AI Ross, CJ Boyce, Jordan Buckingham, Henry Thornton, Tom Straker, T Shamsi\n\n"
         }
       }
+    },
+    {
+      "id": "warriors-vs-gaints",
+      "slug": "warriors-vs-gaints",
+      "seo": {
+        "meta_title": "Up Warriors Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/warriors-vs-gaints/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-10T14:35:23.328+05:30",
+        "last_modified": "2026-01-10T14:35:23.328+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Warriors Vs Gaints",
+        "team1": "Warriors ",
+        "team2": "Gaints",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hindi",
+          "src": "",
+          "default": false
+        },
+        {
+          "name": "",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "Gujarat Giants have looked nowhere close to being real contenders for a title in the previous three seasons. However, the revamped unit has made quite a few interesting additions for the 2026 edition. Ashleigh Gardner has been appointed as the full-time skipper of the side, and she will be hoping to prove her worth by leading the side by example.\n\n\n\nUP Warriorz, on the other hand, have welcomed an experienced captain to their set-up in the form of Meg Lanning. She has the habit of taking her side to the finals, and is also a proven leader. She captained Delhi Capitals previously in all three preceding seasons, where they reached the summit clash every time. Hence, she will be hoping to build a similar habit with her new side, especially with someone like Deepti Sharma alongside.",
+        "match_details": "",
+        "pitch_report": "The Dr. DY Patil Sports Academy in Navi Mumbai is among the most iconic landmarks in WPL history, and is the same venue that hosted the first-ever match in the league. The pitches here have a tendency to slow down as the match progresses, which doesn't allow the batters to score runs at will. As a result, batting first and putting up a target for the opposition is an ideal decision for teams winning the toss.",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Warriors ": [],
+          "Gaints": []
+        },
+        "squads": {
+          "Warriors ": "Meg Lanning (captain), Pratika Rawal, Deandra Dottin, Harleen Deol, Deepti Sharma, Kiran Navgire, Chloe Tryon, Shweta Sehrawat, Asha Sobhana, Sophie Ecclestone, Shikha Pandey",
+          "Gaints": "Yastika Bhatia (wicketkeeper), Beth Mooney, Sophie Devine, Ashleigh Gardner (captain), Bharti Fulmali, Kashvee Gautam, Anushka Sharma, Kanika Ahuja, Renuka Singh Thakur, Titas Sadhu, Georgia Wareham"
+        }
+      }
     }
   ]
 }
