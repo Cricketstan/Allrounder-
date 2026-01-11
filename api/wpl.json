@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-11T09:53:49.647Z",
+  "updated_at": "2026-01-11T10:29:36.426Z",
   "count": 100,
   "items": [
+    {
+      "title": "Varun Dhawan on TATA WPL and the rise of women's cricket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/27/9e/6a/0/image-7aca1c66-f46d-42de-85cb-63540c7381d9.jpg",
+      "video_id": "6387561689112",
+      "duration": 103,
+      "published_iso": "2026-01-11T10:22:22",
+      "url": "https://crickettv.site/wpl/6387561689112.html"
+    },
     {
       "title": "Change of fortunes, ft. G Kamalini and Natalie Sciver-Brunt",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2b/8b/c9/0/image-dd7d5af4-70ef-477f-a0a6-0e33d72e1bd6.jpg",
@@ -43,14 +51,6 @@
       "url": "https://crickettv.site/wpl/6387531216112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: G. Kamalini",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/15/dc/af/0/image-6ecb8a31-939c-43c1-96b6-7fd8d94a39e1.jpg",
-      "video_id": "6387530251112",
-      "duration": 30,
-      "published_iso": "2026-01-10T18:26:58",
-      "url": "https://crickettv.site/wpl/6387530251112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d9/36/fa/0/image-795c3295-4f2f-40ff-8f4a-2313d790836f.jpg",
       "video_id": "6387531518112",
@@ -59,20 +59,28 @@
       "url": "https://crickettv.site/wpl/6387531518112.html"
     },
     {
-      "title": "Player of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/f7/5f/0/image-8bdb8fec-7633-4b44-a21a-65895b4c2ab2.jpg",
-      "video_id": "6387529757112",
-      "duration": 194,
-      "published_iso": "2026-01-10T18:26:58",
-      "url": "https://crickettv.site/wpl/6387529757112.html"
-    },
-    {
       "title": "ChatGPT Match IQ Award: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Nicola Carey",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/74/20/d1/0/image-5b29102d-829d-487f-bbc6-c88b63287b1f.jpg",
       "video_id": "6387530624112",
       "duration": 22,
       "published_iso": "2026-01-10T18:26:58",
       "url": "https://crickettv.site/wpl/6387530624112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: G. Kamalini",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/15/dc/af/0/image-6ecb8a31-939c-43c1-96b6-7fd8d94a39e1.jpg",
+      "video_id": "6387530251112",
+      "duration": 30,
+      "published_iso": "2026-01-10T18:26:58",
+      "url": "https://crickettv.site/wpl/6387530251112.html"
+    },
+    {
+      "title": "Player of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/f7/5f/0/image-8bdb8fec-7633-4b44-a21a-65895b4c2ab2.jpg",
+      "video_id": "6387529757112",
+      "duration": 194,
+      "published_iso": "2026-01-10T18:26:58",
+      "url": "https://crickettv.site/wpl/6387529757112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Chinelle Henry",
@@ -227,6 +235,14 @@
       "url": "https://crickettv.site/wpl/6387528667112.html"
     },
     {
+      "title": "Wicket: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Marizanne Kapp Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/ce/83/0/3oERiQ01H5.jpg",
+      "video_id": "6387525921112",
+      "duration": 28,
+      "published_iso": "2026-01-10T16:24:00",
+      "url": "https://crickettv.site/wpl/6387525921112.html"
+    },
+    {
       "title": "Six: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Marizanne Kapp Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/87/42/98/0/dAwnTI1D5b.jpg",
       "video_id": "6387526714112",
@@ -241,14 +257,6 @@
       "duration": 79,
       "published_iso": "2026-01-10T16:24:00",
       "url": "https://crickettv.site/wpl/6387528471112.html"
-    },
-    {
-      "title": "Wicket: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Marizanne Kapp Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/ce/83/0/3oERiQ01H5.jpg",
-      "video_id": "6387525921112",
-      "duration": 28,
-      "published_iso": "2026-01-10T16:24:00",
-      "url": "https://crickettv.site/wpl/6387525921112.html"
     },
     {
       "title": "Flying Kamalini! A terrific one-handed blinder",
@@ -451,12 +459,12 @@
       "url": "https://crickettv.site/wpl/6387522663112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/40/1e/6b/0/image-e622d8cf-0377-441b-a2d3-90d547780485.jpg",
-      "video_id": "6387523818112",
-      "duration": 23,
+      "title": "Herbalife Active Catch of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/65/03/0/image-1f0f9187-0630-4f1f-a688-784688280177.jpg",
+      "video_id": "6387522066112",
+      "duration": 24,
       "published_iso": "2026-01-10T13:19:00",
-      "url": "https://crickettv.site/wpl/6387523818112.html"
+      "url": "https://crickettv.site/wpl/6387522066112.html"
     },
     {
       "title": "Player of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Georgia Wareham",
@@ -475,20 +483,20 @@
       "url": "https://crickettv.site/wpl/6387523819112.html"
     },
     {
+      "title": "ChatGPT Match IQ Award: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/40/1e/6b/0/image-e622d8cf-0377-441b-a2d3-90d547780485.jpg",
+      "video_id": "6387523818112",
+      "duration": 23,
+      "published_iso": "2026-01-10T13:19:00",
+      "url": "https://crickettv.site/wpl/6387523818112.html"
+    },
+    {
       "title": "Sierra Super Striker of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Georgia Wareham",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1b/ee/7e/0/image-3c1b9fc3-549c-4c30-a782-8a25d544b0df.jpg",
       "video_id": "6387521883112",
       "duration": 24,
       "published_iso": "2026-01-10T13:19:00",
       "url": "https://crickettv.site/wpl/6387521883112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Bharti Fulmali",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/68/65/03/0/image-1f0f9187-0630-4f1f-a688-784688280177.jpg",
-      "video_id": "6387522066112",
-      "duration": 24,
-      "published_iso": "2026-01-10T13:19:00",
-      "url": "https://crickettv.site/wpl/6387522066112.html"
     },
     {
       "title": "Presentation: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026",
@@ -539,20 +547,20 @@
       "url": "https://crickettv.site/wpl/6387521646112.html"
     },
     {
-      "title": "Wicket: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Deandra Dottin Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/50/4c/1d/0/image-7601f18f-d77e-420b-9bc8-a6db2572da86.jpg",
-      "video_id": "6387522827112",
-      "duration": 20,
-      "published_iso": "2026-01-10T12:50:26",
-      "url": "https://crickettv.site/wpl/6387522827112.html"
-    },
-    {
       "title": "Six: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Asha Sobhana Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a2/92/22/0/image-0338ab54-b95c-4a8f-a588-e2ec58acb681.jpg",
       "video_id": "6387522148112",
       "duration": 17,
       "published_iso": "2026-01-10T12:50:26",
       "url": "https://crickettv.site/wpl/6387522148112.html"
+    },
+    {
+      "title": "Wicket: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Deandra Dottin Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/50/4c/1d/0/image-7601f18f-d77e-420b-9bc8-a6db2572da86.jpg",
+      "video_id": "6387522827112",
+      "duration": 20,
+      "published_iso": "2026-01-10T12:50:26",
+      "url": "https://crickettv.site/wpl/6387522827112.html"
     },
     {
       "title": "Wicket: Match 2, UP Warriorz vs Gujarat Giants, WPL 2026: Sophie Ecclestone Wicket",
@@ -793,14 +801,6 @@
       "duration": 15,
       "published_iso": "2026-01-10T10:55:34",
       "url": "https://crickettv.site/wpl/6387519253112.html"
-    },
-    {
-      "title": "GG Captain Ashleigh Gardner leads the way with 65(41)",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/59/0a/3d/0/image-35c3511e-d22f-46b1-9128-d5d62388dfd6.jpg",
-      "video_id": "6387520896112",
-      "duration": 184,
-      "published_iso": "2026-01-10T10:55:29",
-      "url": "https://crickettv.site/wpl/6387520896112.html"
     }
   ]
 }
