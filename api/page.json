@@ -562,7 +562,7 @@
         "canonical": "https://crickettv.site/home/india-vs-newzeland/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-11T10:08:43.225+05:30",
-        "last_modified": "2026-01-11T12:59:36.239+05:30",
+        "last_modified": "2026-01-11T13:08:16.946+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -575,13 +575,13 @@
       },
       "streams": [
         {
-          "name": "Hindi",
+          "name": "Jio Hotstar ",
           "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
           "default": false
         },
         {
-          "name": "Jio Hotstar",
-          "src": "https://allrounderlive.pages.dev/player?url=https://dillzy.cricketstream745.workers.dev/live.m3u8",
+          "name": "Hindi",
+          "src": "https://cricketstan.github.io/Star-Sports-2-Hindi/",
           "default": false
         },
         {
