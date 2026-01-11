@@ -1,32 +1,30 @@
 <!DOCTYPE html>
-<html lang="en"> 
-<head> 
-  <meta charset="UTF-8"> 
-  <title>dillzy</title> 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <script src="//content.jwplatform.com/libraries/SAHhwvZq.js"></script> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>dillzy</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- 
-  <script>
-  
-    
-  <style> 
-    html, body { 
-      margin: 0; 
-      height: 100%; 
+  <!-- JW Player -->
+  <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
       background: #000;
-    } 
+    }
 
-    .jwplayer { 
-      position: absolute !important; 
+    .jwplayer {
+      position: absolute !important;
       inset: 0;
-    } 
+    }
 
-    .jwplayer.jw-flag-aspect-mode { 
-      min-height: 100%; 
-      max-height: 100%; 
-    } 
+    .jwplayer.jw-flag-aspect-mode {
+      min-height: 100%;
+      max-height: 100%;
+    }
 
     #visitor-counter {
       position: fixed;
@@ -44,7 +42,7 @@
       background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
       z-index: 10000;
       display: none;
       max-width: 85%;
@@ -72,23 +70,9 @@
       gap: 10px;
       margin-bottom: 20px;
       color: #4CAF50;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 16px;
       font-weight: 600;
-    }
-
-    #capture-preview .preview-header svg {
-      width: 24px;
-      height: 24px;
-      fill: #4CAF50;
-    }
-
-    #capture-preview .image-wrapper {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      border: 2px solid rgba(255, 255, 255, 0.05);
     }
 
     #capture-preview img {
@@ -102,15 +86,8 @@
       color: #888;
       text-align: center;
       margin-top: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      font-family: Arial, sans-serif;
       font-size: 13px;
-      letter-spacing: 0.3px;
-    }
-
-    /* Style the JW Player button */
-    .jw-button-container .jw-icon-capture {
-      width: 40px;
-      height: 40px;
     }
 
     .jw-svg-icon-capture {
@@ -118,23 +95,19 @@
       width: 20px;
       height: 20px;
     }
-  </style> 
-</head> 
+  </style>
+</head>
 
-<body> 
-  <div id="jwplayerDiv"></div> 
+<body>
+
+  <div id="jwplayerDiv"></div>
 
   <!-- Premium frame capture preview -->
   <div id="capture-preview">
     <div class="preview-header">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-      </svg>
-      <span>Frame Captured Successfully</span>
+      ✔ Frame Captured Successfully
     </div>
-    <div class="image-wrapper">
-      <img id="captured-image" alt="Captured Frame">
-    </div>
+    <img id="captured-image" alt="Captured Frame">
     <div class="info">Image downloaded automatically</div>
   </div>
 
@@ -142,9 +115,6 @@
   <div id="visitor-counter">
     <div id="sfcf9a543mw181dpyf921tw7rfrwz5bx28z"></div>
     <script src="https://counter1.optistats.ovh/private/counter.js?c=f9a543mw181dpyf921tw7rfrwz5bx28z&down=async" async></script>
-    <noscript>
-      <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=f9a543mw181dpyf921tw7rfrwz5bx28z" alt="">
-    </noscript>
   </div>
 
   <script>
@@ -152,90 +122,69 @@
     const stream = urlParams.get('url') || "https://rumble.com/live-hls-dvr/6z66p4/playlist.m3u8";
 
     const player = jwplayer("jwplayerDiv");
-    
-    player.setup({ 
-      file: stream, 
-      position: 'bottom', 
-      autostart: true, 
-      stretching: "uniform", 
-      width: "100%", 
+
+    player.setup({
+      file: stream,
+      autostart: true,
+      stretching: "uniform",
+      width: "100%",
       type: "hls"
     });
 
-    // Add custom capture button to control bar
-    player.on('ready', function() {
-      // Create SVG icon
-      const iconPath = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="jw-svg-icon jw-svg-icon-capture"><path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>';
-      
+    player.on('ready', function () {
+      const iconPath = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="jw-svg-icon jw-svg-icon-capture">
+        <path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+      </svg>`;
+
       player.addButton(
         iconPath,
         'Capture Frame',
-        function() {
-          captureFrame();
-        },
+        captureFrame,
         'capture-frame-btn'
       );
-
-      // Apply custom styling to the button
-      setTimeout(() => {
-        const captureBtn = document.querySelector('.jw-icon-capture');
-        if (captureBtn) {
-          captureBtn.style.display = 'flex';
-          captureBtn.style.alignItems = 'center';
-          captureBtn.style.justifyContent = 'center';
-        }
-      }, 100);
     });
 
     function captureFrame() {
       try {
-        // Get the video element
         const video = document.querySelector('video');
-        
         if (!video) {
-          alert('Video element not found');
+          alert('Video not found');
           return;
         }
 
-        // Create canvas
         const canvas = document.createElement('canvas');
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
-        
-        // Draw current frame
+
         const ctx = canvas.getContext('2d');
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        
-        // Convert to blob and download
-        canvas.toBlob(function(blob) {
-          // Create download link
+
+        canvas.toBlob(function (blob) {
           const url = URL.createObjectURL(blob);
           const a = document.createElement('a');
           const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
           a.href = url;
-          a.download = `frame-capture-${timestamp}.png`;
+          a.download = `frame-${timestamp}.png`;
           a.click();
-          
-          // Show premium preview
+
           const preview = document.getElementById('capture-preview');
           const capturedImg = document.getElementById('captured-image');
           capturedImg.src = url;
           preview.classList.add('show');
-          
-          // Hide preview after 2.5 seconds
+
           setTimeout(() => {
             preview.classList.remove('show');
-            setTimeout(() => {
-              URL.revokeObjectURL(url);
-            }, 300);
+            URL.revokeObjectURL(url);
           }, 2500);
         }, 'image/png');
-        
-      } catch (error) {
-        console.error('Error capturing frame:', error);
-        alert('Error capturing frame. Please try again.');
+
+      } catch (e) {
+        console.error(e);
+        alert("Capture failed!");
       }
     }
-  </script> 
-</body> 
+  </script>
+
+</body>
 </html>
