@@ -1859,6 +1859,10 @@ body {
 </div>
 
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  initParticles();
+  initSlider();
+});
 // [All your existing JavaScript code remains exactly the same]
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
