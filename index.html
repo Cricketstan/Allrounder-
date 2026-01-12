@@ -1861,46 +1861,47 @@ body {
 <script>
   document.addEventListener("DOMContentLoaded", () => {
   initParticles();
-  initSlider();
+  
 });
-// [All your existing JavaScript code remains exactly the same]
-const canvas = document.getElementById('particles');
-const ctx = canvas.getContext('2d');
+function initParticles() {
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
 
-let w, h;
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
+  let w, h;
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const particles = [];
+  for (let i = 0; i < 45; i++) {
+    particles.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 1.4 + 0.4,
+      vx: Math.random() * 0.15 + 0.05,
+      vy: Math.random() * 0.1 + 0.03,
+      a: Math.random() * 0.35 + 0.15
+    });
+  }
+
+  (function animate() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x > w) p.x = 0;
+      if (p.y > h) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${p.a})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(animate);
+  })();
 }
-window.addEventListener('resize', resize);
-resize();
-
-const particles = [];
-for (let i = 0; i < 45; i++) {
-  particles.push({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    r: Math.random() * 1.4 + 0.4,
-    vx: Math.random() * 0.15 + 0.05,
-    vy: Math.random() * 0.1 + 0.03,
-    a: Math.random() * 0.35 + 0.15
-  });
-}
-
-(function animate() {
-  ctx.clearRect(0, 0, w, h);
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    if (p.x > w) p.x = 0;
-    if (p.y > h) p.y = 0;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${p.a})`;
-    ctx.fill();
-  });
-  requestAnimationFrame(animate);
-})();
 
 const slider = document.getElementById('slider');
 const dotsWrap = document.getElementById('dots');
