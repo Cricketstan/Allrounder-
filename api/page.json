@@ -2,40 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "indu19-vs-southafricau19",
-      "slug": "indu19-vs-southafricau19",
-      "seo": {
-        "meta_title": "India U19 vs South Africa U19 Live Streaming",
-        "meta_description": "Watch India U19 vs South Africa U19 live streaming online on CricTV.",
-        "canonical": "https://crickettv.site/home/indu19-vs-southafricau19/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-04T14:00:00+05:30",
-        "last_modified": "2026-01-04T14:00:00+05:30",
-        "breadcrumb_title": "India U19 vs South Africa U19"
-      },
-      "match": {
-        "title": "India U19 vs South Africa U19 Live Streaming",
-        "team1": "India U19",
-        "team2": "South Africa U19",
-        "venue": "Unknown",
-        "start_iso": "2026-01-04T15:00:00+05:30",
-        "end_iso": "2026-01-04T19:00:00+05:30"
-      },
-      "streams": [
-        {
-          "name": "Hotstar",
-          "src": "https://dillzy.wasmer.app/?url=https://youtu.be/kpqdUCpiPDI?si=yL2Nv4INPLasdXyx",
-          "default": true
-        }
-      ],
-      "content": {
-        "overview": "India U19 take on South Africa U19 in an exciting youth international fixture.",
-        "match_details": "Match: India U19 vs South Africa U19\nFormat: Youth International",
-        "prediction": "India U19 look slightly stronger on paper.",
-        "final_word": "Expect young talent and competitive cricket."
-      }
-    },
-    {
       "id": "england-vs-australia",
       "slug": "england-vs-australia",
       "seo": {
