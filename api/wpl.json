@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-12T04:04:03.591Z",
+  "updated_at": "2026-01-12T05:01:23.628Z",
   "count": 100,
   "items": [
+    {
+      "title": "Recapping a knock for the ages, ft. Sophie Devine, Ash Gardner & Kim Garth ",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/8a/30/3a/0/image-52ebbcea-cf63-4d5b-a556-68e7930fe030.jpg",
+      "video_id": "6387588616112",
+      "duration": 138,
+      "published_iso": "2026-01-12T03:53:32",
+      "url": "https://crickettv.site/wpl/6387588616112.html"
+    },
     {
       "title": "Sophie knows her game really well: Daniel Marsh",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/57/20/5a/0/image-ac9c6215-45cd-4835-b544-0db740b6d64b.jpg",
@@ -35,28 +43,12 @@
       "url": "https://crickettv.site/wpl/6387569040112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sree Charani",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/2e/bb/0/image-325c19d1-55ec-4c7e-b26c-62abf399bac1.jpg",
-      "video_id": "6387570485112",
-      "duration": 26,
-      "published_iso": "2026-01-11T18:08:30",
-      "url": "https://crickettv.site/wpl/6387570485112.html"
-    },
-    {
       "title": "TATA WPL Green Dot Balls of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Nandni Sharma",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fb/28/dc/0/image-12147e43-549d-4326-acac-f7f8119762b2.jpg",
       "video_id": "6387569143112",
       "duration": 26,
       "published_iso": "2026-01-11T18:08:30",
       "url": "https://crickettv.site/wpl/6387569143112.html"
-    },
-    {
-      "title": "Player of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sophie Devine",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/d6/11/0/image-15b5bfe7-c1d9-4bd0-a167-9b1c1f9cf5b0.jpg",
-      "video_id": "6387570191112",
-      "duration": 158,
-      "published_iso": "2026-01-11T18:08:30",
-      "url": "https://crickettv.site/wpl/6387570191112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sophie Devine",
@@ -75,12 +67,12 @@
       "url": "https://crickettv.site/wpl/6387569330112.html"
     },
     {
-      "title": "Presentation: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b8/26/64/0/image-976836ea-dad0-4601-9960-89389cdcade1.jpg",
-      "video_id": "6387568537112",
-      "duration": 483,
+      "title": "Player of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sophie Devine",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/d6/11/0/image-15b5bfe7-c1d9-4bd0-a167-9b1c1f9cf5b0.jpg",
+      "video_id": "6387570191112",
+      "duration": 158,
       "published_iso": "2026-01-11T18:08:30",
-      "url": "https://crickettv.site/wpl/6387568537112.html"
+      "url": "https://crickettv.site/wpl/6387570191112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Nandni Sharma",
@@ -89,6 +81,22 @@
       "duration": 19,
       "published_iso": "2026-01-11T18:08:30",
       "url": "https://crickettv.site/wpl/6387570690112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sree Charani",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/2e/bb/0/image-325c19d1-55ec-4c7e-b26c-62abf399bac1.jpg",
+      "video_id": "6387570485112",
+      "duration": 26,
+      "published_iso": "2026-01-11T18:08:30",
+      "url": "https://crickettv.site/wpl/6387570485112.html"
+    },
+    {
+      "title": "Presentation: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b8/26/64/0/image-976836ea-dad0-4601-9960-89389cdcade1.jpg",
+      "video_id": "6387568537112",
+      "duration": 483,
+      "published_iso": "2026-01-11T18:08:30",
+      "url": "https://crickettv.site/wpl/6387568537112.html"
     },
     {
       "title": "Anushka Sharma's match-defining save",
@@ -587,6 +595,30 @@
       "url": "https://crickettv.site/wpl/6387529559112.html"
     },
     {
+      "title": "Herbalife Active Catch of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: G. Kamalini",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/15/dc/af/0/image-6ecb8a31-939c-43c1-96b6-7fd8d94a39e1.jpg",
+      "video_id": "6387530251112",
+      "duration": 30,
+      "published_iso": "2026-01-10T18:26:58",
+      "url": "https://crickettv.site/wpl/6387530251112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d9/36/fa/0/image-795c3295-4f2f-40ff-8f4a-2313d790836f.jpg",
+      "video_id": "6387531518112",
+      "duration": 29,
+      "published_iso": "2026-01-10T18:26:58",
+      "url": "https://crickettv.site/wpl/6387531518112.html"
+    },
+    {
+      "title": "Player of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/f7/5f/0/image-8bdb8fec-7633-4b44-a21a-65895b4c2ab2.jpg",
+      "video_id": "6387529757112",
+      "duration": 194,
+      "published_iso": "2026-01-10T18:26:58",
+      "url": "https://crickettv.site/wpl/6387529757112.html"
+    },
+    {
       "title": "ChatGPT Match IQ Award: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Nicola Carey",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/74/20/d1/0/image-5b29102d-829d-487f-bbc6-c88b63287b1f.jpg",
       "video_id": "6387530624112",
@@ -609,30 +641,6 @@
       "duration": 23,
       "published_iso": "2026-01-10T18:26:58",
       "url": "https://crickettv.site/wpl/6387530625112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d9/36/fa/0/image-795c3295-4f2f-40ff-8f4a-2313d790836f.jpg",
-      "video_id": "6387531518112",
-      "duration": 29,
-      "published_iso": "2026-01-10T18:26:58",
-      "url": "https://crickettv.site/wpl/6387531518112.html"
-    },
-    {
-      "title": "Player of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/f7/5f/0/image-8bdb8fec-7633-4b44-a21a-65895b4c2ab2.jpg",
-      "video_id": "6387529757112",
-      "duration": 194,
-      "published_iso": "2026-01-10T18:26:58",
-      "url": "https://crickettv.site/wpl/6387529757112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: G. Kamalini",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/15/dc/af/0/image-6ecb8a31-939c-43c1-96b6-7fd8d94a39e1.jpg",
-      "video_id": "6387530251112",
-      "duration": 30,
-      "published_iso": "2026-01-10T18:26:58",
-      "url": "https://crickettv.site/wpl/6387530251112.html"
     },
     {
       "title": "Amazing Amelia Kerr shines with 3/24",
@@ -707,20 +715,20 @@
       "url": "https://crickettv.site/wpl/6387530289112.html"
     },
     {
-      "title": "Wicket: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Minnu Mani Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/27/1d/af/0/image-1c1285f8-9ade-4418-9e50-eec12146d19e.jpg",
-      "video_id": "6387530091112",
-      "duration": 30,
-      "published_iso": "2026-01-10T17:33:20",
-      "url": "https://crickettv.site/wpl/6387530091112.html"
-    },
-    {
       "title": "Wicket: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Chinelle Henry Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5b/e7/ce/0/image-1a1c81e1-1021-46ac-bfbf-85933098e9c4.jpg",
       "video_id": "6387528817112",
       "duration": 30,
       "published_iso": "2026-01-10T17:33:20",
       "url": "https://crickettv.site/wpl/6387528817112.html"
+    },
+    {
+      "title": "Wicket: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Minnu Mani Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/27/1d/af/0/image-1c1285f8-9ade-4418-9e50-eec12146d19e.jpg",
+      "video_id": "6387530091112",
+      "duration": 30,
+      "published_iso": "2026-01-10T17:33:20",
+      "url": "https://crickettv.site/wpl/6387530091112.html"
     },
     {
       "title": "Six: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Chinelle Henry Six",
@@ -777,14 +785,6 @@
       "duration": 28,
       "published_iso": "2026-01-10T16:36:58",
       "url": "https://crickettv.site/wpl/6387528667112.html"
-    },
-    {
-      "title": "Six: Match 3, Mumbai Indians vs Delhi Capitals, WPL 2026: Marizanne Kapp Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/87/42/98/0/dAwnTI1D5b.jpg",
-      "video_id": "6387526714112",
-      "duration": 17,
-      "published_iso": "2026-01-10T16:24:00",
-      "url": "https://crickettv.site/wpl/6387526714112.html"
     },
     {
       "title": "Castled x 2! Nicola Carey's unplayable inswingers",
