@@ -635,8 +635,14 @@ section h2 {
   font-family: 'Arial', sans-serif;
 }
 .lazy-section {
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-section.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 /* ==================== TODAY EVENTS ==================== */
 .today-event-card {
