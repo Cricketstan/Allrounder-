@@ -157,7 +157,7 @@
       "id": "sky-nz-1",
       "name": "SKY NZ",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/player4?url=https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+      "iframeSrc": "https://crickettv.site/sky-nz/player?id=3",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=sky-nz-1",
       "get": "https://dillzycounter.vercel.app/api/get?key=sky-nz-1"
     },
