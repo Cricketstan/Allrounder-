@@ -58,6 +58,47 @@
           "Renegade ": ""
         }
       }
+    },
+    {
+      "id": "wpl",
+      "slug": "wpl",
+      "seo": {
+        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/wpl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T17:50:15.995+05:30",
+        "last_modified": "2026-01-12T17:50:16.010+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Benglore Vs Gujarat Live Streaming ",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hindi",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "K",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
+        }
+      }
     }
   ]
 }
