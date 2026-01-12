@@ -68,7 +68,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-01-12T17:50:16.010+05:30",
+        "last_modified": "2026-01-12T17:56:37.570+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -82,7 +82,32 @@
       "streams": [
         {
           "name": "Hindi",
-          "src": "",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/king.m3u8",
+          "default": false
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/king.m3u8",
+          "default": false
+        },
+        {
+          "name": "Fox Cricket 501",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": false
+        },
+        {
+          "name": "Willow Sports ",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
+          "default": false
+        },
+        {
+          "name": "Sky Sports Nz ( Temp )",
+          "src": "https://crickettv.site/sky-nz/player?id=1",
+          "default": false
+        },
+        {
+          "name": "4k ( Temp )",
+          "src": "https://crickettv.site/sky-nz/player?id=0",
           "default": false
         }
       ],
