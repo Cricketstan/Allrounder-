@@ -1889,6 +1889,7 @@ body {
   document.addEventListener("DOMContentLoaded", () => {
   initParticles();
   initLazySections();
+  initLazyImages();   
 });
 function initParticles() {
   const canvas = document.getElementById('particles');
@@ -3230,6 +3231,33 @@ setTimeout(loadSkyNZChannels, 3500);
   });
 
   sections.forEach(section => observer.observe(section));
+  }
+  function initLazyImages() {
+  const imgs = document.querySelectorAll('img[data-src]');
+
+  // Fallback for old browsers
+  if (!('IntersectionObserver' in window)) {
+    imgs.forEach(img => {
+      img.src = img.dataset.src;
+      img.classList.add('loaded');
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.onload = () => img.classList.add('loaded');
+        observer.unobserve(img);
+      }
+    });
+  }, {
+    rootMargin: "200px"
+  });
+
+  imgs.forEach(img => observer.observe(img));
   }
 </script>
 
