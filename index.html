@@ -644,6 +644,15 @@ section h2 {
   opacity: 1;
   transform: translateY(0);
 }
+  /* Lazy image blur effect */
+.lazy-img {
+  filter: blur(10px);
+  transition: filter 0.6s ease;
+}
+
+.lazy-img.loaded {
+  filter: blur(0);
+}
 /* ==================== TODAY EVENTS ==================== */
 .today-event-card {
   flex: 0 0 min(260px, 28vw);
