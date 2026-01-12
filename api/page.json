@@ -1,11 +1,48 @@
 {
   "site": "https://crickettv.site",
   "pages": [
-    
-          
-      
-        
-      
-    
+    {
+      "id": "bbl",
+      "slug": "bbl",
+      "seo": {
+        "meta_title": "thunder vs renegade live streaming ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/bbl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T11:17:50.076+05:30",
+        "last_modified": "2026-01-12T11:17:50.077+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Sydney Thunder Va Melbourne Renegade ",
+        "team1": "Thunder",
+        "team2": "Renegade ",
+        "venue": "Melbourne Stadium ",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Thunder": [],
+          "Renegade ": []
+        },
+        "squads": {
+          "Thunder": "",
+          "Renegade ": ""
+        }
+      }
+    }
   ]
 }
