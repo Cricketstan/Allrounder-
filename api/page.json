@@ -10,7 +10,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-12T14:53:11.840+05:30",
+        "last_modified": "2026-01-12T14:55:04.695+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -35,6 +35,11 @@
         {
           "name": "Willow",
           "src": "https://crickettv.site/willow",
+          "default": false
+        },
+        {
+          "name": "Sky Nz 3",
+          "src": "https://crickettv.site/sky-nz/player?id=3",
           "default": false
         }
       ],
