@@ -1873,9 +1873,7 @@ body {
 <script>
   document.addEventListener("DOMContentLoaded", () => {
   initParticles();
-  
-});
-  
+  initLazySections();
 });
 function initParticles() {
   const canvas = document.getElementById('particles');
@@ -1916,7 +1914,34 @@ function initParticles() {
     requestAnimationFrame(animate);
   })();
 }
+  
+function initLazySections() {
+  const sections = document.querySelectorAll('.lazy-section');
 
+  if (!('IntersectionObserver' in window)) {
+    sections.forEach(sec => sec.classList.add('loaded'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('loaded');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: "200px"
+  });
+
+  sections.forEach((section, i) => {
+    if (i === 0) {
+      section.classList.add('loaded');
+    } else {
+      observer.observe(section);
+    }
+  });
+}
 const slider = document.getElementById('slider');
 const dotsWrap = document.getElementById('dots');
 const skeleton = document.getElementById('skeleton');
