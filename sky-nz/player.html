@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sky NZ Player</title>
+  <title>Cric Tv Sky Nz</title>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">
@@ -52,19 +52,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   const id = getParam("id");
-  if (!id) {
-    alert("No channel selected");
-    return;
-  }
+  if (!id) return;
 
   const res = await fetch(JSON_URL);
   const data = await res.json();
   const ch = data[id];
-
-  if (!ch) {
-    alert("Invalid channel");
-    return;
-  }
+  if (!ch) return;
 
   shaka.polyfill.installAll();
   if (!shaka.Player.isBrowserSupported()) return;
@@ -89,13 +82,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  const clearKeys = {};
-  clearKeys[ch.kid] = ch.key;
+  const drmConfig = {
+    clearKeys: {
+      [ch.kid]: ch.key
+    }
+  };
 
   player.configure({
-    drm: {
-      clearKeys: clearKeys
-    }
+    drm: drmConfig
   });
 
   player.getNetworkingEngine().registerRequestFilter((type, request) => {
@@ -107,7 +101,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   try {
     await player.load(ch.mpd);
     video.play();
-    document.title = ch.name;
   } catch (e) {
     console.error(e);
   }
