@@ -3,6 +3,19 @@
   "event": [
 
 {
+      "title": "Bengaluru Vs Gujarat",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69570ad8e4b098c9e191f443-1767938195147?location=hero-default&imwidth=1920",
+      "watch_now": [
+        { "id": "home/wpl", "name": "All Stream" }
+      ],
+      "date": "12 Jan 2026",
+      "start_time": "7:15 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "WPL"
+},
+{
       "title": "Thunder Vs Renegades",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/694482e9e4b06fdd0fa83777-1767526900553?location=hero-default&imwidth=1920",
       "watch_now": [
