@@ -3170,6 +3170,22 @@ async function loadSkyNZChannels() {
 
 // Load after Sony LIV
 setTimeout(loadSkyNZChannels, 3500);
+  function initLazySections() {
+  const sections = document.querySelectorAll('.lazy-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('loaded');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: "150px"
+  });
+
+  sections.forEach(section => observer.observe(section));
+  }
 </script>
 
 </body>
