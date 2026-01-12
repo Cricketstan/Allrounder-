@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sky NZ Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { background:#000; color:#fff; font-family:sans-serif; }
+    .item {
+      padding:12px;
+      margin:8px;
+      background:#111;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    .item:hover { background:#222; }
+  </style>
+</head>
+<body>
+
+<h2>Sky NZ Channels</h2>
+<div id="list">Loading...</div>
+
+<script>
+const JSON_URL = "https://sky-nz.dillzycreations.workers.dev/output";
+
+async function loadChannels() {
+  const res = await fetch(JSON_URL);
+  const data = await res.json();
+
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  data.forEach((ch, i) => {
+    const div = document.createElement("div");
+    div.className = "item";
+    div.innerText = ch.name;
+    div.onclick = () => {
+      window.location.href = `player.html?id=${i}`;
+    };
+    list.appendChild(div);
+  });
+}
+
+loadChannels();
+</script>
+
+</body>
+</html>
