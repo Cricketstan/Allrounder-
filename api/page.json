@@ -10,7 +10,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-12T11:17:50.077+05:30",
+        "last_modified": "2026-01-12T11:22:19.596+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -23,8 +23,13 @@
       },
       "streams": [
         {
-          "name": "",
-          "src": "",
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/",
+          "default": false
+        },
+        {
+          "name": "Sky Nz 3",
+          "src": "https://crickettv.site/sky-nz/player?id=3",
           "default": false
         }
       ],
