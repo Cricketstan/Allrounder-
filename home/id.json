@@ -1,12 +1,18 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-12T09:30:04.222594Z",
-  "count": 1,
+  "updated_at": "2026-01-12T12:20:25.624809Z",
+  "count": 2,
   "pages": [
     {
       "id": "bbl",
       "title": "Sydney Thunder Va Melbourne Renegade ",
       "url": "https://crickettv.site/home/bbl/",
+      "description": ""
+    },
+    {
+      "id": "wpl",
+      "title": "Benglore Vs Gujarat Live Streaming ",
+      "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
   ]
