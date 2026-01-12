@@ -2,71 +2,100 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Player</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sky NZ Player</title>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">
 
   <style>
-    body, html {
-      margin:0;
-      padding:0;
-      background:black;
-      height:100%;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      background: #000;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
     }
     .shaka-video-container {
-      width:100%;
-      height:100%;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
     video {
-      width:100%;
-      height:100%;
-      background:black;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: contain;
+    }
+    .shaka-spinner-container,
+    .shaka-spinner,
+    .shaka-spinner-svg {
+      display: none !important;
     }
   </style>
 </head>
 
 <body>
-
-<div class="shaka-video-container" data-shaka-player>
-  <video autoplay playsinline></video>
-</div>
+  <div class="shaka-video-container" data-shaka-player>
+    <video autoplay playsinline preload="metadata"></video>
+  </div>
 
 <script>
-const JSON_URL = "https://sky-nz.dillzycreations.workers.dev/output";
+document.addEventListener('DOMContentLoaded', async () => {
 
-function getParam(name) {
-  return new URLSearchParams(window.location.search).get(name);
-}
+  const JSON_URL = "https://sky-nz.dillzycreations.workers.dev/output";
 
-async function init() {
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
   const id = getParam("id");
-  if (!id) return alert("No channel selected");
+  if (!id) {
+    alert("No channel selected");
+    return;
+  }
 
   const res = await fetch(JSON_URL);
   const data = await res.json();
   const ch = data[id];
 
-  if (!ch) return alert("Invalid channel");
-
-  shaka.polyfill.installAll();
-  if (!shaka.Player.isBrowserSupported()) {
-    alert("Browser not supported");
+  if (!ch) {
+    alert("Invalid channel");
     return;
   }
 
-  const video = document.querySelector("video");
-  const container = document.querySelector(".shaka-video-container");
+  shaka.polyfill.installAll();
+  if (!shaka.Player.isBrowserSupported()) return;
 
-  const player = new shaka.Player(video);
+  const video = document.querySelector('video');
+  const player = new shaka.Player();
+  await player.attach(video);
+
+  const container = document.querySelector('.shaka-video-container');
   const ui = new shaka.ui.Overlay(player, container, video);
+
+  ui.configure({
+    controlPanelElements: [
+      'play_pause','time_and_duration','mute','volume',
+      'spacer','language','captions','picture_in_picture',
+      'quality','fullscreen'
+    ],
+    seekBarColors: {
+      base: 'white',
+      buffered: 'red',
+      played: 'green'
+    }
+  });
 
   const clearKeys = {};
   clearKeys[ch.kid] = ch.key;
 
   player.configure({
-    drm: { clearKeys }
+    drm: {
+      clearKeys: clearKeys
+    }
   });
 
   player.getNetworkingEngine().registerRequestFilter((type, request) => {
@@ -77,15 +106,13 @@ async function init() {
 
   try {
     await player.load(ch.mpd);
-    console.log("Playing:", ch.name);
+    video.play();
+    document.title = ch.name;
   } catch (e) {
     console.error(e);
-    alert("Playback error");
   }
-}
 
-init();
+});
 </script>
-
 </body>
 </html>
