@@ -1,6 +1,13 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-12T05:46:32.083478Z",
-  "count": 0,
-  "pages": []
+  "updated_at": "2026-01-12T05:47:58.158702Z",
+  "count": 1,
+  "pages": [
+    {
+      "id": "bbl",
+      "title": "Sydney Thunder Va Melbourne Renegade ",
+      "url": "https://crickettv.site/home/bbl/",
+      "description": ""
+    }
+  ]
 }
