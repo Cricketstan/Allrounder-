@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cric Tv Sony Liv 2</title>
+  <title>Sky NZ Player</title>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">
@@ -45,6 +45,27 @@
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
 
+  const JSON_URL = "https://sky-nz.dillzycreations.workers.dev/output";
+
+  function getParam(name) {
+    return new URLSearchParams(window.location.search).get(name);
+  }
+
+  const id = getParam("id");
+  if (!id) {
+    alert("No channel selected");
+    return;
+  }
+
+  const res = await fetch(JSON_URL);
+  const data = await res.json();
+  const ch = data[id];
+
+  if (!ch) {
+    alert("Invalid channel");
+    return;
+  }
+
   shaka.polyfill.installAll();
   if (!shaka.Player.isBrowserSupported()) return;
 
@@ -68,16 +89,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   });
 
-  const streamUrl = "https://aba5sdmaaaaaaaamdwujas5g6mg4r.otte.live.cf.ww.aiv-cdn.net/syd-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd";
-
-  const drmConfig = {
-    clearKeys: {
-      "0b42be2664d7e811d04f3e504e0924c5": "ae24090123b8c72ac5404dc152847cb8"
-    }
-  };
+  const clearKeys = {};
+  clearKeys[ch.kid] = ch.key;
 
   player.configure({
-    drm: drmConfig
+    drm: {
+      clearKeys: clearKeys
+    }
   });
 
   player.getNetworkingEngine().registerRequestFilter((type, request) => {
@@ -87,8 +105,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   try {
-    await player.load(streamUrl);
+    await player.load(ch.mpd);
     video.play();
+    document.title = ch.name;
   } catch (e) {
     console.error(e);
   }
