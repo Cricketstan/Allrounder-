@@ -76,7 +76,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-13T11:40:12.616+05:30",
+        "last_modified": "2026-01-13T13:56:16.191+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -111,6 +111,11 @@
         {
           "name": "Sky Sports Cricket ",
           "src": "https://allrounderlive.pages.dev/player2?url=https://datakameha.route64.de/o11/sky-sports-cricket/p/uohy7c36sstkqws7nfrfk2sxjnqx42mtsskwvifitvygfjtdtnpghicrlryvkx25zkhkbdulusp2a3uqrnikaxnfljjwrikvke/index.m3u8",
+          "default": false
+        },
+        {
+          "name": "Cricbuzz ",
+          "src": "https://crickettv.site/cricbuzz1",
           "default": false
         }
       ],
