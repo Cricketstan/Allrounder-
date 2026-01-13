@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-13T13:04:05.570Z",
+  "updated_at": "2026-01-13T13:53:29.897Z",
   "count": 100,
   "items": [
+    {
+      "title": "Toss: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c0/7a/ce/0/image-55d42d96-a376-4c12-adc2-d23312b0385e.jpg",
+      "video_id": "6387658033112",
+      "duration": 209,
+      "published_iso": "2026-01-13T13:38:41",
+      "url": "https://crickettv.site/wpl/6387658033112.html"
+    },
     {
       "title": "Pre Match Interview: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Nicola Carey Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cb/fa/3a/0/image-9d5824d8-d150-4c07-a708-f910df1da7be.jpg",
@@ -67,22 +75,6 @@
       "url": "https://crickettv.site/wpl/6387612725112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Lauren Bell",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7b/1b/00/0/image-04f42f80-aa53-4d7d-88a5-203d5569244b.jpg",
-      "video_id": "6387612903112",
-      "duration": 23,
-      "published_iso": "2026-01-12T17:29:42",
-      "url": "https://crickettv.site/wpl/6387612903112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Radha Yadav",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c5/93/b4/0/image-557ed25e-6fe0-4967-81b4-d1bcada87941.jpg",
-      "video_id": "6387613102112",
-      "duration": 24,
-      "published_iso": "2026-01-12T17:29:42",
-      "url": "https://crickettv.site/wpl/6387613102112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Grace Harris",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d7/35/24/0/image-e614af99-21db-4f2e-aacf-d1d2ba1f00e5.jpg",
       "video_id": "6387612811112",
@@ -91,12 +83,12 @@
       "url": "https://crickettv.site/wpl/6387612811112.html"
     },
     {
-      "title": "Presentation: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/96/22/0/image-dc910e2d-ea4c-438d-80d3-81bd226daa89.jpg",
-      "video_id": "6387612716112",
-      "duration": 588,
+      "title": "Player of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Grace Harris",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7a/ee/27/0/image-377caee1-77c5-425c-aae4-cf3325266bd4.jpg",
+      "video_id": "6387612620112",
+      "duration": 204,
       "published_iso": "2026-01-12T17:29:42",
-      "url": "https://crickettv.site/wpl/6387612716112.html"
+      "url": "https://crickettv.site/wpl/6387612620112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Grace Harris",
@@ -107,12 +99,28 @@
       "url": "https://crickettv.site/wpl/6387612715112.html"
     },
     {
-      "title": "Player of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Grace Harris",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7a/ee/27/0/image-377caee1-77c5-425c-aae4-cf3325266bd4.jpg",
-      "video_id": "6387612620112",
-      "duration": 204,
+      "title": "Presentation: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/96/22/0/image-dc910e2d-ea4c-438d-80d3-81bd226daa89.jpg",
+      "video_id": "6387612716112",
+      "duration": 588,
       "published_iso": "2026-01-12T17:29:42",
-      "url": "https://crickettv.site/wpl/6387612620112.html"
+      "url": "https://crickettv.site/wpl/6387612716112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Radha Yadav",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c5/93/b4/0/image-557ed25e-6fe0-4967-81b4-d1bcada87941.jpg",
+      "video_id": "6387613102112",
+      "duration": 24,
+      "published_iso": "2026-01-12T17:29:42",
+      "url": "https://crickettv.site/wpl/6387613102112.html"
+    },
+    {
+      "title": "TATA WPL Green Dot Balls of the Match: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Lauren Bell",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7b/1b/00/0/image-04f42f80-aa53-4d7d-88a5-203d5569244b.jpg",
+      "video_id": "6387612903112",
+      "duration": 23,
+      "published_iso": "2026-01-12T17:29:42",
+      "url": "https://crickettv.site/wpl/6387612903112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 5, Royal Challengers Bengaluru vs UP Warriorz, WPL 2026: Shreyanka Patil",
@@ -467,30 +475,6 @@
       "url": "https://crickettv.site/wpl/6387569040112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sree Charani",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/2e/bb/0/image-325c19d1-55ec-4c7e-b26c-62abf399bac1.jpg",
-      "video_id": "6387570485112",
-      "duration": 26,
-      "published_iso": "2026-01-11T18:08:30",
-      "url": "https://crickettv.site/wpl/6387570485112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Nandni Sharma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fb/28/dc/0/image-12147e43-549d-4326-acac-f7f8119762b2.jpg",
-      "video_id": "6387569143112",
-      "duration": 26,
-      "published_iso": "2026-01-11T18:08:30",
-      "url": "https://crickettv.site/wpl/6387569143112.html"
-    },
-    {
-      "title": "Player of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sophie Devine",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/d6/11/0/image-15b5bfe7-c1d9-4bd0-a167-9b1c1f9cf5b0.jpg",
-      "video_id": "6387570191112",
-      "duration": 158,
-      "published_iso": "2026-01-11T18:08:30",
-      "url": "https://crickettv.site/wpl/6387570191112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sophie Devine",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/47/f5/29/0/image-f4c0b5e8-659f-44cd-a6d6-dec6c2d488fe.jpg",
       "video_id": "6387569536112",
@@ -505,6 +489,30 @@
       "duration": 19,
       "published_iso": "2026-01-11T18:08:30",
       "url": "https://crickettv.site/wpl/6387569330112.html"
+    },
+    {
+      "title": "Player of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sophie Devine",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/d6/11/0/image-15b5bfe7-c1d9-4bd0-a167-9b1c1f9cf5b0.jpg",
+      "video_id": "6387570191112",
+      "duration": 158,
+      "published_iso": "2026-01-11T18:08:30",
+      "url": "https://crickettv.site/wpl/6387570191112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Sree Charani",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/2e/bb/0/image-325c19d1-55ec-4c7e-b26c-62abf399bac1.jpg",
+      "video_id": "6387570485112",
+      "duration": 26,
+      "published_iso": "2026-01-11T18:08:30",
+      "url": "https://crickettv.site/wpl/6387570485112.html"
+    },
+    {
+      "title": "TATA WPL Green Dot Balls of the Match: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Nandni Sharma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fb/28/dc/0/image-12147e43-549d-4326-acac-f7f8119762b2.jpg",
+      "video_id": "6387569143112",
+      "duration": 26,
+      "published_iso": "2026-01-11T18:08:30",
+      "url": "https://crickettv.site/wpl/6387569143112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Nandni Sharma",
@@ -793,14 +801,6 @@
       "duration": 141,
       "published_iso": "2026-01-11T15:34:21",
       "url": "https://crickettv.site/wpl/6387567755112.html"
-    },
-    {
-      "title": "Six: Match 4, Delhi Capitals vs Gujarat Giants, WPL 2026: Ashleigh Gardner Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9a/3a/f1/0/62USKz3awg.jpg",
-      "video_id": "6387567750112",
-      "duration": 15,
-      "published_iso": "2026-01-11T15:32:00",
-      "url": "https://crickettv.site/wpl/6387567750112.html"
     }
   ]
 }
