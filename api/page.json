@@ -2,64 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "bbl",
-      "slug": "bbl",
-      "seo": {
-        "meta_title": "thunder vs renegade live streaming ",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/bbl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-12T14:59:55.234+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Sydney Thunder Va Melbourne Renegade ",
-        "team1": "Thunder",
-        "team2": "Renegade ",
-        "venue": "Melbourne Stadium ",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Star Sports ",
-          "src": "https://cricketstan.github.io/Channel-14/",
-          "default": true
-        },
-        {
-          "name": "Fox Cricket 501",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        },
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow",
-          "default": false
-        },
-        {
-          "name": "Sky Nz 3",
-          "src": "https://crickettv.site/sky-nz/player?id=3",
-          "default": true
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
-        "players_to_watch": {
-          "Thunder": [],
-          "Renegade ": []
-        },
-        "squads": {
-          "Thunder": "",
-          "Renegade ": ""
-        }
-      }
-    },
-    {
       "id": "wpl",
       "slug": "wpl",
       "seo": {
@@ -122,6 +64,69 @@
         },
         "squads": {
           "": ""
+        }
+      }
+    },
+    {
+      "id": "bbl",
+      "slug": "bbl",
+      "seo": {
+        "meta_title": "thunder vs renegade live streaming ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/bbl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T11:17:50.076+05:30",
+        "last_modified": "2026-01-13T11:40:12.616+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Melbourne Star Vs Adelaide Strikers ",
+        "team1": "Thunder",
+        "team2": "Renegade ",
+        "venue": "Melbourne Stadium ",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Star Sports ",
+          "src": "https://cricketstan.github.io/Channel-14/",
+          "default": true
+        },
+        {
+          "name": "Fox Cricket 501",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": false
+        },
+        {
+          "name": "Willow",
+          "src": "https://crickettv.site/willow",
+          "default": false
+        },
+        {
+          "name": "Sky Nz 3",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://datakameha.route64.de/o11/sky-sport-3-nz/p/uohy7c36sstkqws7nfrfk2sxjnqx42mtsskwvifitvygfjuqjosfnjkzrvlz6xf5t5hkat5bkcofc3mpmkkuzi2ttzki4wvclm/index.m3u8",
+          "default": true
+        },
+        {
+          "name": "Sky Sports Cricket ",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://datakameha.route64.de/o11/sky-sports-cricket/p/uohy7c36sstkqws7nfrfk2sxjnqx42mtsskwvifitvygfjtdtnpghicrlryvkx25zkhkbdulusp2a3uqrnikaxnfljjwrikvke/index.m3u8",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Thunder": [],
+          "Renegade ": []
+        },
+        "squads": {
+          "Thunder": "",
+          "Renegade ": ""
         }
       }
     }
