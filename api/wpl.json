@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-15T08:41:11.031Z",
+  "updated_at": "2026-01-15T09:02:50.128Z",
   "count": 100,
   "items": [
     {
@@ -123,20 +123,20 @@
       "url": "https://crickettv.site/wpl/6387718324112.html"
     },
     {
-      "title": "Fall of Wickets: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b2/f1/a5/0/image-79eb6e08-f423-4e23-86de-37603bee4cc3.jpg",
-      "video_id": "6387720172112",
-      "duration": 258,
-      "published_iso": "2026-01-14T17:26:52",
-      "url": "https://crickettv.site/wpl/6387720172112.html"
-    },
-    {
       "title": "Super Sixes: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3e/48/39/0/image-6254bcba-6a7a-4f8c-a5f4-d018e52ce73a.jpg",
       "video_id": "6387719394112",
       "duration": 85,
       "published_iso": "2026-01-14T17:26:52",
       "url": "https://crickettv.site/wpl/6387719394112.html"
+    },
+    {
+      "title": "Fall of Wickets: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b2/f1/a5/0/image-79eb6e08-f423-4e23-86de-37603bee4cc3.jpg",
+      "video_id": "6387720172112",
+      "duration": 258,
+      "published_iso": "2026-01-14T17:26:52",
+      "url": "https://crickettv.site/wpl/6387720172112.html"
     },
     {
       "title": "Wicket: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Jemimah Rodrigues Wicket",
@@ -443,6 +443,14 @@
       "url": "https://crickettv.site/wpl/6387668694112.html"
     },
     {
+      "title": "ChatGPT Match IQ Award: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Amanjot Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/94/4b/1e/0/image-121fb422-9c66-4a52-841a-0fffcb0d037c.jpg",
+      "video_id": "6387669172112",
+      "duration": 20,
+      "published_iso": "2026-01-13T18:00:58",
+      "url": "https://crickettv.site/wpl/6387669172112.html"
+    },
+    {
       "title": "Amazing Moments: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/90/74/0/image-24731504-974e-47d4-b5ed-cbc1b8ffce66.jpg",
       "video_id": "6387668499112",
@@ -457,14 +465,6 @@
       "duration": 210,
       "published_iso": "2026-01-13T18:00:58",
       "url": "https://crickettv.site/wpl/6387669756112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Amanjot Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/94/4b/1e/0/image-121fb422-9c66-4a52-841a-0fffcb0d037c.jpg",
-      "video_id": "6387669172112",
-      "duration": 20,
-      "published_iso": "2026-01-13T18:00:58",
-      "url": "https://crickettv.site/wpl/6387669172112.html"
     },
     {
       "title": "Nicola Carey makes it count again with vital 38*(23)",
