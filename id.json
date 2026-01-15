@@ -53,7 +53,7 @@
       "id": "prime-hin",
       "name": "Prime Hindi",
       "type": "iframe",
-      "iframeSrc": "https://hff-eight.vercel.app/",
+      "iframeSrc": "https://crickettv.site/prime-hin",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=prime-hin",
       "get": "https://dillzycounter.vercel.app/api/get?key=prime-hin"
     },
@@ -69,7 +69,7 @@
       "id": "prime-eng",
       "name": "Prime English",
       "type": "iframe",
-      "iframeSrc": "https://prime-english.vercel.app/",
+      "iframeSrc": "https://crickettv.site/prime-eng",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=prime-eng",
       "get": "https://dillzycounter.vercel.app/api/get?key=prime-eng"
     },
