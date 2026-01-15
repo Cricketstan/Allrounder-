@@ -175,6 +175,52 @@
           "": ""
         }
       }
+    },
+    {
+      "id": "usa-vs-ind",
+      "slug": "wpl",
+      "seo": {
+        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/wpl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-15T12:37:22.009+05:30",
+        "last_modified": "2026-01-15T12:37:22.009+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Indian Vs United States Of America ",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Prime Hindi",
+          "src": "https://crickettv.site/prime-hin",
+          "default": false
+        },
+        {
+          "name": "Prime Eng",
+          "src": "https://crickettv.site/prime-eng",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "K",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
+        }
+      }
     }
   ]
 }
