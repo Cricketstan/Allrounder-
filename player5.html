@@ -1,563 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Fox Cricket</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-  <meta name="referrer" content="no-referrer"/>
+<title>Fox Cricket</title>
 
-  <!-- Plyr CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<meta name="referrer" content="no-referrer"/>
 
-  <!-- HLS.js -->
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 
-  <!-- Plyr JS -->
-  <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
+<style>
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  overflow:hidden;
+}
+.plyr,
+.plyr__video-wrapper,
+video{
+  width:100%;
+  height:100%;
+}
 
-  <style>
-    body {
-      background-color: #000;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    html, body {
-      height: 100%;
-      width: 100%;
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: #000;
-    }
-    .plyr {
-      height: 100%;
-      width: 100%;
-    }
+video{
+  object-fit:contain;
+  background:#000;
+}
 
-    /* Invisible visitor counter */
-    #visitor-counter {
-      position: fixed;
-      opacity: 0;
-      pointer-events: none;
-      z-index: -1;
-    }
+#recIndicator{
+  position:fixed;
+  top:12px;
+  left:12px;
+  z-index:9999;
+  background:rgba(0,0,0,.75);
+  color:#00ff6a;
+  padding:5px 8px;
+  font-size:11px;
+  border-radius:4px;
+  font-family:monospace;
+  display:none;
+}
 
-    /* Recording indicator */
-    .recording-indicator {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 0, 0, 0.9);
-      color: white;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: bold;
-      display: none;
-      z-index: 9999;
-      animation: pulse 1s infinite;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-    }
+@keyframes recBlink{
+  0%{opacity:1}
+  50%{opacity:.4}
+  100%{opacity:1}
+}
 
-    .recording-indicator.active {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .recording-indicator::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: white;
-      border-radius: 50%;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.8; }
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
-    }
-
-    /* Preview modal */
-    #capture-preview {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.9);
-      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.1) inset;
-      z-index: 10000;
-      display: none;
-      max-width: 85%;
-      max-height: 85%;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInScale 0.3s ease-out forwards;
-    }
-
-    @keyframes fadeInScale {
-      to {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-    }
-
-    #capture-preview.show {
-      display: block;
-      opacity: 0;
-    }
-
-    #capture-preview .preview-header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      color: #4CAF50;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    #capture-preview .preview-header svg {
-      width: 24px;
-      height: 24px;
-      fill: #4CAF50;
-    }
-
-    #capture-preview .image-wrapper {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      border: 2px solid rgba(255, 255, 255, 0.05);
-    }
-
-    #capture-preview img {
-      max-width: 100%;
-      max-height: 65vh;
-      display: block;
-      border-radius: 10px;
-    }
-
-    #capture-preview video {
-      max-width: 100%;
-      max-height: 65vh;
-      display: block;
-      border-radius: 10px;
-    }
-
-    #capture-preview .info {
-      color: #888;
-      text-align: center;
-      margin-top: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.3px;
-    }
-
-    /* Custom buttons in Plyr */
-    .plyr__controls button[data-plyr="capture"],
-    .plyr__controls button[data-plyr="record"] {
-      padding: 7px;
-    }
-
-    .plyr__controls button[data-plyr="capture"] svg,
-    .plyr__controls button[data-plyr="record"] svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    .plyr__controls button[data-plyr="record"].recording {
-      color: #ff4444;
-    }
-  </style>
+.rec-active{
+  color:#00ff6a !important;
+  animation:recBlink 1.2s infinite;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- BLOCKING SCRIPT -->
-  <script>
-    (function () {
-      try {
-        const blockedDomains = [
-          "skcricweb.pages.dev",
-          "insiderlivehd.pages.dev",
-          "sportseera.pages.dev"
-        ];
-        
-        const currentHost = window.location.hostname;
-        
-        const isDirectBlocked = blockedDomains.some(domain => 
-          currentHost.includes(domain) || 
-          currentHost.endsWith(domain.replace(/^https?:\/\//, ''))
-        );
-        
-        const ref = document.referrer || "";
-        const isReferrerBlocked = blockedDomains.some(domain => 
-          ref.includes(domain)
-        );
-        
-        const isEmbedded = window.top !== window.self;
-        
-        if (isDirectBlocked || (isEmbedded && isReferrerBlocked)) {
-          document.documentElement.innerHTML = `
-            <html>
-            <head>
-              <title>Access Blocked</title>
-              <style>
-                body {
-                  margin: 0;
-                  background: #000;
-                  color: #fff;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  height: 100vh;
-                  font-family: Arial, sans-serif;
-                }
-                .box {
-                  text-align: center;
-                  border: 2px solid #ff4444;
-                  padding: 30px;
-                  border-radius: 12px;
-                  box-shadow: 0 0 40px rgba(255,0,0,0.4);
-                }
-                h1 {
-                  color: #ff4444;
-                  margin-bottom: 10px;
-                }
-                p {
-                  font-size: 16px;
-                  opacity: 0.9;
-                }
-                .blocked-domain {
-                  color: #ff9999;
-                  font-weight: bold;
-                  margin: 10px 0;
-                  padding: 5px;
-                  background: rgba(255,0,0,0.1);
-                  border-radius: 4px;
-                }
-                .brand {
-                  margin-top: 20px;
-                  font-size: 18px;
-                  font-weight: bold;
-                  color: #4CAF50;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="box">
-                <h1>Access Blocked</h1>
-                <p>This domain is not allowed to access this content.</p>
-                <div class="blocked-domain">Blocked: ${currentHost}</div>
-                <div class="brand">REMEMBER DILLZY</div>
-              </div>
-            </body>
-            </html>
-          `;
-          window.stop();
-        }
-      } catch (e) {
-        document.documentElement.innerHTML = "";
+<video id="player" controls playsinline></video>
+<div id="recIndicator">• REC 00:00:00</div>
+
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+
+const src =
+  new URLSearchParams(location.search).get("url") ||
+  "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
+
+const video = document.getElementById("player");
+const recIndicator = document.getElementById("recIndicator");
+
+let hls;
+let recorder;
+let chunks = [];
+let recording = false;
+let timer, startTime;
+let recBtn;
+
+function initPlyr(levels){
+
+  const qualities = levels
+    ? [...new Set(levels.map(l=>l.height))].sort((a,b)=>b-a)
+    : [];
+
+  const defaultQuality = qualities.includes(720)
+    ? 720
+    : qualities[0];
+
+  const player = new Plyr(video,{
+    autoplay:false,
+    muted:true,        
+    controls:[
+      "play-large",  
+      "play",
+      "progress",
+      "current-time",
+      "mute",
+      "volume",
+      "settings",
+      "fullscreen"
+    ],
+    quality: levels ? {
+      default: defaultQuality,
+      options: qualities,
+      forced: true,
+      onChange: q=>{
+        levels.forEach((l,i)=>{
+          if(l.height === q) hls.currentLevel = i;
+        });
       }
-    })();
-  </script>
+    } : null
+  });
 
-  <div class="video-container">
-    <video autoplay playsinline muted id="player" controls preload="metadata"></video>
-  </div>
+  /* Unmute on first user play */
+  player.on("play",()=>{
+    video.muted = false;
+    video.volume = 1;
+  });
+  
+  recBtn = document.createElement("button");
+  recBtn.className = "plyr__control";
+  recBtn.innerHTML = "• REC";
+  recBtn.style.fontSize = "11px";
+  recBtn.style.color = "#e50914";
+  recBtn.title = "Record";
 
-  <!-- Recording indicator -->
-  <div id="recording-indicator" class="recording-indicator">
-    Recording...
-  </div>
+  player.elements.controls.appendChild(recBtn);
+  
+  function format(ms){
+    const t = Math.floor(ms/1000);
+    const h = String(Math.floor(t/3600)).padStart(2,"0");
+    const m = String(Math.floor((t%3600)/60)).padStart(2,"0");
+    const s = String(t%60).padStart(2,"0");
+    return `${h}:${m}:${s}`;
+  }
 
-  <!-- Preview modal -->
-  <div id="capture-preview">
-    <div class="preview-header">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-      </svg>
-      <span id="preview-title">Frame Captured Successfully</span>
-    </div>
-    <div class="image-wrapper">
-      <img id="captured-image" alt="Captured Frame" style="display: none;">
-      <video id="captured-video" style="display: none;" controls></video>
-    </div>
-    <div class="info" id="preview-info">Image downloaded automatically</div>
-  </div>
+  recBtn.onclick = ()=>{
 
-  <!-- Visitor counter -->
-  <div id="visitor-counter">
-    <div id="sfcf9a543mw181dpyf921tw7rfrwz5bx28z"></div>
-    <script src="https://counter1.optistats.ovh/private/counter.js?c=f9a543mw181dpyf921tw7rfrwz5bx28z&down=async" async></script>
-    <noscript>
-      <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=f9a543mw181dpyf921tw7rfrwz5bx28z" alt="">
-    </noscript>
-  </div>
+    if(!recording){
 
-  <script>
-    let mediaRecorder = null;
-    let recordingChunks = [];
-    let isRecording = false;
+      const stream = video.captureStream();
 
-    function captureFrame() {
-      try {
-        const video = document.getElementById("player");
-        
-        if (!video) {
-          alert('Video element not found');
-          return;
-        }
+      recorder = new MediaRecorder(stream,{
+        mimeType:"video/webm;codecs=vp9,opus",
+        videoBitsPerSecond:9000000,
+        audioBitsPerSecond:320000
+      });
 
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        
-        canvas.toBlob(function(blob) {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-          a.href = url;
-          a.download = `frame-capture-${timestamp}.png`;
-          a.click();
-          
-          const preview = document.getElementById('capture-preview');
-          const capturedImg = document.getElementById('captured-image');
-          const capturedVideo = document.getElementById('captured-video');
-          
-          document.getElementById('preview-title').textContent = 'Frame Captured Successfully';
-          document.getElementById('preview-info').textContent = 'Image downloaded automatically';
-          
-          capturedImg.src = url;
-          capturedImg.style.display = 'block';
-          capturedVideo.style.display = 'none';
-          preview.classList.add('show');
-          
-          setTimeout(() => {
-            preview.classList.remove('show');
-            setTimeout(() => {
-              URL.revokeObjectURL(url);
-            }, 300);
-          }, 2500);
-        }, 'image/png');
-        
-      } catch (error) {
-        console.error('Error capturing frame:', error);
-        alert('Error capturing frame. Please try again.');
-      }
-    }
+      chunks = [];
 
-    function startScreenRecording() {
-      const video = document.getElementById("player");
-      
-      if (!video) {
-        alert('Video element not found');
-        return;
-      }
-
-      try {
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        
-        const ctx = canvas.getContext('2d');
-        recordingChunks = [];
-
-        const stream = canvas.captureStream(30);
-        mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm;codecs=vp9' });
-
-        const animationId = setInterval(() => {
-          if (isRecording && video.videoWidth > 0) {
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-          }
-        }, 33);
-
-        mediaRecorder.ondataavailable = (event) => {
-          if (event.data.size > 0) {
-            recordingChunks.push(event.data);
-          }
-        };
-
-        mediaRecorder.onstop = () => {
-          clearInterval(animationId);
-          
-          const blob = new Blob(recordingChunks, { type: 'video/webm' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-          a.href = url;
-          a.download = `screen-recording-${timestamp}.webm`;
-          a.click();
-          
-          const preview = document.getElementById('capture-preview');
-          const capturedVideo = document.getElementById('captured-video');
-          const capturedImg = document.getElementById('captured-image');
-          
-          document.getElementById('preview-title').textContent = 'Recording Saved Successfully';
-          document.getElementById('preview-info').textContent = 'Video downloaded automatically';
-          
-          capturedVideo.src = url;
-          capturedVideo.style.display = 'block';
-          capturedImg.style.display = 'none';
-          preview.classList.add('show');
-          
-          setTimeout(() => {
-            preview.classList.remove('show');
-            setTimeout(() => {
-              URL.revokeObjectURL(url);
-            }, 300);
-          }, 3000);
-          
-          isRecording = false;
-          mediaRecorder = null;
-        };
-
-        mediaRecorder.start();
-        isRecording = true;
-        document.getElementById('recording-indicator').classList.add('active');
-
-      } catch (error) {
-        console.error('Error starting recording:', error);
-        alert('Error starting recording: ' + error.message);
-      }
-    }
-
-    function stopScreenRecording() {
-      if (mediaRecorder && isRecording) {
-        mediaRecorder.stop();
-        document.getElementById('recording-indicator').classList.remove('active');
-      }
-    }
-
-    function toggleScreenRecording() {
-      if (!isRecording) {
-        startScreenRecording();
-      } else {
-        stopScreenRecording();
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      const params = new URLSearchParams(window.location.search);
-      const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
-
-      const video = document.getElementById("player");
-      const source = streamUrl;
-
-      const defaultOptions = {
-        autoplay: true,
-        controls: [
-          'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'
-        ],
-        settings: ['quality']
+      recorder.ondataavailable = e=>{
+        if(e.data.size) chunks.push(e.data);
       };
 
-      if (Hls.isSupported()) {
-        const hls = new Hls({ autoStartLoad: true });
+      recorder.onstop = ()=>{
+        clearInterval(timer);
+        recIndicator.style.display = "none";
 
-        hls.loadSource(source);
-        hls.attachMedia(video);
+        const blob = new Blob(chunks,{type:"video/webm"});
+        const url = URL.createObjectURL(blob);
 
-        hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
-          const availableQualities = data.levels.map(l => l.height).sort((a,b) => b - a);
+        const d = new Date();
+        const fileName =
+          "Sayan_Live_Stream_Recording_" +
+          d.toISOString().slice(0,16)
+            .replace("T","_")
+            .replace(":","-") +
+          ".mp4";
 
-          const player = new Plyr(video, {
-            ...defaultOptions,
-            quality: {
-              default: availableQualities[0],
-              options: availableQualities,
-              forced: true,
-              onChange: q => {
-                hls.levels.forEach((level, index) => {
-                  if (level.height === q) hls.currentLevel = index;
-                });
-              }
-            }
-          });
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      };
 
-          player.on('ready', () => {
-            addCaptureButtons(player);
-          });
-        });
+      recorder.start();
 
-      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = source;
-        video.addEventListener("loadedmetadata", () => video.play());
-        const player = new Plyr(video, defaultOptions);
-        
-        player.on('ready', () => {
-          addCaptureButtons(player);
-        });
-      }
-    });
+      startTime = Date.now();
+      recIndicator.style.display = "block";
 
-    function addCaptureButtons(player) {
-      const controls = document.querySelector('.plyr__controls');
-      if (!controls) return;
+      timer = setInterval(()=>{
+        recIndicator.textContent =
+          "• REC " + format(Date.now() - startTime);
+      },1000);
 
-      // Frame capture button
-      const captureBtn = document.createElement('button');
-      captureBtn.className = 'plyr__controls__item plyr__control';
-      captureBtn.setAttribute('type', 'button');
-      captureBtn.setAttribute('data-plyr', 'capture');
-      captureBtn.setAttribute('aria-label', 'Capture Frame');
-      captureBtn.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-        </svg>
-      `;
-      captureBtn.addEventListener('click', captureFrame);
+      recBtn.classList.add("rec-active");
+      recording = true;
 
-      // Screen recorder button
-      const recordBtn = document.createElement('button');
-      recordBtn.className = 'plyr__controls__item plyr__control';
-      recordBtn.setAttribute('type', 'button');
-      recordBtn.setAttribute('data-plyr', 'record');
-      recordBtn.setAttribute('aria-label', 'Record Screen');
-      recordBtn.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="3" fill="currentColor"/>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
-        </svg>
-      `;
-      recordBtn.addEventListener('click', toggleScreenRecording);
+    }else{
 
-      const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
-      if (fullscreenBtn) {
-        controls.insertBefore(recordBtn, fullscreenBtn);
-        controls.insertBefore(captureBtn, fullscreenBtn);
-      } else {
-        controls.appendChild(captureBtn);
-        controls.appendChild(recordBtn);
-      }
+      recorder.stop();
+      recBtn.classList.remove("rec-active");
+      recording = false;
     }
-  </script>
+  };
+}
+
+if(Hls.isSupported()){
+  hls = new Hls();
+  hls.loadSource(src);
+  hls.attachMedia(video);
+  hls.on(Hls.Events.MANIFEST_PARSED,(_,data)=>{
+    initPlyr(data.levels);
+  });
+}else{
+  video.src = src;
+  initPlyr();
+}
+
+});
+</script>
 
 </body>
-  </html>
+</html>
