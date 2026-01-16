@@ -140,190 +140,202 @@
 </head>
 <body>
 
-  <!-- CORRECTED BLOCKING SCRIPT - Only blocks specific domains -->
+  <!-- UPDATED BLOCKING SCRIPT - More aggressive blocking -->
   <script>
     (function () {
-      try {
-        // List of blocked domains - ONLY THESE WILL BE BLOCKED
-        const blockedDomains = [
-          "skcricweb.pages.dev",
-          "insiderlivehd.pages.dev", 
-          "mahirat.netlify.app",
-          "sportseera.pages.dev"
-        ];
-        
-        // Helper function to normalize domain
-        function normalizeDomain(domain) {
-          return domain.toLowerCase()
-            .replace(/^(https?:\/\/)?/, '')
-            .replace(/^www\./, '')
-            .split('/')[0]; // Remove paths if any
-        }
-        
-        // Get current hostname
-        const currentHost = normalizeDomain(window.location.hostname);
-        
-        // Normalize blocked domains
-        const normalizedBlocked = blockedDomains.map(domain => normalizeDomain(domain));
-        
-        // Check if current domain is directly blocked
-        const isDirectBlocked = normalizedBlocked.some(blocked => {
-          return currentHost === blocked || currentHost.endsWith('.' + blocked);
-        });
-        
-        // Check if embedded in iframe
-        const isEmbedded = window.top !== window.self;
-        let isEmbeddedBlocked = false;
-        
-        // Only check referrer if embedded
-        if (isEmbedded) {
-          try {
-            // Try to get parent hostname
-            const parentHost = window.parent.location.hostname;
-            const normalizedParent = normalizeDomain(parentHost);
-            
-            // Check if parent is in blocked list
-            isEmbeddedBlocked = normalizedBlocked.some(blocked => {
-              return normalizedParent === blocked || normalizedParent.endsWith('.' + blocked);
-            });
-            
-          } catch (e) {
-            // Cross-origin error - can't access parent
-            // In this case, check document.referrer as fallback
-            const referrer = document.referrer;
-            if (referrer) {
-              try {
-                const referrerUrl = new URL(referrer);
-                const normalizedReferrer = normalizeDomain(referrerUrl.hostname);
-                
-                isEmbeddedBlocked = normalizedBlocked.some(blocked => {
-                  return normalizedReferrer === blocked || normalizedReferrer.endsWith('.' + blocked);
-                });
-              } catch (err) {
-                // If we can't check referrer, don't block (allow access)
-                isEmbeddedBlocked = false;
-              }
-            } else {
-              // No referrer, don't block
-              isEmbeddedBlocked = false;
-            }
-          }
-        }
-        
-        // BLOCK ONLY IF:
-        // 1. Direct access from blocked domains, OR
-        // 2. Embedded in iframe from blocked domains
-        // ALLOW if:
-        // 1. Direct access from non-blocked domains, OR
-        // 2. Embedded from non-blocked domains
-        
-        if (isDirectBlocked || (isEmbedded && isEmbeddedBlocked)) {
-          let blockedReason = "";
-          let blockedDomain = "";
-          
-          if (isDirectBlocked) {
-            blockedReason = "Direct access from blocked domain";
-            blockedDomain = window.location.hostname;
-          } else {
-            blockedReason = "Embedding from blocked domain";
-            try {
-              blockedDomain = window.parent.location.hostname;
-            } catch (e) {
-              blockedDomain = document.referrer || "Unknown domain";
-            }
-          }
-          
-          // Display block message and stop all execution
-          document.open();
-          document.write(`
-            <!DOCTYPE html>
-            <html>
-            <head>
-              <title>Access Blocked</title>
-              <style>
-                body {
-                  margin: 0;
-                  padding: 0;
-                  background: #000;
-                  color: #fff;
-                  font-family: Arial, sans-serif;
-                  height: 100vh;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  text-align: center;
-                }
-                .block-message {
-                  background: rgba(30, 30, 30, 0.9);
-                  border: 2px solid #ff4444;
-                  padding: 30px;
-                  border-radius: 10px;
-                  max-width: 500px;
-                  margin: 20px;
-                }
-                h1 {
-                  color: #ff4444;
-                  margin: 0 0 15px 0;
-                }
-                .reason {
-                  background: rgba(255, 68, 68, 0.1);
-                  padding: 10px;
-                  border-radius: 5px;
-                  margin: 15px 0;
-                  font-family: monospace;
-                  font-size: 14px;
-                  word-break: break-word;
-                }
-                .domain-list {
-                  text-align: left;
-                  margin: 15px 0;
-                  padding: 10px;
-                  background: rgba(0, 0, 0, 0.3);
-                  border-radius: 5px;
-                  font-size: 12px;
-                }
-                .domain-list ul {
-                  margin: 5px 0;
-                  padding-left: 20px;
-                }
-                .brand {
-                  margin-top: 20px;
-                  font-size: 18px;
-                  color: #4CAF50;
-                  font-weight: bold;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="block-message">
-                <h1>Access Blocked</h1>
-                <p>This content is not accessible from this source.</p>
-                <div class="reason">${blockedReason}: ${blockedDomain}</div>
-                <div class="domain-list">
-                  <p>Blocked domains:</p>
-                  <ul>
-                    ${blockedDomains.map(domain => `<li>${domain}</li>`).join('')}
-                  </ul>
-                </div>
-                <div class="brand">REMEMBER DILLZY</div>
-              </div>
-            </body>
-            </html>
-          `);
-          document.close();
-          
-          // Prevent any further execution
-          if (window.stop) window.stop();
-          return;
-        }
-        
-        // If not blocked, continue normally
-        console.log('Access granted from:', window.location.hostname);
-        
-      } catch (error) {
-        console.error('Blocking script error:', error);
-        // On error, allow access (fail-open for safety)
+      // List of blocked domains
+      const blockedDomains = [
+        "skcricweb.pages.dev",
+        "insiderlivehd.pages.dev", 
+        "mahirat.netlify.app",
+        "sportseera.pages.dev"
+      ];
+      
+      // Also block subdomains of these domains
+      const blockedPatterns = blockedDomains.map(domain => {
+        // Convert to regex pattern
+        const escaped = domain.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return new RegExp(`(^|\\.)${escaped}$`, 'i');
+      });
+      
+      // Helper to check if a domain is blocked
+      function isDomainBlocked(domain) {
+        if (!domain) return false;
+        return blockedPatterns.some(pattern => pattern.test(domain));
       }
+      
+      // Get current domain
+      const currentDomain = window.location.hostname;
+      
+      // Check if current domain is blocked (direct access)
+      const isCurrentDomainBlocked = isDomainBlocked(currentDomain);
+      
+      // Check if embedded
+      const isEmbedded = window.top !== window.self;
+      
+      // Get referrer domain
+      let referrerDomain = null;
+      try {
+        if (document.referrer) {
+          const referrerUrl = new URL(document.referrer);
+          referrerDomain = referrerUrl.hostname;
+        }
+      } catch (e) {
+        // Invalid referrer
+      }
+      
+      // Check if referrer domain is blocked
+      const isReferrerBlocked = isDomainBlocked(referrerDomain);
+      
+      // Try to get parent domain if embedded
+      let parentDomain = null;
+      let isParentBlocked = false;
+      
+      if (isEmbedded) {
+        try {
+          parentDomain = window.parent.location.hostname;
+          isParentBlocked = isDomainBlocked(parentDomain);
+        } catch (e) {
+          // Cross-origin error, can't access parent
+          // In this case, rely on referrer
+        }
+      }
+      
+      // BLOCKING CONDITIONS:
+      // 1. Direct access from blocked domain
+      // 2. Embedded in iframe AND (parent is blocked OR referrer is blocked)
+      
+      const shouldBlock = isCurrentDomainBlocked || 
+                         (isEmbedded && (isParentBlocked || isReferrerBlocked));
+      
+      if (shouldBlock) {
+        // Get the domain that caused the block
+        let blockedDomainInfo = '';
+        if (isCurrentDomainBlocked) {
+          blockedDomainInfo = `Direct access from: ${currentDomain}`;
+        } else if (isParentBlocked) {
+          blockedDomainInfo = `Embedded from blocked parent: ${parentDomain}`;
+        } else if (isReferrerBlocked) {
+          blockedDomainInfo = `Referrer from blocked domain: ${referrerDomain}`;
+        }
+        
+        // Clear the entire page immediately
+        document.documentElement.innerHTML = '';
+        
+        // Create blocking page
+        const blockPage = document.createElement('html');
+        blockPage.innerHTML = `
+        <head>
+          <title>Access Blocked</title>
+          <style>
+            body {
+              margin: 0;
+              padding: 0;
+              background: #000;
+              color: #fff;
+              font-family: Arial, sans-serif;
+              height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+            }
+            .block-container {
+              background: rgba(30, 30, 30, 0.95);
+              border: 3px solid #ff4444;
+              padding: 40px;
+              border-radius: 12px;
+              max-width: 500px;
+              margin: 20px;
+              box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
+            }
+            h1 {
+              color: #ff4444;
+              margin: 0 0 20px 0;
+              font-size: 28px;
+            }
+            .blocked-info {
+              background: rgba(255, 68, 68, 0.1);
+              padding: 15px;
+              border-radius: 8px;
+              margin: 20px 0;
+              font-family: monospace;
+              font-size: 14px;
+              border-left: 4px solid #ff4444;
+            }
+            .domains-list {
+              text-align: left;
+              margin: 20px 0;
+              padding: 15px;
+              background: rgba(0, 0, 0, 0.3);
+              border-radius: 8px;
+              font-size: 13px;
+            }
+            .domains-list h3 {
+              margin: 0 0 10px 0;
+              color: #ff9999;
+            }
+            .domains-list ul {
+              margin: 0;
+              padding-left: 20px;
+            }
+            .domains-list li {
+              margin: 5px 0;
+            }
+            .brand {
+              margin-top: 25px;
+              font-size: 20px;
+              color: #4CAF50;
+              font-weight: bold;
+              text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+            }
+            .access-info {
+              font-size: 12px;
+              color: #aaa;
+              margin-top: 15px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="block-container">
+            <h1>🚫 ACCESS BLOCKED</h1>
+            <p>This content cannot be accessed from unauthorized domains.</p>
+            
+            <div class="blocked-info">
+              ${blockedDomainInfo}
+              ${isEmbedded ? '<br>Detected: Embedded in iframe' : ''}
+            </div>
+            
+            <div class="domains-list">
+              <h3>Blocked Domains:</h3>
+              <ul>
+                ${blockedDomains.map(domain => `<li>${domain}</li>`).join('')}
+              </ul>
+            </div>
+            
+            <div class="access-info">
+              Current domain: ${currentDomain}<br>
+              ${referrerDomain ? `Referrer: ${referrerDomain}` : ''}
+            </div>
+            
+            <div class="brand">REMEMBER DILLZY</div>
+          </div>
+        </body>
+        `;
+        
+        // Replace the entire document
+        document.replaceChild(blockPage, document.documentElement);
+        
+        // Stop all execution
+        if (window.stop) window.stop();
+        throw new Error('Domain blocked');
+      }
+      
+      // If not blocked, log access
+      console.log('Access granted from:', currentDomain, 
+                  isEmbedded ? '(Embedded)' : '(Direct)',
+                  referrerDomain ? `Referrer: ${referrerDomain}` : '');
+                  
     })();
   </script>
 
@@ -355,144 +367,146 @@
   </div>
 
   <script>
-    // Your player code - ONLY RUNS IF NOT BLOCKED
-    function captureFrame() {
-      try {
-        const video = document.getElementById("player");
-        
-        if (!video) {
-          alert('Video element not found');
-          return;
-        }
+    // Only run if not blocked
+    if (!document.querySelector('.block-container')) {
+      function captureFrame() {
+        try {
+          const video = document.getElementById("player");
+          
+          if (!video) {
+            alert('Video element not found');
+            return;
+          }
 
-        // Create canvas
-        const canvas = document.createElement('canvas');
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        
-        // Draw current frame
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        
-        // Convert to blob and download
-        canvas.toBlob(function(blob) {
-          // Create download link
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-          a.href = url;
-          a.download = `frame-capture-${timestamp}.png`;
-          a.click();
+          const canvas = document.createElement('canvas');
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
           
-          // Show premium preview
-          const preview = document.getElementById('capture-preview');
-          const capturedImg = document.getElementById('captured-image');
-          capturedImg.src = url;
-          preview.classList.add('show');
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
           
-          // Hide preview after 2.5 seconds
-          setTimeout(() => {
-            preview.classList.remove('show');
+          canvas.toBlob(function(blob) {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+            a.href = url;
+            a.download = `frame-capture-${timestamp}.png`;
+            a.click();
+            
+            const preview = document.getElementById('capture-preview');
+            const capturedImg = document.getElementById('captured-image');
+            capturedImg.src = url;
+            preview.classList.add('show');
+            
             setTimeout(() => {
-              URL.revokeObjectURL(url);
-            }, 300);
-          }, 2500);
-        }, 'image/png');
-        
-      } catch (error) {
-        console.error('Error capturing frame:', error);
-        alert('Error capturing frame. Please try again.');
-      }
-    }
-
-    // Initialize player - will only run if not blocked
-    document.addEventListener("DOMContentLoaded", function () {
-      // Check if we're on the blocked page
-      if (document.querySelector('.block-message')) {
-        console.log('Page blocked, skipping player initialization');
-        return;
+              preview.classList.remove('show');
+              setTimeout(() => {
+                URL.revokeObjectURL(url);
+              }, 300);
+            }, 2500);
+          }, 'image/png');
+          
+        } catch (error) {
+          console.error('Error capturing frame:', error);
+          alert('Error capturing frame. Please try again.');
+        }
       }
 
-      const params = new URLSearchParams(window.location.search);
-      const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
+      document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
 
-      const video = document.getElementById("player");
-      const source = streamUrl;
+        const video = document.getElementById("player");
+        const source = streamUrl;
 
-      const defaultOptions = {
-        autoplay: true,
-        controls: [
-          'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'
-        ],
-        settings: ['quality']
-      };
+        const defaultOptions = {
+          autoplay: true,
+          controls: [
+            'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'
+          ],
+          settings: ['quality']
+        };
 
-      if (Hls.isSupported()) {
-        const hls = new Hls({ autoStartLoad: true });
+        if (Hls.isSupported()) {
+          const hls = new Hls({ autoStartLoad: true });
 
-        hls.loadSource(source);
-        hls.attachMedia(video);
+          hls.loadSource(source);
+          hls.attachMedia(video);
 
-        hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
-          const availableQualities = data.levels.map(l => l.height).sort((a,b) => b - a);
+          hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
+            const availableQualities = data.levels.map(l => l.height).sort((a,b) => b - a);
 
-          const player = new Plyr(video, {
-            ...defaultOptions,
-            quality: {
-              default: availableQualities[0],
-              options: availableQualities,
-              forced: true,
-              onChange: q => {
-                hls.levels.forEach((level, index) => {
-                  if (level.height === q) hls.currentLevel = index;
-                });
+            const player = new Plyr(video, {
+              ...defaultOptions,
+              quality: {
+                default: availableQualities[0],
+                options: availableQualities,
+                forced: true,
+                onChange: q => {
+                  hls.levels.forEach((level, index) => {
+                    if (level.height === q) hls.currentLevel = index;
+                  });
+                }
               }
+            });
+
+            player.on('ready', () => {
+              const controls = document.querySelector('.plyr__controls');
+              if (!controls) return;
+
+              const captureBtn = document.createElement('button');
+              captureBtn.className = 'plyr__controls__item plyr__control';
+              captureBtn.setAttribute('type', 'button');
+              captureBtn.setAttribute('data-plyr', 'capture');
+              captureBtn.setAttribute('aria-label', 'Capture Frame');
+              captureBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                </svg>
+              `;
+              
+              captureBtn.addEventListener('click', captureFrame);
+
+              const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
+              if (fullscreenBtn) {
+                controls.insertBefore(captureBtn, fullscreenBtn);
+              } else {
+                controls.appendChild(captureBtn);
+              }
+            });
+          });
+
+        } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+          video.src = source;
+          video.addEventListener("loadedmetadata", () => video.play());
+          const player = new Plyr(video, defaultOptions);
+          
+          player.on('ready', () => {
+            const controls = document.querySelector('.plyr__controls');
+            if (!controls) return;
+
+            const captureBtn = document.createElement('button');
+            captureBtn.className = 'plyr__controls__item plyr__control';
+            captureBtn.setAttribute('type', 'button');
+            captureBtn.setAttribute('data-plyr', 'capture');
+            captureBtn.setAttribute('aria-label', 'Capture Frame');
+            captureBtn.innerHTML = `
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+              </svg>
+            `;
+            
+            captureBtn.addEventListener('click', captureFrame);
+
+            const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
+            if (fullscreenBtn) {
+              controls.insertBefore(captureBtn, fullscreenBtn);
+            } else {
+              controls.appendChild(captureBtn);
             }
           });
-
-          // Add custom capture button after player is ready
-          player.on('ready', () => {
-            addCaptureButton(player);
-          });
-        });
-
-      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = source;
-        video.addEventListener("loadedmetadata", () => video.play());
-        const player = new Plyr(video, defaultOptions);
-        
-        player.on('ready', () => {
-          addCaptureButton(player);
-        });
-      }
-    });
-
-    function addCaptureButton(player) {
-      // Find the controls container
-      const controls = document.querySelector('.plyr__controls');
-      if (!controls) return;
-
-      // Create capture button
-      const captureBtn = document.createElement('button');
-      captureBtn.className = 'plyr__controls__item plyr__control';
-      captureBtn.setAttribute('type', 'button');
-      captureBtn.setAttribute('data-plyr', 'capture');
-      captureBtn.setAttribute('aria-label', 'Capture Frame');
-      captureBtn.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-        </svg>
-      `;
-      
-      captureBtn.addEventListener('click', captureFrame);
-
-      // Insert before fullscreen button
-      const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
-      if (fullscreenBtn) {
-        controls.insertBefore(captureBtn, fullscreenBtn);
-      } else {
-        controls.appendChild(captureBtn);
-      }
+        }
+      });
     }
   </script>
 
