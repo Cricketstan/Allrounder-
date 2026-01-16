@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-15T23:47:10.174Z",
+  "updated_at": "2026-01-16T02:22:59.936Z",
   "count": 100,
   "items": [
     {
@@ -17,46 +17,6 @@
       "duration": 600,
       "published_iso": "2026-01-15T19:47:43",
       "url": "https://crickettv.site/wpl/6387773728112.html"
-    },
-    {
-      "title": "Presentation: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/aa/28/dd/0/image-43f64f4c-8393-400e-9e03-7411b0769b09.jpg",
-      "video_id": "6387769106112",
-      "duration": 508,
-      "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387769106112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Chloe Tryon",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fc/11/04/0/image-72037edb-ea8e-4ee6-86af-6fd49c4c3b96.jpg",
-      "video_id": "6387770966112",
-      "duration": 22,
-      "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387770966112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harleen Deol",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fc/e4/08/0/image-6608e394-ff0c-4cad-bf61-124913f0194b.jpg",
-      "video_id": "6387769803112",
-      "duration": 22,
-      "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387769803112.html"
-    },
-    {
-      "title": "Player of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harleen Deol",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/23/e7/62/0/image-ee709730-48c0-4248-870c-018783d8254c.jpg",
-      "video_id": "6387768805112",
-      "duration": 197,
-      "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387768805112.html"
-    },
-    {
-      "title": "Amazing Moments: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/54/6a/cd/0/image-7f7e1ffd-c02e-44d8-b8d3-4052cae07f6a.jpg",
-      "video_id": "6387769804112",
-      "duration": 62,
-      "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387769804112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harmanpreet Kaur",
@@ -83,6 +43,46 @@
       "url": "https://crickettv.site/wpl/6387768526112.html"
     },
     {
+      "title": "Presentation: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/aa/28/dd/0/image-43f64f4c-8393-400e-9e03-7411b0769b09.jpg",
+      "video_id": "6387769106112",
+      "duration": 508,
+      "published_iso": "2026-01-15T17:52:44",
+      "url": "https://crickettv.site/wpl/6387769106112.html"
+    },
+    {
+      "title": "Player of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harleen Deol",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/23/e7/62/0/image-ee709730-48c0-4248-870c-018783d8254c.jpg",
+      "video_id": "6387768805112",
+      "duration": 197,
+      "published_iso": "2026-01-15T17:52:44",
+      "url": "https://crickettv.site/wpl/6387768805112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harleen Deol",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fc/e4/08/0/image-6608e394-ff0c-4cad-bf61-124913f0194b.jpg",
+      "video_id": "6387769803112",
+      "duration": 22,
+      "published_iso": "2026-01-15T17:52:44",
+      "url": "https://crickettv.site/wpl/6387769803112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/54/6a/cd/0/image-7f7e1ffd-c02e-44d8-b8d3-4052cae07f6a.jpg",
+      "video_id": "6387769804112",
+      "duration": 62,
+      "published_iso": "2026-01-15T17:52:44",
+      "url": "https://crickettv.site/wpl/6387769804112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Chloe Tryon",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fc/11/04/0/image-72037edb-ea8e-4ee6-86af-6fd49c4c3b96.jpg",
+      "video_id": "6387770966112",
+      "duration": 22,
+      "published_iso": "2026-01-15T17:52:44",
+      "url": "https://crickettv.site/wpl/6387770966112.html"
+    },
+    {
       "title": "Post Match Interviews: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Chloe Tryon Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/23/3a/09/0/image-591783cb-e279-4064-993d-c1888d00d331.jpg",
       "video_id": "6387770065112",
@@ -107,20 +107,20 @@
       "url": "https://crickettv.site/wpl/6387770360112.html"
     },
     {
-      "title": "Super Sixes: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2a/ba/75/0/nFCVUonEJ3.jpg",
-      "video_id": "6387770153112",
-      "duration": 86,
-      "published_iso": "2026-01-15T17:27:00",
-      "url": "https://crickettv.site/wpl/6387770153112.html"
-    },
-    {
       "title": "Fall of Wickets: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/71/99/c5/0/G5euMbdg3j.jpg",
       "video_id": "6387768017112",
       "duration": 201,
       "published_iso": "2026-01-15T17:27:00",
       "url": "https://crickettv.site/wpl/6387768017112.html"
+    },
+    {
+      "title": "Super Sixes: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2a/ba/75/0/nFCVUonEJ3.jpg",
+      "video_id": "6387770153112",
+      "duration": 86,
+      "published_iso": "2026-01-15T17:27:00",
+      "url": "https://crickettv.site/wpl/6387770153112.html"
     },
     {
       "title": "Harleen Deol takes command with masterful 64*(39)",
@@ -203,20 +203,20 @@
       "url": "https://crickettv.site/wpl/6387766558112.html"
     },
     {
-      "title": "What happened there? Ecclestone, Sciver-Brunt reactions say it all",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/b9/94/0/image-63dd0005-e6f7-41f1-a7ff-f0c9b05af61c.jpg",
-      "video_id": "6387765849112",
-      "duration": 37,
-      "published_iso": "2026-01-15T15:53:08",
-      "url": "https://crickettv.site/wpl/6387765849112.html"
-    },
-    {
       "title": "Stop them if you can! Sciver-Brunt and Carey on fire",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2e/35/dc/0/image-e2ad6c31-6b7b-4b7a-a10c-be103135cad8.jpg",
       "video_id": "6387767033112",
       "duration": 112,
       "published_iso": "2026-01-15T15:53:08",
       "url": "https://crickettv.site/wpl/6387767033112.html"
+    },
+    {
+      "title": "What happened there? Ecclestone, Sciver-Brunt reactions say it all",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/b9/94/0/image-63dd0005-e6f7-41f1-a7ff-f0c9b05af61c.jpg",
+      "video_id": "6387765849112",
+      "duration": 37,
+      "published_iso": "2026-01-15T15:53:08",
+      "url": "https://crickettv.site/wpl/6387765849112.html"
     },
     {
       "title": "Highlights: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
@@ -427,6 +427,14 @@
       "url": "https://crickettv.site/wpl/6387720696112.html"
     },
     {
+      "title": "ChatGPT Match IQ Award: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Shafali Verma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5b/1b/79/0/image-a69d8c92-2c56-45fa-b951-8d2cf594e5a0.jpg",
+      "video_id": "6387721195112",
+      "duration": 18,
+      "published_iso": "2026-01-14T17:52:00",
+      "url": "https://crickettv.site/wpl/6387721195112.html"
+    },
+    {
       "title": "Player of the Match: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Shafali Verma",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/c4/cc/0/CtLhZwOAas.jpg",
       "video_id": "6387721480112",
@@ -435,12 +443,12 @@
       "url": "https://crickettv.site/wpl/6387721480112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Shafali Verma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5b/1b/79/0/image-a69d8c92-2c56-45fa-b951-8d2cf594e5a0.jpg",
-      "video_id": "6387721195112",
-      "duration": 18,
-      "published_iso": "2026-01-14T17:52:00",
-      "url": "https://crickettv.site/wpl/6387721195112.html"
+      "title": "Kingfisher Good Times Sixes of the Match: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Lizelle Lee",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bd/73/47/0/image-fc816339-a1f4-4d03-ac52-e4af99fe5735.jpg",
+      "video_id": "6387721194112",
+      "duration": 17,
+      "published_iso": "2026-01-14T17:51:59",
+      "url": "https://crickettv.site/wpl/6387721194112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of the Match: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Shafali Verma",
@@ -457,14 +465,6 @@
       "duration": 20,
       "published_iso": "2026-01-14T17:51:59",
       "url": "https://crickettv.site/wpl/6387720695112.html"
-    },
-    {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Lizelle Lee",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bd/73/47/0/image-fc816339-a1f4-4d03-ac52-e4af99fe5735.jpg",
-      "video_id": "6387721194112",
-      "duration": 17,
-      "published_iso": "2026-01-14T17:51:59",
-      "url": "https://crickettv.site/wpl/6387721194112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Lizelle Lee",
@@ -507,20 +507,20 @@
       "url": "https://crickettv.site/wpl/6387718324112.html"
     },
     {
-      "title": "Super Sixes: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3e/48/39/0/image-6254bcba-6a7a-4f8c-a5f4-d018e52ce73a.jpg",
-      "video_id": "6387719394112",
-      "duration": 85,
-      "published_iso": "2026-01-14T17:26:52",
-      "url": "https://crickettv.site/wpl/6387719394112.html"
-    },
-    {
       "title": "Fall of Wickets: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b2/f1/a5/0/image-79eb6e08-f423-4e23-86de-37603bee4cc3.jpg",
       "video_id": "6387720172112",
       "duration": 258,
       "published_iso": "2026-01-14T17:26:52",
       "url": "https://crickettv.site/wpl/6387720172112.html"
+    },
+    {
+      "title": "Super Sixes: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3e/48/39/0/image-6254bcba-6a7a-4f8c-a5f4-d018e52ce73a.jpg",
+      "video_id": "6387719394112",
+      "duration": 85,
+      "published_iso": "2026-01-14T17:26:52",
+      "url": "https://crickettv.site/wpl/6387719394112.html"
     },
     {
       "title": "Wicket: Match 7, UP Warriorz vs Delhi Capitals, WPL 2026: Jemimah Rodrigues Wicket",
@@ -787,20 +787,20 @@
       "url": "https://crickettv.site/wpl/6387671195112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Bharti Fulmali",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/b7/c2/0/image-39261f96-f82a-414b-b3ed-35021ccc3e1e.jpg",
-      "video_id": "6387668693112",
-      "duration": 19,
+      "title": "Sierra Super Striker of the Match: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Bharti Fulmali",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a1/07/5c/0/image-2f84dd70-fc6a-41e6-91e1-d63a6a4205dd.jpg",
+      "video_id": "6387669658112",
+      "duration": 23,
       "published_iso": "2026-01-13T18:00:58",
-      "url": "https://crickettv.site/wpl/6387668693112.html"
+      "url": "https://crickettv.site/wpl/6387669658112.html"
     },
     {
-      "title": "Player of the Match: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/45/03/05/0/image-b4c224e0-aafe-404e-8727-a02adebd2483.jpg",
-      "video_id": "6387669756112",
-      "duration": 210,
+      "title": "ChatGPT Match IQ Award: Match 6, Mumbai Indians vs Gujarat Giants, WPL 2026: Amanjot Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/94/4b/1e/0/image-121fb422-9c66-4a52-841a-0fffcb0d037c.jpg",
+      "video_id": "6387669172112",
+      "duration": 20,
       "published_iso": "2026-01-13T18:00:58",
-      "url": "https://crickettv.site/wpl/6387669756112.html"
+      "url": "https://crickettv.site/wpl/6387669172112.html"
     }
   ]
 }
