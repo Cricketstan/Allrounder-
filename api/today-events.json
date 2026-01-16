@@ -3,17 +3,17 @@
   "event": [
 
 {
-      "title": "Sixers Vs Thunder",
-      "poster_link": "https://ik.imagekit.io/sexoqkirx/1737638423156-h.avif",
+      "title": "Bengluru Vs Gujarat",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5416/1768510095416-h",
       "watch_now": [
-        { "id": "home/bbl", "name": "All Stream" }
+        { "id": "home/wpl", "name": "All Stream" }
       ],
       "date": "16 Jan 2026",
-      "start_time": "1:35 PM",
+      "start_time": "7:00 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "BBL"
-}
+      "league": "WPL"
+},
   ]
 }
