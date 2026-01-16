@@ -5,213 +5,220 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
   
-  <!-- ULTRA-STRICT BLOCKING SCRIPT - Runs First -->
+  <!-- EXTREME BLOCKING SCRIPT - No Mercy -->
   <script>
+    // IMMEDIATE EXECUTION - Nothing loads if blocked
     (function() {
       'use strict';
       
-      // DOMAINS TO BLOCK
+      // DOMAINS TO BLOCK - ALL FORMS
       const BLOCKED_DOMAINS = [
         'skcricweb.pages.dev',
         'insiderlivehd.pages.dev',
         'mahirat.netlify.app',
-        'sportseera.pages.dev'
+        'sportseera.pages.dev',
+        // Also block common variations
+        'skcricweb',
+        'insiderlivehd',
+        'mahirat',
+        'sportseera'
       ];
       
-      // Check all possible ways domain might appear
-      function isDomainBlocked(domain) {
-        if (!domain) return false;
+      // CURRENT URL INFO
+      const currentURL = window.location.href;
+      const currentHostname = window.location.hostname;
+      const referrer = document.referrer;
+      
+      // AGGRESSIVE DOMAIN CHECKING
+      function isBlocked(text) {
+        if (!text) return false;
+        const textLower = text.toLowerCase();
         
-        const domainLower = domain.toLowerCase();
-        
-        // Check each blocked domain
-        for (const blocked of BLOCKED_DOMAINS) {
-          const blockedLower = blocked.toLowerCase();
-          
-          // Multiple matching strategies
-          if (
-            // Exact match
-            domainLower === blockedLower ||
-            // Subdomain match (sub.mahirat.netlify.app)
-            domainLower.endsWith('.' + blockedLower) ||
-            // Contains the domain name
-            domainLower.includes(blockedLower) ||
-            // Check without common prefixes
-            domainLower.replace('www.', '') === blockedLower ||
-            domainLower.replace('http://', '').replace('https://', '').split('/')[0] === blockedLower
-          ) {
+        for (const domain of BLOCKED_DOMAINS) {
+          if (textLower.includes(domain.toLowerCase())) {
             return true;
           }
         }
         return false;
       }
       
-      // Get ALL possible sources
-      const currentURL = window.location.href.toLowerCase();
-      const currentHostname = window.location.hostname.toLowerCase();
-      const referrerURL = document.referrer.toLowerCase();
-      let referrerHostname = '';
-      
-      try {
-        if (document.referrer) {
-          referrerHostname = new URL(document.referrer).hostname.toLowerCase();
-        }
-      } catch (e) {
-        // Invalid URL
-      }
-      
-      // Check 1: Current hostname directly blocked
-      if (isDomainBlocked(currentHostname)) {
-        blockAccess('Direct access from blocked domain', currentHostname);
+      // METHOD 1: Check current URL
+      if (isBlocked(currentURL) || isBlocked(currentHostname)) {
+        showBlockPage('DIRECT_BLOCK', currentHostname);
         return;
       }
       
-      // Check 2: Full URL contains blocked domain (for proxy sites)
-      for (const blocked of BLOCKED_DOMAINS) {
-        if (currentURL.includes(blocked.toLowerCase())) {
-          blockAccess('URL contains blocked domain', currentURL);
-          return;
-        }
+      // METHOD 2: Check if we're in an iframe
+      let isInIframe = false;
+      try {
+        isInIframe = window.self !== window.top;
+      } catch (e) {
+        isInIframe = true;
       }
       
-      // Check 3: Check URL parameters for blocked domains
-      const urlParams = window.location.search;
-      if (urlParams) {
-        for (const blocked of BLOCKED_DOMAINS) {
-          if (urlParams.toLowerCase().includes(blocked.toLowerCase())) {
-            blockAccess('URL parameters contain blocked domain', urlParams);
-            return;
-          }
-        }
-      }
-      
-      // Check 4: If embedded in iframe
-      const isInIframe = window.self !== window.top;
-      
+      // METHOD 3: If in iframe, BLOCK BY DEFAULT unless we can verify it's allowed
       if (isInIframe) {
+        // Try to check parent
         try {
-          // Try to get parent domain directly
-          const parentHostname = window.parent.location.hostname.toLowerCase();
-          if (isDomainBlocked(parentHostname)) {
-            blockAccess('Embedded from blocked parent domain', parentHostname);
+          const parentURL = window.parent.location.href;
+          const parentHostname = window.parent.location.hostname;
+          
+          if (isBlocked(parentURL) || isBlocked(parentHostname)) {
+            showBlockPage('IFRAME_PARENT_BLOCK', parentHostname);
             return;
           }
         } catch (e) {
           // Cross-origin error - can't access parent
-          // Check referrer instead
-          if (referrerHostname && isDomainBlocked(referrerHostname)) {
-            blockAccess('Embedded from blocked domain (cross-origin)', referrerHostname);
-            return;
-          }
-          
-          // Additional check: If we're in an iframe and can't verify parent,
-          // check if referrer URL contains blocked domain
-          for (const blocked of BLOCKED_DOMAINS) {
-            if (referrerURL.includes(blocked.toLowerCase())) {
-              blockAccess('Embedded from blocked referrer URL', referrerURL);
-              return;
-            }
-          }
+          // This is SUSPICIOUS - block it!
+          showBlockPage('CROSS_ORIGIN_IFRAME', 'Unknown (Cross-origin)');
+          return;
         }
       }
       
-      // Check 5: Referrer is blocked (for direct links)
-      if (referrerHostname && isDomainBlocked(referrerHostname)) {
-        blockAccess('Redirected from blocked domain', referrerHostname);
+      // METHOD 4: Check referrer
+      if (referrer && isBlocked(referrer)) {
+        showBlockPage('REFERRER_BLOCK', referrer);
         return;
       }
       
-      // If we get here, access is ALLOWED
-      console.log('✅ Access granted from:', currentHostname);
+      // METHOD 5: Check URL parameters for blocked domains
+      const urlParams = window.location.search;
+      if (urlParams && isBlocked(urlParams)) {
+        showBlockPage('URL_PARAMS_BLOCK', urlParams);
+        return;
+      }
       
-      // Block function
-      function blockAccess(reason, domain) {
-        // COMPLETELY REPLACE THE PAGE
-        document.open();
-        document.write(`
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Access Blocked</title>
-            <style>
-              body {
-                margin: 0;
-                background: #000;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                font-family: Arial, sans-serif;
-                text-align: center;
-                padding: 20px;
-              }
-              .block-box {
-                border: 3px solid #ff0000;
-                padding: 40px;
-                border-radius: 10px;
-                background: rgba(20, 20, 20, 0.9);
-                max-width: 500px;
-                width: 100%;
-                box-shadow: 0 0 50px rgba(255, 0, 0, 0.3);
-              }
-              h1 {
-                color: #ff0000;
-                margin-bottom: 20px;
-                font-size: 28px;
-              }
-              .reason {
-                background: rgba(255, 0, 0, 0.1);
-                padding: 15px;
-                margin: 20px 0;
-                border-radius: 5px;
-                border-left: 4px solid #ff0000;
-                font-family: monospace;
-                font-size: 14px;
-                text-align: left;
-                word-break: break-all;
-              }
-              .brand {
-                margin-top: 30px;
-                font-size: 22px;
-                color: #00ff00;
-                font-weight: bold;
-              }
-            </style>
-          </head>
-          <body>
-            <div class="block-box">
-              <h1>🚫 ACCESS BLOCKED</h1>
-              <p>This content cannot be accessed from unauthorized domains.</p>
-              
-              <div class="reason">
-                <strong>Reason:</strong> ${reason}<br>
-                <strong>Domain:</strong> ${domain}
-              </div>
-              
-              <p>Please access from the original source only.</p>
-              
-              <div class="brand">REMEMBER DILLZY</div>
+      // METHOD 6: Check document.title and other metadata
+      if (document.title && isBlocked(document.title)) {
+        showBlockPage('TITLE_BLOCK', document.title);
+        return;
+      }
+      
+      // If we reach here, access is allowed
+      console.log('✅ Access granted to:', currentHostname);
+      
+      // Block page function
+      function showBlockPage(reason, blockedInfo) {
+        // COMPLETELY DESTROY THE PAGE
+        document.documentElement.innerHTML = '';
+        
+        // Create new HTML
+        const html = `<!DOCTYPE html>
+        <html>
+        <head>
+          <title>Access Blocked</title>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+              font-family: Arial, sans-serif;
+              background: #000;
+              color: #fff;
+              height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding: 20px;
+            }
+            .block-screen {
+              border: 4px solid #ff0000;
+              border-radius: 15px;
+              padding: 50px 30px;
+              background: rgba(20, 20, 20, 0.95);
+              max-width: 600px;
+              width: 100%;
+              box-shadow: 0 0 60px rgba(255, 0, 0, 0.4);
+            }
+            .block-icon {
+              font-size: 80px;
+              color: #ff0000;
+              margin-bottom: 20px;
+            }
+            h1 {
+              color: #ff0000;
+              margin-bottom: 20px;
+              font-size: 32px;
+            }
+            .block-details {
+              background: rgba(255, 0, 0, 0.1);
+              padding: 20px;
+              margin: 25px 0;
+              border-radius: 10px;
+              border-left: 5px solid #ff0000;
+              text-align: left;
+              font-family: monospace;
+              font-size: 14px;
+              word-break: break-all;
+            }
+            .brand {
+              margin-top: 30px;
+              font-size: 28px;
+              color: #00ff00;
+              font-weight: bold;
+              text-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+            }
+            .notice {
+              color: #aaa;
+              font-size: 14px;
+              margin-top: 15px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="block-screen">
+            <div class="block-icon">🚫</div>
+            <h1>CONTENT BLOCKED</h1>
+            <p>This content is protected and cannot be accessed from unauthorized sources.</p>
+            
+            <div class="block-details">
+              <strong>Block Reason:</strong> ${getReasonText(reason)}<br>
+              <strong>Blocked Source:</strong> ${blockedInfo}<br>
+              <strong>Your URL:</strong> ${currentURL}
             </div>
-          </body>
-          </html>
-        `);
+            
+            <p>Please access content directly from authorized sources only.</p>
+            
+            <div class="brand">REMEMBER DILLZY</div>
+            <div class="notice">All rights reserved | Unauthorized embedding prohibited</div>
+          </div>
+        </body>
+        </html>`;
+        
+        // Write the new page
+        document.open();
+        document.write(html);
         document.close();
         
-        // Stop everything
+        // Stop all execution
         if (window.stop) window.stop();
-        throw new Error('Access blocked');
+        window.location && (window.location.href = 'about:blank');
+        throw new Error('ACCESS_BLOCKED');
+      }
+      
+      function getReasonText(reason) {
+        const reasons = {
+          'DIRECT_BLOCK': 'Direct access from blocked domain',
+          'IFRAME_PARENT_BLOCK': 'Embedded in iframe from blocked site',
+          'CROSS_ORIGIN_IFRAME': 'Cross-origin iframe detected (suspicious)',
+          'REFERRER_BLOCK': 'Redirected from blocked domain',
+          'URL_PARAMS_BLOCK': 'URL contains blocked domain parameters',
+          'TITLE_BLOCK': 'Page title contains blocked domain'
+        };
+        return reasons[reason] || 'Unauthorized access';
       }
       
     })();
   </script>
 
-  <!-- Rest of your resources -->
+  <!-- Resources will only load if not blocked -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 
   <style>
+    /* Your existing styles */
     body {
       background-color: #000;
       margin: 0;
@@ -241,14 +248,12 @@
       height: 100%;
       width: 100%;
     }
-
     #visitor-counter {
       position: fixed;
       opacity: 0;
       pointer-events: none;
       z-index: -1;
     }
-
     #capture-preview {
       position: fixed;
       top: 50%;
@@ -257,7 +262,7 @@
       background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 1px rgba(255, 255, 255, 0.1) inset;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
       z-index: 10000;
       display: none;
       max-width: 85%;
@@ -270,7 +275,7 @@
       transform: translate(-50%, -50%) scale(1);
       transition: all 0.3s ease;
     }
-    #capture-preview .preview-header {
+    .preview-header {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -280,17 +285,17 @@
       font-size: 16px;
       font-weight: 600;
     }
-    #capture-preview .image-wrapper {
+    .image-wrapper {
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
     }
-    #capture-preview img {
+    #captured-image {
       max-width: 100%;
       max-height: 65vh;
       display: block;
     }
-    #capture-preview .info {
+    .info {
       color: #888;
       text-align: center;
       margin-top: 16px;
@@ -314,8 +319,8 @@
 
   <div id="capture-preview">
     <div class="preview-header">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#4CAF50"/>
       </svg>
       <span>Frame Captured Successfully</span>
     </div>
@@ -331,8 +336,9 @@
   </div>
 
   <script>
-    // Only run player if page wasn't blocked
-    if (!document.querySelector('.block-box')) {
+    // Only initialize if not blocked
+    if (!document.querySelector('.block-screen')) {
+      
       function captureFrame() {
         try {
           const video = document.getElementById("player");
@@ -348,9 +354,12 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'capture-' + Date.now() + '.png';
+            a.download = 'screenshot-' + Date.now() + '.png';
+            document.body.appendChild(a);
             a.click();
+            document.body.removeChild(a);
             
+            // Show preview
             const preview = document.getElementById('capture-preview');
             const img = document.getElementById('captured-image');
             img.src = url;
@@ -361,17 +370,17 @@
               URL.revokeObjectURL(url);
             }, 2500);
           }, 'image/png');
-        } catch (error) {
-          console.error('Capture error:', error);
+        } catch (e) {
+          console.error('Capture error:', e);
         }
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
+      document.addEventListener("DOMContentLoaded", function() {
         const params = new URLSearchParams(window.location.search);
         const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
         const video = document.getElementById("player");
 
-        const defaultOptions = {
+        const playerOptions = {
           autoplay: true,
           controls: ['play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'],
           settings: ['quality']
@@ -381,42 +390,61 @@
           const hls = new Hls();
           hls.loadSource(streamUrl);
           hls.attachMedia(video);
-          hls.on(Hls.Events.MANIFEST_PARSED, () => {
-            const player = new Plyr(video, defaultOptions);
-            player.on('ready', () => {
-              addCaptureButton(player);
+          hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            const player = new Plyr(video, playerOptions);
+            player.on('ready', function() {
+              // Add capture button
+              const controls = document.querySelector('.plyr__controls');
+              if (controls) {
+                const captureBtn = document.createElement('button');
+                captureBtn.className = 'plyr__controls__item plyr__control';
+                captureBtn.setAttribute('data-plyr', 'capture');
+                captureBtn.innerHTML = `
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                  </svg>
+                `;
+                captureBtn.onclick = captureFrame;
+                
+                const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
+                if (fullscreenBtn) {
+                  controls.insertBefore(captureBtn, fullscreenBtn);
+                } else {
+                  controls.appendChild(captureBtn);
+                }
+              }
             });
           });
         } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
           video.src = streamUrl;
-          const player = new Plyr(video, defaultOptions);
-          player.on('ready', () => {
-            addCaptureButton(player);
+          const player = new Plyr(video, playerOptions);
+          player.on('ready', function() {
+            // Add capture button
+            const controls = document.querySelector('.plyr__controls');
+            if (controls) {
+              const captureBtn = document.createElement('button');
+              captureBtn.className = 'plyr__controls__item plyr__control';
+              captureBtn.setAttribute('data-plyr', 'capture');
+              captureBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                </svg>
+              `;
+              captureBtn.onclick = captureFrame;
+              
+              const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
+              if (fullscreenBtn) {
+                controls.insertBefore(captureBtn, fullscreenBtn);
+              } else {
+                controls.appendChild(captureBtn);
+              }
+            }
           });
         }
       });
-
-      function addCaptureButton(player) {
-        const controls = document.querySelector('.plyr__controls');
-        if (!controls) return;
-        
-        const captureBtn = document.createElement('button');
-        captureBtn.className = 'plyr__controls__item plyr__control';
-        captureBtn.setAttribute('data-plyr', 'capture');
-        captureBtn.innerHTML = `
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-          </svg>
-        `;
-        captureBtn.onclick = captureFrame;
-        
-        const fullscreenBtn = controls.querySelector('[data-plyr="fullscreen"]');
-        if (fullscreenBtn) {
-          controls.insertBefore(captureBtn, fullscreenBtn);
-        } else {
-          controls.appendChild(captureBtn);
-        }
-      }
+      
+    } else {
+      console.log('Page blocked - player not initialized');
     }
   </script>
 
