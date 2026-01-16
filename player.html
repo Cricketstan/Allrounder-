@@ -1,11 +1,179 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Fox Cricket</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
+
+  <!-- DOMAIN BLOCKING SCRIPT - Runs First -->
+  <script>
+    // Enhanced domain blocking - ONLY blocks specific domains
+    (function() {
+      // List of blocked domains - ONLY THESE WILL BE BLOCKED
+      const blockedDomains = [
+        "skcricweb.pages.dev",
+        "insiderlivehd.pages.dev",
+        "mahirat.netlify.app",
+        "sportseera.pages.dev"
+      ];
+      
+      // Function to check if a domain matches blocked list
+      function isDomainBlocked(domain) {
+        if (!domain) return false;
+        
+        // Convert to lowercase for comparison
+        const domainLower = domain.toLowerCase();
+        
+        // Check each blocked domain
+        for (const blocked of blockedDomains) {
+          const blockedLower = blocked.toLowerCase();
+          
+          // Exact match or subdomain match
+          if (domainLower === blockedLower || 
+              domainLower.endsWith('.' + blockedLower)) {
+            return true;
+          }
+        }
+        return false;
+      }
+      
+      // Get current domain
+      const currentDomain = window.location.hostname;
+      let referrerDomain = '';
+      
+      try {
+        referrerDomain = document.referrer ? new URL(document.referrer).hostname : '';
+      } catch (e) {
+        referrerDomain = '';
+      }
+      
+      // Check if we should block
+      let shouldBlock = false;
+      let blockReason = '';
+      let blockedDomain = '';
+      
+      // 1. Check if current domain is blocked (direct access)
+      if (isDomainBlocked(currentDomain)) {
+        shouldBlock = true;
+        blockReason = 'Direct access from blocked domain';
+        blockedDomain = currentDomain;
+      }
+      
+      // 2. If not blocked yet, check if embedded in iframe
+      if (!shouldBlock && (window.self !== window.top)) {
+        try {
+          // Try to get parent domain
+          const parentDomain = window.parent.location.hostname;
+          if (isDomainBlocked(parentDomain)) {
+            shouldBlock = true;
+            blockReason = 'Embedded in iframe from blocked domain';
+            blockedDomain = parentDomain;
+          }
+        } catch (e) {
+          // Cross-origin error - can't access parent
+          // Check referrer instead
+          if (referrerDomain && isDomainBlocked(referrerDomain)) {
+            shouldBlock = true;
+            blockReason = 'Embedded from blocked domain (cross-origin)';
+            blockedDomain = referrerDomain;
+          }
+          // If we can't check and referrer is not blocked, ALLOW access
+        }
+      }
+      
+      // 3. If still not blocked, check referrer (for redirects/bookmarks)
+      if (!shouldBlock && referrerDomain && isDomainBlocked(referrerDomain)) {
+        shouldBlock = true;
+        blockReason = 'Redirected from blocked domain';
+        blockedDomain = referrerDomain;
+      }
+      
+      // ONLY BLOCK IF DOMAIN IS IN THE BLOCKED LIST
+      if (shouldBlock) {
+        // Clear everything and show block message
+        document.open();
+        document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Access Blocked</title>
+            <style>
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+              }
+              body {
+                margin: 0;
+                background: #000;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+                padding: 20px;
+              }
+              .block-container {
+                text-align: center;
+                border: 2px solid #ff4444;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 0 40px rgba(255,0,0,0.4);
+                max-width: 500px;
+                width: 100%;
+              }
+              h1 {
+                color: #ff4444;
+                margin-bottom: 10px;
+                font-size: 24px;
+              }
+              .reason {
+                background: rgba(255, 68, 68, 0.1);
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 8px;
+                font-family: monospace;
+                font-size: 14px;
+                border-left: 4px solid #ff4444;
+              }
+              .brand {
+                margin-top: 30px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #4CAF50;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="block-container">
+              <h1>Access Blocked</h1>
+              <p>This domain is not allowed to access this content.</p>
+              
+              <div class="reason">
+                <strong>Block Reason:</strong><br>
+                ${blockReason}<br>
+                <strong>Blocked Domain:</strong><br>
+                ${blockedDomain}
+              </div>
+              
+              <div class="brand">REMEMBER DILLZY</div>
+            </div>
+          </body>
+          </html>
+        `);
+        document.close();
+        
+        // Stop all further execution
+        if (window.stop) window.stop();
+        return;
+      }
+      
+      // If we get here, access is ALLOWED
+      console.log('Access granted from:', currentDomain);
+      
+    })();
+  </script>
 
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
@@ -17,7 +185,6 @@
   <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 
   <style>
-    /* ... (all your existing styles remain the same) ... */
     body {
       background-color: #000;
       margin: 0;
@@ -48,7 +215,7 @@
       width: 100%;
     }
 
-    /* 🔹 Invisible visitor counter (same as before) */
+    /* 🔹 Invisible visitor counter */
     #visitor-counter {
       position: fixed;
       opacity: 0;
@@ -71,21 +238,13 @@
       max-width: 85%;
       max-height: 85%;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      animation: fadeInScale 0.3s ease-out forwards;
     }
-
-    @keyframes fadeInScale {
-      to {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
-    }
-
     #capture-preview.show {
       display: block;
-      opacity: 0;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      transition: all 0.3s ease;
     }
-
     #capture-preview .preview-header {
       display: flex;
       align-items: center;
@@ -93,46 +252,28 @@
       gap: 10px;
       margin-bottom: 20px;
       color: #4CAF50;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       font-size: 16px;
       font-weight: 600;
     }
-
-    #capture-preview .preview-header svg {
-      width: 24px;
-      height: 24px;
-      fill: #4CAF50;
-    }
-
     #capture-preview .image-wrapper {
-      position: relative;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-      border: 2px solid rgba(255, 255, 255, 0.05);
     }
-
     #capture-preview img {
       max-width: 100%;
       max-height: 65vh;
       display: block;
-      border-radius: 10px;
     }
-
     #capture-preview .info {
       color: #888;
       text-align: center;
       margin-top: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
       font-size: 13px;
-      letter-spacing: 0.3px;
     }
-
-    /* Custom capture button in Plyr */
     .plyr__controls button[data-plyr="capture"] {
       padding: 7px;
     }
-
     .plyr__controls button[data-plyr="capture"] svg {
       width: 18px;
       height: 18px;
@@ -141,103 +282,6 @@
   </style>
 </head>
 <body>
-
-  <!-- YOUR BLOCKING SCRIPT - Placed at the very top -->
-  <script>
-    (function () {
-      try {
-        // List of blocked domains
-        const blockedDomains = [
-          "skcricweb.pages.dev",
-          "insiderlivehd.pages.dev",
-          "mahirat.netlify.app",
-          "sportseera.pages.dev"
-        ];
-        
-        // Get current hostname
-        const currentHost = window.location.hostname;
-        
-        // Check if current domain is in blocked list (direct access)
-        const isDirectBlocked = blockedDomains.some(domain => 
-          currentHost.includes(domain) || 
-          currentHost.endsWith(domain.replace(/^https?:\/\//, ''))
-        );
-        
-        // Check if referrer is from blocked domain (embedded access)
-        const ref = document.referrer || "";
-        const isReferrerBlocked = blockedDomains.some(domain => 
-          ref.includes(domain)
-        );
-        
-        // Check if embedded in iframe
-        const isEmbedded = window.top !== window.self;
-        
-        // Block if: direct access from blocked domain OR embedded from blocked domain
-        if (isDirectBlocked || (isEmbedded && isReferrerBlocked)) {
-          document.documentElement.innerHTML = `
-            <html>
-            <head>
-              <title>Access Blocked</title>
-              <style>
-                body {
-                  margin: 0;
-                  background: #000;
-                  color: #fff;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  height: 100vh;
-                  font-family: Arial, sans-serif;
-                }
-                .box {
-                  text-align: center;
-                  border: 2px solid #ff4444;
-                  padding: 30px;
-                  border-radius: 12px;
-                  box-shadow: 0 0 40px rgba(255,0,0,0.4);
-                }
-                h1 {
-                  color: #ff4444;
-                  margin-bottom: 10px;
-                }
-                p {
-                  font-size: 16px;
-                  opacity: 0.9;
-                }
-                .blocked-domain {
-                  color: #ff9999;
-                  font-weight: bold;
-                  margin: 10px 0;
-                  padding: 5px;
-                  background: rgba(255,0,0,0.1);
-                  border-radius: 4px;
-                }
-                .brand {
-                  margin-top: 20px;
-                  font-size: 18px;
-                  font-weight: bold;
-                  color: #4CAF50;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="box">
-                <h1>Access Blocked</h1>
-                <p>This domain is not allowed to access this content.</p>
-                <div class="blocked-domain">Blocked: ${currentHost}</div>
-                <div class="brand">REMEMBER DILLZY</div>
-              </div>
-            </body>
-            </html>
-          `;
-          window.stop();
-        }
-      } catch (e) {
-        // Error handling - clear the page on error
-        document.documentElement.innerHTML = "";
-      }
-    })();
-  </script>
 
   <div class="video-container">
     <video autoplay playsinline muted id="player" controls preload="metadata"></video>
@@ -267,7 +311,7 @@
   </div>
 
   <script>
-    // Your existing player code remains completely unchanged below
+    // Player code - only runs if not blocked
     function captureFrame() {
       try {
         const video = document.getElementById("player");
@@ -318,7 +362,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-
       const params = new URLSearchParams(window.location.search);
       const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
 
