@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-16T08:12:07.338878Z",
+  "updated_at": "2026-01-16T13:41:44.225544Z",
   "count": 4,
   "pages": [
     {
@@ -16,15 +16,15 @@
       "description": ""
     },
     {
-      "id": "wpl",
-      "title": "Benglore Vs Gujarat Live Streaming ",
-      "url": "https://crickettv.site/home/wpl/",
-      "description": ""
-    },
-    {
       "id": "bbl",
       "title": "Melbourne Star Vs Adelaide Strikers ",
       "url": "https://crickettv.site/home/bbl/",
+      "description": ""
+    },
+    {
+      "id": "wpl",
+      "title": "Benglore Vs Gujarat Live Streaming ",
+      "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
   ]
