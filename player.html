@@ -1,204 +1,11 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Fox Cricket</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
-
-  <!-- DOMAIN BLOCKING SCRIPT - Runs First -->
-  <script>
-    // Enhanced domain blocking with multiple checks
-    (function() {
-      // List of blocked domains
-      const blockedDomains = [
-        "skcricweb.pages.dev",
-        "insiderlivehd.pages.dev",
-        "mahirat.netlify.app",
-        "sportseera.pages.dev"
-      ];
-      
-      // Block if accessed from blocked domain
-      const currentHostname = window.location.hostname;
-      let referrerHostname = '';
-      
-      try {
-        referrerHostname = document.referrer ? new URL(document.referrer).hostname : '';
-      } catch (e) {
-        referrerHostname = '';
-      }
-      
-      // Check multiple conditions
-      let shouldBlock = false;
-      let blockReason = '';
-      
-      // 1. Check current URL hostname
-      for (const domain of blockedDomains) {
-        if (currentHostname.includes(domain) || currentHostname === domain) {
-          shouldBlock = true;
-          blockReason = `Direct access from blocked domain: ${currentHostname}`;
-          break;
-        }
-      }
-      
-      // 2. Check referrer (where the page was opened from)
-      if (!shouldBlock && referrerHostname) {
-        for (const domain of blockedDomains) {
-          if (referrerHostname.includes(domain) || referrerHostname === domain) {
-            shouldBlock = true;
-            blockReason = `Access from blocked referrer domain: ${referrerHostname}`;
-            break;
-          }
-        }
-      }
-      
-      // 3. Check if page is in iframe
-      if (!shouldBlock && window.self !== window.top) {
-        // Get parent/top window URL
-        try {
-          const topHostname = window.top.location.hostname;
-          for (const domain of blockedDomains) {
-            if (topHostname.includes(domain) || topHostname === domain) {
-              shouldBlock = true;
-              blockReason = `Embedded in iframe from blocked domain: ${topHostname}`;
-              break;
-            }
-          }
-        } catch (e) {
-          // Cross-origin error means we're in an iframe from different domain
-          // Block by default if we can't verify the parent
-          shouldBlock = true;
-          blockReason = `Embedded in iframe from unknown/blocked domain (cross-origin)`;
-        }
-      }
-      
-      // If blocked, take action
-      if (shouldBlock) {
-        // Clear everything and show block message
-        document.open();
-        document.write(`
-          <!DOCTYPE html>
-          <html>
-          <head>
-            <title>Access Blocked</title>
-            <style>
-              * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-              }
-              body {
-                margin: 0;
-                background: #000;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                padding: 20px;
-              }
-              .block-container {
-                text-align: center;
-                border: 3px solid #ff4444;
-                padding: 40px;
-                border-radius: 15px;
-                box-shadow: 0 0 50px rgba(255,0,0,0.5);
-                max-width: 600px;
-                width: 100%;
-                background: rgba(20, 20, 20, 0.95);
-              }
-              h1 {
-                color: #ff4444;
-                margin-bottom: 20px;
-                font-size: 28px;
-              }
-              .reason-box {
-                background: rgba(255, 68, 68, 0.1);
-                border: 1px solid rgba(255, 68, 68, 0.3);
-                padding: 20px;
-                margin: 20px 0;
-                border-radius: 10px;
-                text-align: left;
-                font-family: monospace;
-                font-size: 14px;
-                word-break: break-word;
-              }
-              .blocked-list {
-                margin: 25px 0;
-                text-align: left;
-                padding: 15px;
-                background: rgba(0, 0, 0, 0.3);
-                border-radius: 10px;
-              }
-              .blocked-list h3 {
-                color: #ff9999;
-                margin-bottom: 10px;
-                font-size: 18px;
-              }
-              .blocked-list ul {
-                padding-left: 20px;
-              }
-              .blocked-list li {
-                margin: 8px 0;
-                padding: 5px;
-                background: rgba(255, 255, 255, 0.05);
-                border-radius: 5px;
-              }
-              .info {
-                font-size: 12px;
-                color: #aaa;
-                margin: 15px 0;
-                opacity: 0.8;
-              }
-              .brand {
-                margin-top: 30px;
-                font-size: 24px;
-                font-weight: bold;
-                color: #4CAF50;
-                text-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
-              }
-            </style>
-          </head>
-          <body>
-            <div class="block-container">
-              <h1>⛔ ACCESS BLOCKED</h1>
-              <p>This content cannot be embedded or accessed from unauthorized domains.</p>
-              
-              <div class="reason-box">
-                <strong>Block Reason:</strong><br>
-                ${blockReason}
-              </div>
-              
-              <div class="blocked-list">
-                <h3>Blocked Domains:</h3>
-                <ul>
-                  ${blockedDomains.map(domain => `<li>${domain}</li>`).join('')}
-                </ul>
-              </div>
-              
-              <div class="info">
-                Current URL: ${window.location.href}<br>
-                ${referrerHostname ? `Referrer: ${referrerHostname}` : 'No referrer detected'}
-              </div>
-              
-              <p><small>If you believe this is an error, contact the website administrator.</small></p>
-              
-              <div class="brand">REMEMBER DILLZY</div>
-            </div>
-          </body>
-          </html>
-        `);
-        document.close();
-        
-        // Prevent all further JavaScript execution
-        console.log = console.error = console.warn = function() {};
-        if (window.stop) window.stop();
-        
-        // Stop execution
-        throw new Error("Domain access blocked");
-      }
-    })();
-  </script>
 
   <!-- Plyr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css"/>
@@ -334,6 +141,103 @@
   </style>
 </head>
 <body>
+
+  <!-- YOUR BLOCKING SCRIPT - Placed at the very top -->
+  <script>
+    (function () {
+      try {
+        // List of blocked domains
+        const blockedDomains = [
+          "skcricweb.pages.dev",
+          "insiderlivehd.pages.dev",
+          "mahirat.netlify.app",
+          "sportseera.pages.dev"
+        ];
+        
+        // Get current hostname
+        const currentHost = window.location.hostname;
+        
+        // Check if current domain is in blocked list (direct access)
+        const isDirectBlocked = blockedDomains.some(domain => 
+          currentHost.includes(domain) || 
+          currentHost.endsWith(domain.replace(/^https?:\/\//, ''))
+        );
+        
+        // Check if referrer is from blocked domain (embedded access)
+        const ref = document.referrer || "";
+        const isReferrerBlocked = blockedDomains.some(domain => 
+          ref.includes(domain)
+        );
+        
+        // Check if embedded in iframe
+        const isEmbedded = window.top !== window.self;
+        
+        // Block if: direct access from blocked domain OR embedded from blocked domain
+        if (isDirectBlocked || (isEmbedded && isReferrerBlocked)) {
+          document.documentElement.innerHTML = `
+            <html>
+            <head>
+              <title>Access Blocked</title>
+              <style>
+                body {
+                  margin: 0;
+                  background: #000;
+                  color: #fff;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  height: 100vh;
+                  font-family: Arial, sans-serif;
+                }
+                .box {
+                  text-align: center;
+                  border: 2px solid #ff4444;
+                  padding: 30px;
+                  border-radius: 12px;
+                  box-shadow: 0 0 40px rgba(255,0,0,0.4);
+                }
+                h1 {
+                  color: #ff4444;
+                  margin-bottom: 10px;
+                }
+                p {
+                  font-size: 16px;
+                  opacity: 0.9;
+                }
+                .blocked-domain {
+                  color: #ff9999;
+                  font-weight: bold;
+                  margin: 10px 0;
+                  padding: 5px;
+                  background: rgba(255,0,0,0.1);
+                  border-radius: 4px;
+                }
+                .brand {
+                  margin-top: 20px;
+                  font-size: 18px;
+                  font-weight: bold;
+                  color: #4CAF50;
+                }
+              </style>
+            </head>
+            <body>
+              <div class="box">
+                <h1>Access Blocked</h1>
+                <p>This domain is not allowed to access this content.</p>
+                <div class="blocked-domain">Blocked: ${currentHost}</div>
+                <div class="brand">REMEMBER DILLZY</div>
+              </div>
+            </body>
+            </html>
+          `;
+          window.stop();
+        }
+      } catch (e) {
+        // Error handling - clear the page on error
+        document.documentElement.innerHTML = "";
+      }
+    })();
+  </script>
 
   <div class="video-container">
     <video autoplay playsinline muted id="player" controls preload="metadata"></video>
