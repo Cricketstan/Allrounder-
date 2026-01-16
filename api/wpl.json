@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-16T09:42:27.676Z",
+  "updated_at": "2026-01-16T09:57:46.877Z",
   "count": 100,
   "items": [
     {
@@ -35,12 +35,20 @@
       "url": "https://crickettv.site/wpl/6387773728112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/78/3f/0/image-5c196687-f3c6-45e9-8faa-aa4a1b04e4c4.jpg",
-      "video_id": "6387770666112",
-      "duration": 20,
+      "title": "Amazing Moments: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/54/6a/cd/0/image-7f7e1ffd-c02e-44d8-b8d3-4052cae07f6a.jpg",
+      "video_id": "6387769804112",
+      "duration": 62,
       "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387770666112.html"
+      "url": "https://crickettv.site/wpl/6387769804112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Chloe Tryon",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fc/11/04/0/image-72037edb-ea8e-4ee6-86af-6fd49c4c3b96.jpg",
+      "video_id": "6387770966112",
+      "duration": 22,
+      "published_iso": "2026-01-15T17:52:44",
+      "url": "https://crickettv.site/wpl/6387770966112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harleen Deol",
@@ -57,14 +65,6 @@
       "duration": 197,
       "published_iso": "2026-01-15T17:52:44",
       "url": "https://crickettv.site/wpl/6387768805112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Chloe Tryon",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fc/11/04/0/image-72037edb-ea8e-4ee6-86af-6fd49c4c3b96.jpg",
-      "video_id": "6387770966112",
-      "duration": 22,
-      "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387770966112.html"
     },
     {
       "title": "Presentation: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
@@ -91,12 +91,12 @@
       "url": "https://crickettv.site/wpl/6387770869112.html"
     },
     {
-      "title": "Amazing Moments: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/54/6a/cd/0/image-7f7e1ffd-c02e-44d8-b8d3-4052cae07f6a.jpg",
-      "video_id": "6387769804112",
-      "duration": 62,
+      "title": "Kingfisher Good Times Sixes of the Match: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/78/3f/0/image-5c196687-f3c6-45e9-8faa-aa4a1b04e4c4.jpg",
+      "video_id": "6387770666112",
+      "duration": 20,
       "published_iso": "2026-01-15T17:52:44",
-      "url": "https://crickettv.site/wpl/6387769804112.html"
+      "url": "https://crickettv.site/wpl/6387770666112.html"
     },
     {
       "title": "Post Match Interviews: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026: Chloe Tryon Interview",
@@ -123,20 +123,20 @@
       "url": "https://crickettv.site/wpl/6387770360112.html"
     },
     {
-      "title": "Super Sixes: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2a/ba/75/0/nFCVUonEJ3.jpg",
-      "video_id": "6387770153112",
-      "duration": 86,
-      "published_iso": "2026-01-15T17:27:00",
-      "url": "https://crickettv.site/wpl/6387770153112.html"
-    },
-    {
       "title": "Fall of Wickets: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/71/99/c5/0/G5euMbdg3j.jpg",
       "video_id": "6387768017112",
       "duration": 201,
       "published_iso": "2026-01-15T17:27:00",
       "url": "https://crickettv.site/wpl/6387768017112.html"
+    },
+    {
+      "title": "Super Sixes: Match 8, Mumbai Indians vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2a/ba/75/0/nFCVUonEJ3.jpg",
+      "video_id": "6387770153112",
+      "duration": 86,
+      "published_iso": "2026-01-15T17:27:00",
+      "url": "https://crickettv.site/wpl/6387770153112.html"
     },
     {
       "title": "Harleen Deol takes command with masterful 64*(39)",
