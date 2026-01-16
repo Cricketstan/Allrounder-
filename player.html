@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,101 +143,110 @@
 <body>
 
   <!-- YOUR BLOCKING SCRIPT - Placed at the very top -->
-  <script>
-    (function () {
-      try {
-        // List of blocked domains
-        const blockedDomains = [
-          "skcricweb.pages.dev",
-          "insiderlivehd.pages.dev",
-          "http://cmvlive.blogspot.com",
-          "sportseera.pages.dev"
-        ];
+<script>
+  (function () {
+    try {
+      // List of blocked domains - remove http:// protocol
+      const blockedDomains = [
+        "skcricweb.pages.dev",
+        "insiderlivehd.pages.dev",
+        "cmvlive.blogspot.com",
+        "sportseera.pages.dev"
+      ];
+      
+      // Get current hostname
+      const currentHost = window.location.hostname;
+      
+      // Function to check if a URL matches any blocked domain
+      function isBlocked(url) {
+        if (!url) return false;
         
-        // Get current hostname
-        const currentHost = window.location.hostname;
+        // Remove protocol and www
+        const cleanUrl = url
+          .replace(/^https?:\/\//, '')
+          .replace(/^www\./, '')
+          .split('/')[0]; // Get only domain
         
-        // Check if current domain is in blocked list (direct access)
-        const isDirectBlocked = blockedDomains.some(domain => 
-          currentHost.includes(domain) || 
-          currentHost.endsWith(domain.replace(/^https?:\/\//, ''))
+        return blockedDomains.some(domain => 
+          cleanUrl === domain || 
+          cleanUrl.endsWith('.' + domain) // Check subdomains
         );
-        
-        // Check if referrer is from blocked domain (embedded access)
-        const ref = document.referrer || "";
-        const isReferrerBlocked = blockedDomains.some(domain => 
-          ref.includes(domain)
-        );
-        
-        // Check if embedded in iframe
-        const isEmbedded = window.top !== window.self;
-        
-        // Block if: direct access from blocked domain OR embedded from blocked domain
-        if (isDirectBlocked || (isEmbedded && isReferrerBlocked)) {
-          document.documentElement.innerHTML = `
-            <html>
-            <head>
-              <title>Access Blocked</title>
-              <style>
-                body {
-                  margin: 0;
-                  background: #000;
-                  color: #fff;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  height: 100vh;
-                  font-family: Arial, sans-serif;
-                }
-                .box {
-                  text-align: center;
-                  border: 2px solid #ff4444;
-                  padding: 30px;
-                  border-radius: 12px;
-                  box-shadow: 0 0 40px rgba(255,0,0,0.4);
-                }
-                h1 {
-                  color: #ff4444;
-                  margin-bottom: 10px;
-                }
-                p {
-                  font-size: 16px;
-                  opacity: 0.9;
-                }
-                .blocked-domain {
-                  color: #ff9999;
-                  font-weight: bold;
-                  margin: 10px 0;
-                  padding: 5px;
-                  background: rgba(255,0,0,0.1);
-                  border-radius: 4px;
-                }
-                .brand {
-                  margin-top: 20px;
-                  font-size: 18px;
-                  font-weight: bold;
-                  color: #4CAF50;
-                }
-              </style>
-            </head>
-            <body>
-              <div class="box">
-                <h1>Access Blocked</h1>
-                <p>This domain is not allowed to access this content.</p>
-                <div class="blocked-domain">Blocked: ${currentHost}</div>
-                <div class="brand">REMEMBER DILLZY</div>
-              </div>
-            </body>
-            </html>
-          `;
-          window.stop();
-        }
-      } catch (e) {
-        // Error handling - clear the page on error
-        document.documentElement.innerHTML = "";
       }
-    })();
-  </script>
+      
+      // Check current domain
+      const isCurrentBlocked = isBlocked(currentHost);
+      
+      // Check referrer domain
+      const isReferrerBlocked = isBlocked(document.referrer);
+      
+      // Block if: direct access from blocked domain OR embedded from blocked domain
+      if (isCurrentBlocked || isReferrerBlocked) {
+        document.documentElement.innerHTML = `
+          <html>
+          <head>
+            <title>Access Blocked</title>
+            <style>
+              body {
+                margin: 0;
+                background: #000;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                font-family: Arial, sans-serif;
+              }
+              .box {
+                text-align: center;
+                border: 2px solid #ff4444;
+                padding: 30px;
+                border-radius: 12px;
+                box-shadow: 0 0 40px rgba(255,0,0,0.4);
+              }
+              h1 {
+                color: #ff4444;
+                margin-bottom: 10px;
+              }
+              p {
+                font-size: 16px;
+                opacity: 0.9;
+              }
+              .blocked-domain {
+                color: #ff9999;
+                font-weight: bold;
+                margin: 10px 0;
+                padding: 5px;
+                background: rgba(255,0,0,0.1);
+                border-radius: 4px;
+              }
+              .brand {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #4CAF50;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="box">
+              <h1>Access Blocked</h1>
+              <p>This domain is not allowed to access this content.</p>
+              <div class="blocked-domain">Blocked: ${currentHost}</div>
+              <div class="brand">REMEMBER DILLZY</div>
+            </div>
+          </body>
+          </html>
+        `;
+        window.stop();
+        // Prevent any further execution
+        throw new Error('Domain blocked');
+      }
+    } catch (e) {
+      // Stop all execution
+      window.stop();
+    }
+  })();
+</script>
 
   <div class="video-container">
     <video autoplay playsinline muted id="player" controls preload="metadata"></video>
