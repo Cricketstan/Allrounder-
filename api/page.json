@@ -185,7 +185,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-15T12:37:22.009+05:30",
-        "last_modified": "2026-01-17T12:47:11.703+05:30",
+        "last_modified": "2026-01-17T12:47:39.898+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -203,7 +203,7 @@
           "default": false
         },
         {
-          "name": "Srilanka Vs Zim",
+          "name": "Srilanka Vs Japan",
           "src": "https://crickettv.site/prime-hin",
           "default": false
         }
@@ -213,7 +213,7 @@
         "match_details": "",
         "pitch_report": "",
         "prediction": "",
-        "final_word": "K",
+        "final_word": "Kg",
         "players_to_watch": {
           "": []
         },
