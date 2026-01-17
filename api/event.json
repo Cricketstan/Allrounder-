@@ -1,48 +1,19 @@
 {
   "event": [
 
-
 {
-      "title": "Bengaluru Vs Delhi",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6543/1768566376543-i",
+      "title": "India Vs Newzealand",
+      "poster_link": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/6272/1768206646272-i",
       "watch_now": [
-        { "id": "home/wpl", "name": "All Stream" }
+        { "id": "highlights/ind-vs-nz", "name": "Play Highlights" }
       ],
-      "date": "17 Jan 2026",
-      "start_time": "07:00 PM",
+      "date": "18 Jan 2026",
+      "start_time": "12:35 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "WPL"
-},
-{
-      "title": "India Vs Bangladesh",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/1728/1768574951728-i",
-      "watch_now": [
-        { "id": "home/usa-vs-ind", "name": "All Stream" }
-      ],
-      "date": "17 Jan 2026",
-      "start_time": "12:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "ICC"
-},
-
-{
-      "title": "Adelaide Vs Melbourne",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7179/1768601287179-i",
-      "watch_now": [
-        { "id": "home/bbl", "name": "All Stream" }
-      ],
-      "date": "17 Jan 2026",
-      "start_time": "11:20 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "BBL"
-},
-
+      "league": "ODI"
+    },
 
 
 {
