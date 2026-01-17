@@ -1,6 +1,4 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,17 +16,19 @@
   <script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.js"></script>
 
   <style>
-    /* ... (all your existing styles remain the same) ... */
     body {
       background-color: #000;
       margin: 0;
       padding: 0;
       overflow: hidden;
+      font-family: Arial, sans-serif;
     }
     html, body {
       height: 100%;
       width: 100%;
     }
+    
+    /* Video container */
     .video-container {
       position: relative;
       width: 100%;
@@ -38,6 +38,7 @@
       align-items: center;
       justify-content: center;
     }
+    
     video {
       width: 100%;
       height: 100%;
@@ -49,7 +50,24 @@
       width: 100%;
     }
 
-    /* 🔹 Invisible visitor counter (same as before) */
+    /* Error message */
+    #error-message {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 0, 0, 0.2);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 0, 0, 0.5);
+      max-width: 80%;
+      z-index: 10;
+    }
+
+    /* 🔹 Invisible visitor counter */
     #visitor-counter {
       position: fixed;
       opacity: 0;
@@ -139,56 +157,75 @@
       height: 18px;
       fill: currentColor;
     }
+
+    /* Loading spinner */
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #4CAF50;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
+      z-index: 5;
+    }
+
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
   </style>
 </head>
 <body>
 
-  <!-- YOUR BLOCKING SCRIPT - Placed at the very top -->
+  <!-- ALLOWLIST SCRIPT - Only specific domains are allowed -->
 <script>
-  (function () {
-    try {
-      // List of blocked domains - remove http:// protocol
-      const blockedDomains = [
-        "skcricweb.pages.dev",
-        "insiderlivehd.pages.dev",
-        "cmvlive.blogspot.com",
-        "sportseera.pages.dev"
+(function () {
+  try {
+    // ✅ Check if page is embedded
+    if (window.top !== window.self) {
+      // EMBEDDED CHECK - Add matcheslinks-eaa.pages.dev to your allowed list
+      const allowed = [
+        "matcheslinks-eaa.pages.dev", // ADD THIS LINE
+        "dilzcreation.pages.dev",
+        "run-machine.pages.dev",
+        "match-central.pages.dev",
+        "cricontime.pages.dev",
+        "pitchside.pages.dev",
+        "cricworldd.pages.dev",
+        "cricketchampion.pages.dev",
+        "editverse.pages.dev",
+        "cricket-stan.pages.dev",
+        "alr-prediction.pages.dev",
+        "domain10.com"
       ];
+
+      const ref = document.referrer;
       
-      // Get current hostname
-      const currentHost = window.location.hostname;
-      
-      // Function to check if a URL matches any blocked domain
-      function isBlocked(url) {
-        if (!url) return false;
-        
-        // Remove protocol and www
-        const cleanUrl = url
-          .replace(/^https?:\/\//, '')
-          .replace(/^www\./, '')
-          .split('/')[0]; // Get only domain
-        
-        return blockedDomains.some(domain => 
-          cleanUrl === domain || 
-          cleanUrl.endsWith('.' + domain) // Check subdomains
-        );
-      }
-      
-      // Check current domain
-      const isCurrentBlocked = isBlocked(currentHost);
-      
-      // Check referrer domain
-      const isReferrerBlocked = isBlocked(document.referrer);
-      
-      // Block if: direct access from blocked domain OR embedded from blocked domain
-      if (isCurrentBlocked || isReferrerBlocked) {
+      // Check if referrer is in allowed list
+      const isAllowedEmbed = ref && allowed.some(d => {
+        try {
+          const refHost = new URL(ref).hostname.replace('www.', '');
+          const allowedHost = d.replace('www.', '');
+          return refHost === allowedHost || refHost.endsWith('.' + allowedHost);
+        } catch {
+          return ref.includes(d);
+        }
+      });
+
+      if (!isAllowedEmbed) {
         document.documentElement.innerHTML = `
           <html>
           <head>
-            <title>Access Blocked</title>
+            <title>Embed Blocked</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
               body {
                 margin: 0;
+                padding: 0;
                 background: #000;
                 color: #fff;
                 display: flex;
@@ -196,32 +233,137 @@
                 justify-content: center;
                 height: 100vh;
                 font-family: Arial, sans-serif;
-              }
-              .box {
                 text-align: center;
-                border: 2px solid #ff4444;
+              }
+              .blocked-container {
                 padding: 30px;
-                border-radius: 12px;
-                box-shadow: 0 0 40px rgba(255,0,0,0.4);
+                background: rgba(255, 0, 0, 0.1);
+                border-radius: 10px;
+                border: 2px solid #ff4444;
+              }
+              h2 {
+                color: #ff4444;
+                margin-bottom: 20px;
+              }
+              .contact {
+                margin-top: 20px;
+                color: #4CAF50;
+                font-weight: bold;
+              }
+            </style>
+          </head>
+          <body>
+            <div class="blocked-container">
+              <h2>Embed Blocked</h2>
+              <p>This embed is not allowed from your domain.</p>
+              <div class="contact">Contact @valverdeae</div>
+            </div>
+          </body>
+          </html>
+        `;
+        throw new Error("Embed blocked");
+      }
+    } else {
+      // DIRECT ACCESS CHECK - Only matcheslinks-eaa.pages.dev can access directly
+      const allowedDomains = [
+        "matcheslinks-eaa.pages.dev",
+        "https://allrounderlive.pages.dev"
+      ];
+      
+      const currentHost = window.location.hostname;
+      
+      function isAllowed(url) {
+        if (!url) return false;
+        const cleanUrl = url
+          .replace(/^https?:\/\//, '')
+          .replace(/^www\./, '')
+          .split('/')[0];
+        return allowedDomains.some(domain => 
+          cleanUrl === domain || 
+          cleanUrl.endsWith('.' + domain)
+        );
+      }
+      
+      const isCurrentAllowed = isAllowed(currentHost);
+      const isLocalhost = currentHost === 'localhost' || 
+                        currentHost === '127.0.0.1' || 
+                        currentHost.startsWith('192.168.') ||
+                        currentHost.startsWith('10.');
+      
+      if (!isCurrentAllowed && !isLocalhost) {
+        document.documentElement.innerHTML = `
+          <html>
+          <head>
+            <title>Access Restricted</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style>
+              body {
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                font-family: 'Segoe UI', Arial, sans-serif;
+                text-align: center;
+              }
+              .restricted-container {
+                max-width: 600px;
+                padding: 40px;
+                background: rgba(30, 30, 30, 0.95);
+                border-radius: 20px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              }
+              .warning-icon {
+                font-size: 80px;
+                color: #ff4444;
+                margin-bottom: 20px;
+                animation: pulse 2s infinite;
+              }
+              @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
               }
               h1 {
                 color: #ff4444;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
+                font-size: 28px;
               }
-              p {
-                font-size: 16px;
-                opacity: 0.9;
+              .message {
+                background: rgba(255, 68, 68, 0.1);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 20px 0;
+                border-left: 4px solid #ff4444;
               }
-              .blocked-domain {
-                color: #ff9999;
-                font-weight: bold;
-                margin: 10px 0;
-                padding: 5px;
-                background: rgba(255,0,0,0.1);
-                border-radius: 4px;
+              .domain-info {
+                background: rgba(255, 255, 255, 0.05);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 20px 0;
+                font-family: monospace;
+                    font-size: 14px;
+                word-break: break-all;
+              }
+              .allowed-list {
+                background: rgba(76, 175, 80, 0.1);
+                padding: 15px;
+                border-radius: 10px;
+                margin: 20px 0;
+                border-left: 4px solid #4CAF50;
+                text-align: left;
+              }
+              .allowed-list h3 {
+                color: #4CAF50;
+                margin-top: 0;
               }
               .brand {
-                margin-top: 20px;
+                margin-top: 30px;
+                padding-top: 20px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
                 font-size: 18px;
                 font-weight: bold;
                 color: #4CAF50;
@@ -229,26 +371,51 @@
             </style>
           </head>
           <body>
-            <div class="box">
-              <h1>Access Blocked</h1>
-              <p>This domain is not allowed to access this content.</p>
-              <div class="blocked-domain">Blocked: ${currentHost}</div>
-              <div class="brand">REMEMBER valverdeae</div>
+            <div class="restricted-container">
+              <div class="warning-icon">🚫</div>
+              <h1>Access Restricted</h1>
+              <p>This content is only accessible from authorized domains.</p>
+              
+              <div class="message">
+                Your current domain is not authorized to access this content.
+              </div>
+              
+              <div class="domain-info">
+                <strong>Your Domain:</strong><br>
+                ${currentHost}
+              </div>
+              
+              <div class="allowed-list">
+                <h3>Authorized Domain:</h3>
+                <ul>
+                  <li>matcheslinks-eaa.pages.dev</li>
+                </ul>
+              </div>
+              
+              <div class="brand">valverdeae</div>
             </div>
           </body>
           </html>
         `;
-        window.stop();
-        // Prevent any further execution
-        throw new Error('Domain blocked');
+        throw new Error('Domain not allowed - Access restricted');
       }
-    } catch (e) {
-      // Stop all execution
-      window.stop();
     }
-  })();
+    
+    console.log('Access granted');
+    
+  } catch (e) {
+    window.stop();
+  }
+})();
 </script>
 
+  <!-- Loading spinner -->
+  <div class="loader" id="loader"></div>
+
+  <!-- Error message -->
+  <div id="error-message"></div>
+
+  <!-- Main video container -->
   <div class="video-container">
     <video autoplay playsinline muted id="player" controls preload="metadata"></video>
   </div>
@@ -277,7 +444,21 @@
   </div>
 
   <script>
-    // Your existing player code remains completely unchanged below
+    // Global variables
+    let hls = null;
+    let player = null;
+
+    function showError(message) {
+      const errorDiv = document.getElementById('error-message');
+      errorDiv.innerHTML = `<h3>Error</h3><p>${message}</p>`;
+      errorDiv.style.display = 'block';
+      document.getElementById('loader').style.display = 'none';
+    }
+
+    function hideLoader() {
+      document.getElementById('loader').style.display = 'none';
+    }
+
     function captureFrame() {
       try {
         const video = document.getElementById("player");
@@ -327,16 +508,15 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
-
-      const params = new URLSearchParams(window.location.search);
-      const streamUrl = params.get("url") || "https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1";
-
+    function initPlayer(streamUrl) {
       const video = document.getElementById("player");
       const source = streamUrl;
 
+      console.log('Initializing player with URL:', source);
+
       const defaultOptions = {
         autoplay: true,
+        muted: false,
         controls: [
           'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'
         ],
@@ -344,15 +524,25 @@
       };
 
       if (Hls.isSupported()) {
-        const hls = new Hls({ autoStartLoad: true });
+        hls = new Hls({ 
+          autoStartLoad: true,
+          debug: false,
+          enableWorker: true,
+          lowLatencyMode: true,
+          backBufferLength: 90
+        });
 
         hls.loadSource(source);
         hls.attachMedia(video);
 
         hls.on(Hls.Events.MANIFEST_PARSED, (_, data) => {
+          console.log('Manifest parsed successfully');
+          hideLoader();
+          
           const availableQualities = data.levels.map(l => l.height).sort((a,b) => b - a);
+          console.log('Available qualities:', availableQualities);
 
-          const player = new Plyr(video, {
+          player = new Plyr(video, {
             ...defaultOptions,
             quality: {
               default: availableQualities[0],
@@ -369,24 +559,100 @@
           // Add custom capture button after player is ready
           player.on('ready', () => {
             addCaptureButton(player);
+            console.log('Player ready');
+          });
+
+          player.on('play', () => {
+            console.log('Playback started');
           });
         });
 
+        hls.on(Hls.Events.ERROR, (event, data) => {
+          console.error('HLS Error:', data);
+          hideLoader();
+          
+          if (data.fatal) {
+            switch (data.type) {
+              case Hls.ErrorTypes.NETWORK_ERROR:
+                showError('Network error. Trying alternative stream...');
+                // Try alternative stream
+                setTimeout(() => {
+                  initPlayer("https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1");
+                }, 2000);
+                break;
+              case Hls.ErrorTypes.MEDIA_ERROR:
+                showError('Media error. Trying to recover...');
+                hls.recoverMediaError();
+                break;
+              default:
+                showError('Stream error. Please check the stream URL.');
+                hls.destroy();
+                break;
+            }
+          }
+        });
+
       } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+        // For Safari
+        console.log('Using native HLS for Safari');
         video.src = source;
-        video.addEventListener("loadedmetadata", () => video.play());
-        const player = new Plyr(video, defaultOptions);
+        player = new Plyr(video, defaultOptions);
+        
+        video.addEventListener("loadedmetadata", () => {
+          console.log('Safari HLS loaded');
+          hideLoader();
+          video.play();
+        });
+
+        video.addEventListener('error', (e) => {
+          console.error('Safari video error:', e);
+          hideLoader();
+          showError('Failed to load stream in Safari. Please try Chrome or Firefox.');
+        });
         
         player.on('ready', () => {
           addCaptureButton(player);
         });
+      } else {
+        hideLoader();
+        showError('Your browser does not support HLS streaming. Please use Chrome, Firefox, or Safari.');
       }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get stream URL from URL parameter or use your stream
+      const params = new URLSearchParams(window.location.search);
+      const streamUrl = params.get("url") || "https://valverdeaeadffa.hogix28221.workers.dev/live.m3u8";
+      
+      console.log('Using stream URL:', streamUrl);
+      
+      // Test the stream URL first
+      fetch(streamUrl, { method: 'HEAD', mode: 'no-cors' })
+        .then(() => {
+          console.log('Stream URL accessible');
+          initPlayer(streamUrl);
+        })
+        .catch(() => {
+          console.log('Primary stream failed, trying alternative...');
+          showError('Primary stream unavailable. Trying alternative...');
+          // Try the rumble stream as fallback
+          initPlayer("https://rumble.com/live-hls-dvr/6z4aec/playlist.m3u8?level=1");
+        });
     });
 
     function addCaptureButton(player) {
       // Find the controls container
       const controls = document.querySelector('.plyr__controls');
-      if (!controls) return;
+      if (!controls) {
+        // Wait a bit and try again
+        setTimeout(() => addCaptureButton(player), 500);
+        return;
+      }
+
+      // Check if button already exists
+      if (controls.querySelector('[data-plyr="capture"]')) {
+        return;
+      }
 
       // Create capture button
       const captureBtn = document.createElement('button');
@@ -409,6 +675,8 @@
       } else {
         controls.appendChild(captureBtn);
       }
+      
+      console.log('Capture button added');
     }
   </script>
 
