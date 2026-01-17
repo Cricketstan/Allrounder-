@@ -184,11 +184,22 @@
 <script>
 (function () {
   try {
+    const currentHost = window.location.hostname;
+    console.log('Current host:', currentHost);
+    
     // ✅ Check if page is embedded
     if (window.top !== window.self) {
-      // EMBEDDED CHECK - Add matcheslinks-eaa.pages.dev to your allowed list
+      console.log('Page is embedded');
+      
+      // SPECIAL CASE: Always allow embedding from same domain
+      // This fixes your specific issue
+      if (currentHost === "matcheslinks-eaa.pages.dev") {
+        console.log('Self-embedding allowed');
+        return; // Allow access
+      }
+      
+      // EMBEDDED CHECK for other domains
       const allowed = [
-        "matcheslinks-eaa.pages.dev", // ADD THIS LINE
         "dilzcreation.pages.dev",
         "run-machine.pages.dev",
         "match-central.pages.dev",
@@ -203,72 +214,95 @@
       ];
 
       const ref = document.referrer;
+      console.log('Referrer:', ref || 'none');
       
-      // Check if referrer is in allowed list
-      const isAllowedEmbed = ref && allowed.some(d => {
-        try {
-          const refHost = new URL(ref).hostname.replace('www.', '');
-          const allowedHost = d.replace('www.', '');
-          return refHost === allowedHost || refHost.endsWith('.' + allowedHost);
-        } catch {
-          return ref.includes(d);
-        }
-      });
+      if (ref) {
+        // Check if referrer is in allowed list
+        const isAllowedEmbed = allowed.some(d => {
+          try {
+            const refHost = new URL(ref).hostname.replace('www.', '');
+            const allowedHost = d.replace('www.', '');
+            return refHost === allowedHost || refHost.endsWith('.' + allowedHost);
+          } catch {
+            return ref.includes(d);
+          }
+        });
 
-      if (!isAllowedEmbed) {
-        document.documentElement.innerHTML = `
-          <html>
-          <head>
-            <title>Embed Blocked</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style>
-              body {
-                margin: 0;
-                padding: 0;
-                background: #000;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                font-family: Arial, sans-serif;
-                text-align: center;
-              }
-              .blocked-container {
-                padding: 30px;
-                background: rgba(255, 0, 0, 0.1);
-                border-radius: 10px;
-                border: 2px solid #ff4444;
-              }
-              h2 {
-                color: #ff4444;
-                margin-bottom: 20px;
-              }
-              .contact {
-                margin-top: 20px;
-                color: #4CAF50;
-                font-weight: bold;
-              }
-            </style>
-          </head>
-          <body>
-            <div class="blocked-container">
-              <h2>Embed Blocked</h2>
-              <p>This embed is not allowed from your domain.</p>
-              <div class="contact">Contact t.me/dillzycreations</div>
-            </div>
-          </body>
-          </html>
-        `;
-        throw new Error("Embed blocked");
+        if (isAllowedEmbed) {
+          console.log('Embed allowed from allowed domain');
+          return; // Allow access
+        }
       }
+      
+      // If we get here, embed is not allowed
+      console.log('Embed blocked - not in allowed list');
+      document.documentElement.innerHTML = `
+        <html>
+        <head>
+          <title>Embed Blocked</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            body {
+              margin: 0;
+              padding: 0;
+              background: #000;
+              color: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 100vh;
+              font-family: Arial, sans-serif;
+              text-align: center;
+            }
+            .blocked-container {
+              padding: 30px;
+              background: rgba(255, 0, 0, 0.1);
+              border-radius: 10px;
+              border: 2px solid #ff4444;
+            }
+            h2 {
+              color: #ff4444;
+              margin-bottom: 20px;
+            }
+            .contact {
+              margin-top: 20px;
+              color: #4CAF50;
+              font-weight: bold;
+            }
+            .debug {
+              margin-top: 20px;
+              font-size: 12px;
+              color: #aaa;
+              background: rgba(255,255,255,0.1);
+              padding: 10px;
+              border-radius: 5px;
+              text-align: left;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="blocked-container">
+            <h2>Join @MATCHES LINKS</h2>
+            <p>This embed is not allowed from your domain.</p>
+            <div class="debug">
+              <strong>Debug Info:</strong><br>
+              Referrer: ${ref || 'none'}<br>
+              Current Host: ${currentHost}<br>
+              Allowed: ${JSON.stringify(allowed)}
+            </div>
+            <div class="contact">Contact @valverdeae</div>
+          </div>
+        </body>
+        </html>
+      `;
+      throw new Error("Embed blocked");
+      
     } else {
       // DIRECT ACCESS CHECK - Only matcheslinks-eaa.pages.dev can access directly
+      console.log('Direct access check');
       const allowedDomains = [
         "matcheslinks-eaa.pages.dev"
       ];
-      
-      const currentHost = window.location.hostname;
       
       function isAllowed(url) {
         if (!url) return false;
@@ -289,6 +323,7 @@
                         currentHost.startsWith('10.');
       
       if (!isCurrentAllowed && !isLocalhost) {
+        console.log('Direct access blocked');
         document.documentElement.innerHTML = `
           <html>
           <head>
@@ -402,7 +437,9 @@
     console.log('Access granted');
     
   } catch (e) {
-    window.stop();
+    if (!e.message.includes('Embed blocked') && !e.message.includes('Domain not allowed')) {
+      window.stop();
+    }
   }
 })();
 </script>
