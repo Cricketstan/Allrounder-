@@ -175,7 +175,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-01-17T21:13:27.343+05:30",
+        "last_modified": "2026-01-17T21:14:14.217+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -190,7 +190,7 @@
         {
           "name": "Hindi",
           "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/king.m3u8",
-          "default": false
+          "default": true
         },
         {
           "name": "Jio Hotstar ",
@@ -210,7 +210,7 @@
         {
           "name": "Fox 505",
           "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/fox.m3u8",
-          "default": true
+          "default": false
         }
       ],
       "content": {
