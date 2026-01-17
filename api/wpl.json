@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-17T17:43:03.617Z",
+  "updated_at": "2026-01-17T17:56:33.748Z",
   "count": 100,
   "items": [
+    {
+      "title": "Sierra Super Striker of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ef/7d/28/0/image-6b372241-1eec-4596-9c38-e7a88af7c218.jpg",
+      "video_id": "6387866493112",
+      "duration": 22,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387866493112.html"
+    },
     {
       "title": "Post Match Interviews: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Jemimah Rodrigues Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/53/d6/73/0/image-acad4c84-5cac-4641-910f-a69cb5a7a24c.jpg",
@@ -9,14 +17,6 @@
       "duration": 129,
       "published_iso": "2026-01-17T17:36:35",
       "url": "https://crickettv.site/wpl/6387869028112.html"
-    },
-    {
-      "title": "WPL 26 DC vs RCB_FALL OF WICKETS",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cf/70/3a/0/image-72613146-07cc-4a31-acea-51715e3a9029.jpg",
-      "video_id": "6387866889112",
-      "duration": 310,
-      "published_iso": "2026-01-17T17:36:35",
-      "url": "https://crickettv.site/wpl/6387866889112.html"
     },
     {
       "title": "Post Match Interviews: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Georgia Voll Interview",
@@ -27,8 +27,24 @@
       "url": "https://crickettv.site/wpl/6387866401112.html"
     },
     {
-      "title": "Georgia Voll increases the voltage with an impactful 54*",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/04/fc/bc/0/image-22d123eb-d896-42dd-8a54-846fb33c8091.jpg",
+      "title": "Fall of Wickets: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b1/b2/be/0/31n8mUGgbt.jpg",
+      "video_id": "6387866889112",
+      "duration": 310,
+      "published_iso": "2026-01-17T17:36:00",
+      "url": "https://crickettv.site/wpl/6387866889112.html"
+    },
+    {
+      "title": "Super Sixes: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/8b/85/fe/0/rfrCEtLUK1.jpg",
+      "video_id": "6387868045112",
+      "duration": 214,
+      "published_iso": "2026-01-17T17:36:00",
+      "url": "https://crickettv.site/wpl/6387868045112.html"
+    },
+    {
+      "title": "Georgia Voll increases the voltage in the chase with an impactful 54*",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5c/60/cb/0/image-f9969238-a0aa-4866-8fea-3491008aa406.jpg",
       "video_id": "6387865889112",
       "duration": 161,
       "published_iso": "2026-01-17T17:30:56",
@@ -91,10 +107,10 @@
       "url": "https://crickettv.site/wpl/6387865781112.html"
     },
     {
-      "title": "Captain Fantastic! Smriti Mandhana oozes the chase with a classy fifty",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/27/3a/ed/0/image-88c6d03b-2b0b-40af-9355-22168662f9a8.jpg",
+      "title": "Captain Fantastic! Smriti Mandhana graces the chase with a delightful 96(61)",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/67/27/d4/0/image-4c26b0d2-6c50-4327-bd53-adaca7e9ee77.jpg",
       "video_id": "6387867416112",
-      "duration": 167,
+      "duration": 342,
       "published_iso": "2026-01-17T16:47:42",
       "url": "https://crickettv.site/wpl/6387867416112.html"
     },
@@ -267,20 +283,20 @@
       "url": "https://crickettv.site/wpl/6387863635112.html"
     },
     {
-      "title": "Counter-attack on! Shafali Verma on the charge",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/31/cc/0d/0/image-3e1a1e3b-ae85-4a6b-90cf-4dbcb4baaa77.jpg",
-      "video_id": "6387861552112",
-      "duration": 127,
-      "published_iso": "2026-01-17T14:33:52",
-      "url": "https://crickettv.site/wpl/6387861552112.html"
-    },
-    {
       "title": "Six: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Shafali Verma Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/69/14/44/0/PG1wWBFW84.jpg",
       "video_id": "6387862837112",
       "duration": 15,
       "published_iso": "2026-01-17T14:33:00",
       "url": "https://crickettv.site/wpl/6387862837112.html"
+    },
+    {
+      "title": "Counter-attack on! Shafali Verma on the charge",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c1/5c/50/0/MQ9AwDkeTa.jpg",
+      "video_id": "6387861552112",
+      "duration": 127,
+      "published_iso": "2026-01-17T14:33:00",
+      "url": "https://crickettv.site/wpl/6387861552112.html"
     },
     {
       "title": "Timber strike x 4! RCB's rampant new-ball blitz ",
@@ -379,12 +395,12 @@
       "url": "https://crickettv.site/wpl/6387862218112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Kranti Goud",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d2/43/57/0/image-7deeac25-c67c-433c-a360-0c6f0706af99.jpg",
-      "video_id": "6387862011112",
-      "duration": 20,
+      "title": "Herbalife Active Catch of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Harleen Deol",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dc/f4/a6/0/image-ce1088c7-0e47-4aea-924f-64f734f2f1ad.jpg",
+      "video_id": "6387861701112",
+      "duration": 22,
       "published_iso": "2026-01-17T13:16:23",
-      "url": "https://crickettv.site/wpl/6387862011112.html"
+      "url": "https://crickettv.site/wpl/6387861701112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Amelia Kerr",
@@ -403,20 +419,12 @@
       "url": "https://crickettv.site/wpl/6387863272112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Harleen Deol",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dc/f4/a6/0/image-ce1088c7-0e47-4aea-924f-64f734f2f1ad.jpg",
-      "video_id": "6387861701112",
-      "duration": 22,
+      "title": "TATA WPL Green Dot Balls of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Kranti Goud",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d2/43/57/0/image-7deeac25-c67c-433c-a360-0c6f0706af99.jpg",
+      "video_id": "6387862011112",
+      "duration": 20,
       "published_iso": "2026-01-17T13:16:23",
-      "url": "https://crickettv.site/wpl/6387861701112.html"
-    },
-    {
-      "title": "Player of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Meg Lanning",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9a/8f/e3/0/image-d654be20-28a9-4c58-be09-f7b688251ee4.jpg",
-      "video_id": "6387861300112",
-      "duration": 145,
-      "published_iso": "2026-01-17T13:16:22",
-      "url": "https://crickettv.site/wpl/6387861300112.html"
+      "url": "https://crickettv.site/wpl/6387862011112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Phoebe Litchfield",
@@ -425,6 +433,14 @@
       "duration": 17,
       "published_iso": "2026-01-17T13:16:22",
       "url": "https://crickettv.site/wpl/6387862390112.html"
+    },
+    {
+      "title": "Player of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Meg Lanning",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9a/8f/e3/0/image-d654be20-28a9-4c58-be09-f7b688251ee4.jpg",
+      "video_id": "6387861300112",
+      "duration": 145,
+      "published_iso": "2026-01-17T13:16:22",
+      "url": "https://crickettv.site/wpl/6387861300112.html"
     },
     {
       "title": "Presentation: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
@@ -547,20 +563,20 @@
       "url": "https://crickettv.site/wpl/6387860319112.html"
     },
     {
-      "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Nicola Carey Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/46/ff/0/wYEcFNHfh2.jpg",
-      "video_id": "6387861003112",
-      "duration": 28,
-      "published_iso": "2026-01-17T12:16:00",
-      "url": "https://crickettv.site/wpl/6387861003112.html"
-    },
-    {
       "title": "Six: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Harmanpreet Kaur Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/37/18/0/f1xRD4al7E.jpg",
       "video_id": "6387861002112",
       "duration": 15,
       "published_iso": "2026-01-17T12:16:00",
       "url": "https://crickettv.site/wpl/6387861002112.html"
+    },
+    {
+      "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Nicola Carey Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/46/ff/0/wYEcFNHfh2.jpg",
+      "video_id": "6387861003112",
+      "duration": 28,
+      "published_iso": "2026-01-17T12:16:00",
+      "url": "https://crickettv.site/wpl/6387861003112.html"
     },
     {
       "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Nat Sciver-Brunt Wicket",
@@ -619,20 +635,20 @@
       "url": "https://crickettv.site/wpl/6387860252112.html"
     },
     {
-      "title": "Harleen Deol contributes again with brisk cameo",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/82/07/5a/0/image-db9a9b01-6a73-46fe-b360-8f33d9e64c6d.jpg",
-      "video_id": "6387858115112",
-      "duration": 90,
-      "published_iso": "2026-01-17T11:09:42",
-      "url": "https://crickettv.site/wpl/6387858115112.html"
-    },
-    {
       "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Deepti Sharma Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/f5/e5/0/image-440094f6-2424-4710-ad6b-cd775b1d3414.jpg",
       "video_id": "6387859177112",
       "duration": 27,
       "published_iso": "2026-01-17T11:09:42",
       "url": "https://crickettv.site/wpl/6387859177112.html"
+    },
+    {
+      "title": "Harleen Deol contributes again with brisk cameo",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/82/07/5a/0/image-db9a9b01-6a73-46fe-b360-8f33d9e64c6d.jpg",
+      "video_id": "6387858115112",
+      "duration": 90,
+      "published_iso": "2026-01-17T11:09:42",
+      "url": "https://crickettv.site/wpl/6387858115112.html"
     },
     {
       "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Sophie Ecclestone Wicket",
@@ -691,6 +707,14 @@
       "url": "https://crickettv.site/wpl/6387858853112.html"
     },
     {
+      "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Meg Lanning Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b2/49/c4/0/image-610bf3c5-5b5d-4d89-8252-f784351f65ba.jpg",
+      "video_id": "6387858079112",
+      "duration": 24,
+      "published_iso": "2026-01-17T10:35:18",
+      "url": "https://crickettv.site/wpl/6387858079112.html"
+    },
+    {
       "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Phoebe Litchfield Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b9/75/65/0/image-7c9725d8-e09a-423d-9817-b9099cc5f4d4.jpg",
       "video_id": "6387858554112",
@@ -705,14 +729,6 @@
       "duration": 227,
       "published_iso": "2026-01-17T10:35:18",
       "url": "https://crickettv.site/wpl/6387858452112.html"
-    },
-    {
-      "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Meg Lanning Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b2/49/c4/0/image-610bf3c5-5b5d-4d89-8252-f784351f65ba.jpg",
-      "video_id": "6387858079112",
-      "duration": 24,
-      "published_iso": "2026-01-17T10:35:18",
-      "url": "https://crickettv.site/wpl/6387858079112.html"
     },
     {
       "title": "Drop, run-out & stumping go begging: MI's misses, UPW's relief",
@@ -785,22 +801,6 @@
       "duration": 13,
       "published_iso": "2026-01-17T09:44:46",
       "url": "https://crickettv.site/wpl/6387856472112.html"
-    },
-    {
-      "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Kiran Navgire Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b7/a0/f4/0/mE9nVn6KZV.jpg",
-      "video_id": "6387856364112",
-      "duration": 20,
-      "published_iso": "2026-01-17T09:37:00",
-      "url": "https://crickettv.site/wpl/6387856364112.html"
-    },
-    {
-      "title": "Toss: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2b/a8/19/0/GAi62AmbVg.jpg",
-      "video_id": "6387855286112",
-      "duration": 218,
-      "published_iso": "2026-01-17T09:13:00",
-      "url": "https://crickettv.site/wpl/6387855286112.html"
     }
   ]
 }
