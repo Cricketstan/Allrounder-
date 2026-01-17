@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-17T07:17:47.865290Z",
+  "updated_at": "2026-01-17T13:25:28.233934Z",
   "count": 4,
   "pages": [
     {
@@ -16,14 +16,14 @@
       "description": ""
     },
     {
-      "id": "wpl",
-      "title": "Benglore Vs Gujarat Live Streaming ",
+      "id": "usa-vs-ind",
+      "title": "Indian Vs United States Of America ",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
     },
     {
-      "id": "usa-vs-ind",
-      "title": "Indian Vs United States Of America ",
+      "id": "wpl",
+      "title": "Benglore Vs Gujarat Live Streaming ",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
