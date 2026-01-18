@@ -206,7 +206,8 @@
         "editverse.pages.dev",
         "cricket-stan.pages.dev",
         "dishtv.pages.dev",
-        "alr-prediction.pages.dev"
+        "alr-prediction.pages.dev",
+        "allrounderlive.pages.dev"  // ADDED THIS
       ];
 
       const ref = document.referrer;
@@ -219,12 +220,21 @@
       
       if (ref) {
         try {
-          // Add protocol if missing for URL parsing
-          const refWithProtocol = ref.startsWith('http') ? ref : 'https://' + ref;
-          const refUrl = new URL(refWithProtocol);
-          const refHost = refUrl.hostname.toLowerCase();
+          // FIXED: Better URL parsing that handles various formats
+          let refHost = '';
           
-          console.log('Parsed referrer host:', refHost);
+          // Check if ref contains http:// or https://
+          if (ref.includes('://')) {
+            // If it has protocol, parse normally
+            const refUrl = new URL(ref);
+            refHost = refUrl.hostname.toLowerCase();
+          } else {
+            // If no protocol, extract hostname manually
+            // Remove path and get just domain
+            refHost = ref.split('/')[0].toLowerCase();
+          }
+          
+          console.log('Extracted referrer host:', refHost);
           
           // Check against allowed domains
           isAllowedEmbed = allowed.some(domain => {
@@ -243,15 +253,14 @@
           
         } catch (e) {
           console.log('Error parsing referrer URL:', e);
-          // Fallback: check if referrer string contains any allowed domain
+          // SIMPLE FALLBACK: Just check if referrer contains any allowed domain
           isAllowedEmbed = allowed.some(domain => {
             const lowerRef = ref.toLowerCase();
             const lowerDomain = domain.toLowerCase();
-            // Check if domain appears in referrer (with or without www)
-            return lowerRef.includes(lowerDomain) || 
-                   lowerRef.includes(lowerDomain.replace('www.', ''));
+            // Simple contains check
+            return lowerRef.includes(lowerDomain);
           });
-          console.log('Fallback check result:', isAllowedEmbed);
+          console.log('Simple fallback check result:', isAllowedEmbed);
         }
       }
 
@@ -261,10 +270,21 @@
       console.log('Is allowed embed:', isAllowedEmbed);
       console.log('Is same domain:', isSameDomain);
       
-      // ALWAYS allow crickettv.site
-      if (ref && ref.toLowerCase().includes('crickettv.site')) {
-        console.log('✓ Forcing allow for crickettv.site');
-        isAllowedEmbed = true;
+      // FORCE ALLOW specific domains that we know should work
+      const forceAllowed = [
+        'crickettv.site',
+        'allrounderlive.pages.dev',
+        'matcheslinks-eaa.pages.dev'
+      ];
+      
+      if (ref) {
+        const lowerRef = ref.toLowerCase();
+        forceAllowed.forEach(domain => {
+          if (lowerRef.includes(domain.toLowerCase())) {
+            console.log('✓ Force allowing domain:', domain);
+            isAllowedEmbed = true;
+          }
+        });
       }
       
       if (!isAllowedEmbed && !isSameDomain) {
@@ -321,7 +341,8 @@
                 Referrer: ${ref || 'none'}<br>
                 Current Host: ${currentHost}<br>
                 Is Embedded: ${window.top !== window.self}<br>
-                Allowed Domains: ${JSON.stringify(allowed)}
+                Allowed Domains: ${JSON.stringify(allowed)}<br>
+                Force Allowed: ${JSON.stringify(forceAllowed)}
               </div>
               <div class="contact">Contact @valverdeae</div>
             </div>
