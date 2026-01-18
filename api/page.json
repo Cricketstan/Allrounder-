@@ -180,7 +180,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-14T12:45:30.477+05:30",
-        "last_modified": "2026-01-18T15:03:41.118+05:30",
+        "last_modified": "2026-01-18T15:31:12.724+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -194,12 +194,12 @@
       "streams": [
         {
           "name": "Hindi",
-          "src": "https://allrounderlive.pages.dev/p6?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "src": "https://allrounderlive.pages.dev/player?url=https://rumble.com/live-hls-dvr/72b1w8/playlist.m3u8",
           "default": false
         },
         {
           "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://rumble.com/live-hls-dvr/72b1w8/playlist.m3u8",
           "default": false
         },
         {
@@ -214,7 +214,7 @@
         },
         {
           "name": "Permanent Hindi",
-          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "src": "https://allrounderlive.pages.dev/player4?url=https://rumble.com/live-hls-dvr/72b1w8/playlist.m3u8",
           "default": false
         },
         {
