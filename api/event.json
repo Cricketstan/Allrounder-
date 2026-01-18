@@ -1,20 +1,6 @@
 {
   "event": [
 
-
-{
-      "title": "Rise Of Champions",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/854/1766311040854-i",
-      "watch_now": [
-        { "id": "highlights/rise-of-champion", "name": "Play Highlights" }
-      ],
-      "date": "17 Jan 2026",
-      "start_time": "12:35 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "Series"
-    },
 {
       "title": "India Vs Newzealand",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6968106be4b0bf5f55788659-1768429228792?location=hero-default&imwidth=2560",
@@ -29,6 +15,19 @@
       "league": "ODI"
     },
 
+{
+      "title": "Rise Of Champions",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/854/1766311040854-i",
+      "watch_now": [
+        { "id": "highlights/rise-of-champion", "name": "Play Highlights" }
+      ],
+      "date": "17 Jan 2026",
+      "start_time": "12:35 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "Series"
+    },
 
 {
       "title": "Highlights",
