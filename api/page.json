@@ -175,7 +175,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-01-18T11:18:25.176+05:30",
+        "last_modified": "2026-01-18T11:35:19.822+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -194,7 +194,7 @@
         },
         {
           "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/player?url=https://dillzyserver.dillzycreations.workers.dev/live/king.m3u8",
+          "src": "https://allrounderlive.pages.dev/p6?url=https://dillzyserver.dillzycreations.workers.dev/live/king.m3u8",
           "default": false
         },
         {
