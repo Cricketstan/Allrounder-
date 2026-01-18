@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title></title>
+  <title>Fox Cricket</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
   <meta name="referrer" content="no-referrer"/>
 
@@ -213,11 +212,16 @@
       const ref = document.referrer;
       const currentHost = window.location.hostname;
       
+      console.log('Referrer:', ref);
+      console.log('Current host:', currentHost);
+      
       let isAllowedEmbed = false;
       
       if (ref) {
         try {
-          const refUrl = new URL(ref);
+          // Add protocol if missing for URL parsing
+          const refWithProtocol = ref.startsWith('http') ? ref : 'https://' + ref;
+          const refUrl = new URL(refWithProtocol);
           const refHost = refUrl.hostname.toLowerCase();
           
           console.log('Parsed referrer host:', refHost);
@@ -232,7 +236,7 @@
                          cleanRefHost.endsWith('.' + cleanDomain);
             
             if (match) {
-              console.log('✓ Domain matched:', domain);
+              console.log('✓ Domain matched:', domain, 'with referrer:', refHost);
             }
             return match;
           });
@@ -240,7 +244,14 @@
         } catch (e) {
           console.log('Error parsing referrer URL:', e);
           // Fallback: check if referrer string contains any allowed domain
-          isAllowedEmbed = allowed.some(domain => ref.toLowerCase().includes(domain.toLowerCase()));
+          isAllowedEmbed = allowed.some(domain => {
+            const lowerRef = ref.toLowerCase();
+            const lowerDomain = domain.toLowerCase();
+            // Check if domain appears in referrer (with or without www)
+            return lowerRef.includes(lowerDomain) || 
+                   lowerRef.includes(lowerDomain.replace('www.', ''));
+          });
+          console.log('Fallback check result:', isAllowedEmbed);
         }
       }
 
@@ -249,6 +260,12 @@
       
       console.log('Is allowed embed:', isAllowedEmbed);
       console.log('Is same domain:', isSameDomain);
+      
+      // ALWAYS allow crickettv.site
+      if (ref && ref.toLowerCase().includes('crickettv.site')) {
+        console.log('✓ Forcing allow for crickettv.site');
+        isAllowedEmbed = true;
+      }
       
       if (!isAllowedEmbed && !isSameDomain) {
         document.documentElement.innerHTML = `
