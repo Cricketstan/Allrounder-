@@ -472,7 +472,7 @@ main {
 }
 
 .header-bar {
-  height: 52px; /* Small like Hotstar */
+  height: 40px; /* Small like Hotstar */
   display: grid;
   grid-template-columns: 50px 1fr 50px;
   align-items: center;
@@ -1000,6 +1000,11 @@ main {
 
   <!-- Slide Menu -->
   <nav class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <span>Menu</span>
+      <button class="close-btn" onclick="toggleMenu()">✕</button>
+    </div>
+
     <a href="/">Home</a>
     <a href="/live.html">Live Matches</a>
     <a href="/schedule.html">Schedule</a>
@@ -1008,6 +1013,7 @@ main {
     <a href="/news.html">News</a>
   </nav>
 </header>
+  
 <main id="main-content" role="main">
   
   
