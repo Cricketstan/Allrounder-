@@ -3,18 +3,18 @@
   "event": [
 
 {
-      "title": "India Vs Newzealand",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69643124e4b0ecc1be9bd84b-1768173913683?location=hero-default&imwidth=2560",
+      "title": "Bengluru Vs Gujarat",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8702/1768717958702-i",
       "watch_now": [
-        { "id": "highlights/ind-vs-nz", "name": "Play Highlights" }
+        { "id": "home/wpl", "name": "Play Highlights" }
       ],
-      "date": "18 Jan 2026",
-      "start_time": "12:35 PM",
+      "date": "19 Jan 2026",
+      "start_time": "06:55 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "ODI"
-  }
+      "league": "WPL"
+    }
 
   ]
 }
