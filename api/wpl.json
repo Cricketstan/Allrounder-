@@ -1,7 +1,47 @@
 {
-  "updated_at": "2026-01-19T13:55:31.113Z",
+  "updated_at": "2026-01-19T14:37:04.107Z",
   "count": 100,
   "items": [
+    {
+      "title": "Six: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Gautami Naik Six",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/80/d3/1e/0/image-6b9617ca-3b00-4af3-a8bc-8a41a9fb8c7f.jpg",
+      "video_id": "6387941966112",
+      "duration": 19,
+      "published_iso": "2026-01-19T14:32:05",
+      "url": "https://crickettv.site/wpl/6387941966112.html"
+    },
+    {
+      "title": "Free-flowing! In-form Mandhana gets going in style",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/0a/4a/0/image-4462fae9-3b61-449a-8202-4c52db52911d.jpg",
+      "video_id": "6387939020112",
+      "duration": 93,
+      "published_iso": "2026-01-19T14:31:37",
+      "url": "https://crickettv.site/wpl/6387939020112.html"
+    },
+    {
+      "title": "One brings two! Renuka, Kashvee strike early for GG",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d5/ac/5d/0/image-6c27dfc1-aac9-4fef-8751-4ddfb51ef0b6.jpg",
+      "video_id": "6387940017112",
+      "duration": 77,
+      "published_iso": "2026-01-19T14:20:34",
+      "url": "https://crickettv.site/wpl/6387940017112.html"
+    },
+    {
+      "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Georgia Voll Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/6d/ec/b9/0/image-8ddd0e33-1a03-4af4-89fe-1329f6d591b4.jpg",
+      "video_id": "6387940108112",
+      "duration": 27,
+      "published_iso": "2026-01-19T14:15:36",
+      "url": "https://crickettv.site/wpl/6387940108112.html"
+    },
+    {
+      "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Grace Harri Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e9/d2/3f/0/image-0d1a350d-73c0-4699-b8c2-71bf1353cbba.jpg",
+      "video_id": "6387940098112",
+      "duration": 26,
+      "published_iso": "2026-01-19T14:06:45",
+      "url": "https://crickettv.site/wpl/6387940098112.html"
+    },
     {
       "title": "Toss: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a0/34/ee/0/4ZQ11wsKTi.jpg",
@@ -51,20 +91,12 @@
       "url": "https://crickettv.site/wpl/6387894079112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award of Week 1",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cf/51/e7/0/image-ccdf991c-deda-47f4-a391-77e356c2d9cd.jpg",
-      "video_id": "6387872375112",
-      "duration": 577,
+      "title": "TATA WPL Green Dot Balls of Week 1",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/99/83/56/0/image-4f0dc2a9-cb3a-45f0-98fa-bf01922967bc.jpg",
+      "video_id": "6387872575112",
+      "duration": 134,
       "published_iso": "2026-01-17T19:26:53",
-      "url": "https://crickettv.site/wpl/6387872375112.html"
-    },
-    {
-      "title": "Sierra Super Striker of Week 1",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/ea/5c/0/image-bfa8a354-709d-4b9a-b58d-ec4ce6c91d84.jpg",
-      "video_id": "6387872667112",
-      "duration": 571,
-      "published_iso": "2026-01-17T19:26:00",
-      "url": "https://crickettv.site/wpl/6387872667112.html"
+      "url": "https://crickettv.site/wpl/6387872575112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of Week 1",
@@ -83,20 +115,28 @@
       "url": "https://crickettv.site/wpl/6387871303112.html"
     },
     {
+      "title": "Sierra Super Striker of Week 1",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/ea/5c/0/image-bfa8a354-709d-4b9a-b58d-ec4ce6c91d84.jpg",
+      "video_id": "6387872667112",
+      "duration": 571,
+      "published_iso": "2026-01-17T19:26:00",
+      "url": "https://crickettv.site/wpl/6387872667112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award of Week 1",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cf/51/e7/0/image-ccdf991c-deda-47f4-a391-77e356c2d9cd.jpg",
+      "video_id": "6387872375112",
+      "duration": 577,
+      "published_iso": "2026-01-17T19:26:53",
+      "url": "https://crickettv.site/wpl/6387872375112.html"
+    },
+    {
       "title": "Herbalife Active Catches of Week 1",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/82/9f/4f/0/image-2dfffef4-ffaf-4d26-8fb0-8aaa85a37a12.jpg",
       "video_id": "6387871108112",
       "duration": 311,
       "published_iso": "2026-01-17T19:26:53",
       "url": "https://crickettv.site/wpl/6387871108112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of Week 1",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/99/83/56/0/image-4f0dc2a9-cb3a-45f0-98fa-bf01922967bc.jpg",
-      "video_id": "6387872575112",
-      "duration": 134,
-      "published_iso": "2026-01-17T19:26:53",
-      "url": "https://crickettv.site/wpl/6387872575112.html"
     },
     {
       "title": "The atmosphere and crowds have been great to experience: Lucy Hamilton",
@@ -123,22 +163,6 @@
       "url": "https://crickettv.site/wpl/6387867896112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b5/d2/bb/0/image-903e04f4-821b-4589-8f4c-d72c48d05736.jpg",
-      "video_id": "6387866692112",
-      "duration": 21,
-      "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387866692112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/1d/3d/0/image-4553ce29-3fb3-497e-bef3-c148ed109f9f.jpg",
-      "video_id": "6387866693112",
-      "duration": 20,
-      "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387866693112.html"
-    },
-    {
       "title": "Presentation: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5e/e2/d8/0/image-407fb93c-2a95-4c85-bca7-b0f71b24b722.jpg",
       "video_id": "6387867484112",
@@ -147,12 +171,12 @@
       "url": "https://crickettv.site/wpl/6387867484112.html"
     },
     {
-      "title": "Player of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/57/78/0/image-0039f5c2-b2a5-4284-b28f-40077e5b3ba2.jpg",
-      "video_id": "6387867179112",
-      "duration": 191,
+      "title": "TATA WPL Green Dot Balls of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/67/bf/8c/0/image-db7cfd64-4320-45f6-a55d-dec58ee73225.jpg",
+      "video_id": "6387867483112",
+      "duration": 19,
       "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387867179112.html"
+      "url": "https://crickettv.site/wpl/6387867483112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
@@ -163,20 +187,36 @@
       "url": "https://crickettv.site/wpl/6387866493112.html"
     },
     {
+      "title": "Herbalife Active Catch of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/1d/3d/0/image-4553ce29-3fb3-497e-bef3-c148ed109f9f.jpg",
+      "video_id": "6387866693112",
+      "duration": 20,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387866693112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b5/d2/bb/0/image-903e04f4-821b-4589-8f4c-d72c48d05736.jpg",
+      "video_id": "6387866692112",
+      "duration": 21,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387866692112.html"
+    },
+    {
+      "title": "Player of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/57/78/0/image-0039f5c2-b2a5-4284-b28f-40077e5b3ba2.jpg",
+      "video_id": "6387867179112",
+      "duration": 191,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387867179112.html"
+    },
+    {
       "title": "Kingfisher Good Times Sixes of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Shafali Verma",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/93/bc/0/image-192246d1-652c-43ff-84ae-bda1a1c9e173.jpg",
       "video_id": "6387868355112",
       "duration": 16,
       "published_iso": "2026-01-17T17:50:40",
       "url": "https://crickettv.site/wpl/6387868355112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/67/bf/8c/0/image-db7cfd64-4320-45f6-a55d-dec58ee73225.jpg",
-      "video_id": "6387867483112",
-      "duration": 19,
-      "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387867483112.html"
     },
     {
       "title": "Post Match Interviews: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Georgia Voll Interview",
@@ -563,12 +603,12 @@
       "url": "https://crickettv.site/wpl/6387863084112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Amelia Kerr",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ba/93/64/0/image-94de2642-a5d8-476d-9118-60d534dfff2f.jpg",
-      "video_id": "6387861806112",
-      "duration": 26,
+      "title": "Herbalife Active Catch of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Harleen Deol",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dc/f4/a6/0/image-ce1088c7-0e47-4aea-924f-64f734f2f1ad.jpg",
+      "video_id": "6387861701112",
+      "duration": 22,
       "published_iso": "2026-01-17T13:16:23",
-      "url": "https://crickettv.site/wpl/6387861806112.html"
+      "url": "https://crickettv.site/wpl/6387861701112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Amelia Kerr",
@@ -587,28 +627,20 @@
       "url": "https://crickettv.site/wpl/6387862011112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Harleen Deol",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dc/f4/a6/0/image-ce1088c7-0e47-4aea-924f-64f734f2f1ad.jpg",
-      "video_id": "6387861701112",
-      "duration": 22,
+      "title": "ChatGPT Match IQ Award: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Amelia Kerr",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ba/93/64/0/image-94de2642-a5d8-476d-9118-60d534dfff2f.jpg",
+      "video_id": "6387861806112",
+      "duration": 26,
       "published_iso": "2026-01-17T13:16:23",
-      "url": "https://crickettv.site/wpl/6387861701112.html"
+      "url": "https://crickettv.site/wpl/6387861806112.html"
     },
     {
-      "title": "Amazing Moments: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/80/dd/e3/0/image-6c888865-5e0a-4fa3-a043-bbfc388fd0dc.jpg",
-      "video_id": "6387862095112",
-      "duration": 62,
+      "title": "Presentation: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b3/92/6b/0/image-feb574a9-67ed-42fe-a812-3c00da98aca4.jpg",
+      "video_id": "6387862094112",
+      "duration": 309,
       "published_iso": "2026-01-17T13:16:22",
-      "url": "https://crickettv.site/wpl/6387862095112.html"
-    },
-    {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Phoebe Litchfield",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/64/06/ce/0/image-4596bd2e-5a8f-46f3-a144-90dfdd46284b.jpg",
-      "video_id": "6387862390112",
-      "duration": 17,
-      "published_iso": "2026-01-17T13:16:22",
-      "url": "https://crickettv.site/wpl/6387862390112.html"
+      "url": "https://crickettv.site/wpl/6387862094112.html"
     },
     {
       "title": "Player of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Meg Lanning",
@@ -619,12 +651,20 @@
       "url": "https://crickettv.site/wpl/6387861300112.html"
     },
     {
-      "title": "Presentation: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b3/92/6b/0/image-feb574a9-67ed-42fe-a812-3c00da98aca4.jpg",
-      "video_id": "6387862094112",
-      "duration": 309,
+      "title": "Kingfisher Good Times Sixes of the Match: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Phoebe Litchfield",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/64/06/ce/0/image-4596bd2e-5a8f-46f3-a144-90dfdd46284b.jpg",
+      "video_id": "6387862390112",
+      "duration": 17,
       "published_iso": "2026-01-17T13:16:22",
-      "url": "https://crickettv.site/wpl/6387862094112.html"
+      "url": "https://crickettv.site/wpl/6387862390112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/80/dd/e3/0/image-6c888865-5e0a-4fa3-a043-bbfc388fd0dc.jpg",
+      "video_id": "6387862095112",
+      "duration": 62,
+      "published_iso": "2026-01-17T13:16:22",
+      "url": "https://crickettv.site/wpl/6387862095112.html"
     },
     {
       "title": "Post Match Interviews: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Harmanpreet Kaur Interview",
@@ -761,46 +801,6 @@
       "duration": 16,
       "published_iso": "2026-01-17T11:46:16",
       "url": "https://crickettv.site/wpl/6387858618112.html"
-    },
-    {
-      "title": "Wicket: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Sajeevan Sajana Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e5/54/2f/0/hYe1lhKUsS.jpg",
-      "video_id": "6387860101112",
-      "duration": 23,
-      "published_iso": "2026-01-17T11:42:00",
-      "url": "https://crickettv.site/wpl/6387860101112.html"
-    },
-    {
-      "title": "Six: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Sajeevan Sajana Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/6e/97/27/0/XXSivV7jhY.jpg",
-      "video_id": "6387860575112",
-      "duration": 12,
-      "published_iso": "2026-01-17T11:38:00",
-      "url": "https://crickettv.site/wpl/6387860575112.html"
-    },
-    {
-      "title": "Triple-wicket over: Amelia Kerr clinches back the Purple Cap",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/52/58/3a/0/image-34a2c6f2-04f3-4e59-ba12-4945b8048efa.jpg",
-      "video_id": "6387858412112",
-      "duration": 64,
-      "published_iso": "2026-01-17T11:33:31",
-      "url": "https://crickettv.site/wpl/6387858412112.html"
-    },
-    {
-      "title": "Highlights: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/77/1b/86/0/image-8d640b38-738b-423f-a0b4-baba344235a8.jpg",
-      "video_id": "6387859970112",
-      "duration": 695,
-      "published_iso": "2026-01-17T11:21:45",
-      "url": "https://crickettv.site/wpl/6387859970112.html"
-    },
-    {
-      "title": "Interview: Match 10, UP Warriorz vs Mumbai Indians, WPL 2026: Amelia Kerr & Phoebe Litchfield Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9e/1f/f3/0/image-872c341e-04e0-4c67-9442-27f59111bcb2.jpg",
-      "video_id": "6387860252112",
-      "duration": 138,
-      "published_iso": "2026-01-17T11:15:55",
-      "url": "https://crickettv.site/wpl/6387860252112.html"
     }
   ]
 }
