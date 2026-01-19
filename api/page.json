@@ -185,7 +185,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-01-19T18:42:30.208+05:30",
+        "last_modified": "2026-01-19T23:09:28.528+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -219,7 +219,7 @@
         },
         {
           "name": "Fox 505",
-          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/fox.m3u8",
+          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
           "default": false
         }
       ],
