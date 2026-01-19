@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dillzy Admin Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  background: #0f0f0f;
+  color: #fff;
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 15px;
+  background: #111;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid #222;
+}
+.section {
+  padding: 15px;
+}
+h2 {
+  margin-top: 0;
+  color: #00ffd5;
+}
+.card {
+  background: #151515;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.small {
+  color: #aaa;
+  font-size: 13px;
+}
+.badge {
+  background: #222;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+
+<header>Dillzy Admin Panel</header>
+
+<div class="section">
+  <h2>Domains</h2>
+  <div id="domains"></div>
+</div>
+
+<div class="section">
+  <h2>IPs</h2>
+  <div id="ips"></div>
+</div>
+
+<div class="section">
+  <h2>Paths</h2>
+  <div id="paths"></div>
+</div>
+
+<script>
+const FIREBASE_DB = "https://hotstar-10f50-default-rtdb.firebaseio.com";
+
+async function loadSection(name, elementId) {
+  try {
+    const res = await fetch(`${FIREBASE_DB}/${name}.json`);
+    const data = await res.json();
+    const container = document.getElementById(elementId);
+    container.innerHTML = "";
+
+    if (!data) {
+      container.innerHTML = "<div class='small'>No data</div>";
+      return;
+    }
+
+    const sorted = Object.values(data).sort((a, b) => b.count - a.count);
+
+    sorted.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+        <div class="flex">
+          <div>${item.domain || item.ip || item.path || "Unknown"}</div>
+          <div class="badge">${item.count}</div>
+        </div>
+        <div class="small">Last hit: ${new Date(item.lastHit).toLocaleString()}</div>
+      `;
+      container.appendChild(div);
+    });
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+async function refreshAll() {
+  await loadSection("domains", "domains");
+  await loadSection("ips", "ips");
+  await loadSection("paths", "paths");
+}
+
+refreshAll();
+setInterval(refreshAll, 5000);
+</script>
+
+</body>
+</html>
