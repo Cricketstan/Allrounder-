@@ -462,7 +462,65 @@ main {
   transform: translateY(-3px);
   box-shadow: var(--shadow-xl);
 }
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(11,18,32,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
 
+.header-bar {
+  height: 52px; /* Small like Hotstar */
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.center-logo {
+  text-align: center;
+  font-weight: 800;
+  font-size: 18px;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100vh;
+  background: #0b1220;
+  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: 0.3s ease;
+  z-index: 99999;
+}
+
+.side-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.side-menu.show {
+  left: 0;
+}
 .btn-secondary {
   background: var(--bg-card);
   color: var(--text-primary);
@@ -928,27 +986,28 @@ main {
 
 <body itemscope itemtype="https://schema.org/WebPage">
 
-<header class="site-header" role="banner" aria-label="Main header">
-  <div class="header-container">
-    <a href="/" class="brand" aria-label="Cricket TV Home">
-      <span class="brand-logo" itemprop="name">🏏 Cricket TV</span>
-      <span class="brand-tagline" itemprop="description">Free Live Cricket Streaming</span>
-    </a>
-    
-    <nav class="nav-links" role="navigation" aria-label="Main navigation">
-      <a href="/" class="nav-link active" aria-current="page">Home</a>
-      <a href="/live.html" class="nav-link">Live Matches</a>
-      <a href="/schedule.html" class="nav-link">Schedule</a>
-      <a href="/highlights.html" class="nav-link">Highlights</a>
-      <a href="/scores.html" class="nav-link">Live Scores</a>
-      <a href="/news.html" class="nav-link">News</a>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark/light mode">
-        <span class="theme-icon">🌓</span>
-      </button>
-    </nav>
-  </div>
-</header>
+<header class="site-header">
+  <div class="header-bar">
+    <!-- Hamburger -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
 
+    <!-- Center Logo -->
+    <div class="center-logo">🏏 Cricket TV</div>
+
+    <!-- Right Spacer -->
+    <div class="right-space"></div>
+  </div>
+
+  <!-- Slide Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="/">Home</a>
+    <a href="/live.html">Live Matches</a>
+    <a href="/schedule.html">Schedule</a>
+    <a href="/highlights.html">Highlights</a>
+    <a href="/scores.html">Live Scores</a>
+    <a href="/news.html">News</a>
+  </nav>
+</header>
 <main id="main-content" role="main">
   
   
@@ -1267,6 +1326,11 @@ main {
 </footer>
 
 <script>
+  
+function toggleMenu() {
+  document.getElementById("sideMenu").classList.toggle("show");
+}
+
 // Theme toggle functionality
 function toggleTheme() {
   const html = document.documentElement;
