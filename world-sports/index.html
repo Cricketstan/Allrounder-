@@ -55,7 +55,7 @@ body {
   gap: 14px;
 }
 
-/* PREMIUM BLACK CARD */
+/* CARD */
 .channel-card {
   position: relative;
   aspect-ratio: 16 / 9;
@@ -76,7 +76,6 @@ body {
     0 0 20px rgba(0,150,255,0.25);
 }
 
-/* LOGO CENTER */
 .channel-card img {
   position: absolute;
   inset: 0;
@@ -84,10 +83,8 @@ body {
   max-width: 65%;
   max-height: 65%;
   object-fit: contain;
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.8));
 }
 
-/* VIGNETTE */
 .channel-vignette {
   position: absolute;
   bottom: 0;
@@ -102,7 +99,6 @@ body {
   );
 }
 
-/* NAME */
 .channel-name {
   position: absolute;
   bottom: 10px;
@@ -112,8 +108,6 @@ body {
   font-size: 14px;
   font-weight: 600;
   z-index: 2;
-  text-shadow: 0 2px 8px rgba(0,0,0,1);
-  letter-spacing: 0.3px;
 }
 </style>
 </head>
@@ -131,11 +125,10 @@ body {
 </div>
 
 <script>
-/* PARTICLE BG */
 const canvas = document.getElementById('particles');
 const ctx = canvas.getContext('2d');
-
 let w, h;
+
 function resize() {
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
@@ -144,9 +137,7 @@ window.addEventListener('resize', resize);
 resize();
 
 const particles = [];
-const COUNT = 45;
-
-for (let i = 0; i < COUNT; i++) {
+for (let i = 0; i < 45; i++) {
   particles.push({
     x: Math.random() * w,
     y: Math.random() * h,
@@ -173,7 +164,6 @@ function animate() {
 }
 animate();
 
-/* FETCH CHANNELS */
 const jsonURL = "https://raw.githubusercontent.com/Cricketstan/Allrounder-/main/api/world-sports.json";
 
 fetch(jsonURL)
@@ -182,11 +172,10 @@ fetch(jsonURL)
     const grid = document.getElementById("channelGrid");
 
     data.forEach(ch => {
-      const card = document.createElement("div");
-      card.className = "channel-card";
-
       const slug = ch.name.toLowerCase().replace(/\s+/g, "-");
 
+      const card = document.createElement("div");
+      card.className = "channel-card";
       card.innerHTML = `
         <img src="${ch.logo}">
         <div class="channel-vignette"></div>
@@ -194,13 +183,12 @@ fetch(jsonURL)
       `;
 
       card.onclick = () => {
-        window.location.href = `player.html/${slug}`;
+        window.location.href = `player.html?id=${slug}`;
       };
 
       grid.appendChild(card);
     });
-  })
-  .catch(err => console.error(err));
+  });
 </script>
 
 </body>
