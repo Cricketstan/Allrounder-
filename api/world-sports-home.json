@@ -1,0 +1,52 @@
+[
+  {
+    "name": "TNT Sports 1",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/TNT_Sports_%282023%29.svg/1280px-TNT_Sports_%282023%29.svg.png",
+    "url": "world-sports/player.html?id=tnt-sports-1"
+  },
+  {
+    "name": "TNT Sports 2",
+    "logo": "https://iili.io/3OKhGKg.png",
+    "url": "world-sports/player.html?id=tnt-sports-2"
+  },
+  {
+    "name": "TNT Sports 3",
+    "logo": "https://iili.io/3DPQCG9.png",
+    "url": "world-sports/player.html?id=tnt-sports-3"
+  },
+  {
+    "name": "Prime TV",
+    "logo": "https://iili.io/FfrCHqN.png",
+    "url": "world-sports/player.html?id=prime-tv"
+  },
+  {
+    "name": "Premier Sports 1",
+    "logo": "https://iili.io/KWnBoiB.png",
+    "url": "world-sports/player.html?id=premier-sports-1"
+  },
+  {
+    "name": "Premier Sports 2",
+    "logo": "https://iili.io/KWnCF1I.png",
+    "url": "world-sports/player.html?id=premier-sports-2"
+  },
+  {
+    "name": "beIN Sports 1 HD",
+    "logo": "http://linear-poster.astro.com.my/prod/logo/beINSPORT1.png",
+    "url": "world-sports/player.html?id=bein-sports-1"
+  },
+  {
+    "name": "beIN Sports 2 HD",
+    "logo": "http://linear-poster.astro.com.my/prod/logo/beINSPORTS2.png",
+    "url": "world-sports/player.html?id=bein-sports-2"
+  },
+  {
+    "name": "Fubo Sports 1",
+    "logo": "https://i.imgur.com/7BwABte.png",
+    "url": "world-sports/player.html?id=fubo-sports-1"
+  },
+  {
+    "name": "Fubo Sports 2",
+    "logo": "https://i.imgur.com/7BwABte.png",
+    "url": "world-sports/player.html?id=fubo-sports-2"
+  }
+]
