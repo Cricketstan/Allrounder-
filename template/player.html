@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Sports</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css">
+
+  <style>
+    html, body {
+      background: #000;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+    .shaka-video-container {
+      position: fixed;
+      inset: 0;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    #logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      height: 40px;
+      z-index: 9999;
+    }
+  </style>
+</head>
+
+<body>
+
+<img id="logo">
+
+<div class="shaka-video-container" data-shaka-player>
+  <video autoplay playsinline></video>
+</div>
+
+<script>
+(async () => {
+
+  const JSON_URL = "world-sports.json";
+
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) return alert("Missing id");
+
+  const res = await fetch(JSON_URL);
+  const data = await res.json();
+
+  const ch = data.find(x => x.id === id);
+
+  if (!ch) return alert("Channel not found");
+
+  document.title = ch.name;
+  document.getElementById("logo").src = ch.logo;
+
+  shaka.polyfill.installAll();
+  if (!shaka.Player.isBrowserSupported()) return;
+
+  const video = document.querySelector("video");
+  const player = new shaka.Player(video);
+
+  const clearKeys = {};
+  clearKeys[ch.keyId] = ch.key;
+
+  player.configure({
+    drm: { clearKeys }
+  });
+
+  try {
+    await player.load(ch.url1);
+    video.play();
+  } catch (e) {
+    console.error(e);
+  }
+
+})();
+</script>
+
+</body>
+</html>
