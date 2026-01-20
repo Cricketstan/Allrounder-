@@ -31,16 +31,7 @@
     "key": "634e10efe4abbb14be400a3ccbac0258",
     "logo": "https://iili.io/3DPQfQS.png"
   },
-  {
-    "name": "DD Sports",
-    "id": "1A",
-    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/DD_Sports_BTS/output/index.mpd",
-    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/DD_Sports_BTS/output/index.mpd",
-    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/DD_Sports_BTS/output/index.mpd",
-    "keyId": "0c1b139b9a955134a1efae8e44b63aac",
-    "key": "00897bffd6997049787270797b8c3a17",
-    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/DD_Sports.png"
-  },
+  
   {
     "name": "Ten Cricket",
     "id": "TEN77",
