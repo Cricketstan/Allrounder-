@@ -1,0 +1,25 @@
+name: Update World Sports JSON
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download JSON
+        run: |
+          curl -L -o world-sports.json https://crickettv.site/api/world-sports.json
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add world-sports.json
+          git commit -m "Auto update world sports JSON" || exit 0
+          git push
