@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-20T09:40:43.177Z",
+  "updated_at": "2026-01-20T10:00:30.695Z",
   "count": 100,
   "items": [
     {
@@ -35,6 +35,14 @@
       "url": "https://crickettv.site/wpl/6387949200112.html"
     },
     {
+      "title": "Player of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Gautami Naik",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/45/7f/b5/0/image-64284914-db82-46a9-a31b-67dfcc31534b.jpg",
+      "video_id": "6387950651112",
+      "duration": 152,
+      "published_iso": "2026-01-19T18:01:03",
+      "url": "https://crickettv.site/wpl/6387950651112.html"
+    },
+    {
       "title": "TATA WPL Green Dot Balls of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dc/4e/45/0/image-7ffd35fa-2300-4e56-93e1-15773cf3460b.jpg",
       "video_id": "6387949159112",
@@ -43,12 +51,20 @@
       "url": "https://crickettv.site/wpl/6387949159112.html"
     },
     {
-      "title": "Player of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Gautami Naik",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/45/7f/b5/0/image-64284914-db82-46a9-a31b-67dfcc31534b.jpg",
-      "video_id": "6387950651112",
-      "duration": 152,
-      "published_iso": "2026-01-19T18:01:03",
-      "url": "https://crickettv.site/wpl/6387950651112.html"
+      "title": "ChatGPT Match IQ Award: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Sayali Satghare",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ab/4a/b6/0/image-26f33705-7f96-4635-9d8b-a1b098e98cbe.jpg",
+      "video_id": "6387949158112",
+      "duration": 28,
+      "published_iso": "2026-01-19T18:01:02",
+      "url": "https://crickettv.site/wpl/6387949158112.html"
+    },
+    {
+      "title": "Kingfisher Good Times Sixes of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/09/ef/16/0/image-115809e2-eaf3-4fa8-a3d0-5427c917ad62.jpg",
+      "video_id": "6387950649112",
+      "duration": 18,
+      "published_iso": "2026-01-19T18:01:02",
+      "url": "https://crickettv.site/wpl/6387950649112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
@@ -65,22 +81,6 @@
       "duration": 611,
       "published_iso": "2026-01-19T18:01:02",
       "url": "https://crickettv.site/wpl/6387950342112.html"
-    },
-    {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/09/ef/16/0/image-115809e2-eaf3-4fa8-a3d0-5427c917ad62.jpg",
-      "video_id": "6387950649112",
-      "duration": 18,
-      "published_iso": "2026-01-19T18:01:02",
-      "url": "https://crickettv.site/wpl/6387950649112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Sayali Satghare",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ab/4a/b6/0/image-26f33705-7f96-4635-9d8b-a1b098e98cbe.jpg",
-      "video_id": "6387949158112",
-      "duration": 28,
-      "published_iso": "2026-01-19T18:01:02",
-      "url": "https://crickettv.site/wpl/6387949158112.html"
     },
     {
       "title": "Amazing Moments: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026",
@@ -131,20 +131,20 @@
       "url": "https://crickettv.site/wpl/6387947793112.html"
     },
     {
-      "title": "Ashleigh Gardner stands tall with 54(43)",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/2f/6e/0/ADmwBvWaie.jpg",
-      "video_id": "6387947269112",
-      "duration": 123,
-      "published_iso": "2026-01-19T17:25:00",
-      "url": "https://crickettv.site/wpl/6387947269112.html"
-    },
-    {
       "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Bharti Fulmali Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/e4/0f/0/ZPzjBqPLAj.jpg",
       "video_id": "6387948372112",
       "duration": 29,
       "published_iso": "2026-01-19T17:25:00",
       "url": "https://crickettv.site/wpl/6387948372112.html"
+    },
+    {
+      "title": "Ashleigh Gardner stands tall with 54(43)",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/2f/6e/0/ADmwBvWaie.jpg",
+      "video_id": "6387947269112",
+      "duration": 123,
+      "published_iso": "2026-01-19T17:25:00",
+      "url": "https://crickettv.site/wpl/6387947269112.html"
     },
     {
       "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Ashleigh Gardner Wicket",
@@ -451,14 +451,6 @@
       "url": "https://crickettv.site/wpl/6387894079112.html"
     },
     {
-      "title": "Sierra Super Striker of Week 1",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/ea/5c/0/image-bfa8a354-709d-4b9a-b58d-ec4ce6c91d84.jpg",
-      "video_id": "6387872667112",
-      "duration": 571,
-      "published_iso": "2026-01-17T19:26:00",
-      "url": "https://crickettv.site/wpl/6387872667112.html"
-    },
-    {
       "title": "TATA WPL 2026 Rewind - Week 1",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/64/81/cf/0/image-a156f2dd-91ea-425e-b039-89d62ff1b03c.jpg",
       "video_id": "6387871303112",
@@ -467,12 +459,20 @@
       "url": "https://crickettv.site/wpl/6387871303112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of Week 1",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/62/1d/0/image-91fc7f44-fbd0-40c6-8280-68593a411c96.jpg",
-      "video_id": "6387872668112",
-      "duration": 317,
+      "title": "Sierra Super Striker of Week 1",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/ea/5c/0/image-bfa8a354-709d-4b9a-b58d-ec4ce6c91d84.jpg",
+      "video_id": "6387872667112",
+      "duration": 571,
+      "published_iso": "2026-01-17T19:26:00",
+      "url": "https://crickettv.site/wpl/6387872667112.html"
+    },
+    {
+      "title": "Herbalife Active Catches of Week 1",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/82/9f/4f/0/image-2dfffef4-ffaf-4d26-8fb0-8aaa85a37a12.jpg",
+      "video_id": "6387871108112",
+      "duration": 311,
       "published_iso": "2026-01-17T19:26:53",
-      "url": "https://crickettv.site/wpl/6387872668112.html"
+      "url": "https://crickettv.site/wpl/6387871108112.html"
     },
     {
       "title": "ChatGPT Match IQ Award of Week 1",
@@ -483,20 +483,20 @@
       "url": "https://crickettv.site/wpl/6387872375112.html"
     },
     {
+      "title": "Kingfisher Good Times Sixes of Week 1",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/62/1d/0/image-91fc7f44-fbd0-40c6-8280-68593a411c96.jpg",
+      "video_id": "6387872668112",
+      "duration": 317,
+      "published_iso": "2026-01-17T19:26:53",
+      "url": "https://crickettv.site/wpl/6387872668112.html"
+    },
+    {
       "title": "TATA WPL Green Dot Balls of Week 1",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/99/83/56/0/image-4f0dc2a9-cb3a-45f0-98fa-bf01922967bc.jpg",
       "video_id": "6387872575112",
       "duration": 134,
       "published_iso": "2026-01-17T19:26:53",
       "url": "https://crickettv.site/wpl/6387872575112.html"
-    },
-    {
-      "title": "Herbalife Active Catches of Week 1",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/82/9f/4f/0/image-2dfffef4-ffaf-4d26-8fb0-8aaa85a37a12.jpg",
-      "video_id": "6387871108112",
-      "duration": 311,
-      "published_iso": "2026-01-17T19:26:53",
-      "url": "https://crickettv.site/wpl/6387871108112.html"
     },
     {
       "title": "The atmosphere and crowds have been great to experience: Lucy Hamilton",
@@ -523,20 +523,20 @@
       "url": "https://crickettv.site/wpl/6387867896112.html"
     },
     {
+      "title": "ChatGPT Match IQ Award: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b5/d2/bb/0/image-903e04f4-821b-4589-8f4c-d72c48d05736.jpg",
+      "video_id": "6387866692112",
+      "duration": 21,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387866692112.html"
+    },
+    {
       "title": "TATA WPL Green Dot Balls of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/67/bf/8c/0/image-db7cfd64-4320-45f6-a55d-dec58ee73225.jpg",
       "video_id": "6387867483112",
       "duration": 19,
       "published_iso": "2026-01-17T17:50:40",
       "url": "https://crickettv.site/wpl/6387867483112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/1d/3d/0/image-4553ce29-3fb3-497e-bef3-c148ed109f9f.jpg",
-      "video_id": "6387866693112",
-      "duration": 20,
-      "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387866693112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
@@ -547,28 +547,20 @@
       "url": "https://crickettv.site/wpl/6387866493112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b5/d2/bb/0/image-903e04f4-821b-4589-8f4c-d72c48d05736.jpg",
-      "video_id": "6387866692112",
-      "duration": 21,
-      "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387866692112.html"
-    },
-    {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Shafali Verma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/93/bc/0/image-192246d1-652c-43ff-84ae-bda1a1c9e173.jpg",
-      "video_id": "6387868355112",
-      "duration": 16,
-      "published_iso": "2026-01-17T17:50:40",
-      "url": "https://crickettv.site/wpl/6387868355112.html"
-    },
-    {
       "title": "Player of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/41/57/78/0/image-0039f5c2-b2a5-4284-b28f-40077e5b3ba2.jpg",
       "video_id": "6387867179112",
       "duration": 191,
       "published_iso": "2026-01-17T17:50:40",
       "url": "https://crickettv.site/wpl/6387867179112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Lucy Hamilton",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/1d/3d/0/image-4553ce29-3fb3-497e-bef3-c148ed109f9f.jpg",
+      "video_id": "6387866693112",
+      "duration": 20,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387866693112.html"
     },
     {
       "title": "Presentation: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026",
@@ -579,12 +571,12 @@
       "url": "https://crickettv.site/wpl/6387867484112.html"
     },
     {
-      "title": "Post Match Interviews: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Georgia Voll Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a5/2e/f5/0/image-325aada0-a0e4-45b0-a9f9-0f614d481efd.jpg",
-      "video_id": "6387866401112",
-      "duration": 107,
-      "published_iso": "2026-01-17T17:36:35",
-      "url": "https://crickettv.site/wpl/6387866401112.html"
+      "title": "Kingfisher Good Times Sixes of the Match: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Shafali Verma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/93/bc/0/image-192246d1-652c-43ff-84ae-bda1a1c9e173.jpg",
+      "video_id": "6387868355112",
+      "duration": 16,
+      "published_iso": "2026-01-17T17:50:40",
+      "url": "https://crickettv.site/wpl/6387868355112.html"
     },
     {
       "title": "Post Match Interviews: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Jemimah Rodrigues Interview",
@@ -593,6 +585,14 @@
       "duration": 129,
       "published_iso": "2026-01-17T17:36:35",
       "url": "https://crickettv.site/wpl/6387869028112.html"
+    },
+    {
+      "title": "Post Match Interviews: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026: Georgia Voll Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a5/2e/f5/0/image-325aada0-a0e4-45b0-a9f9-0f614d481efd.jpg",
+      "video_id": "6387866401112",
+      "duration": 107,
+      "published_iso": "2026-01-17T17:36:35",
+      "url": "https://crickettv.site/wpl/6387866401112.html"
     },
     {
       "title": "Super Sixes: Match 11, Delhi Capitals vs Royal Challengers Bengaluru, WPL 2026",
