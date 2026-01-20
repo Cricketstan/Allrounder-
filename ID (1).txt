@@ -1,0 +1,609 @@
+[
+  {
+    "name": "Willow Cricket",
+    "id": "3A",
+    "url1": "https://a170aivottlinear-a.akamaihd.net:443/OTTB/bom-nitro/live/dash/enc/f60kqesunw/out/v1/a435ed7a00f947deb4369b46d8f2fb70/cenc.mpd",
+    "keyId": "1779C27B9D077A3BA0C9CC1BB9A94B9F",
+    "key": "CC5CF3B7928FB9E0A1EE6A8B566F0A8E",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtZcJANelaW8aBRREj0hAfcWIjvYWJdJ_Epg&usqp=CAU"
+  },
+  {
+    "keyId": "4e4c5dba5bfe5a7c9338bc086eb80379",
+    "key": "b8e8932f440084e1d2b705fa52eef94b",
+    "id": "33722",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_1.png",
+    "name": "Sony LIV Sports 1",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_1_MOB/WDVLive/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/SonyLIV_Sports_1_MOB/WDVLive/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/SonyLIV_Sports_1_MOB/WDVLive/index.mpd"
+  },
+  {
+    "keyId": "ef24516ae38b50d18049343cd1cd998a",
+    "key": "eb4810ec250a1795a0019dba7881ff45",
+    "id": "33733",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_2.png",
+    "name": "Sony LIV Sports 2",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_2_MOB/WDVLive/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/SonyLIV_Sports_2_MOB/WDVLive/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/SonyLIV_Sports_2_MOB/WDVLive/index.mpd"
+  },
+  {
+    "keyId": "3afa887864e6545aa006db21aeb39054",
+    "key": "6b8cce271f3cd923d0df32d45b44f6df",
+    "id": "33744",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_3.png",
+    "name": "Sony LIV Sports 3",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_3_MOB/WDVLive/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/SonyLIV_Sports_3_MOB/WDVLive/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/SonyLIV_Sports_3_MOB/WDVLive/index.mpd"
+  },
+  {
+    "keyId": "9f266ceda9555faf8b40c586ac40406a",
+    "key": "92f9a1ca4c16545db65ad0578bd1baa3",
+    "id": "33977",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_4_Tamil.png",
+    "name": "Sony LIV Sports 4 Tamil",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Tamil_MOB/WDVLive/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Tamil_MOB/WDVLive/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Tamil_MOB/WDVLive/index.mpd"
+  },
+  {
+    "keyId": "4d39c423d72a5f1ca5df1de110c80422",
+    "key": "572a9370c22c8b5d741352ebf8f68721",
+    "id": "33988",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_4_Telugu.png",
+    "name": "Sony LIV Sports 4 Telugu",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Telugu_MOB/WDVLive/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Telugu_MOB/WDVLive/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/SonyLIV_Sports_4_Telugu_MOB/WDVLive/index.mpd"
+  },
+  {
+    "keyId": "cee8550bf50b569d8ad2ed0c5264f0d2",
+    "key": "565a95f1c332c03534e1e5fcc1ff9a8b",
+    "id": "33999",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/SonyLIV_Sports_5.png",
+    "name": "Sony LIV Sports 5",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/SonyLIV_Sports_5_MOB/WDVLive/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/SonyLIV_Sports_5_MOB/WDVLive/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/SonyLIV_Sports_5_MOB/WDVLive/index.mpd"
+  },
+  {
+    "name": "TNT Sports 1",
+    "id": "4A",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/wf8usag51e/out/v1/bd3b0c314fff4bb1ab4693358f3cd2d3/cenc.mpd",
+    "keyId": "d0f2e5c39e70c18f29bf77768a1ad89a",
+    "key": "d6853c51fcf37a18905f0609972395d7",
+    "logo": "https://iili.io/3DPQBC7.png"
+  },
+  {
+    "name": "TNT Sports 2",
+    "id": "5A",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/f0qvkrra8j/out/v1/f8fa17f087564f51aa4d5c700be43ec4/cenc.mpd",
+    "keyId": "9f51f3dc6313ac8bc668e2d9d1c04dfa",
+    "key": "74bc63e5a193454a91ca494975db33f9",
+    "logo": "https://iili.io/3OKhGKg.png"
+  },
+  {
+    "name": "TNT Sports 3",
+    "id": "6A",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/lsdasbvglv/out/v1/bb548a3626cd4708afbb94a58d71dce9/cenc.mpd",
+    "keyId": "a93c1cbfdccd23233bac13540c693e7f",
+    "key": "2f6ab2e6693eb847eff3c9da8f9d01fc",
+    "logo": "https://iili.io/3DPQCG9.png"
+  },
+  {
+    "name": "TNT Sports 4",
+    "id": "7A",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/dash/enc/i2pcjr4pe5/out/v1/912e9db56d75403b8a9ac0a719110f36/cenc.mpd",
+    "keyId": "192b1115da041585c77200128549efa1",
+    "key": "634e10efe4abbb14be400a3ccbac0258",
+    "logo": "https://iili.io/3DPQfQS.png"
+  },
+  {
+    "name": "DD Sports",
+    "id": "1A",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/DD_Sports_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/DD_Sports_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/DD_Sports_BTS/output/index.mpd",
+    "keyId": "0c1b139b9a955134a1efae8e44b63aac",
+    "key": "00897bffd6997049787270797b8c3a17",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/DD_Sports.png"
+  },
+  {
+    "name": "Ten Cricket",
+    "id": "TEN77",
+    "url1": "https://edge4-moblive.yuppcdn.net/drm2/smil:tencricketdrm1.smil/manifest.mpd",
+    "keyId": "9872e439f21f4a299cab249c6554daa3",
+    "key": "0cdfcfe0d0f1fbe100554ce3ef4c4665",
+    "logo": "https://img-cdn.publive.online/fit-in/640x430/filters:format(webp)/afaqs/media/post_attachments/84882a51b6c9326e4499dedbb089ca95bd82663084027217207edb964a9a89ad.jpg"
+  },
+  {
+    "name": "Premier Sports 1",
+    "id": "12A",
+    "url1": "https://abizzcbaaaaaaaamlniubkrls2bb7.otte.live.cf.ww.aiv-cdn.net/fra-nitro/live/dash/enc/vwq77hfgzw/out/v1/b858e0b845c64cec953887bd4269e4ea/cenc.mpd",
+    "keyId": "1444f4235529f183f0a5a486befe9cdb",
+    "key": "e5e3fec67a1bb3472a2089c8a0a2557f",
+    "logo": "https://iili.io/KWnBoiB.png"
+  },
+  {
+    "name": "Premier Sports 2",
+    "id": "13A",
+    "url1": "https://abizzcbaaaaaaaaml3dau5ew7oiof.otte.live.cf.ww.aiv-cdn.net/fra-nitro/live/dash/enc/w34nznx0bz/out/v1/1c6639b9af994c75847def2249302066/cenc.mpd",
+    "keyId": "1a5df53609ebc9857898c490f4724918",
+    "key": "77f62980d582ec541280796acf8b2d19",
+    "logo": "https://iili.io/KWnCF1I.png"
+  },
+  {
+    "name": "Fox Sports 1",
+    "id": "15A",
+    "url1": "https://cors-proxy.rdpsell01.workers.dev/https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/fsu3wl2rwb/out/v1/be61206c04e643349d53fb22301f3b50/cenc.mpd",
+    "keyId": "5466ebd70704bdeb657f0abf3c5ca4ef",
+    "key": "bdd79b72d8e48ed483aa623cc38a8a16",
+    "logo": "https://iili.io/KYJqv0G.png"
+  },
+  {
+    "name": "Fox Sports 2",
+    "id": "16A",
+    "url1": "https://cors-proxy.rdpsell01.workers.dev/https://otte.live.fly.ww.aiv-cdn.net/iad-nitro/live/clients/dash/enc/awxnrqkbo5/out/v1/716529a4091947b0877e6cb80dbd6ccb/cenc.mpd",
+    "keyId": "09453ce820d65fbc675de3185f9e454c",
+    "key": "98cff9600995fa381c76fdacf3c7edae",
+    "logo": "https://iili.io/KYJC4V9.png"
+  },
+   {
+    "name": "CBS Sports",
+    "id": "17A",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/rbem8rorcw/out/v1/5318821e2c3c44c2a439681b9aa86e9b/cenc.mpd",
+    "keyId": "d9623774ac5c8c351aafe97c5fe70267",
+    "key": "5164e6d05164a2d65fa8fcc962aa4861",
+    "logo": "https://s3.us-west-2.amazonaws.com/prod-cbssportstenantstack-citadelbucket0907d78c-qwwjcczd8p3p/CBS-Sports-Logo-1731106414735.png"
+  },
+  {
+    "name": "Tap Sports",
+    "id": "18A",
+    "url1": "https://qp-pldt-live-grp-11-prod.akamaized.net/out/u/dr_tapsports.mpd",
+    "keyId": "eabd2d95c89e42f2b0b0b40ce4179ea0",
+    "key": "0e7e35a07e2c12822316c0dc4873903f",
+    "logo": "https://i.imgur.com/EEDMg6S.png"
+  },
+  {
+    "name": "TSN Sports 1",
+    "id": "19A",
+    "url1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/u142pfptsm/out/v1/1caa3b2dfa9e448d8f61209bdfc1acdc/cenc.mpd",
+    "keyId": "7e99f734748d098cbfa2f7bde968dd44",
+    "key": "98ea6088c3222e9abaf61e537804d6cc",
+    "logo": "https://i.ibb.co.com/HYzgFbZ/tsn1.png"
+  },
+  {
+    "name": "TSN Sports 2",
+    "id": "20A",
+    "url1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/v5v9yfn62i/out/v1/0991e33d09da46b2857fcc845db95c40/cenc.mpd",
+    "keyId": "362202eefc5d9e42eec6450998cce9e8",
+    "key": "978dfdd53186ec587d940e0bd1e2ec42",
+    "logo": "https://i.ibb.co.com/5r1nzp5/tsn2.png"
+  },
+  {
+    "name": "TSN Sports 3",
+    "id": "21A",
+    "url1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/mrskysvotx/out/v1/ad58961bd8fd48d2944e461c034b8914/cenc.mpd",
+    "keyId": "d9097a1b7d04b7786b29f2b0e155316d",
+    "key": "279695ebe0fb1bc5787422b6b59ce8a8",
+    "logo": "https://i.ibb.co.com/r6FWmrW/tsn3.png"
+  },
+  {
+    "name": "TSN Sports 4",
+    "id": "22A",
+    "url1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/irtfdsri14/out/v1/165128c314e944faa3d79e107974b323/cenc.mpd",
+    "keyId": "e1aa4c4daf6222a04f7ae80130495ea1",
+    "key": "31bb1ee9a8d088f62b0103550c301449",
+    "logo": "https://i.ibb.co.com/PxGj1GQ/tsn4.png"
+  },
+  {
+    "name": "TSN Sports 5",
+    "id": "23A",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/mttgh1c4ei/out/v1/9cc664b146744e2ba23066aa048efbc5/cenc.mpd",
+    "keyId": "8ce20e2a4b3dd04e0a6e5469b7cb47be",
+    "key": "163c323b65d0597b13f037641fd67b1e",
+    "logo": "https://i.ibb.co.com/F4dfsDM/tsn5.png"
+  },
+  {
+    "name": "Star Sports 1 HD",
+    "id": "4470",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_BTS/output/index.mpd",
+    "keyId": "965dc2ddb1d85138ad787999a7f30ca5",
+    "key": "859695076e67fe961836b564db6d689c",
+    "logo": "https://img.media.jio.com/tvpimages/76/32/301981_1749665664018_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1",
+    "id": "1142",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_BTS/output/index.mpd",
+    "keyId": "df20894ec30954d3b28097c138f4cfda",
+    "key": "ff9b6292b1cddbd11a046029cb314634",
+    "logo": "https://img.media.jio.com/tvpimages/56/92/302115_1749665579801_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Hindi HD",
+    "id": "174",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD1_Hindi_BTS/output/index.mpd",
+    "keyId": "400131994b445d8c8817202248760fda",
+    "key": "2d56cb6f07a75b9aff165d534ae2bfc4",
+    "logo": "https://img.media.jio.com/tvpimages/5/6/301982_1749665314605_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Hindi",
+    "id": "148",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Hindi_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Hindi_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Hindi_BTS/output/index.mpd",
+    "keyId": "8ea9b607549252068e260a5f4d7dd321",
+    "key": "350c0aaffedf51cc1502e9543c7c885e",
+    "logo": "https://img.media.jio.com/tvpimages/13/81/302112_1749665154709_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 HD",
+    "id": "4456",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_HD2_BTS/output/index.mpd",
+    "keyId": "9457eb90129456fa8ea95e10ba4ac51e",
+    "key": "e620a970cea474c491ac78ae71a4d764",
+    "logo": "https://img.media.jio.com/tvpimages/41/51/301983_1749666169105_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2",
+    "id": "1141",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_2_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_2_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_2_BTS/output/index.mpd",
+    "keyId": "fc3aafe80845584199a637249fad2ffa",
+    "key": "ca4474972fdb4bf8ecb164482853c692",
+    "logo": "https://img.media.jio.com/tvpimages/11/30/302116_1749666029079_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Hindi HD",
+    "id": "1984",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd",
+    "keyId": "bd1ea6a1c1fb5dcdb709434e0826bbc0",
+    "key": "f57f22cba32739ce7beb1fab3f3d060b",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_1_HD.png"
+  },
+  {
+    "name": "Star Sports 2 Hindi HD",
+    "id": "1984",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd",
+    "keyId": "b9d4acedc66c5660a1e06197a55bccd2",
+    "key": "dd53bab1a42f41ae8f0a5c8fd286f456",
+    "logo": "https://img.media.jio.com/tvpimages/56/36/301229_1742214332015_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Hindi",
+    "id": "1985",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Sports18_1_SD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_1_SD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Sports18_1_SD_BTS/output/index.mpd",
+    "keyId": "a3ed8dc0e0cb5d238da80ee0a85bd2e1",
+    "key": "67a96992e6406606f3480ab58d7f540c",
+    "logo": "https://img.media.jio.com/tvpimages/57/17/302124_1749130246443_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 3",
+    "id": "147",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_3_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_3_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_3_BTS/output/index.mpd",
+    "keyId": "e4e8647eaf0659ac85f61765a5abcdc1",
+    "key": "d749c9b27505beb0e1a8b6c30ca65de6",
+    "logo": "https://img.media.jio.com/tvpimages/78/2/302117_1749666092192_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Tamil HD",
+    "id": "4468",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_HD_BTS/output/index.mpd",
+    "keyId": "2272c0bc6b2e5cb090b1f55996e0026c",
+    "key": "943923934de1d5536ab01c67fca8b337",
+    "logo": "https://img.media.jio.com/tvpimages/19/19/302122_1749662923298_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Tamil",
+    "id": "1124",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_BTS/output/index.mpd",
+    "keyId": "d0d750ebd52b5756aa7fb833f61ceece",
+    "key": "4ae62a20c030c918aad24193c1dda229",
+    "logo": "https://img.media.jio.com/tvpimages/69/73/301995_1749664384503_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Telugu HD",
+    "id": "4471",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_HD_BTS/output/index.mpd",
+    "keyId": "49e84b9edfd85379b90c81b7d2d3d2bf",
+    "key": "19c82d3ff094fa06af95820a1572ecb5",
+    "logo": "https://img.media.jio.com/tvpimages/19/57/302123_1749663029798_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Telugu",
+    "id": "1651",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Telugu_BTS/output/index.mpd",
+    "keyId": "200a6dd89c6b5a48b9991d8ab57fc7d2",
+    "key": "1f62834669a97e92ea1f3263274853fc",
+    "logo": "https://img.media.jio.com/tvpimages/26/67/302119_1749662981095_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 1 Kannada",
+    "id": "1650",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_1_Kannada_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Kannada_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_1_Kannada_BTS/output/index.mpd",
+    "keyId": "9a6d058fa40b5460a946178900eb44cb",
+    "key": "791d7444110cec32d731ca0c33ac6c15",
+    "logo": "https://img.media.jio.com/tvpimages/13/91/302118_1749663894692_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Kannada",
+    "id": "4472",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_2_Kannada_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_2_Kannada_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_2_Kannada_BTS/output/index.mpd",
+    "keyId": "7af2add2968a56309519ac2680c18f25",
+    "key": "f992a14e0def17ccdfe16f58c4ce56c5",
+    "logo": "https://img.media.jio.com/tvpimages/11/37/301993_1749664589518_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Tamil HD",
+    "id": "4473",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports2_Tamil_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports2_Tamil_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports2_Tamil_HD_BTS/output/index.mpd",
+    "keyId": "dc44fe6251825774b90d58dcfa7d94e0",
+    "key": "63e3ae853f483a86752b5b9e6d61eb20",
+    "logo": "https://img.media.jio.com/tvpimages/50/43/302120_1749664850896_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Tamil",
+    "id": "2853",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Sports18_3_MOB/WDVCatchup/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_3_MOB/WDVCatchup/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Sports18_3_MOB/WDVCatchup/index.mpd",
+    "keyId": "3979aae1ca51561c9e8074cd618b3864",
+    "key": "ae12e0e147d3e76cfa62bfb99bc07109",
+    "logo": "https://img.media.jio.com/tvpimages/74/92/301561_1749664725619_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Telugu HD",
+    "id": "4474",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports2_Telugu_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports2_Telugu_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports2_Telugu_HD_BTS/output/index.mpd",
+    "keyId": "c8a2fb190fc957c1b8333af9a7a39d31",
+    "key": "be7497b59d4ce9e33d29bfd1d38bad1d",
+    "logo": "https://img.media.jio.com/tvpimages/84/67/302121_1749664974599_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports 2 Telugu",
+    "id": "2852",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Sports18_2_MOB/WDVCatchup/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_2_MOB/WDVCatchup/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Sports18_2_MOB/WDVCatchup/index.mpd",
+    "keyId": "e38f46718d9d5c40af83095f176ba41e",
+    "key": "8836ee0f7377d71c156a139361a45be5",
+    "logo": "https://img.media.jio.com/tvpimages/41/94/301562_1749665043898_l_medium.jpg"
+  },
+  {
+    "name": "Eurosport HD",
+    "id": "875",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Dsports_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Dsports_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Dsports_HD_BTS/output/index.mpd",
+    "keyId": "14fc31f9d832509c9f7cdd77e622e30b",
+    "key": "a884515f4e1dd77f07aa100ccec13388",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Dsports_HD.png"
+  },
+  {
+    "name": "JioGames HD",
+    "id": "1163",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Jio_Esports_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Jio_Esports_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Jio_Esports_HD_BTS/output/index.mpd",
+    "keyId": "3ae597f8c16c52429d3240a91fd39935",
+    "key": "87c7615c0f83d6e1a2e2095120c55112",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Jio_Esports_HD.png"
+  },
+  {
+    "name": "Eurosport",
+    "id": "1294",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Dsports_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Dsports_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Dsports_BTS/output/index.mpd",
+    "keyId": "a17493406a15563ab13e0fbc5e559ada",
+    "key": "958b6c534825a0dd318799f843ce4f67",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Dsports.png"
+  },
+  {
+    "name": "MI TV",
+    "id": "1529",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/MI_TV_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/MI_TV_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/MI_TV_BTS/output/index.mpd",
+    "keyId": "2050077627935a8282bc631835db9db3",
+    "key": "69b16419f2b9ab53e501f0856720be0e",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/MI_TV.png"
+  },
+  {
+    "name": "BRAVE TV",
+    "id": "2766",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Brave_TV_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Brave_TV_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Brave_TV_BTS/output/index.mpd",
+    "keyId": "25cf2421cd9c57298e17d0d7b8084e8c",
+    "key": "520507b4b9f496970f88c57f5aa59778",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Brave_TV.png"
+  },
+  {
+    "name": "Red Bull TV",
+    "id": "2779",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Red_Bull_TV_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Red_Bull_TV_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Red_Bull_TV_BTS/output/index.mpd",
+    "keyId": "579df4be39cf5bffacebb5b95d2f648b",
+    "key": "009ccb96848687b80ec97b3f2a0a2fac",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Red_Bull_TV.png"
+  },
+  {
+    "name": "Lancs TV HD",
+    "id": "3011",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Lancs_TV_HD_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Lancs_TV_HD_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Lancs_TV_HD_BTS/output/index.mpd",
+    "keyId": "f4272d0d9bb85100bc7f2d985349064e",
+    "key": "68196dad6d7d3b2989a473ba9a50b1e0",
+    "logo": "https://jiotv.catchup.cdn.jio.com/dare_images/images/Lancs_TV_HD.png"
+  },
+  {
+    "name": "Star Sports Khel",
+    "id": "1998",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Sports18_Khel_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_Khel_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Sports18_Khel_BTS/output/index.mpd",
+    "keyId": "ab947ddbb9795d38bff35597b4f73108",
+    "key": "2671e22eb7dc174c35b6aad4b113f7b0",
+    "logo": "https://jiotvimages.cdn.jio.com/dare_images/images/Sports18_Khel.png"
+  },
+  {
+    "name": "Star Sports Select 1 HD",
+    "id": "300",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_1_BTS/output/index.mpd",
+    "keyId": "c2c048e439d65316beeda6ef64d5d0f8",
+    "key": "e2fdc132cbdee65501b845ce414fce39",
+    "logo": "https://img.media.jio.com/tvpimages/96/65/302113_1749664252703_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports Select 1",
+    "id": "1123",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_1_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_Select_1_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_Select_1_BTS/output/index.mpd",
+    "keyId": "ea7985dacbb95f1c9d62e5a1675142e5",
+    "key": "39d5910ca04841b5f32bf24623cdae58",
+    "logo": "https://img.media.jio.com/tvpimages/13/82/301994_1749664069587_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports Select 2 HD",
+    "id": "301",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_Select_HD_2_BTS/output/index.mpd",
+    "keyId": "6017d0514d425fa38f6e80ba6dcc852f",
+    "key": "0018944b00adf2078f62386f30c68b74",
+    "logo": "https://img.media.jio.com/tvpimages/98/79/302114_1749665414817_l_medium.jpg"
+  },
+  {
+    "name": "Star Sports Select 2",
+    "id": "1114",
+    "url1": "https://jiotvpllive.cdn.jio.com/bpk-tv/Star_Sports_Select_2_BTS/output/index.mpd",
+    "url2": "https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_Select_2_BTS/output/index.mpd",
+    "url3": "https://jiotvbpkmob.cdn.jio.com/bpk-tv/Star_Sports_Select_2_BTS/output/index.mpd",
+    "keyId": "ec7d009d07aa5cbc81a441880530dfa5",
+    "key": "8147983ad7402ebfc222d28b667a196f",
+    "logo": "https://img.media.jio.com/tvpimages/98/48/301989_1749664475828_l_medium.jpg"
+  },
+  {
+    "id": "FUBO-1",
+    "name": "Fubo Sports 1",
+    "url1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/3b7qwiqzk3/out/v1/9f14895badca43e6a716db021dcd0c31/cenc.mpd",
+    "keyId": "dc69b6159a0f9f0a4e03b3ff91cbacd5",
+    "key": "d0dcbcd7723bc40df0bf34c9c092d51f",
+    "logo": "https://i.imgur.com/7BwABte.png"
+  },
+  {
+    "id": "FUBO-2",
+    "name": "Fubo Sports 2",
+    "url1": "https://otte.live.fly.ww.aiv-cdn.net/pdx-nitro/live/clients/dash/enc/uiffe4jhf0/out/v1/3534efafca8c4815adbb4d2e9a1fe003/cenc.mpd",
+    "keyId": "3dcfbec0e7146928baa55210bf2cb62f",
+    "key": "bc85f74f815d9be5ae1dd6defaa05135",
+    "logo": "https://i.imgur.com/7BwABte.png"
+  },
+  {
+    "id": "UFC-PLUS",
+    "name": "UFC +",
+    "url1": "https://ottb.live.cf.ww.aiv-cdn.net/lhr-nitro/live/clients/dash/enc/8mxwjnh2te/out/v1/356704796c0c4bed81f67cd3518d0c8a/cenc.mpd",
+    "keyId": "a49085f8da5e65af1efff0edac830b1f",
+    "key": "4659bc58a85c062e3fe0c039a446fe47",
+    "logo": "https://iili.io/KWCPXBS.png"
+  },
+  {
+    "id": "PREMIER-TV",
+    "name": "Premier League TV",
+    "url1": "https://cors-everywhere-wc8b4.ondigitalocean.app/https://fsly.stream.peacocktv.com/Content/CMAF_CTR-4s/Live/channel(vc1021n07j)/master.mpd",
+    "keyId": "002046c9a49b9ab1cdb6616bec5d26c3",
+    "key": "d2f92f6b7edc9a1a05d393ba0c20ef9e",
+    "logo": "https://iili.io/KWCtSja.png"
+  },
+  {
+    "name": "Prime TV",
+    "id": "14A",
+    "url1": "https://cors-proxy.rdpsell01.workers.dev/https://ottb.live.cf.ww.aivcdn.net/lhr-nitro/live/dash/enc/lqj6tdomna/out/v1/817aa485206f4456ad594bbf61c1016c/cenc.mpd",
+    "keyId": "680a24e3d3785ea8b3a33a56928ea128",
+    "key": "3f07a7f94f0ac7ee96057224b6a4163d",
+    "logo": "https://iili.io/FfrCHqN.png"
+  },
+  {
+    "id": "BEIN-1",
+    "name": "BeIN Sports 1 HD",
+    "url1": "https://aba5sdmaaaaaaaamooyrewxky2c4j.otte.live.cf.ww.aiv-cdn.net/syd-nitro/live/dash/enc/ghwcl6hv68/out/v1/83536910d8034e9b9895a20fbe1c1687/cenc.mpd",
+    "keyId": "335dad778109954503dcbb21dc92015f",
+    "key": "24bfd75d436cbf73168a2a2dccd40281",
+    "logo": "http://linear-poster.astro.com.my/prod/logo/beINSPORT1.png"
+  },
+  {
+    "id": "BEIN-2",
+    "name": "BeIN Sports 2 HD",
+    "url1": "https://aba5sdmaaaaaaaamdwujas5g6mg4r.otte.live.cf.ww.aiv-cdn.net/syd-nitro/live/clients/dash/enc/8m8cd46i1t/out/v1/83985c68e4174e90a58a1f2c024be4c9/cenc.mpd",
+    "keyId": "0b42be2664d7e811d04f3e504e0924c5",
+    "key": "ae24090123b8c72ac5404dc152847cb8",
+    "logo": "http://linear-poster.astro.com.my/prod/logo/beINSPORTS2.png"
+  },
+  {
+    "id": "BEIN-3",
+    "name": "BeIN Sports 3 HD",
+    "url1": "https://aba5sdmaaaaaaaamhq2w5oosrf5ae.otte.live.cf.ww.aiv-cdn.net/syd-nitro/live/clients/dash/enc/q4u5nwaogz/out/v1/18de6d3e65934f3a8de4358e69eab86c/cenc.mpd",
+    "keyId": "7995c724a13748ed970840a8ab5bb9b3",
+    "key": "67bdaf1e2175b9ff682fcdf0e2354b1e",
+    "logo": "http://linear-poster.astro.com.my/prod/logo/beIN_SPORTS3_V2.png"
+  },
+  {
+    "id": "FAST-SPORTS",
+    "name": "Fast Sports HD",
+    "url1": "https://cors-everywhere-wc8b4.ondigitalocean.app/https://live2.shoq.com.pk/live/eds/Fast_Sports_HD/DASH/Fast_Sports_HD.mpd",
+    "keyId": "ba9b637b639af897f228114363e882fa",
+    "key": "27508374902bd52361f08a2ad4dba3a3",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkjmoUatVnbQsL-NNHSj2L9zjbbMg92x5pNA&s"
+  }
+]
+
+
+
+
+
+
+
+
+
