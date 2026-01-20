@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CricTV</title>
+
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #00013a 0%, #071b4f 50%, #00013a 100%);
+  overflow-y: auto;
+}
+
+/* HEADER */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #0b2f7c 0%, #0b2a6f 35%, #071b4f 65%, #00013a 100%);
+}
+
+.app-header img {
+  height: 30px;
+}
+
+/* PARTICLES */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* CONTENT */
+.main {
+  position: relative;
+  z-index: 2;
+  padding: 14px;
+}
+
+/* GRID */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* PREMIUM BLACK CARD */
+.channel-card {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.channel-card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 16px 30px rgba(0,0,0,0.8),
+    0 0 20px rgba(0,150,255,0.25);
+}
+
+/* LOGO CENTER */
+.channel-card img {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  max-width: 65%;
+  max-height: 65%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.8));
+}
+
+/* VIGNETTE */
+.channel-vignette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.95),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0)
+  );
+}
+
+/* NAME */
+.channel-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0,0,0,1);
+  letter-spacing: 0.3px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="app-header">
+  <img src="https://crickettv.site/image/api/crickettv.png">
+</header>
+
+<div class="main">
+  <div class="channel-grid" id="channelGrid"></div>
+</div>
+
+<script>
+/* PARTICLE BG */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+
+let w, h;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+const particles = [];
+const COUNT = 45;
+
+for (let i = 0; i < COUNT; i++) {
+  particles.push({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    r: Math.random() * 1.4 + 0.4,
+    vx: Math.random() * 0.15 + 0.05,
+    vy: Math.random() * 0.1 + 0.03,
+    a: Math.random() * 0.35 + 0.15
+  });
+}
+
+function animate() {
+  ctx.clearRect(0, 0, w, h);
+  for (const p of particles) {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x > w) p.x = 0;
+    if (p.y > h) p.y = 0;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${p.a})`;
+    ctx.fill();
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* FETCH CHANNELS */
+const jsonURL = "https://raw.githubusercontent.com/Cricketstan/Allrounder-/main/api/world-sports.json";
+
+fetch(jsonURL)
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById("channelGrid");
+
+    data.forEach(ch => {
+      const card = document.createElement("div");
+      card.className = "channel-card";
+
+      const slug = ch.name.toLowerCase().replace(/\s+/g, "-");
+
+      card.innerHTML = `
+        <img src="${ch.logo}">
+        <div class="channel-vignette"></div>
+        <div class="channel-name">${ch.name}</div>
+      `;
+
+      card.onclick = () => {
+        window.location.href = `player.html/${slug}`;
+      };
+
+      grid.appendChild(card);
+    });
+  })
+  .catch(err => console.error(err));
+</script>
+
+</body>
+</html>
