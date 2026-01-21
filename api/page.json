@@ -48,72 +48,6 @@
       }
     },
     {
-      "id": "ind-vs-nz",
-      "slug": "wpl",
-      "seo": {
-        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/wpl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-14T12:45:30.477+05:30",
-        "last_modified": "2026-01-18T18:04:41.719+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Benglore Vs Gujarat Live Streaming ",
-        "team1": "",
-        "team2": "",
-        "venue": "",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hindi",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Willow Sports ",
-          "src": "https://cricketstan.github.io/Willow-Sports/",
-          "default": true
-        },
-        {
-          "name": "Tnt",
-          "src": "https://cricketstan.github.io/TNT-1/",
-          "default": false
-        },
-        {
-          "name": "Permanent Hindi",
-          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Willow ",
-          "src": "https://crickettv.site/willow",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "K",
-        "players_to_watch": {
-          "": []
-        },
-        "squads": {
-          "": ""
-        }
-      }
-    },
-    {
       "id": "wpl",
       "slug": "wpl",
       "seo": {
@@ -224,6 +158,72 @@
         "squads": {
           "Thunder": "",
           "Renegade ": ""
+        }
+      }
+    },
+    {
+      "id": "ind-vs-nz",
+      "slug": "wpl",
+      "seo": {
+        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/wpl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-14T12:45:30.477+05:30",
+        "last_modified": "2026-01-21T17:42:44.857+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Benglore Vs Gujarat Live Streaming ",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hindi",
+          "src": "allrounderlive.pages.dev/dilz?id=dillzy645",
+          "default": false
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "allrounderlive.pages.dev/dilz?id=dillzy645",
+          "default": false
+        },
+        {
+          "name": "Willow Sports ",
+          "src": "https://crickettv.site/willow",
+          "default": true
+        },
+        {
+          "name": "Tnt",
+          "src": "https://cricketstan.github.io/TNT-1/",
+          "default": false
+        },
+        {
+          "name": "Permanent Hindi",
+          "src": "allrounderlive.pages.dev/dilz?id=dillzy645",
+          "default": false
+        },
+        {
+          "name": "Fox 501",
+          "src": "allrounderlive.pages.dev/dilz?id=65656576",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "K",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
         }
       }
     }
