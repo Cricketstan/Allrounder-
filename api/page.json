@@ -170,7 +170,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-14T12:45:30.477+05:30",
-        "last_modified": "2026-01-21T17:43:16.008+05:30",
+        "last_modified": "2026-01-21T17:51:39.581+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -184,12 +184,12 @@
       "streams": [
         {
           "name": "Hindi",
-          "src": "allrounderlive.pages.dev/dilz?id=dillzy645",
+          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy645",
           "default": false
         },
         {
           "name": "Jio Hotstar ",
-          "src": "allrounderlive.pages.dev/dilz?id=dillzy645",
+          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy645",
           "default": false
         },
         {
@@ -204,12 +204,12 @@
         },
         {
           "name": "Permanent Hindi",
-          "src": "allrounderlive.pages.dev/dilz?id=dillzy645",
+          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy645",
           "default": false
         },
         {
           "name": "Fox 501",
-          "src": "allrounderlive.pages.dev/dilz?id=65656576",
+          "src": "https://allrounderlive.pages.dev/dilz?id=65656576",
           "default": false
         }
       ],
