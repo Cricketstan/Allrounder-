@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-01-20T23:55:24.836Z",
+  "updated_at": "2026-01-21T02:27:20.334Z",
   "count": 100,
   "items": [
-    {
-      "title": "Our Powerplay with the bat hasn't clicked: Lisa Keightley",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/ef/cf/0/image-a03d58b9-3148-49ed-b613-54bef39f12ec.jpg",
-      "video_id": "6387996785112",
-      "duration": 316,
-      "published_iso": "2026-01-20T18:38:34",
-      "url": "https://crickettv.site/wpl/6387996785112.html"
-    },
     {
       "title": "The more I lead, the more I'll get better: Jemimah Rodrigues",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f5/4a/54/0/image-22431c65-195a-4088-b996-57705adb8ec4.jpg",
@@ -17,6 +9,14 @@
       "duration": 302,
       "published_iso": "2026-01-20T18:38:34",
       "url": "https://crickettv.site/wpl/6387997160112.html"
+    },
+    {
+      "title": "Our Powerplay with the bat hasn't clicked: Lisa Keightley",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/ef/cf/0/image-a03d58b9-3148-49ed-b613-54bef39f12ec.jpg",
+      "video_id": "6387996785112",
+      "duration": 316,
+      "published_iso": "2026-01-20T18:38:34",
+      "url": "https://crickettv.site/wpl/6387996785112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Marizanne Kapp",
@@ -27,14 +27,6 @@
       "url": "https://crickettv.site/wpl/6387996243112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Nat Sciver-Brunt",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b7/a7/f0/0/image-844c6727-6dea-4fe9-a166-36ed8e8a3f21.jpg",
-      "video_id": "6387996244112",
-      "duration": 17,
-      "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387996244112.html"
-    },
-    {
       "title": "Presentation: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7d/b1/b8/0/image-a327cb4f-b3ff-492f-a07b-790ea395fd03.jpg",
       "video_id": "6387997721112",
@@ -43,20 +35,12 @@
       "url": "https://crickettv.site/wpl/6387997721112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Shafali Verma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/62/1b/99/0/image-21190c74-d7b2-42aa-8106-20a29329815b.jpg",
-      "video_id": "6387996245112",
-      "duration": 23,
+      "title": "Sierra Super Striker of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Lizelle Lee",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/12/d3/03/0/image-c26ccf75-a843-4bf6-9441-c57fc2b9e924.jpg",
+      "video_id": "6387995552112",
+      "duration": 27,
       "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387996245112.html"
-    },
-    {
-      "title": "Amazing Moments: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/20/5d/f0/0/image-1c871172-0c09-426a-a2d6-86c2f24b48e0.jpg",
-      "video_id": "6387998012112",
-      "duration": 61,
-      "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387998012112.html"
+      "url": "https://crickettv.site/wpl/6387995552112.html"
     },
     {
       "title": "Player of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Jemimah Rodrigues",
@@ -75,12 +59,28 @@
       "url": "https://crickettv.site/wpl/6387996931112.html"
     },
     {
-      "title": "Sierra Super Striker of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Lizelle Lee",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/12/d3/03/0/image-c26ccf75-a843-4bf6-9441-c57fc2b9e924.jpg",
-      "video_id": "6387995552112",
-      "duration": 27,
+      "title": "Kingfisher Good Times Sixes of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Nat Sciver-Brunt",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b7/a7/f0/0/image-844c6727-6dea-4fe9-a166-36ed8e8a3f21.jpg",
+      "video_id": "6387996244112",
+      "duration": 17,
       "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387995552112.html"
+      "url": "https://crickettv.site/wpl/6387996244112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Shafali Verma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/62/1b/99/0/image-21190c74-d7b2-42aa-8106-20a29329815b.jpg",
+      "video_id": "6387996245112",
+      "duration": 23,
+      "published_iso": "2026-01-20T17:57:00",
+      "url": "https://crickettv.site/wpl/6387996245112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/20/5d/f0/0/image-1c871172-0c09-426a-a2d6-86c2f24b48e0.jpg",
+      "video_id": "6387998012112",
+      "duration": 61,
+      "published_iso": "2026-01-20T17:57:00",
+      "url": "https://crickettv.site/wpl/6387998012112.html"
     },
     {
       "title": "Captain Jemimah Rodrigues' crucial finishing act of 51*(37)",
@@ -411,14 +411,6 @@
       "url": "https://crickettv.site/wpl/6387949200112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/27/e3/58/0/image-147660e4-6be1-4fb6-9a74-a650789a98f6.jpg",
-      "video_id": "6387949159112",
-      "duration": 29,
-      "published_iso": "2026-01-19T18:01:03",
-      "url": "https://crickettv.site/wpl/6387949159112.html"
-    },
-    {
       "title": "Player of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Gautami Naik",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/45/7f/b5/0/image-64284914-db82-46a9-a31b-67dfcc31534b.jpg",
       "video_id": "6387950651112",
@@ -427,12 +419,12 @@
       "url": "https://crickettv.site/wpl/6387950651112.html"
     },
     {
-      "title": "Sierra Super Striker of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ad/17/f3/0/image-81fc044e-abe1-4fb3-8006-0f78aa8d10c3.jpg",
-      "video_id": "6387948411112",
-      "duration": 30,
-      "published_iso": "2026-01-19T18:01:02",
-      "url": "https://crickettv.site/wpl/6387948411112.html"
+      "title": "TATA WPL Green Dot Balls of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/27/e3/58/0/image-147660e4-6be1-4fb6-9a74-a650789a98f6.jpg",
+      "video_id": "6387949159112",
+      "duration": 29,
+      "published_iso": "2026-01-19T18:01:03",
+      "url": "https://crickettv.site/wpl/6387949159112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Sayali Satghare",
@@ -451,6 +443,14 @@
       "url": "https://crickettv.site/wpl/6387950342112.html"
     },
     {
+      "title": "Sierra Super Striker of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ad/17/f3/0/image-81fc044e-abe1-4fb3-8006-0f78aa8d10c3.jpg",
+      "video_id": "6387948411112",
+      "duration": 30,
+      "published_iso": "2026-01-19T18:01:02",
+      "url": "https://crickettv.site/wpl/6387948411112.html"
+    },
+    {
       "title": "Kingfisher Good Times Sixes of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/09/ef/16/0/image-115809e2-eaf3-4fa8-a3d0-5427c917ad62.jpg",
       "video_id": "6387950649112",
@@ -459,20 +459,20 @@
       "url": "https://crickettv.site/wpl/6387950649112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Radha Yadav",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/8e/ae/0/t703AU298y.jpg",
-      "video_id": "6387950650112",
-      "duration": 26,
-      "published_iso": "2026-01-19T18:01:00",
-      "url": "https://crickettv.site/wpl/6387950650112.html"
-    },
-    {
       "title": "Amazing Moments: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/43/78/f2/0/GsEhxsFGH2.jpg",
       "video_id": "6387948975112",
       "duration": 62,
       "published_iso": "2026-01-19T18:01:00",
       "url": "https://crickettv.site/wpl/6387948975112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Radha Yadav",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/8e/ae/0/t703AU298y.jpg",
+      "video_id": "6387950650112",
+      "duration": 26,
+      "published_iso": "2026-01-19T18:01:00",
+      "url": "https://crickettv.site/wpl/6387950650112.html"
     },
     {
       "title": "Post Match Interviews: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Ashleigh Gardner Interview",
@@ -507,20 +507,20 @@
       "url": "https://crickettv.site/wpl/6387947793112.html"
     },
     {
-      "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Bharti Fulmali Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/e4/0f/0/ZPzjBqPLAj.jpg",
-      "video_id": "6387948372112",
-      "duration": 29,
-      "published_iso": "2026-01-19T17:25:00",
-      "url": "https://crickettv.site/wpl/6387948372112.html"
-    },
-    {
       "title": "Ashleigh Gardner stands tall with 54(43)",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/2f/6e/0/ADmwBvWaie.jpg",
       "video_id": "6387947269112",
       "duration": 123,
       "published_iso": "2026-01-19T17:25:00",
       "url": "https://crickettv.site/wpl/6387947269112.html"
+    },
+    {
+      "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Bharti Fulmali Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/e4/0f/0/ZPzjBqPLAj.jpg",
+      "video_id": "6387948372112",
+      "duration": 29,
+      "published_iso": "2026-01-19T17:25:00",
+      "url": "https://crickettv.site/wpl/6387948372112.html"
     },
     {
       "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Ashleigh Gardner Wicket",
