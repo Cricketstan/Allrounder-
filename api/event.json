@@ -2,17 +2,17 @@
   "event": [
 
 {
-      "title": "Mumbai Vs Delhi",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/1318/1768821911318-i",
+      "title": "Hobart Vs Star",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/695dda0ee4b011f887d6877e-1768885145273?location=hero-default&imwidth=2560",
       "watch_now": [
-        { "id": "home/wpl", "name": "Play Highlights" }
+        { "id": "home/bbl", "name": "Play Highlights" }
       ],
-      "date": "20 Jan 2026",
-      "start_time": "07:00 PM",
+      "date": "21 Jan 2026",
+      "start_time": "01:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "WPL"
+      "league": "BBL"
     },
 
 {
