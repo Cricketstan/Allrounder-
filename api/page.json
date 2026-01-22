@@ -223,7 +223,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-01-22T18:27:29.606+05:30",
+        "last_modified": "2026-01-22T19:02:38.787+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -253,11 +253,6 @@
         {
           "name": "Hindi Permanent ",
           "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Fox Cricket ",
-          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
           "default": false
         },
         {
