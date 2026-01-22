@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-22T11:29:46.152Z",
+  "updated_at": "2026-01-22T11:50:04.330Z",
   "count": 100,
   "items": [
     {
@@ -27,30 +27,6 @@
       "url": "https://crickettv.site/wpl/6387997160112.html"
     },
     {
-      "title": "Player of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Jemimah Rodrigues",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3f/30/eb/0/image-62326f9a-39b0-4639-aee4-93797e128a4d.jpg",
-      "video_id": "6387996525112",
-      "duration": 183,
-      "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387996525112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Marizanne Kapp",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/ff/12/0/image-b5262fdd-64c2-4a68-8d2d-eb14fc0fb417.jpg",
-      "video_id": "6387996243112",
-      "duration": 27,
-      "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387996243112.html"
-    },
-    {
-      "title": "Amazing Moments: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/64/c1/81/0/image-b8a3d26c-59aa-40d2-a591-f7e253a88e1e.jpg",
-      "video_id": "6387998012112",
-      "duration": 61,
-      "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387998012112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Lizelle Lee",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/12/d3/03/0/image-c26ccf75-a843-4bf6-9441-c57fc2b9e924.jpg",
       "video_id": "6387995552112",
@@ -65,6 +41,30 @@
       "duration": 27,
       "published_iso": "2026-01-20T17:57:00",
       "url": "https://crickettv.site/wpl/6387996931112.html"
+    },
+    {
+      "title": "Presentation: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7d/b1/b8/0/image-a327cb4f-b3ff-492f-a07b-790ea395fd03.jpg",
+      "video_id": "6387997721112",
+      "duration": 338,
+      "published_iso": "2026-01-20T17:57:00",
+      "url": "https://crickettv.site/wpl/6387997721112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/64/c1/81/0/image-b8a3d26c-59aa-40d2-a591-f7e253a88e1e.jpg",
+      "video_id": "6387998012112",
+      "duration": 61,
+      "published_iso": "2026-01-20T17:57:00",
+      "url": "https://crickettv.site/wpl/6387998012112.html"
+    },
+    {
+      "title": "Player of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Jemimah Rodrigues",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3f/30/eb/0/image-62326f9a-39b0-4639-aee4-93797e128a4d.jpg",
+      "video_id": "6387996525112",
+      "duration": 183,
+      "published_iso": "2026-01-20T17:57:00",
+      "url": "https://crickettv.site/wpl/6387996525112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Shafali Verma",
@@ -83,12 +83,12 @@
       "url": "https://crickettv.site/wpl/6387996244112.html"
     },
     {
-      "title": "Presentation: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7d/b1/b8/0/image-a327cb4f-b3ff-492f-a07b-790ea395fd03.jpg",
-      "video_id": "6387997721112",
-      "duration": 338,
+      "title": "TATA WPL Green Dot Balls of the Match: Match 13, Delhi Capitals vs Mumbai Indians, WPL 2026: Marizanne Kapp",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/ff/12/0/image-b5262fdd-64c2-4a68-8d2d-eb14fc0fb417.jpg",
+      "video_id": "6387996243112",
+      "duration": 27,
       "published_iso": "2026-01-20T17:57:00",
-      "url": "https://crickettv.site/wpl/6387997721112.html"
+      "url": "https://crickettv.site/wpl/6387996243112.html"
     },
     {
       "title": "Captain Jemimah Rodrigues' crucial finishing act of 51*(37)",
@@ -443,22 +443,6 @@
       "url": "https://crickettv.site/wpl/6387948975112.html"
     },
     {
-      "title": "Presentation: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b3/27/9b/0/image-2e800919-e50a-4c86-86b8-a56e6070ea00.jpg",
-      "video_id": "6387950342112",
-      "duration": 611,
-      "published_iso": "2026-01-19T18:01:02",
-      "url": "https://crickettv.site/wpl/6387950342112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ad/17/f3/0/image-81fc044e-abe1-4fb3-8006-0f78aa8d10c3.jpg",
-      "video_id": "6387948411112",
-      "duration": 30,
-      "published_iso": "2026-01-19T18:01:02",
-      "url": "https://crickettv.site/wpl/6387948411112.html"
-    },
-    {
       "title": "ChatGPT Match IQ Award: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Sayali Satghare",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ab/4a/b6/0/image-26f33705-7f96-4635-9d8b-a1b098e98cbe.jpg",
       "video_id": "6387949158112",
@@ -473,6 +457,22 @@
       "duration": 18,
       "published_iso": "2026-01-19T18:01:02",
       "url": "https://crickettv.site/wpl/6387950649112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Richa Ghosh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ad/17/f3/0/image-81fc044e-abe1-4fb3-8006-0f78aa8d10c3.jpg",
+      "video_id": "6387948411112",
+      "duration": 30,
+      "published_iso": "2026-01-19T18:01:02",
+      "url": "https://crickettv.site/wpl/6387948411112.html"
+    },
+    {
+      "title": "Presentation: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b3/27/9b/0/image-2e800919-e50a-4c86-86b8-a56e6070ea00.jpg",
+      "video_id": "6387950342112",
+      "duration": 611,
+      "published_iso": "2026-01-19T18:01:02",
+      "url": "https://crickettv.site/wpl/6387950342112.html"
     },
     {
       "title": "Herbalife Active Catch of the Match: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Radha Yadav",
@@ -515,20 +515,20 @@
       "url": "https://crickettv.site/wpl/6387947191112.html"
     },
     {
-      "title": "Ashleigh Gardner stands tall with 54(43)",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/2f/6e/0/ADmwBvWaie.jpg",
-      "video_id": "6387947269112",
-      "duration": 123,
-      "published_iso": "2026-01-19T17:25:00",
-      "url": "https://crickettv.site/wpl/6387947269112.html"
-    },
-    {
       "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Bharti Fulmali Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/39/e4/0f/0/ZPzjBqPLAj.jpg",
       "video_id": "6387948372112",
       "duration": 29,
       "published_iso": "2026-01-19T17:25:00",
       "url": "https://crickettv.site/wpl/6387948372112.html"
+    },
+    {
+      "title": "Ashleigh Gardner stands tall with 54(43)",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/2f/6e/0/ADmwBvWaie.jpg",
+      "video_id": "6387947269112",
+      "duration": 123,
+      "published_iso": "2026-01-19T17:25:00",
+      "url": "https://crickettv.site/wpl/6387947269112.html"
     },
     {
       "title": "Wicket: Match 12, Gujarat Giants vs Royal Challengers Bengaluru, WPL 2026: Ashleigh Gardner Wicket",
