@@ -4,16 +4,16 @@
 
 {
       "title": "India Vs Newzealand",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69658b88e4b046f839d7b12e-1768276340566?location=hero-default&imwidth=2560",
+      "poster_link": "https://www.fancode.com/skillup-uploads/cms-media/Mini-Match-Card-(1080x810)-(3).png",
       "watch_now": [
-        { "id": "home/ind-vs-nz", "name": "Play Highlights" }
+        { "id": "home/england-vs-srilanka", "name": "Play Highlights" }
       ],
-      "date": "21 Jan 2026",
-      "start_time": "06:27 PM",
+      "date": "22 Jan 2026",
+      "start_time": "02:00 PM",
       "category": "Cricket",
       "year": "2025",
-      "language": "Multi",
-      "league": "T20"
+      "language": "English",
+      "league": "ODI"
     }
 
 
