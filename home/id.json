@@ -1,17 +1,11 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-22T08:59:49.683709Z",
+  "updated_at": "2026-01-22T12:57:39.592038Z",
   "count": 5,
   "pages": [
     {
       "id": "usa-vs-ind",
       "title": "Indian Vs United States Of America ",
-      "url": "https://crickettv.site/home/wpl/",
-      "description": ""
-    },
-    {
-      "id": "wpl",
-      "title": "Benglore Vs Gujarat Live Streaming ",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
     },
@@ -32,6 +26,12 @@
       "title": "England Vs Srilanka Live",
       "url": "https://crickettv.site/home/england-vs-srilanka/",
       "description": "The Sri Lankan mens cricket team is set to take on England in a three-match ODI series, starting January 22. Notably, the 2nd and third ODI will be played on January 24 and 27 respectively. All the three matches of this ODI series will be played at the R Premadasa Stadium in Colombo."
+    },
+    {
+      "id": "wpl",
+      "title": "Benglore Vs Gujarat Live Streaming ",
+      "url": "https://crickettv.site/home/wpl/",
+      "description": ""
     }
   ]
 }
