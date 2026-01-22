@@ -2,6 +2,19 @@
   "event": [
 
 {
+      "title": "Gujarat Vs Up",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/4094/1769057054094-i",
+      "watch_now": [
+        { "id": "home/wpl", "name": "Play Highlights" }
+      ],
+      "date": "22 Jan 2026",
+      "start_time": "07:00 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "WPL"
+    },
+{
       "title": "England Vs Srilanka",
       "poster_link": "https://images.slivcdn.com/videoasset_images/manage_file/1000013858/176898736563443_SLvsENG26_1odi_21jan_landscape_thumb.jpg",
       "watch_now": [
