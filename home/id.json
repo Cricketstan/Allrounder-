@@ -1,7 +1,7 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-21T12:21:47.920044Z",
-  "count": 4,
+  "updated_at": "2026-01-22T05:27:23.025234Z",
+  "count": 5,
   "pages": [
     {
       "id": "usa-vs-ind",
@@ -25,6 +25,12 @@
       "id": "ind-vs-nz",
       "title": "India Vs Newzealand Live",
       "url": "https://crickettv.site/home/wpl/",
+      "description": ""
+    },
+    {
+      "id": "england-vs-srilanka",
+      "title": "England Vs Srilanka Live",
+      "url": "https://crickettv.site/home/england-vs-srilanka/",
       "description": ""
     }
   ]
