@@ -48,67 +48,6 @@
       }
     },
     {
-      "id": "wpl",
-      "slug": "wpl",
-      "seo": {
-        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/wpl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-01-20T19:32:34.271+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Benglore Vs Gujarat Live Streaming ",
-        "team1": "",
-        "team2": "",
-        "venue": "",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hindi",
-          "src": "https://allrounderlive.pages.dev/p6?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": true
-        },
-        {
-          "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Criclife",
-          "src": "https://crickettv.site/willow",
-          "default": false
-        },
-        {
-          "name": "Hindi Permanent ",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Sky Sports Cricket ",
-          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "K",
-        "players_to_watch": {
-          "": []
-        },
-        "squads": {
-          "": ""
-        }
-      }
-    },
-    {
       "id": "bbl",
       "slug": "bbl",
       "seo": {
@@ -272,6 +211,72 @@
         "squads": {
           "Srilanka ": "Pathum Nissanka, Kamil Mishara, Kusal Mendis(w), Dhananjaya de Silva, Charith Asalanka(c), Kamindu Mendis, Janith Liyanage, Wanindu Hasaranga, Maheesh Theekshana, Eshan Malinga, Asitha Fernando, Jeffrey Vandersay, Pramod Madushan, Dunith Wellalage, Pavan Rathnayake, Milan Priyanath Rathnayake, Sadeera Samarawickrama",
           "England ": "Zak Crawley, Ben Duckett, Joe Root, Jacob Bethell, Harry Brook(c), Jos Buttler(w), Will Jacks, Sam Curran, Jamie Overton, Liam Dawson, Adil Rashid, Luke Wood, Brydon Carse, Tom Banton, Rehan Ahmed"
+        }
+      }
+    },
+    {
+      "id": "wpl",
+      "slug": "wpl",
+      "seo": {
+        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/wpl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T17:50:15.995+05:30",
+        "last_modified": "2026-01-22T18:27:29.606+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Benglore Vs Gujarat Live Streaming ",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hindi",
+          "src": "https://allrounderlive.pages.dev/p6?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "default": true
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "default": false
+        },
+        {
+          "name": "Criclife",
+          "src": "https://crickettv.site/willow",
+          "default": true
+        },
+        {
+          "name": "Hindi Permanent ",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "default": false
+        },
+        {
+          "name": "Fox Cricket ",
+          "src": "https://allrounderlive.pages.dev/player4?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": false
+        },
+        {
+          "name": "Cric Life",
+          "src": "https://crickettv.site/cric-life",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "K",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
         }
       }
     }
