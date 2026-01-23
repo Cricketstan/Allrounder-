@@ -1,17 +1,11 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-23T08:43:57.282851Z",
+  "updated_at": "2026-01-23T12:48:44.920864Z",
   "count": 5,
   "pages": [
     {
       "id": "usa-vs-ind",
       "title": "Indian Vs United States Of America ",
-      "url": "https://crickettv.site/home/wpl/",
-      "description": ""
-    },
-    {
-      "id": "ind-vs-nz",
-      "title": "India Vs Newzealand Live",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
     },
@@ -31,6 +25,12 @@
       "id": "bbl",
       "title": "Melbourne Star Vs Adelaide Strikers ",
       "url": "https://crickettv.site/home/bbl/",
+      "description": ""
+    },
+    {
+      "id": "ind-vs-nz",
+      "title": "India Vs Newzealand Live",
+      "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
   ]
