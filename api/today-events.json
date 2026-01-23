@@ -2,17 +2,17 @@
 {
   "event": [
 {
-      "title": "Sydney Vs Hobart",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/695dda10e4b011f887d6877f-1768996888575?location=hero-default&imwidth=1920",
+      "title": "India Vs Newzealand",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6965bc7be4b08f97e7b4bd46-1768519282532?location=hero-default&imwidth=2560",
       "watch_now": [
-        { "id": "home/bbl", "name": "Play Highlights" }
+        { "id": "home/ind-vs-nz", "name": "Play Highlights" }
       ],
       "date": "23 Jan 2026",
-      "start_time": "01:40 PM",
+      "start_time": "06:15 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "BBL"
+      "league": "T20"
     }
 
 
