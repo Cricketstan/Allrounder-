@@ -1,18 +1,12 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-22T13:32:47.688027Z",
+  "updated_at": "2026-01-23T08:43:57.282851Z",
   "count": 5,
   "pages": [
     {
       "id": "usa-vs-ind",
       "title": "Indian Vs United States Of America ",
       "url": "https://crickettv.site/home/wpl/",
-      "description": ""
-    },
-    {
-      "id": "bbl",
-      "title": "Melbourne Star Vs Adelaide Strikers ",
-      "url": "https://crickettv.site/home/bbl/",
       "description": ""
     },
     {
@@ -31,6 +25,12 @@
       "id": "wpl",
       "title": "Benglore Vs Gujarat Live Streaming ",
       "url": "https://crickettv.site/home/wpl/",
+      "description": ""
+    },
+    {
+      "id": "bbl",
+      "title": "Melbourne Star Vs Adelaide Strikers ",
+      "url": "https://crickettv.site/home/bbl/",
       "description": ""
     }
   ]
