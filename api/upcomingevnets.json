@@ -1,138 +1,138 @@
 {
   "upcomingMatches": [
     {
-      "title": "Paarl Royals vs Joburg Super Kings - 30th Match (SA20 2025-26)",
-      "date": "Mon, Jan 19 2026",
+      "title": "Sri Lanka vs England - 2nd ODI (England tour of Sri Lanka 2026)",
+      "date": "Sat, Jan 24 2026",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "Sri Lanka",
+      "team2": "England",
+      "time": "2:30 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Ireland vs Italy - 2nd T20I (Ireland vs Italy in UAE, 2026)",
+      "date": "Sun, Jan 25 2026",
+      "venue": "Dubai, The Sevens Stadium",
+      "team1": "Ireland",
+      "team2": "Italy",
+      "time": "11:00 AM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
+    },
+    {
+      "title": "India vs New Zealand - 3rd T20I (New Zealand tour of India, 2026)",
+      "date": "Sun, Jan 25 2026",
+      "venue": "Guwahati, Barsapara Cricket Stadium",
+      "team1": "India",
+      "team2": "New Zealand",
+      "time": "7:00 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "Ireland vs Italy - 3rd T20I (Ireland vs Italy in UAE, 2026)",
+      "date": "Mon, Jan 26 2026",
+      "venue": "Dubai, The Sevens Stadium",
+      "team1": "Ireland",
+      "team2": "Italy",
+      "time": "7:30 PM",
+      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+    },
+    {
+      "title": "Sri Lanka vs England - 3rd ODI (England tour of Sri Lanka 2026)",
+      "date": "Tue, Jan 27 2026",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "Sri Lanka",
+      "team2": "England",
+      "time": "2:30 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "South Africa vs West Indies - 1st T20I (West Indies tour of South Africa, 2026)",
+      "date": "Tue, Jan 27 2026",
       "venue": "Paarl, Boland Park",
-      "team1": "Paarl Royals",
-      "team2": "Joburg Super Kings",
-      "time": "9:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "Northern Knights vs Central Districts - 24th Match (Super Smash 2025-26)",
-      "date": "Tue, Jan 20 2026",
-      "venue": "Hamilton, Seddon Park",
-      "team1": "Northern Knights",
-      "team2": "Central Districts",
-      "time": "10:25 AM",
+      "team1": "South Africa",
+      "team2": "West Indies",
+      "time": "9:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
     },
     {
-      "title": "Rangpur Riders vs Sylhet Titans - Eliminator (3rd vs 4th) (Bangladesh Premier League 2025-26)",
-      "date": "Tue, Jan 20 2026",
-      "venue": "Dhaka, Shere Bangla National Stadium",
-      "team1": "Rangpur Riders",
-      "team2": "Sylhet Titans",
-      "time": "12:30 PM",
+      "title": "India vs New Zealand - 4th T20I (New Zealand tour of India, 2026)",
+      "date": "Wed, Jan 28 2026",
+      "venue": "Visakhapatnam, ACA-VDCA Cricket Stadium",
+      "team1": "India",
+      "team2": "New Zealand",
+      "time": "7:00 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Rajshahi Warriors vs Chattogram Royals - Qualifier 1 (1st vs 2nd) (Bangladesh Premier League 2025-26)",
-      "date": "Tue, Jan 20 2026",
-      "venue": "Dhaka, Shere Bangla National Stadium",
-      "team1": "Rajshahi Warriors",
-      "team2": "Chattogram Royals",
-      "time": "5:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "Perth Scorchers vs Sydney Sixers - Qualifier (Big Bash League 2025-26)",
-      "date": "Tue, Jan 20 2026",
-      "venue": "Perth, Perth Stadium",
-      "team1": "Perth Scorchers",
-      "team2": "Sydney Sixers",
-      "time": "2:00 PM",
+      "title": "Pakistan vs Australia - 1st T20I (Australia tour of Pakistan, 2026)",
+      "date": "Thu, Jan 29 2026",
+      "venue": "Lahore, Gaddafi Stadium",
+      "team1": "Pakistan",
+      "team2": "Australia",
+      "time": "6:30 PM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "Canterbury vs Otago - 25th Match (Super Smash 2025-26)",
-      "date": "Wed, Jan 21 2026",
-      "venue": "Christchurch, Hagley Oval",
-      "team1": "Canterbury",
-      "team2": "Otago",
-      "time": "10:25 AM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
-    },
-    {
-      "title": "Hobart Hurricanes vs Melbourne Stars - Knockout (Big Bash League 2025-26)",
-      "date": "Wed, Jan 21 2026",
-      "venue": "Hobart, Bellerive Oval",
-      "team1": "Hobart Hurricanes",
-      "team2": "Melbourne Stars",
-      "time": "2:00 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "TBC vs TBC - Qualifier 2 (Loser Q1 vs Winner Eliminator) (Bangladesh Premier League 2025-26)",
-      "date": "Wed, Jan 21 2026",
-      "venue": "Dhaka, Shere Bangla National Stadium",
-      "team1": "TBC",
-      "team2": "TBC",
-      "time": "5:30 PM",
+      "title": "United Arab Emirates vs Ireland - 1st T20I (Ireland tour of United Arab Emirates 2026)",
+      "date": "Thu, Jan 29 2026",
+      "venue": "Dubai, Dubai International Cricket Stadium",
+      "team1": "United Arab Emirates",
+      "team2": "Ireland",
+      "time": "7:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "Sunrisers Eastern Cape vs TBC - Qualifier 1 (SA20 2025-26)",
-      "date": "Wed, Jan 21 2026",
-      "venue": "Durban, Kingsmead",
-      "team1": "Sunrisers Eastern Cape",
-      "team2": "TBC",
-      "time": "9:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "Auckland vs Northern Knights - 26th Match (Super Smash 2025-26)",
-      "date": "Thu, Jan 22 2026",
-      "venue": "Auckland, Eden Park Outer Oval",
-      "team1": "Auckland",
-      "team2": "Northern Knights",
-      "time": "8:55 AM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
-    },
-    {
-      "title": "TBC vs TBC - Eliminator (SA20 2025-26)",
-      "date": "Thu, Jan 22 2026",
+      "title": "South Africa vs West Indies - 2nd T20I (West Indies tour of South Africa, 2026)",
+      "date": "Thu, Jan 29 2026",
       "venue": "Centurion, SuperSport Park",
-      "team1": "TBC",
-      "team2": "TBC",
-      "time": "9:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "Canterbury vs Wellington - 27th Match (Super Smash 2025-26)",
-      "date": "Fri, Jan 23 2026",
-      "venue": "Christchurch, Hagley Oval",
-      "team1": "Canterbury",
-      "team2": "Wellington",
-      "time": "10:25 AM",
+      "team1": "South Africa",
+      "team2": "West Indies",
+      "time": "9:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
     },
     {
-      "title": "TBC vs TBC - Challenger (Big Bash League 2025-26)",
-      "date": "Fri, Jan 23 2026",
-      "venue": "TBC, TBC",
-      "team1": "TBC",
-      "team2": "TBC",
-      "time": "2:00 PM",
+      "title": "Sri Lanka vs England - 1st T20I (England tour of Sri Lanka 2026)",
+      "date": "Fri, Jan 30 2026",
+      "venue": "Pallekele, Pallekele International Cricket Stadium",
+      "team1": "Sri Lanka",
+      "team2": "England",
+      "time": "7:00 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+    },
+    {
+      "title": "United Arab Emirates vs Ireland - 2nd T20I (Ireland tour of United Arab Emirates 2026)",
+      "date": "Sat, Jan 31 2026",
+      "venue": "Dubai, Dubai International Cricket Stadium",
+      "team1": "United Arab Emirates",
+      "team2": "Ireland",
+      "time": "11:30 AM",
       "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
     },
     {
-      "title": "TBC vs TBC - Final (Winner Q1 vs Winner Q2) (Bangladesh Premier League 2025-26)",
-      "date": "Fri, Jan 23 2026",
-      "venue": "Dhaka, Shere Bangla National Stadium",
-      "team1": "TBC",
-      "team2": "TBC",
+      "title": "Pakistan vs Australia - 2nd T20I (Australia tour of Pakistan, 2026)",
+      "date": "Sat, Jan 31 2026",
+      "venue": "Lahore, Gaddafi Stadium",
+      "team1": "Pakistan",
+      "team2": "Australia",
       "time": "6:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     },
     {
-      "title": "TBC vs TBC - Qualifier 2 (SA20 2025-26)",
-      "date": "Fri, Jan 23 2026",
+      "title": "India vs New Zealand - 5th T20I (New Zealand tour of India, 2026)",
+      "date": "Sat, Jan 31 2026",
+      "venue": "Thiruvananthapuram, Greenfield International Stadium",
+      "team1": "India",
+      "team2": "New Zealand",
+      "time": "7:00 PM",
+      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
+    },
+    {
+      "title": "South Africa vs West Indies - 3rd T20I (West Indies tour of South Africa, 2026)",
+      "date": "Sat, Jan 31 2026",
       "venue": "Johannesburg, The Wanderers Stadium",
-      "team1": "TBC",
-      "team2": "TBC",
-      "time": "9:00 PM",
+      "team1": "South Africa",
+      "team2": "West Indies",
+      "time": "9:30 PM",
       "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
     }
   ]
