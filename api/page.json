@@ -231,7 +231,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-25T13:15:10.284+05:30",
+        "last_modified": "2026-01-25T13:16:19.160+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -261,6 +261,11 @@
         {
           "name": "Cricbuzzz",
           "src": "https://crickettv.site/cricbuzz1",
+          "default": false
+        },
+        {
+          "name": "Star Sports 2",
+          "src": "https://cricketstan.github.io/Channel-14/",
           "default": false
         }
       ],
