@@ -6,10 +6,172 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* RESET */
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
-body{background:#0b0f1a;color:#fff;padding:14px}
-h1{text-align:center;margin-bottom:14px}
+html,body{
+  height:100%;
+  overflow:hidden;
+}
 
+/* SAME BACKGROUND */
+body{
+  background:linear-gradient(
+    180deg,
+    #00013a 0%,
+    #071b4f 50%,
+    #00013a 100%
+  );
+  color:#fff;
+}
+
+/* HEADER */
+.app-header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:3;
+  height:50px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  background:linear-gradient(
+    90deg,
+    #0b2f7c 0%,
+    #0b2a6f 35%,
+    #071b4f 65%,
+    #00013a 100%
+  );
+}
+.header-left{
+  display:flex;
+  align-items:center;
+}
+.app-header img{
+  height:30px;
+}
+
+/* Profile Icon */
+.profile-icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:linear-gradient(145deg, #00ff88, #00cc6a);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-weight:bold;
+  font-size:18px;
+  color:#000;
+  box-shadow:0 2px 10px rgba(0,255,136,0.3);
+}
+
+/* Popup Modal */
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.8);
+  z-index:999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+.popup-content{
+  background:linear-gradient(145deg,#151c30,#0f1424);
+  border-radius:20px;
+  padding:30px;
+  width:90%;
+  max-width:400px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.5);
+}
+
+.popup-content h2{
+  text-align:center;
+  margin-bottom:20px;
+  color:#00ff88;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+  opacity:0.8;
+}
+
+.form-group input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:2px solid #2a3b5f;
+  background:#0e1527;
+  color:#fff;
+  font-size:16px;
+}
+
+.form-group input:focus{
+  outline:none;
+  border-color:#00ff88;
+}
+
+.balance-display{
+  text-align:center;
+  margin:15px 0;
+  padding:10px;
+  background:#0e1527;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+.balance-amount{
+  color:#00ff88;
+  font-size:24px;
+}
+
+.btn-submit{
+  width:100%;
+  padding:15px;
+  border-radius:10px;
+  border:none;
+  background:linear-gradient(145deg, #00ff88, #00cc6a);
+  color:#000;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+.btn-submit:hover{
+  background:linear-gradient(145deg, #00ff88, #00ff88);
+}
+
+/* PARTICLES */
+#particles{
+  position:fixed;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+}
+
+/* CONTENT */
+.page{
+  position:relative;
+  z-index:2;
+  padding:64px 14px 14px;
+  height:100%;
+  overflow-y:auto;
+}
+
+/* ODDS UI */
 .card{
   background:linear-gradient(145deg,#151c30,#0f1424);
   border-radius:16px;
@@ -50,72 +212,250 @@ h1{text-align:center;margin-bottom:14px}
 .win{color:#00ff88}
 .lose{color:#ff4d4d}
 .suspend{color:#ffaa00}
+
+/* Current Balance in Header */
+.current-balance{
+  margin-right:15px;
+  font-size:14px;
+  font-weight:bold;
+  color:#00ff88;
+}
 </style>
 </head>
 
 <body>
 
-<h1>🏏 Cricket Odds</h1>
-<div id="matches">Loading…</div>
+<canvas id="particles"></canvas>
+
+<header class="app-header">
+  <div class="header-left">
+    <img src="https://crickettv.site/image/api/crickettv.png" alt="CricTV">
+  </div>
+  <div style="display:flex;align-items:center;">
+    <span class="current-balance" id="currentBalance">₹0</span>
+    <div class="profile-icon" onclick="openProfilePopup()">👤</div>
+  </div>
+</header>
+
+<!-- Profile Popup -->
+<div class="popup-overlay" id="profilePopup">
+  <div class="popup-content">
+    <h2>Create Profile</h2>
+    <div class="form-group">
+      <label for="userName">Your Name</label>
+      <input type="text" id="userName" placeholder="Enter your name">
+    </div>
+    <div class="balance-display">
+      <div>Opening Bonus</div>
+      <div class="balance-amount" id="bonusAmount">₹10,000</div>
+      <small style="opacity:0.7;">Instantly credited to your account</small>
+    </div>
+    <button class="btn-submit" onclick="saveProfile()">Create Account</button>
+  </div>
+</div>
+
+<div class="page">
+  <div id="matches">Loading…</div>
+</div>
 
 <script>
-const API = "https://central.zplay1.in/pb/api/v1/events/matches/4";
+/* USER PROFILE SYSTEM */
+let userProfile = null;
 
-function openMatch(eventId){
-  location.href = "match.html?eventId=" + eventId;
+// Load profile from localStorage
+function loadProfile() {
+  const saved = localStorage.getItem('cricket_user');
+  if (saved) {
+    userProfile = JSON.parse(saved);
+    updateBalanceDisplay();
+    return true;
+  }
+  return false;
+}
+
+// Show profile popup if no user exists
+if (!loadProfile()) {
+  setTimeout(() => {
+    document.getElementById('profilePopup').style.display = 'flex';
+  }, 1000);
+}
+
+// Update balance display
+function updateBalanceDisplay() {
+  if (userProfile) {
+    document.getElementById('currentBalance').textContent = `₹${userProfile.balance.toLocaleString()}`;
+  }
+}
+
+// Open profile popup
+function openProfilePopup() {
+  if (!userProfile) {
+    document.getElementById('profilePopup').style.display = 'flex';
+  } else {
+    // If user exists, show account info
+    alert(`Account Info:\nName: ${userProfile.name}\nBalance: ₹${userProfile.balance.toLocaleString()}`);
+  }
+}
+
+// Save profile
+function saveProfile() {
+  const name = document.getElementById('userName').value.trim();
+  if (!name) {
+    alert('Please enter your name');
+    return;
+  }
+  
+  userProfile = {
+    name: name,
+    balance: 10000, // Initial 10K balance
+    createdAt: new Date().toISOString(),
+    bets: []
+  };
+  
+  localStorage.setItem('cricket_user', JSON.stringify(userProfile));
+  document.getElementById('profilePopup').style.display = 'none';
+  updateBalanceDisplay();
+  alert(`Welcome ${name}! ₹10,000 has been credited to your account.`);
+}
+
+/* BET SETTLEMENT SYSTEM */
+function settleBet(eventId, winningRunnerSid, backOdds, layOdds) {
+  if (!userProfile) return;
+  
+  // Find user's bets for this match
+  const userBets = userProfile.bets.filter(bet => bet.eventId === eventId);
+  
+  userBets.forEach(bet => {
+    if (bet.runnerSid === winningRunnerSid) {
+      // User backed the winning team
+      if (bet.type === 'back') {
+        const winnings = bet.stake * backOdds;
+        userProfile.balance += winnings;
+      } else if (bet.type === 'lay') {
+        // Losing lay bet means user wins (they were betting against the winner)
+        const liability = bet.stake * (layOdds - 1);
+        userProfile.balance += liability;
+      }
+    } else {
+      // User backed the losing team
+      if (bet.type === 'back') {
+        // Lose stake
+        userProfile.balance -= bet.stake;
+      } else if (bet.type === 'lay') {
+        // Win lay bet (betting against loser)
+        const winnings = bet.stake;
+        userProfile.balance += winnings;
+      }
+    }
+    
+    // Mark bet as settled
+    bet.settled = true;
+  });
+  
+  // Save updated profile
+  localStorage.setItem('cricket_user', JSON.stringify(userProfile));
+  updateBalanceDisplay();
+}
+
+/* PARTICLES (EXACT SAME) */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let w,h;
+
+function resize(){
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+const particles=[];
+const COUNT=45;
+
+for(let i=0;i<COUNT;i++){
+  particles.push({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    r:Math.random()*1.4+.4,
+    vx:Math.random()*.15+.05,
+    vy:Math.random()*.1+.03,
+    a:Math.random()*.35+.15
+  });
+}
+
+function animate(){
+  ctx.clearRect(0,0,w,h);
+  for(const p of particles){
+    p.x+=p.vx;
+    p.y+=p.vy;
+    if(p.x>w)p.x=0;
+    if(p.y>h)p.y=0;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(255,255,255,${p.a})`;
+    ctx.fill();
+  }
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* ODDS API */
+const API="https://central.zplay1.in/pb/api/v1/events/matches/4";
+
+function openMatch(id){
+  location.href="match.html?eventId="+id;
 }
 
 fetch(API)
 .then(r=>r.json())
 .then(d=>{
-  const matches = d.data || [];
-  const box = document.getElementById("matches");
-  box.innerHTML = "";
-
-  matches.forEach(m=>{
-    let runnersHTML = "";
-
-    if (m.runners && m.runners.length) {
-      m.runners.forEach(r=>{
-        const name =
-          m.runnerNames?.find(x=>x.SID===r.sid)?.RN || "Runner";
-
-        if (r.ex?.b?.length || r.ex?.l?.length) {
-          const back = r.ex.b?.[0]?.p;
-          const lay  = r.ex.l?.[0]?.p;
-
-          runnersHTML += `
-            <div class="runner">
-              <div class="name">${name}</div>
-              <div>
-                ${back ? `<span class="odd back">${back}</span>` : ""}
-                ${lay ? `<span class="odd lay">${lay}</span>` : ""}
-              </div>
-            </div>`;
-        } else {
-          let statusClass = "suspend";
-          if (r.s === "WINNER") statusClass = "win";
-          if (r.s === "LOSER") statusClass = "lose";
-
-          runnersHTML += `
-            <div class="runner">
-              <div class="name">${name}</div>
-              <div class="status ${statusClass}">${r.s || "NO ODDS"}</div>
-            </div>`;
+  const box=document.getElementById("matches");
+  box.innerHTML="";
+  (d.data||[]).forEach(m=>{
+    let html="";
+    m.runners?.forEach(r=>{
+      const name=m.runnerNames?.find(x=>x.SID===r.sid)?.RN||"Runner";
+      if(r.ex?.b?.length||r.ex?.l?.length){
+        html+=`
+        <div class="runner">
+          <div class="name">${name}</div>
+          <div>
+            ${r.ex.b?.[0]?.p?`<span class="odd back">${r.ex.b[0].p}</span>`:""}
+            ${r.ex.l?.[0]?.p?`<span class="odd lay">${r.ex.l[0].p}</span>`:""}
+          </div>
+        </div>`;
+      }else{
+        let c="suspend";
+        if(r.s==="WINNER")c="win";
+        if(r.s==="LOSER")c="lose";
+        html+=`
+        <div class="runner">
+          <div class="name">${name}</div>
+          <div class="status ${c}">${r.s||"NO ODDS"}</div>
+        </div>`;
+        
+        // Check if match has ended and settle bets
+        if (r.s === "WINNER" && userProfile) {
+          // Get odds from before match ended
+          const backOdds = r.ex?.b?.[0]?.p || 1.0;
+          const layOdds = r.ex?.l?.[0]?.p || 1.0;
+          settleBet(m.event_id, r.sid, parseFloat(backOdds), parseFloat(layOdds));
         }
-      });
-    } else {
-      runnersHTML = `<div class="status suspend">No odds yet</div>`;
-    }
+      }
+    });
 
-    box.innerHTML += `
-      <div class="card" onclick="openMatch(${m.event_id})">
-        <div class="league">${m.league_name}</div>
-        <div class="match">${m.event_name}</div>
-        ${runnersHTML}
-        <div class="status">Market: ${m.status || "N/A"}</div>
-      </div>`;
+    box.innerHTML+=`
+    <div class="card" onclick="openMatch(${m.event_id})">
+      <div class="league">${m.league_name}</div>
+      <div class="match">${m.event_name}</div>
+      ${html||'<div class="status suspend">No odds yet</div>'}
+      <div class="status">Market: ${m.status||"N/A"}</div>
+    </div>`;
   });
+})
+.catch(e=>{
+  document.getElementById("matches").innerHTML="Failed to load matches.";
 });
 </script>
 
