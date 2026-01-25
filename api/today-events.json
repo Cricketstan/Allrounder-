@@ -3,6 +3,20 @@
   "event": [
 
 {
+      "title": "India Vs Newzealand",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6965bc7be4b08f97e7b4bd46-1768519282532?location=hero-default&imwidth=2560",
+      "watch_now": [
+        { "id": "home/ind-vs-nz", "name": "Play Highlights" }
+      ],
+      "date": "25 Jan 2026",
+      "start_time": "06:15 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "T20"
+    },
+
+{
       "title": "Perth Vs Sydney",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/8506/1769256258506-h",
       "watch_now": [
