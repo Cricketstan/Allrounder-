@@ -231,7 +231,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-25T13:36:12.617+05:30",
+        "last_modified": "2026-01-25T13:37:37.164+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -254,7 +254,7 @@
           "default": false
         },
         {
-          "name": "Willow",
+          "name": "Willow Cricket ",
           "src": "https://cricketstan.github.io/Willow-Sports/",
           "default": false
         },
@@ -269,8 +269,8 @@
           "default": false
         },
         {
-          "name": "Willow Cricket ",
-          "src": "https://crickettv.site/willow",
+          "name": "Willow Sports",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
           "default": false
         }
       ],
