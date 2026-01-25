@@ -1204,6 +1204,55 @@ window.addEventListener('load', () => {
 });
 
 setInterval(loadMatches, 30000);
+  function settleMatchBets() {
+  if (!matchData || !userProfile) return;
+
+  // 1️⃣ Find winning runner (odds === 0.00)
+  let winningRunnerId = null;
+
+  matchData.matchOddData.forEach(market => {
+    market.runners?.forEach(runner => {
+      const backOdds = runner.ex?.b?.[0]?.p;
+      if (backOdds === 0 || backOdds === "0.00") {
+        winningRunnerId = runner.sid;
+      }
+    });
+  });
+
+  if (!winningRunnerId) return; // match not finished yet
+
+  // 2️⃣ Settle all pending bets
+  userProfile.bets.forEach(bet => {
+    if (bet.settled || bet.eventId != EVENT_ID) return;
+
+    let isWin = false;
+
+    if (bet.type === "back") {
+      isWin = bet.runnerId == winningRunnerId;
+    } else if (bet.type === "lay") {
+      isWin = bet.runnerId != winningRunnerId;
+    }
+
+    bet.settled = true;
+    bet.result = isWin ? "WIN" : "LOSE";
+
+    if (isWin) {
+      userProfile.balance += bet.stake + bet.potentialWin;
+      bet.winnings = bet.potentialWin;
+      userProfile.stats.wonBets++;
+      userProfile.stats.netProfit += bet.potentialWin;
+      showSettlement(`🎉 YOU WON ₹${bet.potentialWin}`);
+    } else {
+      bet.winnings = 0;
+      userProfile.stats.lostBets++;
+      userProfile.stats.netProfit -= bet.stake;
+      showSettlement(`❌ YOU LOST ₹${bet.stake}`);
+    }
+  });
+
+  localStorage.setItem("cricTV_premium_user", JSON.stringify(userProfile));
+  updateUI();
+    }
 </script>
 </body>
 </html>
