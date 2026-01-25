@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>All Odds</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
+body{background:#0b0f1a;color:#fff;padding:14px}
+h1{text-align:center;margin-bottom:14px}
+.card{
+  background:linear-gradient(145deg,#151c30,#0f1424);
+  border-radius:16px;
+  padding:14px;
+  margin-bottom:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.45);
+  cursor:pointer;
+}
+.league{font-size:13px;opacity:.8}
+.match{font-size:17px;font-weight:800;margin:6px 0 10px}
+.runner{
+  display:flex;justify-content:space-between;
+  background:#0e1527;
+  padding:10px;border-radius:12px;margin-top:6px
+}
+.odd{padding:6px 10px;border-radius:8px;font-weight:800}
+.back{background:#00ff88;color:#000}
+.lay{background:#ff4d4d}
+.status{font-size:12px;opacity:.7;margin-top:6px}
+</style>
+</head>
+
+<body>
+<h1>⚽ All Matches Odds</h1>
+<div id="matches">Loading…</div>
+
+<script>
+const API = "https://central.zplay1.in/pb/api/v1/events/matches/inplay";
+
+function best(arr, type){
+  if(!arr?.length) return null;
+  return type==="max"
+    ? Math.max(...arr.map(o=>o.p))
+    : Math.min(...arr.map(o=>o.p));
+}
+
+fetch(API)
+.then(r=>r.json())
+.then(d=>{
+  const matches = d.data.inplay || [];
+  const box = document.getElementById("matches");
+  box.innerHTML="";
+
+  matches.forEach(m=>{
+    if(!m.runners?.length) return;
+
+    let oddsHTML="";
+    m.runners.forEach(r=>{
+      const back = best(r.ex?.b,"max");
+      const lay  = best(r.ex?.l,"min");
+      if(!back && !lay) return;
+
+      const name =
+        m.runnerNames?.find(x=>x.SID===r.sid)?.RN || "Runner";
+
+      oddsHTML+=`
+        <div class="runner">
+          <div>${name}</div>
+          <div>
+            ${back?`<span class="odd back">${back}</span>`:""}
+            ${lay?`<span class="odd lay">${lay}</span>`:""}
+          </div>
+        </div>`;
+    });
+
+    box.innerHTML+=`
+      <div class="card" onclick="openMatch(${m.event_id})">
+        <div class="league">${m.league_name}</div>
+        <div class="match">${m.event_name}</div>
+        ${oddsHTML}
+        <div class="status">Status: ${m.status}</div>
+      </div>`;
+  });
+});
+
+function openMatch(id){
+  location.href="match.html?eventId="+id;
+}
+</script>
+</body>
+</html>
