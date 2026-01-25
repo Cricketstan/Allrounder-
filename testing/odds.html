@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>All Odds</title>
+<title>Cricket Odds</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui}
 body{background:#0b0f1a;color:#fff;padding:14px}
 h1{text-align:center;margin-bottom:14px}
+
 .card{
   background:linear-gradient(145deg,#151c30,#0f1424);
   border-radius:16px;
@@ -18,74 +20,104 @@ h1{text-align:center;margin-bottom:14px}
 }
 .league{font-size:13px;opacity:.8}
 .match{font-size:17px;font-weight:800;margin:6px 0 10px}
+
 .runner{
-  display:flex;justify-content:space-between;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   background:#0e1527;
-  padding:10px;border-radius:12px;margin-top:6px
+  padding:10px 12px;
+  border-radius:12px;
+  margin-top:6px;
 }
-.odd{padding:6px 10px;border-radius:8px;font-weight:800}
+.name{font-size:14px;font-weight:600}
+
+.odd{
+  padding:6px 10px;
+  border-radius:8px;
+  font-weight:800;
+  min-width:50px;
+  text-align:center;
+}
 .back{background:#00ff88;color:#000}
 .lay{background:#ff4d4d}
-.status{font-size:12px;opacity:.7;margin-top:6px}
+
+.status{
+  margin-top:8px;
+  font-size:12px;
+  opacity:.75;
+}
+.win{color:#00ff88}
+.lose{color:#ff4d4d}
+.suspend{color:#ffaa00}
 </style>
 </head>
 
 <body>
-<h1>⚽ All Matches Odds</h1>
+
+<h1>🏏 Cricket Odds</h1>
 <div id="matches">Loading…</div>
 
 <script>
 const API = "https://central.zplay1.in/pb/api/v1/events/matches/4";
 
-function best(arr, type){
-  if(!arr?.length) return null;
-  return type==="max"
-    ? Math.max(...arr.map(o=>o.p))
-    : Math.min(...arr.map(o=>o.p));
+function openMatch(eventId){
+  location.href = "match.html?eventId=" + eventId;
 }
 
 fetch(API)
 .then(r=>r.json())
 .then(d=>{
-  const matches = d.data.inplay || [];
+  const matches = d.data || [];
   const box = document.getElementById("matches");
-  box.innerHTML="";
+  box.innerHTML = "";
 
   matches.forEach(m=>{
-    if(!m.runners?.length) return;
+    let runnersHTML = "";
 
-    let oddsHTML="";
-    m.runners.forEach(r=>{
-      const back = best(r.ex?.b,"max");
-      const lay  = best(r.ex?.l,"min");
-      if(!back && !lay) return;
+    if (m.runners && m.runners.length) {
+      m.runners.forEach(r=>{
+        const name =
+          m.runnerNames?.find(x=>x.SID===r.sid)?.RN || "Runner";
 
-      const name =
-        m.runnerNames?.find(x=>x.SID===r.sid)?.RN || "Runner";
+        if (r.ex?.b?.length || r.ex?.l?.length) {
+          const back = r.ex.b?.[0]?.p;
+          const lay  = r.ex.l?.[0]?.p;
 
-      oddsHTML+=`
-        <div class="runner">
-          <div>${name}</div>
-          <div>
-            ${back?`<span class="odd back">${back}</span>`:""}
-            ${lay?`<span class="odd lay">${lay}</span>`:""}
-          </div>
-        </div>`;
-    });
+          runnersHTML += `
+            <div class="runner">
+              <div class="name">${name}</div>
+              <div>
+                ${back ? `<span class="odd back">${back}</span>` : ""}
+                ${lay ? `<span class="odd lay">${lay}</span>` : ""}
+              </div>
+            </div>`;
+        } else {
+          let statusClass = "suspend";
+          if (r.s === "WINNER") statusClass = "win";
+          if (r.s === "LOSER") statusClass = "lose";
 
-    box.innerHTML+=`
+          runnersHTML += `
+            <div class="runner">
+              <div class="name">${name}</div>
+              <div class="status ${statusClass}">${r.s || "NO ODDS"}</div>
+            </div>`;
+        }
+      });
+    } else {
+      runnersHTML = `<div class="status suspend">No odds yet</div>`;
+    }
+
+    box.innerHTML += `
       <div class="card" onclick="openMatch(${m.event_id})">
         <div class="league">${m.league_name}</div>
         <div class="match">${m.event_name}</div>
-        ${oddsHTML}
-        <div class="status">Status: ${m.status}</div>
+        ${runnersHTML}
+        <div class="status">Market: ${m.status || "N/A"}</div>
       </div>`;
   });
 });
-
-function openMatch(id){
-  location.href="match.html?eventId="+id;
-}
 </script>
+
 </body>
 </html>
