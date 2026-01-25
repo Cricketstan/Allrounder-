@@ -231,7 +231,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-25T11:08:13.900+05:30",
+        "last_modified": "2026-01-25T13:14:33.100+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -249,13 +249,18 @@
           "default": false
         },
         {
-          "name": "Cricbuzz ",
-          "src": "https://crickettv.site/cricbuzz1",
+          "name": "Fox Cricket 501",
+          "src": "https://allrounderlive.pages.dev/dilz?id=65656576",
           "default": false
         },
         {
           "name": "Willow",
           "src": "https://cricketstan.github.io/Willow-Sports/",
+          "default": false
+        },
+        {
+          "name": "Cricbuzzz",
+          "src": "https://crickettv.site/cricbuzz1",
           "default": false
         }
       ],
