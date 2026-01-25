@@ -63,54 +63,6 @@
       }
     },
     {
-      "id": "bbl",
-      "slug": "bbl",
-      "seo": {
-        "meta_title": "thunder vs renegade live streaming ",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/bbl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-23T14:13:48.576+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Melbourne Star Vs Adelaide Strikers ",
-        "team1": "Thunder",
-        "team2": "Renegade ",
-        "venue": "Melbourne Stadium ",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Fox Cricket 501",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        },
-        {
-          "name": "Cricbuzz ",
-          "src": "https://crickettv.site/cricbuzz1",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
-        "players_to_watch": {
-          "Thunder": [],
-          "Renegade ": []
-        },
-        "squads": {
-          "Thunder": "",
-          "Renegade ": ""
-        }
-      }
-    },
-    {
       "id": "ind-vs-nz",
       "slug": "wpl",
       "seo": {
@@ -267,6 +219,59 @@
         "squads": {
           "Srilanka ": "Pathum Nissanka, Kamil Mishara, Kusal Mendis(w), Dhananjaya de Silva, Charith Asalanka(c), Kamindu Mendis, Janith Liyanage, Wanindu Hasaranga, Maheesh Theekshana, Eshan Malinga, Asitha Fernando, Jeffrey Vandersay, Pramod Madushan, Dunith Wellalage, Pavan Rathnayake, Milan Priyanath Rathnayake, Sadeera Samarawickrama",
           "England ": "Zak Crawley, Ben Duckett, Joe Root, Jacob Bethell, Harry Brook(c), Jos Buttler(w), Will Jacks, Sam Curran, Jamie Overton, Liam Dawson, Adil Rashid, Luke Wood, Brydon Carse, Tom Banton, Rehan Ahmed"
+        }
+      }
+    },
+    {
+      "id": "bbl",
+      "slug": "bbl",
+      "seo": {
+        "meta_title": "thunder vs renegade live streaming ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/bbl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T11:17:50.076+05:30",
+        "last_modified": "2026-01-25T11:08:13.900+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Melbourne Star Vs Adelaide Strikers ",
+        "team1": "Thunder",
+        "team2": "Renegade ",
+        "venue": "Melbourne Stadium ",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hotstar",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
+          "default": false
+        },
+        {
+          "name": "Cricbuzz ",
+          "src": "https://crickettv.site/cricbuzz1",
+          "default": false
+        },
+        {
+          "name": "Willow",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Thunder": [],
+          "Renegade ": []
+        },
+        "squads": {
+          "Thunder": "",
+          "Renegade ": ""
         }
       }
     }
