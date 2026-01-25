@@ -231,7 +231,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-25T13:14:33.100+05:30",
+        "last_modified": "2026-01-25T13:15:10.284+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -250,7 +250,7 @@
         },
         {
           "name": "Fox Cricket 501",
-          "src": "https://allrounderlive.pages.dev/dilz?id=65656576",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
           "default": false
         },
         {
