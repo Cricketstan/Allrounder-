@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CricTV - Live Match Betting</title>
+
+<style>
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(180deg, #00013a 0%, #071b4f 50%, #00013a 100%);
+  color: #fff;
+}
+
+/* PARTICLE CANVAS */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* PREMIUM HEADER */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  background: linear-gradient(90deg, 
+    #0b2f7c 0%,
+    #0b2a6f 35%,
+    #071b4f 65%,
+    #00013a 100%
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.match-title {
+  font-size: 16px;
+  font-weight: 700;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.balance-display {
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #4d7fff, #2a5fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 60px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding-bottom: 20px;
+}
+
+/* MATCH HEADER */
+.match-header {
+  padding: 20px;
+  background: rgba(11, 15, 26, 0.8);
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.match-name {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  text-align: center;
+  background: linear-gradient(145deg, #fff, #4d7fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.match-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.match-status {
+  padding: 4px 12px;
+  background: linear-gradient(145deg, #ff4d4d, #ff3333);
+  color: white;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* MARKET TABS */
+.market-tabs {
+  display: flex;
+  gap: 10px;
+  padding: 0 15px 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn.active {
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+  border-color: transparent;
+}
+
+/* MARKETS CONTAINER */
+.markets-container {
+  padding: 0 15px;
+}
+
+.market-section {
+  margin-bottom: 25px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  border-radius: 2px;
+}
+
+/* MATCH ODDS MARKET */
+.market-card {
+  background: linear-gradient(145deg, 
+    rgba(21, 28, 48, 0.95),
+    rgba(15, 20, 36, 0.95)
+  );
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.market-name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #4d7fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.market-type {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+/* RUNNER ROW */
+.runner-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(11, 15, 26, 0.8);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.runner-row:hover {
+  background: rgba(11, 15, 26, 1);
+  transform: translateX(4px);
+}
+
+.runner-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.team-flag {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #4d7fff, #2a5fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.runner-details {
+  flex: 1;
+}
+
+.runner-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.runner-odds {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.odds-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.odds-btn {
+  min-width: 75px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.odds-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.odds-btn.back {
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+}
+
+.odds-btn.lay {
+  background: linear-gradient(145deg, #ff4d4d, #ff3333);
+  color: white;
+}
+
+/* FANCY MARKETS */
+.fancy-market {
+  background: rgba(11, 15, 26, 0.8);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fancy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.fancy-name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.fancy-line {
+  font-size: 12px;
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+.fancy-odds {
+  display: flex;
+  gap: 10px;
+}
+
+.fancy-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+}
+
+.fancy-btn:hover {
+  transform: translateY(-2px);
+}
+
+.fancy-btn.back {
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  color: #000;
+}
+
+.fancy-btn.lay {
+  background: linear-gradient(145deg, #ff4d4d, #ff3333);
+  color: white;
+}
+
+/* MY BETS SECTION */
+.my-bets-section {
+  background: rgba(11, 15, 26, 0.8);
+  margin: 15px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.my-bets-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #00ff88;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.my-bets-title::before {
+  content: '📊';
+  font-size: 18px;
+}
+
+.bet-item {
+  background: rgba(15, 20, 36, 0.8);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  border-left: 4px solid;
+  transition: all 0.2s;
+}
+
+.bet-item:hover {
+  transform: translateX(4px);
+}
+
+.bet-item.win {
+  border-left-color: #00ff88;
+}
+
+.bet-item.lose {
+  border-left-color: #ff4d4d;
+}
+
+.bet-item.pending {
+  border-left-color: #ffaa00;
+}
+
+.bet-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.bet-type {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.bet-type.back {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+}
+
+.bet-type.lay {
+  background: rgba(255, 77, 77, 0.2);
+  color: #ff4d4d;
+}
+
+.bet-status {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.bet-details {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.bet-stake {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.bet-amount {
+  font-weight: 700;
+}
+
+.bet-win {
+  color: #00ff88;
+  font-weight: 800;
+}
+
+/* BET SLIP */
+.bet-slip {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(145deg, #151c30, #0f1424);
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  box-shadow: 0 -15px 40px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bet-slip.show {
+  transform: translateY(0);
+}
+
+.bet-slip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bet-slip-title {
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(145deg, #fff, #4d7fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.close-bet-slip {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+.close-bet-slip:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bet-details {
+  background: rgba(11, 15, 26, 0.8);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bet-selection {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.bet-odds {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.stake-input {
+  margin-bottom: 20px;
+}
+
+.stake-input input {
+  width: 100%;
+  padding: 18px;
+  background: rgba(11, 15, 26, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.stake-input input:focus {
+  border-color: #00ff88;
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.quick-stakes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quick-stake {
+  padding: 14px 10px;
+  background: rgba(11, 15, 26, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.quick-stake:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00ff88;
+  transform: translateY(-2px);
+}
+
+.potential-return {
+  background: linear-gradient(145deg, 
+    rgba(0, 255, 136, 0.1),
+    rgba(0, 204, 106, 0.1)
+  );
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.potential-return .label {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+
+.potential-return .amount {
+  font-size: 32px;
+  font-weight: 900;
+  color: #00ff88;
+  line-height: 1;
+}
+
+.place-bet-btn {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(145deg, #00ff88, #00cc6a);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  font-weight: 900;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.place-bet-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+}
+
+.place-bet-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.7;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  border-top-color: #00ff88;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(145deg, #4d7fff, #2a5fff);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(145deg, #2a5fff, #00ff88);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .match-title {
+    font-size: 14px;
+    max-width: 150px;
+  }
+  
+  .match-name {
+    font-size: 18px;
+  }
+  
+  .market-tabs {
+    padding: 0 10px 15px;
+  }
+  
+  .tab-btn {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  
+  .markets-container {
+    padding: 0 10px;
+  }
+  
+  .odds-buttons {
+    gap: 8px;
+  }
+  
+  .odds-btn {
+    min-width: 70px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .quick-stakes {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<header class="app-header">
+  <div class="header-left">
+    <button class="back-btn" onclick="goBack()">←</button>
+    <div class="match-title" id="matchTitleHeader">Match Loading...</div>
+  </div>
+  <div class="user-section">
+    <div class="balance-display" id="userBalance">₹0</div>
+    <div class="profile-icon" onclick="openProfile()">👤</div>
+  </div>
+</header>
+
+<main class="main-content">
+  <!-- MATCH HEADER -->
+  <div class="match-header">
+    <h1 class="match-name" id="matchName">Loading...</h1>
+    <div class="match-info">
+      <span id="matchLeague">Cricket</span>
+      <span class="match-status">LIVE</span>
+    </div>
+  </div>
+  
+  <!-- MARKET TABS -->
+  <div class="market-tabs" id="marketTabs">
+    <button class="tab-btn active" onclick="showTab('matchOdds')">Match Odds</button>
+    <button class="tab-btn" onclick="showTab('fancy')">Fancy Markets</button>
+    <button class="tab-btn" onclick="showTab('bookmaker')">Bookmaker</button>
+    <button class="tab-btn" onclick="showTab('myBets')">My Bets</button>
+  </div>
+  
+  <!-- MARKETS CONTAINER -->
+  <div class="markets-container">
+    <!-- MATCH ODDS SECTION -->
+    <div id="matchOddsTab" class="market-section">
+      <h2 class="section-title">Match Odds</h2>
+      <div id="matchOddsContainer">
+        <div class="loading">
+          <div class="spinner"></div>
+          Loading match odds...
+        </div>
+      </div>
+    </div>
+    
+    <!-- FANCY MARKETS SECTION -->
+    <div id="fancyTab" class="market-section" style="display: none;">
+      <h2 class="section-title">Fancy & Session Markets</h2>
+      <div id="fancyMarketsContainer">
+        <div class="loading">
+          <div class="spinner"></div>
+          Loading fancy markets...
+        </div>
+      </div>
+    </div>
+    
+    <!-- BOOKMAKER SECTION -->
+    <div id="bookmakerTab" class="market-section" style="display: none;">
+      <h2 class="section-title">Bookmaker Odds</h2>
+      <div id="bookmakerContainer">
+        <div class="loading">
+          <div class="spinner"></div>
+          Loading bookmaker odds...
+        </div>
+      </div>
+    </div>
+    
+    <!-- MY BETS SECTION -->
+    <div id="myBetsTab" class="market-section" style="display: none;">
+      <div class="my-bets-section">
+        <h2 class="my-bets-title">My Active Bets</h2>
+        <div id="myBetsContainer">
+          <div class="loading">
+            <div class="spinner"></div>
+            Loading your bets...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- BET SLIP -->
+<div class="bet-slip" id="betSlip">
+  <div class="bet-slip-header">
+    <h3 class="bet-slip-title">Place Bet</h3>
+    <button class="close-bet-slip" onclick="closeBetSlip()">×</button>
+  </div>
+  
+  <div class="bet-details">
+    <div class="bet-selection" id="betSelection">Select a market</div>
+    <div class="bet-odds" id="betOdds">Odds: -</div>
+  </div>
+  
+  <div class="stake-input">
+    <input type="number" id="stakeAmount" placeholder="Enter stake amount" min="10" max="1000000">
+  </div>
+  
+  <div class="quick-stakes">
+    <button class="quick-stake" onclick="setStake(100)">₹100</button>
+    <button class="quick-stake" onclick="setStake(500)">₹500</button>
+    <button class="quick-stake" onclick="setStake(1000)">₹1K</button>
+    <button class="quick-stake" onclick="setStake(5000)">₹5K</button>
+    <button class="quick-stake" onclick="setStake(10000)">₹10K</button>
+  </div>
+  
+  <div class="potential-return">
+    <div class="label">Potential Return</div>
+    <div class="amount" id="potentialReturn">₹0</div>
+  </div>
+  
+  <button class="place-bet-btn" onclick="placeBet()">Place Bet</button>
+</div>
+
+<script>
+// ==================== PARTICLE SYSTEM ====================
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let w, h;
+const particlesArray = [];
+
+function initParticles() {
+  resizeCanvas();
+  createParticles();
+  animateParticles();
+}
+
+function resizeCanvas() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+
+function createParticles() {
+  particlesArray.length = 0;
+  for (let i = 0; i < 45; i++) {
+    particlesArray.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      r: Math.random() * 1.4 + 0.4,
+      vx: Math.random() * 0.15 + 0.05,
+      vy: Math.random() * 0.1 + 0.03,
+      a: Math.random() * 0.35 + 0.15
+    });
+  }
+}
+
+function animateParticles() {
+  ctx.clearRect(0, 0, w, h);
+  
+  particlesArray.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    
+    if (p.x > w) p.x = 0;
+    if (p.y > h) p.y = 0;
+    
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 255, 255, ${p.a})`;
+    ctx.fill();
+  });
+  
+  requestAnimationFrame(animateParticles);
+}
+
+// ==================== USER PROFILE SYSTEM ====================
+let userProfile = null;
+let currentBet = null;
+let matchData = null;
+const EVENT_ID = new URLSearchParams(location.search).get("eventId");
+
+function loadUserProfile() {
+  try {
+    const saved = localStorage.getItem('cricTV_premium_user');
+    if (saved) {
+      userProfile = JSON.parse(saved);
+      updateUI();
+      loadMyBets();
+      return true;
+    }
+  } catch (e) {
+    console.error('Error loading profile:', e);
+  }
+  
+  // Create profile if doesn't exist
+  userProfile = {
+    name: 'Player',
+    balance: 10000,
+    bets: [],
+    stats: {
+      totalBets: 0,
+      wonBets: 0,
+      lostBets: 0,
+      netProfit: 0
+    },
+    createdAt: new Date().toISOString()
+  };
+  localStorage.setItem('cricTV_premium_user', JSON.stringify(userProfile));
+  updateUI();
+  return true;
+}
+
+function updateUI() {
+  if (userProfile) {
+    document.getElementById('userBalance').textContent = `₹${userProfile.balance.toLocaleString()}`;
+  }
+}
+
+function openProfile() {
+  if (userProfile) {
+    alert(`Account Info:\nName: ${userProfile.name}\nBalance: ₹${userProfile.balance.toLocaleString()}\n\nTotal Bets: ${userProfile.stats.totalBets}\nWon: ${userProfile.stats.wonBets}\nLost: ${userProfile.stats.lostBets}\nNet Profit: ₹${userProfile.stats.netProfit.toLocaleString()}`);
+  }
+}
+
+// ==================== TAB SYSTEM ====================
+function showTab(tabName) {
+  // Hide all tabs
+  document.getElementById('matchOddsTab').style.display = 'none';
+  document.getElementById('fancyTab').style.display = 'none';
+  document.getElementById('bookmakerTab').style.display = 'none';
+  document.getElementById('myBetsTab').style.display = 'none';
+  
+  // Remove active class from all tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Show selected tab
+  document.getElementById(tabName + 'Tab').style.display = 'block';
+  
+  // Add active class to clicked tab
+  event.target.classList.add('active');
+  
+  // Load content for the tab
+  if (tabName === 'matchOdds' && matchData) {
+    renderMatchOdds();
+  } else if (tabName === 'fancy' && matchData) {
+    renderFancyMarkets();
+  } else if (tabName === 'bookmaker' && matchData) {
+    renderBookmakerMarkets();
+  } else if (tabName === 'myBets') {
+    loadMyBets();
+  }
+}
+
+// ==================== BETTING SYSTEM ====================
+function openBetSlip(betType, marketId, runnerId, runnerName, odds, marketName, marketType = 'match') {
+  if (!userProfile) {
+    alert('Please wait, loading your account...');
+    return;
+  }
+  
+  currentBet = {
+    type: betType,
+    marketId: marketId,
+    runnerId: runnerId,
+    runnerName: runnerName,
+    odds: parseFloat(odds),
+    marketName: marketName,
+    marketType: marketType,
+    eventId: EVENT_ID,
+    eventName: document.getElementById('matchName').textContent,
+    timestamp: new Date().toISOString()
+  };
+  
+  const selection = document.getElementById('betSelection');
+  const oddsDisplay = document.getElementById('betOdds');
+  
+  const typeColor = betType === 'back' ? '#00ff88' : '#ff4d4d';
+  const typeText = betType === 'back' ? 'BACK' : 'LAY';
+  
+  selection.innerHTML = `<span style="color:${typeColor}">${typeText}</span> ${runnerName}`;
+  oddsDisplay.textContent = `Odds: ${odds} • Market: ${marketName}`;
+  
+  document.getElementById('stakeAmount').value = '';
+  document.getElementById('potentialReturn').textContent = '₹0';
+  
+  document.getElementById('betSlip').classList.add('show');
+  document.getElementById('stakeAmount').focus();
+}
+
+function closeBetSlip() {
+  document.getElementById('betSlip').classList.remove('show');
+  currentBet = null;
+}
+
+function setStake(amount) {
+  if (!userProfile || !currentBet) return;
+  
+  if (amount > userProfile.balance) {
+    alert(`Insufficient balance. Available: ₹${userProfile.balance.toLocaleString()}`);
+    return;
+  }
+  
+  document.getElementById('stakeAmount').value = amount;
+  calculatePotentialReturn();
+}
+
+function calculatePotentialReturn() {
+  const amount = parseFloat(document.getElementById('stakeAmount').value) || 0;
+  if (!currentBet || amount === 0) {
+    document.getElementById('potentialReturn').textContent = '₹0';
+    return;
+  }
+  
+  let returnAmount = 0;
+  if (currentBet.type === 'back') {
+    returnAmount = amount * currentBet.odds;
+  } else {
+    returnAmount = amount * (currentBet.odds - 1);
+  }
+  
+  document.getElementById('potentialReturn').textContent = `₹${Math.round(returnAmount).toLocaleString()}`;
+}
+
+function placeBet() {
+  if (!userProfile || !currentBet) return;
+  
+  const amount = parseFloat(document.getElementById('stakeAmount').value);
+  if (!amount || amount < 10) {
+    alert('Minimum bet amount is ₹10');
+    return;
+  }
+  
+  if (amount > userProfile.balance) {
+    alert(`Insufficient balance. Available: ₹${userProfile.balance.toLocaleString()}`);
+    return;
+  }
+  
+  // Calculate potential return
+  let returnAmount = 0;
+  let potentialWin = 0;
+  
+  if (currentBet.type === 'back') {
+    returnAmount = amount * currentBet.odds;
+    potentialWin = returnAmount - amount;
+  } else {
+    returnAmount = amount * (currentBet.odds - 1);
+    potentialWin = amount;
+  }
+  
+  // Create bet record
+  const betRecord = {
+    id: Date.now(),
+    ...currentBet,
+    stake: amount,
+    potentialWin: Math.round(potentialWin),
+    returnAmount: Math.round(returnAmount),
+    placedAt: new Date().toISOString(),
+    settled: false,
+    result: null,
+    winnings: null
+  };
+  
+  // Update user profile
+  userProfile.balance -= amount;
+  userProfile.bets.push(betRecord);
+  userProfile.stats.totalBets++;
+  
+  // Save to localStorage
+  localStorage.setItem('cricTV_premium_user', JSON.stringify(userProfile));
+  
+  // Update UI
+  updateUI();
+  loadMyBets();
+  
+  // Show success message
+  alert(`✅ Bet placed successfully!\n\nStake: ₹${amount.toLocaleString()}\nPotential Win: ₹${Math.round(potentialWin).toLocaleString()}\nGood luck!`);
+  
+  // Close bet slip
+  closeBetSlip();
+}
+
+// ==================== MATCH DATA ====================
+async function loadMatchData() {
+  try {
+    const API = `https://central.zplay1.in/pb/api/v1/events/matchDetails/${EVENT_ID}`;
+    const response = await fetch(API);
+    const data = await response.json();
+    
+    if (data.data && data.data.match) {
+      matchData = data.data.match;
+      renderMatchData();
+      renderMatchOdds();
+      renderFancyMarkets();
+      renderBookmakerMarkets();
+    } else {
+      throw new Error('Invalid match data');
+    }
+  } catch (error) {
+    console.error('Error loading match:', error);
+    document.getElementById('matchOddsContainer').innerHTML = `
+      <div class="loading">
+        Failed to load match data. Please try again.
+      </div>
+    `;
+  }
+}
+
+function renderMatchData() {
+  document.getElementById('matchName').textContent = matchData.eventName;
+  document.getElementById('matchTitleHeader').textContent = matchData.eventName;
+  document.getElementById('matchLeague').textContent = matchData.leaguesName || 'Cricket';
+}
+
+// ==================== MATCH ODDS RENDER ====================
+function renderMatchOdds() {
+  const container = document.getElementById('matchOddsContainer');
+  
+  if (!matchData.matchOddData || matchData.matchOddData.length === 0) {
+    container.innerHTML = `
+      <div class="loading">
+        No match odds available for this match.
+      </div>
+    `;
+    return;
+  }
+  
+  let html = '';
+  
+  matchData.matchOddData.forEach(market => {
+    const marketId = market.mid;
+    let runnersHtml = '';
+    
+    market.runners?.forEach(runner => {
+      const runnerName = market.runnerName?.find(r => r.SID === runner.sid)?.RN || 'Team';
+      const backOdds = getBestBackOdds(runner);
+      const layOdds = getBestLayOdds(runner);
+      
+      if (!backOdds && !layOdds) return;
+      
+      // Check user's bet on this runner
+      const userBet = userProfile ? userProfile.bets.find(bet => 
+        bet.eventId == EVENT_ID && 
+        bet.marketId == marketId &&
+        bet.runnerId == runner.sid && 
+        !bet.settled
+      ) : null;
+      
+      runnersHtml += `
+        <div class="runner-row">
+          <div class="runner-info">
+            <div class="team-flag">${runnerName.charAt(0)}</div>
+            <div class="runner-details">
+              <div class="runner-name">${runnerName}</div>
+              <div class="runner-odds">Best odds available</div>
+            </div>
+          </div>
+          <div class="odds-buttons">
+            ${backOdds ? `
+              <button class="odds-btn back" onclick="openBetSlip('back', '${marketId}', '${runner.sid}', '${runnerName}', '${backOdds}', '${market.marketName}', 'match')">
+                ${backOdds}
+              </button>
+            ` : ''}
+            ${layOdds ? `
+              <button class="odds-btn lay" onclick="openBetSlip('lay', '${marketId}', '${runner.sid}', '${runnerName}', '${layOdds}', '${market.marketName}', 'match')">
+                ${layOdds}
+              </button>
+            ` : ''}
+          </div>
+        </div>
+        ${userBet ? `
+          <div style="font-size:12px; padding:10px; background:${userBet.type === 'back' ? 'rgba(0,255,136,0.1)' : 'rgba(255,77,77,0.1)'}; border-radius:8px; margin-bottom:10px; border:1px solid ${userBet.type === 'back' ? 'rgba(0,255,136,0.2)' : 'rgba(255,77,77,0.2)'}">
+            <div style="margin-bottom:5px; color:${userBet.type === 'back' ? '#00ff88' : '#ff4d4d'}; font-weight:600;">
+              🎯 Your ${userBet.type === 'back' ? 'Back' : 'Lay'} Bet
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:13px;">
+              <span>Stake: ₹${userBet.stake.toLocaleString()}</span>
+              <span style="color:#00ff88; font-weight:700;">Win: ₹${userBet.potentialWin.toLocaleString()}</span>
+            </div>
+          </div>
+        ` : ''}
+      `;
+    });
+    
+    if (runnersHtml) {
+      html += `
+        <div class="market-card">
+          <div class="market-name">
+            ${market.marketName}
+            <span class="market-type">MATCH ODDS</span>
+          </div>
+          ${runnersHtml}
+        </div>
+      `;
+    }
+  });
+  
+  container.innerHTML = html;
+}
+
+// ==================== FANCY MARKETS RENDER ====================
+function renderFancyMarkets() {
+  const container = document.getElementById('fancyMarketsContainer');
+  
+  if (!matchData.fancyOddData?.ml || matchData.fancyOddData.ml.length === 0) {
+    container.innerHTML = `
+      <div class="loading">
+        No fancy markets available for this match.
+      </div>
+    `;
+    return;
+  }
+  
+  let html = '';
+  
+  matchData.fancyOddData.ml.forEach(fancy => {
+    html += `
+      <div class="fancy-market">
+        <div class="fancy-header">
+          <div class="fancy-name">${fancy.mn}</div>
+          <div class="fancy-line">Line: ${fancy.rn} - ${fancy.ry}</div>
+        </div>
+        <div class="fancy-odds">
+          <button class="fancy-btn back" onclick="openBetSlip('back', 'fancy_${fancy.mi}', 'yes', '${fancy.mn} - YES', '${fancy.oy}', 'Fancy Market', 'fancy')">
+            ${fancy.oy}
+          </button>
+          <button class="fancy-btn lay" onclick="openBetSlip('lay', 'fancy_${fancy.mi}', 'no', '${fancy.mn} - NO', '${fancy.on}', 'Fancy Market', 'fancy')">
+            ${fancy.on}
+          </button>
+        </div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
+// ==================== BOOKMAKER MARKETS RENDER ====================
+function renderBookmakerMarkets() {
+  const container = document.getElementById('bookmakerContainer');
+  
+  // Filter for bookmaker markets (Tied Match, etc.)
+  const bookmakerMarkets = matchData.matchOddData?.filter(market => 
+    market.marketName.includes('Tied Match') || 
+    market.marketName.includes('Highest Opening Partnership') ||
+    market.marketName.includes('Total Sixes') ||
+    market.marketName.includes('Total Fours')
+  ) || [];
+  
+  if (bookmakerMarkets.length === 0) {
+    container.innerHTML = `
+      <div class="loading">
+        No bookmaker markets available for this match.
+      </div>
+    `;
+    return;
+  }
+  
+  let html = '';
+  
+  bookmakerMarkets.forEach(market => {
+    const marketId = market.mid;
+    let runnersHtml = '';
+    
+    market.runners?.forEach(runner => {
+      const runnerName = market.runnerName?.find(r => r.SID === runner.sid)?.RN || 'Option';
+      const backOdds = getBestBackOdds(runner);
+      const layOdds = getBestLayOdds(runner);
+      
+      if (!backOdds && !layOdds) return;
+      
+      runnersHtml += `
+        <div class="runner-row">
+          <div class="runner-info">
+            <div class="team-flag">${runnerName.charAt(0)}</div>
+            <div class="runner-details">
+              <div class="runner-name">${runnerName}</div>
+              <div class="runner-odds">Bookmaker odds</div>
+            </div>
+          </div>
+          <div class="odds-buttons">
+            ${backOdds ? `
+              <button class="odds-btn back" onclick="openBetSlip('back', '${marketId}', '${runner.sid}', '${runnerName}', '${backOdds}', '${market.marketName}', 'bookmaker')">
+                ${backOdds}
+              </button>
+            ` : ''}
+            ${layOdds ? `
+              <button class="odds-btn lay" onclick="openBetSlip('lay', '${marketId}', '${runner.sid}', '${runnerName}', '${layOdds}', '${market.marketName}', 'bookmaker')">
+                ${layOdds}
+              </button>
+            ` : ''}
+          </div>
+        </div>
+      `;
+    });
+    
+    if (runnersHtml) {
+      html += `
+        <div class="market-card">
+          <div class="market-name">
+            ${market.marketName}
+            <span class="market-type">BOOKMAKER</span>
+          </div>
+          ${runnersHtml}
+        </div>
+      `;
+    }
+  });
+  
+  container.innerHTML = html;
+}
+
+function getBestBackOdds(runner) {
+  return runner.ex?.b?.length ? Math.max(...runner.ex.b.map(o => o.p)) : null;
+}
+
+function getBestLayOdds(runner) {
+  return runner.ex?.l?.length ? Math.min(...runner.ex.l.map(o => o.p)) : null;
+}
+
+// ==================== MY BETS ====================
+function loadMyBets() {
+  if (!userProfile) return;
+  
+  const myBets = userProfile.bets.filter(bet => bet.eventId == EVENT_ID);
+  const container = document.getElementById('myBetsContainer');
+  
+  if (myBets.length === 0) {
+    container.innerHTML = `
+      <div class="loading">
+        <div style="font-size:14px; opacity:0.7; padding:20px;">
+          No bets placed on this match yet.
+        </div>
+      </div>
+    `;
+    return;
+  }
+  
+  let html = '';
+  
+  myBets.forEach(bet => {
+    const statusClass = bet.settled ? (bet.result === 'WIN' ? 'win' : 'lose') : 'pending';
+    const statusText = bet.settled ? (bet.result === 'WIN' ? 'WON' : 'LOST') : 'PENDING';
+    const marketType = bet.marketType === 'fancy' ? 'Fancy' : 
+                      bet.marketType === 'bookmaker' ? 'Bookmaker' : 'Match';
+    
+    html += `
+      <div class="bet-item ${statusClass}">
+        <div class="bet-header">
+          <div class="bet-type ${bet.type}">${bet.type.toUpperCase()}</div>
+          <div class="bet-status">${statusText}</div>
+        </div>
+        <div class="bet-details">
+          ${bet.runnerName}<br>
+          <small style="opacity:0.7">${marketType} • Odds: ${bet.odds}</small>
+        </div>
+        <div class="bet-stake">
+          <span class="bet-amount">Stake: ₹${bet.stake.toLocaleString()}</span>
+          <span class="bet-win">Win: ₹${bet.potentialWin.toLocaleString()}</span>
+        </div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
+// ==================== BET SETTLEMENT ====================
+function checkBetSettlement() {
+  if (!userProfile || !matchData) return;
+  
+  let updated = false;
+  
+  userProfile.bets.forEach(bet => {
+    if (bet.eventId == EVENT_ID && !bet.settled) {
+      const market = matchData.matchOddData?.find(m => m.mid == bet.marketId);
+      if (market) {
+        const runner = market.runners?.find(r => r.sid == bet.runnerId);
+        if (runner && runner.s === "WINNER") {
+          // Settle the bet
+          bet.settled = true;
+          bet.settledAt = new Date().toISOString();
+          
+          if (bet.type === 'back') {
+            // Back bet won
+            const winnings = bet.stake * bet.odds;
+            userProfile.balance += winnings;
+            bet.result = 'WIN';
+            bet.winnings = winnings;
+            userProfile.stats.wonBets++;
+            userProfile.stats.netProfit += (winnings - bet.stake);
+          } else if (bet.type === 'lay') {
+            // Lay bet lost (runner won)
+            bet.result = 'LOSE';
+            userProfile.stats.lostBets++;
+            userProfile.stats.netProfit -= bet.stake;
+          }
+          updated = true;
+        } else if (runner && runner.s === "LOSER" && bet.type === 'lay') {
+          // Lay bet won (runner lost)
+          bet.settled = true;
+          bet.settledAt = new Date().toISOString();
+          userProfile.balance += bet.stake;
+          bet.result = 'WIN';
+          bet.winnings = bet.stake;
+          userProfile.stats.wonBets++;
+          userProfile.stats.netProfit += bet.stake;
+          updated = true;
+        }
+      }
+    }
+  });
+  
+  if (updated) {
+    localStorage.setItem('cricTV_premium_user', JSON.stringify(userProfile));
+    updateUI();
+    loadMyBets();
+    
+    // Show notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+      position: fixed;
+      top: 60px;
+      right: 15px;
+      background: linear-gradient(145deg, #00ff88, #00cc6a);
+      color: #000;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 800;
+      font-size: 14px;
+      z-index: 1000;
+      box-shadow: 0 8px 25px rgba(0,255,136,0.3);
+      animation: slideIn 0.3s ease-out;
+    `;
+    notification.textContent = '💰 Bets settled! Balance updated.';
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.remove();
+    }, 3000);
+  }
+}
+
+// ==================== NAVIGATION ====================
+function goBack() {
+  window.location.href = 'index.html';
+}
+
+// ==================== INITIALIZATION ====================
+window.addEventListener('load', () => {
+  initParticles();
+  window.addEventListener('resize', resizeCanvas);
+  
+  // Load user profile
+  loadUserProfile();
+  
+  // Load match data
+  loadMatchData();
+  
+  // Set up event listeners
+  document.getElementById('stakeAmount').addEventListener('input', calculatePotentialReturn);
+  
+  // Auto-check for settlements
+  setInterval(checkBetSettlement, 5000);
+});
+</script>
+</body>
+</html>
