@@ -289,6 +289,49 @@
           "England ": "Zak Crawley, Ben Duckett, Joe Root, Jacob Bethell, Harry Brook(c), Jos Buttler(w), Will Jacks, Sam Curran, Jamie Overton, Liam Dawson, Adil Rashid, Luke Wood, Brydon Carse, Tom Banton, Rehan Ahmed"
         }
       }
+    },
+    {
+      "id": "south-africa-vs-westindies",
+      "slug": "south-africa-vs-westindies",
+      "seo": {
+        "meta_title": "southafrica-vs-westindies-live",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/south-africa-vs-westindies/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-27T19:19:32.423+05:30",
+        "last_modified": "2026-01-27T19:19:32.432+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "South Africa Vs Westindies ",
+        "team1": "South Africa ",
+        "team2": "Westindies ",
+        "venue": "Paarl",
+        "start_iso": "9:00 Pm",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hotstar",
+          "src": "",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "South Africa ": [],
+          "Westindies ": []
+        },
+        "squads": {
+          "South Africa ": "",
+          "Westindies ": ""
+        }
+      }
     }
   ]
 }
