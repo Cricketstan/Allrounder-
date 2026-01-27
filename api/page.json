@@ -175,54 +175,6 @@
       }
     },
     {
-      "id": "england-vs-srilanka",
-      "slug": "england-vs-srilanka",
-      "seo": {
-        "meta_title": "Srilanka Vs England Live Streaming Free ",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/england-vs-srilanka/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-22T10:57:15.659+05:30",
-        "last_modified": "2026-01-24T14:05:59.725+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "England Vs Srilanka Live",
-        "team1": "Srilanka ",
-        "team2": "England ",
-        "venue": "Colombo ",
-        "start_iso": "2:00 Pm",
-        "end_iso": "11:00 Pm"
-      },
-      "streams": [
-        {
-          "name": "Sony Liv ",
-          "src": "https://crickettv.site/sonyliv/sonyliv-5",
-          "default": false
-        },
-        {
-          "name": "TNT Sports ",
-          "src": "https://crickettv.site/world-sports/player?id=tnt-sports-2",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "The Sri Lankan mens cricket team is set to take on England in a three-match ODI series, starting January 22. Notably, the 2nd and third ODI will be played on January 24 and 27 respectively. All the three matches of this ODI series will be played at the R Premadasa Stadium in Colombo.",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
-        "players_to_watch": {
-          "Srilanka ": [],
-          "England ": []
-        },
-        "squads": {
-          "Srilanka ": "Pathum Nissanka, Kamil Mishara, Kusal Mendis(w), Dhananjaya de Silva, Charith Asalanka(c), Kamindu Mendis, Janith Liyanage, Wanindu Hasaranga, Maheesh Theekshana, Eshan Malinga, Asitha Fernando, Jeffrey Vandersay, Pramod Madushan, Dunith Wellalage, Pavan Rathnayake, Milan Priyanath Rathnayake, Sadeera Samarawickrama",
-          "England ": "Zak Crawley, Ben Duckett, Joe Root, Jacob Bethell, Harry Brook(c), Jos Buttler(w), Will Jacks, Sam Curran, Jamie Overton, Liam Dawson, Adil Rashid, Luke Wood, Brydon Carse, Tom Banton, Rehan Ahmed"
-        }
-      }
-    },
-    {
       "id": "bbl",
       "slug": "bbl",
       "seo": {
@@ -287,6 +239,54 @@
         "squads": {
           "Thunder": "",
           "Renegade ": ""
+        }
+      }
+    },
+    {
+      "id": "england-vs-srilanka",
+      "slug": "england-vs-srilanka",
+      "seo": {
+        "meta_title": "Srilanka Vs England Live Streaming Free ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/england-vs-srilanka/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-22T10:57:15.659+05:30",
+        "last_modified": "2026-01-27T14:09:40.614+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "England Vs Srilanka Live",
+        "team1": "Srilanka ",
+        "team2": "England ",
+        "venue": "Colombo ",
+        "start_iso": "2:00 Pm",
+        "end_iso": "11:00 Pm"
+      },
+      "streams": [
+        {
+          "name": "Sony Liv ",
+          "src": "https://crickettv.site/sonyliv/sonyliv-5",
+          "default": false
+        },
+        {
+          "name": "TNT Sports ",
+          "src": "https://crickettv.site/world-sports/player?id=tnt-sports-1",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "The Sri Lankan mens cricket team is set to take on England in a three-match ODI series, starting January 22. Notably, the 2nd and third ODI will be played on January 24 and 27 respectively. All the three matches of this ODI series will be played at the R Premadasa Stadium in Colombo.",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Srilanka ": [],
+          "England ": []
+        },
+        "squads": {
+          "Srilanka ": "Pathum Nissanka, Kamil Mishara, Kusal Mendis(w), Dhananjaya de Silva, Charith Asalanka(c), Kamindu Mendis, Janith Liyanage, Wanindu Hasaranga, Maheesh Theekshana, Eshan Malinga, Asitha Fernando, Jeffrey Vandersay, Pramod Madushan, Dunith Wellalage, Pavan Rathnayake, Milan Priyanath Rathnayake, Sadeera Samarawickrama",
+          "England ": "Zak Crawley, Ben Duckett, Joe Root, Jacob Bethell, Harry Brook(c), Jos Buttler(w), Will Jacks, Sam Curran, Jamie Overton, Liam Dawson, Adil Rashid, Luke Wood, Brydon Carse, Tom Banton, Rehan Ahmed"
         }
       }
     }
