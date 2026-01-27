@@ -251,7 +251,7 @@
         "canonical": "https://crickettv.site/home/england-vs-srilanka/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-22T10:57:15.659+05:30",
-        "last_modified": "2026-01-27T14:09:40.614+05:30",
+        "last_modified": "2026-01-27T14:10:50.088+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -265,7 +265,7 @@
       "streams": [
         {
           "name": "Sony Liv ",
-          "src": "https://crickettv.site/sonyliv/sonyliv-5",
+          "src": "https://crickettv.site/sonyliv/sonyliv-1",
           "default": false
         },
         {
