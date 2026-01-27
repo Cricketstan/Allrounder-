@@ -299,7 +299,7 @@
         "canonical": "https://crickettv.site/home/south-africa-vs-westindies/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-27T19:19:32.423+05:30",
-        "last_modified": "2026-01-27T19:22:39.175+05:30",
+        "last_modified": "2026-01-27T19:23:39.420+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -324,12 +324,18 @@
         "prediction": "",
         "final_word": "",
         "players_to_watch": {
-          "South Africa ": [],
-          "Westindies ": []
+          "South Africa ": [
+            "Markram",
+            "Miller"
+          ],
+          "Westindies ": [
+            "Hope",
+            "Hetmyre"
+          ]
         },
         "squads": {
-          "South Africa ": "",
-          "Westindies ": ""
+          "South Africa ": "Aiden Markram (C), Ryan Rickelton, Quinton de Kock (WK), Tristan Stubbs, Dewald Brevis, Jason Smith, Marco Jansen, Corbin Bosch, Keshav Maharaj, Kagiso Rabada, Anrich Nortje.",
+          "Westindies ": "Shai Hope (C & WK), Johnson Charles, Brandon King, Sherfane Rutherford, Rovman Powell, Romario Shepherd, Roston Chase, Jason Holder, Akeal Hosein, Gudakesh Motie, Shamar Springer."
         }
       }
     }
