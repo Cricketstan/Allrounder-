@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-28T14:43:41.508Z",
+  "updated_at": "2026-01-28T15:17:34.176Z",
   "count": 100,
   "items": [
     {
@@ -51,22 +51,6 @@
       "url": "https://crickettv.site/wpl/6388390395112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Rajeshwari Gayakwad",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a0/d5/56/0/image-d98f1c40-4c8d-41f0-a64c-d27f598dd78d.jpg",
-      "video_id": "6388388444112",
-      "duration": 30,
-      "published_iso": "2026-01-27T18:48:53",
-      "url": "https://crickettv.site/wpl/6388388444112.html"
-    },
-    {
-      "title": "Kingfisher Good Times Sixes of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Sneh Rana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d5/1c/f4/0/image-3aae5b79-e6b9-4c48-b878-a352123cd4a0.jpg",
-      "video_id": "6388389031112",
-      "duration": 29,
-      "published_iso": "2026-01-27T18:48:53",
-      "url": "https://crickettv.site/wpl/6388389031112.html"
-    },
-    {
       "title": "Presentation: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/52/59/0/image-d497f90c-6543-4407-b838-6c3134cb7342.jpg",
       "video_id": "6388387659112",
@@ -75,12 +59,28 @@
       "url": "https://crickettv.site/wpl/6388387659112.html"
     },
     {
+      "title": "TATA WPL Green Dot Balls of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Rajeshwari Gayakwad",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a0/d5/56/0/image-d98f1c40-4c8d-41f0-a64c-d27f598dd78d.jpg",
+      "video_id": "6388388444112",
+      "duration": 30,
+      "published_iso": "2026-01-27T18:48:53",
+      "url": "https://crickettv.site/wpl/6388388444112.html"
+    },
+    {
       "title": "Sierra Super Striker of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Niki Prasad",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/73/62/a7/0/image-ecf88ba3-a20b-4386-b4a6-a1ea6d1e94e8.jpg",
       "video_id": "6388388733112",
       "duration": 32,
       "published_iso": "2026-01-27T18:48:53",
       "url": "https://crickettv.site/wpl/6388388733112.html"
+    },
+    {
+      "title": "Kingfisher Good Times Sixes of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Sneh Rana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d5/1c/f4/0/image-3aae5b79-e6b9-4c48-b878-a352123cd4a0.jpg",
+      "video_id": "6388389031112",
+      "duration": 29,
+      "published_iso": "2026-01-27T18:48:53",
+      "url": "https://crickettv.site/wpl/6388389031112.html"
     },
     {
       "title": "Amazing Moments: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -531,22 +531,6 @@
       "url": "https://crickettv.site/wpl/6388339451112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Poonam Khemnar",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e9/93/77/0/image-a5ef0611-86b3-48dc-9f4c-affd957a2f2e.jpg",
-      "video_id": "6388337783112",
-      "duration": 28,
-      "published_iso": "2026-01-26T17:59:55",
-      "url": "https://crickettv.site/wpl/6388337783112.html"
-    },
-    {
-      "title": "Amazing Moments: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/61/d1/ac/0/image-5c83644a-c249-43e2-8edc-4600cb7a319f.jpg",
-      "video_id": "6388336420112",
-      "duration": 62,
-      "published_iso": "2026-01-26T17:59:55",
-      "url": "https://crickettv.site/wpl/6388336420112.html"
-    },
-    {
       "title": "Herbalife Active Catch of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Rahila Firdous",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1f/c7/7f/0/image-997f8e3e-2e32-42ba-b3eb-7f711aa46c36.jpg",
       "video_id": "6388337013112",
@@ -563,20 +547,36 @@
       "url": "https://crickettv.site/wpl/6388336234112.html"
     },
     {
+      "title": "Amazing Moments: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/61/d1/ac/0/image-5c83644a-c249-43e2-8edc-4600cb7a319f.jpg",
+      "video_id": "6388336420112",
+      "duration": 62,
+      "published_iso": "2026-01-26T17:59:55",
+      "url": "https://crickettv.site/wpl/6388336420112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Poonam Khemnar",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e9/93/77/0/image-a5ef0611-86b3-48dc-9f4c-affd957a2f2e.jpg",
+      "video_id": "6388337783112",
+      "duration": 28,
+      "published_iso": "2026-01-26T17:59:55",
+      "url": "https://crickettv.site/wpl/6388337783112.html"
+    },
+    {
+      "title": "Player of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Natalie Sciver-Brunt",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/73/e4/0/2W8X9mcQJ0.jpg",
+      "video_id": "6388336617112",
+      "duration": 176,
+      "published_iso": "2026-01-26T17:59:00",
+      "url": "https://crickettv.site/wpl/6388336617112.html"
+    },
+    {
       "title": "TATA WPL Green Dot Balls of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Lauren Bell",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d4/97/25/0/qF9adyarIJ.jpg",
       "video_id": "6388336707112",
       "duration": 28,
       "published_iso": "2026-01-26T17:59:00",
       "url": "https://crickettv.site/wpl/6388336707112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Richa Ghosh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3d/18/98/0/fojM36Volr.jpg",
-      "video_id": "6388337494112",
-      "duration": 30,
-      "published_iso": "2026-01-26T17:59:00",
-      "url": "https://crickettv.site/wpl/6388337494112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Richa Ghosh",
@@ -587,12 +587,12 @@
       "url": "https://crickettv.site/wpl/6388336233112.html"
     },
     {
-      "title": "Player of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Natalie Sciver-Brunt",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/73/e4/0/2W8X9mcQJ0.jpg",
-      "video_id": "6388336617112",
-      "duration": 176,
+      "title": "Sierra Super Striker of the Match: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Richa Ghosh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3d/18/98/0/fojM36Volr.jpg",
+      "video_id": "6388337494112",
+      "duration": 30,
       "published_iso": "2026-01-26T17:59:00",
-      "url": "https://crickettv.site/wpl/6388336617112.html"
+      "url": "https://crickettv.site/wpl/6388337494112.html"
     },
     {
       "title": "Super Sixes: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026",
@@ -787,20 +787,20 @@
       "url": "https://crickettv.site/wpl/6388333356112.html"
     },
     {
-      "title": "Wicket: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Georgia Voll Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/cc/89/0/fakwWJ6jx5.jpg",
-      "video_id": "6388332479112",
-      "duration": 30,
-      "published_iso": "2026-01-26T16:14:00",
-      "url": "https://crickettv.site/wpl/6388332479112.html"
-    },
-    {
       "title": "Wicket: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Smriti Mandhana Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/53/f7/f9/0/4YImIl08m7.jpg",
       "video_id": "6388332770112",
       "duration": 28,
       "published_iso": "2026-01-26T16:14:00",
       "url": "https://crickettv.site/wpl/6388332770112.html"
+    },
+    {
+      "title": "Wicket: Match 16, Royal Challengers Bengaluru vs Mumbai Indians, WPL 2026: Georgia Voll Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/cc/89/0/fakwWJ6jx5.jpg",
+      "video_id": "6388332479112",
+      "duration": 30,
+      "published_iso": "2026-01-26T16:14:00",
+      "url": "https://crickettv.site/wpl/6388332479112.html"
     }
   ]
 }
