@@ -1,75 +1,201 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JioStar Player</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css">
-
-<style>
-html,body{
-  margin:0;
-  background:#000;
-  height:100%;
-}
-.shaka-video-container{
-  position:absolute;
-  inset:0;
-}
-video{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-.shaka-spinner-container{display:none!important}
-</style>
-</head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Player</title>     
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">  
+  <style>  
+    * { margin: 0; padding: 0; box-sizing: border-box; }  
+    html, body { background: #000; height: 100vh; width: 100vw; overflow: hidden; }  
+    .shaka-video-container { position: absolute; inset: 0; width: 100%; height: 100%; }  
+    video { width: 100%; height: 100%; background: #000; object-fit: contain; }  
+    .shaka-spinner-container { display: none !important; }  
+    .back-btn { position: absolute; top: 15px; left: 15px; z-index: 100; color: white; text-decoration: none; background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 30px; font-size: 14px; border: 1px solid #444; }
+    
+    /* Telegram Popup Styles for Player */
+    .telegram-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .telegram-popup.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .telegram-modal {
+      background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      border: 1px solid rgba(255, 105, 180, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+      transform: translateY(20px);
+      transition: transform 0.4s ease;
+    }
+    
+    .telegram-popup.active .telegram-modal {
+      transform: translateY(0);
+    }
+    
+    .telegram-icon {
+      font-size: 3.5rem;
+      color: #229ED9;
+      margin-bottom: 20px;
+    }
+    
+    .telegram-title {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #229ED9, #2AABEE);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .telegram-text {
+      color: #aaa;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+    
+    .telegram-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    
+    .btn {
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(90deg, #229ED9, #2AABEE);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(34, 158, 217, 0.4);
+    }
+    
+    .btn-secondary {
+      background: rgba(60, 60, 60, 0.8);
+      color: #ddd;
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(80, 80, 80, 0.9);
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>  
 <body>
-<div class="shaka-video-container" data-shaka-player>
-  <video autoplay playsinline></video>
-</div>
+  <!-- Telegram Popup -->
+  <div class="telegram-popup" id="telegramPopup">
+    <div class="telegram-modal">
+      <div class="telegram-icon">
+        <i class="fab fa-telegram"></i>
+      </div>
+      <h2 class="telegram-title">Stay Updated</h2>
+      <p class="telegram-text">Join our Telegram channel for the latest updates, new channels, and exclusive content.</p>
+      <div class="telegram-buttons">
+        <button class="btn btn-primary" id="joinTelegram">
+          <i class="fab fa-telegram"></i> Join Now
+        </button>
+        <button class="btn btn-secondary" id="cancelTelegram">Maybe Later</button>
+      </div>
+    </div>
+  </div>
+  
+  <a href="index.html" class="back-btn">← Back</a>
+  <div class="shaka-video-container" data-shaka-player>  
+    <video autoplay playsinline></video>  
+  </div>  
+  
+  <script>  
+    // Telegram popup functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      // Show Telegram popup on page load (after a delay)
+      setTimeout(() => {
+        const popup = document.getElementById('telegramPopup');
+        const hasClosedPopup = localStorage.getItem('telegramPopupClosed');
+        
+        // Only show if not already closed by user
+        if (!hasClosedPopup) {
+          popup.classList.add('active');
+        }
+      }, 2000); // Show after 2 seconds on player page
+    });
+    
+    // Telegram popup handlers
+    document.getElementById('joinTelegram').addEventListener('click', () => {
+      window.open('https://t.me/+5OZ8BmlhECZjMzNl', '_blank');
+      localStorage.setItem('telegramPopupClosed', 'true');
+      document.getElementById('telegramPopup').classList.remove('active');
+    });
+    
+    document.getElementById('cancelTelegram').addEventListener('click', () => {
+      localStorage.setItem('telegramPopupClosed', 'true');
+      document.getElementById('telegramPopup').classList.remove('active');
+    });
+    
+    // Main video player setup
+    async function setupPlayer() {
+      const params = new URLSearchParams(window.location.search);
+      const streamUrl = params.get('src');
+      const kid = params.get('kid');
+      const key = params.get('key');
 
-<script>
-(async()=>{
-  const p = new URLSearchParams(location.search);
-
-  const mpd   = p.get("mpd");
-  const kid   = p.get("kid");
-  const key   = p.get("key");
-  const cookie= p.get("cookie") || "";
-
-  shaka.polyfill.installAll();
-  if(!shaka.Player.isBrowserSupported()) return;
-
-  const video = document.querySelector("video");
-  const player = new shaka.Player(video);
-  new shaka.ui.Overlay(player, document.querySelector(".shaka-video-container"), video);
-
-  player.configure({
-    drm:{ clearKeys:{ [kid]:key }},
-    streaming:{
-      lowLatencyMode:true,
-      bufferingGoal:15,
-      rebufferingGoal:2
+      shaka.polyfill.installAll();  
+      const video = document.querySelector('video');  
+      const player = new shaka.Player();  
+      await player.attach(video);  
+  
+      const container = document.querySelector('.shaka-video-container');
+      const ui = new shaka.ui.Overlay(player, container, video);  
+  
+      ui.configure({  
+        controlPanelElements: ['play_pause', 'time_and_duration', 'spacer', 'quality', 'fullscreen'],  
+        volumeBarColors: { base: 'rgba(255, 192, 203, 0.3)', level: 'rgb(255, 105, 180)' },  
+        seekBarColors: { base: 'rgba(255, 255, 0, 0.3)', buffered: 'rgba(255, 255, 0, 0.6)', played: 'rgb(255, 255, 0)' }  
+      });  
+  
+      player.configure({  
+        drm: { clearKeys: { [kid]: key } },  
+        streaming: { lowLatencyMode: true, bufferingGoal: 15 }  
+      });  
+  
+      try {  
+        await player.load(streamUrl);  
+      } catch (error) {  
+        console.error('Error loading stream:', error);  
+      }
     }
-  });
-
-  player.getNetworkingEngine().registerRequestFilter((type,req)=>{
-    req.headers["Referer"]="https://www.jiotv.com/";
-    req.headers["User-Agent"]="plaYtv/7.1.5 (Android)";
-    if(cookie) req.headers["Cookie"]=cookie;
-
-    if(req.uris[0] && cookie && !req.uris[0].includes("__hdnea")){
-      req.uris[0]+= (req.uris[0].includes("?")?"&":"?")+cookie;
-    }
-  });
-
-  await player.load(mpd);
-  try{ await video.play(); }catch{}
-})();
-</script>
-</body>
+    
+    // Start the player after DOM is ready
+    setupPlayer();
+  </script>  
+</body>  
 </html>
