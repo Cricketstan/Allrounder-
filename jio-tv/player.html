@@ -12,7 +12,20 @@
     .shaka-video-container { position: absolute; inset: 0; width: 100%; height: 100%; }  
     video { width: 100%; height: 100%; background: #000; object-fit: contain; }  
     .shaka-spinner-container { display: none !important; }  
-    .back-btn { position: absolute; top: 15px; left: 15px; z-index: 100; color: white; text-decoration: none; background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 30px; font-size: 14px; border: 1px solid #444; }
+    .back-btn { 
+      position: absolute; 
+      top: 15px; 
+      left: 15px; 
+      z-index: 100; 
+      color: white; 
+      text-decoration: none; 
+      background: rgba(0,0,0,0.6); 
+      padding: 8px 16px; 
+      border-radius: 30px; 
+      font-size: 14px; 
+      border: 1px solid #444; 
+      cursor: pointer;
+    }
     
     /* Telegram Popup Styles for Player */
     .telegram-popup {
@@ -21,7 +34,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.95);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -137,60 +150,110 @@
   <script>  
     // Telegram popup functionality
     document.addEventListener('DOMContentLoaded', () => {
-      // Show Telegram popup on page load (after a delay)
+      // Show Telegram popup on every page load
       setTimeout(() => {
         const popup = document.getElementById('telegramPopup');
-        const hasClosedPopup = localStorage.getItem('telegramPopupClosed');
-        
-        // Only show if not already closed by user
-        if (!hasClosedPopup) {
-          popup.classList.add('active');
-        }
-      }, 2000); // Show after 2 seconds on player page
+        popup.classList.add('active');
+      }, 2000);
     });
     
     // Telegram popup handlers
     document.getElementById('joinTelegram').addEventListener('click', () => {
       window.open('https://t.me/+5OZ8BmlhECZjMzNl', '_blank');
-      localStorage.setItem('telegramPopupClosed', 'true');
       document.getElementById('telegramPopup').classList.remove('active');
     });
     
     document.getElementById('cancelTelegram').addEventListener('click', () => {
-      localStorage.setItem('telegramPopupClosed', 'true');
       document.getElementById('telegramPopup').classList.remove('active');
     });
     
     // Main video player setup
     async function setupPlayer() {
-      const params = new URLSearchParams(window.location.search);
-      const streamUrl = params.get('src');
-      const kid = params.get('kid');
-      const key = params.get('key');
-
-      shaka.polyfill.installAll();  
-      const video = document.querySelector('video');  
-      const player = new shaka.Player();  
-      await player.attach(video);  
-  
-      const container = document.querySelector('.shaka-video-container');
-      const ui = new shaka.ui.Overlay(player, container, video);  
-  
-      ui.configure({  
-        controlPanelElements: ['play_pause', 'time_and_duration', 'spacer', 'quality', 'fullscreen'],  
-        volumeBarColors: { base: 'rgba(255, 192, 203, 0.3)', level: 'rgb(255, 105, 180)' },  
-        seekBarColors: { base: 'rgba(255, 255, 0, 0.3)', buffered: 'rgba(255, 255, 0, 0.6)', played: 'rgb(255, 255, 0)' }  
-      });  
-  
-      player.configure({  
-        drm: { clearKeys: { [kid]: key } },  
-        streaming: { lowLatencyMode: true, bufferingGoal: 15 }  
-      });  
-  
-      try {  
-        await player.load(streamUrl);  
-      } catch (error) {  
-        console.error('Error loading stream:', error);  
+      // Get channel_id from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const channelId = urlParams.get('id');
+      
+      if (!channelId) {
+        console.error('No channel ID provided');
+        alert('Error: No channel selected. Please go back and select a channel.');
+        return;
+      }
+      
+      console.log('Loading channel ID:', channelId);
+      
+      // Fetch the channel data from the JSON API
+      try {
+        const response = await fetch("https://crickettv.site/api/jiotv.json");
+        const allChannels = await response.json();
+        
+        // Find the channel by ID
+        const channel = allChannels.find(ch => ch.channel_id === channelId);
+        
+        if (!channel) {
+          console.error('Channel not found:', channelId);
+          alert('Error: Channel not found. Please go back and select another channel.');
+          return;
+        }
+        
+        console.log('Found channel:', channel.channel_name);
+        console.log('Stream URL:', channel.channel_url);
+        console.log('Key ID:', channel.keyId);
+        console.log('Key:', channel.key);
+        
+        // Set page title
+        document.title = `Prime TV - ${channel.channel_name}`;
+        
+        // Initialize Shaka Player
+        shaka.polyfill.installAll();  
+        const video = document.querySelector('video');  
+        const player = new shaka.Player();  
+        
+        try {
+          await player.attach(video);  
+        } catch (error) {
+          console.error('Error attaching player:', error);
+          return;
+        }
+    
+        const container = document.querySelector('.shaka-video-container');
+        const ui = new shaka.ui.Overlay(player, container, video);  
+    
+        ui.configure({  
+          controlPanelElements: ['play_pause', 'time_and_duration', 'spacer', 'quality', 'fullscreen'],  
+          volumeBarColors: { base: 'rgba(255, 192, 203, 0.3)', level: 'rgb(255, 105, 180)' },  
+          seekBarColors: { base: 'rgba(255, 255, 0, 0.3)', buffered: 'rgba(255, 255, 0, 0.6)', played: 'rgb(255, 255, 0)' }  
+        });  
+    
+        player.configure({  
+          drm: { clearKeys: { [channel.keyId]: channel.key } },  
+          streaming: { 
+            lowLatencyMode: true, 
+            bufferingGoal: 15,
+            rebufferingGoal: 8 
+          }
+        });  
+    
+        try {  
+          console.log('Loading stream:', channel.channel_url);
+          await player.load(channel.channel_url);  
+          console.log('Stream loaded successfully');
+        } catch (error) {  
+          console.error('Error loading stream:', error);  
+          alert(`Error loading ${channel.channel_name}. Please try another channel.`);
+          
+          // Try to provide more helpful error message
+          if (error.code === 1002) {
+            alert('DRM error: Invalid key or keyId. The stream may have expired.');
+          } else if (error.code === 4000) {
+            alert('Network error: Cannot connect to the stream server.');
+          } else if (error.code === 4002) {
+            alert('Stream error: Invalid MPD manifest format.');
+          }
+        }
+        
+      } catch (error) {
+        console.error('Error fetching channel data:', error);
+        alert('Error loading channel information. Please check your connection.');
       }
     }
     
