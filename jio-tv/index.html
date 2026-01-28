@@ -418,27 +418,21 @@
         let allChannels = [];
         let selectedCategory = 'All';
         
-        // Show Telegram popup on page load
+        // Show Telegram popup on every page load
         window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 const popup = document.getElementById('telegramPopup');
-                const hasClosedPopup = localStorage.getItem('telegramPopupClosed');
-                
-                if (!hasClosedPopup) {
-                    popup.classList.add('active');
-                }
+                popup.classList.add('active');
             }, 1500);
         });
         
         // Telegram popup handlers
         document.getElementById('joinTelegram').addEventListener('click', () => {
             window.open('https://t.me/+5OZ8BmlhECZjMzNl', '_blank');
-            localStorage.setItem('telegramPopupClosed', 'true');
             document.getElementById('telegramPopup').classList.remove('active');
         });
         
         document.getElementById('cancelTelegram').addEventListener('click', () => {
-            localStorage.setItem('telegramPopupClosed', 'true');
             document.getElementById('telegramPopup').classList.remove('active');
         });
         
