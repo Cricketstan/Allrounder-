@@ -3,13 +3,13 @@
 
 
 {
-      "title": "India Vs Newzealand",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6965bc7be4b08f97e7b4bd46-1768519282532?location=hero-default&imwidth=2560",
+      "title": "Pakistan Vs Australia",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/69794fffe4b0e88dc76ed988-1769559218453?location=hero-default&imwidth=1920",
       "watch_now": [
-        { "id": "home/ind-vs-nz", "name": "Play Highlights" }
+        { "id": "home/pakistan-vs-australia", "name": "Play Highlights" }
       ],
-      "date": "28 Jan 2026",
-      "start_time": "06:15 PM",
+      "date": "29 Jan 2026",
+      "start_time": "04:15 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
