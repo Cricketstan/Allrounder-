@@ -551,13 +551,9 @@
                 const div = document.createElement('div');
                 div.className = 'card';
                 
+                // Pass ONLY channel_id to player.html
                 div.onclick = () => {
-                    const params = new URLSearchParams({
-                        src: ch.channel_url,
-                        kid: ch.keyId,
-                        key: ch.key
-                    });
-                    window.location.href = `player.html?${params.toString()}`;
+                    window.location.href = `player.html?id=${ch.channel_id}`;
                 };
 
                 // Add a random badge to some cards for visual appeal
