@@ -210,10 +210,10 @@
       "get": "https://dillzycounter.vercel.app/api/get?key=youtube"
     },
     {
-      "id": "super-smash",
-      "name": "Fancode",
+      "id": "cricbuzz",
+      "name": "cricbuzz",
       "type": "iframe",
-      "iframeSrc": "https://dillzy.xo.je/mac_single_script/?page=play&cmd=ffrt+http%3A%2F%2Flocalhost%2Fch%2F1966&name=STAR+SPORTS+1+HINDI+4K%2A",
+      "iframeSrc": "https://crickettv.site/cricbuzz1",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=SS",
       "get": "https://dillzycounter.vercel.app/api/get?key=SS"
     }
