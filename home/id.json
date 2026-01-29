@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-01-28T10:37:54.032272Z",
+  "updated_at": "2026-01-29T15:37:58.693313Z",
   "count": 6,
   "pages": [
     {
@@ -28,16 +28,16 @@
       "description": "The Sri Lankan mens cricket team is set to take on England in a three-match ODI series, starting January 22. Notably, the 2nd and third ODI will be played on January 24 and 27 respectively. All the three matches of this ODI series will be played at the R Premadasa Stadium in Colombo."
     },
     {
-      "id": "south-africa-vs-westindies",
-      "title": "South Africa Vs Westindies ",
-      "url": "https://crickettv.site/home/south-africa-vs-westindies/",
-      "description": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter."
-    },
-    {
       "id": "ind-vs-nz",
       "title": "India Vs Newzealand Live",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
+    },
+    {
+      "id": "south-africa-vs-westindies",
+      "title": "South Africa Vs Westindies ",
+      "url": "https://crickettv.site/home/south-africa-vs-westindies/",
+      "description": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter."
     }
   ]
 }
