@@ -1,7 +1,19 @@
 {
   "event": [
 
-
+{
+      "title": "Gujrat Vs Delhi",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/3872/1769598163872-i",
+      "watch_now": [
+        { "id": "home/wpl", "name": "Play Highlights" }
+      ],
+      "date": "29 Jan 2026",
+      "start_time": "06:45 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "WPL"
+    },
 {
       "title": "Pakistan Vs Australia",
       "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6716dcace4b096cd1311a729-1730933062732?location=hero-default&imwidth=2560",
@@ -13,6 +25,21 @@
       "category": "Cricket",
       "year": "2025",
       "language": "Eng",
+      "league": "T20"
+    },
+
+
+{
+      "title": "Africa Vs Westindies",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7615/1769523767615-i",
+      "watch_now": [
+        { "id": "home/south-africa-vs-westindies", "name": "Play Highlights" }
+      ],
+      "date": "29 Jan 2026",
+      "start_time": "09:05 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
       "league": "T20"
     },
 {
