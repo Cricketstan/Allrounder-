@@ -1,6 +1,18 @@
 {
   "event": [
-
+{
+      "title": "Africa Vs Westindies",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7615/1769523767615-i",
+      "watch_now": [
+        { "id": "home/south-africa-vs-westindies", "name": "Play Highlights" }
+      ],
+      "date": "29 Jan 2026",
+      "start_time": "09:05 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "T20"
+    },
 {
       "title": "Benglore Vs Up",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/3872/1769598163872-i",
@@ -16,19 +28,7 @@
     },
 
 
-{
-      "title": "Africa Vs Westindies",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7615/1769523767615-i",
-      "watch_now": [
-        { "id": "home/south-africa-vs-westindies", "name": "Play Highlights" }
-      ],
-      "date": "29 Jan 2026",
-      "start_time": "09:05 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "T20"
-    },
+
 {
       "title": "Rise Of Champions",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/854/1766311040854-i",
