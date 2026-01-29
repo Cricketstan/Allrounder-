@@ -299,7 +299,7 @@
         "canonical": "https://crickettv.site/home/south-africa-vs-westindies/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-27T19:19:32.423+05:30",
-        "last_modified": "2026-01-29T21:07:49.208+05:30",
+        "last_modified": "2026-01-29T21:15:40.936+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -313,6 +313,11 @@
       "streams": [
         {
           "name": "Willow Cricket ",
+          "src": "https://crickettv.site/willow2",
+          "default": false
+        },
+        {
+          "name": "Cricbuzz ",
           "src": "https://crickettv.site/cricbuzz1",
           "default": false
         }
