@@ -230,60 +230,6 @@
       }
     },
     {
-      "id": "south-africa-vs-westindies",
-      "slug": "south-africa-vs-westindies",
-      "seo": {
-        "meta_title": "southafrica-vs-westindies-live",
-        "meta_description": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter.",
-        "canonical": "https://crickettv.site/home/south-africa-vs-westindies/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-27T19:19:32.423+05:30",
-        "last_modified": "2026-01-27T21:20:49.124+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "South Africa Vs Westindies ",
-        "team1": "South Africa ",
-        "team2": "Westindies ",
-        "venue": "Paarl",
-        "start_iso": "9:00 Pm",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hotstar",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        },
-        {
-          "name": "Willow Cricket ",
-          "src": "https://crickettv.site/willow",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter.",
-        "match_details": "The hosts recently played a five-match T20I series against India. The Aiden Markram-led side lost 1-3, with one match getting washed out. South Africa will enter the upcoming series as favourites and will want to get a few wins under their belt, especially with the T20 World Cup being on the horizon.\n\nMeanwhile, the West Indies played a three-match T20I series earlier this month against Afghanistan in Dubai and lost 1-2. However, they missed star players like regular captain Shai Hope and Sherfane Rutherford, who were busy with their SA20 commitments.",
-        "pitch_report": "Boland Park, Paarl Pitch Report\nFive games were played at the Boland Park in SA20 2025-26. The average first-innings score was around 172. Four out of the five games were won by teams batting first. The surface tends to slow down a touch in the second innings but captains generally prefer to chase in the shortest format and that trend might continue on Tuesday as well.",
-        "prediction": "Westindies Will Win This Match",
-        "final_word": "Venkat Ramana Govinda ",
-        "players_to_watch": {
-          "South Africa ": [
-            "Markram",
-            "Miller"
-          ],
-          "Westindies ": [
-            "Hope",
-            "Hetmyre"
-          ]
-        },
-        "squads": {
-          "South Africa ": "Aiden Markram (C), Ryan Rickelton, Quinton de Kock (WK), Tristan Stubbs, Dewald Brevis, Jason Smith, Marco Jansen, Corbin Bosch, Keshav Maharaj, Kagiso Rabada, Anrich Nortje.",
-          "Westindies ": "Shai Hope (C & WK), Johnson Charles, Brandon King, Sherfane Rutherford, Rovman Powell, Romario Shepherd, Roston Chase, Jason Holder, Akeal Hosein, Gudakesh Motie, Shamar Springer."
-        }
-      }
-    },
-    {
       "id": "ind-vs-nz",
       "slug": "wpl",
       "seo": {
@@ -341,6 +287,55 @@
         },
         "squads": {
           "": ""
+        }
+      }
+    },
+    {
+      "id": "south-africa-vs-westindies",
+      "slug": "south-africa-vs-westindies",
+      "seo": {
+        "meta_title": "southafrica-vs-westindies-live",
+        "meta_description": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter.",
+        "canonical": "https://crickettv.site/home/south-africa-vs-westindies/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-27T19:19:32.423+05:30",
+        "last_modified": "2026-01-29T21:07:49.208+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "South Africa Vs Westindies ",
+        "team1": "South Africa ",
+        "team2": "Westindies ",
+        "venue": "Paarl",
+        "start_iso": "9:00 Pm",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Willow Cricket ",
+          "src": "https://crickettv.site/cricbuzz1",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter.",
+        "match_details": "The hosts recently played a five-match T20I series against India. The Aiden Markram-led side lost 1-3, with one match getting washed out. South Africa will enter the upcoming series as favourites and will want to get a few wins under their belt, especially with the T20 World Cup being on the horizon.\n\nMeanwhile, the West Indies played a three-match T20I series earlier this month against Afghanistan in Dubai and lost 1-2. However, they missed star players like regular captain Shai Hope and Sherfane Rutherford, who were busy with their SA20 commitments.",
+        "pitch_report": "Boland Park, Paarl Pitch Report\nFive games were played at the Boland Park in SA20 2025-26. The average first-innings score was around 172. Four out of the five games were won by teams batting first. The surface tends to slow down a touch in the second innings but captains generally prefer to chase in the shortest format and that trend might continue on Tuesday as well.",
+        "prediction": "Westindies Will Win This Match",
+        "final_word": "Venkat Ramana Govinda ",
+        "players_to_watch": {
+          "South Africa ": [
+            "Markram",
+            "Miller"
+          ],
+          "Westindies ": [
+            "Hope",
+            "Hetmyre"
+          ]
+        },
+        "squads": {
+          "South Africa ": "Aiden Markram (C), Ryan Rickelton, Quinton de Kock (WK), Tristan Stubbs, Dewald Brevis, Jason Smith, Marco Jansen, Corbin Bosch, Keshav Maharaj, Kagiso Rabada, Anrich Nortje.",
+          "Westindies ": "Shai Hope (C & WK), Johnson Charles, Brandon King, Sherfane Rutherford, Rovman Powell, Romario Shepherd, Roston Chase, Jason Holder, Akeal Hosein, Gudakesh Motie, Shamar Springer."
         }
       }
     }
