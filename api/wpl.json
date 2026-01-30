@@ -1,7 +1,39 @@
 {
-  "updated_at": "2026-01-30T11:52:57.585Z",
+  "updated_at": "2026-01-30T13:14:07.624Z",
   "count": 100,
   "items": [
+    {
+      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Hayley Matthews Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/92/6c/0/image-63b5cd20-b90f-4ddf-82fe-29c7b30f9e33.jpg",
+      "video_id": "6388540033112",
+      "duration": 116,
+      "published_iso": "2026-01-30T12:56:17",
+      "url": "https://crickettv.site/wpl/6388540033112.html"
+    },
+    {
+      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/85/a8/0/image-7d100b40-9d2d-47e9-9640-f2feb4027370.jpg",
+      "video_id": "6388541403112",
+      "duration": 111,
+      "published_iso": "2026-01-30T12:56:17",
+      "url": "https://crickettv.site/wpl/6388541403112.html"
+    },
+    {
+      "title": "Pitch Report: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/66/a7/0/image-0591ecaf-c398-4d67-acc6-0191361887c1.jpg",
+      "video_id": "6388539852112",
+      "duration": 106,
+      "published_iso": "2026-01-30T12:56:17",
+      "url": "https://crickettv.site/wpl/6388539852112.html"
+    },
+    {
+      "title": "COTS - Nadine De Klerk - Match 18",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/46/70/80/0/image-394fbe6d-624c-4f0d-bf43-63b18e5da2d8.jpg",
+      "video_id": "6388537532112",
+      "duration": 19,
+      "published_iso": "2026-01-30T11:55:43",
+      "url": "https://crickettv.site/wpl/6388537532112.html"
+    },
     {
       "title": "Decoding RCB's March to the Final, ft. Nadine de Klerk & Grace Harris ",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/87/20/72/0/image-97f6671c-3b69-49ac-904d-8b5bfca4e784.jpg",
@@ -51,20 +83,20 @@
       "url": "https://crickettv.site/wpl/6388494474112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/92/2a/0/gEvluRmedL.jpg",
-      "video_id": "6388494364112",
-      "duration": 26,
-      "published_iso": "2026-01-29T17:33:00",
-      "url": "https://crickettv.site/wpl/6388494364112.html"
-    },
-    {
       "title": "ChatGPT Match IQ Award: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/27/e4/0/4szINvFh1H.jpg",
       "video_id": "6388495852112",
       "duration": 26,
       "published_iso": "2026-01-29T17:33:00",
       "url": "https://crickettv.site/wpl/6388495852112.html"
+    },
+    {
+      "title": "TATA WPL Green Dot Balls of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/92/2a/0/gEvluRmedL.jpg",
+      "video_id": "6388494364112",
+      "duration": 26,
+      "published_iso": "2026-01-29T17:33:00",
+      "url": "https://crickettv.site/wpl/6388494364112.html"
     },
     {
       "title": "Herbalife Active Catch of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Nadine De Klerk",
@@ -451,14 +483,6 @@
       "url": "https://crickettv.site/wpl/6388390395112.html"
     },
     {
-      "title": "Presentation: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/52/59/0/image-d497f90c-6543-4407-b838-6c3134cb7342.jpg",
-      "video_id": "6388387659112",
-      "duration": 552,
-      "published_iso": "2026-01-27T18:48:53",
-      "url": "https://crickettv.site/wpl/6388387659112.html"
-    },
-    {
       "title": "Kingfisher Good Times Sixes of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Sneh Rana",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d5/1c/f4/0/image-3aae5b79-e6b9-4c48-b878-a352123cd4a0.jpg",
       "video_id": "6388389031112",
@@ -481,6 +505,14 @@
       "duration": 32,
       "published_iso": "2026-01-27T18:48:53",
       "url": "https://crickettv.site/wpl/6388388733112.html"
+    },
+    {
+      "title": "Presentation: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/52/59/0/image-d497f90c-6543-4407-b838-6c3134cb7342.jpg",
+      "video_id": "6388387659112",
+      "duration": 552,
+      "published_iso": "2026-01-27T18:48:53",
+      "url": "https://crickettv.site/wpl/6388387659112.html"
     },
     {
       "title": "Amazing Moments: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -747,14 +779,6 @@
       "url": "https://crickettv.site/wpl/6388381134112.html"
     },
     {
-      "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Beth Mooney Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ca/8d/cf/0/BRlxmYJBGN.jpg",
-      "video_id": "6388379951112",
-      "duration": 28,
-      "published_iso": "2026-01-27T15:34:00",
-      "url": "https://crickettv.site/wpl/6388379951112.html"
-    },
-    {
       "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Kashvee Gautam Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/f1/15/0/z8MmeXRNXP.jpg",
       "video_id": "6388381711112",
@@ -763,44 +787,20 @@
       "url": "https://crickettv.site/wpl/6388381711112.html"
     },
     {
+      "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Beth Mooney Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ca/8d/cf/0/BRlxmYJBGN.jpg",
+      "video_id": "6388379951112",
+      "duration": 28,
+      "published_iso": "2026-01-27T15:34:00",
+      "url": "https://crickettv.site/wpl/6388379951112.html"
+    },
+    {
       "title": "Brilliant Mooney provides control with solid 58(46)",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/50/d1/0/image-0e2ca4bc-5620-43ad-9aa7-087dfdef891f.jpg",
       "video_id": "6388381605112",
       "duration": 137,
       "published_iso": "2026-01-27T15:27:49",
       "url": "https://crickettv.site/wpl/6388381605112.html"
-    },
-    {
-      "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ad/54/b5/0/image-d3af04e6-570f-4679-b2f3-3b5133d46968.jpg",
-      "video_id": "6388378468112",
-      "duration": 27,
-      "published_iso": "2026-01-27T15:21:19",
-      "url": "https://crickettv.site/wpl/6388378468112.html"
-    },
-    {
-      "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Bharti Fulmali Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/44/7a/5a/0/image-ed2b444f-cd24-478d-b945-09b07ae06fe2.jpg",
-      "video_id": "6388380332112",
-      "duration": 30,
-      "published_iso": "2026-01-27T15:21:19",
-      "url": "https://crickettv.site/wpl/6388380332112.html"
-    },
-    {
-      "title": "Six: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f3/19/2e/0/image-e380cd1e-dcfe-42d6-b0b2-e321ea54271e.jpg",
-      "video_id": "6388380423112",
-      "duration": 23,
-      "published_iso": "2026-01-27T15:15:14",
-      "url": "https://crickettv.site/wpl/6388380423112.html"
-    },
-    {
-      "title": "Superb Placement: Mooney goes 4,4,4",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/c0/ee/0/image-3c65d974-6d04-4316-b925-3b8a6da141d4.jpg",
-      "video_id": "6388380596112",
-      "duration": 91,
-      "published_iso": "2026-01-27T15:01:46",
-      "url": "https://crickettv.site/wpl/6388380596112.html"
     }
   ]
 }
