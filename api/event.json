@@ -1,5 +1,19 @@
 {
   "event": [
+
+{
+      "title": "Srilanka Vs England",
+      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/62a9681fe4b0249c1e633367-1692695410944?location=hero-default&imwidth=2560",
+      "watch_now": [
+        { "id": "home/england-vs-srilanka", "name": "Play Highlights" }
+      ],
+      "date": "30 Jan 2026",
+      "start_time": "06:45 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "T20"
+    },
 {
       "title": "Mumbai Vs Gujarat",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/15/1769688560015-i",
