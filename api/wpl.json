@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-30T11:17:30.277Z",
+  "updated_at": "2026-01-30T11:52:57.585Z",
   "count": 100,
   "items": [
     {
@@ -75,20 +75,20 @@
       "url": "https://crickettv.site/wpl/6388494964112.html"
     },
     {
-      "title": "Amazing Moments: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/61/77/0/uzmRPHIn6x.jpg",
-      "video_id": "6388493586112",
-      "duration": 61,
-      "published_iso": "2026-01-29T17:33:00",
-      "url": "https://crickettv.site/wpl/6388493586112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/bb/0e/0/VWzVlDIkLZ.jpg",
       "video_id": "6388493491112",
       "duration": 29,
       "published_iso": "2026-01-29T17:33:00",
       "url": "https://crickettv.site/wpl/6388493491112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/61/77/0/uzmRPHIn6x.jpg",
+      "video_id": "6388493586112",
+      "duration": 61,
+      "published_iso": "2026-01-29T17:33:00",
+      "url": "https://crickettv.site/wpl/6388493586112.html"
     },
     {
       "title": "Smriti Mandhana guides RCB into final with superb 54*(27)",
@@ -451,6 +451,14 @@
       "url": "https://crickettv.site/wpl/6388390395112.html"
     },
     {
+      "title": "Presentation: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/52/59/0/image-d497f90c-6543-4407-b838-6c3134cb7342.jpg",
+      "video_id": "6388387659112",
+      "duration": 552,
+      "published_iso": "2026-01-27T18:48:53",
+      "url": "https://crickettv.site/wpl/6388387659112.html"
+    },
+    {
       "title": "Kingfisher Good Times Sixes of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Sneh Rana",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d5/1c/f4/0/image-3aae5b79-e6b9-4c48-b878-a352123cd4a0.jpg",
       "video_id": "6388389031112",
@@ -473,14 +481,6 @@
       "duration": 32,
       "published_iso": "2026-01-27T18:48:53",
       "url": "https://crickettv.site/wpl/6388388733112.html"
-    },
-    {
-      "title": "Presentation: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/52/59/0/image-d497f90c-6543-4407-b838-6c3134cb7342.jpg",
-      "video_id": "6388387659112",
-      "duration": 552,
-      "published_iso": "2026-01-27T18:48:53",
-      "url": "https://crickettv.site/wpl/6388387659112.html"
     },
     {
       "title": "Amazing Moments: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -747,20 +747,20 @@
       "url": "https://crickettv.site/wpl/6388381134112.html"
     },
     {
-      "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Kashvee Gautam Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/f1/15/0/z8MmeXRNXP.jpg",
-      "video_id": "6388381711112",
-      "duration": 30,
-      "published_iso": "2026-01-27T15:34:00",
-      "url": "https://crickettv.site/wpl/6388381711112.html"
-    },
-    {
       "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Beth Mooney Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ca/8d/cf/0/BRlxmYJBGN.jpg",
       "video_id": "6388379951112",
       "duration": 28,
       "published_iso": "2026-01-27T15:34:00",
       "url": "https://crickettv.site/wpl/6388379951112.html"
+    },
+    {
+      "title": "Wicket: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Kashvee Gautam Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/f1/15/0/z8MmeXRNXP.jpg",
+      "video_id": "6388381711112",
+      "duration": 30,
+      "published_iso": "2026-01-27T15:34:00",
+      "url": "https://crickettv.site/wpl/6388381711112.html"
     },
     {
       "title": "Brilliant Mooney provides control with solid 58(46)",
