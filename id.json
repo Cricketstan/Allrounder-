@@ -189,7 +189,7 @@
       "id": "sony",
       "name": "SONY",
       "type": "iframe",
-      "iframeSrc": "https://crickettv.site/sonyliv/sonyliv-5",
+      "iframeSrc": "https://crickettv.site/sonyliv/sonyliv-1",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=sony-1",
       "get": "https://dillzycounter.vercel.app/api/get?key=sony-1"
     },
