@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-01-30T13:14:07.624Z",
+  "updated_at": "2026-01-30T14:04:22.881Z",
   "count": 100,
   "items": [
+    {
+      "title": "Toss: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cc/8e/89/0/image-ac20fc9f-d026-4ddc-a016-a57bd68872a3.jpg",
+      "video_id": "6388541759112",
+      "duration": 173,
+      "published_iso": "2026-01-30T13:36:30",
+      "url": "https://crickettv.site/wpl/6388541759112.html"
+    },
     {
       "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Hayley Matthews Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/92/6c/0/image-63b5cd20-b90f-4ddf-82fe-29c7b30f9e33.jpg",
@@ -11,20 +19,20 @@
       "url": "https://crickettv.site/wpl/6388540033112.html"
     },
     {
-      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/85/a8/0/image-7d100b40-9d2d-47e9-9640-f2feb4027370.jpg",
-      "video_id": "6388541403112",
-      "duration": 111,
-      "published_iso": "2026-01-30T12:56:17",
-      "url": "https://crickettv.site/wpl/6388541403112.html"
-    },
-    {
       "title": "Pitch Report: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/66/a7/0/image-0591ecaf-c398-4d67-acc6-0191361887c1.jpg",
       "video_id": "6388539852112",
       "duration": 106,
       "published_iso": "2026-01-30T12:56:17",
       "url": "https://crickettv.site/wpl/6388539852112.html"
+    },
+    {
+      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/85/a8/0/image-7d100b40-9d2d-47e9-9640-f2feb4027370.jpg",
+      "video_id": "6388541403112",
+      "duration": 111,
+      "published_iso": "2026-01-30T12:56:17",
+      "url": "https://crickettv.site/wpl/6388541403112.html"
     },
     {
       "title": "COTS - Nadine De Klerk - Match 18",
@@ -83,14 +91,6 @@
       "url": "https://crickettv.site/wpl/6388494474112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/27/e4/0/4szINvFh1H.jpg",
-      "video_id": "6388495852112",
-      "duration": 26,
-      "published_iso": "2026-01-29T17:33:00",
-      "url": "https://crickettv.site/wpl/6388495852112.html"
-    },
-    {
       "title": "TATA WPL Green Dot Balls of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Lauren Bell",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/92/2a/0/gEvluRmedL.jpg",
       "video_id": "6388494364112",
@@ -107,12 +107,12 @@
       "url": "https://crickettv.site/wpl/6388494964112.html"
     },
     {
-      "title": "Sierra Super Striker of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/bb/0e/0/VWzVlDIkLZ.jpg",
-      "video_id": "6388493491112",
-      "duration": 29,
+      "title": "ChatGPT Match IQ Award: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/27/e4/0/4szINvFh1H.jpg",
+      "video_id": "6388495852112",
+      "duration": 26,
       "published_iso": "2026-01-29T17:33:00",
-      "url": "https://crickettv.site/wpl/6388493491112.html"
+      "url": "https://crickettv.site/wpl/6388495852112.html"
     },
     {
       "title": "Amazing Moments: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026",
@@ -121,6 +121,14 @@
       "duration": 61,
       "published_iso": "2026-01-29T17:33:00",
       "url": "https://crickettv.site/wpl/6388493586112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/bb/0e/0/VWzVlDIkLZ.jpg",
+      "video_id": "6388493491112",
+      "duration": 29,
+      "published_iso": "2026-01-29T17:33:00",
+      "url": "https://crickettv.site/wpl/6388493491112.html"
     },
     {
       "title": "Smriti Mandhana guides RCB into final with superb 54*(27)",
@@ -483,6 +491,14 @@
       "url": "https://crickettv.site/wpl/6388390395112.html"
     },
     {
+      "title": "Sierra Super Striker of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Niki Prasad",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/73/62/a7/0/image-ecf88ba3-a20b-4386-b4a6-a1ea6d1e94e8.jpg",
+      "video_id": "6388388733112",
+      "duration": 32,
+      "published_iso": "2026-01-27T18:48:53",
+      "url": "https://crickettv.site/wpl/6388388733112.html"
+    },
+    {
       "title": "Kingfisher Good Times Sixes of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Sneh Rana",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d5/1c/f4/0/image-3aae5b79-e6b9-4c48-b878-a352123cd4a0.jpg",
       "video_id": "6388389031112",
@@ -497,14 +513,6 @@
       "duration": 30,
       "published_iso": "2026-01-27T18:48:53",
       "url": "https://crickettv.site/wpl/6388388444112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026: Niki Prasad",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/73/62/a7/0/image-ecf88ba3-a20b-4386-b4a6-a1ea6d1e94e8.jpg",
-      "video_id": "6388388733112",
-      "duration": 32,
-      "published_iso": "2026-01-27T18:48:53",
-      "url": "https://crickettv.site/wpl/6388388733112.html"
     },
     {
       "title": "Presentation: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -531,20 +539,20 @@
       "url": "https://crickettv.site/wpl/6388387291112.html"
     },
     {
-      "title": "Fall of Wickets: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7d/93/63/0/image-9804f3b9-2f0f-48b1-af18-c1e9564ac510.jpg",
-      "video_id": "6388385710112",
-      "duration": 476,
-      "published_iso": "2026-01-27T17:59:47",
-      "url": "https://crickettv.site/wpl/6388385710112.html"
-    },
-    {
       "title": "Super Sixes: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c9/71/58/0/image-c28c3aba-1353-430f-8298-6bf408e59b6a.jpg",
       "video_id": "6388385015112",
       "duration": 90,
       "published_iso": "2026-01-27T17:59:47",
       "url": "https://crickettv.site/wpl/6388385015112.html"
+    },
+    {
+      "title": "Fall of Wickets: Match 17, Gujarat Giants vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7d/93/63/0/image-9804f3b9-2f0f-48b1-af18-c1e9564ac510.jpg",
+      "video_id": "6388385710112",
+      "duration": 476,
+      "published_iso": "2026-01-27T17:59:47",
+      "url": "https://crickettv.site/wpl/6388385710112.html"
     },
     {
       "title": "Rajeshwari Gayakwad sparkles with a superb spell of 3/20",
@@ -793,14 +801,6 @@
       "duration": 28,
       "published_iso": "2026-01-27T15:34:00",
       "url": "https://crickettv.site/wpl/6388379951112.html"
-    },
-    {
-      "title": "Brilliant Mooney provides control with solid 58(46)",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/50/d1/0/image-0e2ca4bc-5620-43ad-9aa7-087dfdef891f.jpg",
-      "video_id": "6388381605112",
-      "duration": 137,
-      "published_iso": "2026-01-27T15:27:49",
-      "url": "https://crickettv.site/wpl/6388381605112.html"
     }
   ]
 }
