@@ -169,67 +169,6 @@
       }
     },
     {
-      "id": "ind-vs-nz",
-      "slug": "wpl",
-      "seo": {
-        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/wpl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-14T12:45:30.477+05:30",
-        "last_modified": "2026-01-28T16:07:44.350+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "India Vs Newzealand Live",
-        "team1": "",
-        "team2": "",
-        "venue": "",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hindi",
-          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
-          "default": false
-        },
-        {
-          "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
-          "default": false
-        },
-        {
-          "name": "Willow Sports ",
-          "src": "https://crickettv.site/willow",
-          "default": true
-        },
-        {
-          "name": "Tnt",
-          "src": "https://cricketstan.github.io/TNT-1/",
-          "default": false
-        },
-        {
-          "name": "Permanent Hindi",
-          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "K",
-        "players_to_watch": {
-          "": []
-        },
-        "squads": {
-          "": ""
-        }
-      }
-    },
-    {
       "id": "south-africa-vs-westindies",
       "slug": "south-africa-vs-westindies",
       "seo": {
@@ -327,6 +266,67 @@
         {
           "name": "Cric Life",
           "src": "https://crickettv.site/cric-life",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "K",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
+        }
+      }
+    },
+    {
+      "id": "ind-vs-nz",
+      "slug": "wpl",
+      "seo": {
+        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/wpl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-14T12:45:30.477+05:30",
+        "last_modified": "2026-01-31T18:57:40.055+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "India Vs Newzealand Live",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hindi",
+          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
+          "default": false
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
+          "default": false
+        },
+        {
+          "name": "Willow Sports ",
+          "src": "https://crickettv.site/willow",
+          "default": true
+        },
+        {
+          "name": "Tnt",
+          "src": "https://crickettv.site/world-sports/player?id=tnt-sports-3",
+          "default": false
+        },
+        {
+          "name": "Permanent Hindi",
+          "src": "https://allrounderlive.pages.dev/dilz?id=dillzy745",
           "default": false
         }
       ],
