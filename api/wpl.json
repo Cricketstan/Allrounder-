@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-01T09:54:33.174Z",
+  "updated_at": "2026-02-01T10:35:33.446Z",
   "count": 100,
   "items": [
     {
@@ -59,22 +59,6 @@
       "url": "https://crickettv.site/wpl/6388552840112.html"
     },
     {
-      "title": "Player of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7e/b9/b8/0/image-6623b47c-8ec0-4b93-8826-7026ad62444f.jpg",
-      "video_id": "6388552654112",
-      "duration": 120,
-      "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388552654112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Sajeevan Sajana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/e0/28/0/image-ff70f92e-bfaa-492f-8a6c-689435f0b30e.jpg",
-      "video_id": "6388551378112",
-      "duration": 26,
-      "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388551378112.html"
-    },
-    {
       "title": "Amazing Moments: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/09/00/e3/0/image-95feefd5-29db-48f5-9627-127c16c08cb9.jpg",
       "video_id": "6388552243112",
@@ -89,6 +73,22 @@
       "duration": 26,
       "published_iso": "2026-01-30T17:54:13",
       "url": "https://crickettv.site/wpl/6388552936112.html"
+    },
+    {
+      "title": "Player of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7e/b9/b8/0/image-6623b47c-8ec0-4b93-8826-7026ad62444f.jpg",
+      "video_id": "6388552654112",
+      "duration": 120,
+      "published_iso": "2026-01-30T17:54:13",
+      "url": "https://crickettv.site/wpl/6388552654112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Sajeevan Sajana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/e0/28/0/image-ff70f92e-bfaa-492f-8a6c-689435f0b30e.jpg",
+      "video_id": "6388551378112",
+      "duration": 26,
+      "published_iso": "2026-01-30T17:54:13",
+      "url": "https://crickettv.site/wpl/6388551378112.html"
     },
     {
       "title": "Battle of captains: Harmanpreet, Gardner in a thrilling last-over duel",
@@ -467,6 +467,14 @@
       "url": "https://crickettv.site/wpl/6388494364112.html"
     },
     {
+      "title": "ChatGPT Match IQ Award: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/27/e4/0/4szINvFh1H.jpg",
+      "video_id": "6388495852112",
+      "duration": 26,
+      "published_iso": "2026-01-29T17:33:00",
+      "url": "https://crickettv.site/wpl/6388495852112.html"
+    },
+    {
       "title": "Herbalife Active Catch of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Nadine De Klerk",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/08/0d/c2/0/fk9BxmOtgj.jpg",
       "video_id": "6388494964112",
@@ -489,14 +497,6 @@
       "duration": 29,
       "published_iso": "2026-01-29T17:33:00",
       "url": "https://crickettv.site/wpl/6388493491112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/27/e4/0/4szINvFh1H.jpg",
-      "video_id": "6388495852112",
-      "duration": 26,
-      "published_iso": "2026-01-29T17:33:00",
-      "url": "https://crickettv.site/wpl/6388495852112.html"
     },
     {
       "title": "Smriti Mandhana guides RCB into final with superb 54*(27)",
@@ -707,20 +707,20 @@
       "url": "https://crickettv.site/wpl/6388488155112.html"
     },
     {
-      "title": "Wicket: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Harleen Deol Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7a/f5/35/0/image-945ecb0b-39b1-407f-9dc2-2db195540c05.jpg",
-      "video_id": "6388488229112",
-      "duration": 27,
-      "published_iso": "2026-01-29T15:11:12",
-      "url": "https://crickettv.site/wpl/6388488229112.html"
-    },
-    {
       "title": "Wicket: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Chloe Tryon Wicket",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f6/97/a8/0/image-b80d65f9-e045-4ee9-a8f3-a367269da735.jpg",
       "video_id": "6388489910112",
       "duration": 29,
       "published_iso": "2026-01-29T15:11:12",
       "url": "https://crickettv.site/wpl/6388489910112.html"
+    },
+    {
+      "title": "Wicket: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Harleen Deol Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7a/f5/35/0/image-945ecb0b-39b1-407f-9dc2-2db195540c05.jpg",
+      "video_id": "6388488229112",
+      "duration": 27,
+      "published_iso": "2026-01-29T15:11:12",
+      "url": "https://crickettv.site/wpl/6388488229112.html"
     },
     {
       "title": "Nadine de Klerk makes merry again with 4/22",
