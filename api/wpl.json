@@ -1,10 +1,58 @@
 {
-  "updated_at": "2026-02-01T16:43:49.684Z",
+  "updated_at": "2026-02-01T17:12:47.723Z",
   "count": 100,
   "items": [
     {
+      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Marizanne Kapp Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b2/a6/db/0/image-80e94b46-74cc-45f7-8ca6-c6cab25065b9.jpg",
+      "video_id": "6388636787112",
+      "duration": 27,
+      "published_iso": "2026-02-01T17:03:20",
+      "url": "https://crickettv.site/wpl/6388636787112.html"
+    },
+    {
+      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Shafali Verma Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/a7/cb/0/image-8c22ee54-68bd-411f-be4c-8d38d0253f45.jpg",
+      "video_id": "6388638151112",
+      "duration": 27,
+      "published_iso": "2026-02-01T16:59:57",
+      "url": "https://crickettv.site/wpl/6388638151112.html"
+    },
+    {
+      "title": "Brilliant catch! Sophie Ecclestone dives to take a stunner",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/70/32/f6/0/image-f2fcab52-916b-4d18-b9ef-442d492a97fa.jpg",
+      "video_id": "6388638055112",
+      "duration": 68,
+      "published_iso": "2026-02-01T16:55:47",
+      "url": "https://crickettv.site/wpl/6388638055112.html"
+    },
+    {
+      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Laura Wolvaardt Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/11/d3/3a/0/image-fca60ef6-d1ee-4f9e-8151-dfec76ac23c9.jpg",
+      "video_id": "6388636876112",
+      "duration": 25,
+      "published_iso": "2026-02-01T16:51:53",
+      "url": "https://crickettv.site/wpl/6388636876112.html"
+    },
+    {
+      "title": "Top shots! Shikha Pandey's power-packed cameo",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/19/36/0/image-54db28da-8c22-4746-a1d8-b83c1f43f6a5.jpg",
+      "video_id": "6388637657112",
+      "duration": 58,
+      "published_iso": "2026-02-01T16:42:50",
+      "url": "https://crickettv.site/wpl/6388637657112.html"
+    },
+    {
+      "title": "Lovely striking! Wolvaardt goes four x 4",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f4/87/15/0/image-fdfc7664-6c80-4cac-9683-18b0819b6dd1.jpg",
+      "video_id": "6388637156112",
+      "duration": 114,
+      "published_iso": "2026-02-01T16:41:27",
+      "url": "https://crickettv.site/wpl/6388637156112.html"
+    },
+    {
       "title": "4, drop, 4, great effort: Shafali, Wolvaardt riding their luck",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/da/16/cb/0/image-dadf31aa-476e-476b-be1f-29fb280ac7dc.jpg",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c4/ea/86/0/image-07c5873d-6e01-4b3c-97f9-7a534ed66567.jpg",
       "video_id": "6388635298112",
       "duration": 115,
       "published_iso": "2026-02-01T16:21:19",
@@ -84,7 +132,7 @@
     },
     {
       "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deandra Dottin Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c6/2e/1c/0/image-985780f2-f513-4d1a-be46-b0cdaca9821f.jpg",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/ee/25/0/eQXaVMOa4U.jpg",
       "video_id": "6388635021112",
       "duration": 29,
       "published_iso": "2026-02-01T14:53:00",
@@ -107,20 +155,20 @@
       "url": "https://crickettv.site/wpl/6388633951112.html"
     },
     {
-      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5d/ab/38/0/image-8a297f24-7b61-4de8-945f-f56ad348a545.jpg",
-      "video_id": "6388632284112",
-      "duration": 26,
-      "published_iso": "2026-02-01T14:31:34",
-      "url": "https://crickettv.site/wpl/6388632284112.html"
-    },
-    {
       "title": "Six: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/74/50/4a/0/image-6fd4b41c-1485-4cea-b919-a5326c1c3f5f.jpg",
       "video_id": "6388632572112",
       "duration": 21,
       "published_iso": "2026-02-01T14:31:30",
       "url": "https://crickettv.site/wpl/6388632572112.html"
+    },
+    {
+      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma Wicket",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/c8/dd/7a/0/MI8k2trcmO.jpg",
+      "video_id": "6388632284112",
+      "duration": 26,
+      "published_iso": "2026-02-01T14:31:00",
+      "url": "https://crickettv.site/wpl/6388632284112.html"
     },
     {
       "title": "4, 4, Wicket! Striking back in style, ft. Kapp",
@@ -156,10 +204,10 @@
     },
     {
       "title": "Toss: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/da/19/72/0/image-961ca918-4c4e-4da4-bc75-5fb2f2c96b5a.jpg",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/29/3d/0/zPxDDKYEgG.jpg",
       "video_id": "6388633315112",
       "duration": 195,
-      "published_iso": "2026-02-01T13:35:22",
+      "published_iso": "2026-02-01T13:35:00",
       "url": "https://crickettv.site/wpl/6388633315112.html"
     },
     {
@@ -235,14 +283,6 @@
       "url": "https://crickettv.site/wpl/6388551477112.html"
     },
     {
-      "title": "Player of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7e/b9/b8/0/image-6623b47c-8ec0-4b93-8826-7026ad62444f.jpg",
-      "video_id": "6388552654112",
-      "duration": 120,
-      "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388552654112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Harmanpreet Kaur",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ef/2f/f5/0/image-f5a1bf75-4969-4eea-ac6d-fb0e76c9234c.jpg",
       "video_id": "6388552936112",
@@ -265,6 +305,14 @@
       "duration": 27,
       "published_iso": "2026-01-30T17:54:13",
       "url": "https://crickettv.site/wpl/6388552840112.html"
+    },
+    {
+      "title": "Player of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7e/b9/b8/0/image-6623b47c-8ec0-4b93-8826-7026ad62444f.jpg",
+      "video_id": "6388552654112",
+      "duration": 120,
+      "published_iso": "2026-01-30T17:54:13",
+      "url": "https://crickettv.site/wpl/6388552654112.html"
     },
     {
       "title": "Amazing Moments: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
@@ -467,20 +515,20 @@
       "url": "https://crickettv.site/wpl/6388548566112.html"
     },
     {
-      "title": "Flexing their arms! Gardner & Wareham on the move",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/ae/89/0/smcEYJNBuQ.jpg",
-      "video_id": "6388547271112",
-      "duration": 231,
-      "published_iso": "2026-01-30T15:29:00",
-      "url": "https://crickettv.site/wpl/6388547271112.html"
-    },
-    {
       "title": "Six: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/d9/87/0/hi24774DwV.jpg",
       "video_id": "6388547772112",
       "duration": 25,
       "published_iso": "2026-01-30T15:29:00",
       "url": "https://crickettv.site/wpl/6388547772112.html"
+    },
+    {
+      "title": "Flexing their arms! Gardner & Wareham on the move",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/ae/89/0/smcEYJNBuQ.jpg",
+      "video_id": "6388547271112",
+      "duration": 231,
+      "published_iso": "2026-01-30T15:29:00",
+      "url": "https://crickettv.site/wpl/6388547271112.html"
     },
     {
       "title": "Wicket: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Ashleigh Gardner Wicket",
@@ -571,20 +619,20 @@
       "url": "https://crickettv.site/wpl/6388541759112.html"
     },
     {
-      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/85/a8/0/image-7d100b40-9d2d-47e9-9640-f2feb4027370.jpg",
-      "video_id": "6388541403112",
-      "duration": 111,
-      "published_iso": "2026-01-30T12:56:17",
-      "url": "https://crickettv.site/wpl/6388541403112.html"
-    },
-    {
       "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Hayley Matthews Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/92/6c/0/image-63b5cd20-b90f-4ddf-82fe-29c7b30f9e33.jpg",
       "video_id": "6388540033112",
       "duration": 116,
       "published_iso": "2026-01-30T12:56:17",
       "url": "https://crickettv.site/wpl/6388540033112.html"
+    },
+    {
+      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/85/a8/0/image-7d100b40-9d2d-47e9-9640-f2feb4027370.jpg",
+      "video_id": "6388541403112",
+      "duration": 111,
+      "published_iso": "2026-01-30T12:56:17",
+      "url": "https://crickettv.site/wpl/6388541403112.html"
     },
     {
       "title": "Pitch Report: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
@@ -753,54 +801,6 @@
       "duration": 85,
       "published_iso": "2026-01-29T16:51:10",
       "url": "https://crickettv.site/wpl/6388492063112.html"
-    },
-    {
-      "title": "Grace Harris hammers scintillating 75(37)",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/4d/83/26/0/image-e15c5f61-e971-4259-ab50-1bc9c41def1d.jpg",
-      "video_id": "6388491767112",
-      "duration": 210,
-      "published_iso": "2026-01-29T16:46:02",
-      "url": "https://crickettv.site/wpl/6388491767112.html"
-    },
-    {
-      "title": "Game of cat and mouse, ft. Smriti Mandhana and Deepti Sharma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3d/55/d3/0/image-942affec-5bef-4a3e-a62a-297c5d80c6dd.jpg",
-      "video_id": "6388491659112",
-      "duration": 51,
-      "published_iso": "2026-01-29T16:45:58",
-      "url": "https://crickettv.site/wpl/6388491659112.html"
-    },
-    {
-      "title": "Wicket: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/6a/d5/93/0/image-eb441150-b2d0-4546-87e4-fd4b7a476370.jpg",
-      "video_id": "6388490778112",
-      "duration": 23,
-      "published_iso": "2026-01-29T16:44:42",
-      "url": "https://crickettv.site/wpl/6388490778112.html"
-    },
-    {
-      "title": "6, 4, 4! Harris continues to drop the hammer",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/3a/9b/dc/0/image-1b361702-13e9-4be7-9ba2-458d27f0cc70.jpg",
-      "video_id": "6388491166112",
-      "duration": 130,
-      "published_iso": "2026-01-29T16:43:04",
-      "url": "https://crickettv.site/wpl/6388491166112.html"
-    },
-    {
-      "title": "Six: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/0c/04/56/0/image-65880f59-b4b5-4fb2-af20-9ee0681a9ddc.jpg",
-      "video_id": "6388492733112",
-      "duration": 29,
-      "published_iso": "2026-01-29T16:37:16",
-      "url": "https://crickettv.site/wpl/6388492733112.html"
-    },
-    {
-      "title": "Six: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/83/dd/39/0/image-d14b297c-f526-411d-85fc-489b153a373d.jpg",
-      "video_id": "6388491934112",
-      "duration": 25,
-      "published_iso": "2026-01-29T16:23:39",
-      "url": "https://crickettv.site/wpl/6388491934112.html"
     }
   ]
 }
