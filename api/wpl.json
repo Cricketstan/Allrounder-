@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-01T19:31:42.473Z",
+  "updated_at": "2026-02-01T19:55:58.287Z",
   "count": 100,
   "items": [
     {
@@ -11,20 +11,20 @@
       "url": "https://crickettv.site/wpl/6388641075112.html"
     },
     {
-      "title": "Amazing Moments: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/eb/85/0/image-1d1f9197-8be9-4eeb-a929-c9fd4a426ed8.jpg",
-      "video_id": "6388638629112",
-      "duration": 62,
-      "published_iso": "2026-02-01T18:35:49",
-      "url": "https://crickettv.site/wpl/6388638629112.html"
-    },
-    {
       "title": "Presentation: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/22/58/14/0/image-1b4776b8-e644-48ae-9438-7e1cf314f294.jpg",
       "video_id": "6388639598112",
       "duration": 443,
       "published_iso": "2026-02-01T18:35:49",
       "url": "https://crickettv.site/wpl/6388639598112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/eb/85/0/image-1d1f9197-8be9-4eeb-a929-c9fd4a426ed8.jpg",
+      "video_id": "6388638629112",
+      "duration": 62,
+      "published_iso": "2026-02-01T18:35:49",
+      "url": "https://crickettv.site/wpl/6388638629112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Jemimah Rodrigues",
@@ -51,6 +51,14 @@
       "url": "https://crickettv.site/wpl/6388639083112.html"
     },
     {
+      "title": "TATA WPL Green Dot Balls of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Shikha Pandey",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/72/52/e8/0/image-df502388-b4a2-40fb-b7c7-d1b43c6c90f7.jpg",
+      "video_id": "6388638400112",
+      "duration": 31,
+      "published_iso": "2026-02-01T18:06:38",
+      "url": "https://crickettv.site/wpl/6388638400112.html"
+    },
+    {
       "title": "Kingfisher Good Times Sixes of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/40/06/b9/0/image-236ab7ae-b282-4a71-951f-8dff379b4a26.jpg",
       "video_id": "6388639376112",
@@ -65,14 +73,6 @@
       "duration": 29,
       "published_iso": "2026-02-01T18:06:38",
       "url": "https://crickettv.site/wpl/6388637326112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Shikha Pandey",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/72/52/e8/0/image-df502388-b4a2-40fb-b7c7-d1b43c6c90f7.jpg",
-      "video_id": "6388638400112",
-      "duration": 31,
-      "published_iso": "2026-02-01T18:06:38",
-      "url": "https://crickettv.site/wpl/6388638400112.html"
     },
     {
       "title": "Captain Jemimah Rodrigues guides DC into playoffs with 34*(18)",
@@ -395,12 +395,12 @@
       "url": "https://crickettv.site/wpl/6388557007112.html"
     },
     {
-      "title": "Sierra Super Striker of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Harmanpreet Kaur",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ef/2f/f5/0/image-f5a1bf75-4969-4eea-ac6d-fb0e76c9234c.jpg",
-      "video_id": "6388552936112",
+      "title": "Herbalife Active Catch of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Sajeevan Sajana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/e0/28/0/image-ff70f92e-bfaa-492f-8a6c-689435f0b30e.jpg",
+      "video_id": "6388551378112",
       "duration": 26,
       "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388552936112.html"
+      "url": "https://crickettv.site/wpl/6388551378112.html"
     },
     {
       "title": "Player of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham",
@@ -409,14 +409,6 @@
       "duration": 120,
       "published_iso": "2026-01-30T17:54:13",
       "url": "https://crickettv.site/wpl/6388552654112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Sajeevan Sajana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/29/e0/28/0/image-ff70f92e-bfaa-492f-8a6c-689435f0b30e.jpg",
-      "video_id": "6388551378112",
-      "duration": 26,
-      "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388551378112.html"
     },
     {
       "title": "Amazing Moments: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
@@ -433,6 +425,14 @@
       "duration": 27,
       "published_iso": "2026-01-30T17:54:13",
       "url": "https://crickettv.site/wpl/6388552840112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Harmanpreet Kaur",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ef/2f/f5/0/image-f5a1bf75-4969-4eea-ac6d-fb0e76c9234c.jpg",
+      "video_id": "6388552936112",
+      "duration": 26,
+      "published_iso": "2026-01-30T17:54:13",
+      "url": "https://crickettv.site/wpl/6388552936112.html"
     },
     {
       "title": "ChatGPT Match IQ Award: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Ashleigh Gardner",
@@ -651,20 +651,20 @@
       "url": "https://crickettv.site/wpl/6388548566112.html"
     },
     {
-      "title": "Flexing their arms! Gardner & Wareham on the move",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/ae/89/0/smcEYJNBuQ.jpg",
-      "video_id": "6388547271112",
-      "duration": 231,
-      "published_iso": "2026-01-30T15:29:00",
-      "url": "https://crickettv.site/wpl/6388547271112.html"
-    },
-    {
       "title": "Six: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Six",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/d9/87/0/hi24774DwV.jpg",
       "video_id": "6388547772112",
       "duration": 25,
       "published_iso": "2026-01-30T15:29:00",
       "url": "https://crickettv.site/wpl/6388547772112.html"
+    },
+    {
+      "title": "Flexing their arms! Gardner & Wareham on the move",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/ae/89/0/smcEYJNBuQ.jpg",
+      "video_id": "6388547271112",
+      "duration": 231,
+      "published_iso": "2026-01-30T15:29:00",
+      "url": "https://crickettv.site/wpl/6388547271112.html"
     },
     {
       "title": "Wicket: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Ashleigh Gardner Wicket",
