@@ -2,6 +2,21 @@
   "event": [
 
 {
+      "title": "Capitals Vs Warriors",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/747/1769825680747-i",
+      "watch_now": [
+        { "id": "home/wpl", "name": "Play Highlights" }
+      ],
+      "date": "1 Feb 2026",
+      "start_time": "06:45 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "WPL"
+    },
+
+
+{
       "title": "India Vs Pakistan",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5150/1769858875150-i",
       "watch_now": [
