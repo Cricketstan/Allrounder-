@@ -1,139 +1,184 @@
 {
   "upcomingMatches": [
     {
-      "title": "Sri Lanka vs England - 2nd ODI (England tour of Sri Lanka 2026)",
-      "date": "Sat, Jan 24 2026",
-      "venue": "Colombo, R.Premadasa Stadium",
-      "team1": "Sri Lanka",
-      "team2": "England",
-      "time": "2:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+      "title": "Pakistan vs Netherlands - 1st Match, Group A (ICC Men's T20 World Cup 2026)",
+      "date": "Sat, Feb 07 2026",
+      "venue": "Colombo, Sinhalese Sports Club",
+      "team1": "Pakistan",
+      "team2": "Netherlands",
+      "time": "11:00 AM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "Ireland vs Italy - 2nd T20I (Ireland vs Italy in UAE, 2026)",
-      "date": "Sun, Jan 25 2026",
-      "venue": "Dubai, The Sevens Stadium",
-      "team1": "Ireland",
+      "title": "West Indies vs Scotland - 2nd Match, Group C (ICC Men's T20 World Cup 2026)",
+      "date": "Sat, Feb 07 2026",
+      "venue": "Kolkata, Eden Gardens",
+      "team1": "West Indies",
+      "team2": "Scotland",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "India vs United States of America - 3rd Match, Group A (ICC Men's T20 World Cup 2026)",
+      "date": "Sat, Feb 07 2026",
+      "venue": "Mumbai, Wankhede Stadium",
+      "team1": "India",
+      "team2": "United States of America",
+      "time": "7:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "New Zealand vs Afghanistan - 4th Match, Group D (ICC Men's T20 World Cup 2026)",
+      "date": "Sun, Feb 08 2026",
+      "venue": "Chennai, MA Chidambaram Stadium",
+      "team1": "New Zealand",
+      "team2": "Afghanistan",
+      "time": "11:00 AM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "England vs Nepal - 5th Match, Group C (ICC Men's T20 World Cup 2026)",
+      "date": "Sun, Feb 08 2026",
+      "venue": "Mumbai, Wankhede Stadium",
+      "team1": "England",
+      "team2": "Nepal",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "Sri Lanka vs Ireland - 6th Match, Group B (ICC Men's T20 World Cup 2026)",
+      "date": "Sun, Feb 08 2026",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "Sri Lanka",
+      "team2": "Ireland",
+      "time": "7:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "Scotland vs Italy - 7th Match, Group C (ICC Men's T20 World Cup 2026)",
+      "date": "Mon, Feb 09 2026",
+      "venue": "Kolkata, Eden Gardens",
+      "team1": "Scotland",
       "team2": "Italy",
       "time": "11:00 AM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "India vs New Zealand - 3rd T20I (New Zealand tour of India, 2026)",
-      "date": "Sun, Jan 25 2026",
-      "venue": "Guwahati, Barsapara Cricket Stadium",
-      "team1": "India",
-      "team2": "New Zealand",
-      "time": "7:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+      "title": "Zimbabwe vs Oman - 8th Match, Group B (ICC Men's T20 World Cup 2026)",
+      "date": "Mon, Feb 09 2026",
+      "venue": "Colombo, Sinhalese Sports Club",
+      "team1": "Zimbabwe",
+      "team2": "Oman",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "Ireland vs Italy - 3rd T20I (Ireland vs Italy in UAE, 2026)",
-      "date": "Mon, Jan 26 2026",
-      "venue": "Dubai, The Sevens Stadium",
-      "team1": "Ireland",
-      "team2": "Italy",
-      "time": "7:30 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
-    },
-    {
-      "title": "Sri Lanka vs England - 3rd ODI (England tour of Sri Lanka 2026)",
-      "date": "Tue, Jan 27 2026",
-      "venue": "Colombo, R.Premadasa Stadium",
-      "team1": "Sri Lanka",
-      "team2": "England",
-      "time": "2:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "South Africa vs West Indies - 1st T20I (West Indies tour of South Africa, 2026)",
-      "date": "Tue, Jan 27 2026",
-      "venue": "Paarl, Boland Park",
+      "title": "South Africa vs Canada - 9th Match, Group D (ICC Men's T20 World Cup 2026)",
+      "date": "Mon, Feb 09 2026",
+      "venue": "Ahmedabad, Narendra Modi Stadium",
       "team1": "South Africa",
-      "team2": "West Indies",
-      "time": "9:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
-    },
-    {
-      "title": "India vs New Zealand - 4th T20I (New Zealand tour of India, 2026)",
-      "date": "Wed, Jan 28 2026",
-      "venue": "Visakhapatnam, ACA-VDCA Cricket Stadium",
-      "team1": "India",
-      "team2": "New Zealand",
+      "team2": "Canada",
       "time": "7:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "Pakistan vs Australia - 1st T20I (Australia tour of Pakistan, 2026)",
-      "date": "Thu, Jan 29 2026",
-      "venue": "Lahore, Gaddafi Stadium",
+      "title": "Netherlands vs Namibia - 10th Match, Group A (ICC Men's T20 World Cup 2026)",
+      "date": "Tue, Feb 10 2026",
+      "venue": "Delhi, Arun Jaitley Stadium",
+      "team1": "Netherlands",
+      "team2": "Namibia",
+      "time": "11:00 AM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "New Zealand vs United Arab Emirates - 11th Match, Group D (ICC Men's T20 World Cup 2026)",
+      "date": "Tue, Feb 10 2026",
+      "venue": "Chennai, MA Chidambaram Stadium",
+      "team1": "New Zealand",
+      "team2": "United Arab Emirates",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "Pakistan vs United States of America - 12th Match, Group A (ICC Men's T20 World Cup 2026)",
+      "date": "Tue, Feb 10 2026",
+      "venue": "Colombo, Sinhalese Sports Club",
       "team1": "Pakistan",
-      "team2": "Australia",
-      "time": "6:30 PM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+      "team2": "United States of America",
+      "time": "7:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "United Arab Emirates vs Ireland - 1st T20I (Ireland tour of United Arab Emirates 2026)",
-      "date": "Thu, Jan 29 2026",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "United Arab Emirates",
-      "team2": "Ireland",
-      "time": "7:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "South Africa vs West Indies - 2nd T20I (West Indies tour of South Africa, 2026)",
-      "date": "Thu, Jan 29 2026",
-      "venue": "Centurion, SuperSport Park",
+      "title": "South Africa vs Afghanistan - 13th Match, Group D (ICC Men's T20 World Cup 2026)",
+      "date": "Wed, Feb 11 2026",
+      "venue": "Ahmedabad, Narendra Modi Stadium",
       "team1": "South Africa",
-      "team2": "West Indies",
-      "time": "9:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
+      "team2": "Afghanistan",
+      "time": "11:00 AM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "Sri Lanka vs England - 1st T20I (England tour of Sri Lanka 2026)",
-      "date": "Fri, Jan 30 2026",
+      "title": "Australia vs Ireland - 14th Match, Group B (ICC Men's T20 World Cup 2026)",
+      "date": "Wed, Feb 11 2026",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "Australia",
+      "team2": "Ireland",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "England vs West Indies - 15th Match, Group C (ICC Men's T20 World Cup 2026)",
+      "date": "Wed, Feb 11 2026",
+      "venue": "Mumbai, Wankhede Stadium",
+      "team1": "England",
+      "team2": "West Indies",
+      "time": "7:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "Sri Lanka vs Oman - 16th Match, Group B (ICC Men's T20 World Cup 2026)",
+      "date": "Thu, Feb 12 2026",
       "venue": "Pallekele, Pallekele International Cricket Stadium",
       "team1": "Sri Lanka",
-      "team2": "England",
-      "time": "7:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+      "team2": "Oman",
+      "time": "11:00 AM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "United Arab Emirates vs Ireland - 2nd T20I (Ireland tour of United Arab Emirates 2026)",
-      "date": "Sat, Jan 31 2026",
-      "venue": "Dubai, Dubai International Cricket Stadium",
-      "team1": "United Arab Emirates",
-      "team2": "Ireland",
-      "time": "11:30 AM",
-      "poster": "https://images.skyone.co.nz/mac/479214/DAM/6002BC5D-CA34-49FA-9113DF4C238541F2.jpg"
+      "title": "Nepal vs Italy - 17th Match, Group C (ICC Men's T20 World Cup 2026)",
+      "date": "Thu, Feb 12 2026",
+      "venue": "Mumbai, Wankhede Stadium",
+      "team1": "Nepal",
+      "team2": "Italy",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "Pakistan vs Australia - 2nd T20I (Australia tour of Pakistan, 2026)",
-      "date": "Sat, Jan 31 2026",
-      "venue": "Lahore, Gaddafi Stadium",
-      "team1": "Pakistan",
-      "team2": "Australia",
-      "time": "6:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
-    },
-    {
-      "title": "India vs New Zealand - 5th T20I (New Zealand tour of India, 2026)",
-      "date": "Sat, Jan 31 2026",
-      "venue": "Thiruvananthapuram, Greenfield International Stadium",
+      "title": "India vs Namibia - 18th Match, Group A (ICC Men's T20 World Cup 2026)",
+      "date": "Thu, Feb 12 2026",
+      "venue": "Delhi, Arun Jaitley Stadium",
       "team1": "India",
-      "team2": "New Zealand",
+      "team2": "Namibia",
       "time": "7:00 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f460e4b0d1261fa205a1-1766531696661?location=hero-default&imwidth=2560"
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     },
     {
-      "title": "South Africa vs West Indies - 3rd T20I (West Indies tour of South Africa, 2026)",
-      "date": "Sat, Jan 31 2026",
-      "venue": "Johannesburg, The Wanderers Stadium",
-      "team1": "South Africa",
-      "team2": "West Indies",
-      "time": "9:30 PM",
-      "poster": "https://vmndims.kayosports.com.au/api/v2/img/6944f448e4b02a692ff00e0e-1766531497326?location=hero-default&imwidth=1920"
+      "title": "Australia vs Zimbabwe - 19th Match, Group B (ICC Men's T20 World Cup 2026)",
+      "date": "Fri, Feb 13 2026",
+      "venue": "Colombo, R.Premadasa Stadium",
+      "team1": "Australia",
+      "team2": "Zimbabwe",
+      "time": "11:00 AM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
+    },
+    {
+      "title": "Canada vs United Arab Emirates - 20th Match, Group D (ICC Men's T20 World Cup 2026)",
+      "date": "Fri, Feb 13 2026",
+      "venue": "Delhi, Arun Jaitley Stadium",
+      "team1": "Canada",
+      "team2": "United Arab Emirates",
+      "time": "3:00 PM",
+      "poster": "https://pbs.twimg.com/media/G75Ds10XUAEGDRn.jpg"
     }
   ]
 }
