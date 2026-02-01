@@ -1,7 +1,15 @@
 {
-  "updated_at": "2026-02-01T17:44:45.366Z",
+  "updated_at": "2026-02-01T18:00:51.972Z",
   "count": 100,
   "items": [
+    {
+      "title": "Post Match Interview: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Jonathan Batty Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9f/37/ec/0/image-91b61234-dc17-4bca-bebb-8c60f1d22e73.jpg",
+      "video_id": "6388638391112",
+      "duration": 160,
+      "published_iso": "2026-02-01T17:50:38",
+      "url": "https://crickettv.site/wpl/6388638391112.html"
+    },
     {
       "title": "Post Match Interview: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Meg Lanning Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/04/8f/5e/0/image-c0d60856-6dd5-426e-88c9-3fbad9cf2417.jpg",
@@ -299,6 +307,14 @@
       "url": "https://crickettv.site/wpl/6388557007112.html"
     },
     {
+      "title": "Presentation: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/18/44/41/0/image-b7bc75c3-b344-4820-b7c4-f665a83e3fda.jpg",
+      "video_id": "6388551477112",
+      "duration": 480,
+      "published_iso": "2026-01-30T17:54:13",
+      "url": "https://crickettv.site/wpl/6388551477112.html"
+    },
+    {
       "title": "ChatGPT Match IQ Award: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Ashleigh Gardner",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2d/f4/3d/0/image-c5bb4272-accf-493e-937e-df1bb1b607b9.jpg",
       "video_id": "6388551787112",
@@ -315,28 +331,12 @@
       "url": "https://crickettv.site/wpl/6388553127112.html"
     },
     {
-      "title": "Presentation: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/18/44/41/0/image-b7bc75c3-b344-4820-b7c4-f665a83e3fda.jpg",
-      "video_id": "6388551477112",
-      "duration": 480,
-      "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388551477112.html"
-    },
-    {
       "title": "Player of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7e/b9/b8/0/image-6623b47c-8ec0-4b93-8826-7026ad62444f.jpg",
       "video_id": "6388552654112",
       "duration": 120,
       "published_iso": "2026-01-30T17:54:13",
       "url": "https://crickettv.site/wpl/6388552654112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Sophie Devine",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/3d/0c/0/image-ca7987c5-386e-440d-aa84-dfc3eef388bb.jpg",
-      "video_id": "6388552840112",
-      "duration": 27,
-      "published_iso": "2026-01-30T17:54:13",
-      "url": "https://crickettv.site/wpl/6388552840112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Harmanpreet Kaur",
@@ -361,6 +361,14 @@
       "duration": 26,
       "published_iso": "2026-01-30T17:54:13",
       "url": "https://crickettv.site/wpl/6388551378112.html"
+    },
+    {
+      "title": "TATA WPL Green Dot Balls of the Match: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Sophie Devine",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2c/3d/0c/0/image-ca7987c5-386e-440d-aa84-dfc3eef388bb.jpg",
+      "video_id": "6388552840112",
+      "duration": 27,
+      "published_iso": "2026-01-30T17:54:13",
+      "url": "https://crickettv.site/wpl/6388552840112.html"
     },
     {
       "title": "Battle of captains: Harmanpreet, Gardner in a thrilling last-over duel",
@@ -555,20 +563,20 @@
       "url": "https://crickettv.site/wpl/6388548566112.html"
     },
     {
-      "title": "Six: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/d9/87/0/hi24774DwV.jpg",
-      "video_id": "6388547772112",
-      "duration": 25,
-      "published_iso": "2026-01-30T15:29:00",
-      "url": "https://crickettv.site/wpl/6388547772112.html"
-    },
-    {
       "title": "Flexing their arms! Gardner & Wareham on the move",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/ae/89/0/smcEYJNBuQ.jpg",
       "video_id": "6388547271112",
       "duration": 231,
       "published_iso": "2026-01-30T15:29:00",
       "url": "https://crickettv.site/wpl/6388547271112.html"
+    },
+    {
+      "title": "Six: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Six",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b0/d9/87/0/hi24774DwV.jpg",
+      "video_id": "6388547772112",
+      "duration": 25,
+      "published_iso": "2026-01-30T15:29:00",
+      "url": "https://crickettv.site/wpl/6388547772112.html"
     },
     {
       "title": "Wicket: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Ashleigh Gardner Wicket",
@@ -659,20 +667,20 @@
       "url": "https://crickettv.site/wpl/6388541759112.html"
     },
     {
-      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Hayley Matthews Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/92/6c/0/image-63b5cd20-b90f-4ddf-82fe-29c7b30f9e33.jpg",
-      "video_id": "6388540033112",
-      "duration": 116,
-      "published_iso": "2026-01-30T12:56:17",
-      "url": "https://crickettv.site/wpl/6388540033112.html"
-    },
-    {
       "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Georgia Wareham Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/88/85/a8/0/image-7d100b40-9d2d-47e9-9640-f2feb4027370.jpg",
       "video_id": "6388541403112",
       "duration": 111,
       "published_iso": "2026-01-30T12:56:17",
       "url": "https://crickettv.site/wpl/6388541403112.html"
+    },
+    {
+      "title": "Pre Match Interview: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026: Hayley Matthews Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f9/92/6c/0/image-63b5cd20-b90f-4ddf-82fe-29c7b30f9e33.jpg",
+      "video_id": "6388540033112",
+      "duration": 116,
+      "published_iso": "2026-01-30T12:56:17",
+      "url": "https://crickettv.site/wpl/6388540033112.html"
     },
     {
       "title": "Pitch Report: Match 19, Gujarat Giants vs Mumbai Indians, WPL 2026",
@@ -755,20 +763,20 @@
       "url": "https://crickettv.site/wpl/6388494364112.html"
     },
     {
-      "title": "Amazing Moments: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/61/77/0/uzmRPHIn6x.jpg",
-      "video_id": "6388493586112",
-      "duration": 61,
-      "published_iso": "2026-01-29T17:33:00",
-      "url": "https://crickettv.site/wpl/6388493586112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Grace Harris",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/bb/0e/0/VWzVlDIkLZ.jpg",
       "video_id": "6388493491112",
       "duration": 29,
       "published_iso": "2026-01-29T17:33:00",
       "url": "https://crickettv.site/wpl/6388493491112.html"
+    },
+    {
+      "title": "Amazing Moments: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/61/77/0/uzmRPHIn6x.jpg",
+      "video_id": "6388493586112",
+      "duration": 61,
+      "published_iso": "2026-01-29T17:33:00",
+      "url": "https://crickettv.site/wpl/6388493586112.html"
     },
     {
       "title": "Smriti Mandhana guides RCB into final with superb 54*(27)",
@@ -793,14 +801,6 @@
       "duration": 151,
       "published_iso": "2026-01-29T17:10:41",
       "url": "https://crickettv.site/wpl/6388491885112.html"
-    },
-    {
-      "title": "Six: Match 18, UP Warriorz vs Royal Challengers Bengaluru, WPL 2026: Smriti Mandhana Six",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/81/c8/4a/0/image-b6129cd7-1af5-4955-be67-c38fd0dbcba2.jpg",
-      "video_id": "6388494033112",
-      "duration": 23,
-      "published_iso": "2026-01-29T17:07:13",
-      "url": "https://crickettv.site/wpl/6388494033112.html"
     }
   ]
 }
