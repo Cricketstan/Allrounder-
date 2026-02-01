@@ -2,17 +2,17 @@
   "event": [
 
 {
-      "title": "India Vs Newzealand",
-      "poster_link": "https://vmndims.kayosports.com.au/api/v2/img/6965bc7be4b08f97e7b4bd46-1768519282532?location=hero-default&imwidth=2560",
+      "title": "India Vs Pakistan",
+      "poster_link": "https://mena-img-cdn-lb.aws.playco.com/criclife/01022026ICCU19WC2026INDVSPAK12THMSSGY2026M/01022026ICCU19WC2026INDVSPAK12THMSSGY2026M-hero-main-v2-en.jpg",
       "watch_now": [
-        { "id": "home/ind-vs-nz", "name": "Play Highlights" }
+        { "id": "home/usa-vs-ind", "name": "Play Highlights" }
       ],
-      "date": "31 Jan 2026",
-      "start_time": "06:15 PM",
+      "date": "1 Feb 2026",
+      "start_time": "12:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "T20"
+      "league": "U19"
     },
 
 
