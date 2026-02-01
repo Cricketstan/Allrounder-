@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-02-01T07:33:19.910525Z",
+  "updated_at": "2026-02-01T13:05:18.826535Z",
   "count": 6,
   "pages": [
     {
@@ -22,12 +22,6 @@
       "description": "South Africa (SA) lock horns with the West Indies (WI) in the first T20I in the three-match series on Tuesday, January 27. Boland Park in Paarl is going to host this encounter."
     },
     {
-      "id": "wpl",
-      "title": "Benglore Vs Gujarat Live Streaming ",
-      "url": "https://crickettv.site/home/wpl/",
-      "description": ""
-    },
-    {
       "id": "ind-vs-nz",
       "title": "India Vs Newzealand Live",
       "url": "https://crickettv.site/home/wpl/",
@@ -36,6 +30,12 @@
     {
       "id": "usa-vs-ind",
       "title": "Indian Vs United States Of America ",
+      "url": "https://crickettv.site/home/wpl/",
+      "description": ""
+    },
+    {
+      "id": "wpl",
+      "title": "Benglore Vs Gujarat Live Streaming ",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
