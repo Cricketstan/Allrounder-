@@ -27,10 +27,12 @@ jobs:
 
           ID_JSON_PATH = "home/id.json"
 
+          BASE_DOMAIN = "https://allrounderlive.in"
+
           EXTRA_URLS = [
-              "https://crickettv.site/",
-              "https://crickettv.site/cricket-tv-hd",
-              "https://crickettv.site/wpl"
+              f"{BASE_DOMAIN}/",
+              f"{BASE_DOMAIN}/cricket-tv-hd",
+              f"{BASE_DOMAIN}/wpl"
           ]
 
           today = date.today().isoformat()
@@ -39,9 +41,14 @@ jobs:
               data = json.load(f)
 
           urls = EXTRA_URLS[:]
+
           for page in data.get("pages", []):
               if "url" in page:
-                  urls.append(page["url"])
+                  # ensure all URLs are on new domain
+                  if page["url"].startswith("http"):
+                      urls.append(page["url"])
+                  else:
+                      urls.append(f"{BASE_DOMAIN}{page['url']}")
 
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
@@ -49,11 +56,11 @@ jobs:
           ]
 
           for u in sorted(set(urls)):
-              if u == "https://crickettv.site/":
+              if u == f"{BASE_DOMAIN}/":
                   priority = "1.0"
-              elif u == "https://crickettv.site/cricket-tv-hd":
+              elif u == f"{BASE_DOMAIN}/cricket-tv-hd":
                   priority = "0.9"
-              elif u == "https://crickettv.site/wpl":
+              elif u == f"{BASE_DOMAIN}/wpl":
                   priority = "0.8"
               else:
                   priority = "0.7"
@@ -72,7 +79,7 @@ jobs:
           with open("sitemap.xml", "w", encoding="utf-8") as f:
               f.write("\n".join(sitemap))
 
-          print("✅ sitemap.xml generated successfully")
+          print("✅ sitemap.xml generated successfully for allrounderlive.in")
           EOF
 
       - name: Commit and push sitemap.xml
