@@ -295,7 +295,7 @@
         "canonical": "https://crickettv.site/home/bbl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-02-02T19:06:58.688+05:30",
+        "last_modified": "2026-02-02T19:10:07.988+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -315,16 +315,6 @@
         {
           "name": "Willow",
           "src": "https://crickettv.site/willow",
-          "default": false
-        },
-        {
-          "name": "Star Sports 2",
-          "src": "https://cricketstan.github.io/Channel-14/",
-          "default": false
-        },
-        {
-          "name": "Willow Sports",
-          "src": "https://cricketstan.github.io/Willow-Sports/",
           "default": false
         }
       ],
