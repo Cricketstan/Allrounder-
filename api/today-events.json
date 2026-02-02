@@ -1,31 +1,17 @@
 
 {
   "event": [
-{
-      "title": "India Vs Pakistan",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5150/1769858875150-i",
+      "title": "India Vs USA",
+      "poster_link": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.823ac8a1-0f5d-4479-a5dc-65d88aff9871/2/BOXART-16X9/en-US._UR1920,1080_SX25000_FMwebp_.jpeg",
       "watch_now": [
-        { "id": "home/usa-vs-ind", "name": "Play Highlights" }
+        { "id": "willow", "name": "Play Highlights" }
       ],
-      "date": "1 Feb 2026",
-      "start_time": "12:45 PM",
+      "date": "2 Feb 2026",
+      "start_time": "04:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "U19"
-    },
-{
-      "title": "Capitals Vs Warriors",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/747/1769825680747-i",
-      "watch_now": [
-        { "id": "home/wpl", "name": "Play Highlights" }
-      ],
-      "date": "1 Feb 2026",
-      "start_time": "06:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "WPL"
+      "league": "WarmUp"
     }
   ]
 }
