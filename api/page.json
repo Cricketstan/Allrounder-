@@ -2,74 +2,6 @@
   "site": "https://crickettv.site",
   "pages": [
     {
-      "id": "bbl",
-      "slug": "bbl",
-      "seo": {
-        "meta_title": "thunder vs renegade live streaming ",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/bbl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-01-25T13:43:23.496+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Final :- Sydney Vs Perth",
-        "team1": "Thunder",
-        "team2": "Renegade ",
-        "venue": "Melbourne Stadium ",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hotstar",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/hotstar.m3u8",
-          "default": false
-        },
-        {
-          "name": "Fox Cricket 501",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        },
-        {
-          "name": "Willow Cricket ",
-          "src": "https://crickettv.site/willow",
-          "default": false
-        },
-        {
-          "name": "Cricbuzzz",
-          "src": "https://crickettv.site/cricbuzz1",
-          "default": false
-        },
-        {
-          "name": "Star Sports 2",
-          "src": "https://cricketstan.github.io/Channel-14/",
-          "default": false
-        },
-        {
-          "name": "Willow Sports",
-          "src": "https://cricketstan.github.io/Willow-Sports/",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
-        "players_to_watch": {
-          "Thunder": [],
-          "Renegade ": []
-        },
-        "squads": {
-          "Thunder": "",
-          "Renegade ": ""
-        }
-      }
-    },
-    {
       "id": "england-vs-srilanka",
       "slug": "england-vs-srilanka",
       "seo": {
@@ -351,6 +283,64 @@
         },
         "squads": {
           "": ""
+        }
+      }
+    },
+    {
+      "id": "bbl",
+      "slug": "bbl",
+      "seo": {
+        "meta_title": "thunder vs renegade live streaming ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/bbl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T11:17:50.076+05:30",
+        "last_modified": "2026-02-02T19:06:58.688+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Warm Up",
+        "team1": "Thunder",
+        "team2": "Renegade ",
+        "venue": "Melbourne Stadium ",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hotstar",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": false
+        },
+        {
+          "name": "Willow",
+          "src": "https://crickettv.site/willow",
+          "default": false
+        },
+        {
+          "name": "Star Sports 2",
+          "src": "https://cricketstan.github.io/Channel-14/",
+          "default": false
+        },
+        {
+          "name": "Willow Sports",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Thunder": [],
+          "Renegade ": []
+        },
+        "squads": {
+          "Thunder": "",
+          "Renegade ": ""
         }
       }
     }
