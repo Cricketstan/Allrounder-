@@ -1,14 +1,8 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-02-01T13:05:18.826535Z",
+  "updated_at": "2026-02-02T13:37:07.548075Z",
   "count": 6,
   "pages": [
-    {
-      "id": "bbl",
-      "title": "Final :- Sydney Vs Perth",
-      "url": "https://crickettv.site/home/bbl/",
-      "description": ""
-    },
     {
       "id": "england-vs-srilanka",
       "title": "England Vs Srilanka Live",
@@ -37,6 +31,12 @@
       "id": "wpl",
       "title": "Benglore Vs Gujarat Live Streaming ",
       "url": "https://crickettv.site/home/wpl/",
+      "description": ""
+    },
+    {
+      "id": "bbl",
+      "title": "Warm Up",
+      "url": "https://crickettv.site/home/bbl/",
       "description": ""
     }
   ]
