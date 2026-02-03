@@ -1,20 +1,17 @@
 {
   "event": [
     {
-      "title": "India Vs USA",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/8337/1770010158337-h",
+      "title": "Gujarat Vs Delhi",
+      "poster_link": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/918/1769462350918-i",
       "watch_now": [
-        {
-          "id": "home/bbl",
-          "name": "Play Highlights"
-        }
+        { "id": "home/wpl", "name": "Play Highlights" }
       ],
-      "date": "2 Feb 2026",
-      "start_time": "04:45 PM",
+      "date": "3 Feb 2026",
+      "start_time": "06:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "WarmUp"
+      "league": "WPL"
     }
   ]
 }
