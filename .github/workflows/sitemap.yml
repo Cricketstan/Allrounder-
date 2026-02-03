@@ -24,14 +24,14 @@ jobs:
           python3 << 'EOF'
           import json
           from datetime import date
+          from urllib.parse import urlparse
 
           ID_JSON_PATH = "home/id.json"
-
           BASE_DOMAIN = "https://allrounderlive.in"
 
+          # ✅ ONLY pages you really want
           EXTRA_URLS = [
               f"{BASE_DOMAIN}/",
-              f"{BASE_DOMAIN}/cricket-tv-hd",
               f"{BASE_DOMAIN}/wpl"
           ]
 
@@ -43,12 +43,19 @@ jobs:
           urls = EXTRA_URLS[:]
 
           for page in data.get("pages", []):
-              if "url" in page:
-                  # ensure all URLs are on new domain
-                  if page["url"].startswith("http"):
-                      urls.append(page["url"])
-                  else:
-                      urls.append(f"{BASE_DOMAIN}{page['url']}")
+              if "url" not in page:
+                  continue
+
+              raw_url = page["url"].strip()
+
+              # 🔥 FORCE DOMAIN REWRITE (NO OLD DOMAINS ALLOWED)
+              if raw_url.startswith("http"):
+                  parsed = urlparse(raw_url)
+                  clean_url = f"{BASE_DOMAIN}{parsed.path}"
+              else:
+                  clean_url = f"{BASE_DOMAIN}{raw_url}"
+
+              urls.append(clean_url)
 
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
@@ -58,8 +65,6 @@ jobs:
           for u in sorted(set(urls)):
               if u == f"{BASE_DOMAIN}/":
                   priority = "1.0"
-              elif u == f"{BASE_DOMAIN}/cricket-tv-hd":
-                  priority = "0.9"
               elif u == f"{BASE_DOMAIN}/wpl":
                   priority = "0.8"
               else:
@@ -79,7 +84,7 @@ jobs:
           with open("sitemap.xml", "w", encoding="utf-8") as f:
               f.write("\n".join(sitemap))
 
-          print("✅ sitemap.xml generated successfully for allrounderlive.in")
+          print("✅ sitemap.xml generated ONLY for allrounderlive.in")
           EOF
 
       - name: Commit and push sitemap.xml
