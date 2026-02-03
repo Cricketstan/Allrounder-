@@ -226,67 +226,6 @@
       }
     },
     {
-      "id": "wpl",
-      "slug": "wpl",
-      "seo": {
-        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/wpl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-02-01T18:35:11.093+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Benglore Vs Gujarat Live Streaming ",
-        "team1": "",
-        "team2": "",
-        "venue": "",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hindi",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": true
-        },
-        {
-          "name": "Jio Hotstar ",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        },
-        {
-          "name": "Willow Cricket ",
-          "src": "https://crickettv.site/willow",
-          "default": true
-        },
-        {
-          "name": "Hindi Permanent ",
-          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
-          "default": false
-        },
-        {
-          "name": "Cric Life",
-          "src": "https://crickettv.site/cric-life",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "K",
-        "players_to_watch": {
-          "": []
-        },
-        "squads": {
-          "": ""
-        }
-      }
-    },
-    {
       "id": "bbl",
       "slug": "bbl",
       "seo": {
@@ -331,6 +270,67 @@
         "squads": {
           "Thunder": "",
           "Renegade ": ""
+        }
+      }
+    },
+    {
+      "id": "wpl",
+      "slug": "wpl",
+      "seo": {
+        "meta_title": "Wpl Live Streaming - Royal Challengers Bangalore Vs Gujarat Gaints",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/wpl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T17:50:15.995+05:30",
+        "last_modified": "2026-02-03T21:21:34.186+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Benglore Vs Gujarat Live Streaming ",
+        "team1": "",
+        "team2": "",
+        "venue": "",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Hindi",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": true
+        },
+        {
+          "name": "Jio Hotstar ",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": false
+        },
+        {
+          "name": "Willow Cricket ",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
+          "default": true
+        },
+        {
+          "name": "Hindi Permanent ",
+          "src": "https://allrounderlive.pages.dev/player2?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "default": false
+        },
+        {
+          "name": "Cric Life",
+          "src": "https://crickettv.site/cric-life",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "K",
+        "players_to_watch": {
+          "": []
+        },
+        "squads": {
+          "": ""
         }
       }
     }
