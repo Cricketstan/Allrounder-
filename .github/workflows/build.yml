@@ -22,9 +22,9 @@ jobs:
           python3 - << 'EOF'
           import json, os, shutil, datetime
 
-          SITE = "https://allrounderlive.in/"
+          SITE = "https://crickettv.site"
           HOME = "/home"
-          THUMB = "https://allrounderlive.in/image/api/crickettv.png"
+          THUMB = "https://crickettv.site/image/api/crickettv.png"
 
           def render_list(items):
               if not items:
