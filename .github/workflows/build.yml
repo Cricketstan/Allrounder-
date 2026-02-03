@@ -135,26 +135,7 @@ jobs:
                   "pages": index_pages
               }, f, indent=2)
 
-          # ---------- sitemap.xml ----------
-          sitemap = ['<?xml version="1.0" encoding="UTF-8"?>']
-          sitemap.append('<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">')
-
-          for url in sitemap_urls:
-              sitemap.append(f"""
-            <url>
-              <loc>{url}</loc>
-              <lastmod>{datetime.datetime.utcnow().date()}</lastmod>
-              <changefreq>weekly</changefreq>
-              <priority>0.9</priority>
-            </url>
-          """)
-
-          sitemap.append('</urlset>')
-
-          with open("sitemap.xml", "w", encoding="utf-8") as f:
-              f.write("\n".join(sitemap))
-
-          EOF
+          
 
       - name: Commit & push changes
         run: |
