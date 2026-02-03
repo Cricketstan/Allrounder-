@@ -32,6 +32,7 @@ jobs:
           # ✅ ONLY pages you really want
           EXTRA_URLS = [
               f"{BASE_DOMAIN}/",
+              f"{BASE_DOMAIN}/t20-worldcup",
               f"{BASE_DOMAIN}/wpl"
           ]
 
@@ -62,13 +63,12 @@ jobs:
               '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
           ]
 
-          for u in sorted(set(urls)):
-              if u == f"{BASE_DOMAIN}/":
-                  priority = "1.0"
-              elif u == f"{BASE_DOMAIN}/wpl":
-                  priority = "0.8"
-              else:
-                  priority = "0.7"
+          if u == f"{BASE_DOMAIN}/":
+    priority = "1.0"
+elif u in [f"{BASE_DOMAIN}/wpl", f"{BASE_DOMAIN}/t20-worldcup"]:
+    priority = "0.8"
+else:
+    priority = "0.7"
 
               sitemap.extend([
                   "  <url>",
