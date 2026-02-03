@@ -31,9 +31,15 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://allrounderlive.in/wpl</loc>
+    <loc>https://allrounderlive.in/t20-worldcup</loc>
     <lastmod>2026-02-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://allrounderlive.in/wpl</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
