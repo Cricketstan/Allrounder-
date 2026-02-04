@@ -12,7 +12,7 @@
       "id": "wpl",
       "name": "hotstar",
       "type": "iframe",
-      "iframeSrc": "https://crickettv.site/cric-life",
+      "iframeSrc": "https://allrounderlive.pages.dev/cric-life",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=hindi",
       "get": "https://dillzycounter.vercel.app/api/get?key=hindi"
     },
@@ -36,7 +36,7 @@
       "id": "willow",
       "name": "Willow",
       "type": "iframe",
-      "iframeSrc": "https://crickettv.site/willow",
+      "iframeSrc": "https://allrounderlive.pages.dev/willow",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=willow",
       "get": "https://dillzycounter.vercel.app/api/get?key=willow"
     },
@@ -53,7 +53,7 @@
       "id": "prime-hin",
       "name": "Prime Hindi",
       "type": "iframe",
-      "iframeSrc": "https://crickettv.site/prime-hin",
+      "iframeSrc": "https://allrounderlive.pages.dev/prime-hin",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=prime-hin",
       "get": "https://dillzycounter.vercel.app/api/get?key=prime-hin"
     },
@@ -189,7 +189,7 @@
       "id": "sony",
       "name": "SONY",
       "type": "iframe",
-      "iframeSrc": "https://crickettv.site/sonyliv/sonyliv-1",
+      "iframeSrc": "https://allrounderlive.pages.dev/sonyliv/sonyliv-1",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=sony-1",
       "get": "https://dillzycounter.vercel.app/api/get?key=sony-1"
     },
@@ -213,7 +213,7 @@
       "id": "cricbuzz",
       "name": "cricbuzz",
       "type": "iframe",
-      "iframeSrc": "https://crickettv.site/cricbuzz1",
+      "iframeSrc": "https://allrounderlive.pages.dev/cricbuzz1",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=SS",
       "get": "https://dillzycounter.vercel.app/api/get?key=SS"
     }
