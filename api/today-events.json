@@ -1,17 +1,17 @@
 {
   "event": [
     {
-      "title": "Gujarat Vs Delhi",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/545/1770049990545-i",
+      "title": "India Vs Afghanistan",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6336/1770132116336-i",
       "watch_now": [
-        { "id": "home/wpl", "name": "Play Highlights" }
+        { "id": "home/usa-vs-ind", "name": "Play Highlights" }
       ],
-      "date": "3 Feb 2026",
-      "start_time": "06:40 PM",
+      "date": "4 Feb 2026",
+      "start_time": "12:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "WPL"
+      "league": "U19"
     }
   ]
 }
