@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-04T23:01:08.498Z",
+  "updated_at": "2026-02-04T23:44:57.264Z",
   "count": 100,
   "items": [
     {
@@ -59,14 +59,6 @@
       "url": "https://crickettv.site/wpl/6388748035112.html"
     },
     {
-      "title": "The most important game is in two days: Chinelle Henry",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/df/3c/7a/0/image-82b412fd-067b-4f0a-9135-e06c65e4084d.jpg",
-      "video_id": "6388725456112",
-      "duration": 335,
-      "published_iso": "2026-02-03T19:45:14",
-      "url": "https://crickettv.site/wpl/6388725456112.html"
-    },
-    {
       "title": "We are looking to comeback stronger and bigger next year: Michael Klinger",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e6/2d/fc/0/image-47552627-5e0a-467a-a382-4fa02890965d.jpg",
       "video_id": "6388725938112",
@@ -75,28 +67,12 @@
       "url": "https://crickettv.site/wpl/6388725938112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bc/fe/0a/0/image-0baa66e5-0678-4410-889d-7150a4cc5105.jpg",
-      "video_id": "6388723315112",
-      "duration": 24,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388723315112.html"
-    },
-    {
-      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
-      "video_id": "6388721364112",
-      "duration": 28,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388721364112.html"
-    },
-    {
-      "title": "Sierra Super Striker of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Anushka Sharma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/4c/8a/0/image-1775bb39-68aa-4ab4-88be-312310245d09.jpg",
-      "video_id": "6388722436112",
-      "duration": 33,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388722436112.html"
+      "title": "The most important game is in two days: Chinelle Henry",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/df/3c/7a/0/image-82b412fd-067b-4f0a-9135-e06c65e4084d.jpg",
+      "video_id": "6388725456112",
+      "duration": 335,
+      "published_iso": "2026-02-03T19:45:14",
+      "url": "https://crickettv.site/wpl/6388725456112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Chinelle Henry",
@@ -121,6 +97,30 @@
       "duration": 408,
       "published_iso": "2026-02-03T18:16:58",
       "url": "https://crickettv.site/wpl/6388723799112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bc/fe/0a/0/image-0baa66e5-0678-4410-889d-7150a4cc5105.jpg",
+      "video_id": "6388723315112",
+      "duration": 24,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388723315112.html"
+    },
+    {
+      "title": "Sierra Super Striker of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Anushka Sharma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/4c/8a/0/image-1775bb39-68aa-4ab4-88be-312310245d09.jpg",
+      "video_id": "6388722436112",
+      "duration": 33,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388722436112.html"
+    },
+    {
+      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
+      "video_id": "6388721364112",
+      "duration": 28,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388721364112.html"
     },
     {
       "title": "Player of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Jemimah Rodrigues",
@@ -427,6 +427,14 @@
       "url": "https://crickettv.site/wpl/6388713939112.html"
     },
     {
+      "title": "Pre Match Interview: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fd/52/e6/0/image-1fc9f9ec-e086-41fd-aa20-47ad3a13e9c6.jpg",
+      "video_id": "6388713802112",
+      "duration": 118,
+      "published_iso": "2026-02-03T12:51:04",
+      "url": "https://crickettv.site/wpl/6388713802112.html"
+    },
+    {
       "title": "Pitch Report: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2a/25/d3/0/image-9fb8dc12-6fe6-4dc8-a3bb-4166ce12aa89.jpg",
       "video_id": "6388711567112",
@@ -441,14 +449,6 @@
       "duration": 155,
       "published_iso": "2026-02-03T12:51:04",
       "url": "https://crickettv.site/wpl/6388714006112.html"
-    },
-    {
-      "title": "Pre Match Interview: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fd/52/e6/0/image-1fc9f9ec-e086-41fd-aa20-47ad3a13e9c6.jpg",
-      "video_id": "6388713802112",
-      "duration": 118,
-      "published_iso": "2026-02-03T12:51:04",
-      "url": "https://crickettv.site/wpl/6388713802112.html"
     },
     {
       "title": "Fire and Elegance, ft. Marizanne Kapp and Laura Wolvaardt",
@@ -475,14 +475,6 @@
       "url": "https://crickettv.site/wpl/6388645926112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of Week 3",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fd/ff/86/0/image-c2ec44a4-9427-4b88-96b4-c00c5adf4862.jpg",
-      "video_id": "6388644545112",
-      "duration": 77,
-      "published_iso": "2026-02-01T21:52:02",
-      "url": "https://crickettv.site/wpl/6388644545112.html"
-    },
-    {
       "title": "Sierra Super Striker of Week 3",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b6/9f/ac/0/image-305056f9-1d48-4fee-ab05-de03925948ce.jpg",
       "video_id": "6388644341112",
@@ -505,6 +497,14 @@
       "duration": 146,
       "published_iso": "2026-02-01T21:52:02",
       "url": "https://crickettv.site/wpl/6388645440112.html"
+    },
+    {
+      "title": "TATA WPL Green Dot Balls of Week 3",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fd/ff/86/0/image-c2ec44a4-9427-4b88-96b4-c00c5adf4862.jpg",
+      "video_id": "6388644545112",
+      "duration": 77,
+      "published_iso": "2026-02-01T21:52:02",
+      "url": "https://crickettv.site/wpl/6388644545112.html"
     },
     {
       "title": "We will try to stick to our strengths vs GG: Sree Charani",
