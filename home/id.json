@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-02-03T01:23:35.066795Z",
+  "updated_at": "2026-02-04T06:54:30.251564Z",
   "count": 6,
   "pages": [
     {
@@ -22,9 +22,9 @@
       "description": ""
     },
     {
-      "id": "usa-vs-ind",
-      "title": "Indian Vs United States Of America ",
-      "url": "https://crickettv.site/home/wpl/",
+      "id": "bbl",
+      "title": "Warm Up",
+      "url": "https://crickettv.site/home/bbl/",
       "description": ""
     },
     {
@@ -34,9 +34,9 @@
       "description": ""
     },
     {
-      "id": "bbl",
-      "title": "Warm Up",
-      "url": "https://crickettv.site/home/bbl/",
+      "id": "usa-vs-ind",
+      "title": "Indian Vs Afganistan ",
+      "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
   ]
