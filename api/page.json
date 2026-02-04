@@ -282,7 +282,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-15T12:37:22.009+05:30",
-        "last_modified": "2026-02-04T12:24:22.708+05:30",
+        "last_modified": "2026-02-04T12:24:51.393+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -306,7 +306,7 @@
         },
         {
           "name": "Willow",
-          "src": "https://crickettv.site/willow2",
+          "src": "https://cricketstan.github.io/Willow-Sports/",
           "default": false
         },
         {
