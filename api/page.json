@@ -282,7 +282,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-15T12:37:22.009+05:30",
-        "last_modified": "2026-02-04T12:55:06.782+05:30",
+        "last_modified": "2026-02-04T13:06:05.187+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -301,7 +301,7 @@
         },
         {
           "name": "Hindi",
-          "src": "https://allrounderlive.pages.dev/p6?url=https://dillzyserver.dillzycreations.workers.dev/live/abc123.m3u8",
+          "src": "https://cricketstan.github.io/Allrounder-/channel/star-sports-2-hindi.html",
           "default": false
         },
         {
