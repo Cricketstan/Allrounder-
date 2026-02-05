@@ -2,34 +2,18 @@
   "event": [
 
 {
-      "title": "India Vs Africa",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/7624/1770145517624-i",
+      "title": "Bengaluru Vs Delhi",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/1870/1770272311870-i",
       "watch_now": [
-        { "id": "home/bbl", "name": "Play Highlights" }
+        { "id": "home/wpl", "name": "Play Highlights" }
       ],
-      "date": "4 Feb 2026",
+      "date": "5 Feb 2026",
       "start_time": "06:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
-      "league": "WarmUp"
+      "league": "Final"
     },
-
-
-{
-      "title": "India Vs Afghanistan",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/8967/1770187618967-i",
-      "watch_now": [
-        { "id": "home/usa-vs-ind", "name": "Play Highlights" }
-      ],
-      "date": "4 Feb 2026",
-      "start_time": "12:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "U19"
-    },
-
 
 
 {
