@@ -282,7 +282,7 @@
         "canonical": "https://crickettv.site/home/wpl/",
         "thumbnail": "https://crickettv.site/image/api/crickettv.png",
         "publish_date": "2026-01-12T17:50:15.995+05:30",
-        "last_modified": "2026-02-05T17:58:00.238+05:30",
+        "last_modified": "2026-02-05T18:34:42.886+05:30",
         "breadcrumb_title": ""
       },
       "match": {
@@ -317,6 +317,11 @@
         {
           "name": "Cric Life",
           "src": "https://allrounderlive.pages.dev/cric-life",
+          "default": false
+        },
+        {
+          "name": "Ios",
+          "src": "https://allrounderlive.pages.dev/player4?url=https://amg01269-amg01269c1-sportstribal-emea-5204.playouts.now.amagi.tv/playlist/amg01269-willowtvfast-willowplus-",
           "default": false
         }
       ],
