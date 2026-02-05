@@ -1,7 +1,39 @@
 {
-  "updated_at": "2026-02-05T11:51:17.264Z",
+  "updated_at": "2026-02-05T13:21:02.634Z",
   "count": 100,
   "items": [
+    {
+      "title": "Toss: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/46/fe/fb/0/image-c8a4486c-f962-4470-9930-a69ca86636ed.jpg",
+      "video_id": "6388807128112",
+      "duration": 177,
+      "published_iso": "2026-02-05T13:18:58",
+      "url": "https://crickettv.site/wpl/6388807128112.html"
+    },
+    {
+      "title": "Pre Match Interview: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Lauren Bell Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/6f/66/0/image-83a124bf-469e-491b-b89d-1e37f9e9b4a8.jpg",
+      "video_id": "6388805338112",
+      "duration": 130,
+      "published_iso": "2026-02-05T12:50:56",
+      "url": "https://crickettv.site/wpl/6388805338112.html"
+    },
+    {
+      "title": "Pre Match Interview: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Marizanne Kapp Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b5/fa/cf/0/image-1ccc3ba4-053a-4471-a93e-63a1bf5baf72.jpg",
+      "video_id": "6388804343112",
+      "duration": 146,
+      "published_iso": "2026-02-05T12:43:41",
+      "url": "https://crickettv.site/wpl/6388804343112.html"
+    },
+    {
+      "title": "Pitch Report: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/11/44/03/0/image-d0dd16e6-7a28-4009-9a36-32d41eaed33f.jpg",
+      "video_id": "6388804061112",
+      "duration": 101,
+      "published_iso": "2026-02-05T12:43:41",
+      "url": "https://crickettv.site/wpl/6388804061112.html"
+    },
     {
       "title": "TATA WPL 2026 Road to Final, ft. Delhi Capitals ",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/0d/94/0/image-98787fd4-e5d2-407e-9ff3-b2d7da8d5b06.jpg",
@@ -75,20 +107,20 @@
       "url": "https://crickettv.site/wpl/6388748035112.html"
     },
     {
-      "title": "We are looking to comeback stronger and bigger next year: Michael Klinger",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e6/2d/fc/0/image-47552627-5e0a-467a-a382-4fa02890965d.jpg",
-      "video_id": "6388725938112",
-      "duration": 399,
-      "published_iso": "2026-02-03T19:45:14",
-      "url": "https://crickettv.site/wpl/6388725938112.html"
-    },
-    {
       "title": "The most important game is in two days: Chinelle Henry",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/df/3c/7a/0/image-82b412fd-067b-4f0a-9135-e06c65e4084d.jpg",
       "video_id": "6388725456112",
       "duration": 335,
       "published_iso": "2026-02-03T19:45:14",
       "url": "https://crickettv.site/wpl/6388725456112.html"
+    },
+    {
+      "title": "We are looking to comeback stronger and bigger next year: Michael Klinger",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e6/2d/fc/0/image-47552627-5e0a-467a-a382-4fa02890965d.jpg",
+      "video_id": "6388725938112",
+      "duration": 399,
+      "published_iso": "2026-02-03T19:45:14",
+      "url": "https://crickettv.site/wpl/6388725938112.html"
     },
     {
       "title": "Amazing Moments: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -99,12 +131,20 @@
       "url": "https://crickettv.site/wpl/6388723419112.html"
     },
     {
-      "title": "TATA WPL Green Dot Balls of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Chinelle Henry",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/51/d6/0/image-79ef00af-24a3-4ad4-bf68-864255ffe14f.jpg",
-      "video_id": "6388722922112",
-      "duration": 25,
+      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
+      "video_id": "6388721364112",
+      "duration": 28,
       "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388722922112.html"
+      "url": "https://crickettv.site/wpl/6388721364112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bc/fe/0a/0/image-0baa66e5-0678-4410-889d-7150a4cc5105.jpg",
+      "video_id": "6388723315112",
+      "duration": 24,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388723315112.html"
     },
     {
       "title": "Presentation: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -115,20 +155,12 @@
       "url": "https://crickettv.site/wpl/6388723799112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
-      "video_id": "6388721364112",
-      "duration": 28,
+      "title": "TATA WPL Green Dot Balls of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Chinelle Henry",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/51/d6/0/image-79ef00af-24a3-4ad4-bf68-864255ffe14f.jpg",
+      "video_id": "6388722922112",
+      "duration": 25,
       "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388721364112.html"
-    },
-    {
-      "title": "Player of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Jemimah Rodrigues",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a0/dd/8a/0/image-76a7a44d-69a4-45e0-aae9-930b4b9d037f.jpg",
-      "video_id": "6388723609112",
-      "duration": 250,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388723609112.html"
+      "url": "https://crickettv.site/wpl/6388722922112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Anushka Sharma",
@@ -139,20 +171,20 @@
       "url": "https://crickettv.site/wpl/6388722436112.html"
     },
     {
+      "title": "Player of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Jemimah Rodrigues",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a0/dd/8a/0/image-76a7a44d-69a4-45e0-aae9-930b4b9d037f.jpg",
+      "video_id": "6388723609112",
+      "duration": 250,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388723609112.html"
+    },
+    {
       "title": "Herbalife Active Catch of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Chinelle Henry",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/9d/fa/27/0/image-b3f10cd9-d649-4932-a957-3dcf4496faa3.jpg",
       "video_id": "6388724095112",
       "duration": 25,
       "published_iso": "2026-02-03T18:16:58",
       "url": "https://crickettv.site/wpl/6388724095112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bc/fe/0a/0/image-0baa66e5-0678-4410-889d-7150a4cc5105.jpg",
-      "video_id": "6388723315112",
-      "duration": 24,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388723315112.html"
     },
     {
       "title": "Post Match Interview: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee Interview",
@@ -451,20 +483,20 @@
       "url": "https://crickettv.site/wpl/6388711567112.html"
     },
     {
-      "title": "Pre Match Interview: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee Interview",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fd/52/e6/0/image-1fc9f9ec-e086-41fd-aa20-47ad3a13e9c6.jpg",
-      "video_id": "6388713802112",
-      "duration": 118,
-      "published_iso": "2026-02-03T12:51:04",
-      "url": "https://crickettv.site/wpl/6388713802112.html"
-    },
-    {
       "title": "Pre Match Interview: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Sophie Devine Interview",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/07/3f/ee/0/image-e05f513b-7c81-420c-bac4-310d75670575.jpg",
       "video_id": "6388714006112",
       "duration": 155,
       "published_iso": "2026-02-03T12:51:04",
       "url": "https://crickettv.site/wpl/6388714006112.html"
+    },
+    {
+      "title": "Pre Match Interview: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee Interview",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/fd/52/e6/0/image-1fc9f9ec-e086-41fd-aa20-47ad3a13e9c6.jpg",
+      "video_id": "6388713802112",
+      "duration": 118,
+      "published_iso": "2026-02-03T12:51:04",
+      "url": "https://crickettv.site/wpl/6388713802112.html"
     },
     {
       "title": "Fire and Elegance, ft. Marizanne Kapp and Laura Wolvaardt",
@@ -483,12 +515,28 @@
       "url": "https://crickettv.site/wpl/6388643394112.html"
     },
     {
+      "title": "Kingfisher Good Times Sixes of Week 3",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/56/de/16/0/image-8d3fb50a-6961-4e1e-85cd-0434a94ca4cf.jpg",
+      "video_id": "6388645335112",
+      "duration": 368,
+      "published_iso": "2026-02-01T21:52:02",
+      "url": "https://crickettv.site/wpl/6388645335112.html"
+    },
+    {
       "title": "Sierra Super Striker of Week 3",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/b6/9f/ac/0/image-305056f9-1d48-4fee-ab05-de03925948ce.jpg",
       "video_id": "6388644341112",
       "duration": 487,
       "published_iso": "2026-02-01T21:52:02",
       "url": "https://crickettv.site/wpl/6388644341112.html"
+    },
+    {
+      "title": "ChatGPT Match IQ Award of Week 3",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/65/d8/68/0/image-593c4f85-d331-42d1-84af-84557ef1d833.jpg",
+      "video_id": "6388645926112",
+      "duration": 267,
+      "published_iso": "2026-02-01T21:52:02",
+      "url": "https://crickettv.site/wpl/6388645926112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of Week 3",
@@ -499,28 +547,12 @@
       "url": "https://crickettv.site/wpl/6388644545112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of Week 3",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/56/de/16/0/image-8d3fb50a-6961-4e1e-85cd-0434a94ca4cf.jpg",
-      "video_id": "6388645335112",
-      "duration": 368,
-      "published_iso": "2026-02-01T21:52:02",
-      "url": "https://crickettv.site/wpl/6388645335112.html"
-    },
-    {
       "title": "Herbalife Active Catches of Week 3",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/11/e7/ee/0/image-7eaeb178-d405-4810-a44c-0810f27e248a.jpg",
       "video_id": "6388645440112",
       "duration": 146,
       "published_iso": "2026-02-01T21:52:02",
       "url": "https://crickettv.site/wpl/6388645440112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award of Week 3",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/65/d8/68/0/image-593c4f85-d331-42d1-84af-84557ef1d833.jpg",
-      "video_id": "6388645926112",
-      "duration": 267,
-      "published_iso": "2026-02-01T21:52:02",
-      "url": "https://crickettv.site/wpl/6388645926112.html"
     },
     {
       "title": "We will try to stick to our strengths vs GG: Sree Charani",
@@ -539,14 +571,6 @@
       "url": "https://crickettv.site/wpl/6388641075112.html"
     },
     {
-      "title": "Amazing Moments: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/eb/85/0/image-1d1f9197-8be9-4eeb-a929-c9fd4a426ed8.jpg",
-      "video_id": "6388638629112",
-      "duration": 62,
-      "published_iso": "2026-02-01T18:35:49",
-      "url": "https://crickettv.site/wpl/6388638629112.html"
-    },
-    {
       "title": "Presentation: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/22/58/14/0/image-1b4776b8-e644-48ae-9438-7e1cf314f294.jpg",
       "video_id": "6388639598112",
@@ -555,12 +579,36 @@
       "url": "https://crickettv.site/wpl/6388639598112.html"
     },
     {
+      "title": "Amazing Moments: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/97/eb/85/0/image-1d1f9197-8be9-4eeb-a929-c9fd4a426ed8.jpg",
+      "video_id": "6388638629112",
+      "duration": 62,
+      "published_iso": "2026-02-01T18:35:49",
+      "url": "https://crickettv.site/wpl/6388638629112.html"
+    },
+    {
       "title": "Sierra Super Striker of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Jemimah Rodrigues",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d7/94/f5/0/image-07ef3d8a-38e5-4efd-a9f6-37d42abd6313.jpg",
       "video_id": "6388639088112",
       "duration": 30,
       "published_iso": "2026-02-01T18:11:17",
       "url": "https://crickettv.site/wpl/6388639088112.html"
+    },
+    {
+      "title": "Player of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Marizanne Kapp",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/0d/c9/0/image-b7b3a9e0-8113-44f5-9283-4604d8efffc4.jpg",
+      "video_id": "6388639083112",
+      "duration": 28,
+      "published_iso": "2026-02-01T18:06:38",
+      "url": "https://crickettv.site/wpl/6388639083112.html"
+    },
+    {
+      "title": "Herbalife Active Catch of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/a1/54/0/image-fecac385-1611-45ae-a017-54d0543f104a.jpg",
+      "video_id": "6388637326112",
+      "duration": 29,
+      "published_iso": "2026-02-01T18:06:38",
+      "url": "https://crickettv.site/wpl/6388637326112.html"
     },
     {
       "title": "Kingfisher Good Times Sixes of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma",
@@ -585,22 +633,6 @@
       "duration": 25,
       "published_iso": "2026-02-01T18:06:38",
       "url": "https://crickettv.site/wpl/6388637903112.html"
-    },
-    {
-      "title": "Herbalife Active Catch of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deepti Sharma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/a1/54/0/image-fecac385-1611-45ae-a017-54d0543f104a.jpg",
-      "video_id": "6388637326112",
-      "duration": 29,
-      "published_iso": "2026-02-01T18:06:38",
-      "url": "https://crickettv.site/wpl/6388637326112.html"
-    },
-    {
-      "title": "Player of the Match: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Marizanne Kapp",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/0d/c9/0/image-b7b3a9e0-8113-44f5-9283-4604d8efffc4.jpg",
-      "video_id": "6388639083112",
-      "duration": 28,
-      "published_iso": "2026-02-01T18:06:38",
-      "url": "https://crickettv.site/wpl/6388639083112.html"
     },
     {
       "title": "Captain Jemimah Rodrigues guides DC into playoffs with 34*(18)",
@@ -769,38 +801,6 @@
       "duration": 84,
       "published_iso": "2026-02-01T15:13:00",
       "url": "https://crickettv.site/wpl/6388634558112.html"
-    },
-    {
-      "title": "Marizanne Kapp stands tall in big game with 3/30",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/d3/06/f9/0/image-c05ffba5-b4b7-4e69-b1e4-9702f380ff8c.jpg",
-      "video_id": "6388633650112",
-      "duration": 82,
-      "published_iso": "2026-02-01T15:11:04",
-      "url": "https://crickettv.site/wpl/6388633650112.html"
-    },
-    {
-      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Simran Shaikh Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ab/1b/d2/0/image-5f4627f0-ecc0-4565-9ce3-7e88587314ed.jpg",
-      "video_id": "6388635139112",
-      "duration": 21,
-      "published_iso": "2026-02-01T15:06:07",
-      "url": "https://crickettv.site/wpl/6388635139112.html"
-    },
-    {
-      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Shipra Giri Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/cc/a5/a4/0/image-60a1243e-ceba-4271-b28b-b7246e275d69.jpg",
-      "video_id": "6388633855112",
-      "duration": 28,
-      "published_iso": "2026-02-01T15:02:01",
-      "url": "https://crickettv.site/wpl/6388633855112.html"
-    },
-    {
-      "title": "Wicket: Match 20, Delhi Capitals vs UP Warriorz, WPL 2026: Deandra Dottin Wicket",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/78/ee/25/0/eQXaVMOa4U.jpg",
-      "video_id": "6388635021112",
-      "duration": 29,
-      "published_iso": "2026-02-01T14:53:00",
-      "url": "https://crickettv.site/wpl/6388635021112.html"
     }
   ]
 }
