@@ -50,7 +50,7 @@
       "get": "https://dillzycounter.vercel.app/api/get?key=willow"
     },
     {
-      "id": "prime-hin",
+      "id": "prame-hin",
       "name": "Prime Hindi",
       "type": "iframe",
       "iframeSrc": "https://allrounderlive.pages.dev/prime-hin",
