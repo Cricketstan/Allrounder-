@@ -21,7 +21,7 @@
 
 {
       "title": "Magic Moments",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_auto/sources/r1/cms/prod/8610/1770304668610-h",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6053/1770304756053-i",
       "watch_now": [
         { "id": "highlights/rise-of-champion", "name": "Play Highlights" }
       ],
@@ -31,36 +31,7 @@
       "year": "2025",
       "language": "Multi",
       "league": "Series"
-    },
-
-{
-      "title": "Highlights",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/8930/1767991858930-h",
-      "watch_now": [
-        { "id": "highlights/wpl", "name": "Play Highlights" }
-      ],
-      "date": "1 Jan 2026",
-      "start_time": "07:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "WPL"
-    },
-
-
-{
-      "title": "Home And Dry: Mini",
-      "poster_link": "https://images.swm.digital/image?u=https://production-mediacms-utility-hsyp63r9v13b.s3-ap-southeast-2.amazonaws.com/media/123758/ashes-mini.jpg&q=95&w=1920",
-      "watch_now": [
-        { "id": "highlights/ashes.html", "name": "All Stream" }
-      ],
-      "date": "8 Jan 2026",
-      "start_time": "04:55 AM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Eng",
-      "league": "Ashes"
-}
+    }
     
   ]
 }
