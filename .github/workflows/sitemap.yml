@@ -32,6 +32,7 @@ jobs:
           # ✅ ONLY pages you really want
           EXTRA_URLS = [
               f"{BASE_DOMAIN}/",
+              f"{BASE_DOMAIN}/live-match",
               f"{BASE_DOMAIN}/t20-worldcup",
               f"{BASE_DOMAIN}/wpl"
           ]
