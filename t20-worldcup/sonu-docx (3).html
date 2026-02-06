@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CricTV - Dillzy</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-body: #050505;
+            --primary: #2962ff;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-surface: rgba(255, 255, 255, 0.05);
+            --sidebar-bg: rgba(10, 10, 10, 0.95);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --radius: 12px;
+            --primary-yellow: #FFD700;
+            --card-bg: #1c222d;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            background-color: var(--bg-body);
+            background-image: radial-gradient(circle at top, #101525 0%, #000000 60%);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            padding-top: 75px; 
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        .header {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: 70px;
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex; align-items: center;
+            padding: 0 20px;
+            z-index: 1000;
+        }
+
+        .menu-btn { cursor: pointer; z-index: 2; color: #fff; }
+        .menu-btn svg { width: 28px; height: 28px; stroke-width: 2px; }
+
+        .brand-logo {
+            position: absolute; 
+            left: 50%; 
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .sidebar-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+            z-index: 1001; opacity: 0; visibility: hidden;
+            transition: 0.3s;
+        }
+        .sidebar-overlay.active { opacity: 1; visibility: visible; }
+
+        .sidebar {
+            position: fixed; top: 0; left: -300px;
+            width: 300px; height: 100%;
+            background: var(--sidebar-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-right: 1px solid var(--glass-border);
+            z-index: 1002;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 20px 15px 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar.active { left: 0; }
+
+        .nav-header { padding: 60px 0 20px; border-bottom: 1px solid var(--glass-border); margin-bottom: 15px; }
+
+        .nav-link {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 18px; color: #ddd; text-decoration: none;
+            font-size: 14px; font-weight: 500;
+            border-radius: 10px; transition: 0.3s;
+            margin-bottom: 5px;
+        }
+        .nav-link svg { width: 20px; height: 20px; opacity: 0.8; }
+        .nav-link:hover { background: var(--glass-surface); color: var(--primary); }
+        .counter-section {
+            margin-top: auto;
+            padding: 20px;
+            background: linear-gradient(145deg, rgba(41, 98, 255, 0.1), rgba(0, 0, 0, 0.4));
+            border-radius: 15px;
+            border: 1px solid rgba(41, 98, 255, 0.3);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+        .counter-section.visible { display: block; animation: fadeInUp 0.5s ease; }
+        
+        .counter-label { font-size: 10px; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; display: block; font-weight: 800; }
+        .counter-id { font-size: 12px; color: #fff; font-weight: 600; margin-bottom: 6px; display: block; opacity: 0.7; }
+        .counter-value { font-size: 32px; font-weight: 900; color: #fff; text-shadow: 0 0 20px rgba(41,98,255,0.6); }
+
+        .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 15px 40px; }
+        
+        #player-box {
+            width: 100%; position: relative; padding-bottom: 56.25%;
+            background: #000; border-radius: var(--radius);
+            overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+            border: 1px solid var(--glass-border); margin-bottom: 20px;
+        }
+        #player-box iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+        .loader {
+            position: absolute; inset: 0; background: #000;
+            display: flex; flex-direction: column; align-items: center;
+            justify-content: center; z-index: 10; transition: 0.5s;
+        }
+        .loader.hide { opacity: 0; pointer-events: none; }
+        .spinner {
+            width: 40px; height: 40px; border: 3px solid #333;
+            border-top-color: var(--primary); border-radius: 50%;
+            animation: spin 0.8s linear infinite; margin-bottom: 10px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .tab-container {
+            display: flex; gap: 10px; margin-bottom: 20px;
+            background: rgba(255,255,255,0.03); padding: 5px;
+            border-radius: 12px; border: 1px solid var(--glass-border);
+        }
+
+        .tab-btn {
+            flex: 1; padding: 12px; border-radius: 8px; text-align: center;
+            font-size: 14px; font-weight: 600; color: var(--text-muted);
+            cursor: pointer; transition: 0.3s; display: flex;
+            align-items: center; justify-content: center; gap: 8px;
+        }
+        .tab-btn svg { width: 18px; height: 18px; }
+        .tab-btn.active { background: rgba(255,255,255,0.1); color: #fff; }
+        .tab-btn.active-chat { background: var(--primary); color: #fff; }
+
+        .content-view { display: none; animation: fadeIn 0.4s ease; }
+        .content-view.show { display: block; }
+
+        .channel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        @media(min-width: 600px) { .channel-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .channel-card {
+            background: linear-gradient(145deg, #161616, #0a0a0a);
+            border: 1px solid var(--glass-border); padding: 16px;
+            border-radius: var(--radius); text-align: center;
+            cursor: pointer; transition: 0.2s;
+        }
+        .channel-card.active { border-color: var(--primary); background: rgba(41,98,255,0.1); }
+        .ch-title { font-size: 14px; font-weight: 600; color: #eee; }
+        
+        .chat-container { 
+            width: 100%; 
+            position: relative;
+            height: 550px; 
+            background: #1a1a1a; 
+            border-radius: var(--radius); 
+            overflow: hidden; 
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+        }
+        .chat-frame { width: 100%; height: 100%; border: none; background: transparent; }
+
+        .popup-backdrop {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 10005;
+            display: none; align-items: center; justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .popup-card {
+            width: 85%; max-width: 320px; 
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08); 
+            border-radius: 28px;
+            padding: 45px 22px 35px; 
+            text-align: center; 
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            animation: slideUp 0.4s ease-out;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        @keyframes slideUp { 
+            from { transform: translateY(20px); opacity: 0; } 
+            to { transform: translateY(0); opacity: 1; } 
+        }
+        
+        .close-btn {
+            position: absolute; top: 20px; right: 22px; 
+            color: #64748b; cursor: pointer; font-size: 22px;
+        }
+        .icon-circle {
+            width: 62px; height: 62px; 
+            background: rgba(255, 215, 0, 0.1); 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            margin: 0 auto 18px;
+        }
+
+        .popup-card h3 { margin: 0 0 10px; color: #ffffff; font-size: 20px; font-weight: 700; }
+        .popup-card p { margin: 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5; }
+
+        .btn-join {
+            background: var(--primary-yellow); 
+            color: #000; 
+            width: 100%; 
+            padding: 15px 0;
+            border-radius: 14px; 
+            font-weight: 700; 
+            text-decoration: none; 
+            display: block;
+            margin-top: 25px; 
+            font-size: 16px; 
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-join:active { transform: scale(0.97); }
+
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="menu-btn" onclick="toggleSidebar()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </div>
+        <img src="https://allrounderlive.pages.dev/image/api/crickettv.png" alt="Cricket TV" class="brand-logo">
+    </header>
+
+    <div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="nav-header">
+            <a href="/home" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                Home
+            </a>
+            <a href="/Scorecard" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                Scorecard
+            </a>
+            <a href="javascript:void(0)" class="nav-link" onclick="showVisitors()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Visitors
+            </a>
+            <a href="https://t.me/Dillzy" target="_blank" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                Join Telegram
+            </a>
+            <a href="https://t.me/Dillzy" target="_blank" class="nav-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Contact Us
+            </a>
+        </div>
+
+        <div class="counter-section" id="visitorPanel">
+            <span class="counter-label">Live Audience</span>
+            <span class="counter-id" id="displayId">@CricTV</span>
+            <div class="counter-value" id="viewCount">0</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="player-box">
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+                <div style="font-size: 12px; color: #888;">SYNCING STREAM...</div>
+            </div>
+            <iframe id="mainPlayer" src="" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture"></iframe>
+        </div>
+
+        <div class="tab-container">
+            <div class="tab-btn active" id="btnAll" onclick="switchTab('channels')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                All Streams
+            </div>
+            <div class="tab-btn" id="btnChat" onclick="switchTab('chat')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Live Chat
+            </div>
+        </div>
+
+        <div id="viewChannels" class="content-view show">
+            <div class="channel-grid" id="gridContainer"></div>
+        </div>
+
+        <div id="viewChat" class="content-view">
+            <div class="chat-container">
+                <div class="loader" id="chatLoader">
+                    <div class="spinner"></div>
+                    <div style="font-size: 12px; color: #888;">CONNECTING TO LIVE CHAT....</div>
+                </div>
+                <iframe id="chatFrame" class="chat-frame" allow="clipboard-write; clipboard-read"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-backdrop" id="popup">
+        <div class="popup-card">
+          <span class="material-icons close-btn" onclick="closePopup()">close</span>
+          
+          <div class="icon-circle">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--primary-yellow)" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.031 2C6.508 2 2.016 6.492 2.016 12.016c0 1.776.46 3.518 1.334 5.08L2.03 22l4.996-1.306c1.516.826 3.236 1.262 5.005 1.262 5.522 0 10.015-4.492 10.015-10.016S17.553 2 12.031 2zm0 18.257c-1.55 0-3.07-.404-4.42-1.17l-.316-.18-3.268.855.874-3.185-.207-.33a8.17 8.17 0 0 1-1.256-4.331c0-4.542 3.696-8.238 8.24-8.238 4.543 0 8.239 3.696 8.239 8.238 0 4.542-3.692 8.311-7.886 8.311zm4.512-6.208c-.247-.124-1.464-.723-1.69-.805-.227-.083-.392-.124-.557.124-.165.247-.64.805-.784.97-.144.165-.288.185-.536.062-1.077-.535-1.99-1.132-2.778-2.486-.206-.35-.022-.54.102-.663.113-.113.247-.29.37-.434.124-.144.165-.247.248-.412.082-.165.04-.31-.02-.434-.062-.124-.557-1.342-.763-1.837-.2-.485-.402-.42-.557-.427l-.474-.01c-.165 0-.433.062-.66.31-.226.247-.866.846-.866 2.064 0 1.218.887 2.394 1.01 2.56.124.164 1.744 2.662 4.225 3.733 1.638.707 2.273.707 3.085.584.898-.136 1.464-.598 1.67-.929.206-.33.165-.578.103-.681-.062-.104-.227-.165-.475-.29z"/>
+            </svg>
+          </div>
+  
+          <h3>Don't Miss Out !!</h3>
+          <p>Join Our WhatsApp Channel For Backup Links & Instant Match Updates.</p>
+  
+          <a href="https://chat.whatsapp.com/YOUR_LINK" target="_blank" class="btn-join">Join Now</a>
+          
+        </div>
+    </div>
+
+    <script>
+        const API_COUNTER = 'https://sayan-prime.pages.dev/api';
+        const LIST_API = 'https://allrounderlive.in/api/t20-worldcup/match-1.json';
+        const STREAM_API = 'https://crickettv.site/id.json';
+        const CHAT_URL = 'https://chat-4c2.pages.dev';
+
+        const player = document.getElementById('mainPlayer');
+        const loader = document.getElementById('loader');
+        const chatLoader = document.getElementById('chatLoader');
+        const grid = document.getElementById('gridContainer');
+        const chatFrame = document.getElementById('chatFrame');
+        
+        let activeId = '';
+
+        function formatViews(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+            if (num >= 1000) return (num / 1000).toFixed(1) + "K";
+            return num.toString();
+        }
+
+        async function startCounter(streamId) {
+            const countEl = document.getElementById("viewCount");
+            const idEl = document.getElementById("displayId");
+            idEl.innerText = "@" + streamId;
+
+            try {
+                await fetch(`${API_COUNTER}/hit?key=${streamId}&unique=1&_=${Date.now()}`);
+            } catch(e){}
+
+            const update = async () => {
+                try {
+                    const res = await fetch(`${API_COUNTER}/get?key=${streamId}&_=${Date.now()}`);
+                    const json = await res.json();
+                    countEl.innerText = formatViews(json.total || 0);
+                } catch(err){}
+            };
+
+            update();
+            setInterval(update, 10000);
+        }
+
+        async function init() {
+            const params = new URLSearchParams(window.location.search);
+            const urlId = params.get('id');
+            
+            try {
+                const [lRes, sRes] = await Promise.all([fetch(LIST_API), fetch(STREAM_API)]);
+                const lData = await lRes.json();
+                const sData = await sRes.json();
+
+                const channels = lData.channels || [];
+                const streams = sData.iframes || [];
+
+                let targetId = '';
+                if(urlId && streams.find(s => s.id === urlId)) {
+                    targetId = urlId;
+                } else if(channels.length > 0) {
+                    targetId = channels[0].link.split('/').filter(Boolean).pop();
+                } else {
+                    targetId = 'hindi';
+                }
+                
+                activeId = targetId;
+                startCounter(activeId);
+                renderGrid(channels, activeId);
+                loadStream(activeId, streams);
+
+            } catch (e) {
+                console.error("Initialization Error:", e);
+            }
+        }
+
+        function renderGrid(channels, current) {
+            grid.innerHTML = '';
+            channels.forEach(ch => {
+                const id = ch.link.split('/').filter(Boolean).pop();
+                const card = document.createElement('div');
+                card.className = `channel-card ${id === current ? 'active' : ''}`;
+                card.onclick = () => location.href = `?id=${id}`;
+                card.innerHTML = `<div class="ch-title">${ch.name}</div>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function loadStream(id, streams) {
+            const s = streams.find(x => x.id == id);
+            if(s) {
+                loader.classList.remove('hide');
+                player.src = s.iframeSrc;
+                setTimeout(() => loader.classList.add('hide'), 1500);
+            }
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
+
+        function showVisitors() {
+            document.getElementById('visitorPanel').classList.add('visible');
+        }
+
+        function switchTab(t) {
+            const bA = document.getElementById('btnAll'), bC = document.getElementById('btnChat');
+            const vA = document.getElementById('viewChannels'), vC = document.getElementById('viewChat');
+            
+            if(t === 'chat') {
+                bA.classList.remove('active'); bC.classList.add('active', 'active-chat');
+                vA.classList.remove('show'); vC.classList.add('show');
+                
+                if(!chatFrame.src || chatFrame.src === "" || chatFrame.src.includes("about:blank")) {
+                    chatLoader.classList.remove('hide');
+                    chatFrame.src = CHAT_URL;
+                    
+                    chatFrame.onload = () => {
+                        chatLoader.classList.add('hide');
+                    };
+                    
+                    setTimeout(() => {
+                         chatLoader.classList.add('hide');
+                    }, 4000);
+                }
+            } else {
+                bC.classList.remove('active', 'active-chat'); bA.classList.add('active');
+                vC.classList.remove('show'); vA.classList.add('show');
+            }
+        }
+        function closePopup() { 
+            document.getElementById('popup').style.display = 'none'; 
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            init();
+            setTimeout(() => { 
+                document.getElementById('popup').style.display = 'flex'; 
+            }, 2000);
+        });
+    </script>
+</body>
+
+</html>
