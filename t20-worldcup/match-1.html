@@ -231,6 +231,27 @@
             transition: 0.2s;
         }
         .btn-join:active { transform: scale(0.97); }
+        .btn-close-popup {
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    padding: 14px 0;
+    border-radius: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-close-popup:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+.btn-close-popup:active {
+    transform: scale(0.97);
+}
 
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -326,8 +347,13 @@
           <h3>Don't Miss Out !!</h3>
           <p>Join Our WhatsApp Channel For Backup Links & Instant Match Updates.</p>
   
-          <a href="https://chat.whatsapp.com/YOUR_LINK" target="_blank" class="btn-join">Join Now</a>
-          
+          <a href="https://chat.whatsapp.com/YOUR_LINK" target="_blank" class="btn-join">
+    Join Now
+</a>
+
+<button class="btn-close-popup" onclick="closePopup()">
+    Already Join
+</button>
         </div>
     </div>
 
@@ -472,3 +498,4 @@
 </body>
 
 </html>
+
