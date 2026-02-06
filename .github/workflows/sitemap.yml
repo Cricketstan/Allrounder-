@@ -69,6 +69,8 @@ jobs:
                   priority = "1.0"
               elif u == f"{BASE_DOMAIN}/t20-worldcup":
                   priority = "0.8"
+                  elif u == f"{BASE_DOMAIN}/live-match":
+                  priority = "0.8"
               else:
                   priority = "0.7"
 
