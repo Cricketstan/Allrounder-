@@ -360,145 +360,99 @@
     </div>
 
     <script>
-        const API_COUNTER = 'https://sayan-prime.pages.dev/api';
-        const LIST_API = 'https://allrounderlive.in/api/t20-worldcup/match-1.json';
-        const STREAM_API = 'https://allrounderlive.in/id.json';
-        const CHAT_URL = 'https://chat-4c2.pages.dev';
+const LIST_API = 'https://allrounderlive.in/api/t20-worldcup/match-1.json';
+const CHAT_URL = 'https://chat-4c2.pages.dev';
 
-        const player = document.getElementById('mainPlayer');
-        const loader = document.getElementById('loader');
-        const chatLoader = document.getElementById('chatLoader');
-        const grid = document.getElementById('gridContainer');
-        const chatFrame = document.getElementById('chatFrame');
-        
-        let activeId = '';
+const player = document.getElementById('mainPlayer');
+const loader = document.getElementById('loader');
+const grid = document.getElementById('gridContainer');
+const chatFrame = document.getElementById('chatFrame');
+const chatLoader = document.getElementById('chatLoader');
 
-        function formatViews(num) {
-            if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
-            if (num >= 1000) return (num / 1000).toFixed(1) + "K";
-            return num.toString();
-        }
+let channels = [];
 
-        async function startCounter(streamId) {
-            const countEl = document.getElementById("viewCount");
-            const idEl = document.getElementById("displayId");
-            idEl.innerText = "@" + streamId;
+async function init() {
+  try {
+    const res = await fetch(LIST_API);
+    const data = await res.json();
 
-            try {
-                await fetch(`${API_COUNTER}/hit?key=${streamId}&unique=1&_=${Date.now()}`);
-            } catch(e){}
+    channels = data.channels || [];
 
-            const update = async () => {
-                try {
-                    const res = await fetch(`${API_COUNTER}/get?key=${streamId}&_=${Date.now()}`);
-                    const json = await res.json();
-                    countEl.innerText = formatViews(json.total || 0);
-                } catch(err){}
-            };
+    renderGrid();
 
-            update();
-            setInterval(update, 10000);
-        }
+    // Auto play first channel
+    if (channels.length > 0) {
+      loadStream(channels[0].link);
+    }
 
-        async function init() {
-            const params = new URLSearchParams(window.location.search);
-            const urlId = params.get('id');
-            
-            try {
-                const [lRes, sRes] = await Promise.all([fetch(LIST_API), fetch(STREAM_API)]);
-                const lData = await lRes.json();
-                const sData = await sRes.json();
+  } catch(e) {
+    console.error("Fetch Failed:", e);
+  }
+}
 
-                const channels = lData.channels || [];
-                const streams = sData.iframes || [];
+function renderGrid() {
+  grid.innerHTML = '';
 
-                let targetId = '';
-                if(urlId && streams.find(s => s.id === urlId)) {
-                    targetId = urlId;
-                } else if(channels.length > 0) {
-                    targetId = channels[0].link.split('/').filter(Boolean).pop();
-                } else {
-                    targetId = 'hindi';
-                }
-                
-                activeId = targetId;
-                startCounter(activeId);
-                renderGrid(channels, activeId);
-                loadStream(activeId, streams);
+  channels.forEach(ch => {
+    const card = document.createElement('div');
+    card.className = 'channel-card';
 
-            } catch (e) {
-                console.error("Initialization Error:", e);
-            }
-        }
+    card.onclick = () => {
+      loadStream(ch.link);
 
-        function renderGrid(channels, current) {
-            grid.innerHTML = '';
-            channels.forEach(ch => {
-                const id = ch.link.split('/').filter(Boolean).pop();
-                const card = document.createElement('div');
-                card.className = `channel-card ${id === current ? 'active' : ''}`;
-                card.onclick = () => location.href = `?id=${id}`;
-                card.innerHTML = `<div class="ch-title">${ch.name}</div>`;
-                grid.appendChild(card);
-            });
-        }
+      document.querySelectorAll('.channel-card')
+        .forEach(c => c.classList.remove('active'));
 
-        function loadStream(id, streams) {
-            const s = streams.find(x => x.id == id);
-            if(s) {
-                loader.classList.remove('hide');
-                player.src = s.iframeSrc;
-                setTimeout(() => loader.classList.add('hide'), 1500);
-            }
-        }
+      card.classList.add('active');
+    };
 
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
-            document.getElementById('overlay').classList.toggle('active');
-        }
+    card.innerHTML = `<div class="ch-title">${ch.name}</div>`;
+    grid.appendChild(card);
+  });
+}
 
-        function showVisitors() {
-            document.getElementById('visitorPanel').classList.add('visible');
-        }
+function loadStream(url) {
+  loader.classList.remove('hide');
+  player.src = url;
 
-        function switchTab(t) {
-            const bA = document.getElementById('btnAll'), bC = document.getElementById('btnChat');
-            const vA = document.getElementById('viewChannels'), vC = document.getElementById('viewChat');
-            
-            if(t === 'chat') {
-                bA.classList.remove('active'); bC.classList.add('active', 'active-chat');
-                vA.classList.remove('show'); vC.classList.add('show');
-                
-                if(!chatFrame.src || chatFrame.src === "" || chatFrame.src.includes("about:blank")) {
-                    chatLoader.classList.remove('hide');
-                    chatFrame.src = CHAT_URL;
-                    
-                    chatFrame.onload = () => {
-                        chatLoader.classList.add('hide');
-                    };
-                    
-                    setTimeout(() => {
-                         chatLoader.classList.add('hide');
-                    }, 4000);
-                }
-            } else {
-                bC.classList.remove('active', 'active-chat'); bA.classList.add('active');
-                vC.classList.remove('show'); vA.classList.add('show');
-            }
-        }
-        function closePopup() { 
-            document.getElementById('popup').style.display = 'none'; 
-        }
+  setTimeout(() => {
+    loader.classList.add('hide');
+  }, 1200);
+}
 
-        window.addEventListener('DOMContentLoaded', () => {
-            init();
-            setTimeout(() => { 
-                document.getElementById('popup').style.display = 'flex'; 
-            }, 2000);
-        });
+function switchTab(t) {
+  const bA = document.getElementById('btnAll');
+  const bC = document.getElementById('btnChat');
+  const vA = document.getElementById('viewChannels');
+  const vC = document.getElementById('viewChat');
+
+  if(t === 'chat') {
+    bA.classList.remove('active');
+    bC.classList.add('active','active-chat');
+
+    vA.classList.remove('show');
+    vC.classList.add('show');
+
+    if(!chatFrame.src){
+      chatLoader.classList.remove('hide');
+      chatFrame.src = CHAT_URL;
+      chatFrame.onload = ()=> chatLoader.classList.add('hide');
+    }
+  }
+  else {
+    bC.classList.remove('active','active-chat');
+    bA.classList.add('active');
+
+    vC.classList.remove('show');
+    vA.classList.add('show');
+  }
+}
+
+window.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 
 </html>
+
 
 
