@@ -69,7 +69,7 @@
       "id": "prime-eng",
       "name": "Prime English",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/prime",
+      "iframeSrc": "https://allrounderlive.pages.dev/prame",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=prime-eng",
       "get": "https://dillzycounter.vercel.app/api/get?key=prime-eng"
     },
