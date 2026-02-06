@@ -359,100 +359,152 @@
         </div>
     </div>
 
-    <script>
+      <script>
+const API_COUNTER = 'https://sayan-prime.pages.dev/api';
 const LIST_API = 'https://allrounderlive.in/api/t20-worldcup/match-1.json';
 const CHAT_URL = 'https://chat-4c2.pages.dev';
 
 const player = document.getElementById('mainPlayer');
 const loader = document.getElementById('loader');
+const chatLoader = document.getElementById('chatLoader');
 const grid = document.getElementById('gridContainer');
 const chatFrame = document.getElementById('chatFrame');
-const chatLoader = document.getElementById('chatLoader');
 
 let channels = [];
+let activeId = '';
 
-async function init() {
-  try {
-    const res = await fetch(LIST_API);
-    const data = await res.json();
-
-    channels = data.channels || [];
-
-    renderGrid();
-
-    // Auto play first channel
-    if (channels.length > 0) {
-      loadStream(channels[0].link);
-    }
-
-  } catch(e) {
-    console.error("Fetch Failed:", e);
-  }
+function formatViews(num) {
+    if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+    if (num >= 1000) return (num / 1000).toFixed(1) + "K";
+    return num.toString();
 }
 
-function renderGrid() {
-  grid.innerHTML = '';
+async function startCounter(streamId) {
+    const countEl = document.getElementById("viewCount");
+    const idEl = document.getElementById("displayId");
+    idEl.innerText = "@" + streamId;
 
-  channels.forEach(ch => {
-    const card = document.createElement('div');
-    card.className = 'channel-card';
+    try {
+        await fetch(`${API_COUNTER}/hit?key=${streamId}&unique=1&_=${Date.now()}`);
+    } catch(e){}
 
-    card.onclick = () => {
-      loadStream(ch.link);
-
-      document.querySelectorAll('.channel-card')
-        .forEach(c => c.classList.remove('active'));
-
-      card.classList.add('active');
+    const update = async () => {
+        try {
+            const res = await fetch(`${API_COUNTER}/get?key=${streamId}&_=${Date.now()}`);
+            const json = await res.json();
+            countEl.innerText = formatViews(json.total || 0);
+        } catch(err){}
     };
 
-    card.innerHTML = `<div class="ch-title">${ch.name}</div>`;
-    grid.appendChild(card);
-  });
+    update();
+    setInterval(update, 10000);
+}
+
+async function init() {
+    const params = new URLSearchParams(window.location.search);
+    const urlId = params.get('id');
+
+    try {
+        const res = await fetch(LIST_API);
+        const data = await res.json();
+
+        channels = data.channels || [];
+
+        let targetLink = '';
+
+        if(urlId){
+            const found = channels.find(c => c.link.endsWith(urlId));
+            if(found) targetLink = found.link;
+        }
+
+        if(!targetLink && channels.length > 0){
+            targetLink = channels[0].link;
+        }
+
+        activeId = targetLink.split('/').pop();
+
+        startCounter(activeId);
+        renderGrid(activeId);
+        loadStream(targetLink);
+
+    } catch(e) {
+        console.error("Initialization Error:", e);
+    }
+}
+
+function renderGrid(currentId) {
+    grid.innerHTML = '';
+
+    channels.forEach(ch => {
+        const id = ch.link.split('/').pop();
+
+        const card = document.createElement('div');
+        card.className = `channel-card ${id === currentId ? 'active' : ''}`;
+
+        card.onclick = () => {
+            location.href = `?id=${id}`;
+        };
+
+        card.innerHTML = `<div class="ch-title">${ch.name}</div>`;
+        grid.appendChild(card);
+    });
 }
 
 function loadStream(url) {
-  loader.classList.remove('hide');
-  player.src = url;
+    loader.classList.remove('hide');
+    player.src = url;
+    setTimeout(() => loader.classList.add('hide'), 1200);
+}
 
-  setTimeout(() => {
-    loader.classList.add('hide');
-  }, 1200);
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+    document.getElementById('overlay').classList.toggle('active');
+}
+
+function showVisitors() {
+    document.getElementById('visitorPanel').classList.add('visible');
 }
 
 function switchTab(t) {
-  const bA = document.getElementById('btnAll');
-  const bC = document.getElementById('btnChat');
-  const vA = document.getElementById('viewChannels');
-  const vC = document.getElementById('viewChat');
+    const bA = document.getElementById('btnAll');
+    const bC = document.getElementById('btnChat');
+    const vA = document.getElementById('viewChannels');
+    const vC = document.getElementById('viewChat');
 
-  if(t === 'chat') {
-    bA.classList.remove('active');
-    bC.classList.add('active','active-chat');
+    if(t === 'chat') {
+        bA.classList.remove('active');
+        bC.classList.add('active','active-chat');
+        vA.classList.remove('show');
+        vC.classList.add('show');
 
-    vA.classList.remove('show');
-    vC.classList.add('show');
-
-    if(!chatFrame.src){
-      chatLoader.classList.remove('hide');
-      chatFrame.src = CHAT_URL;
-      chatFrame.onload = ()=> chatLoader.classList.add('hide');
+        if(!chatFrame.src){
+            chatLoader.classList.remove('hide');
+            chatFrame.src = CHAT_URL;
+            chatFrame.onload = ()=> chatLoader.classList.add('hide');
+        }
+    } else {
+        bC.classList.remove('active','active-chat');
+        bA.classList.add('active');
+        vC.classList.remove('show');
+        vA.classList.add('show');
     }
-  }
-  else {
-    bC.classList.remove('active','active-chat');
-    bA.classList.add('active');
-
-    vC.classList.remove('show');
-    vA.classList.add('show');
-  }
 }
 
-window.addEventListener('DOMContentLoaded', init);
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    init();
+    setTimeout(() => {
+        document.getElementById('popup').style.display = 'flex';
+    }, 2000);
+});
     </script>
 </body>
 
 </html>
+
 
 
 
