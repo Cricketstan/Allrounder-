@@ -1,6 +1,6 @@
 {
   "site": "https://crickettv.site",
-  "updated_at": "2026-02-06T04:19:55.410521Z",
+  "updated_at": "2026-02-06T06:12:15.576257Z",
   "count": 6,
   "pages": [
     {
@@ -22,12 +22,6 @@
       "description": ""
     },
     {
-      "id": "usa-vs-ind",
-      "title": "Indian Vs Afganistan ",
-      "url": "https://crickettv.site/home/wpl/",
-      "description": ""
-    },
-    {
       "id": "bbl",
       "title": "Warm Up",
       "url": "https://crickettv.site/home/bbl/",
@@ -36,6 +30,12 @@
     {
       "id": "wpl",
       "title": "Benglore Vs Gujarat Live Streaming ",
+      "url": "https://crickettv.site/home/wpl/",
+      "description": ""
+    },
+    {
+      "id": "usa-vs-ind",
+      "title": "Indian Vs Afganistan ",
       "url": "https://crickettv.site/home/wpl/",
       "description": ""
     }
