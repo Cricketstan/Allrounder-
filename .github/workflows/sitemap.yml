@@ -29,7 +29,7 @@ jobs:
           ID_JSON_PATH = "home/id.json"
           BASE_DOMAIN = "https://allrounderlive.in"
 
-          # ✅ ONLY pages you really want
+          # Only pages you want forced in sitemap
           EXTRA_URLS = [
               f"{BASE_DOMAIN}/",
               f"{BASE_DOMAIN}/live-match",
@@ -50,7 +50,7 @@ jobs:
 
               raw_url = page["url"].strip()
 
-              # 🔥 FORCE DOMAIN REWRITE (NO OLD DOMAINS ALLOWED)
+              # Force rewrite to your domain
               if raw_url.startswith("http"):
                   parsed = urlparse(raw_url)
                   clean_url = f"{BASE_DOMAIN}{parsed.path}"
@@ -61,7 +61,7 @@ jobs:
 
           sitemap = [
               '<?xml version="1.0" encoding="UTF-8"?>',
-              '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">'
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
           ]
 
           for u in sorted(set(urls)):
@@ -69,7 +69,7 @@ jobs:
                   priority = "1.0"
               elif u == f"{BASE_DOMAIN}/t20-worldcup":
                   priority = "0.8"
-                  elif u == f"{BASE_DOMAIN}/live-match":
+              elif u == f"{BASE_DOMAIN}/live-match":
                   priority = "0.8"
               else:
                   priority = "0.7"
