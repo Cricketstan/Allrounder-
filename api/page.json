@@ -165,54 +165,6 @@
       }
     },
     {
-      "id": "bbl",
-      "slug": "bbl",
-      "seo": {
-        "meta_title": "thunder vs renegade live streaming ",
-        "meta_description": "",
-        "canonical": "https://crickettv.site/home/bbl/",
-        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
-        "publish_date": "2026-01-12T11:17:50.076+05:30",
-        "last_modified": "2026-02-04T19:03:32.600+05:30",
-        "breadcrumb_title": ""
-      },
-      "match": {
-        "title": "Warm Up",
-        "team1": "Thunder",
-        "team2": "Renegade ",
-        "venue": "Melbourne Stadium ",
-        "start_iso": "",
-        "end_iso": ""
-      },
-      "streams": [
-        {
-          "name": "Hotstar",
-          "src": "https://allrounderlive.pages.dev/dilz?id=65656576",
-          "default": false
-        },
-        {
-          "name": "Willow",
-          "src": "https://crickettv.site/willow",
-          "default": false
-        }
-      ],
-      "content": {
-        "overview": "",
-        "match_details": "",
-        "pitch_report": "",
-        "prediction": "",
-        "final_word": "",
-        "players_to_watch": {
-          "Thunder": [],
-          "Renegade ": []
-        },
-        "squads": {
-          "Thunder": "",
-          "Renegade ": ""
-        }
-      }
-    },
-    {
       "id": "wpl",
       "slug": "wpl",
       "seo": {
@@ -336,6 +288,49 @@
         },
         "squads": {
           "": ""
+        }
+      }
+    },
+    {
+      "id": "bbl",
+      "slug": "bbl",
+      "seo": {
+        "meta_title": "thunder vs renegade live streaming ",
+        "meta_description": "",
+        "canonical": "https://crickettv.site/home/bbl/",
+        "thumbnail": "https://crickettv.site/image/api/crickettv.png",
+        "publish_date": "2026-01-12T11:17:50.076+05:30",
+        "last_modified": "2026-02-06T17:01:53.680+05:30",
+        "breadcrumb_title": ""
+      },
+      "match": {
+        "title": "Warm Up",
+        "team1": "Thunder",
+        "team2": "Renegade ",
+        "venue": "Melbourne Stadium ",
+        "start_iso": "",
+        "end_iso": ""
+      },
+      "streams": [
+        {
+          "name": "Willow",
+          "src": "https://allrounderlive.pages.dev/willow",
+          "default": false
+        }
+      ],
+      "content": {
+        "overview": "",
+        "match_details": "",
+        "pitch_report": "",
+        "prediction": "",
+        "final_word": "",
+        "players_to_watch": {
+          "Thunder": [],
+          "Renegade ": []
+        },
+        "squads": {
+          "Thunder": "",
+          "Renegade ": ""
         }
       }
     }
