@@ -1,6 +1,21 @@
 {
   "event": [
 
+
+{
+      "title": "India Vs Namibia",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/4385/1770328894385-h",
+      "watch_now": [
+        { "id": "home/bbl", "name": "Play Highlights" }
+      ],
+      "date": "6 Feb 2026",
+      "start_time": "05:00 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "Final"
+    },
+
 {
       "title": "India Vs England",
       "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6339/1770323376339-i",
