@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Live Match | Watch Cricket Streaming</title>
+
+<meta name="description"
+content="Watch live cricket matches including IPL, PSL and T20 World Cup. Premium HD streaming portal."/>
+
+<link rel="canonical" href="https://allrounderlive.in/live">
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#02040a;
+font-family:Inter, sans-serif;
+}
+
+/* ==== PREMIUM CARD ==== */
+
+.card{
+background:linear-gradient(135deg,rgba(15,23,42,.9),rgba(30,41,59,.7));
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(18px);
+transition:all .35s ease;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:
+0 30px 80px rgba(0,0,0,.8),
+0 0 40px rgba(14,165,233,.35);
+border-color:#38bdf8;
+}
+
+/* Glow overlay */
+.card::after{
+content:'';
+position:absolute;
+inset:0;
+background:radial-gradient(circle at 50% 0%,rgba(14,165,233,.25),transparent 70%);
+opacity:0;
+transition:.4s;
+}
+.card:hover::after{opacity:.4;}
+
+
+/* ==== IMAGE 16:9 ==== */
+.poster{
+aspect-ratio:16/9;
+width:100%;
+object-fit:cover;
+}
+
+
+/* ==== BUTTON ==== */
+
+.watch{
+background:linear-gradient(135deg,#0ea5e9,#22d3ee);
+transition:.25s;
+}
+.watch:hover{
+transform:scale(1.05);
+box-shadow:0 0 18px rgba(14,165,233,.6);
+}
+
+/* ==== SECTION TITLE ==== */
+
+.section-title{
+font-size:28px;
+font-weight:800;
+background:linear-gradient(to right,#38bdf8,#a855f7,#f59e0b);
+-webkit-background-clip:text;
+color:transparent;
+}
+
+/* ==== HERO ==== */
+
+.hero{
+background:radial-gradient(circle at center,rgba(14,165,233,.15),transparent 70%);
+}
+
+</style>
+</head>
+
+<body class="text-slate-200">
+
+<!-- HERO -->
+<header class="hero text-center py-14 px-4">
+
+<h1 class="text-5xl md:text-7xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-purple-400 to-amber-400">
+LIVE MATCH STREAMING
+</h1>
+
+<p class="mt-3 text-slate-400">
+IPL • PSL • T20 World Cup • International Cricket
+</p>
+
+</header>
+
+
+<!-- SPOTLIGHT -->
+<section class="max-w-6xl mx-auto px-4 mb-12">
+<div id="spot"></div>
+</section>
+
+
+
+<!-- SECTIONS -->
+<main id="sections" class="max-w-7xl mx-auto px-4 space-y-16 pb-24"></main>
+
+
+
+<script>
+
+const API="https://allrounderlive.pages.dev/api/today-events.json";
+const BASE="https://allrounderlive.in/";
+
+async function init(){
+const res=await fetch(API);
+const json=await res.json();
+const events=json.event || [];
+
+buildSpot(events[0]);
+group(events);
+}
+
+
+// Spotlight
+function buildSpot(ev){
+
+if(!ev) return;
+
+document.getElementById("spot").innerHTML=`
+
+<div class="card rounded-2xl overflow-hidden md:flex">
+
+<img src="${ev.poster_link}" class="poster md:w-1/2">
+
+<div class="p-6 flex flex-col justify-center space-y-4">
+
+<div class="px-3 py-1 bg-red-500 text-xs font-bold rounded inline-block animate-pulse">
+LIVE MATCH
+</div>
+
+<h2 class="text-3xl font-bold">${ev.title}</h2>
+
+<p class="text-slate-400">${ev.league} • ${ev.category}</p>
+
+<button onclick="go('${ev.watch_now[0].id}')"
+class="watch px-6 py-3 rounded-lg font-bold w-48">
+Watch Now
+</button>
+
+</div>
+</div>
+`;
+}
+
+
+// Group Matches
+function group(events){
+
+const map={
+"IPL":[],
+"PSL":[],
+"T20 WORLD CUP":[],
+"OTHER MATCHES":[]
+};
+
+events.forEach(e=>{
+const n=(e.league||"").toUpperCase();
+
+if(n.includes("IPL")) map["IPL"].push(e);
+else if(n.includes("PSL")) map["PSL"].push(e);
+else if(n.includes("T20")) map["T20 WORLD CUP"].push(e);
+else map["OTHER MATCHES"].push(e);
+});
+
+const root=document.getElementById("sections");
+
+Object.keys(map).forEach(section=>{
+
+if(map[section].length===0) return;
+
+let html=`
+<section>
+
+<h2 class="section-title mb-6">${section}</h2>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+`;
+
+map[section].forEach(e=>{
+
+html+=`
+<div class="card rounded-xl">
+
+<img src="${e.poster_link}" class="poster">
+
+<div class="p-4 space-y-2">
+
+<h3 class="font-bold text-lg">${e.title}</h3>
+
+<div class="text-sm text-slate-400">
+${e.date} • ${e.start_time}
+</div>
+
+<button onclick="go('${e.watch_now[0].id}')"
+class="watch w-full py-2 rounded-lg font-semibold mt-3">
+Watch Now
+</button>
+
+</div>
+</div>
+`;
+
+});
+
+html+="</div></section>";
+
+root.innerHTML+=html;
+
+});
+
+}
+
+function go(id){
+window.location.href=BASE+id;
+}
+
+init();
+
+</script>
+
+</body>
+</html>
