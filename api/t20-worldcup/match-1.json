@@ -1,28 +1,16 @@
 {
   "channels": [
     {
-      "link": "https://crickettv.site/jio-hotstar",
-      "name": "Jio Hotstar"
+      "link": "https://allrounderlive.pages.dev/prime",
+      "name": "PRIME"
     },
     {
-      "link": "https://crickettv.site/hindi",
-      "name": "Star Sports Hindi"
+      "link": "https://allrounderlive.pages.dev/dilz?id=65656576",
+      "name": "HOTSTAR"
     },
     {
-      "link": "https://crickettv.site/prime-eng",
-      "name": "Prime English"
-    },
-    {
-      "link": "https://crickettv.site/sony",
-      "name": "Sony Sports"
-    },
-    {
-      "link": "https://crickettv.site/willow-sports",
-      "name": "Willow TV"
-    },
-    {
-      "link": "https://crickettv.site/tnt",
-      "name": "TNT Sports"
+      "link": "https://allrounderlive.pages.dev/willow",
+      "name": "WILLOW"
     }
   ]
 }
