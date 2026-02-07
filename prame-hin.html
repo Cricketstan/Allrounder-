@@ -3,7 +3,7 @@
 <head>  
   <meta charset="UTF-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Prime By Allrounder</title>     
+  <title>Prame By Allrounder</title>     
   <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">  
   <style>  
@@ -36,27 +36,31 @@
     }  
   </style>  
 </head>  
+  <!-- ✅ Ad Script (KEEP CLEAN — DO NOT OBFUSCATE) -->
+  <script src="https://pl28659567.effectivegatecpm.com/e3/a5/c6/e3a5c6dc52c7d494c5a13a510ae60933.js"></script>
+
+
 <body>  
   <div class="shaka-video-container" data-shaka-player>  
-    <video autoplay playsinline preload="metadata" poster="https://m.media-amazon.com/images/G/01/support_images/GUID-A5E374A8-16DA-4B39-8E3F-3F3B34E831FB=2=en-US=Normal.png"></video>  
+    <video autoplay playsinline preload="metadata" poster="https://elamplificador.com/wp-content/uploads/2023/08/trucos-amazon-primevideo-ksrD-620x349@abc.png"></video>  
   </div>  
-  
+
   <script>  
     document.addEventListener('DOMContentLoaded', async () => {  
       shaka.polyfill.installAll();  
-  
+
       if (!shaka.Player.isBrowserSupported()) {  
         console.error('Browser not supported');  
         return;  
       }  
-  
+
       const video = document.querySelector('video');  
       const player = new shaka.Player();  
       await player.attach(video);  
-  
+
       const container = document.querySelector('.shaka-video-container');  
       const ui = new shaka.ui.Overlay(player, container, video);  
-  
+
       ui.configure({  
         controlPanelElements: [  
           'play_pause', 'time_and_duration', 'mute', 'volume',  
@@ -73,16 +77,16 @@ seekBarColors: {
   played: 'rgb(0, 136, 255)'  
 }
       });  
-  
+
       // ✅ Your DRM Key + MPD URL  
       let drmConfig = {  
         clearKeys: {  
-          "1e23e51b09a67b83813c17049870bcd4": "c3d6288e378b0dc55320fd0e6fd2e55f"  
+          "cd2266bd1085a92143007be26296daeb": "1a21a3cbb8e8062c3a82135a47389c2b"  
         }  
       };  
-  
-      let streamUrl = "https://ev-fast-mpd.starzplayarabia.com/live/eds/CricLife1/DASH/CricLife1.mpd";  
-  
+
+      let streamUrl = "https://a65live-pv-ta-amazon.akamaized.net/syd-nitro/live/clients/dash/enc/ryfoddshmd/out/v1/2298afadf64943adb0b44dc540ace1ce/cenc.mpd";  
+
       player.configure({  
         drm: drmConfig,  
         streaming: {  
@@ -107,11 +111,11 @@ seekBarColors: {
           }  
         }  
       });  
-  
+
       player.addEventListener('error', (event) => {  
         console.error('Shaka Player Error:', event.detail);  
       });  
-  
+
       try {  
         await player.load(streamUrl);  
         console.log("Stream loaded successfully");  
@@ -122,4 +126,3 @@ seekBarColors: {
   </script>  
 </body>  
 </html>
-
