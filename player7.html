@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>http://jattfilms.info</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- JW Player -->
+  <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+    }
+
+    .jwplayer {
+      position: absolute !important;
+      inset: 0;
+    }
+
+    .jwplayer.jw-flag-aspect-mode {
+      min-height: 100%;
+      max-height: 100%;
+    }
+
+    #visitor-counter {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* Premium frame capture preview */
+    #capture-preview {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      display: none;
+      max-width: 85%;
+      max-height: 85%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: fadeInScale 0.3s ease-out forwards;
+    }
+
+    @keyframes fadeInScale {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    #capture-preview.show {
+      display: block;
+      opacity: 0;
+    }
+
+    #capture-preview .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #4CAF50;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    #capture-preview img {
+      max-width: 100%;
+      max-height: 65vh;
+      display: block;
+      border-radius: 10px;
+    }
+
+    #capture-preview .info {
+      color: #888;
+      text-align: center;
+      margin-top: 16px;
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+    }
+
+    .jw-svg-icon-capture {
+      fill: white;
+      width: 20px;
+      height: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="jwplayerDiv"></div>
+
+  <!-- Premium frame capture preview -->
+  <div id="capture-preview">
+    <div class="preview-header">
+      ✔ Frame Captured Successfully
+    </div>
+    <img id="captured-image" alt="Captured Frame">
+    <div class="info">Image downloaded automatically</div>
+  </div>
+
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const stream = urlParams.get('url') || "https://rumble.com/live-hls-dvr/6z66p4/playlist.m3u8";
+
+    const player = jwplayer("jwplayerDiv");
+
+    player.setup({
+      file: stream,
+      autostart: true,
+      stretching: "uniform",
+      width: "100%",
+      type: "hls"
+    });
+
+    player.on('ready', function () {
+      const iconPath = `
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="jw-svg-icon jw-svg-icon-capture">
+        <path fill="currentColor" d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+      </svg>`;
+
+      player.addButton(
+        iconPath,
+        'Capture Frame',
+        captureFrame,
+        'capture-frame-btn'
+      );
+    });
+
+    function captureFrame() {
+      try {
+        const video = document.querySelector('video');
+        if (!video) {
+          alert('Video not found');
+          return;
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        canvas.toBlob(function (blob) {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+          a.href = url;
+          a.download = `frame-${timestamp}.png`;
+          a.click();
+
+          const preview = document.getElementById('capture-preview');
+          const capturedImg = document.getElementById('captured-image');
+          capturedImg.src = url;
+          preview.classList.add('show');
+
+          setTimeout(() => {
+            preview.classList.remove('show');
+            URL.revokeObjectURL(url);
+          }, 2500);
+        }, 'image/png');
+
+      } catch (e) {
+        console.error(e);
+        alert("Capture failed!");
+      }
+    }
+  </script>
+
+</body>
+</html>
