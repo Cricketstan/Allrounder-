@@ -1,6 +1,18 @@
 {
   "event": [
-
+{
+      "title": "India Vs USA",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6629/1770327286629-i",
+      "watch_now": [
+        { "id": "t20-worldcup/match-1", "name": "Play Highlights" }
+      ],
+      "date": "7 Feb 2026",
+      "start_time": "06:00 PM",
+      "category": "Cricket",
+      "year": "2025",
+      "language": "Multi",
+      "league": "World Cup"
+    },
 
 {
       "title": "Westindies Vs Scotland",
