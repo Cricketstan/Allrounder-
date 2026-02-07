@@ -1,48 +1,18 @@
 {
   "event": [
 {
-      "title": "India Vs USA",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6629/1770327286629-i",
+      "title": "Newzealand Vs Afghanistan",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/9132/1770395179132-h",
       "watch_now": [
         { "id": "t20-worldcup/match-1", "name": "Play Highlights" }
       ],
-      "date": "7 Feb 2026",
-      "start_time": "06:00 PM",
+      "date": "8 Feb 2026",
+      "start_time": "10:45 AM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
       "league": "World Cup"
     },
-
-{
-      "title": "Westindies Vs Scotland",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/9128/1770422289128-i",
-      "watch_now": [
-        { "id": "t20-worldcup/match-1", "name": "Play Highlights" }
-      ],
-      "date": "7 Feb 2026",
-      "start_time": "02:45 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "World Cup"
-    },
-
-
-{
-      "title": "India Vs USA",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/6629/1770327286629-i",
-      "watch_now": [
-        { "id": "t20-worldcup/match-1", "name": "Play Highlights" }
-      ],
-      "date": "7 Feb 2026",
-      "start_time": "06:00 PM",
-      "category": "Cricket",
-      "year": "2025",
-      "language": "Multi",
-      "league": "World Cup"
-    },
-
 
 
 
