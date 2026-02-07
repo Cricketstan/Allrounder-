@@ -53,7 +53,7 @@
       "id": "prame-hin",
       "name": "Prime Hindi",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.in/prame-hin",
+      "iframeSrc": "https://all-in-one-channel.vercel.app/PRIME/DILLZY/",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=prime-hin",
       "get": "https://dillzycounter.vercel.app/api/get?key=prime-hin"
     },
