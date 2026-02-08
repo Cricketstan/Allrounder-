@@ -149,7 +149,7 @@
       "id": "jio-hotstar",
       "name": "Jio Hotstar",
       "type": "iframe",
-      "iframeSrc": "https://allrounderlive.pages.dev/dilz?id=dillzy645",
+      "iframeSrc": "https://allrounderlive.pages.dev/dilz?id=Jattfilms",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=jio-hotstar",
       "get": "https://dillzycounter.vercel.app/api/get?key=jio-hotstar"
     },
