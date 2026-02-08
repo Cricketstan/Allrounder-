@@ -2,15 +2,19 @@
   "channels": [
     {
       "link": "https://cricketstan.github.io/Allrounder-/prame",
-      "name": "PRIME"
+      "name": "Prime"
     },
     {
       "link": "https://allrounderlive.pages.dev/dilz?id=65656576",
-      "name": "HOTSTAR"
+      "name": "Hotstar"
+    },
+    {
+      "link": "https://allrounderlive.pages.dev/dilz?id=dillzy645",
+      "name": "Sky Main Event"
     },
     {
       "link": "https://allrounderlive.pages.dev/willow",
-      "name": "WILLOW"
+      "name": "Willow"
     }
   ]
 }
