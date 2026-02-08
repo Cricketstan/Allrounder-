@@ -39,28 +39,28 @@
   <!-- ✅ Ad Script (KEEP CLEAN — DO NOT OBFUSCATE) -->
   <script src="https://pl28659567.effectivegatecpm.com/e3/a5/c6/e3a5c6dc52c7d494c5a13a510ae60933.js"></script>
 
-
+  
 <body>  
   <div class="shaka-video-container" data-shaka-player>  
     <video autoplay playsinline preload="metadata" poster="https://elamplificador.com/wp-content/uploads/2023/08/trucos-amazon-primevideo-ksrD-620x349@abc.png"></video>  
   </div>  
-
+  
   <script>  
     document.addEventListener('DOMContentLoaded', async () => {  
       shaka.polyfill.installAll();  
-
+  
       if (!shaka.Player.isBrowserSupported()) {  
         console.error('Browser not supported');  
         return;  
       }  
-
+  
       const video = document.querySelector('video');  
       const player = new shaka.Player();  
       await player.attach(video);  
-
+  
       const container = document.querySelector('.shaka-video-container');  
       const ui = new shaka.ui.Overlay(player, container, video);  
-
+  
       ui.configure({  
         controlPanelElements: [  
           'play_pause', 'time_and_duration', 'mute', 'volume',  
@@ -77,16 +77,16 @@ seekBarColors: {
   played: 'rgb(0, 136, 255)'  
 }
       });  
-
+  
       // ✅ Your DRM Key + MPD URL  
       let drmConfig = {  
         clearKeys: {  
-          "ed76c18710d621a87c89dedc7c13019f": "7241c82fe48525a9dc6be6d7bb86611f"  
+          "9c8743426487c9074b60b456dda93e4d": "643e4f68ec9e3309b7e1e61b95bec85d"  
         }  
       };  
-
-      let streamUrl = "https://a65live-pv-ta-amazon.akamaized.net/syd-nitro/live/clients/dash/enc/fclywfntvr/out/v1/e21d21ec21e34c7192049a44ee3de428/cenc.mpd";  
-
+  
+      let streamUrl = "https://a201aivottlinear-a.akamaihd.net/OTTB/lhr-nitro/live/dash/enc/dn7vupw4sj/out/v1/d7130f460d41486ea7e8e3eb45f0522f/cenc.mpd";  
+  
       player.configure({  
         drm: drmConfig,  
         streaming: {  
@@ -111,11 +111,11 @@ seekBarColors: {
           }  
         }  
       });  
-
+  
       player.addEventListener('error', (event) => {  
         console.error('Shaka Player Error:', event.detail);  
       });  
-
+  
       try {  
         await player.load(streamUrl);  
         console.log("Stream loaded successfully");  
