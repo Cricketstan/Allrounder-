@@ -2,17 +2,18 @@
   "event": [
 
 {
-      "title": "Nepal Vs England",
-      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/1326/1770469681326-h",
+      "title": "South Africa Vs Canada",
+      "poster_link": "https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/4737/1770563564737-h",
       "watch_now": [
         { "id": "t20-worldcup/match-1", "name": "Play Highlights" }
       ],
-      "date": "8 Feb 2026",
-      "start_time": "02:45 PM",
+      "date": "9 Feb 2026",
+      "start_time": "06:45 PM",
       "category": "Cricket",
       "year": "2025",
       "language": "Multi",
       "league": "World Cup"
-    }
+
+}
   ]
 }
