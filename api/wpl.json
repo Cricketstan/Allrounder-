@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-02-11T23:16:26.672Z",
+  "updated_at": "2026-02-11T23:54:37.873Z",
   "count": 100,
   "items": [
-    {
-      "title": "All 17 Wickets of Sophie Devine in TATA WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e7/78/4a/0/image-2d9fbc10-b775-48f6-a697-8e63d3d38248.jpg",
-      "video_id": "6389072398112",
-      "duration": 157,
-      "published_iso": "2026-02-11T13:35:03",
-      "url": "https://crickettv.site/wpl/6389072398112.html"
-    },
     {
       "title": "All 13 Sixes by Harmanpreet Kaur in TATA WPL 2026",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/7b/d1/50/0/image-6b57d79c-dbb9-4450-af11-60a57f4d3337.jpg",
@@ -17,6 +9,14 @@
       "duration": 94,
       "published_iso": "2026-02-11T13:35:03",
       "url": "https://crickettv.site/wpl/6389072689112.html"
+    },
+    {
+      "title": "All 17 Wickets of Sophie Devine in TATA WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e7/78/4a/0/image-2d9fbc10-b775-48f6-a697-8e63d3d38248.jpg",
+      "video_id": "6389072398112",
+      "duration": 157,
+      "published_iso": "2026-02-11T13:35:03",
+      "url": "https://crickettv.site/wpl/6389072398112.html"
     },
     {
       "title": "Top Moments of TATA WPL 2026",
@@ -171,20 +171,20 @@
       "url": "https://crickettv.site/wpl/6388836216112.html"
     },
     {
-      "title": "TATA WPL 2026 - Emerging Player of the Season: Nandni Sharma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/25/fb/19/0/image-4f57f945-fd91-4e29-bd80-a060e6986df1.jpg",
-      "video_id": "6388832667112",
-      "duration": 55,
-      "published_iso": "2026-02-05T21:01:11",
-      "url": "https://crickettv.site/wpl/6388832667112.html"
-    },
-    {
       "title": "TATA WPL 2026 - Dr. Fixt Fair Play Award: Mumbai Indians",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/fe/17/0/image-e378bf8f-d961-42ac-bb0e-e9bb7e589b6d.jpg",
       "video_id": "6388833825112",
       "duration": 30,
       "published_iso": "2026-02-05T21:01:11",
       "url": "https://crickettv.site/wpl/6388833825112.html"
+    },
+    {
+      "title": "TATA WPL 2026 - Emerging Player of the Season: Nandni Sharma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/25/fb/19/0/image-4f57f945-fd91-4e29-bd80-a060e6986df1.jpg",
+      "video_id": "6388832667112",
+      "duration": 55,
+      "published_iso": "2026-02-05T21:01:11",
+      "url": "https://crickettv.site/wpl/6388832667112.html"
     },
     {
       "title": "TATA WPL 2026 - Orange Cap - Most Runs of the Season: Smriti Mandhana",
@@ -219,20 +219,20 @@
       "url": "https://crickettv.site/wpl/6388831044112.html"
     },
     {
+      "title": "ChatGPT Match IQ Award: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Georgia Voll",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/84/db/c3/0/image-93b7895e-cca7-4266-aa96-74927f628615.jpg",
+      "video_id": "6388827198112",
+      "duration": 42,
+      "published_iso": "2026-02-05T19:14:41",
+      "url": "https://crickettv.site/wpl/6388827198112.html"
+    },
+    {
       "title": "Kingfisher Good Times Sixes of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Smriti Mandhana",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5d/98/3e/0/image-3984a5e6-c7a8-45d6-86bc-e7e2e018a7c3.jpg",
       "video_id": "6388829036112",
       "duration": 35,
       "published_iso": "2026-02-05T19:14:41",
       "url": "https://crickettv.site/wpl/6388829036112.html"
-    },
-    {
-      "title": "TATA WPL Green Dot Balls of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Lauren Bell",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bb/8a/32/0/image-6392a13a-93bb-49b0-a501-551e364a8ab1.jpg",
-      "video_id": "6388828372112",
-      "duration": 39,
-      "published_iso": "2026-02-05T19:14:41",
-      "url": "https://crickettv.site/wpl/6388828372112.html"
     },
     {
       "title": "Player of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Smriti Mandhana",
@@ -243,12 +243,12 @@
       "url": "https://crickettv.site/wpl/6388826608112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Georgia Voll",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/84/db/c3/0/image-93b7895e-cca7-4266-aa96-74927f628615.jpg",
-      "video_id": "6388827198112",
-      "duration": 42,
+      "title": "Herbalife Active Catch of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Richa Ghosh",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/44/eb/0/image-099d7d6f-e8e0-43b8-9e72-9de10eb69277.jpg",
+      "video_id": "6388828011112",
+      "duration": 41,
       "published_iso": "2026-02-05T19:14:41",
-      "url": "https://crickettv.site/wpl/6388827198112.html"
+      "url": "https://crickettv.site/wpl/6388828011112.html"
     },
     {
       "title": "Sierra Super Striker of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Chinelle Henry",
@@ -259,12 +259,12 @@
       "url": "https://crickettv.site/wpl/6388828187112.html"
     },
     {
-      "title": "Herbalife Active Catch of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Richa Ghosh",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/85/44/eb/0/image-099d7d6f-e8e0-43b8-9e72-9de10eb69277.jpg",
-      "video_id": "6388828011112",
-      "duration": 41,
+      "title": "TATA WPL Green Dot Balls of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Lauren Bell",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bb/8a/32/0/image-6392a13a-93bb-49b0-a501-551e364a8ab1.jpg",
+      "video_id": "6388828372112",
+      "duration": 39,
       "published_iso": "2026-02-05T19:14:41",
-      "url": "https://crickettv.site/wpl/6388828011112.html"
+      "url": "https://crickettv.site/wpl/6388828372112.html"
     },
     {
       "title": "Joy. Jubilation. 2nd Title ft. Royal Challengers Bengaluru",
@@ -747,6 +747,14 @@
       "url": "https://crickettv.site/wpl/6388748035112.html"
     },
     {
+      "title": "We are looking to comeback stronger and bigger next year: Michael Klinger",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e6/2d/fc/0/image-47552627-5e0a-467a-a382-4fa02890965d.jpg",
+      "video_id": "6388725938112",
+      "duration": 399,
+      "published_iso": "2026-02-03T19:45:14",
+      "url": "https://crickettv.site/wpl/6388725938112.html"
+    },
+    {
       "title": "The most important game is in two days: Chinelle Henry",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/df/3c/7a/0/image-82b412fd-067b-4f0a-9135-e06c65e4084d.jpg",
       "video_id": "6388725456112",
@@ -755,12 +763,12 @@
       "url": "https://crickettv.site/wpl/6388725456112.html"
     },
     {
-      "title": "We are looking to comeback stronger and bigger next year: Michael Klinger",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/e6/2d/fc/0/image-47552627-5e0a-467a-a382-4fa02890965d.jpg",
-      "video_id": "6388725938112",
-      "duration": 399,
-      "published_iso": "2026-02-03T19:45:14",
-      "url": "https://crickettv.site/wpl/6388725938112.html"
+      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
+      "video_id": "6388721364112",
+      "duration": 28,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388721364112.html"
     },
     {
       "title": "Amazing Moments: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -771,20 +779,12 @@
       "url": "https://crickettv.site/wpl/6388723419112.html"
     },
     {
-      "title": "ChatGPT Match IQ Award: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Georgia Wareham",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bc/fe/0a/0/image-0baa66e5-0678-4410-889d-7150a4cc5105.jpg",
-      "video_id": "6388723315112",
-      "duration": 24,
+      "title": "Sierra Super Striker of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Anushka Sharma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/4c/8a/0/image-1775bb39-68aa-4ab4-88be-312310245d09.jpg",
+      "video_id": "6388722436112",
+      "duration": 33,
       "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388723315112.html"
-    },
-    {
-      "title": "Presentation: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bf/20/05/0/image-7d20ab15-2374-4e8b-914a-efe2c86e26de.jpg",
-      "video_id": "6388723799112",
-      "duration": 408,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388723799112.html"
+      "url": "https://crickettv.site/wpl/6388722436112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Chinelle Henry",
@@ -795,12 +795,12 @@
       "url": "https://crickettv.site/wpl/6388722922112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
-      "video_id": "6388721364112",
-      "duration": 28,
+      "title": "Presentation: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bf/20/05/0/image-7d20ab15-2374-4e8b-914a-efe2c86e26de.jpg",
+      "video_id": "6388723799112",
+      "duration": 408,
       "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388721364112.html"
+      "url": "https://crickettv.site/wpl/6388723799112.html"
     }
   ]
 }
