@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-13T06:14:27.378Z",
+  "updated_at": "2026-02-13T07:29:13.957Z",
   "count": 100,
   "items": [
     {
@@ -83,20 +83,20 @@
       "url": "https://crickettv.site/wpl/6388840998112.html"
     },
     {
-      "title": "TATA WPL 2026 - Herbalife Active Catch of the Season: Lucy Hamilton",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/92/95/31/0/image-8aeedc78-0253-417a-9941-adffa884f866.jpg",
-      "video_id": "6388841379112",
-      "duration": 40,
-      "published_iso": "2026-02-05T22:33:39",
-      "url": "https://crickettv.site/wpl/6388841379112.html"
-    },
-    {
       "title": "TATA WPL 2026 - Kingfisher Good Times Sixes of the Season: Harmanpreet Kaur",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5a/b4/cf/0/image-b8b22691-a823-4f09-81fc-8022aabb2aa9.jpg",
       "video_id": "6388840890112",
       "duration": 35,
       "published_iso": "2026-02-05T22:33:39",
       "url": "https://crickettv.site/wpl/6388840890112.html"
+    },
+    {
+      "title": "TATA WPL 2026 - Herbalife Active Catch of the Season: Lucy Hamilton",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/92/95/31/0/image-8aeedc78-0253-417a-9941-adffa884f866.jpg",
+      "video_id": "6388841379112",
+      "duration": 40,
+      "published_iso": "2026-02-05T22:33:39",
+      "url": "https://crickettv.site/wpl/6388841379112.html"
     },
     {
       "title": "TATA WPL 2026 - ChatGPT Match IQ Award of the Season: Sophie Devine",
@@ -123,20 +123,20 @@
       "url": "https://crickettv.site/wpl/6388836640112.html"
     },
     {
-      "title": "Sierra Super Striker of Week 4",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/32/2e/0/image-1a968194-81f6-466b-a6fb-bf5329b9f8d6.jpg",
-      "video_id": "6388836352112",
-      "duration": 100,
-      "published_iso": "2026-02-05T21:39:36",
-      "url": "https://crickettv.site/wpl/6388836352112.html"
-    },
-    {
       "title": "Kingfisher Good Times Sixes of Week 4",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/ae/9f/8d/0/image-e3688f35-fefb-4e6e-805a-6607a962135f.jpg",
       "video_id": "6388835470112",
       "duration": 104,
       "published_iso": "2026-02-05T21:39:36",
       "url": "https://crickettv.site/wpl/6388835470112.html"
+    },
+    {
+      "title": "Sierra Super Striker of Week 4",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/32/32/2e/0/image-1a968194-81f6-466b-a6fb-bf5329b9f8d6.jpg",
+      "video_id": "6388836352112",
+      "duration": 100,
+      "published_iso": "2026-02-05T21:39:36",
+      "url": "https://crickettv.site/wpl/6388836352112.html"
     },
     {
       "title": "Herbalife Active Catches of Week 4",
@@ -155,14 +155,6 @@
       "url": "https://crickettv.site/wpl/6388834777112.html"
     },
     {
-      "title": "The way Smriti Mandhana batted today was inhuman: Malolan Rangarajan",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f0/c0/dc/0/image-2c13d1d2-c43d-484f-bb99-d96df749f246.jpg",
-      "video_id": "6388836216112",
-      "duration": 895,
-      "published_iso": "2026-02-05T21:20:33",
-      "url": "https://crickettv.site/wpl/6388836216112.html"
-    },
-    {
       "title": "Jemimah Rodrigues made outstanding decisions as captain throughout the whole tournament: Jonathan Batty",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/96/83/32/0/image-1193f39c-233f-41c8-992b-56309800a5f9.jpg",
       "video_id": "6388834466112",
@@ -171,12 +163,20 @@
       "url": "https://crickettv.site/wpl/6388834466112.html"
     },
     {
-      "title": "TATA WPL 2026 - Dr. Fixt Fair Play Award: Mumbai Indians",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/fe/17/0/image-e378bf8f-d961-42ac-bb0e-e9bb7e589b6d.jpg",
-      "video_id": "6388833825112",
-      "duration": 30,
+      "title": "The way Smriti Mandhana batted today was inhuman: Malolan Rangarajan",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/f0/c0/dc/0/image-2c13d1d2-c43d-484f-bb99-d96df749f246.jpg",
+      "video_id": "6388836216112",
+      "duration": 895,
+      "published_iso": "2026-02-05T21:20:33",
+      "url": "https://crickettv.site/wpl/6388836216112.html"
+    },
+    {
+      "title": "TATA WPL 2026 - Emerging Player of the Season: Nandni Sharma",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/25/fb/19/0/image-4f57f945-fd91-4e29-bd80-a060e6986df1.jpg",
+      "video_id": "6388832667112",
+      "duration": 55,
       "published_iso": "2026-02-05T21:01:11",
-      "url": "https://crickettv.site/wpl/6388833825112.html"
+      "url": "https://crickettv.site/wpl/6388832667112.html"
     },
     {
       "title": "TATA WPL 2026 - Orange Cap - Most Runs of the Season: Smriti Mandhana",
@@ -187,20 +187,20 @@
       "url": "https://crickettv.site/wpl/6388833264112.html"
     },
     {
+      "title": "TATA WPL 2026 - Dr. Fixt Fair Play Award: Mumbai Indians",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/dd/fe/17/0/image-e378bf8f-d961-42ac-bb0e-e9bb7e589b6d.jpg",
+      "video_id": "6388833825112",
+      "duration": 30,
+      "published_iso": "2026-02-05T21:01:11",
+      "url": "https://crickettv.site/wpl/6388833825112.html"
+    },
+    {
       "title": "TATA WPL 2026 - Purple Cap - Most Wickets of the Season: Sophie Devine",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/51/c9/c8/0/image-370b2753-162f-4cdc-9c7e-2bf9658e13b2.jpg",
       "video_id": "6388834993112",
       "duration": 81,
       "published_iso": "2026-02-05T21:01:11",
       "url": "https://crickettv.site/wpl/6388834993112.html"
-    },
-    {
-      "title": "TATA WPL 2026 - Emerging Player of the Season: Nandni Sharma",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/25/fb/19/0/image-4f57f945-fd91-4e29-bd80-a060e6986df1.jpg",
-      "video_id": "6388832667112",
-      "duration": 55,
-      "published_iso": "2026-02-05T21:01:11",
-      "url": "https://crickettv.site/wpl/6388832667112.html"
     },
     {
       "title": "Presentation: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026",
@@ -219,12 +219,20 @@
       "url": "https://crickettv.site/wpl/6388831044112.html"
     },
     {
-      "title": "Sierra Super Striker of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Chinelle Henry",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/56/f1/bb/0/image-9c71b7fd-ca36-4d8f-831a-3849ffdb86f7.jpg",
-      "video_id": "6388828187112",
-      "duration": 50,
+      "title": "ChatGPT Match IQ Award: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Georgia Voll",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/84/db/c3/0/image-93b7895e-cca7-4266-aa96-74927f628615.jpg",
+      "video_id": "6388827198112",
+      "duration": 42,
       "published_iso": "2026-02-05T19:14:41",
-      "url": "https://crickettv.site/wpl/6388828187112.html"
+      "url": "https://crickettv.site/wpl/6388827198112.html"
+    },
+    {
+      "title": "Kingfisher Good Times Sixes of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Smriti Mandhana",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5d/98/3e/0/image-3984a5e6-c7a8-45d6-86bc-e7e2e018a7c3.jpg",
+      "video_id": "6388829036112",
+      "duration": 35,
+      "published_iso": "2026-02-05T19:14:41",
+      "url": "https://crickettv.site/wpl/6388829036112.html"
     },
     {
       "title": "TATA WPL Green Dot Balls of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Lauren Bell",
@@ -243,20 +251,12 @@
       "url": "https://crickettv.site/wpl/6388826608112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Smriti Mandhana",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/5d/98/3e/0/image-3984a5e6-c7a8-45d6-86bc-e7e2e018a7c3.jpg",
-      "video_id": "6388829036112",
-      "duration": 35,
+      "title": "Sierra Super Striker of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Chinelle Henry",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/56/f1/bb/0/image-9c71b7fd-ca36-4d8f-831a-3849ffdb86f7.jpg",
+      "video_id": "6388828187112",
+      "duration": 50,
       "published_iso": "2026-02-05T19:14:41",
-      "url": "https://crickettv.site/wpl/6388829036112.html"
-    },
-    {
-      "title": "ChatGPT Match IQ Award: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Georgia Voll",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/84/db/c3/0/image-93b7895e-cca7-4266-aa96-74927f628615.jpg",
-      "video_id": "6388827198112",
-      "duration": 42,
-      "published_iso": "2026-02-05T19:14:41",
-      "url": "https://crickettv.site/wpl/6388827198112.html"
+      "url": "https://crickettv.site/wpl/6388828187112.html"
     },
     {
       "title": "Herbalife Active Catch of the Match: Final, Royal Challengers Bengaluru vs Delhi Capitals, WPL 2026: Richa Ghosh",
@@ -763,28 +763,12 @@
       "url": "https://crickettv.site/wpl/6388725456112.html"
     },
     {
-      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
-      "video_id": "6388721364112",
-      "duration": 28,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388721364112.html"
-    },
-    {
       "title": "Sierra Super Striker of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Anushka Sharma",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/2f/4c/8a/0/image-1775bb39-68aa-4ab4-88be-312310245d09.jpg",
       "video_id": "6388722436112",
       "duration": 33,
       "published_iso": "2026-02-03T18:16:58",
       "url": "https://crickettv.site/wpl/6388722436112.html"
-    },
-    {
-      "title": "Presentation: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
-      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bf/20/05/0/image-7d20ab15-2374-4e8b-914a-efe2c86e26de.jpg",
-      "video_id": "6388723799112",
-      "duration": 408,
-      "published_iso": "2026-02-03T18:16:58",
-      "url": "https://crickettv.site/wpl/6388723799112.html"
     },
     {
       "title": "Amazing Moments: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
@@ -795,12 +779,28 @@
       "url": "https://crickettv.site/wpl/6388723419112.html"
     },
     {
+      "title": "Kingfisher Good Times Sixes of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Lizelle Lee",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/1c/d3/c8/0/image-4646f2f2-bbbf-40b7-85cc-c8945c9b41bd.jpg",
+      "video_id": "6388721364112",
+      "duration": 28,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388721364112.html"
+    },
+    {
       "title": "TATA WPL Green Dot Balls of the Match: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026: Chinelle Henry",
       "thumbnail": "https://www.wplt20.com/static-assets/waf-images/a6/51/d6/0/image-79ef00af-24a3-4ad4-bf68-864255ffe14f.jpg",
       "video_id": "6388722922112",
       "duration": 25,
       "published_iso": "2026-02-03T18:16:58",
       "url": "https://crickettv.site/wpl/6388722922112.html"
+    },
+    {
+      "title": "Presentation: Eliminator, Gujarat Giants vs Delhi Capitals, WPL 2026",
+      "thumbnail": "https://www.wplt20.com/static-assets/waf-images/bf/20/05/0/image-7d20ab15-2374-4e8b-914a-efe2c86e26de.jpg",
+      "video_id": "6388723799112",
+      "duration": 408,
+      "published_iso": "2026-02-03T18:16:58",
+      "url": "https://crickettv.site/wpl/6388723799112.html"
     }
   ]
 }
