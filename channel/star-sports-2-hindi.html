@@ -53,128 +53,121 @@
 <script>
 document.addEventListener('DOMContentLoaded', async () => {
 
-  shaka.polyfill.installAll();
-  if (!shaka.Player.isBrowserSupported()) return;
+shaka.polyfill.installAll();
+if (!shaka.Player.isBrowserSupported()) return;
 
-  const video = document.querySelector('video');
-  const player = new shaka.Player();
-  await player.attach(video);
+const video = document.querySelector('video');
+const player = new shaka.Player();
+await player.attach(video);
 
-  const container = document.querySelector('.shaka-video-container');
-  const ui = new shaka.ui.Overlay(player, container, video);
+const container = document.querySelector('.shaka-video-container');
+const ui = new shaka.ui.Overlay(player, container, video);
 
-  ui.configure({
-    controlPanelElements: [
-      'play_pause','time_and_duration','mute','volume',
-      'spacer','language','captions','picture_in_picture',
-      'quality','fullscreen'
-    ],
-    seekBarColors: {
-      base: 'white',
-      buffered: 'red',
-      played: 'green'
-    }
-  });
+ui.configure({
+controlPanelElements: [
+'play_pause','time_and_duration','mute','volume',
+'spacer','language','captions','picture_in_picture',
+'quality','fullscreen'
+],
+seekBarColors: {
+base: 'white',
+buffered: 'red',
+played: 'green'
+}
+});
 
-  let drmConfig = {
-    clearKeys: {
-      "bd1ea6a1c1fb5dcdb709434e0826bbc0":
-      "f57f22cba32739ce7beb1fab3f3d060b"
-    }
-  };
+let drmConfig = {
+clearKeys: {
+"bd1ea6a1c1fb5dcdb709434e0826bbc0":
+"f57f22cba32739ce7beb1fab3f3d060b"
+}
+};
 
-  let cookieHeader =
-    "__hdnea__=st=1770968162~exp=1771054562~acl=/*~hmac=a20b369ce7b0b48ea6f53ecd616f0e94ba595042495610cae245fed7b640c883";
+let cookieHeader =
+"hdnea=st=1770968162/exp=1771054562/acl=/*~hmac=a20b369ce7b0b48ea6f53ecd616f0e94ba595042495610cae245fed7b640c883";
 
-  let streamUrl =
-    "https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd";
+let streamUrl =
+"https://jiotvmblive.cdn.jio.com/bpk-tv/Sports18_1_HD_BTS/output/index.mpd";
 
-  try {
-    const response = await fetch(
-      'https://raw.githubusercontent.com/alex8875/m3u/refs/heads/main/jstar.m3u'
-    );
-    const m3uText = await response.text();
-    const lines = m3uText.split('\n');
+// ===== ONLY THIS PART CHANGED =====
+try {
+const response = await fetch(
+'https://allrounderid.pages.dev/api/jiotv2.json'
+);
+const data = await response.json();
 
-    for (let i = 0; i < lines.length; i++) {
-      if (lines[i].includes('Star_Sports_HD')) {
-        for (let j = i - 1; j >= 0; j--) {
-          if (lines[j].startsWith('#EXTHTTP:')) {
-            const cookieMatch =
-              lines[j].match(/"cookie":"([^"]+)"/);
-            if (cookieMatch) {
-              cookieHeader = cookieMatch[1];
-            }
-            break;
-          }
-        }
-        break;
-      }
-    }
-  } catch (e) {}
+const channel = data.find(ch => ch.channel_name === "DD Sports");
 
-  let backupCookie = null;
-  let usingBackupCookie = false;
+if (channel && channel.cookie) {
+  cookieHeader = channel.cookie;
+}
 
-  async function fetchBackupCookie() {
-    if (backupCookie) return backupCookie;
-    const res = await fetch('https://crickettv.site/api/cookie.json');
-    const data = await res.json();
-    backupCookie = data.cookie;
-    return backupCookie;
-  }
+} catch (e) {}
+// ===== END CHANGE =====
 
-  async function switchToBackupCookie() {
-    if (usingBackupCookie) return;
-    usingBackupCookie = true;
-    cookieHeader = await fetchBackupCookie();
-    try {
-      await player.unload();
-      await player.load(streamUrl);
-      video.play();
-    } catch (e) {}
-  }
+let backupCookie = null;
+let usingBackupCookie = false;
 
-  player.configure({
-    drm: drmConfig
-  });
+async function fetchBackupCookie() {
+if (backupCookie) return backupCookie;
+const res = await fetch('https://crickettv.site/api/cookie.json');
+const data = await res.json();
+backupCookie = data.cookie;
+return backupCookie;
+}
 
-  player.getNetworkingEngine().registerRequestFilter((type, request) => {
-    request.headers['Referer'] = 'https://www.jiotv.com/';
-    request.headers['User-Agent'] =
-      "plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
-    request.headers['Cookie'] = cookieHeader;
+async function switchToBackupCookie() {
+if (usingBackupCookie) return;
+usingBackupCookie = true;
+cookieHeader = await fetchBackupCookie();
+try {
+await player.unload();
+await player.load(streamUrl);
+video.play();
+} catch (e) {}
+}
 
-    if (
-      (type === shaka.net.NetworkingEngine.RequestType.MANIFEST ||
-       type === shaka.net.NetworkingEngine.RequestType.SEGMENT) &&
-      request.uris[0] &&
-      !request.uris[0].includes('__hdnea=')
-    ) {
-      const sep = request.uris[0].includes('?') ? '&' : '?';
-      request.uris[0] += sep + cookieHeader;
-    }
-  });
+player.configure({
+drm: drmConfig
+});
 
-  player.addEventListener('error', async (event) => {
-    const err = event.detail;
-    if (
-      !usingBackupCookie &&
-      (
-        err.code === 401 ||
-        err.code === 403 ||
-        err.code === shaka.util.Error.Code.BAD_HTTP_STATUS ||
-        err.code === shaka.util.Error.Code.MANIFEST_UNAVAILABLE
-      )
-    ) {
-      await switchToBackupCookie();
-    }
-  });
+player.getNetworkingEngine().registerRequestFilter((type, request) => {
+request.headers['Referer'] = 'https://www.jiotv.com/';
+request.headers['User-Agent'] =
+"plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
+request.headers['Cookie'] = cookieHeader;
 
-  try {
-    await player.load(streamUrl);
-    video.play();
-  } catch (e) {}
+if (
+  (type === shaka.net.NetworkingEngine.RequestType.MANIFEST ||
+   type === shaka.net.NetworkingEngine.RequestType.SEGMENT) &&
+  request.uris[0] &&
+  !request.uris[0].includes('__hdnea=')
+) {
+  const sep = request.uris[0].includes('?') ? '&' : '?';
+  request.uris[0] += sep + cookieHeader;
+}
+
+});
+
+player.addEventListener('error', async (event) => {
+const err = event.detail;
+if (
+!usingBackupCookie &&
+(
+err.code === 401 ||
+err.code === 403 ||
+err.code === shaka.util.Error.Code.BAD_HTTP_STATUS ||
+err.code === shaka.util.Error.Code.MANIFEST_UNAVAILABLE
+)
+) {
+await switchToBackupCookie();
+}
+});
+
+try {
+await player.load(streamUrl);
+video.play();
+} catch (e) {}
 
 });
 </script>
