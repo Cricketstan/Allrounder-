@@ -7,11 +7,11 @@
     "key": "208c972bd2da4359ac94e6944fe378b6"
   },
   {
-    "name": "Sky Sports NZ 1",
+    "name": "Hub Sports 4",
     "thumb": "https://iili.io/KbJy77S.png",
-    "mpd": "https://MH-BKS400-08.starhubgo.com:443/bpk-token/1ac@fo24tmh5r1ps31ahrydtfy3hzgrdx5e1fmfdqzca/bpk-tv/HubSports4HDnew/output/manifest.mpd?bkm-query",
-    "kid": "aefc2c8d1c8840f1b6981f856c9269ba",
-    "key": "cf8ea114c45b4d6596b2748258ab74d6"
+    "mpd": "https://bks03.starhubgo.com:443/bpk-token/1aa@stivntricvwnguunlhm24rk1gd2ekn1mste3cfca/bpk-tv/HubSports4HDnew/output/manifest.mpd?bkm-query",
+    "kid": "9a29d4f3b6e540b3aa2f36927c01b6f4",
+    "key": "57b670b45b5cb453a9f48fa975b702c1"
   },
   {
     "name": "Sky Sports NZ 2",
