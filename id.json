@@ -20,7 +20,7 @@
       "id": "hub",
       "name": "hub",
       "type": "iframe",
-      "iframeSrc": "https://all-in-one-channel.vercel.app/HUB",
+      "iframeSrc": "https://allrounder-king.pages.dev/hub-4",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=hindi",
       "get": "https://dillzycounter.vercel.app/api/get?key=hindi"
     },
