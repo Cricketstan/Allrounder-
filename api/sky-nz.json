@@ -1,15 +1,15 @@
 [
   {
     "name": "Sky Sports NZ 1 UHD",
-    "thumb": "https://webiptv.site/sky4k.png",
-    "mpd": "ERROR: Could not fetch fresh token from proxy.",
+    "thumb": "allrounder",
+    "mpd": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 503 Service Unavailable\r\n</title><style>@media (prefers-color-scheme:dark){body{background-color:#000!important}}</style></head>\n<body style=\"color: #444; margin:0;font: normal 14px/20px Arial, Helvetica, sans-serif; height:100%; background-color: #fff;\">\n<div style=\"height:auto; min-height:100%; \">     <div style=\"text-align: center; width:800px; margin-left: -400px; position:absolute; top: 30%; left:50%;\">\n        <h1 style=\"margin:0; font-size:150px; line-height:150px; font-weight:bold;\">503</h1>\n<h2 style=\"margin-top:20px;font-size: 30px;\">Service Unavailable\r\n</h2>\n<p>The server is temporarily busy, try again later!</p>\n</div></div></body></html>",
     "kid": "4d346b1d1ae64d4a800409cffa14983e",
     "key": "208c972bd2da4359ac94e6944fe378b6"
   },
   {
     "name": "Hub Sports 4",
     "thumb": "https://iili.io/KbJy77S.png",
-    "mpd": "https://MH-BKS400-07.starhubgo.com:443/bpk-token/1ac@5pyg3anxb1udu4w2k5fggqn0b05dwjhi5bj14vaa/bpk-tv/HubSports4HDnew/output/manifest.mpd?bkm-query",
+    "mpd": "https://MH-BKS400-08.starhubgo.com:443/bpk-token/1ac@qhrv5bqzew4hqhnznmvywcl5di2jm3paqfii2uba/bpk-tv/HubSports4HDnew/output/manifest.mpd?bkm-query",
     "kid": "9a29d4f3b6e540b3aa2f36927c01b6f4",
     "key": "57b670b45b5cb453a9f48fa975b702c1"
   },
@@ -86,7 +86,7 @@
   {
     "name": "Sky Sports ESPN 2",
     "thumb": "https://iili.io/KmUO5il.png",
-    "mpd": "",
+    "mpd": "<!DOCTYPE html>\n<html style=\"height:100%\">\n<head>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" />\n<title> 503 Service Unavailable\r\n</title><style>@media (prefers-color-scheme:dark){body{background-color:#000!important}}</style></head>\n<body style=\"color: #444; margin:0;font: normal 14px/20px Arial, Helvetica, sans-serif; height:100%; background-color: #fff;\">\n<div style=\"height:auto; min-height:100%; \">     <div style=\"text-align: center; width:800px; margin-left: -400px; position:absolute; top: 30%; left:50%;\">\n        <h1 style=\"margin:0; font-size:150px; line-height:150px; font-weight:bold;\">503</h1>\n<h2 style=\"margin-top:20px;font-size: 30px;\">Service Unavailable\r\n</h2>\n<p>The server is temporarily busy, try again later!</p>\n</div></div></body></html>",
     "kid": "a01e1e0d5fb145b8b33190588490a27a",
     "key": "bfd9e3b0866e49cbae1bb7f7116451c9"
   }
