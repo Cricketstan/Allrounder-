@@ -1,174 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<!-- ================= BASIC SEO ================= -->
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<title>T20 World Cup Live Matches Today | Watch Free Cricket – AllRounderLive</title>
-
-<meta name="description" content="Watch T20 World Cup live matches today with IST timings, teams, venues and instant Watch Now links. Free live cricket streaming on AllRounderLive.in">
-<meta name="keywords" content="T20 World Cup live, live cricket streaming, T20 today match, watch cricket online free, AllRounderLive, CricTV">
-<meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="theme-color" content="#050b2e">
-
-<link rel="canonical" href="https://allrounderlive.in/">
-
-<!-- ================= OPEN GRAPH ================= -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="T20 World Cup Live Matches Today – Watch Free">
-<meta property="og:description" content="Live T20 World Cup matches with IST schedule, teams and instant Watch Now links.">
-<meta property="og:url" content="https://allrounderlive.in/">
-<meta property="og:image" content="https://crickettv.site/image/api/crickettv.png">
-<meta property="og:site_name" content="AllRounderLive">
-
-<!-- ================= TWITTER ================= -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="T20 World Cup Live Matches – AllRounderLive">
-<meta name="twitter:description" content="Watch T20 World Cup live cricket matches today with instant streaming links.">
-<meta name="twitter:image" content="https://crickettv.site/image/api/crickettv.png">
-
-<!-- ================= TAILWIND ================= -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- ================= STRUCTURED DATA ================= -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "AllRounderLive",
-  "url": "https://allrounderlive.in/",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://allrounderlive.in/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Watch Live Match</title>
 
 <style>
 body{
-  background:linear-gradient(180deg,#050b2e,#0a1c4d,#050b2e);
+  margin:0;
+  height:100vh;
+  background: radial-gradient(circle at top,#0f2027,#000);
+  font-family:Poppins, sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
 }
-.glass{
-  background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.04));
-  backdrop-filter:blur(18px);
+
+/* Card */
+.card{
+  background: linear-gradient(145deg,#121212,#1a1a1a);
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 0 35px rgba(0,255,200,.15);
+  text-align:center;
+  width:330px;
+  animation:fadeIn .7s ease;
 }
-.live-glow{
-  animation:pulse 1.6s infinite;
+
+.title{
+  font-size:24px;
+  margin-bottom:12px;
+  font-weight:600;
 }
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(255,0,79,.45)}
-  70%{box-shadow:0 0 0 22px rgba(255,0,79,0)}
-  100%{box-shadow:0 0 0 0 rgba(255,0,79,0)}
+
+.desc{
+  opacity:.8;
+  margin-bottom:22px;
+  font-size:15px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 28px;
+  background:linear-gradient(45deg,#00ffc6,#0099ff);
+  border-radius:12px;
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 20px rgba(0,255,200,.6);
+}
+
+/* Animation */
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(25px)}
+  to{opacity:1; transform:translateY(0)}
 }
 </style>
-
 </head>
 
-<body class="text-white antialiased">
+<body>
 
-<canvas id="particles" class="fixed inset-0 pointer-events-none z-0"></canvas>
+<div class="card">
+  <div class="title">🏏 Watch T20 World Cup</div>
+  <div class="desc">
+    Live match link uploaded on our Telegram channel.
+  </div>
 
-<header class="sticky top-0 z-20 backdrop-blur-xl bg-gradient-to-r from-[#071b4f] to-[#000428] h-14 flex items-center justify-center">
-  <img src="https://crickettv.site/image/api/crickettv.png" alt="AllRounderLive Live Cricket Logo" class="h-9">
-</header>
-
-<main class="relative z-10 max-w-7xl mx-auto px-4 py-6">
-
-  <h1 class="text-center text-2xl md:text-3xl font-extrabold tracking-tight">
-    T20 World Cup Live Matches Today
-  </h1>
-
-  <h2 class="text-center text-sm md:text-base text-blue-300 mt-1 mb-6">
-    Free Live Cricket Streaming • IST Schedule • Instant Watch Links
-  </h2>
-
-  <section id="matches" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    Loading live matches…
-  </section>
-
-</main>
-
-<footer class="text-center text-xs opacity-60 my-10">
-  © 2026 AllRounderLive
-</footer>
-
-<script>
-/* PARTICLES */
-const canvas=document.getElementById('particles');
-const ctx=canvas.getContext('2d');
-function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
-addEventListener('resize',resize);resize();
-const p=[];
-for(let i=0;i<40;i++)p.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:1+Math.random(),vx:.15,vy:.15,a:.25});
-(function anim(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  p.forEach(o=>{
-    o.x+=o.vx;o.y+=o.vy;
-    if(o.x>canvas.width)o.x=0;
-    if(o.y>canvas.height)o.y=0;
-    ctx.beginPath();
-    ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
-    ctx.fillStyle=`rgba(255,255,255,${o.a})`;
-    ctx.fill();
-  });
-  requestAnimationFrame(anim);
-})();
-
-/* API */
-const API="https://crictv.cricketstream745.workers.dev/?url="+encodeURIComponent(
-"https://assets-icc.sportz.io/cricket/v1/schedule?client_id=tPZJbRgIub3Vua93%2FDWtyQ%3D%3D&feed_format=json&is_deleted=false&is_live=true&is_recent=false&is_upcoming=true&lang=en&pagination=false&series_ids=13203&tour_ids=9953&timezone=0530&_="+Date.now()
-);
-
-const logo=id=>`https://assets-icc.sportz.io/static-assets/buildv3-stg/images/teams/${id}.png?v=14`;
-
-fetch(API).then(r=>r.json()).then(j=>{
-  const box=document.getElementById("matches");
-  box.innerHTML="";
-  j.data.matches.forEach(m=>{
-    box.innerHTML+=`
-    <article class="glass rounded-2xl p-5 shadow-2xl hover:scale-[1.02] transition">
-      <p class="text-xs text-blue-300">${m.series_name}</p>
-      <p class="text-xs opacity-70 mb-3">${m.match_number}</p>
-
-      <div class="flex items-center justify-between">
-        <div class="text-center w-2/5">
-          <img loading="lazy" src="${logo(m.teama_id)}" alt="${m.teama_short} team logo" class="w-16 h-16 mx-auto">
-          <div class="font-bold mt-1 text-sm">${m.teama_short}</div>
-        </div>
-
-        <div class="text-yellow-400 font-black text-xl">VS</div>
-
-        <div class="text-center w-2/5">
-          <img loading="lazy" src="${logo(m.teamb_id)}" alt="${m.teamb_short} team logo" class="w-16 h-16 mx-auto">
-          <div class="font-bold mt-1 text-sm">${m.teamb_short}</div>
-        </div>
-      </div>
-
-      <div class="text-xs leading-6 mt-4 opacity-90">
-        📅 ${m.match_date_ist}<br>
-        ⏰ ${m.match_time_ist} IST<br>
-        📍 ${m.venue}
-      </div>
-
-      ${
-        m.live
-        ? `<div onclick="watchMatch()" class="live-glow mt-4 text-center py-3 rounded-xl font-black bg-gradient-to-r from-pink-600 to-orange-500 cursor-pointer">▶ Watch Live Now</div>`
-        : `<div class="mt-4 text-center py-3 rounded-xl font-black bg-gradient-to-r from-blue-400 to-cyan-300 text-black">⏳ Upcoming Match</div>`
-      }
-    </article>`;
-  });
-});
-
-function watchMatch(){
-  window.location.href="https://allrounderlive.in/";
-}
-</script>
+  <a class="btn" href="https://t.me/+IldkIZl0GA80MmU1" target="_blank">
+    Watch Now
+  </a>
+</div>
 
 </body>
-  </html>
+</html>
