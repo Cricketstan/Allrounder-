@@ -233,6 +233,15 @@
 "https://allrounder-king.pages.dev/cricbuzz1",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=SS",
       "get": "https://dillzycounter.vercel.app/api/get?key=SS"
+    },
+{
+      "id": "tamil",
+      "name": "tamil",
+      "type": "iframe",
+      "iframeSrc":
+"https://allrounder-king.pages.dev/channel/Tamil",
+      "hit": "https://dillzycounter.vercel.app/api/hit?key=SS",
+      "get": "https://dillzycounter.vercel.app/api/get?key=SS"
     }
   ]
     }
