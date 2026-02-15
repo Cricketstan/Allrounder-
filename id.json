@@ -4,7 +4,7 @@
       "id": "hindi",
       "name": "Star Sports Hindi",
       "type": "iframe",
-      "iframeSrc": "https://allrounder-king.pages.dev/channel/star-sports-2-hindi",
+      "iframeSrc": "https://allrounder-king.pages.dev/channel/star-sports-1-hindi",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=hindi",
       "get": "https://dillzycounter.vercel.app/api/get?key=hindi"
     },
