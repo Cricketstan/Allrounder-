@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Cric Tv Sony Liv 2</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/shaka-player.ui.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.7.11/controls.min.css" crossorigin="anonymous">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FMP9REY96D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FMP9REY96D');
+</script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      background: #000;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .shaka-video-container {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: contain;
+    }
+    .shaka-spinner-container,
+    .shaka-spinner,
+    .shaka-spinner-svg {
+      display: none !important;
+    }
+  </style>
+</head>
+    
+  <body>
+  <div class="shaka-video-container" data-shaka-player>
+    <video autoplay playsinline preload="metadata"></video>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+
+shaka.polyfill.installAll();
+if (!shaka.Player.isBrowserSupported()) return;
+
+const video = document.querySelector('video');
+const player = new shaka.Player();
+await player.attach(video);
+
+const container = document.querySelector('.shaka-video-container');
+const ui = new shaka.ui.Overlay(player, container, video);
+
+ui.configure({
+controlPanelElements: [
+'play_pause','time_and_duration','mute','volume',
+'spacer','language','captions','picture_in_picture',
+'quality','fullscreen'
+],
+seekBarColors: {
+base: 'white',
+buffered: 'red',
+played: 'green'
+}
+});
+
+let drmConfig = {
+clearKeys: {
+"2272c0bc6b2e5cb090b1f55996e0026c":
+"943923934de1d5536ab01c67fca8b337"
+}
+};
+
+let cookieHeader =
+"hdnea=st=1770968162/exp=1771054562/acl=/*~hmac=a20b369ce7b0b48ea6f53ecd616f0e94ba595042495610cae245fed7b640c883";
+
+let streamUrl =
+"https://jiotvmblive.cdn.jio.com/bpk-tv/Star_Sports_1_Tamil_HD_BTS/output/index.mpd";
+
+// ===== ONLY THIS PART CHANGED =====
+try {
+const response = await fetch(
+'https://allrounderid.pages.dev/api/jiotv2.json'
+);
+const data = await response.json();
+
+const channel = data.find(ch => ch.channel_name === "DD Sports");
+
+if (channel && channel.cookie) {
+  cookieHeader = channel.cookie;
+}
+
+} catch (e) {}
+// ===== END CHANGE =====
+
+let backupCookie = null;
+let usingBackupCookie = false;
+
+async function fetchBackupCookie() {
+if (backupCookie) return backupCookie;
+const res = await fetch('https://crickettv.site/api/cookie.json');
+const data = await res.json();
+backupCookie = data.cookie;
+return backupCookie;
+}
+
+async function switchToBackupCookie() {
+if (usingBackupCookie) return;
+usingBackupCookie = true;
+cookieHeader = await fetchBackupCookie();
+try {
+await player.unload();
+await player.load(streamUrl);
+video.play();
+} catch (e) {}
+}
+
+player.configure({
+drm: drmConfig
+});
+
+player.getNetworkingEngine().registerRequestFilter((type, request) => {
+request.headers['Referer'] = 'https://www.jiotv.com/';
+request.headers['User-Agent'] =
+"plaYtv/7.1.5 (Linux;Android 13) ExoPlayerLib/2.11.6";
+request.headers['Cookie'] = cookieHeader;
+
+if (
+  (type === shaka.net.NetworkingEngine.RequestType.MANIFEST ||
+   type === shaka.net.NetworkingEngine.RequestType.SEGMENT) &&
+  request.uris[0] &&
+  !request.uris[0].includes('__hdnea=')
+) {
+  const sep = request.uris[0].includes('?') ? '&' : '?';
+  request.uris[0] += sep + cookieHeader;
+}
+
+});
+
+player.addEventListener('error', async (event) => {
+const err = event.detail;
+if (
+!usingBackupCookie &&
+(
+err.code === 401 ||
+err.code === 403 ||
+err.code === shaka.util.Error.Code.BAD_HTTP_STATUS ||
+err.code === shaka.util.Error.Code.MANIFEST_UNAVAILABLE
+)
+) {
+await switchToBackupCookie();
+}
+});
+
+try {
+await player.load(streamUrl);
+video.play();
+} catch (e) {}
+
+});
+</script>
+<script>(function(s){s.dataset.zone='10603308',s.src='https://bvtpk.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
+    
+</body>
+</html>
