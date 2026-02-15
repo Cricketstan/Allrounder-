@@ -221,7 +221,8 @@
       "id": "cricbuzz",
       "name": "cricbuzz",
       "type": "iframe",
-      "iframeSrc": "      "iframeSrc": "https://allrounder-king.pages.dev/cricbuzz1",
+      "iframeSrc":
+"https://allrounder-king.pages.dev/cricbuzz1",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=SS",
       "get": "https://dillzycounter.vercel.app/api/get?key=SS"
     }
