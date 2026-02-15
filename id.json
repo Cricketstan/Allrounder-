@@ -165,7 +165,7 @@
       "id": "jio-hotstar",
       "name": "Jio Hotstar",
       "type": "iframe",
-      "iframeSrc": "https://allrounder-king.pages.dev/hotstar",
+      "iframeSrc": "https://allrounder-king.pages.dev/dilz?id=Toxifyhy",
       "hit": "https://dillzycounter.vercel.app/api/hit?key=jio-hotstar",
       "get": "https://dillzycounter.vercel.app/api/get?key=jio-hotstar"
     },
